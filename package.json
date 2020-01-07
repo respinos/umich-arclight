@@ -1,0 +1,10 @@
+{
+  "name": "dul-arclight",
+  "private": true,
+  "dependencies": {
+    "@babel/core": "^7.7.7",
+    "@babel/plugin-external-helpers": "^7.7.4",
+    "@babel/plugin-transform-modules-umd": "^7.7.4",
+    "@babel/preset-env": "^7.7.7"
+  }
+}
