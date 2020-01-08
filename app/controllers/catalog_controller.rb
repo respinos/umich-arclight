@@ -357,8 +357,10 @@ class CatalogController < ApplicationController
     config.add_component_terms_field 'parent_access_terms_ssm', label: 'Parent Terms of Access', helper_method: :render_html_tags
 
     # Collection and Component Show Page Access Tab - In Person Section
-    config.add_in_person_field 'repository_ssm', if: :repository_config_present, label: 'Location of this collection', helper_method: :context_access_tab_repository
-    config.add_in_person_field 'id', if: :before_you_visit_note_present, label: 'Before you visit', helper_method: :context_access_tab_visit_note # Using ID because we know it will always exist
+    config.add_in_person_field 'repository_ssm', if: :repository_config_present, label: 'Location of this collection',
+      helper_method: :context_access_tab_repository
+    config.add_in_person_field 'id', if: :before_you_visit_note_present, label: 'Before you visit',
+      helper_method: :context_access_tab_visit_note # Using ID because we know it will always exist
 
     # Collection and Component Show Page Access Tab - How to Cite Section
     config.add_cite_field 'prefercite_ssm', label: 'Preferred citation', helper_method: :render_html_tags
