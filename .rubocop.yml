@@ -1,0 +1,30 @@
+require: rubocop-rspec
+
+inherit_from:
+  - .rubocop_todo.yml
+
+AllCops:
+  Exclude:
+    - 'bin/**/*'
+    - 'db/**/*'
+    - 'vendor/**/*'
+    - 'node_modules/**/*'
+  TargetRubyVersion: 2.5
+  DisplayCopNames: true
+
+Metrics/ClassLength:
+  Exclude:
+    - 'app/controllers/catalog_controller.rb'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'app/controllers/catalog_controller.rb'
+    - 'lib/tasks/**/*'
+    - 'spec/**/*'
+    - 'tasks/**/*'
+
+Metrics/LineLength:
+  Max: 160
+
+Rails:
+  Enabled: true
