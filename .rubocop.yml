@@ -9,8 +9,11 @@ AllCops:
     - 'db/**/*'
     - 'vendor/**/*'
     - 'node_modules/**/*'
-  TargetRubyVersion: 2.5
+  TargetRubyVersion: 2.6
   DisplayCopNames: true
+
+Layout/LineLength:
+  Max: 160
 
 Metrics/ClassLength:
   Exclude:
@@ -22,9 +25,6 @@ Metrics/BlockLength:
     - 'lib/tasks/**/*'
     - 'spec/**/*'
     - 'tasks/**/*'
-
-Metrics/LineLength:
-  Max: 160
 
 Rails:
   Enabled: true
