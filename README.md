@@ -1,24 +1,23 @@
-# README
+# DUL ArcLight (Duke University Libraries)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Discovery & access application for archival material at Duke University Libraries. A front-end for archival finding aids / collection guides, built on the [ArcLight](https://github.com/projectblacklight/arclight) engine.
 
-Things you may want to cover:
+## Requirements
 
-* Ruby version
+* [Ruby](https://www.ruby-lang.org/en/) 2.6 or later
+* [Rails](http://rubyonrails.org) 5.0 or later
 
-* System dependencies
+## Getting Started
 
-* Configuration
 
-* Database creation
+### Indexing
 
-* Database initialization
+You can index a set of sample Duke EAD files into Solr (takes a couple minutes):
 
-* How to run the test suite
+`$ bundle exec rake sample:seed`
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+## Resources
 
-* ...
+* [ArcLight on GitHub](https://github.com/projectblacklight/arclight)
+* [ArcLight project wiki](https://wiki.lyrasis.org/display/samvera/ArcLight)
