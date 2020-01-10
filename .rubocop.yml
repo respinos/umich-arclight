@@ -9,6 +9,7 @@ AllCops:
     - 'db/**/*'
     - 'vendor/**/*'
     - 'node_modules/**/*'
+    - 'sample-ead/**/*'
   TargetRubyVersion: 2.6
   DisplayCopNames: true
 
