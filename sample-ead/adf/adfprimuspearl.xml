@@ -1,0 +1,4005 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ead xmlns="urn:isbn:1-931666-22-9" xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="urn:isbn:1-931666-22-9 http://www.loc.gov/ead/ead.xsd">
+  <eadheader countryencoding="iso3166-1" dateencoding="iso8601" findaidstatus="published"
+    langencoding="iso639-2b" repositoryencoding="iso15511">
+    <eadid url="http://library.duke.edu/rubenstein/findingaids/adfprimuspearl/"
+      >adfprimuspearl</eadid>
+    <filedesc>
+      <titlestmt>
+        <titleproper>Guide to the Pearl Primus Collection, 1920-1994
+          <num>ADF.012</num></titleproper>
+        <author>American Dance Festival Archives Staff; Dean Jeffrey</author>
+      </titlestmt>
+      <publicationstmt>
+        <publisher>American Dance Festival Archives</publisher>
+        <p><date>2007</date></p>
+      </publicationstmt>
+    </filedesc>
+    <profiledesc>
+      <creation>This finding aid was produced using ArchivesSpace on <date>2018-08-22 11:55:00
+          -0400</date>.</creation>
+      <langusage>English</langusage>
+      <descrules>Describing Archives: A Content Standard</descrules>
+    </profiledesc>
+    <revisiondesc>
+      <change>
+        <date>2014</date>
+        <item>Converted from dtd to schema, transformed with AT-import-fixer.xsl, and imported to
+          Archivists Toolkit</item>
+      </change>
+    </revisiondesc>
+  </eadheader>
+  <archdesc level="collection">
+    <did>
+      <langmaterial>
+        <language langcode="eng">English</language>
+      </langmaterial>
+      <repository>
+        <corpname>American Dance Festival Archives</corpname>
+      </repository>
+      <unittitle>Pearl Primus collection</unittitle>
+      <origination label="creator">
+        <persname source="ingest">Primus, Pearl</persname>
+      </origination>
+      <unitid>ADF.012</unitid>
+      <physdesc altrender="whole">
+        <extent altrender="materialtype spaceoccupied">20.4 Linear Feet</extent>
+      </physdesc>
+      <unitdate normal="1920/1994" type="inclusive">1920-1994</unitdate>
+      <physloc id="aspace_9fb1590246d069682457c146d0550617">For current information on the location
+        of these materials, please consult the ADF Archives.</physloc>
+      <abstract id="aspace_686b370c7594a57629714bfea1f00287">Pearl Primus (1919-1994) was an
+        African-American dancer, choreographer, anthropologist, and teacher. Collection includes
+        materials created or collected by Primus and by others dating from circa 1920 to 1994,
+        including correspondence, writings, legal documents, research and teaching materials,
+        clippings, programs, printed materials, photographs, sound recordings, films, videos, and
+        artifacts.</abstract>
+      <physdesc id="aspace_aecc7f6faa61c70d1d3c55ae61154a21"><extent>20650 Items</extent></physdesc>
+      <langmaterial id="aspace_9cb621986e941038019acca9041e8fe0">Material in English </langmaterial>
+    </did>
+    <accessrestrict id="aspace_3a714e740993051616fec8602f3cbd09">
+      <head>Access Restrictions</head>
+      <p>Collection is open for research.</p>
+      <p>Please contact the American Dance Festival Archives (adf@americandancefestival.org) to
+        arrange for use of these materials.</p>
+      <p>Researchers must register and agree to copyright and privacy laws before using this
+        collection. </p>
+      <p>Access to film, videotapes, or audiotapes in this collection requires the use of reference
+        copies. To arrange for the creation of reference copies, if none exist, please contact
+        American Dance Festival Archives. </p>
+    </accessrestrict>
+    <userestrict id="aspace_49223ee91e1d1e773a562e023cb5abe0">
+      <head>Copyright Notice</head>
+      <p>Copyright is retained by the authors of items in these papers, or their descendants, as
+        stipulated by United States copyright law.</p>
+    </userestrict>
+    <prefercite id="aspace_a819ea1aff042b2da068b9a321834ae5">
+      <head>Preferred Citation</head>
+      <p>[Identification of item], Pearl Primus Collection, American Dance Festival Archives.</p>
+    </prefercite>
+    <acqinfo id="aspace_9b7e825021953e18a0b611eeb848ac4c">
+      <head>Provenance</head>
+      <p>The Pearl Primus Collection was received by the American Dance Festival Archives as gifts
+        in 2000.</p>
+    </acqinfo>
+    <processinfo id="aspace_eeda30a43ad3005dec9155ceaf2a7d57">
+      <head>Processing Information</head>
+      <p>Processed by American Dance Festival Archives Staff, October 2004</p>
+      <p>Encoded by Dean Jeffrey, November 2007</p>
+      <p>Accessions were merged into one collection, described in this finding aid. </p>
+    </processinfo>
+    <bioghist id="aspace_6f728dbb8baf2c9e656c2b0576fd6596">
+      <head>Biographical Note</head>
+      <p>Pearl Primus (1919-1994) was an African-American dancer, choreographer, anthropologist, and
+        teacher. She was born in Trinidad in 1919 and raised in New York City, where she attended
+        Hunter High School from 1933 to 1937. Primus received her BA in biology from Hunter College
+        in 1940, where she had been preparing for a career in medicine. Her career goals changed,
+        however, when she began dancing with the New Dance Group, an integrated, politically
+        progressive dance collective. Primus made her professional dance debut in New York City in
+        1943. She began performing at the Café Society, an integrated nightclub, and in 1944 she
+        gave her first solo recital, performing to poetry and the music of folksinger Josh White.
+        Later that year she traveled the American South, where she worked as a cotton-picker in
+        order to learn more about the plight of African-Americans in the region, an experience that
+        later inspired several dances.</p>
+      <p>In 1946 Primus took graduate classes in education at Columbia University and performed
+        professionally with her own company and with the New York revival of <title type="simple"
+          render="italic">Showboat</title> and the Chicago Civic Opera production of <title
+          type="simple" render="italic">The Emperor Jones</title>. In 1949, Primus traveled to
+        Africa on a grant from the Julius Rosenwald Foundation. She lived with tribes in Nigeria and
+        the Belgian Congo, among others, observing and recording African dances, ceremonies, and
+        other cultural activities and aspects of society.</p>
+      <p>In August 1950 Primus married Yael Woll and formally enrolled at Columbia University. She
+        toured internationally with her company and as a solo artist, performing in England for King
+        George IV and Queen Mary in 1951, at the inauguration of Liberian President William V. S.
+        Tubman in 1952, and with her company in Israel and France in 1952.</p>
+      <p>In early 1953 Primus separated from Woll. The following summer, Primus continued her
+        studies of dance in Trinidad and met dancer and choreographer Percival Borde. They married
+        in 1954, and Primus gave birth to their son, Onwin, in January 1955. Primus and Borde
+        continued to perform and teach together until Borde's death in 1979.</p>
+      <p>Primus received her MA in educational sociology from New York University and was awarded a
+        grant from the Rebecca Harkness Foundation to study in Africa in 1959. Upon her return to
+        the U.S. in 1963, Primus founded the Primus-Borde School of Dance, where she developed
+        methods of cross-cultural education through dance. Primus tested these methods in New York
+        City elementary schools from 1965 through 1968 and published her findings for the U.S.
+        Department of Education in 1968. Her phonograph record, <title type="simple" render="italic"
+          >Pearl Primus' Africa</title>, was recorded to assist teachers in elementary and high
+        schools.</p>
+      <p>In 1969, while pursuing a doctorate in anthropology at NYU, Primus was appointed professor
+        at Hunter College. In asserting that dance was an international language, Primus became the
+        first NYU student to use dance to fulfill the language requirement. After completing her
+        dissertation on the use of sculpture to acculturate children in the Mano tribe of Liberia,
+        Primus received her PhD in anthropology in 1978. She began the Pearl Primus Dance Language
+        Institute to promote her blending of African-American, Caribbean, and African influences
+        with modern dance and ballet techniques. Percival Borde died on August 31, 1979 in New
+        York.</p>
+      <p>Primus was appointed director of the Cora P. Maloney College at State University of New
+        York-Buffalo in 1982, where she taught for two years. From 1984 to 1990, Primus served as a
+        professor of ethnic studies and artist-in-residence at the Five College Consortium in
+        Massachusetts. In the following years, Primus was in residency at Howard University, taught
+        at NYU, and worked towards the founding of the Pearl Primus Dance Arts Foundation.</p>
+      <p>Primus received many awards, including a Star of Africa decoration from the Liberian
+        government and the Scroll of Honor from the National Council of Negro Women. In 1991,
+        President George H. W. Bush awarded Primus the National Medal of Arts for "outstanding
+        contributions to the excellence, growth, support and availability of the arts in the United
+        States." Primus' other awards include the Distinguished Service Award from the Association
+        of American Anthropologists in 1985, an honorary doctorate from Spelman College in 1988, the
+        American Dance Festival's first Balasaraswati/Joy Ann Dewey Beinecke Chair for Distinguished
+        Teaching in 1991 and, posthumously, the American Dance Festival/Scripps Award for Lifetime
+        Achievement in Choreography. Primus died in New Rochelle, NY, in 1994. </p>
+    </bioghist>
+    <scopecontent id="aspace_9c579560105ff49ef0d9b7d8dea03afb">
+      <head>Collection Overview</head>
+      <p>Collection includes materials created or collected by Primus and by others dating from
+        circa 1920 to 1994, including correspondence, writings, legal documents, research and
+        teaching materials, clippings, programs, printed materials, photographs, sound recordings,
+        films, videos, and artifacts.</p>
+    </scopecontent>
+    <arrangement id="aspace_19a73a2f5bc045be3553ecc0cb8ba3d1">
+      <head>Collection Arrangement</head>
+      <p>The Pearl Primus Collection is organized into eight series: Correspondence, Subject Files,
+        Dissertation Materials, Printed Materials, Photographs, Moving Images, Sound Recordings, and
+        Artifacts.</p>
+    </arrangement>
+    <controlaccess>
+      <subject source="lcsh">Choreographers -- United States</subject>
+      <subject source="lcsh">African American dance</subject>
+      <subject source="lcsh">Ethnology -- Africa</subject>
+      <subject source="lcsh">Dance -- United States</subject>
+      <subject source="lcsh">Modern dance -- United States</subject>
+      <persname source="ingest">Primus, Pearl</persname>
+    </controlaccess>
+    <dsc>
+      <c01 id="aspace_ref13_gc3" level="series">
+        <did>
+          <unittitle>Correspondence, 1937-1994 and undated</unittitle>
+        </did>
+        <c02 id="aspace_ref14_j2r" level="file">
+          <did>
+            <unittitle>Pearl Primus, 1937-1938, 1947-1994 and undated</unittitle>
+            <physdesc altrender="whole"><extent altrender="materialtype spaceoccupied">0.75 Linear
+                Feet</extent></physdesc>
+            <container id="aspace_8bdd2bbd5a4929e7860146a244fe1b79" label="Mixed Materials"
+              type="box">1</container>
+          </did>
+          <scopecontent id="aspace_2752855a8bc573201ab7db9ab2dd9526">
+            <head>Scope and Contents note</head>
+            <p>Includes letters to Primus from family, friends, fans, and academic colleagues, and
+              letters from Primus to company members, government officials, educators, and funding
+              organizations, among others. Writings, project proposals, invitations, and printed
+              materials are also present. There is extensive correspondence from 1949 documenting
+              her experience in Africa, especially in Liberia. Other significant correspondence
+              includes letters written in 1953 to Primus from her future husband, Percival Borde.
+              Correspondence from the 1980s reflects Primus' professional activities as a faculty
+              member at SUNY-Albany, SUNY-Buffalo, and the Five College Dance Department.</p>
+          </scopecontent>
+          <arrangement id="aspace_4650dfac4e9cc628148fdb6ee8a210ea">
+            <head>Arrangement note</head>
+            <p>Arranged chronologically</p>
+          </arrangement>
+        </c02>
+        <c02 id="aspace_ref18_o9x" level="file">
+          <did>
+            <unittitle>Onwin Primus-Borde, 1987</unittitle>
+            <physdesc altrender="whole"><extent altrender="materialtype spaceoccupied">1
+                folders</extent></physdesc>
+            <container id="aspace_1b61cd7ad2caa79612250253b8596713" label="Mixed Materials"
+              type="box">1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref20_32c" level="file">
+          <did>
+            <unittitle>Percival Borde, 1956, 1962-1964</unittitle>
+            <physdesc altrender="whole"><extent altrender="materialtype spaceoccupied">1
+                folders</extent></physdesc>
+            <container id="aspace_bd3d9c1d0c8802a6ac780ce9d308958d" label="Mixed Materials"
+              type="box">1</container>
+          </did>
+        </c02>
+      </c01>
+      <c01 id="aspace_ref22_pom" level="series">
+        <did>
+          <unittitle>Subject Files, 1934-1994 and undated</unittitle>
+          <physdesc altrender="whole"><extent altrender="materialtype spaceoccupied">4 Linear
+              Feet</extent></physdesc>
+        </did>
+        <scopecontent id="aspace_9be8088934ba89a48207f5f4e19194be">
+          <head>Scope and Contents note</head>
+          <p>Contains materials created or collected by Primus (and occasionally Borde) including
+            correspondence, printed materials, notes, writings, and other materials. Prevalent are
+            materials from Primus' second trip to Africa, including receipts, expense lists, notes,
+            writings, poetry, project proposals, and memorabilia. Borde's activities in Africa
+            during this time are documented by similar materials, as well as diaries, travel
+            documents, and permits. Materials related to Primus' academic career, from high school
+            student to college professor, are in the Notebooks and Notes subject folders. Course
+            materials primarily date to Primus' tenure on the faculty of the Five College Dance
+            Department and at SUNY-Buffalo's Cora P. Maloney College. Primus' daily life is
+            characterized by personal notes, schedules, itineraries, and six diaries, which contain
+            Primus' daily "to do" lists as well as shopping and correspondence lists and some
+            financial information. Occasionally they contain brief musings or phrases of poetry she
+            composed.</p>
+        </scopecontent>
+        <arrangement id="aspace_2c08057fa81b972e4d380c87261fdec5">
+          <head>Arrangement note</head>
+          <p>Arranged alphabetically</p>
+        </arrangement>
+        <c02 id="aspace_ref24_7qy" level="file">
+          <did>
+            <unittitle>Africa, 1949, 1960 and undated</unittitle>
+            <container id="aspace_839af56d91bc98e33f16f4b8e53e7797" label="Mixed Materials"
+              type="box">1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref25_svl" level="file">
+          <did>
+            <unittitle>Africa, Liberia: Invitations and Programs, Presidential Events, 1949,
+              1952</unittitle>
+            <container id="aspace_0320679c8de7d133333c12ccda7c69b7" label="Mixed Materials"
+              type="box">OS1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref26_v27" level="file">
+          <did>
+            <unittitle>Africa, Liberia: Liberian Cultural Affairs Committee, 1960</unittitle>
+            <container id="aspace_e577edcdd013fe96f6f565c8a0225b68" label="Mixed Materials"
+              type="box">1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref27_7z8" level="file">
+          <did>
+            <unittitle>Africa, Nigeria: International Club Brochure, 1949</unittitle>
+            <container id="aspace_281c8e8b64044c9a46f5c94b47f19f1d" label="Mixed Materials"
+              type="box">1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref28_8tp" level="file">
+          <did>
+            <unittitle>Africa, Printed Materials: <title render="italic">The Liberian Age</title>
+              (11 issues), 1948-1949</unittitle>
+            <container id="aspace_c4d978b52bdffa8395cab66a5be73b98" label="Mixed Materials"
+              type="box">OS1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref29_knq" level="file">
+          <did>
+            <unittitle>Africa, Printed Materials: <title render="italic">New York Times</title>
+              supplement on Liberia, July 25, 1965</unittitle>
+            <container id="aspace_a954e051fd6883e88e6b4f27b67f6a00" label="Mixed Materials"
+              type="box">OS1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref30_fas" level="file">
+          <did>
+            <unittitle>Africa, Printed Materials: <title render="italic">New York Times
+                Magazine</title>, March 14, 1965</unittitle>
+            <container id="aspace_fbf29664a0365a7da395dbab9b7f9adf" label="Mixed Materials"
+              type="box">OS1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref31_ldl" level="file">
+          <did>
+            <unittitle>Africa, Printed Materials: <title render="italic">Sierra Leone Trade Industry
+                &amp; Travel</title>, 1959</unittitle>
+            <container id="aspace_2930947a403b2fde821efc6a40ccf54f" label="Mixed Materials"
+              type="box">OS1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref32_cbj" level="file">
+          <did>
+            <unittitle>Africa, Printed Materials: <title render="italic">Weekend Telegraph</title>
+              (U.K.), 1964</unittitle>
+            <container id="aspace_0b3e5a4c8ff5a73e8114cb7ef86125b5" label="Mixed Materials"
+              type="box">OS1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref33_1it" level="file">
+          <did>
+            <unittitle>Alma John Workshops, 1984</unittitle>
+            <container id="aspace_15252e7b35a579053d9da89139b551ff" label="Mixed Materials"
+              type="box">1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref34_lor" level="file">
+          <did>
+            <unittitle>American Dance Festival (Black Tradition in American Modern Dance project),
+              1988</unittitle>
+            <container id="aspace_d6db0d4d8b21e2cb269177a896458764" label="Mixed Materials"
+              type="box">1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref35_fln" level="file">
+          <did>
+            <unittitle>Artwork by Primus, circa 1955</unittitle>
+            <container id="aspace_207a8cafc4517db01b6b5fb9ad490382" label="Mixed Materials"
+              type="box">OS3</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref36_1jp" level="file">
+          <did>
+            <unittitle>Artwork of Primus (illegible signature), undated</unittitle>
+            <container id="aspace_e720da9bbee0e5c0baf44036a36edfb3" label="Mixed Materials"
+              type="box">OS3</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref37_a6d" level="file">
+          <did>
+            <unittitle>Awards and Certificates, circa 1935, 1970-1988</unittitle>
+            <container id="aspace_4d00b4987da114cc66046c38a58abefd" label="Mixed Materials"
+              type="box">1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref38_i8r" level="file">
+          <did>
+            <unittitle>Awards and Certificates, 1985</unittitle>
+            <container id="aspace_0247c88853352cea94b613ef34a65970" label="Mixed Materials"
+              type="box">OS2</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref39_hwe" level="file">
+          <did>
+            <unittitle>Barbados Dance Theatre and Five College Dance Department Exchange,
+              1985-1988</unittitle>
+            <container id="aspace_07b91ea3f237584d88d60accfd39c9ee" label="Mixed Materials"
+              type="box">1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref40_4jw" level="file">
+          <did>
+            <unittitle>Barbados Workshops, 1986-1988</unittitle>
+            <container id="aspace_5120c8c7ffb3b8c266567cdd0f88b5eb" label="Mixed Materials"
+              type="box">1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref41_j54" level="file">
+          <did>
+            <unittitle>Biographical Information and Resumes, 1968-1990 and undated</unittitle>
+            <container id="aspace_398f9a3697f8ea74cdf0cc5f54d0daa1" label="Mixed Materials"
+              type="box">1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref42_8hs" level="file">
+          <did>
+            <unittitle>Borde, Onwin: Awards and Certificates, 1980</unittitle>
+            <container id="aspace_cdaad25495bafcfb75e187c7e14780a4" label="Mixed Materials"
+              type="box">1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref43_52r" level="file">
+          <did>
+            <unittitle>Borde, Percival: Dorothea Towles, 1962</unittitle>
+            <container id="aspace_b640e87e51fa650ac04619ceb4e5ec8c" label="Mixed Materials"
+              type="box">1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref44_5dp" level="file">
+          <did>
+            <unittitle>Borde, Percival: Nigeria, Trinidad and Tobago Cultural Society,
+              1962</unittitle>
+            <container id="aspace_b8cc60d7f26185ec45cff22264f48a32" label="Mixed Materials"
+              type="box">OS1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref45_2v9" level="file">
+          <did>
+            <unittitle>Borde, Percival: Writings, circa 1962</unittitle>
+            <container id="aspace_162c5a993944a9ee7b5b58b6759c1a35" label="Mixed Materials"
+              type="box">1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref46_tvq" level="file">
+          <did>
+            <unittitle>Borde, Percival: Writings, Diaries, 1962</unittitle>
+            <container id="aspace_1797db626f9b30d03ff579864ef47f11" label="Mixed Materials"
+              type="box">OS1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref47_ruz" level="file">
+          <did>
+            <unittitle>Children's Theatre Company, 1984</unittitle>
+            <container id="aspace_68eefd980c678fac8b16042e84eeeff9" label="Mixed Materials"
+              type="box">1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref48_mxb" level="file">
+          <did>
+            <unittitle>Contact Information (address lists and business cards), undated</unittitle>
+            <container id="aspace_b190fa76ec3325ef7e6cec66b7accdf1" label="Mixed Materials"
+              type="box">1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref49_qkb" level="file">
+          <did>
+            <unittitle>Contact Information (address lists), undated</unittitle>
+            <container id="aspace_968365cbd2b2c216582a25a12c666740" label="Mixed Materials"
+              type="box">OS1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref50_ohv" level="file">
+          <did>
+            <unittitle>Contracts and Correspondence, Lordly and Dame, 1986-1989</unittitle>
+            <container id="aspace_02f6d26e49bfbe7be3353f284cf1ba60" label="Mixed Materials"
+              type="box">OS1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref51_7nb" level="file">
+          <did>
+            <unittitle>Course Materials, circa 1963-1987</unittitle>
+            <container id="aspace_dcee16dcf12a750182ca9e06d0d2404c" label="Mixed Materials"
+              type="box">1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref52_fmk" level="file">
+          <did>
+            <unittitle>Course Materials: Student Papers, 1988, 1992</unittitle>
+            <container id="aspace_c7287aa4f42e32151602fa54ba89ce97" label="Mixed Materials"
+              type="box">1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref53_oeo" level="file">
+          <did>
+            <unittitle>Course Materials: Syllabi, 1984-1994</unittitle>
+            <container id="aspace_450f350c58b22ce76ef73c3262abd5ba" label="Mixed Materials"
+              type="box">1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref54_xxr" level="file">
+          <did>
+            <unittitle>Course Materials: Syllabus, 1985</unittitle>
+            <container id="aspace_43b23a78dfcf2e9ab7d66c5bca733994" label="Mixed Materials"
+              type="box">OS1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref55_qu4" level="file">
+          <did>
+            <unittitle>Course Materials: Test and Lecture Notes, 1987, 1991 and undated</unittitle>
+            <container id="aspace_431e1dc184b9382860e10f2d121eb91d" label="Mixed Materials"
+              type="box">1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref56_j84" level="file">
+          <did>
+            <unittitle>The Dance Project (WNET), 1987-1990</unittitle>
+            <container id="aspace_ec2c3f6b8ae7e18130ff79ce1d07195d" label="Mixed Materials"
+              type="box">1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref57_fqh" level="file">
+          <did>
+            <unittitle>Everybody's Creative Arts Center (CitiCentre Dance Theatre),
+              1984-1986</unittitle>
+            <container id="aspace_5c2bd2518e36d757d7b4ae4a149222d2" label="Mixed Materials"
+              type="box">1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref58_1ow" level="file">
+          <did>
+            <unittitle>Restricted: Greeting card by Primus, 1934</unittitle>
+            <container id="aspace_8fff90de87f348195ca76b66255b6e60" label="Mixed Materials"
+              type="box">5</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref59_b9c" level="file">
+          <did>
+            <unittitle>Reference Copy: Greeting card by Primus, 1934</unittitle>
+            <container id="aspace_816c248381ddd99466d0216770840bfe" label="Mixed Materials"
+              type="box">1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref60_6ck" level="file">
+          <did>
+            <unittitle>Howard University Residency, 1992</unittitle>
+            <container id="aspace_209e9fb641a8d477de32189faa9d3bcd" label="Mixed Materials"
+              type="box">1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref61_3l6" level="file">
+          <did>
+            <unittitle>Hunter College Employment, 1969-1973</unittitle>
+            <container id="aspace_2a4b747ad03521d6e17f1e5a9e2c485e" label="Mixed Materials"
+              type="box">1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref62_w9y" level="file">
+          <did>
+            <unittitle>Italy, Oct.-Dec. 1956</unittitle>
+            <container id="aspace_4892e5123a6e91d92271b5c4ddc9c4c0" label="Mixed Materials"
+              type="box">1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref63_w1l" level="file">
+          <did>
+            <unittitle>Kwanzaa Speech Notes, 1986</unittitle>
+            <container id="aspace_89431048629fe53ee3668d46ca7630fb" label="Mixed Materials"
+              type="box">1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref64_nm8" level="file">
+          <did>
+            <unittitle>Kwanzaa Student Project, 1983</unittitle>
+            <container id="aspace_4a99c07045a455734eee3de00c08cee0" label="Mixed Materials"
+              type="box">OS1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref65_ylk" level="file">
+          <did>
+            <unittitle>Ledger, 1963</unittitle>
+            <container id="aspace_804ace4d3f9b81a3743e332c6b6d10a1" label="Mixed Materials"
+              type="box">1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref66_9y7" level="file">
+          <did>
+            <unittitle>Legal Affairs: Contracts, 1951-1989</unittitle>
+            <container id="aspace_c57b8a154cd6ed7bb3d35300ee4fbf98" label="Mixed Materials"
+              type="box">1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref67_458" level="file">
+          <did>
+            <unittitle>Legal Documents: Eviction Proceedings, 1963, 1984</unittitle>
+            <container id="aspace_b2814a56a741c1664305b3e6b91fc473" label="Mixed Materials"
+              type="box">1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref68_cc0" level="file">
+          <did>
+            <unittitle>Legal Documents: Immigration, 1937, 1957-1958</unittitle>
+            <container id="aspace_63257d7f54e439b05646e2d2b683ba5e" label="Mixed Materials"
+              type="box">1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref69_ayi" level="file">
+          <did>
+            <unittitle>Legal Documents: Marriage Certificate and Divorce Decrees, 1961</unittitle>
+            <container id="aspace_95c826c9fd3fe14ded759e0ea8ccd98c" label="Mixed Materials"
+              type="box">OS1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref70_opf" level="file">
+          <did>
+            <unittitle>Legal Documents: Onwin Borde, 1955, 1978</unittitle>
+            <container id="aspace_6b1c5e6b4b2bf7de2ad79ce53cbf0975" label="Mixed Materials"
+              type="box">2</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref71_nc6" level="file">
+          <did>
+            <unittitle>Legal Documents: Permits and Licenses, 1951, 1960-1961</unittitle>
+            <container id="aspace_a0778ec3adbed87f6ade755ee10a8b84" label="Mixed Materials"
+              type="box">2</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref72_9cc" level="file">
+          <did>
+            <unittitle>Memorabilia, 1940-1976 and undated</unittitle>
+            <container id="aspace_599ac908483478e22f1a158105321186" label="Mixed Materials"
+              type="box">2</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref73_lpa" level="file">
+          <did>
+            <unittitle>Memorabilia: Postcards, undated</unittitle>
+            <container id="aspace_4a5e6f88e83944b4ba6c7229b938ec9c" label="Mixed Materials"
+              type="box">2</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref74_qtk" level="file">
+          <did>
+            <unittitle>Miscellaneous, 1948-1986 and undated</unittitle>
+            <container id="aspace_0b0fd6c2fd20958f2955c9818f991286" label="Mixed Materials"
+              type="box">2</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref75_wp2" level="file">
+          <did>
+            <unittitle>National Council for Culture and Art, 1980</unittitle>
+            <container id="aspace_e7995c1e97cfcc63ffd08e6831ae8a83" label="Mixed Materials"
+              type="box">2</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref76_mem" level="file">
+          <did>
+            <unittitle>National Endowment for the Arts, 1985-1994</unittitle>
+            <container id="aspace_083a30f8c753c6c5028aa2eb5cc4d3e0" label="Mixed Materials"
+              type="box">2</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref77_zgx" level="file">
+          <did>
+            <unittitle>New York University, Fifth International Festival, 1964</unittitle>
+            <container id="aspace_0404e4ec4e28c7284050d074b01fb0ed" label="Mixed Materials"
+              type="box">2</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref78_5ox" level="file">
+          <did>
+            <unittitle>Notebook, circa 1951</unittitle>
+            <container id="aspace_55adf2844aa3d697e6382bd1561d7be1" label="Mixed Materials"
+              type="box">2</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref79_1q9" level="file">
+          <did>
+            <unittitle>Notebooks: Africa, circa 1958-1963</unittitle>
+            <container id="aspace_1e2992db26ae4132c1f3f92dabe2fd7b" label="Mixed Materials"
+              type="box">2</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref80_u8d" level="file">
+          <did>
+            <unittitle>Notebook, circa 1965</unittitle>
+            <container id="aspace_5990d2e2278a7521c8de0ff3b60c83c6" label="Mixed Materials"
+              type="box">2</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref81_a8t" level="file">
+          <did>
+            <unittitle>Notebook, 1977-1981</unittitle>
+            <container id="aspace_f9c7feebe6e3ef810b96576f4291c455" label="Mixed Materials"
+              type="box">2</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref82_fnj" level="file">
+          <did>
+            <unittitle>Notebook, circa 1987-1988</unittitle>
+            <container id="aspace_d71f419c80043082d5489e9470e56273" label="Mixed Materials"
+              type="box">2</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref83_xjf" level="file">
+          <did>
+            <unittitle>Notebook, circa 1992</unittitle>
+            <container id="aspace_f7a4711e44d401456fdb78f89f91cf64" label="Mixed Materials"
+              type="box">2</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref84_tnp" level="file">
+          <did>
+            <unittitle>Notes: Africa, circa 1949-1960</unittitle>
+            <container id="aspace_bd3fb9062b354b8a2c9bf5e85364b1ca" label="Mixed Materials"
+              type="box">2</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref85_o3v" level="file">
+          <did>
+            <unittitle>Notes: Africa, Bushongo and Watusi, undated</unittitle>
+            <container id="aspace_957c1562983d93b906258cafc51fa0b9" label="Mixed Materials"
+              type="box">2</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref86_ito" level="file">
+          <did>
+            <unittitle>Notes: African-American History and Heritage, undated</unittitle>
+            <container id="aspace_da6ccfa9eba030e7240ef5e91f8568aa" label="Mixed Materials"
+              type="box">2</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref87_w9o" level="file">
+          <did>
+            <unittitle>Notes: African-American Women, undated</unittitle>
+            <container id="aspace_4a486aa6e78c1b08fe6ca9eedc11102b" label="Mixed Materials"
+              type="box">2</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref88_sz7" level="file">
+          <did>
+            <unittitle>Notes: African Art, undated</unittitle>
+            <container id="aspace_69688e8183855ee9885d48335ca41b64" label="Mixed Materials"
+              type="box">2</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref89_x97" level="file">
+          <did>
+            <unittitle>Notes: Anthropology, undated</unittitle>
+            <container id="aspace_7aa991bc45c40c237434b0ca75126353" label="Mixed Materials"
+              type="box">OS1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref90_ixu" level="file">
+          <did>
+            <unittitle>Notes: Caribbean, undated</unittitle>
+            <container id="aspace_df3232b728079057372f251c56818cad" label="Mixed Materials"
+              type="box">2</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref91_god" level="file">
+          <did>
+            <unittitle>Notes: Choreography, Dance, circa 1950-1959</unittitle>
+            <container id="aspace_9c898aa359005d11f1170245d04af03c" label="Mixed Materials"
+              type="box">OS1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref92_192" level="file">
+          <did>
+            <unittitle>Notes: Choreography, Dance, undated</unittitle>
+            <container id="aspace_e724c1c46b99c3cbe8c6771dc85dc893" label="Mixed Materials"
+              type="box">2</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref93_17d" level="file">
+          <did>
+            <unittitle>Notes: Cora P. Maloney College, undated</unittitle>
+            <container id="aspace_33af43ba5e351ca86700817f885019c8" label="Mixed Materials"
+              type="box">2</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref94_03x" level="file">
+          <did>
+            <unittitle>Notes: Dance Presentation for Children Study, undated</unittitle>
+            <container id="aspace_7a0c805bc3fafa7df39ed0748d7be634" label="Mixed Materials"
+              type="box">2</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref95_nxx" level="file">
+          <did>
+            <unittitle>Notes: First African Performing Arts Center (Konoma Kende),
+              undated</unittitle>
+            <container id="aspace_7cee2c6c0cd03d7c969af7717d107fb3" label="Mixed Materials"
+              type="box">2</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref96_qlf" level="file">
+          <did>
+            <unittitle>Notes: First African Performing Arts Center (Konoma Kende),
+              undated</unittitle>
+            <container id="aspace_7762f899593e62c9a4517a841c15302c" label="Mixed Materials"
+              type="box">OS1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref97_0o3" level="file">
+          <did>
+            <unittitle>Notes: Personal, undated</unittitle>
+            <container id="aspace_24a8ea359926d993e9b52ba7246813e9" label="Mixed Materials"
+              type="box">OS1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref98_mth" level="file">
+          <did>
+            <unittitle>Notes: Personal and Professional (2 folders), circa 1950-1980</unittitle>
+            <container id="aspace_3946b905373d1f129c28f49053170ba6" label="Mixed Materials"
+              type="box">2</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref99_i0m" level="file">
+          <did>
+            <unittitle>Pearl Primus-Percival Borde School of Dance, 1968</unittitle>
+            <container id="aspace_3a6079d5d0c09e3989863d570b3d2307" label="Mixed Materials"
+              type="box">OS1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref100_kne" level="file">
+          <did>
+            <unittitle>Poetry, Music, Lyrics by Primus Project Proposals: African-Caribbean-American
+              Dance-Arts Center, circa 1955</unittitle>
+            <container id="aspace_70ea9161a773c3b664b14b1974ca0074" label="Mixed Materials"
+              type="box">OS1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref101_q0u" level="file">
+          <did>
+            <unittitle>Project Proposals: African-Caribbean-American Dance-Arts Center,
+              1957-1958</unittitle>
+            <container id="aspace_9620327a57c9959271453c43c5cb619b" label="Mixed Materials"
+              type="box">2</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref102_rkt" level="file">
+          <did>
+            <unittitle>Project Proposals: First African Dance Theatre, circa 1958</unittitle>
+            <container id="aspace_9cda03a267a2a3891c980fe48cf53dbf" label="Mixed Materials"
+              type="box">2</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref103_gu9" level="file">
+          <did>
+            <unittitle>Project Proposals: Pearl Primus Dance Language Institute, undated</unittitle>
+            <container id="aspace_8d0c365bd7b9a9f48d84866a359d205e" label="Mixed Materials"
+              type="box">2</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref104_9ln" level="file">
+          <did>
+            <unittitle>Project Proposals by Primus, 1955-1989 and undated</unittitle>
+            <container id="aspace_8d87b2fac7b56216bf44700210311183" label="Mixed Materials"
+              type="box">2</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref105_273" level="file">
+          <did>
+            <unittitle>Project Proposals by Others, 1987 and undated</unittitle>
+            <container id="aspace_2b8ca09b267397d9a862cf1ce804aa51" label="Mixed Materials"
+              type="box">2</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref106_puw" level="file">
+          <did>
+            <unittitle>Publishing Correspondence, 1950-1951</unittitle>
+            <container id="aspace_16a0bb0a411ae264a0c263113fc42fff" label="Mixed Materials"
+              type="box">2</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref107_4ni" level="file">
+          <did>
+            <unittitle>Rebekah Harkness Foundation Tour of Africa: Financial, 1961-1962</unittitle>
+            <container id="aspace_e98754f0d476d81691b9353a985c7b73" label="Mixed Materials"
+              type="box">2</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref108_qj9" level="file">
+          <did>
+            <unittitle>Rebekah Harkness Foundation Tour of Africa: Primus, 1961-1962</unittitle>
+            <container id="aspace_ebcf890c6cd31aeea48ba92ae6c19053" label="Mixed Materials"
+              type="box">2</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref109_qeq" level="file">
+          <did>
+            <unittitle>Rebekah Harkness Foundation Tour of Africa: Borde, 1961-1962</unittitle>
+            <container id="aspace_2b762e955c29f9f63c19810fcafb2e89" label="Mixed Materials"
+              type="box">2</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref110_ecp" level="file">
+          <did>
+            <unittitle>Rebekah Harkness Foundation Tour of Africa: Proposal and Description, 1962
+              and undated</unittitle>
+            <container id="aspace_07187aa92b88f3e401396fad05fd1c8e" label="Mixed Materials"
+              type="box">OS1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref111_w8f" level="file">
+          <did>
+            <unittitle>Receipts, 1952-1957 and undated</unittitle>
+            <container id="aspace_ea9eaac4a2a74afab55171fa964513b7" label="Mixed Materials"
+              type="box">2</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref112_fec" level="file">
+          <did>
+            <unittitle>Receipts: Nigeria, Dec. 1948-Apr. 1949</unittitle>
+            <container id="aspace_c27bf5ce7e219c159cf54ec5a6f25035" label="Mixed Materials"
+              type="box">2</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref113_q5t" level="file">
+          <did>
+            <unittitle>Receipts: Belgian Congo, May-Aug. 1949</unittitle>
+            <container id="aspace_be5241097207c86cdeb75bb33f846316" label="Mixed Materials"
+              type="box">2</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref114_tky" level="file">
+          <did>
+            <unittitle>Schedules and Itineraries, 1949-circa 1992 and undated</unittitle>
+            <container id="aspace_268a5cd4e15b06f8af526378da5bac93" label="Mixed Materials"
+              type="box">2</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref115_70b" level="file">
+          <did>
+            <unittitle>School Essays, 1935-circa 1940 and undated</unittitle>
+            <container id="aspace_7b2df52587c765ffe5dfbe41aa8f3d93" label="Mixed Materials"
+              type="box">2</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref116_47a" level="file">
+          <did>
+            <unittitle>School Notes: Biology, undated</unittitle>
+            <container id="aspace_493dfcce7ab8b45b92218107c2aa39eb" label="Mixed Materials"
+              type="box">2</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref117_p1n" level="file">
+          <did>
+            <unittitle>School Notes: Biology, Botany, 1938 and undated</unittitle>
+            <container id="aspace_1fa0030437122ecb2a508e88ecb6419c" label="Mixed Materials"
+              type="box">2</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref118_m7d" level="file">
+          <did>
+            <unittitle>School Notes: Dance, undated</unittitle>
+            <container id="aspace_f8db89485ca73d46fc8dcb061991aeb9" label="Mixed Materials"
+              type="box">2</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref119_jtf" level="file">
+          <did>
+            <unittitle>School Notes: English Literature, undated</unittitle>
+            <container id="aspace_afe0052ddb54360b7c5d25fb82bbc401" label="Mixed Materials"
+              type="box">2</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref120_338" level="file">
+          <did>
+            <unittitle>School Notes: Physical Education, 1938 and undated</unittitle>
+            <container id="aspace_89fbefda14ed5915085a4c6712c4ff12" label="Mixed Materials"
+              type="box">2</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref121_u87" level="file">
+          <did>
+            <unittitle>School Notes: Primitive Art, 1953</unittitle>
+            <container id="aspace_a7dafa4912ca439428b21ae1e3a54b07" label="Mixed Materials"
+              type="box">2</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref122_up8" level="file">
+          <did>
+            <unittitle>School Notes: Psychology, undated</unittitle>
+            <container id="aspace_02f2476229df820193601f5f52cc9230" label="Mixed Materials"
+              type="box">2</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref123_hf4" level="file">
+          <did>
+            <unittitle>School Notes: Roman History, undated</unittitle>
+            <container id="aspace_69504fdd569042f1f149e6960e7ece6e" label="Mixed Materials"
+              type="box">2</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref124_0tk" level="file">
+          <did>
+            <unittitle>SISA (Sisterhood in Support of Sisters in South Africa),
+              1986-1987</unittitle>
+            <container id="aspace_92776b8090e3761509a3995481ccfe75" label="Mixed Materials"
+              type="box">2</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref125_ncw" level="file">
+          <did>
+            <unittitle>Spelman College Inauguration and Symposium, 1988</unittitle>
+            <container id="aspace_766dee46a5f80d4d725dd678a873641a" label="Mixed Materials"
+              type="box">2</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref126_0nj" level="file">
+          <did>
+            <unittitle>Spiritual Baptists, Granville Williams, 1984-1988</unittitle>
+            <container id="aspace_62f7b109f6d3080960d84c1531e132b1" label="Mixed Materials"
+              type="box">2</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref127_adz" level="file">
+          <did>
+            <unittitle>Symposium: The Struggle for Liberation in Southern Africa, 1983</unittitle>
+            <container id="aspace_4f4dbdfd6d95db9204a5fbc1117f7209" label="Mixed Materials"
+              type="box">2</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref128_x9p" level="file">
+          <did>
+            <unittitle>Travel Documents (including passports and permits), 1948-1963</unittitle>
+            <container id="aspace_2c9b29c0be663ca5bde806f0f6a5b64a" label="Mixed Materials"
+              type="box">2</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref129_syb" level="file">
+          <did>
+            <unittitle>White, Josh, 1983-1984 and undated</unittitle>
+            <container id="aspace_4961fa4e5895790fa6f458f1d074e249" label="Mixed Materials"
+              type="box">2</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref130_gj0" level="file">
+          <did>
+            <unittitle>Writings, undated</unittitle>
+            <container id="aspace_3e92fc684b9464c8e55b75a4c63b2ad3" label="Mixed Materials"
+              type="box">2</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref131_9v8" level="file">
+          <did>
+            <unittitle>Writings: Africa, 1962</unittitle>
+            <container id="aspace_e6a14e3b816ea3f1100cb5b04ba16506" label="Mixed Materials"
+              type="box">OS1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref132_bwy" level="file">
+          <did>
+            <unittitle>Writings: Africa, undated</unittitle>
+            <container id="aspace_4fe9bbedc5d33470425705de2e953500" label="Mixed Materials"
+              type="box">2</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref133_8x1" level="file">
+          <did>
+            <unittitle>Writings: <title render="doublequote">African Dance</title>, 1963</unittitle>
+            <container id="aspace_19ca2c7faa9618848cdca8d4e23dd41b" label="Mixed Materials"
+              type="box">2</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref134_non" level="file">
+          <did>
+            <unittitle>Writings: <title render="doublequote">An Evaluation Report on Cultural
+                Enrichment Through the Dance</title>, 1967</unittitle>
+            <container id="aspace_2df9408369634facc438c33bc126b6d1" label="Mixed Materials"
+              type="box">2</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref135_rjx" level="file">
+          <did>
+            <unittitle>Writings: Dance, undated</unittitle>
+            <container id="aspace_f4fdacb23b8225d8f50d7eb8ca5debfc" label="Mixed Materials"
+              type="box">2</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref136_p03" level="file">
+          <did>
+            <unittitle>Restricted: Writings: Diary, circa 1943-1949</unittitle>
+            <container id="aspace_c4e948e47e6deb052b782a57e5804456" label="Mixed Materials"
+              type="box">5</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref137_dy1" level="file">
+          <did>
+            <unittitle>Reference Copy: Writings: Diary, circa 1943-1949</unittitle>
+            <container id="aspace_db5500c71a3064655e4ace244c5172ed" label="Mixed Materials"
+              type="box">2</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref138_wg1" level="file">
+          <did>
+            <unittitle>Writings: Diary, 1944</unittitle>
+            <container id="aspace_9785f7303da179ba52e6220cc8eea1ff" label="Mixed Materials"
+              type="box">3</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref139_43s" level="file">
+          <did>
+            <unittitle>Writings: Diary, 1949</unittitle>
+            <container id="aspace_50b1994a225ded963be079796241d9f7" label="Mixed Materials"
+              type="box">3</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref140_sx0" level="file">
+          <did>
+            <unittitle>Restricted: Writings: Diary, circa 1956</unittitle>
+            <container id="aspace_1eafd335e9cb8b74bb1bfbe2ab6fc7ed" label="Mixed Materials"
+              type="box">5</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref141_bih" level="file">
+          <did>
+            <unittitle>Reference Copy: Writings: Diary, circa 1956</unittitle>
+            <container id="aspace_b7ed9a7014010312da051d91d7ee42b5" label="Mixed Materials"
+              type="box">3</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref142_muk" level="file">
+          <did>
+            <unittitle>Writings: Diary, 1957</unittitle>
+            <container id="aspace_d55342484567b24f2d5ffb3ee3ee8b0e" label="Mixed Materials"
+              type="box">3</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref143_u1v" level="file">
+          <did>
+            <unittitle>Writings: Diary, circa 1960</unittitle>
+            <container id="aspace_b9806673b1ffd2d3b195286b561baf9f" label="Mixed Materials"
+              type="box">3</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref144_zr8" level="file">
+          <did>
+            <unittitle>Writings: Poetry, Lyrics, and Music, undated</unittitle>
+            <container id="aspace_67efd07377bd436bc9e85be86298f648" label="Mixed Materials"
+              type="box">3</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref145_9ys" level="file">
+          <did>
+            <unittitle>Restricted: Writings: <title render="doublequote">Tree Worship</title>,
+              1934</unittitle>
+            <container id="aspace_5f01a91d2709bce40f0d3906718a9b93" label="Mixed Materials"
+              type="box">5</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref146_q9s" level="file">
+          <did>
+            <unittitle>Reference Copy: Writings: <title render="doublequote">Tree Worship</title>,
+              1934</unittitle>
+            <container id="aspace_cb70d9e8e23c67dd72a5528ebd7f14a9" label="Mixed Materials"
+              type="box">3</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref147_wkh" level="file">
+          <did>
+            <unittitle>Restricted: Writings: Diary by M. Hull, 1979</unittitle>
+            <container id="aspace_6ad5296368349bdb011f6c0fa240ba35" label="Mixed Materials"
+              type="box">5</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref148_afs" level="file">
+          <did>
+            <unittitle>Writings: By Others, 1960-1991 and undated</unittitle>
+            <container id="aspace_dca6e4e7276ef94844fafc6448d9fa57" label="Mixed Materials"
+              type="box">3</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref149_zru" level="file">
+          <did>
+            <unittitle>Writings: By Others about Primus, 1979, 1982 and undated</unittitle>
+            <container id="aspace_987f314cc4fed2e1ead3e13f0dcbd85c" label="Mixed Materials"
+              type="box">3</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref150_l7k" level="file">
+          <did>
+            <unittitle>Writings: Poetry, Lyrics, and Music by Others, 1928, 1965, and
+              undated</unittitle>
+            <container id="aspace_b139f200e7dd9291169fcf5f046a0cf1" label="Mixed Materials"
+              type="box">3</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref151_6fr" level="file">
+          <did>
+            <unittitle>Writings: Woll, Yael, English Composition notebook, 1938</unittitle>
+            <container id="aspace_ecb312b584fe647fa0538095d224f591" label="Mixed Materials"
+              type="box">3</container>
+          </did>
+        </c02>
+      </c01>
+      <c01 id="aspace_ref154_ntu" level="series">
+        <did>
+          <unittitle>Dissertation Materials, 1959-1977 and undated</unittitle>
+          <physdesc id="aspace_249e7ef6c9b8675304c6a79fe8d79dfd"><extent>.5 linear foot, 21
+              folders</extent></physdesc>
+        </did>
+        <scopecontent id="aspace_69618247cd741563b799ef4db05bb7b5">
+          <head>Scope and Contents note</head>
+          <p>Contains various drafts of Primus' doctoral dissertation at New York University
+            entitled "A Study of Sculpture-Dance as a Factor in the Enculturation of the Mano People
+            of Liberia, West Africa, Between 1948 and 1963." The final version of the dissertation
+            is not included. Also included are photocopies of research materials and illustrations
+            used in the dissertation. Primus began her research in Liberia during the tour sponsored
+            by Rosenwald Foundation in 1949, continued it during a brief visit to Liberia in 1952,
+            and continued it again from 1959 to 1963. Primus' dissertation proposal, begun in 1959,
+            was approved in 1975. Her doctorate was awarded in 1978 upon completion of the
+            dissertation.</p>
+        </scopecontent>
+        <arrangement id="aspace_16ee4d34dc7b5cc28a7f059d19041455">
+          <head>Arrangement note</head>
+          <p>Proposal drafts are followed by drafts of chapters or sections, followed by folders
+            devoted to illustrations, bibliographies, research materials, and correspondence. Drafts
+            of chapters and sections are presented in the same order as the table of contents of the
+            most complete draft of the dissertation. The identification of some materials as part of
+            Primus' dissertation proposal is sometimes uncertain; likewise, some materials filed as
+            a draft of a chapter of the dissertation may possibly be a draft of proposal chapters or
+            sections.</p>
+        </arrangement>
+        <c02 id="aspace_ref156_hj9" level="file">
+          <did>
+            <unittitle>Proposal Drafts, 1959, 1975 and undated</unittitle>
+            <container id="aspace_c51dc50f2a6f686f582b7d2aa8420d86" label="Mixed Materials"
+              type="box">3</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref157_nof" level="file">
+          <did>
+            <unittitle>Drafts, Chapters 1 and 2</unittitle>
+            <container id="aspace_e8b071c02e51341f400407467818db32" label="Mixed Materials"
+              type="box">3</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref158_fjf" level="file">
+          <did>
+            <unittitle>Drafts, Chapters 1-4, 1975</unittitle>
+            <container id="aspace_6c3af6ab401a6c1e087e1d3e7c4af5e9" label="Mixed Materials"
+              type="box">3</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref159_ps9" level="file">
+          <did>
+            <unittitle>Drafts, Foreword, Preface, Dedication</unittitle>
+            <container id="aspace_8e35046c1f321a89f3aa5d53f7e1b2a3" label="Mixed Materials"
+              type="box">3</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref160_qla" level="file">
+          <did>
+            <unittitle><title render="doublequote">Through the Eyes of the
+              Investigator</title></unittitle>
+            <container id="aspace_51fdb597dc7730fa41f96c7988c43ab8" label="Mixed Materials"
+              type="box">3</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref161_n3q" level="file">
+          <did>
+            <unittitle><title render="doublequote">The Republic of Liberia, West
+              Africa</title></unittitle>
+            <container id="aspace_d84e4629b6b0555e883e6bd2af3a0c87" label="Mixed Materials"
+              type="box">3</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref162_9de" level="file">
+          <did>
+            <unittitle><title render="doublequote">Africa</title></unittitle>
+            <container id="aspace_e48ab3929cf234d9dd5403bbf0ddee36" label="Mixed Materials"
+              type="box">3</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref163_dtq" level="file">
+          <did>
+            <unittitle><title render="doublequote">Methodology</title> (Chapter 3)</unittitle>
+            <container id="aspace_dfe69428c3636d2f3b2a0782ed16240c" label="Mixed Materials"
+              type="box">3</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref164_e21" level="file">
+          <did>
+            <unittitle><title render="doublequote">Ethnography</title> (Chapter 4)</unittitle>
+            <container id="aspace_4a4486f3058adcb0c4c019a3daa79e2f" label="Mixed Materials"
+              type="box">3</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref165_3ex" level="file">
+          <did>
+            <unittitle><title render="doublequote">Dance</title> (Chapter 4 of final
+              dissertation)</unittitle>
+            <container id="aspace_41e557c9261f2b2c15086d5ced93a063" label="Mixed Materials"
+              type="box">3</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref166_2yw" level="file">
+          <did>
+            <unittitle><title render="doublequote">The Enculturation Process Among the Mano
+                People</title> (Chapter 5)</unittitle>
+            <container id="aspace_d95abe348f1efb70fdbc13a71c41f4cb" label="Mixed Materials"
+              type="box">3</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref167_ayo" level="file">
+          <did>
+            <unittitle><title render="doublequote">When Sculpture-Danced Danced</title> (Chapter
+              6)</unittitle>
+            <container id="aspace_1ad7a9a700b4455b7492b339f4eb33ac" label="Mixed Materials"
+              type="box">3</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref168_dk9" level="file">
+          <did>
+            <unittitle><title render="doublequote">Implications of the Study</title> (Chapter
+              7)</unittitle>
+            <container id="aspace_1918b6a6b8ae2329640e56b0b328870b" label="Mixed Materials"
+              type="box">3</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref169_b7r" level="file">
+          <did>
+            <unittitle><title render="doublequote">Related Studies</title></unittitle>
+            <container id="aspace_537cc5962bda707573f06572c5f4bcdb" label="Mixed Materials"
+              type="box">3</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref170_ys5" level="file">
+          <did>
+            <unittitle>Drafts, sections unidentified</unittitle>
+            <container id="aspace_8d1ee88d699f4f41d3d66989e311a2b3" label="Mixed Materials"
+              type="box">3</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref171_8fh" level="file">
+          <did>
+            <unittitle>Illustrations</unittitle>
+            <container id="aspace_9d8742bd5331f8516dde308441fcaf0c" label="Mixed Materials"
+              type="box">3</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref172_v4q" level="file">
+          <did>
+            <unittitle>Bibliography</unittitle>
+            <container id="aspace_53f2b397f8ff05d49885ba41ac90cc1d" label="Mixed Materials"
+              type="box">3</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref173_nne" level="file">
+          <did>
+            <unittitle>Rosenwald Fellowship Correspondence, 1948-1960</unittitle>
+            <container id="aspace_29fc1ce243935574619479f20dc21a46" label="Mixed Materials"
+              type="box">3</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref174_g23" level="file">
+          <did>
+            <unittitle>Dissertation-Related Correspondence, 1975-1977 and undated</unittitle>
+            <container id="aspace_5175bb97a49cf688f790bd31cf27dc84" label="Mixed Materials"
+              type="box">3</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref175_tbh" level="file">
+          <did>
+            <unittitle>Research Materials</unittitle>
+            <container id="aspace_0cf2cb343fc5c2fb7a2d736d49c0c6bd" label="Mixed Materials"
+              type="box">3</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref176_63h" level="file">
+          <did>
+            <unittitle>Handwritten Notes and Drafts</unittitle>
+            <container id="aspace_b3f0069f5d4d60131490de2da683366a" label="Mixed Materials"
+              type="box">3</container>
+          </did>
+        </c02>
+      </c01>
+      <c01 id="aspace_ref179_y3r" level="series">
+        <did>
+          <unittitle>Printed Materials, circa 1935-1995</unittitle>
+          <physdesc altrender="whole"><extent altrender="materialtype spaceoccupied">4.3 Linear
+              Feet</extent></physdesc>
+        </did>
+        <arrangement id="aspace_ce2fa479706725d4b78d13f79c097d30">
+          <head>Arrangement note</head>
+          <p>Arranged chronolgically in two subseries: printed materials pertaining to Primus or her
+            family members, and printed materials collected by Primus that do not specifically
+            mention her or her family.</p>
+        </arrangement>
+        <c02 id="aspace_ref181_1sf" level="subseries">
+          <did>
+            <unittitle>Primus and Family, circa 1940-1994</unittitle>
+          </did>
+          <scopecontent id="aspace_cbd23d2dbed1f9cb36851e3248c27798">
+            <head>Scope and Contents note</head>
+            <p>Contains programs, clippings, promotional materials, reviews, publications,
+              announcements, flyers, press releases, and other items that specifically mention
+              Primus or her immediate family, including Percival Borde and Onwin Primus-Borde, as
+              well as performances of students Primus advised, groups she directed, dances she
+              choreographed, and shows she lent costumes. Also included are articles and
+              publications that Primus authored.</p>
+          </scopecontent>
+          <c03 id="aspace_ref182_q9x" level="file">
+            <did>
+              <unittitle>Program Drafts, circa 1940-1959</unittitle>
+              <container id="aspace_04bf176ec1950d83e2a13c6b0e2fb039" label="Mixed Materials"
+                type="box">OS1</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref183_kcu" level="file">
+            <did>
+              <unittitle>1941-1960 (20 folders)</unittitle>
+              <container id="aspace_5e784bae4f3861e421b5ee4f20efff89" label="Mixed Materials"
+                type="box">3</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref184_666" level="file">
+            <did>
+              <unittitle>1944-1985 (3 folders)</unittitle>
+              <container id="aspace_3f0de043054b8e7773d0170dc48689ea" label="Mixed Materials"
+                type="box">OS2</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref185_gl2" level="file">
+            <did>
+              <unittitle>1961-1994 (32 folders)</unittitle>
+              <container id="aspace_3e1fdca1789e9869c9dae9c7ab00d390" label="Mixed Materials"
+                type="box">4</container>
+            </did>
+          </c03>
+        </c02>
+        <c02 id="aspace_ref187_hz9" level="subseries">
+          <did>
+            <unittitle>Collected by Primus, circa 1935-1994</unittitle>
+          </did>
+          <scopecontent id="aspace_acfe4c6be4b2be52d85e44f33cabb85d">
+            <head>Scope and Contents note</head>
+            <p>Contains printed materials that Primus collected but that do not specifically mention
+              her or her family, including popular periodicals, newspaper clippings, programs, and
+              brochures.</p>
+          </scopecontent>
+          <c03 id="aspace_ref188_rin" level="file">
+            <did>
+              <unittitle>circa 1935-1994 (16 folders)</unittitle>
+              <container id="aspace_40f6726b08fee553ad0e67da1ab58470" label="Mixed Materials"
+                type="box">4</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref189_mwy" level="file">
+            <did>
+              <unittitle><title render="italic">Rat</title> newspaper, 1968</unittitle>
+              <container id="aspace_0d345852f83e71b9de41a09c99587b74" label="Mixed Materials"
+                type="box">OS2</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref190_3al" level="file">
+            <did>
+              <unittitle><title render="doublequote">Master Class</title> poster, 1974 or
+                1985</unittitle>
+              <container id="aspace_56099a83c49aa799b04a9f7cd33608b3" label="Mixed Materials"
+                type="box">OS3</container>
+            </did>
+          </c03>
+        </c02>
+      </c01>
+      <c01 id="aspace_ref194_c0r" level="series">
+        <did>
+          <unittitle>Photographs, circa 1920-1992 and undated</unittitle>
+        </did>
+        <c02 id="aspace_ref195_6qh" level="subseries">
+          <did>
+            <unittitle>Prints, circa 1920-1992 and undated</unittitle>
+          </did>
+          <arrangement id="aspace_f93fc28dffb7cd5a5dc280b6a9d13a10">
+            <head>Arrangement note</head>
+            <p>Prints are arranged into four subseries: Portraits, Publicity, Performance, and
+              Snapshots. Folder titles identify either the subject of the photo or the title of the
+              dance depicted, followed by the date. When known, the photographer's name appears in
+              parentheses.</p>
+          </arrangement>
+          <c03 id="aspace_ref196_qat" level="subseries">
+            <did>
+              <unittitle>Portraits, circa 1920-1992</unittitle>
+            </did>
+            <c04 id="aspace_ref197_4gq" level="subseries">
+              <did>
+                <unittitle>Portraits of Primus, circa 1920-1992</unittitle>
+                <physdesc altrender="whole"><extent altrender="materialtype spaceoccupied">15
+                    folders</extent></physdesc>
+              </did>
+              <arrangement id="aspace_fce26017aa03690eeafcf50d274ecea4">
+                <head>Arrangement note</head>
+                <p>Arranged chronologically</p>
+              </arrangement>
+              <c05 id="aspace_ref199_6pd" level="file">
+                <did>
+                  <unittitle>Primus, circa 1920</unittitle>
+                  <container id="aspace_114d383c1ca00411be240c3e524f5c30" label="Mixed Materials"
+                    type="box">6</container>
+                </did>
+              </c05>
+              <c05 id="aspace_ref200_gpv" level="file">
+                <did>
+                  <unittitle>Primus, circa 1930-1949 (2 folders)</unittitle>
+                  <container id="aspace_92f2180dc27477a6fa3dfcc50d018419" label="Mixed Materials"
+                    type="box">6</container>
+                </did>
+              </c05>
+              <c05 id="aspace_ref201_zj0" level="file">
+                <did>
+                  <unittitle>Primus, circa 1940-1949</unittitle>
+                  <container id="aspace_e64e280d010090fba8fabfdb7d5cb85e" label="Mixed Materials"
+                    type="box">6</container>
+                </did>
+              </c05>
+              <c05 id="aspace_ref202_zxt" level="file">
+                <did>
+                  <unittitle>Primus (Cris Alexander), circa 1940-1945 (3 folders)</unittitle>
+                  <container id="aspace_eea52ea40a8da706eda4ba8728501d57" label="Mixed Materials"
+                    type="box">6</container>
+                </did>
+              </c05>
+              <c05 id="aspace_ref203_pd9" level="file">
+                <did>
+                  <unittitle>Primus (Cris Alexander), circa 1940-1945</unittitle>
+                  <container id="aspace_fb07f1c26639a9b48a531f872e1f5d3a" label="Mixed Materials"
+                    type="box">OS2</container>
+                </did>
+              </c05>
+              <c05 id="aspace_ref204_1de" level="file">
+                <did>
+                  <unittitle>Primus (Gerda Peterich), circa 1940-1949</unittitle>
+                  <container id="aspace_0e2594cc644fe3344f7b16657f87a5bb" label="Mixed Materials"
+                    type="box">6</container>
+                </did>
+              </c05>
+              <c05 id="aspace_ref205_kkn" level="file">
+                <did>
+                  <unittitle>Primus (Carl Van Vechten), circa 1940-1949</unittitle>
+                  <container id="aspace_57b5564e8dcf54a1ac281179b25c5d3e" label="Mixed Materials"
+                    type="box">6</container>
+                </did>
+              </c05>
+              <c05 id="aspace_ref206_502" level="file">
+                <did>
+                  <unittitle>Primus (photograph of painting by Robert G. Thomkins), 1950</unittitle>
+                  <container id="aspace_522a177c4baa3dba12e694cd2f2abbc2" label="Mixed Materials"
+                    type="box">6</container>
+                </did>
+              </c05>
+              <c05 id="aspace_ref207_lqk" level="file">
+                <did>
+                  <unittitle>Primus (photograph of bust by Ben Karp), circa 1950-1959</unittitle>
+                  <container id="aspace_39cda566b2f7dd5ba19a008d4622c1c1" label="Mixed Materials"
+                    type="box">6</container>
+                </did>
+              </c05>
+              <c05 id="aspace_ref208_9l4" level="file">
+                <did>
+                  <unittitle>Primus, Percival, and Onwin Borde passport photos, circa
+                    1961</unittitle>
+                  <container id="aspace_f77b5cfc3c6863401bde080f27dfa66b" label="Mixed Materials"
+                    type="box">6</container>
+                </did>
+              </c05>
+              <c05 id="aspace_ref209_wpb" level="file">
+                <did>
+                  <unittitle>Primus, Afro-American Studies Department, University of
+                    Massachusetts-Amherst, 1992</unittitle>
+                  <container id="aspace_73cf3ef839df48b1eefb0078fdae1771" label="Mixed Materials"
+                    type="box">6</container>
+                </did>
+              </c05>
+            </c04>
+            <c04 id="aspace_ref212_3kl" level="subseries">
+              <did>
+                <unittitle>Portraits of Others, circa 1940-1969</unittitle>
+                <physdesc altrender="whole"><extent altrender="materialtype spaceoccupied">2
+                    folders</extent></physdesc>
+              </did>
+              <c05 id="aspace_ref214_vp8" level="file">
+                <did>
+                  <unittitle>Others, signed or identified, circa 1940-1959</unittitle>
+                  <container id="aspace_b65bae1c0eb9a52a84c8c7b4ba8f485b" label="Mixed Materials"
+                    type="box">6</container>
+                </did>
+              </c05>
+              <c05 id="aspace_ref215_vn7" level="file">
+                <did>
+                  <unittitle>Others, unidentified, circa 1940-1969</unittitle>
+                  <container id="aspace_89dbed87a501cdf343c810289f48ca17" label="Mixed Materials"
+                    type="box">6</container>
+                </did>
+              </c05>
+            </c04>
+          </c03>
+          <c03 id="aspace_ref216_iz0" level="subseries">
+            <did>
+              <unittitle>Publicity, circa 1940-1969</unittitle>
+            </did>
+            <c04 id="aspace_ref217_cg4" level="subseries">
+              <did>
+                <unittitle>Primus in Performance, circa 1940-1959</unittitle>
+                <physdesc altrender="whole"><extent altrender="materialtype spaceoccupied">25
+                    folders</extent></physdesc>
+              </did>
+              <scopecontent id="aspace_bc780ecf81a710ea5f0155ed87328e1b">
+                <head>Scope and Contents note</head>
+                <p>Contains publicity shots of Primus (sometimes with her company or family),
+                  depicting scenes from dance performances, taken by professional photographers for
+                  promotional purposes.</p>
+              </scopecontent>
+              <arrangement id="aspace_c1f3f2179be121a141f7e4be0e2dc409">
+                <head>Arrangement note</head>
+                <p>Arranged alphabetically by title of dance</p>
+              </arrangement>
+              <c05 id="aspace_ref219_m7r" level="file">
+                <did>
+                  <unittitle><title render="italic">African Ceremonial</title> (Gerda Peterich),
+                    circa 1944 (2 folders)</unittitle>
+                  <container id="aspace_2820146d797766e0559caec9c19a513f" label="Mixed Materials"
+                    type="box">6</container>
+                </did>
+              </c05>
+              <c05 id="aspace_ref220_fte" level="file">
+                <did>
+                  <unittitle><title render="italic">Afro-Haitian Play Dance</title> (Gerda
+                    Peterich), circa 1940-1949</unittitle>
+                  <container id="aspace_b83a526198ca5457a5ab5bb6e65150e6" label="Mixed Materials"
+                    type="box">6</container>
+                </did>
+              </c05>
+              <c05 id="aspace_ref221_6e2" level="file">
+                <did>
+                  <unittitle><title render="italic">Hard Times Blues</title>, 1940</unittitle>
+                  <container id="aspace_4e05499243c3730c390ec6b8099a7bb4" label="Mixed Materials"
+                    type="box">OS2</container>
+                </did>
+              </c05>
+              <c05 id="aspace_ref222_1cu" level="file">
+                <did>
+                  <unittitle><title render="italic">Dance of the Watusi</title>, 1951</unittitle>
+                  <container id="aspace_a7a7f912176d9e614adb33265dd04e2e" label="Mixed Materials"
+                    type="box">6</container>
+                </did>
+              </c05>
+              <c05 id="aspace_ref223_b26" level="file">
+                <did>
+                  <unittitle><title render="italic">Folk Dance, </title><title render="italic">PM
+                      Daily Picture Magazine</title> (Morris Gordon), 1944</unittitle>
+                  <container id="aspace_a2988a3f2ce34de16610e268d5177cba" label="Mixed Materials"
+                    type="box">6</container>
+                </did>
+              </c05>
+              <c05 id="aspace_ref224_647" level="file">
+                <did>
+                  <unittitle><title render="italic">Folk Dance</title> (Gerda Peterich), circa
+                    1944</unittitle>
+                  <container id="aspace_70620a8939902a9ebeb2cf91abb0dd51" label="Mixed Materials"
+                    type="box">6</container>
+                </did>
+              </c05>
+              <c05 id="aspace_ref225_efj" level="file">
+                <did>
+                  <unittitle><title render="italic">Folk Dance</title> (Jay Florian Mitchell), circa
+                    1950-1959</unittitle>
+                  <container id="aspace_aa7a4bbb1a7225710b99e87954f0ec51" label="Mixed Materials"
+                    type="box">6</container>
+                </did>
+              </c05>
+              <c05 id="aspace_ref226_fr0" level="file">
+                <did>
+                  <unittitle><title render="italic">Folk Dance</title> (Gerda Peterich),
+                    1950-1959</unittitle>
+                  <container id="aspace_7c9a885850512d35f43029c2b2c59b8f" label="Mixed Materials"
+                    type="box">6</container>
+                </did>
+              </c05>
+              <c05 id="aspace_ref227_3ub" level="file">
+                <did>
+                  <unittitle><title render="italic">Negro Speaks of Rivers</title>, circa 1940-1949
+                    (3 folders)</unittitle>
+                  <container id="aspace_4c652166514e7d0409fe42ebaed10234" label="Mixed Materials"
+                    type="box">6</container>
+                </did>
+              </c05>
+              <c05 id="aspace_ref228_zt7" level="file">
+                <did>
+                  <unittitle><title render="italic">Negro Speaks of Rivers</title>, circa
+                    1940-1949</unittitle>
+                  <container id="aspace_19e8a539a87e2a96ae236450cc90cad6" label="Mixed Materials"
+                    type="box">OS2</container>
+                </did>
+              </c05>
+              <c05 id="aspace_ref229_2vg" level="file">
+                <did>
+                  <unittitle><title render="italic">Negro Speaks of Rivers</title> (Gerda Peterich),
+                    circa 1940-1949 (2 folders)</unittitle>
+                  <container id="aspace_953cc9ee2ebdce867463d555c31f9432" label="Mixed Materials"
+                    type="box">6</container>
+                </did>
+              </c05>
+              <c05 id="aspace_ref230_kd9" level="file">
+                <did>
+                  <unittitle><title render="italic">Spirituals</title>, circa 1940-1949</unittitle>
+                  <container id="aspace_1867a39a55749fc3d766f82499c7dd1c" label="Mixed Materials"
+                    type="box">6</container>
+                </did>
+              </c05>
+              <c05 id="aspace_ref231_b4w" level="file">
+                <did>
+                  <unittitle>Unidentified Dances, circa 1940-1959 (9 folders)</unittitle>
+                  <container id="aspace_cd4c4a8e1571c7c5ae24fa654e10856c" label="Mixed Materials"
+                    type="box">7</container>
+                </did>
+              </c05>
+              <c05 id="aspace_ref232_2ha" level="file">
+                <did>
+                  <unittitle>Unidentified Dances (Barbara Morgan), circa 1950-1959</unittitle>
+                  <container id="aspace_3508e9905b68bcfe03301bfcc04e6ce8" label="Mixed Materials"
+                    type="box">7</container>
+                </did>
+              </c05>
+              <c05 id="aspace_ref233_wf1" level="file">
+                <did>
+                  <unittitle>Unidentified Dances, with Joe Nash (Gerda Peterich), circa
+                    1947</unittitle>
+                  <container id="aspace_aff9cb726be2fd37a954bb90dbc6355e" label="Mixed Materials"
+                    type="box">7</container>
+                </did>
+              </c05>
+            </c04>
+            <c04 id="aspace_ref236_z98" level="subseries">
+              <did>
+                <unittitle>Primus Company, circa 1940-1959</unittitle>
+                <physdesc altrender="whole"><extent altrender="materialtype spaceoccupied">11
+                    folders</extent></physdesc>
+              </did>
+              <scopecontent id="aspace_8d137e65c71997e84ba84369a5a862b4">
+                <head>Scope and Contents note</head>
+                <p>Contains publicity shots of Primus company members in performance and in
+                  rehearsal.</p>
+              </scopecontent>
+              <arrangement id="aspace_7d596e25c1ac5c92e272352b7285d779">
+                <head>Arrangement note</head>
+                <p>Arranged chronologically</p>
+              </arrangement>
+              <c05 id="aspace_ref238_sq0" level="file">
+                <did>
+                  <unittitle>Primus Company, circa 1940-1949 (2 folders)</unittitle>
+                  <container id="aspace_3521f546bca8c0db4c6e7df9791676b1" label="Mixed Materials"
+                    type="box">7</container>
+                </did>
+              </c05>
+              <c05 id="aspace_ref239_fpb" level="file">
+                <did>
+                  <unittitle>Primus Company (Barry), circa 1940-1949</unittitle>
+                  <container id="aspace_2b371a6a8eda8ec5a809c7505ceae59e" label="Mixed Materials"
+                    type="box">7</container>
+                </did>
+              </c05>
+              <c05 id="aspace_ref240_lcf" level="file">
+                <did>
+                  <unittitle>Primus Company (Barry), circa 1940-1949</unittitle>
+                  <container id="aspace_e86e49d9bcce4381fff69a6c240587c4" label="Mixed Materials"
+                    type="box">OS2</container>
+                </did>
+              </c05>
+              <c05 id="aspace_ref241_xxe" level="file">
+                <did>
+                  <unittitle>Primus Company (Scurlock Studio), circa 1940-1949</unittitle>
+                  <container id="aspace_010deacee88c5a22a4dec2861a351df6" label="Mixed Materials"
+                    type="box">7</container>
+                </did>
+              </c05>
+              <c05 id="aspace_ref242_qmr" level="file">
+                <did>
+                  <unittitle>Primus Company, <title render="italic">Caribbean Conga</title> (Gjon
+                    Mili), circa 1940-1949</unittitle>
+                  <container id="aspace_ef900665d40f2dd079c587bcb320b273" label="Mixed Materials"
+                    type="box">7</container>
+                </did>
+              </c05>
+              <c05 id="aspace_ref243_57h" level="file">
+                <did>
+                  <unittitle>Primus Company, <title render="italic">Caribbean Conga</title> (Jay
+                    Florian Mitchell), circa 1940-1949</unittitle>
+                  <container id="aspace_77f1c4a45e056ca710d7b88d39be030d" label="Mixed Materials"
+                    type="box">7</container>
+                </did>
+              </c05>
+              <c05 id="aspace_ref244_hca" level="file">
+                <did>
+                  <unittitle>Primus Company, <title render="italic">Caribbean Conga</title> (Jay
+                    Florian Mitchell), circa 1940-1949</unittitle>
+                  <container id="aspace_1abbb06d016f0899510423499926b192" label="Mixed Materials"
+                    type="box">OS2</container>
+                </did>
+              </c05>
+              <c05 id="aspace_ref245_ki7" level="file">
+                <did>
+                  <unittitle>Primus Company, Four Male Dancers (Marvin Smith), circa
+                    1940-1949</unittitle>
+                  <container id="aspace_b2de3bb728fed4e6022548863a1fdc1b" label="Mixed Materials"
+                    type="box">7</container>
+                </did>
+              </c05>
+              <c05 id="aspace_ref246_n0u" level="file">
+                <did>
+                  <unittitle>Primus Company, Rehearsal (Gazelle Szabo), circa 1940-1949</unittitle>
+                  <container id="aspace_f91129e6eb48512ae7851072b496acd4" label="Mixed Materials"
+                    type="box">7</container>
+                </did>
+              </c05>
+              <c05 id="aspace_ref247_xd5" level="file">
+                <did>
+                  <unittitle>Primus Company with Joe Nash and Jacqueline Hairston (Marvin Smith),
+                    circa 1940-1949</unittitle>
+                  <container id="aspace_dc5075bae84b31fcc02f8b840ba2d698" label="Mixed Materials"
+                    type="box">7</container>
+                </did>
+              </c05>
+              <c05 id="aspace_ref248_mfo" level="file">
+                <did>
+                  <unittitle>Primus Company, donkey costume (Jay Florian Mitchell), circa
+                    1950-1955</unittitle>
+                  <container id="aspace_211925fe170e2f851e726100b359350b" label="Mixed Materials"
+                    type="box">7</container>
+                </did>
+              </c05>
+              <c05 id="aspace_ref249_fmt" level="file">
+                <did>
+                  <unittitle>Primus Company, circa 1950-1959</unittitle>
+                  <container id="aspace_b24a91a542acd1cd74602a16a5da0e59" label="Mixed Materials"
+                    type="box">7</container>
+                </did>
+              </c05>
+            </c04>
+            <c04 id="aspace_ref252_lvl" level="subseries">
+              <did>
+                <unittitle>Public Appearances by Primus, circa 1940-1969</unittitle>
+                <physdesc altrender="whole"><extent altrender="materialtype spaceoccupied">40
+                    folders</extent></physdesc>
+              </did>
+              <scopecontent id="aspace_06293771db4cac446ea430183b0f7cab">
+                <head>Scope and Contents note</head>
+                <p>Contains publicity shots taken at public appearances and events.</p>
+              </scopecontent>
+              <arrangement id="aspace_41e89c55fc8a414e32396943c5c8e1d4">
+                <head>Arrangement note</head>
+                <p>Arranged chronologically</p>
+              </arrangement>
+              <c05 id="aspace_ref254_y4o" level="file">
+                <did>
+                  <unittitle>Radio appearance, circa 1940-1949</unittitle>
+                  <container id="aspace_9e5c33c8eb6e36155c34f29c06fd9a5d" label="Mixed Materials"
+                    type="box">7</container>
+                </did>
+              </c05>
+              <c05 id="aspace_ref255_1wu" level="file">
+                <did>
+                  <unittitle>Radio appearance, NBC (Dennis Stock), circa 1940-1949</unittitle>
+                  <container id="aspace_014ad572fb148c299b97f0661de0a3f9" label="Mixed Materials"
+                    type="box">7</container>
+                </did>
+              </c05>
+              <c05 id="aspace_ref256_hkv" level="file">
+                <did>
+                  <unittitle>Radio appearance, WHN (Irving Kaufman), circa 1940-1949</unittitle>
+                  <container id="aspace_54a95a314d4ee986c8d4835040838f94" label="Mixed Materials"
+                    type="box">7</container>
+                </did>
+              </c05>
+              <c05 id="aspace_ref257_1jf" level="file">
+                <did>
+                  <unittitle>Saks Fifth Avenue Store Window (Worsinger), circa 1940-1949</unittitle>
+                  <container id="aspace_32669af0c08c9196113d9ccb05d5518e" label="Mixed Materials"
+                    type="box">7</container>
+                </did>
+              </c05>
+              <c05 id="aspace_ref258_yl5" level="file">
+                <did>
+                  <unittitle>Appearances, circa 1940-1989</unittitle>
+                  <container id="aspace_3cc2f382c17718a12b28b2a052196e59" label="Mixed Materials"
+                    type="box">7</container>
+                </did>
+              </c05>
+              <c05 id="aspace_ref259_1oc" level="file">
+                <did>
+                  <unittitle>War Effort, with CIO member/veterans, circa 1942-1944</unittitle>
+                  <container id="aspace_88151b8d3994239f68f89a197e8e992c" label="Mixed Materials"
+                    type="box">7</container>
+                </did>
+              </c05>
+              <c05 id="aspace_ref260_csg" level="file">
+                <did>
+                  <unittitle>Cafe Society, circa 1943</unittitle>
+                  <container id="aspace_59292d1248df4cc41ced55fa2a580638" label="Mixed Materials"
+                    type="box">7</container>
+                </did>
+              </c05>
+              <c05 id="aspace_ref261_mqc" level="file">
+                <did>
+                  <unittitle><title render="italic">Emperor Jones</title>, 1947</unittitle>
+                  <container id="aspace_7c7ccfe2338a1e16b1d2b11c6affdd1e" label="Mixed Materials"
+                    type="box">7</container>
+                </did>
+              </c05>
+              <c05 id="aspace_ref262_s0m" level="file">
+                <did>
+                  <unittitle>Packing for Africa (Rosenwald Grant) (Rosalie Gwathmey),
+                    1949</unittitle>
+                  <container id="aspace_0c50be91807c14d18d11753ace24fc49" label="Mixed Materials"
+                    type="box">7</container>
+                </did>
+              </c05>
+              <c05 id="aspace_ref263_osf" level="file">
+                <did>
+                  <unittitle>Signing Autographs (Beckman), 1947</unittitle>
+                  <container id="aspace_161422f2e3bff9aec664b078652667b5" label="Mixed Materials"
+                    type="box">7</container>
+                </did>
+              </c05>
+              <c05 id="aspace_ref264_lkb" level="file">
+                <did>
+                  <unittitle>Belgian Congo, 1949</unittitle>
+                  <container id="aspace_5ef85e52fffb17b3fc4432c0e82be4db" label="Mixed Materials"
+                    type="box">7</container>
+                </did>
+              </c05>
+              <c05 id="aspace_ref265_aup" level="file">
+                <did>
+                  <unittitle>Primus with Family (Rosalie Gwathmey), 1949</unittitle>
+                  <container id="aspace_f000864c4b6c1799f744b45e63a178d8" label="Mixed Materials"
+                    type="box">7</container>
+                </did>
+              </c05>
+              <c05 id="aspace_ref266_0x0" level="file">
+                <did>
+                  <unittitle>Women Dancers in Nigeria, 1949</unittitle>
+                  <container id="aspace_6580409bf6b8db071a69d048880ba595" label="Mixed Materials"
+                    type="box">7</container>
+                </did>
+              </c05>
+              <c05 id="aspace_ref267_030" level="file">
+                <did>
+                  <unittitle>Jacob's Pillow, 1950</unittitle>
+                  <container id="aspace_3855d17a210cfc573bc40f1165ac4124" label="Mixed Materials"
+                    type="box">7</container>
+                </did>
+              </c05>
+              <c05 id="aspace_ref268_2ek" level="file">
+                <did>
+                  <unittitle>Primus with Percival Borde, circa 1950-1959</unittitle>
+                  <container id="aspace_44cd041d7eedebcc5d79d4c6d102b876" label="Mixed Materials"
+                    type="box">7</container>
+                </did>
+              </c05>
+              <c05 id="aspace_ref269_kaw" level="file">
+                <did>
+                  <unittitle>Primus with Francis Day, Jack Hylton reading program of Primus' royal
+                    performance, Oct. 29, 1951</unittitle>
+                  <container id="aspace_64b37acf4773245fccd78b91bee2fa20" label="Mixed Materials"
+                    type="box">7</container>
+                </did>
+              </c05>
+              <c05 id="aspace_ref270_x81" level="file">
+                <did>
+                  <unittitle>Appearance in U.K., (Keystone Press Agency), Oct. 1951</unittitle>
+                  <container id="aspace_acbbedbfd6e6f4bd83420f88001eec5d" label="Mixed Materials"
+                    type="box">7</container>
+                </did>
+              </c05>
+              <c05 id="aspace_ref271_8b0" level="file">
+                <did>
+                  <unittitle>Appearance In U.K (Daily Express), circa 1951</unittitle>
+                  <container id="aspace_e6156746479b8ea338e0535aea95f95a" label="Mixed Materials"
+                    type="box">7</container>
+                </did>
+              </c05>
+              <c05 id="aspace_ref272_cfq" level="file">
+                <did>
+                  <unittitle>Israeli tour (Hans Kaufmann), Jan. 1952</unittitle>
+                  <container id="aspace_bc53183407838eb21978b736f0b6eff5" label="Mixed Materials"
+                    type="box">7</container>
+                </did>
+              </c05>
+              <c05 id="aspace_ref273_fxv" level="file">
+                <did>
+                  <unittitle>Trieste, Italy, Oct.-Nov. 1956</unittitle>
+                  <container id="aspace_8d6f876938209887447182f2d57f9ae6" label="Mixed Materials"
+                    type="box">7</container>
+                </did>
+              </c05>
+              <c05 id="aspace_ref274_x87" level="file">
+                <did>
+                  <unittitle>Primus with Percival Borde and Curtis J. Perkins (R. Walker), circa
+                    1956</unittitle>
+                  <container id="aspace_399c095601c01ee56cd5b929f0adfcae" label="Mixed Materials"
+                    type="box">7</container>
+                </did>
+              </c05>
+              <c05 id="aspace_ref275_s2l" level="file">
+                <did>
+                  <unittitle>Appearance with Onwin Borde, circa 1960</unittitle>
+                  <container id="aspace_92ce4fc9b21122c4ef8823b802af9225" label="Mixed Materials"
+                    type="box">7</container>
+                </did>
+              </c05>
+              <c05 id="aspace_ref276_vuk" level="file">
+                <did>
+                  <unittitle>Appearance, circa 1960-1969</unittitle>
+                  <container id="aspace_dc45de82a7af908b9d6933f9b08256dc" label="Mixed Materials"
+                    type="box">7</container>
+                </did>
+              </c05>
+              <c05 id="aspace_ref277_vns" level="file">
+                <did>
+                  <unittitle>Appearance at Detroit Institute of the Arts, circa
+                    1960-1969</unittitle>
+                  <container id="aspace_5114454104c7bcd65f79a3612571c24a" label="Mixed Materials"
+                    type="box">7</container>
+                </did>
+              </c05>
+              <c05 id="aspace_ref278_3dt" level="file">
+                <did>
+                  <unittitle>Primus with Percival Borde and Nun, circa 1960-1969</unittitle>
+                  <container id="aspace_3d8b50721647e289f8921d38b25cc834" label="Mixed Materials"
+                    type="box">7</container>
+                </did>
+              </c05>
+              <c05 id="aspace_ref279_4tz" level="file">
+                <did>
+                  <unittitle>Primus teaching children, circa 1960-1969</unittitle>
+                  <container id="aspace_9d6614a0195ec8f78919b22fa62c37b6" label="Mixed Materials"
+                    type="box">OS2</container>
+                </did>
+              </c05>
+              <c05 id="aspace_ref280_1wu" level="file">
+                <did>
+                  <unittitle>Primus with Nigerian Cultural Leaders, circa 1961</unittitle>
+                  <container id="aspace_4cf9cf26a705cdb55bec7a0a4afe09d4" label="Mixed Materials"
+                    type="box">8</container>
+                </did>
+              </c05>
+              <c05 id="aspace_ref281_6gn" level="file">
+                <did>
+                  <unittitle>Percival Borde presenting award, circa 1962</unittitle>
+                  <container id="aspace_8b6a970cd634c69a589ae95c6e2933c3" label="Mixed Materials"
+                    type="box">8</container>
+                </did>
+              </c05>
+              <c05 id="aspace_ref282_7z9" level="file">
+                <did>
+                  <unittitle>Percival Borde with Miss Trinidad and Tobago Independence, Sept.
+                    1962</unittitle>
+                  <container id="aspace_e7415f83b843d9318d875c221c43ee85" label="Mixed Materials"
+                    type="box">8</container>
+                </did>
+              </c05>
+              <c05 id="aspace_ref283_wpe" level="file">
+                <did>
+                  <unittitle>Press clipping: <title render="doublequote">Everyman's African
+                      Roots</title>, <title render="italic">Dance Magazine</title>, Oct.
+                    1964</unittitle>
+                  <container id="aspace_7715c0e3b01ede058d649b034b73a0d1" label="Mixed Materials"
+                    type="box">8</container>
+                </did>
+              </c05>
+              <c05 id="aspace_ref284_dc0" level="file">
+                <did>
+                  <unittitle><title render="doublequote">Dancing Masks of Africa</title> Exhibit
+                    Opening, Sept. 1974</unittitle>
+                  <container id="aspace_8ed61518f8cee29bd708bd10beeeac98" label="Mixed Materials"
+                    type="box">8</container>
+                </did>
+              </c05>
+              <c05 id="aspace_ref285_yow" level="file">
+                <did>
+                  <unittitle>Spelman College Repertory Workshop, <title render="italic">Swing
+                      Low</title> (Reeves Studios), 1976</unittitle>
+                  <container id="aspace_71f17c9bb11ab944c261c526deabcf24" label="Mixed Materials"
+                    type="box">8</container>
+                </did>
+              </c05>
+              <c05 id="aspace_ref286_fgg" level="file">
+                <did>
+                  <unittitle>Primus (Sigrid Estrada), circa 1982</unittitle>
+                  <container id="aspace_54eafc770c6bd51d18a43ccb921c9af5" label="Mixed Materials"
+                    type="box">8</container>
+                </did>
+              </c05>
+              <c05 id="aspace_ref287_sio" level="file">
+                <did>
+                  <unittitle><title render="italic">Contact Magazine</title> shoot (Stephen Long),
+                    1984</unittitle>
+                  <container id="aspace_998bc1562afc7fcd5758ee7b189a8184" label="Mixed Materials"
+                    type="box">8</container>
+                </did>
+              </c05>
+              <c05 id="aspace_ref288_ij3" level="file">
+                <did>
+                  <unittitle>Lecture Demonstration at Amherst (Frank Ward), circa 1986</unittitle>
+                  <container id="aspace_a1e48ace5b7ed463580a5c86faf345c4" label="Mixed Materials"
+                    type="box">8</container>
+                </did>
+              </c05>
+              <c05 id="aspace_ref289_v0n" level="file">
+                <did>
+                  <unittitle>American Dance Festival Master Class (Jay Anderson), 1988</unittitle>
+                  <container id="aspace_393505f914b6fe30f44ad0c29becfb06" label="Mixed Materials"
+                    type="box">8</container>
+                </did>
+              </c05>
+              <c05 id="aspace_ref290_j2c" level="file">
+                <did>
+                  <unittitle>Primus with Kim Bears, circa 1988</unittitle>
+                  <container id="aspace_7f8222d1252c81e8bcf6e975800dfa87" label="Mixed Materials"
+                    type="box">8</container>
+                </did>
+              </c05>
+              <c05 id="aspace_ref291_ogf" level="file">
+                <did>
+                  <unittitle>Lecture Demonstration (Andre Richardson), circa 1980-1989</unittitle>
+                  <container id="aspace_284baffd387a08a72209623878bfe15a" label="Mixed Materials"
+                    type="box">8</container>
+                </did>
+              </c05>
+              <c05 id="aspace_ref292_k5s" level="file">
+                <did>
+                  <unittitle>National Medal of Arts (Vivian Ronay), 1991</unittitle>
+                  <container id="aspace_d0b2fbf4c690dc6256c8832ccc126324" label="Mixed Materials"
+                    type="box">8</container>
+                </did>
+              </c05>
+            </c04>
+            <c04 id="aspace_ref295_k3q" level="subseries">
+              <did>
+                <unittitle>Photographs of Others, circa 1940-1969</unittitle>
+                <physdesc altrender="whole"><extent altrender="materialtype spaceoccupied">2
+                    folders</extent></physdesc>
+              </did>
+              <c05 id="aspace_ref297_9ht" level="file">
+                <did>
+                  <unittitle>Photographs of others, identified, circa 1940-1969</unittitle>
+                  <container id="aspace_ab86be89419ae0895e07b9a30d926c36" label="Mixed Materials"
+                    type="box">8</container>
+                </did>
+              </c05>
+              <c05 id="aspace_ref298_a1r" level="file">
+                <did>
+                  <unittitle>Photographs of others, unidentified, circa 1940-1969</unittitle>
+                  <container id="aspace_f46b666f503dfb3c808aa65aad0fe079" label="Mixed Materials"
+                    type="box">8</container>
+                </did>
+              </c05>
+            </c04>
+          </c03>
+          <c03 id="aspace_ref299_b6m" level="subseries">
+            <did>
+              <unittitle>Performance, circa 1940-1969</unittitle>
+              <physdesc altrender="whole"><extent altrender="materialtype spaceoccupied">45
+                  folders</extent></physdesc>
+            </did>
+            <scopecontent id="aspace_36f23b2780216a82e8d11172bad9f1cb">
+              <head>Scope and Contents note</head>
+              <p>Includes photographs of Primus, her family, and her company taken by a professional
+                photographer at live performances.</p>
+            </scopecontent>
+            <arrangement id="aspace_90289c90533222d09ec56d1395eab084">
+              <head>Arrangement note</head>
+              <p>Arranged chronologically</p>
+            </arrangement>
+            <c04 id="aspace_ref301_3lj" level="file">
+              <did>
+                <unittitle>Performances, circa 1940-1979</unittitle>
+                <container id="aspace_35831295baa50c7a968a7946e36b5d5b" label="Mixed Materials"
+                  type="box">8</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref302_351" level="file">
+              <did>
+                <unittitle><title render="italic">Prayer of Thanksgiving</title>, Belgian Congo (A.
+                  Da Cruz), 1949</unittitle>
+                <container id="aspace_c25ab436316ce173615567ea4657f7e3" label="Mixed Materials"
+                  type="box">8</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref303_hxv" level="file">
+              <did>
+                <unittitle>Belgian Congo (A. Da Cruz), circa May-Aug. 1949</unittitle>
+                <container id="aspace_f07dbd55e9c6e514cebf56184261b08f" label="Mixed Materials"
+                  type="box">8</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref304_wc8" level="file">
+              <did>
+                <unittitle><title render="italic">Dance of Lightning</title>, Belgian Congo (A. Da
+                  Cruz), circa May-Aug. 1949</unittitle>
+                <container id="aspace_63cbf7d73be381620959c53aa2ac28fc" label="Mixed Materials"
+                  type="box">8</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref305_19c" level="file">
+              <did>
+                <unittitle>Jacob's Pillow, 1950</unittitle>
+                <container id="aspace_d6191aa656a2a04b053399f88adc48dc" label="Mixed Materials"
+                  type="box">8</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref306_ana" level="file">
+              <did>
+                <unittitle>Cleveland Performance (Bill Wingfield), circa 1950-1959</unittitle>
+                <container id="aspace_d893d6bc38bb4cbb4e1e9af07ef9201a" label="Mixed Materials"
+                  type="box">8</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref307_26h" level="file">
+              <did>
+                <unittitle>International Festival, circa 1950-1959</unittitle>
+                <container id="aspace_15c8fccaffb3cff13271611dbe37b659" label="Mixed Materials"
+                  type="box">8</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref308_ki7" level="file">
+              <did>
+                <unittitle>English Tour, 1951</unittitle>
+                <container id="aspace_f6ef401c98a454acd1a02e7377354d6a" label="Mixed Materials"
+                  type="box">8</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref309_nv4" level="file">
+              <did>
+                <unittitle>Primus Company, circa 1951</unittitle>
+                <container id="aspace_40996110113a5ab7add5769226a1359c" label="Mixed Materials"
+                  type="box">8</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref310_wyi" level="file">
+              <did>
+                <unittitle>Italian tour (Foto Florio), 1956</unittitle>
+                <container id="aspace_5578c89efc7f56ab7a4c0ea0f86cb743" label="Mixed Materials"
+                  type="box">8</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref311_uws" level="file">
+              <did>
+                <unittitle>Italian tour (E. Constantine), 1956</unittitle>
+                <container id="aspace_8a1ff64c2cd86e0a484ac4f997bb4341" label="Mixed Materials"
+                  type="box">8</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref312_prb" level="file">
+              <did>
+                <unittitle>Italian tour (L. de Rota), circa Oct.-Nov. 1956</unittitle>
+                <container id="aspace_95666ca9cd7d13fb124d7ab101650453" label="Mixed Materials"
+                  type="box">8</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref313_ggz" level="file">
+              <did>
+                <unittitle>Primus with Percival Borde, NYU-TV (Irwin Gooen), 1957</unittitle>
+                <container id="aspace_bf804ef651c00190e9ae7ff1362488ee" label="Mixed Materials"
+                  type="box">8</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref314_z1x" level="file">
+              <did>
+                <unittitle>Percival Borde, circa 1960-1969</unittitle>
+                <container id="aspace_48c7e60390f6614d169a62b40fdb6a1b" label="Mixed Materials"
+                  type="box">8</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref315_09h" level="file">
+              <did>
+                <unittitle>Primus Company, circa 1960-1969</unittitle>
+                <container id="aspace_c6046075ca3c0cd5c5ec560d02d32830" label="Mixed Materials"
+                  type="box">8</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref316_zl4" level="file">
+              <did>
+                <unittitle>NYU (William Simmons), 1962</unittitle>
+                <container id="aspace_0be9dad24fb31142049ddd72f63e9fc1" label="Mixed Materials"
+                  type="box">8</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref317_dxl" level="file">
+              <did>
+                <unittitle>Appearance (Bro. David McAdams), June 25, 1964</unittitle>
+                <container id="aspace_90729f990e28769a75bffc3e188144a6" label="Mixed Materials"
+                  type="box">8</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref318_58q" level="file">
+              <did>
+                <unittitle>Alphonse Cimber, Primus Company drummer (E. Pen Stevens), Oct. 11,
+                  1969</unittitle>
+                <container id="aspace_24da69045fbea8fd3f6bad1402d3da20" label="Mixed Materials"
+                  type="box">8</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref319_vq9" level="file">
+              <did>
+                <unittitle>Percival Borde, Primus Company, Lincoln Center Out-Of-Doors Festival (Dan
+                  Brinzac), Aug. 20, 1979</unittitle>
+                <container id="aspace_50fba3fd3e95c50a2ff292c627f7dfc8" label="Mixed Materials"
+                  type="box">8</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref320_j2o" level="file">
+              <did>
+                <unittitle>Percival Borde, circa 1970-1979</unittitle>
+                <container id="aspace_2a93fbae344d9f673fe4b4fd6b49123c" label="Mixed Materials"
+                  type="box">8</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref321_3ok" level="file">
+              <did>
+                <unittitle>Percival Borde, <title render="italic">Impinyuza</title>, circa
+                  1970-1979</unittitle>
+                <container id="aspace_14135fa4439a8010b89a563283b67f56" label="Mixed Materials"
+                  type="box">8</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref322_c58" level="file">
+              <did>
+                <unittitle>Primus with Onwin Borde, circa 1970-1979</unittitle>
+                <container id="aspace_d1fd8fc2ba7362ebc0d325431bd4454d" label="Mixed Materials"
+                  type="box">8</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref323_ktf" level="file">
+              <did>
+                <unittitle>Performance, circa 1980-1989 (3 folders)</unittitle>
+                <container id="aspace_a69b44ed128afe12438509f3e43e011b" label="Mixed Materials"
+                  type="box">8</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref324_j48" level="file">
+              <did>
+                <unittitle>Unidentified Performers, circa 1980-1989</unittitle>
+                <container id="aspace_c506cfb8d36c473aae46d69332b9e96b" label="Mixed Materials"
+                  type="box">8</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref325_461" level="file">
+              <did>
+                <unittitle><title render="italic">Excerpts from an African Journey</title>, Five
+                  College Faculty Dance Concert, 1984</unittitle>
+                <container id="aspace_1120a9c03bf7028a5c886bcbe2429bbd" label="Mixed Materials"
+                  type="box">8</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref326_mwt" level="file">
+              <did>
+                <unittitle>Mary François Brooks and Co., 1986</unittitle>
+                <container id="aspace_1f7840d2ff80fa8bae43f8f22f984a7a" label="Mixed Materials"
+                  type="box">8</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref327_e7a" level="file">
+              <did>
+                <unittitle>Primus Company, undated</unittitle>
+                <container id="aspace_8cda2af138e824cc95887c44b2c2159b" label="Mixed Materials"
+                  type="box">8</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref328_6kc" level="file">
+              <did>
+                <unittitle>Primus Company (Costas), undated</unittitle>
+                <container id="aspace_5740c481250594abe7b7db4e473216d1" label="Mixed Materials"
+                  type="box">8</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref329_w72" level="file">
+              <did>
+                <unittitle>Primus Company, <title render="italic">Initiation</title>,
+                  undated</unittitle>
+                <container id="aspace_466452120870ac66527d1fd6d761a53b" label="Mixed Materials"
+                  type="box">8</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref330_mvu" level="file">
+              <did>
+                <unittitle>Primus Company, <title render="italic">Bushasche</title>,
+                  undated</unittitle>
+                <container id="aspace_e88b74245b4a851253dbd6a082b9db6b" label="Mixed Materials"
+                  type="box">8</container>
+              </did>
+            </c04>
+          </c03>
+          <c03 id="aspace_ref333_fqb" level="subseries">
+            <did>
+              <unittitle>Snapshots, circa 1930-1992</unittitle>
+              <physdesc altrender="whole"><extent altrender="materialtype spaceoccupied">40
+                  folders</extent></physdesc>
+            </did>
+            <scopecontent id="aspace_58620532bf4eb3e0cf0420545c36ccdb">
+              <head>Scope and Contents note</head>
+              <p>Includes photographs taken by non-professional, unidentified photographers. The
+                images document Primus' family and friends, as well as some performances and
+                appearances.</p>
+            </scopecontent>
+            <arrangement id="aspace_1fadc2dca01c217562612abe57e82429">
+              <head>Arrangement note</head>
+              <p>Arranged chronologically</p>
+            </arrangement>
+            <c04 id="aspace_ref335_k9i" level="file">
+              <did>
+                <unittitle>Emily and Edward Primus (parents), circa 1930-1939</unittitle>
+                <container id="aspace_c2fbde6a204e3f16074bbff86d36e93d" label="Mixed Materials"
+                  type="box">9</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref336_ybp" level="file">
+              <did>
+                <unittitle>Others, circa 1930-1959</unittitle>
+                <container id="aspace_f1cf26aff9d0c2d7ef0ceefa8b8993b3" label="Mixed Materials"
+                  type="box">9</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref337_6xy" level="file">
+              <did>
+                <unittitle>Hunter College, Friends, circa 1937</unittitle>
+                <container id="aspace_af4c4105e79fa775388fa7e4a9d748d4" label="Mixed Materials"
+                  type="box">9</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref338_h4l" level="file">
+              <did>
+                <unittitle>Primus, circa 1937-1950</unittitle>
+                <container id="aspace_031b4af969dc85c61af734c0a72bb075" label="Mixed Materials"
+                  type="box">9</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref339_oca" level="file">
+              <did>
+                <unittitle>Primus with Family and Friends, circa 1937-1960</unittitle>
+                <container id="aspace_e5fb0e8730b7dd9a6df133a024ac69f7" label="Mixed Materials"
+                  type="box">9</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref340_s5g" level="file">
+              <did>
+                <unittitle>Albums, including Father and Hunter College friend, 1938-1939</unittitle>
+                <container id="aspace_188a18a7950783e2fbf897856ae45078" label="Mixed Materials"
+                  type="box">9</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref341_a9h" level="file">
+              <did>
+                <unittitle>Primus' Brothers and Sisters-in-Law, circa 1940-1949</unittitle>
+                <container id="aspace_cda3568abcba08c03be4f95539f0250e" label="Mixed Materials"
+                  type="box">9</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref342_mg9" level="file">
+              <did>
+                <unittitle>Others, signed, 1949</unittitle>
+                <container id="aspace_4fc928d0d95cd072fca57858fa93a893" label="Mixed Materials"
+                  type="box">9</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref343_ttw" level="file">
+              <did>
+                <unittitle>Others, unidentified, 1949, 1959-1963</unittitle>
+                <container id="aspace_e90a6d36b4a29e58a2f2a32040030848" label="Mixed Materials"
+                  type="box">9</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref344_sjt" level="file">
+              <did>
+                <unittitle>Primus in Africa, circa 1949</unittitle>
+                <container id="aspace_2fe4fcecbedc3cc8a1bbf9ec809b192a" label="Mixed Materials"
+                  type="box">9</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref345_y8s" level="file">
+              <did>
+                <unittitle>Watusi (Rwanda), circa 1949</unittitle>
+                <container id="aspace_47d8bb80beac15472180863c91e5d567" label="Mixed Materials"
+                  type="box">9</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref346_oah" level="file">
+              <did>
+                <unittitle>Primus at Café Society Downtown, 1950</unittitle>
+                <container id="aspace_a703c6d133005cc563fdc74a72c18fd2" label="Mixed Materials"
+                  type="box">9</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref347_i8e" level="file">
+              <did>
+                <unittitle>Yael Woll, circa 1950-1953</unittitle>
+                <container id="aspace_40263c62a5807cbd505d7f8d785a234b" label="Mixed Materials"
+                  type="box">9</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref348_mdp" level="file">
+              <did>
+                <unittitle>Album, circa 1952</unittitle>
+                <container id="aspace_1edf1e29a446dff1a5af49106940edfa" label="Mixed Materials"
+                  type="box">9</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref349_4cu" level="file">
+              <did>
+                <unittitle>Trinidad, circa 1953</unittitle>
+                <container id="aspace_77e5f081cd0af5096041bc15fd39f6e0" label="Mixed Materials"
+                  type="box">9</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref350_pr0" level="file">
+              <did>
+                <unittitle>Trinidad albums, circa 1953 (5 folders)</unittitle>
+                <container id="aspace_b5f5f318399139c3c806ef67ac033591" label="Mixed Materials"
+                  type="box">9</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref351_q6t" level="file">
+              <did>
+                <unittitle>Onwin Borde (with Primus and Percival Borde), 1955</unittitle>
+                <container id="aspace_880a1272317b622078c27e175e889d45" label="Mixed Materials"
+                  type="box">9</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref352_jla" level="file">
+              <did>
+                <unittitle>Africa, circa 1959-1963 (2 folders)</unittitle>
+                <container id="aspace_a8a8d4b48cd66b6c0c31301fec098101" label="Mixed Materials"
+                  type="box">9</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref353_9re" level="file">
+              <did>
+                <unittitle>Liberia, circa 1959-1963</unittitle>
+                <container id="aspace_83c095cdc60a6795e84576e68d1e82ed" label="Mixed Materials"
+                  type="box">9</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref354_vmx" level="file">
+              <did>
+                <unittitle>Onwin Borde, 1961</unittitle>
+                <container id="aspace_138c6e21d03eee8648ea223e9758dec8" label="Mixed Materials"
+                  type="box">9</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref355_nag" level="file">
+              <did>
+                <unittitle>Liberia, 1961</unittitle>
+                <container id="aspace_c632c1ba96e21e4d1eb6b7ade29bad3c" label="Mixed Materials"
+                  type="box">9</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref356_w3i" level="file">
+              <did>
+                <unittitle>Classes, circa 1965</unittitle>
+                <container id="aspace_898c3b8b311628dbb54ae5c09c3cd9d9" label="Mixed Materials"
+                  type="box">9</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref357_hg4" level="file">
+              <did>
+                <unittitle>Percival Borde, Lagos, Nigeria, 1971</unittitle>
+                <container id="aspace_ff29a66f583895c3e214ca9fb416b59d" label="Mixed Materials"
+                  type="box">9</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref358_z5y" level="file">
+              <did>
+                <unittitle>Onwin Borde drumming, circa 1980-1989</unittitle>
+                <container id="aspace_59f6101b3b774c60866e343e817e94e8" label="Mixed Materials"
+                  type="box">9</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref359_8pj" level="file">
+              <did>
+                <unittitle>Lecture Demonstration, Emory University, Atlanta, circa
+                  1980-1989</unittitle>
+                <container id="aspace_806bf4aac711bbd637cd1c634c7c2975" label="Mixed Materials"
+                  type="box">9</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref360_c8r" level="file">
+              <did>
+                <unittitle>Panel Discussion, circa 1980-1989</unittitle>
+                <container id="aspace_c12016476b8807eba5f25c55a99c8962" label="Mixed Materials"
+                  type="box">9</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref361_boo" level="file">
+              <did>
+                <unittitle>Primus with Marilyn Middleton, circa 1980-1989</unittitle>
+                <container id="aspace_d98a25618153e49970517f571171fb55" label="Mixed Materials"
+                  type="box">9</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref362_cw8" level="file">
+              <did>
+                <unittitle>Primus at White Plains High School, circa 1980-1989</unittitle>
+                <container id="aspace_1449fbf12e80aebf2cf8a7fa1d1e929b" label="Mixed Materials"
+                  type="box">9</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref363_6uz" level="file">
+              <did>
+                <unittitle><title render="italic">Shango de Ima</title>, circa 1980-1989</unittitle>
+                <container id="aspace_9282fb4bf3968274c6e83c6deefcca30" label="Mixed Materials"
+                  type="box">9</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref364_21p" level="file">
+              <did>
+                <unittitle>Unidentified, circa 1980-1994</unittitle>
+                <container id="aspace_5a6f7835304bd679407f82e6a4828277" label="Mixed Materials"
+                  type="box">9</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref365_nia" level="file">
+              <did>
+                <unittitle>Primus at Murray and Peggy Schwartz's home, 1983</unittitle>
+                <container id="aspace_c123f8d53bd5bff0d90bca86afab58eb" label="Mixed Materials"
+                  type="box">9</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref366_rw5" level="file">
+              <did>
+                <unittitle>Students, Dance Workshop, Apr. 6, 1984</unittitle>
+                <container id="aspace_9a49c3fdc814f67abbcabdab32a2809b" label="Mixed Materials"
+                  type="box">9</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref367_lm2" level="file">
+              <did>
+                <unittitle>Primus with Maya Angelou and Onwin Borde, 1987</unittitle>
+                <container id="aspace_e0c84b1bdc601e82b9558b799f88937b" label="Mixed Materials"
+                  type="box">10</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref368_ni8" level="file">
+              <did>
+                <unittitle>Primus and Shepard Roderick, Barbados, circa 1987</unittitle>
+                <container id="aspace_c890d3c69d845340abfdfba9790e6962" label="Mixed Materials"
+                  type="box">10</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref369_zaw" level="file">
+              <did>
+                <unittitle>Primus at Murray and Peggy Schwartz's home, 1989</unittitle>
+                <container id="aspace_1faec6d6e164cdc54fda4c2a4f1440fd" label="Mixed Materials"
+                  type="box">10</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref370_cd2" level="file">
+              <did>
+                <unittitle>Tokunaga Dance Kompany, Boston, circa 1992</unittitle>
+                <container id="aspace_90860a2b11cf4192fc36bd2197c768a5" label="Mixed Materials"
+                  type="box">10</container>
+              </did>
+            </c04>
+          </c03>
+        </c02>
+        <c02 id="aspace_ref375_0gz" level="subseries">
+          <did>
+            <unittitle>Contact Sheets, circa 1940-1984</unittitle>
+            <physdesc altrender="whole"><extent altrender="materialtype spaceoccupied">8
+                folders</extent></physdesc>
+          </did>
+          <scopecontent id="aspace_45c6b3d099994ac6f6e338c8afd2934f">
+            <head>Scope and Contents note</head>
+            <p>None of the contact sheets in this series has its accompanying negatives. There are,
+              however, a few contact sheets with their accompanying negatives in the Negatives
+              series.</p>
+          </scopecontent>
+          <arrangement id="aspace_02de39b59d50cc8b43e79a2e02118a0f">
+            <head>Arrangement note</head>
+            <p>Arranged chronologically within three subseries: Publicity, Performance, and
+              Snapshots.</p>
+          </arrangement>
+          <c03 id="aspace_ref377_93n" level="subseries">
+            <did>
+              <unittitle>Publicity, circa 1940-1959</unittitle>
+            </did>
+            <c04 id="aspace_ref378_4k5" level="file">
+              <did>
+                <unittitle>Primus and Company (or students), circa 1940-1949</unittitle>
+                <container id="aspace_da3e4f7ad7f4f76edabacdeac304fc09" label="Mixed Materials"
+                  type="box">10</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref379_8l3" level="file">
+              <did>
+                <unittitle>Primus Company Rehearsal, circa 1950-1959</unittitle>
+                <container id="aspace_2c9c5dab2a503d875ef26ce1aba56965" label="Mixed Materials"
+                  type="box">10</container>
+              </did>
+            </c04>
+          </c03>
+          <c03 id="aspace_ref380_ul4" level="subseries">
+            <did>
+              <unittitle>Performance, circa 1940-1984</unittitle>
+            </did>
+            <c04 id="aspace_ref381_ijg" level="file">
+              <did>
+                <unittitle>Primus, circa 1940-1949</unittitle>
+                <container id="aspace_a182d463ced727e5a890f74597fe04b5" label="Mixed Materials"
+                  type="box">10</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref382_99q" level="file">
+              <did>
+                <unittitle>Primus at Jacob's Pillow, 1950</unittitle>
+                <container id="aspace_1fac1aa3d6d28f81e3f1b01d654d4c30" label="Mixed Materials"
+                  type="box">10</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref383_pmw" level="file">
+              <did>
+                <unittitle>Onwin Borde, circa 1965</unittitle>
+                <container id="aspace_94b8b5d80ddf4b29d1f3974108501cbf" label="Mixed Materials"
+                  type="box">10</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref384_7lv" level="file">
+              <did>
+                <unittitle>Primus with unidentified company, 1984</unittitle>
+                <container id="aspace_dd1a6aa9ac49a7fd8ac0b132a6530812" label="Mixed Materials"
+                  type="box">10</container>
+              </did>
+            </c04>
+          </c03>
+          <c03 id="aspace_ref385_wf2" level="subseries">
+            <did>
+              <unittitle>Snapshots, circa 1950-1959</unittitle>
+            </did>
+            <c04 id="aspace_ref386_7p8" level="file">
+              <did>
+                <unittitle>Primus, circa 1950-1959</unittitle>
+                <container id="aspace_434ae1754de23a525455626150befc31" label="Mixed Materials"
+                  type="box">10</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref387_33t" level="file">
+              <did>
+                <unittitle>Primus, Percival Borde, Onwin Borde, circa 1958</unittitle>
+                <container id="aspace_2ac273b2b77acf4300043fa6ef37b69e" label="Mixed Materials"
+                  type="box">10</container>
+              </did>
+            </c04>
+          </c03>
+        </c02>
+        <c02 id="aspace_ref390_jao" level="subseries">
+          <did>
+            <unittitle>Negatives, circa 1930-1988 and undated</unittitle>
+            <physdesc altrender="whole"><extent altrender="materialtype spaceoccupied">14
+                folders</extent></physdesc>
+          </did>
+          <scopecontent id="aspace_e8acf9a282f607302589306be27dc3d1">
+            <head>Scope and Contents note</head>
+            <p>Contains some of the negatives of prints found in the Photographic Prints subseries.
+              There are also numerous negatives of snapshots of family members with Onwin Borde,
+              primarily during his infant and toddler years, 1955-1957. Other negatives include
+              performances of Primus and other well-known modern dancers such as Jose Limon and
+              Helen Tamiris at Jacob's Pillow Dance Festival in 1950.</p>
+          </scopecontent>
+          <arrangement id="aspace_72419a6e7c478d552698a5c063c28621">
+            <head>Arrangement note</head>
+            <p>Arranged chronologically within the series of Portraits, Publicity, Performance, and
+              Snapshots. Primus' negatives from her trips to Africa are arranged in a separate,
+              following series.</p>
+          </arrangement>
+          <c03 id="aspace_ref392_aip" level="subseries">
+            <did>
+              <unittitle>Portraits, circa 1945</unittitle>
+            </did>
+            <c04 id="aspace_ref393_5kc" level="file">
+              <did>
+                <unittitle>Primus, circa 1945</unittitle>
+                <container id="aspace_ba483a58431fef0bfa97a96b8b0404c9" label="Mixed Materials"
+                  type="box">10</container>
+              </did>
+            </c04>
+          </c03>
+          <c03 id="aspace_ref394_rzq" level="subseries">
+            <did>
+              <unittitle>Publicity, circa 1945-1988</unittitle>
+            </did>
+            <c04 id="aspace_ref395_6xw" level="file">
+              <did>
+                <unittitle><title render="italic">Spirituals</title>, circa 1945</unittitle>
+                <container id="aspace_a06b05363588c851d3af564a099003f9" label="Mixed Materials"
+                  type="box">10</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref396_zuq" level="file">
+              <did>
+                <unittitle>Primus, circa 1945-1988</unittitle>
+                <container id="aspace_f3596a9d5e7c5c9807d4e100055de327" label="Mixed Materials"
+                  type="box">10</container>
+              </did>
+            </c04>
+          </c03>
+          <c03 id="aspace_ref397_71o" level="subseries">
+            <did>
+              <unittitle>Performance, 1949-1950</unittitle>
+            </did>
+            <c04 id="aspace_ref398_3ui" level="file">
+              <did>
+                <unittitle><title render="italic">Dance of Lightning</title> and <title
+                    render="italic">Prayer of Thanksgiving</title>, 1949</unittitle>
+                <container id="aspace_116aaca0afdbf319dc68ef3a436f0f31" label="Mixed Materials"
+                  type="box">10</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref399_mjc" level="file">
+              <did>
+                <unittitle>Limon, Ide, Helen, Cimber, Lindquist, Rivera, Jacob's Pillow,
+                  1950</unittitle>
+                <container id="aspace_988f00c1ab41408739a457b7196f7152" label="Mixed Materials"
+                  type="box">10</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref400_b8z" level="file">
+              <did>
+                <unittitle><title render="italic">Dance of Lightning</title> and <title
+                    render="italic">The Negro Speaks of Rivers</title>, 1950</unittitle>
+                <container id="aspace_941e18152936cd4cbe25ce5fc5df951c" label="Mixed Materials"
+                  type="box">10</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref401_yio" level="file">
+              <did>
+                <unittitle>Primus, Jacob's Pillow, 1950</unittitle>
+                <container id="aspace_5963f5f2f1d6dbcb7ec7fb3d56b7035f" label="Mixed Materials"
+                  type="box">10</container>
+              </did>
+            </c04>
+          </c03>
+          <c03 id="aspace_ref402_64v" level="subseries">
+            <did>
+              <unittitle>Snapshots, circa 1930-1965 and undated</unittitle>
+            </did>
+            <c04 id="aspace_ref403_0px" level="file">
+              <did>
+                <unittitle>Unidentified, circa 1930-1949</unittitle>
+                <container id="aspace_18edfafe4334292fe6bd74af24ea9ab8" label="Mixed Materials"
+                  type="box">10</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref404_75u" level="file">
+              <did>
+                <unittitle>Primus and family, 1955-1957</unittitle>
+                <container id="aspace_f464dfa332b66e1d0922d86e73d6cac6" label="Mixed Materials"
+                  type="box">10</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref405_y2o" level="file">
+              <did>
+                <unittitle>Children, including Onwin Borde, circa 1955-1959</unittitle>
+                <container id="aspace_d9d28ccea25460e2390aee14f45d78d7" label="Mixed Materials"
+                  type="box">10</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref406_at7" level="file">
+              <did>
+                <unittitle>Percival Borde and Onwin Borde, circa 1960</unittitle>
+                <container id="aspace_ae7c051ba1f34de0c3183affa9294d82" label="Mixed Materials"
+                  type="box">10</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref407_hlv" level="file">
+              <did>
+                <unittitle>Onwin Borde, circa 1960</unittitle>
+                <container id="aspace_1f2d277f01eba75a4b782d0f71028d49" label="Mixed Materials"
+                  type="box">10</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref408_a12" level="file">
+              <did>
+                <unittitle>Onwin Borde, circa 1965</unittitle>
+                <container id="aspace_8c9e9069b92779a0b420ac2decf40357" label="Mixed Materials"
+                  type="box">10</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref409_wry" level="file">
+              <did>
+                <unittitle>Primus and Percival Borde, undated</unittitle>
+                <container id="aspace_5ae896e37e70cf3aa39f6968a50b96ff" label="Mixed Materials"
+                  type="box">10</container>
+              </did>
+            </c04>
+          </c03>
+        </c02>
+        <c02 id="aspace_ref412_t06" level="subseries">
+          <did>
+            <unittitle>Primus' Ethnographic Studies from Africa, 1949, 1960-1963</unittitle>
+          </did>
+          <scopecontent id="aspace_224b960b261772a1486ce2e5a4b2ad99">
+            <head>Scope and Contents note</head>
+            <p>This subseries consists of negatives and transpareancies taken by Primus in Africa in
+              1949 and 1960-1963. They document the people, landscapes, vegetation, habitats,
+              crafts, instruments, dance, dress, and rituals of the African tribes she visited.</p>
+          </scopecontent>
+          <c03 id="aspace_ref413_xq1" level="subseries">
+            <did>
+              <unittitle>Negatives Identified by Primus, 1949, 1960-1963</unittitle>
+              <physdesc altrender="whole"><extent altrender="materialtype spaceoccupied">16
+                  folders</extent></physdesc>
+            </did>
+            <arrangement id="aspace_526926731978213db292770f6e96379a">
+              <head>Arrangement note</head>
+              <p>The negatives in this subseries were contained in an index card box and identified
+                by Primus according to city or subject, although they were not arranged in their
+                current alphabetical order.</p>
+            </arrangement>
+            <c04 id="aspace_ref415_npa" level="file">
+              <did>
+                <unittitle>Aba (Nigeria)</unittitle>
+                <container id="aspace_52c38c58d184b3b43fd7897b7fa0a12b" label="Mixed Materials"
+                  type="box">10</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref416_hqf" level="file">
+              <did>
+                <unittitle>Benin (Nigeria)</unittitle>
+                <container id="aspace_50f083650bad441854b019dd3320cd69" label="Mixed Materials"
+                  type="box">10</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref417_8qf" level="file">
+              <did>
+                <unittitle>Boma (Belgian Congo)</unittitle>
+                <container id="aspace_9d69825d6de1cf45afc265c1b5737afe" label="Mixed Materials"
+                  type="box">10</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref418_kus" level="file">
+              <did>
+                <unittitle>Bonny (Nigeria)</unittitle>
+                <container id="aspace_de5569b00d35b3953947ce75e295ae4b" label="Mixed Materials"
+                  type="box">10</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref419_5dn" level="file">
+              <did>
+                <unittitle>Duala (Cameroon)</unittitle>
+                <container id="aspace_98e1f08cbc985af5eddbed45fdbc9f98" label="Mixed Materials"
+                  type="box">10</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref420_g23" level="file">
+              <did>
+                <unittitle>Ife (Nigeria)</unittitle>
+                <container id="aspace_06782f55d8da52760ae2f0ac9ba1e9c3" label="Mixed Materials"
+                  type="box">10</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref421_z1h" level="file">
+              <did>
+                <unittitle>Jos (Nigeria)</unittitle>
+                <container id="aspace_98c2f97f8a0ba728daa68bad29bffeca" label="Mixed Materials"
+                  type="box">11</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref422_oe1" level="file">
+              <did>
+                <unittitle>Kalabar (Nigeria)</unittitle>
+                <container id="aspace_565c744170c7be71700f239350e2b112" label="Mixed Materials"
+                  type="box">11</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref423_bx9" level="file">
+              <did>
+                <unittitle>Kano (Nigeria)</unittitle>
+                <container id="aspace_059d1bb616c5948310a6f76d924d0148" label="Mixed Materials"
+                  type="box">11</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref424_rye" level="file">
+              <did>
+                <unittitle>Lagos (Nigeria)</unittitle>
+                <container id="aspace_d70a8940cd2daadca40df37eff7243ca" label="Mixed Materials"
+                  type="box">11</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref425_ask" level="file">
+              <did>
+                <unittitle>Missions</unittitle>
+                <container id="aspace_e8b9ced79db74da3773bbb6ac9b61bb9" label="Mixed Materials"
+                  type="box">11</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref426_wzh" level="file">
+              <did>
+                <unittitle>Oron (Nigeria)</unittitle>
+                <container id="aspace_73c47a771bb81b7f27d133f2e0a80a32" label="Mixed Materials"
+                  type="box">11</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref427_og6" level="file">
+              <did>
+                <unittitle>Ship</unittitle>
+                <container id="aspace_f5abc03dd72a232d38941ba523014493" label="Mixed Materials"
+                  type="box">11</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref428_ro5" level="file">
+              <did>
+                <unittitle>Usumbura (Burundi)</unittitle>
+                <container id="aspace_ca8419ea5674b6b0d9b7d0378b3ad763" label="Mixed Materials"
+                  type="box">11</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref429_g20" level="file">
+              <did>
+                <unittitle>Warri (Nigeria)</unittitle>
+                <container id="aspace_a60e571acc5b4ff7d56cbc5b2b995dc4" label="Mixed Materials"
+                  type="box">11</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref430_sos" level="file">
+              <did>
+                <unittitle>Zaria (Nigeria)</unittitle>
+                <container id="aspace_0d30d7c65ac68b25471fda5cbfd9aa7d" label="Mixed Materials"
+                  type="box">11</container>
+              </did>
+            </c04>
+          </c03>
+          <c03 id="aspace_ref433_mwz" level="subseries">
+            <did>
+              <unittitle>Negatives not Identified by Primus, 1949</unittitle>
+              <physdesc altrender="whole"><extent altrender="materialtype spaceoccupied">13
+                  folders</extent></physdesc>
+            </did>
+            <scopecontent id="aspace_127773040a006b35ce2e655dba6d037a">
+              <head>Scope and Contents note</head>
+              <p>The majority of these negatives likely date to Primus' 1949 Rosenwald Foundation
+                grant tour.</p>
+            </scopecontent>
+            <arrangement id="aspace_dcaa018649d545310360e37646746d45">
+              <head>Arrangement note</head>
+              <p>The negatives in this subseries were tentatively identified or categorized by ADF
+                Archives staff and arranged alphabetically by tribe or subject.</p>
+            </arrangement>
+            <c04 id="aspace_ref435_yck" level="file">
+              <did>
+                <unittitle>Ashanti [?] (Ghana)</unittitle>
+                <container id="aspace_fbd0637181d01063f4a7db8da3608d2e" label="Mixed Materials"
+                  type="box">11</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref436_7wu" level="file">
+              <did>
+                <unittitle>Bakuba (Belgian Congo) (4 folders)</unittitle>
+                <container id="aspace_895499af7301244bc54cfafa5ab7e0f0" label="Mixed Materials"
+                  type="box">11</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref437_khu" level="file">
+              <did>
+                <unittitle>Flora and Fauna</unittitle>
+                <container id="aspace_fbd46f3e9f40940b0eff399edaa51aa9" label="Mixed Materials"
+                  type="box">11</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref438_so8" level="file">
+              <did>
+                <unittitle>Ife [?] (Nigeria)</unittitle>
+                <container id="aspace_1f37b8cc09739d14d67a85ab8d1483f0" label="Mixed Materials"
+                  type="box">11</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref439_nlw" level="file">
+              <did>
+                <unittitle>Kampo [?] (Senegal)</unittitle>
+                <container id="aspace_9f052cfbe41b76c48fde5047b9072f9e" label="Mixed Materials"
+                  type="box">11</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref440_3y9" level="file">
+              <did>
+                <unittitle>Mano (Liberia) (3 folders)</unittitle>
+                <container id="aspace_c9ce915df242da7a9a6e70eb0a9b0b98" label="Mixed Materials"
+                  type="box">11</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref441_j7y" level="file">
+              <did>
+                <unittitle>Material Culture (2 folders)</unittitle>
+                <container id="aspace_e966e42de3dccb5ed35d2a51a4a05580" label="Mixed Materials"
+                  type="box">11</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref442_q43" level="file">
+              <did>
+                <unittitle>Primus</unittitle>
+                <container id="aspace_f5ddd04db9284813761e902ead45321f" label="Mixed Materials"
+                  type="box">11</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref443_uuu" level="file">
+              <did>
+                <unittitle>Watusi (Rwanda) (4 folders)</unittitle>
+                <container id="aspace_0cfc7ccdb09406c0d0d2129745d3ec63" label="Mixed Materials"
+                  type="box">11</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref444_5qd" level="file">
+              <did>
+                <unittitle>Unidentified Children</unittitle>
+                <container id="aspace_e6368add08d77b7cb07186ca2906f760" label="Mixed Materials"
+                  type="box">11</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref445_gm4" level="file">
+              <did>
+                <unittitle>Unidentified People (4 folders)</unittitle>
+                <container id="aspace_7b112c4bb718aec20d40aaa4b3e0f464" label="Mixed Materials"
+                  type="box">11</container>
+              </did>
+            </c04>
+          </c03>
+          <c03 id="aspace_ref448_jrh" level="subseries">
+            <did>
+              <unittitle>Transparencies not Identified by Primus, 1949, 1960-1963</unittitle>
+              <physdesc altrender="whole"><extent altrender="materialtype spaceoccupied">2
+                  folders</extent></physdesc>
+            </did>
+            <arrangement id="aspace_9b1c548b44c5ced78cb0436453d76b60">
+              <head>Arrangement note</head>
+              <p>The transparencies in this subseries were tentatively identified or categorized by
+                ADF Archives staff and arranged alphabetically by tribe or subject.</p>
+            </arrangement>
+            <c04 id="aspace_ref450_7s8" level="file">
+              <did>
+                <unittitle>Accra (Ghana), circa 1962</unittitle>
+                <container id="aspace_d09965c0fc6b5d08eadfe16e448238fe" label="Mixed Materials"
+                  type="box">11</container>
+              </did>
+            </c04>
+            <c04 id="aspace_ref451_swc" level="file">
+              <did>
+                <unittitle>Bakuba (Belgian Congo)</unittitle>
+                <container id="aspace_bc5445a3f4b26edc338f26c6ef06c14e" label="Mixed Materials"
+                  type="box">11</container>
+              </did>
+            </c04>
+          </c03>
+        </c02>
+      </c01>
+      <c01 id="aspace_ref455_asm" level="series">
+        <did>
+          <unittitle>Moving Images, circa 1949-1992</unittitle>
+          <physdesc altrender="whole"><extent altrender="materialtype spaceoccupied">22
+              items</extent></physdesc>
+        </did>
+        <accessrestrict id="aspace_8256ed6f15f19b7ea30542c2ac193eac">
+          <head>Conditions Governing Access note</head>
+          <p>Viewing of these materials requires the use of reference copies. When a reference copy
+            exists, it is noted in the finding aid. Originals are restricted.</p>
+        </accessrestrict>
+        <scopecontent id="aspace_719b9bcd6ed0de2f43c7e3e42bc9a5a2">
+          <head>Scope and Contents note</head>
+          <p>Includes 15 reels of 8mm film, primarily containing images of Africa shot by Primus in
+            either 1949 or 1960 to 1963. This series also contains amateur VHS footage of Alvin
+            Ailey American Dance Theatre rehearsing Primus' <title type="simple" render="italic"
+              >Impinyuza</title> and of a speech Primus presented at Howard University in 1992. Also
+            present is an interview with Primus conducted for the Standifer Oral History Archive in
+            1989, as well as a 1981 feature on Primus by Schenectady PBS affiliate WMHT. Titles are
+            transcribed from the original label on each item.</p>
+        </scopecontent>
+        <arrangement id="aspace_16bca3fb7cd95c159436fa7a2090925c">
+          <head>Arrangement note</head>
+          <p>Arranged by format and then by item number, as assigned by the staff of Free to
+            Dance.</p>
+        </arrangement>
+        <c02 id="aspace_ref457_yax" level="subseries">
+          <did>
+            <unittitle>8 mm Film, circa 1949-1969</unittitle>
+          </did>
+          <scopecontent id="aspace_6dac072d4bc2a37d3f1376b84602b406">
+            <head>Scope and Contents note</head>
+            <p>Films marked with an asterisk* are also represented on Reference Copy DVD #4781 (Box
+              16), Preservation Copy Betacam SP #4781 (Box 13), and Preservation Copy DigiBeta #4781
+              (Box 13). Originals and preservation copies are restricted.</p>
+          </scopecontent>
+          <c03 id="aspace_ref458_scz" level="file">
+            <did>
+              <unittitle>051-01-5 <title render="doublequote">50' B/W Bullfight</title>*</unittitle>
+              <container id="aspace_c56d6549fb981c166ebda21ee7b638dc" label="Mixed Materials"
+                type="box">12</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref459_ztu" level="file">
+            <did>
+              <unittitle>051-03-5 <title render="doublequote">dancing outside, in front of two
+                  doors-very light</title></unittitle>
+              <container id="aspace_9e117cc0476df9048d8c2789a3252921" label="Mixed Materials"
+                type="box">12</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref460_9k7" level="file">
+            <did>
+              <unittitle>051-04-5 <title render="doublequote">Great Wall, Donkeys, Looks like more
+                  African dancing, 1960s</title>*</unittitle>
+              <container id="aspace_88863eefe6a70dda61b2f80d5e388b64" label="Mixed Materials"
+                type="box">12</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref461_t6x" level="file">
+            <did>
+              <unittitle>051-05-5 <title render="doublequote">Native Guitar, Street in
+                Lagos</title></unittitle>
+              <container id="aspace_83ce744b48e3217e5e7b760ee4c226ab" label="Mixed Materials"
+                type="box">12</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref462_eun" level="file">
+            <did>
+              <unittitle>051-06-5 <title render="doublequote">Pearl at Jacob's
+                Pillow</title></unittitle>
+              <container id="aspace_ca28ae50197dc69b10ab438f76d01761" label="Mixed Materials"
+                type="box">12</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref463_j1j" level="file">
+            <did>
+              <unittitle>051-07-5 <title render="doublequote">Bullfight, color</title>*</unittitle>
+              <container id="aspace_4e6536ede8484bd67bca379734ce5b6c" label="Mixed Materials"
+                type="box">12</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref464_xg4" level="file">
+            <did>
+              <unittitle>051-08-5 <title render="doublequote">50' B/W, good exposure. Probably not
+                  Africa-people coming out of buildings</title></unittitle>
+              <container id="aspace_1ac1962b5e58df9ed78693353a486525" label="Mixed Materials"
+                type="box">12</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref465_2bf" level="file">
+            <did>
+              <unittitle>051-09-5 <title render="doublequote">50' color
+                Bullfight</title>*</unittitle>
+              <container id="aspace_2a5bc2d8117914df343ae7f30085cda6" label="Mixed Materials"
+                type="box">12</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref466_det" level="file">
+            <did>
+              <unittitle>051-10-5 <title render="doublequote">looks like female African standing,
+                  then dancing in road. Full roll</title></unittitle>
+              <container id="aspace_12b3856d62adf7ca6d000e88c08f024f" label="Mixed Materials"
+                type="box">12</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref467_isv" level="file">
+            <did>
+              <unittitle>051-11-5 <title render="doublequote">dancing, color. Soloist in white
+                  skirt</title>*</unittitle>
+              <container id="aspace_1134b565c29266e8db0487258a038b34" label="Mixed Materials"
+                type="box">12</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref468_svx" level="file">
+            <did>
+              <unittitle>051-14-5 <title render="doublequote">sheep or cow under a
+                tree</title>*</unittitle>
+              <container id="aspace_26433641da88dddd891454ac3e227e1e" label="Mixed Materials"
+                type="box">12</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref469_r5q" level="file">
+            <did>
+              <unittitle>051-15-5 <title render="doublequote">color-very light</title>*</unittitle>
+              <container id="aspace_f0aa5106812d103bfd37bf7d95638be4" label="Mixed Materials"
+                type="box">12</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref470_xmc" level="file">
+            <did>
+              <unittitle>051-16-5 <title render="doublequote">the road, shot from inside a car,
+                  color</title>*</unittitle>
+              <container id="aspace_216c75a880299c57948b0cd35cc2f949" label="Mixed Materials"
+                type="box">12</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref471_xte" level="file">
+            <did>
+              <unittitle>051-17-5 <title render="doublequote">date: 1958 house/hut/tent
+                  color</title>*</unittitle>
+              <container id="aspace_c0e93566122692c04be56fa178c3851f" label="Mixed Materials"
+                type="box">12</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref472_xuk" level="file">
+            <did>
+              <unittitle>051-18-5 <title render="doublequote">person standing in front of
+                  stairs</title>*</unittitle>
+              <container id="aspace_917e30b66a037c10f51fd49e4be4272d" label="Mixed Materials"
+                type="box">12</container>
+            </did>
+          </c03>
+        </c02>
+        <c02 id="aspace_ref474_dpi" level="subseries">
+          <did>
+            <unittitle>VHS Videocassettes, circa 1989-1992 and undated</unittitle>
+          </did>
+          <scopecontent id="aspace_d4c610a12e2821ac11176d599db33333">
+            <head>Scope and Contents note</head>
+            <p>Videocassettes marked with an asterisk* are represented on individual reference copy
+              DVDs (Box 16) and individual preservation copy Betacam SP videocassettes (Box 13).
+              Originals and preservation copies are restricted.</p>
+          </scopecontent>
+          <c03 id="aspace_ref475_1gr" level="file">
+            <did>
+              <unittitle>051-12-4 <title render="doublequote">Pearl Primus in
+                Africa</title>*</unittitle>
+              <container id="aspace_af275927c65fc9bb55c6ca5c4a7d61b4" label="Mixed Materials"
+                type="box">13</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref476_bge" level="file">
+            <did>
+              <unittitle>051-13-4 <title render="doublequote">Sathi Ailey Impinyuza-Sun. 10/21 TRT:
+                  23:22 5/21/92</title>*</unittitle>
+              <container id="aspace_fe9dd88c19e84d0f125c02fc0193e571" label="Mixed Materials"
+                type="box">13</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref477_ftx" level="file">
+            <did>
+              <unittitle>051-14-4 <title render="doublequote">Luncheon at Howard University
+                  1992</title>*</unittitle>
+              <container id="aspace_fc6067d3f2723a29119ca0a1cd616984" label="Mixed Materials"
+                type="box">13</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref478_p5y" level="file">
+            <did>
+              <unittitle>051-15-4 <title render="doublequote">Impinyuza Rehearsal
+                8/7/90</title></unittitle>
+              <container id="aspace_626b0ae64a7c3657e324b8f6e953db84" label="Mixed Materials"
+                type="box">13</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref479_m1r" level="file">
+            <did>
+              <unittitle>051-16-4 <title render="doublequote">Dr. Pearl Primus Interviewed by James
+                  Standifer, Feb. 16, 1989</title></unittitle>
+              <container id="aspace_fdef7ff5a6d57e3825a1a837271341f3" label="Mixed Materials"
+                type="box">13</container>
+            </did>
+          </c03>
+        </c02>
+        <c02 id="aspace_ref481_x33" level="subseries">
+          <did>
+            <unittitle>U-Matic Videocassettes, 1981</unittitle>
+          </did>
+          <scopecontent id="aspace_37e878755ff2efbb784e381cd65418d0">
+            <head>Scope and Contents note</head>
+            <p>These two tapes are represented on a single reference copy DVD (Box 16) and two
+              individual preservation copy Betacam SP videocassettes (Box 13). Originals and
+              preservation copies are restricted.</p>
+          </scopecontent>
+          <c03 id="aspace_ref482_cf9" level="file">
+            <did>
+              <unittitle><title render="doublequote">Pearl Primus, Mon. 4/20/81</title>, WMHT-NY (2
+                videocassettes)</unittitle>
+              <container id="aspace_32e70ed0d6eb060942c90737b075310a" label="Mixed Materials"
+                type="box">13</container>
+            </did>
+          </c03>
+        </c02>
+      </c01>
+      <c01 id="aspace_ref487_ott" level="series">
+        <did>
+          <unittitle>Sound Recordings, 1950-1989 and undated</unittitle>
+          <physdesc altrender="whole"><extent altrender="materialtype spaceoccupied">68
+              items</extent></physdesc>
+        </did>
+        <accessrestrict id="aspace_3eab72f518f14a1982d0a75d7e41f1b4">
+          <head>Conditions Governing Access note</head>
+          <p>Listening to these materials requires the use of reference copies. Sound recordings
+            marked with an asterisk* are also represented on individual reference copy audio CDs
+            (Box 16). Originals are restricted.</p>
+        </accessrestrict>
+        <scopecontent id="aspace_10f1590a811462e80965077b2b7d68bc">
+          <head>Scope and Contents note</head>
+          <p>Contains 1/4-inch reel-to-reel audiotapes and audiocassettes belonging to Primus,
+            including interviews with Primus in 1950 and 1956 and a lecture-demonstration on <title
+              type="simple" render="doublequote">Dance and Life Crisis</title>. This series also
+            contains a copy of <title type="simple" render="italic">Pearl Primus' Africa</title>, a
+            set of three phonograph records of African stories, proverbs, and songs that Primus
+            narrated, as well as copies of four other native music LPs. Also included are recordings
+            of chants, drumming, and singing likely used to accompany rehearsals, or perhaps made to
+            preserve native songs and rhythms for future study, although these are largely
+            unidentified. Home recordings and duplicates of popular music, including Josh White,
+            Miles Davis, Langston Hughes, and Billie Holiday, are also included.</p>
+          <p>Titles are copied from the original labels on the boxes of the sound reels and
+            audiocassettes. Additional notes appear in brackets, including spelled-out abbreviations
+            and uncertain readings of illegible titles.</p>
+        </scopecontent>
+        <arrangement id="aspace_8706816978936294b339c218e8b1d98e">
+          <head>Arrangement note</head>
+          <p>Arranged by format and by identifying numbers assigned by ADF staff.</p>
+        </arrangement>
+        <c02 id="aspace_ref489_58u" level="subseries">
+          <did>
+            <unittitle>1/4-Inch Reel-to-Reel Audiotapes, 1950-1988 and undated</unittitle>
+          </did>
+          <c03 id="aspace_ref490_qsa" level="file">
+            <did>
+              <unittitle>PPCAud1 <title render="doublequote">Fanti +
+                Group/Fanga</title>*</unittitle>
+              <container id="aspace_0892652209c653753973016097ed57de" label="Mixed Materials"
+                type="box">14</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref491_i06" level="file">
+            <did>
+              <unittitle>PPCAud2 <title render="doublequote">Shango Songs</title>*</unittitle>
+              <container id="aspace_ede8c1244a3b9ec2696fce9aee74997f" label="Mixed Materials"
+                type="box">14</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref492_qd4" level="file">
+            <did>
+              <unittitle>PPCAud3 <title render="doublequote">Priorities</title>*</unittitle>
+              <container id="aspace_5e08b1c3afca0c100a9a66523c0c8a1b" label="Mixed Materials"
+                type="box">14</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref493_eae" level="file">
+            <did>
+              <unittitle>PPCAud4 <title render="doublequote">Hard Times Blues
+                6/88</title></unittitle>
+              <container id="aspace_b7752d223164da953a394cac52b0eed8" label="Mixed Materials"
+                type="box">14</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref494_7te" level="file">
+            <did>
+              <unittitle>PPCAud5 <title render="doublequote">Fanga</title>*</unittitle>
+              <container id="aspace_c654b97d27e4fd93968575dbb72b8081" label="Mixed Materials"
+                type="box">14</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref495_904" level="file">
+            <did>
+              <unittitle>PPCAud6 <title render="doublequote">P. Primus Lecture
+                Coldstream</title>*</unittitle>
+              <container id="aspace_f4184fa01d88727c7c84bb8e867ef932" label="Mixed Materials"
+                type="box">14</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref497_6jp" level="file">
+            <did>
+              <unittitle>PPCAud8 Unidentified</unittitle>
+              <container id="aspace_ee220dae3d1d1f76fb39200d8c338f27" label="Mixed Materials"
+                type="box">14</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref498_wrf" level="file">
+            <did>
+              <unittitle>PPCAud9 Unidentified</unittitle>
+              <container id="aspace_29befd86b8eab1398a45a546ce681567" label="Mixed Materials"
+                type="box">14</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref499_0u2" level="file">
+            <did>
+              <unittitle>PPCAud10 Unidentified</unittitle>
+              <container id="aspace_5c4b45476d41af21fc0e0015b900afe1" label="Mixed Materials"
+                type="box">14</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref500_xej" level="file">
+            <did>
+              <unittitle>PPCAud11 <title render="doublequote">Aug-Sept 1955, Music and Talk-Pearl,
+                  Percy, Hada[mar?] Nul[tor?], 1st part Carr[icecon] [Sonny, Arnette]-Sept. 22/55,
+                  Belle pique, Cacoa oh Cacoa, Rock Daniel, Rattle</title>*</unittitle>
+              <container id="aspace_1ab74bfb5bf1bdf314c0ada4438b206c" label="Mixed Materials"
+                type="box">14</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref501_99u" level="file">
+            <did>
+              <unittitle>PPCAud11 <title render="doublequote">Aug-Sept 1955, Music and Talk-Pearl,
+                  Percy, Hada[mar?] Nul[tor?], 1st part Carr[icecon] [Sonny, Arnette]-Sept. 22/55,
+                  Belle pique, Cacoa oh Cacoa, Rock Daniel, Rattle</title>*</unittitle>
+              <container id="aspace_8266a377fafd61d66c332f300a406849" label="Mixed Materials"
+                type="box">14</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref502_g24" level="file">
+            <did>
+              <unittitle>PPCAud12 <title render="doublequote">Newark 7/9/57</title>*</unittitle>
+              <container id="aspace_7bc7e00e4e7e80dece0cd998c9687ce5" label="Mixed Materials"
+                type="box">14</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref503_a54" level="file">
+            <did>
+              <unittitle>PPCAud13 <title render="doublequote">Round Table Discussion, African
+                  Theater Arts, P.P. and P.B. [Pearl Primus and Percival Borde], [Ezra Koli?], P.
+                  Reynolds, W. Edwards, L. Jones, 11/2/73</title>*</unittitle>
+              <container id="aspace_a0e57c364ea79038f28c503cde8f6b1d" label="Mixed Materials"
+                type="box">14</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref504_9es" level="file">
+            <did>
+              <unittitle>PPCAud14 <title render="doublequote">St. Marks 1/hour 5 weeks 9/23 to
+                  10/26, Bondi + Company, Primus Guest Artist</title>*</unittitle>
+              <container id="aspace_841298f0deb8f4d64b7872af9d88b18c" label="Mixed Materials"
+                type="box">14</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref505_owy" level="file">
+            <did>
+              <unittitle>PPCAud15 <title render="doublequote">Records of [James and ?] with K.
+                  [Heldek?] Shango</title>*</unittitle>
+              <container id="aspace_3339b28a1656f76e4d27a2e50945f7fc" label="Mixed Materials"
+                type="box">14</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref506_8u0" level="file">
+            <did>
+              <unittitle>PPCAud16 Unidentified*</unittitle>
+              <container id="aspace_61741a5eae8948537b670eeee56225d3" label="Mixed Materials"
+                type="box">14</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref507_wuo" level="file">
+            <did>
+              <unittitle>PPCAud17 <title render="doublequote">Nights in Latin
+                America-Rumba</title></unittitle>
+              <container id="aspace_8de7f5d5ba3e7f1e55e6bc93f03d1e66" label="Mixed Materials"
+                type="box">14</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref508_d43" level="file">
+            <did>
+              <unittitle>PPCAud18 Unidentified*</unittitle>
+              <container id="aspace_bad3c6435dac8a0fae619c62fc591301" label="Mixed Materials"
+                type="box">14</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref509_t75" level="file">
+            <did>
+              <unittitle>PPCAud19 <title render="doublequote">Jack Lathrop 1951, Pearl Primus, Conn.
+                  Coll., Aug. 1950</title>*</unittitle>
+              <container id="aspace_9063fe2e7c7b8a86622cad9d38ab99b3" label="Mixed Materials"
+                type="box">14</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref510_swq" level="file">
+            <did>
+              <unittitle>PPCAud20 <title render="doublequote">Radio Interview P. Primus, Callinda
+                  Drumming, Sam and [Tiny?], Pearl Primus, 17 W. 24th Studio, Sun. April 8,
+                  1956</title>*</unittitle>
+              <container id="aspace_d715ebd81474b7185f4abc4c363464f3" label="Mixed Materials"
+                type="box">14</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref511_onk" level="file">
+            <did>
+              <unittitle>PPCAud21 <title render="doublequote">Recording of Drums and Singing By K.
+                  Ablack</title>*</unittitle>
+              <container id="aspace_2c1713fe1c839d493e3988325a933b82" label="Mixed Materials"
+                type="box">14</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref512_nlf" level="file">
+            <did>
+              <unittitle>PPCAud22 Unlabeled*</unittitle>
+              <container id="aspace_c6a21ecf2c4a330cc3074e4296da9a7f" label="Mixed Materials"
+                type="box">14</container>
+            </did>
+            <scopecontent id="aspace_9acb30ec0682d1e572a8b8f15be1b6f4">
+              <head>Scope and Contents note</head>
+              <p>Letter from Koko to Primus identifies reel as recordings by Koko given to Primus.
+                Original letter is in Correspondence, undated</p>
+            </scopecontent>
+          </c03>
+          <c03 id="aspace_ref514_k7q" level="file">
+            <did>
+              <unittitle>PPCAud23 <title render="doublequote">May 56 Speed Slow, Blue Sands-Buddy
+                  Collet [Collette], June 12 56, 'Dance off Buddy Fantaloon Dance Off' Onwin Primus,
+                  'Big Foot Mary' Drumming by Onwin, Onwin on drums 1 yr later July 1 '57 age 2
+                  1/2</title>*</unittitle>
+              <container id="aspace_c46e975703a235815117661ea60846fd" label="Mixed Materials"
+                type="box">14</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref515_78j" level="file">
+            <did>
+              <unittitle>PPCAud24 Unidentified*</unittitle>
+              <container id="aspace_5531a7bc64ad2fd9674548be7edbbc74" label="Mixed Materials"
+                type="box">14</container>
+            </did>
+          </c03>
+        </c02>
+        <c02 id="aspace_ref516_1ka" level="subseries">
+          <did>
+            <unittitle>Audiocassettes, 1973-1989 and undated</unittitle>
+          </did>
+          <c03 id="aspace_ref517_t7m" level="file">
+            <did>
+              <unittitle>PPCAud25 Sides 1 and 2: <title render="doublequote">321X Class
+                  3/13/73</title>*</unittitle>
+              <container id="aspace_23143a880063d5aa00efe7fc0ca729c4" label="Mixed Materials"
+                type="box">15</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref518_sn2" level="file">
+            <did>
+              <unittitle>PPCAud26 Sides 1 and 2: <title render="doublequote"
+                >Lecture</title>*</unittitle>
+              <container id="aspace_d09e8e05b9e2402114b4f690451b5e29" label="Mixed Materials"
+                type="box">15</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref519_lft" level="file">
+            <did>
+              <unittitle>PPCAud27 Side 1: <title render="doublequote">For transcript, Dance
+                  Studies</title>; Side 2: <title render="doublequote">African Dance Studies for
+                  transcription 7/9/75, Fanga</title>*</unittitle>
+              <container id="aspace_50e8df7bb5bd225a9b89f172aaa05526" label="Mixed Materials"
+                type="box">15</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref520_rtk" level="file">
+            <did>
+              <unittitle>PPCAud28 Side 1: <title render="doublequote">Explaining Talking Drum by
+                  Timi of [Cede] 8/5/73</title>; Side 2: Blank*</unittitle>
+              <container id="aspace_4d2ed6a80bef73f6df4078052e32506a" label="Mixed Materials"
+                type="box">15</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref521_ocz" level="file">
+            <did>
+              <unittitle>PPCAud29 Side 1: <title render="doublequote">The Gay Flamingoes, Secrets of
+                  the Pan, 4 Selections</title>; Side 2: Unidentified*</unittitle>
+              <container id="aspace_f26eced7d4fce9ab5d40d01e842ac42f" label="Mixed Materials"
+                type="box">15</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref522_kbh" level="file">
+            <did>
+              <unittitle>PPCAud30 Sides 1 and 2: <title render="doublequote">Spring 74 Lect[ure] at
+                  Sus Valley School</title>*</unittitle>
+              <container id="aspace_f9d3360b213432247aed19e8c9c0d11f" label="Mixed Materials"
+                type="box">15</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref523_jxq" level="file">
+            <did>
+              <unittitle>PPCAud31 Side 1: <title render="doublequote">Praise Song 8/17/73
+                  Osun</title>; Side 2: Blank*</unittitle>
+              <container id="aspace_51aac516914c2b29ec0ea94df2e1548e" label="Mixed Materials"
+                type="box">15</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref524_fs9" level="file">
+            <did>
+              <unittitle>PPCAud32 Side 1: <title render="doublequote">Notes on Artifacts, BOCES
+                  Stamford NY</title>; Side 2: Blank*</unittitle>
+              <container id="aspace_bf25ad572fb900a3708309dd75319159" label="Mixed Materials"
+                type="box">15</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref525_fzj" level="file">
+            <did>
+              <unittitle>PPCAud33 Sides 1 and 2: <title render="doublequote">Others </title>[Side 2
+                only on reference CD]*</unittitle>
+              <container id="aspace_4a07c0ae343ac09da6f5d7c03f98ab7c" label="Mixed Materials"
+                type="box">15</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref526_j51" level="file">
+            <did>
+              <unittitle>PPCAud34 Sides 1 and 2: <title render="doublequote">Summer Institute in
+                  Ethnic Studies Through the Arts</title>*</unittitle>
+              <container id="aspace_dc00b6956d173e7e3ae74444cc02a7eb" label="Mixed Materials"
+                type="box">15</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref527_0gq" level="file">
+            <did>
+              <unittitle>PPCAud35 Sides 1 and 2: <title render="doublequote">Festac 77 </title>[2nd
+                World Black and African Festival of Art and Culture, Jan. 1977]*</unittitle>
+              <container id="aspace_696b3f32e3d176d8b58a50e67f94ffe1" label="Mixed Materials"
+                type="box">15</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref528_81d" level="file">
+            <did>
+              <unittitle>PPCAud36 Side 1: <title render="doublequote">Arabo's Younger Brother
+                  8/10/75</title>; Side 2: <title render="doublequote">Lagos 1st Bata
+                  Narrative</title>*</unittitle>
+              <container id="aspace_ea76bb9f5649f2423e20e61f0bf8bcdc" label="Mixed Materials"
+                type="box">15</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref529_115" level="file">
+            <did>
+              <unittitle>PPCAud37 Side 1: <title render="doublequote">1-216 WA 107
+                  Caribbean-137</title></unittitle>
+              <container id="aspace_eb45ae7291e1272e7521b46c4cfba66f" label="Mixed Materials"
+                type="box">15</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref530_ah5" level="file">
+            <did>
+              <unittitle>PPCAud38 Side 1: <title render="doublequote">Discipline Bai T. Moon 8/12,
+                  Cultural Center 'in the Bush' 8/13</title>; Side 2: <title render="doublequote"
+                  >Cultural Center 8/13 Lect[ure] Demo[nstration]</title></unittitle>
+              <container id="aspace_b9bc955d40cef84ccfa1278eb0b948b0" label="Mixed Materials"
+                type="box">15</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref531_2gf" level="file">
+            <did>
+              <unittitle>PPCAud39 Sides 1 and 2: <title render="doublequote">Hi Life and JuJu
+                  Music</title></unittitle>
+              <container id="aspace_ac20ae7c45d736da6f324b3c223fdd2c" label="Mixed Materials"
+                type="box">15</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref532_p0k" level="file">
+            <did>
+              <unittitle>PPCAud40 Side 1: <title render="doublequote">8/9 5[?]-1st Part, Egon
+                  Gun-2nd part</title>; Side 2: <title render="doublequote">Egon Gun Lagos, Low
+                  Battery-8/9/75</title></unittitle>
+              <container id="aspace_fb6da66ca74d1bcc930ca1cfa1c7cb84" label="Mixed Materials"
+                type="box">15</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref533_7tn" level="file">
+            <did>
+              <unittitle>PPCAud41 Side 1: <title render="doublequote">Italian-B and B Fall 1973
+                  project</title>; Side 2: Blank</unittitle>
+              <container id="aspace_0d3ec49f8efdedc83851e1aa5531fca0" label="Mixed Materials"
+                type="box">15</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref534_0gh" level="file">
+            <did>
+              <unittitle>PPCAud42 Side 1: <title render="doublequote">Wisconsin #1-Superior</title>;
+                Side 2: <title render="doublequote">Superior Wisc 1971</title></unittitle>
+              <container id="aspace_b30d0f3dc5b85f38ebba0c359d5d9c62" label="Mixed Materials"
+                type="box">15</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref535_jvj" level="file">
+            <did>
+              <unittitle>PPCAud43 Side 1: <title render="doublequote">Why Mosquitoes
+                Buzz</title></unittitle>
+              <container id="aspace_fa91277f1b24cf610656ac6bb92c5a55" label="Mixed Materials"
+                type="box">15</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref536_ij5" level="file">
+            <did>
+              <unittitle>PPCAud44 Side 1: <title render="doublequote">Lect[ure] 292, 1st pt of
+                  Report, W.A., 71</title>; Side 2: <title render="doublequote">Report 1971
+                  (cont)</title></unittitle>
+              <container id="aspace_ddf63750701e7f0ffafb0bbb20935db2" label="Mixed Materials"
+                type="box">15</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref537_hwr" level="file">
+            <did>
+              <unittitle>PPCAud45 Side 1: <title render="doublequote">African Rhythms</title>; Side
+                2: <title render="doublequote">Lecture Caribbean Music-4/18/79 M101
+                Blank</title></unittitle>
+              <container id="aspace_0c713ed00c7702912ef4274565bb0e2e" label="Mixed Materials"
+                type="box">15</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref538_lma" level="file">
+            <did>
+              <unittitle>PPCAud46 Side 1: <title render="doublequote">Paraverbal Meeting
+                  11/3/89</title></unittitle>
+              <container id="aspace_3560648e657754bec08e0e757f8f8714" label="Mixed Materials"
+                type="box">15</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref539_3uv" level="file">
+            <did>
+              <unittitle>PPCAud47 Side 1: <title render="doublequote">292B Black Theatre</title>;
+                Side 2: <title render="doublequote">292B Africa Theatre</title></unittitle>
+              <container id="aspace_a652e90f740f3a17990c6820a4e20e8b" label="Mixed Materials"
+                type="box">15</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref540_y55" level="file">
+            <did>
+              <unittitle>PPCAud48 Side 1: <title render="doublequote">Drama/Dance Nigeria Dundun
+                  Set</title>; Side 2: <title render="doublequote">Yoruba Class
+                8/1/73</title></unittitle>
+              <container id="aspace_3a69ff5094012b28b2ed55a502164917" label="Mixed Materials"
+                type="box">15</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref541_fgn" level="file">
+            <did>
+              <unittitle>PPCAud49 Side 1: <title render="doublequote">5/8/74 [A Allvelty?]</title>;
+                Side 2: <title render="doublequote">French Class</title></unittitle>
+              <container id="aspace_9bc653a2a15e7d25d5d6f616235bc521" label="Mixed Materials"
+                type="box">15</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref542_pmc" level="file">
+            <did>
+              <unittitle>PPCAud50 Side 1: <title render="doublequote">Borroff</title></unittitle>
+              <container id="aspace_855bcd280d381c671a6344e9e6ddd00b" label="Mixed Materials"
+                type="box">15</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref543_jym" level="file">
+            <did>
+              <unittitle>PPCAud51 Unidentified</unittitle>
+              <container id="aspace_58275d911d32447890569abe6494ca8f" label="Mixed Materials"
+                type="box">15</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref544_qr0" level="file">
+            <did>
+              <unittitle>PPCAud52 Unidentified</unittitle>
+              <container id="aspace_cfdef8fb72052fa024413ff687a28808" label="Mixed Materials"
+                type="box">15</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref545_k1p" level="file">
+            <did>
+              <unittitle>PPCAud53 Side 1: <title render="doublequote">Lect at Chicago [?]
+                  Forks-10/16/75</title>; Side 2: <title render="doublequote">Cheuougo Forks Lect
+                  10/21/75</title></unittitle>
+              <container id="aspace_853dd11f6c1535ee16a04f94506799f4" label="Mixed Materials"
+                type="box">15</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref546_sgt" level="file">
+            <did>
+              <unittitle>PPCAud54 Side 1: <title render="doublequote">Seminar on Report
+                  11/22</title></unittitle>
+              <container id="aspace_52e2616f7d5627591d897809734165c5" label="Mixed Materials"
+                type="box">15</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref547_8p5" level="file">
+            <did>
+              <unittitle>PPCAud55 Side 1: <title render="doublequote">African Article Report
+                  11/17</title>; Side 2: <title render="doublequote">Asleiti Conference
+                  11/17</title></unittitle>
+              <container id="aspace_68f93c6ac9d69cf3845f89b9060a6614" label="Mixed Materials"
+                type="box">15</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref548_oix" level="file">
+            <did>
+              <unittitle>PPCAud56 Side 1: <title render="doublequote">PSU Lect Oregon 6/21</title>;
+                Side 2: <title render="doublequote">Lect-P.S.U.</title></unittitle>
+              <container id="aspace_85ec4abc20b01bb8fa3ed093bb7f015a" label="Mixed Materials"
+                type="box">15</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref549_75a" level="file">
+            <did>
+              <unittitle>PPCAud57 Sides 1 and 2: <title render="doublequote">Radical Liberal Arts
+                  May 1988</title></unittitle>
+              <container id="aspace_d2537e40d0a67a813e41d9b6b15754d4" label="Mixed Materials"
+                type="box">15</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref550_rqb" level="file">
+            <did>
+              <unittitle>PPCAud58 Side 1: <title render="doublequote">AA/Thea 137 and 207 c/w
+                  5/8/74</title></unittitle>
+              <container id="aspace_5a18728c1339054519cd874bdaae922d" label="Mixed Materials"
+                type="box">15</container>
+            </did>
+          </c03>
+          <c03 id="aspace_ref551_2d3" level="file">
+            <did>
+              <unittitle>PPCAud59 Side 1: <title render="doublequote">Tue Dije 8/9/73</title>; Side
+                2: <title render="doublequote">Tue Dije 8/9/73</title></unittitle>
+              <container id="aspace_bb461d46ef3c0ed0a9a3a96ce29db6a2" label="Mixed Materials"
+                type="box">15</container>
+            </did>
+          </c03>
+        </c02>
+      </c01>
+      <c01 id="aspace_ref565_t3e" level="series">
+        <did>
+          <unittitle>Artifacts, 1974-1991 and undated</unittitle>
+          <physdesc altrender="whole"><extent altrender="materialtype spaceoccupied">2.92 Linear
+              Feet</extent></physdesc>
+        </did>
+        <accessrestrict id="aspace_78e383d613245688a0f84315f09fd37e">
+          <head>Conditions Governing Access note</head>
+          <p>Costumes (Box 18) are restricted.</p>
+        </accessrestrict>
+        <scopecontent id="aspace_199f105bdb91b57b0d32d9191a3cc1da">
+          <head>Scope and Contents note</head>
+          <p>Contains seven plaques, awarded for achievement in modern dance, anthropology, and
+            teaching, and the 1991 Medal of Arts, awarded by President George H. W. Bush. This
+            series also contains three female and one male ballet slippers, assumed to have belonged
+            to Primus and her husband, Percival, and three dance costumes presumably worn by Primus.
+            Notable is the one identifiable costume, worn by Primus during performances of <title
+              type="simple" render="italic">The Negro Speaks of Rivers</title> and <title
+              type="simple" render="italic">Strange Fruit</title> in the mid-1940s.</p>
+        </scopecontent>
+        <c02 id="aspace_ref567_3lt" level="file">
+          <did>
+            <unittitle>Appreciation presented by African Heritage Class and African-American
+              Heritage Dance Club, 1974</unittitle>
+            <container id="aspace_0336e8a0d9092d509b7a408c77535a90" label="Mixed Materials"
+              type="box">17</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref568_owa" level="file">
+          <did>
+            <unittitle>Outstanding Pioneer Award presented by Audelco, 1977</unittitle>
+            <container id="aspace_73b298a424eb3298b862978e52167ea4" label="Mixed Materials"
+              type="box">17</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref569_huz" level="file">
+          <did>
+            <unittitle>Ernest Melby Award presented by NYU Alumni Association, 1986</unittitle>
+            <container id="aspace_91f9369b10253e149c4c772165e83859" label="Mixed Materials"
+              type="box">17</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref570_rm3" level="file">
+          <did>
+            <unittitle>Honorary Citizen of Atlanta, 1989</unittitle>
+            <container id="aspace_570282c578a4c549f459149296753ca1" label="Mixed Materials"
+              type="box">17</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref571_wlv" level="file">
+          <did>
+            <unittitle>Distinguished Achievement Award presented by Association of Black
+              Anthropologists, 1991</unittitle>
+            <container id="aspace_842077b8989dcbb29045ce375e9a5cc7" label="Mixed Materials"
+              type="box">17</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref572_axj" level="file">
+          <did>
+            <unittitle>National Medal of Arts, 1991</unittitle>
+            <container id="aspace_e257373c6ee4e286f20d306df6938fd0" label="Mixed Materials"
+              type="box">17</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref573_tcx" level="file">
+          <did>
+            <unittitle>Olaudah Equiano Award of Excellence, University of Utah, 1994</unittitle>
+            <container id="aspace_1a716b35133287950950fdd2aa4f3f4f" label="Mixed Materials"
+              type="box">17</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref574_7as" level="file">
+          <did>
+            <unittitle>Ballet shoes (three women's and one men's)</unittitle>
+            <container id="aspace_7be040242400080852d76516812911cd" label="Mixed Materials"
+              type="box">17</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref575_vs3" level="file">
+          <did>
+            <unittitle>Brown woven circle</unittitle>
+            <container id="aspace_e83c0ca991b08bb2b207d0208a197a47" label="Mixed Materials"
+              type="box">17</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref576_ls5" level="file">
+          <did>
+            <unittitle>P. Borde name Tag</unittitle>
+            <container id="aspace_aad080121c9fd76c9f068089a6d4b500" label="Mixed Materials"
+              type="box">17</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref577_lyw" level="file">
+          <did>
+            <unittitle>Rosary</unittitle>
+            <container id="aspace_a43af517c895c372c052890ae4d73241" label="Mixed Materials"
+              type="box">17</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref578_kou" level="file">
+          <did>
+            <unittitle>Woodblock stamp of image from African Ceremonial</unittitle>
+            <container id="aspace_71e84c205d43fee2b4c8a66b161c8d66" label="Mixed Materials"
+              type="box">17</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref579_6ww" level="file">
+          <did>
+            <unittitle>Wooden comb</unittitle>
+            <container id="aspace_c8481a86c2256de282047be1f0164113" label="Mixed Materials"
+              type="box">17</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref580_7qk" level="file">
+          <did>
+            <unittitle>Restricted: Black striped skirt with pink trim, from <title render="italic"
+                >Negro Speaks of Rivers</title> and <title render="italic">Strange
+              Fruit</title></unittitle>
+            <container id="aspace_5387daa5e14db5552bc3cb1cafc0d64f" label="Mixed Materials"
+              type="box">18</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref581_x89" level="file">
+          <did>
+            <unittitle>Restricted: Blue and purple velvet dress with leaves</unittitle>
+            <container id="aspace_2e9e542a81ed38e93cf7d02979d247df" label="Mixed Materials"
+              type="box">18</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref582_xyk" level="file">
+          <did>
+            <unittitle>Restricted: Purple dress</unittitle>
+            <container id="aspace_23c46990f709f31823d17de5a77b0c1b" label="Mixed Materials"
+              type="box">18</container>
+          </did>
+        </c02>
+      </c01>
+    </dsc>
+  </archdesc>
+</ead>
