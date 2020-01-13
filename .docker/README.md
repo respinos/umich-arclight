@@ -16,13 +16,11 @@ restart of the `app` container (or of the rails server within the container).
 
 In the `.docker` directory, run:
 
-    $ ./build.sh
+    $ ./build.sh [--incremental]
 
-The script attempts to do an [incremental build](https://github.com/openshift/source-to-image#incremental-builds)
-by re-using artifacts (i.e., gems) from the previous build, if available.
-Obviously on the first build it will not be able to do this, so you will
-see a message accordingly.  Subsequent builds will usually be able to
-retrieve artifacts, saving build time.
+Use the `--incremental` flag to re-use artifacts (i.e., gems) from the previous build,
+if available. (Obviously on the first build it will not be able to do this, so you will
+see a non-fatal error message accordingly.)
 
 ## Development
 
