@@ -5,7 +5,6 @@ source 'https://rubygems.org'
 gem 'arclight', git: 'https://github.com/projectblacklight/arclight.git'
 gem 'blacklight-locale_picker'
 gem 'blacklight_range_limit', '~> 7.1'
-gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bootstrap', '~> 4.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'devise'

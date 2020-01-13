@@ -29,6 +29,7 @@ services:
     environment:
       - RAILS_ENV
       - DATABASE_URL
+      - SOLR_URL
     entrypoint:
       - wait-for-it
       - db:5432
