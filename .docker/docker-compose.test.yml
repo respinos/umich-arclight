@@ -1,0 +1,8 @@
+version: '3.7'
+
+services:
+  app:
+    volumes:
+      - ..:/opt/app-root
+    environment:
+      - RAILS_ENV=test
