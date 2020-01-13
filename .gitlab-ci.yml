@@ -1,0 +1,99 @@
+include:
+  template: Dependency-Scanning.gitlab-ci.yml
+
+stages:
+  - build
+  - test
+  - release
+  - deploy
+
+variables:
+  APP_IMAGE: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
+  ENVIRONMENT_IMAGE: $CI_REGISTRY_IMAGE/$CI_ENVIRONMENT_SLUG:latest
+
+build_image:
+  stage: build
+  before_script:
+    - docker info
+    - cd .docker
+  script:
+    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
+    - ./build.sh
+    - docker push $APP_IMAGE
+  tags:
+    - docker
+    - build
+
+test_image:
+  stage: test
+  variables:
+    RAILS_ENV: test
+  before_script:
+    - docker info
+    - docker-compose version
+    - cd .docker
+  script:
+    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
+    - docker pull $APP_IMAGE
+    - docker-compose run --rm app bundle exec rake db:reset spec
+    - docker-compose down
+  tags:
+    - docker
+    - test
+
+release_latest:
+  stage: release
+  only:
+    - master
+  before_script:
+    - docker info
+  script:
+    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
+    - docker pull $APP_IMAGE
+    - docker tag $APP_IMAGE $CI_REGISTRY_IMAGE:latest
+    - docker push $CI_REGISTRY_IMAGE:latest
+
+.deploy_job_template: &deploy_job_def
+  stage: deploy
+  before_script:
+    - docker info
+    - docker-compose version
+  script:
+    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
+    - docker pull $APP_IMAGE
+    - docker tag $APP_IMAGE $ENVIRONMENT_IMAGE
+    - docker push $ENVIRONMENT_IMAGE
+  after_script:
+    - sudo systemctl restart docker-compose@dul-arclight
+
+.deploy_development:
+  <<: *deploy_job_def
+  environment:
+    name: development
+  tags:
+    - development
+  only:
+    - develop
+    - tags
+    - /^release-.*$/
+
+.deploy_staging:
+  <<: *deploy_job_def
+  environment:
+    name: staging
+  tags:
+    - staging
+  only:
+    - tags
+    - /^release-.*$/
+
+.deploy_production:
+  <<: *deploy_job_def
+  environment:
+    name: production
+  tags:
+    - production
+  only:
+    - master
+    - tags
+  when: manual

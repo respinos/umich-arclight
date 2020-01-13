@@ -5,15 +5,6 @@ require_relative 'config/application'
 
 Rails.application.load_tasks
 
-require 'solr_wrapper/rake_task' unless Rails.env.production?
-
-# Borrowed from ArcLight Demo app
-# https://github.com/sul-dlss/arclight-demo/blob/master/Rakefile
-
-# Load SOLR_URL from our configuration file
-solr_config = YAML.load(ERB.new(File.read('./config/blacklight.yml')).result)
-ENV['SOLR_URL'] = solr_config[Rails.env]['url']
-
 # Read the repository configuration
 repo_config = YAML.load(File.read('./config/repositories.yml'))
 

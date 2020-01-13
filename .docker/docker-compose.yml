@@ -1,0 +1,36 @@
+version: '3.7'
+
+networks:
+  default:
+    name: "${COMPOSE_PROJECT_NAME}"
+
+services:
+  db:
+    image: "${POSTGRES_IMAGE}"
+    environment:
+      - POSTGRES_DB
+      - POSTGRES_PASSWORD
+
+  solr:
+    image: "${SOLR_IMAGE}"
+    volumes:
+      - ../solr/conf:/solr_config:ro
+    entrypoint:
+      - docker-entrypoint.sh
+      - solr-precreate
+      - "${SOLR_CORE}"
+      - /solr_config
+
+  app:
+    image: "${APP_IMAGE}"
+    depends_on:
+      - db
+      - solr
+    environment:
+      - RAILS_ENV
+      - DATABASE_URL
+    entrypoint:
+      - wait-for-it
+      - db:5432
+      - '--'
+    command: run
