@@ -8,6 +8,12 @@
   (Linux only - included in Docker Desktop for Mac/Windows)
 - [source-to-image](https://github.com/openshift/source-to-image#installation)
 
+## Wrapper scripts
+
+The `.docker` directory contains wrapper scripts and other files for building
+the application image locally and running development and test environments.
+Details of usage are given below.
+
 ## Build
 
 For iterative development, a build should be run whenever there is a change in
@@ -33,7 +39,9 @@ may not be fully available as soon as the script exits; Docker considers a servi
 container has started, not necessarily when the main process (e.g., Rails server, Postgres, etc.)
 is ready to fully initialized.
 
-To access a command prompt in the `app` container run:
+For more information, run `./dev.sh --help`.
+
+To access an interactive shell in the `app` container run the `bash` command:
 
     $ ./dev.sh exec app bash
 
@@ -41,10 +49,13 @@ You will see a prompt like:
 
     app-user@d9988b05920c:~$
 
-The working directory will be the root of the Rails project. You can run rake tasks from that point,
-or access the Rails console:
+The working directory will be the root of the Rails project, `/opt/app-root`.
+You can run rake tasks from that point, or access the Rails console:
 
     app-user@d9988b05920c:~$ bundle exec rails c
+
+Note that you are logged in as the user `app-user` (UID 1001), which is a member of the `root`
+group (GID 0).
 
 To stop the development environment:
 
@@ -61,3 +72,9 @@ in the `app` container to run tests, e.g.:
 To run the test suite:
 
     $ ./run_test_suite.sh
+
+To ensure that the test environment is cleaned up run:
+
+    $ ./test.sh down
+
+Fore more information, run `./test.sh --help`.
