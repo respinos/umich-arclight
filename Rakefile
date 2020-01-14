@@ -6,7 +6,7 @@ require_relative 'config/application'
 Rails.application.load_tasks
 
 # Read the repository configuration
-repo_config = YAML.load(File.read('./config/repositories.yml'))
+repo_config = YAML.safe_load(File.read('./config/repositories.yml'))
 
 namespace :sample do
   desc 'Index sample EAD files into Solr'

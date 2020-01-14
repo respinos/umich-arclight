@@ -35,6 +35,7 @@ test_image:
   script:
     - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
     - docker pull $APP_IMAGE
+    - docker-compose run --rm app bundle exec rubocop
     - docker-compose run --rm app bundle exec rake db:reset spec
     - docker-compose down
   tags:

@@ -12,6 +12,7 @@ if [[ "$@" =~ ^(-h|(--)?help)$ ]]; then
 fi
 
 cd "$(dirname ${BASH_SOURCE[0]})"
+./test.sh run --rm app bundle exec rubocop
 ./test.sh run --rm app bundle exec rake db:reset spec
 code=$?
 ./test.sh down
