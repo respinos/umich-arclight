@@ -67,7 +67,7 @@ release_latest:
   after_script:
     - sudo systemctl restart docker-compose@dul-arclight
 
-.deploy_development:
+deploy_development:
   <<: *deploy_job_def
   environment:
     name: development
