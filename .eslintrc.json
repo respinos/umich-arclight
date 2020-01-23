@@ -1,0 +1,25 @@
+{
+    "env": {
+        "browser": true,
+        "es6": true,
+        "jquery": true
+    },
+    "extends": [
+        "airbnb-base/legacy"
+    ],
+    "globals": {
+        "Atomics": "readonly",
+        "Blacklight": true,
+        "SharedArrayBuffer": "readonly"
+    },
+    "parserOptions": {
+        "ecmaVersion": 2018,
+        "ecmaFeatures": {
+          "impliedStrict": true
+        }
+    },
+    "rules": {
+      "no-param-reassign": [2, { "props": false }],
+      "func-names": ["error", "never"]
+    }
+}
