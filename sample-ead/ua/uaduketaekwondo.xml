@@ -32,7 +32,7 @@
       </notestmt>
     </filedesc>
     <profiledesc>
-      <creation>This finding aid was produced using ArchivesSpace on <date>2020-01-23 14:32:46
+      <creation>This finding aid was produced using ArchivesSpace on <date>2020-01-23 15:12:49
           -0500</date>.</creation>
       <langusage>English</langusage>
       <descrules>Describing Archives: A Content Standard</descrules>
@@ -55,7 +55,8 @@
         >1990-2020</unitdate>
       <unitdate calendar="gregorian" era="ce" normal="2017/2019" type="bulk">bulk
         2017-2019</unitdate>
-      <unitdate calendar="gregorian" era="ce">undated</unitdate>
+      <unitdate calendar="gregorian" era="ce">undated (single)</unitdate>
+      <unitdate calendar="gregorian" era="ce">undated (inclusive)</unitdate>
       <abstract id="aspace_ae28124cc44cf20cf9f9b4db74fc8d87">Duke Taekwondo is a Sport Club training
         in the World Taekwondo style of Taekwondo. The Duke Taekwondo records cover 2017-2019 and
         include of background documents and photographs, among other administrative
@@ -65,9 +66,9 @@
     <bioghist id="aspace_0f2ea84aad5812595a149174280bf9b0">
       <head>Biographical / Historical</head>
       <p>Duke Taekwondo is a Sport Club training in the World Taekwondo style of Taekwondo. From
-        their <extref xlink:href="https://www.duketaekwondo.com/">website</extref>, Duke Taekwondo practices
-        "primarily for Olympic-style sport taekwondo sparring," as well as coaching in poomsae
-        (forms). Several times throughout the year, Duke Taekwondo travels to participate in
+        their <extref xlink:href="https://www.duketaekwondo.com/">website</extref>, Duke Taekwondo
+        practices "primarily for Olympic-style sport taekwondo sparring," as well as coaching in
+        poomsae (forms). Several times throughout the year, Duke Taekwondo travels to participate in
         regional and national competitions. As of 2019, Duke Taekwondo offers belt rank-testing
         during each semester.</p>
     </bioghist>
@@ -128,47 +129,50 @@
             <unitdate calendar="gregorian" era="ce">undated</unitdate>
             <physdesc id="aspace_ddfe7abd6515e3a6223ce647f3ff0a00">5 document files; less than 1
               megabyte.</physdesc>
-            <container id="aspace_12c02d5a57010ebd2ce547fbae0a5f35" label="Mixed Materials"
+            <container id="aspace_f59f13326b90de0ef06703be9916b5ff" label="Mixed Materials"
               type="digital-materials">UA31-31-0003-SET-0001</container>
           </did>
         </c02>
         <c02 id="aspace_e95bf723acea815fec9f982956c19dda" level="file">
           <did>
             <unittitle>Certificates</unittitle>
-            <unitdate normal="2017/2017">2017</unitdate>
+            <unitdate calendar="gregorian" era="ce">about 2017 (date expression only)</unitdate>
             <physdesc id="aspace_ce4dab2cd967a257d594e4567a23b433">5 document files; approximately 2
               megabytes.</physdesc>
-            <container id="aspace_f6c7ba688f440bc3c77324bd4a1d7f9a" label="Mixed Materials"
+            <container id="aspace_1e7565f9e2e1ddadfd9ba513bdd3503e" label="Mixed Materials"
               type="digital-materials">UA31-31-0003-SET-0001</container>
           </did>
         </c02>
         <c02 id="aspace_806098f8929a13437efdfe604476efff" level="file">
           <did>
             <unittitle>Photos</unittitle>
-            <unitdate normal="2019/2019">2019</unitdate>
+            <unitdate calendar="gregorian" era="ce">undated</unitdate>
             <physdesc id="aspace_ab90aaf2e417e7db44405016e600c9ec">12 image files; approximately 10
               megabytes</physdesc>
-            <container id="aspace_db49baac4d1bdd69b96621697043b8b2" label="Mixed Materials"
+            <container id="aspace_84a303c598db6978ebf98569b6598ac5" label="Mixed Materials"
               type="digital-materials">UA31-31-0003-SET-0001</container>
           </did>
         </c02>
         <c02 id="aspace_5b0288bae36d2bfb505265f3295b7d58" level="file">
           <did>
-            <unittitle>Practice Guides</unittitle>
+            <unittitle>Practice Guides (only normal dates, no expression)</unittitle>
             <unitdate normal="2018/2019" type="inclusive">2018-2019</unitdate>
             <physdesc id="aspace_60b6cff63168ea68b6dd952dbbde8699">12 document files; less than 1
               megabyte</physdesc>
-            <container id="aspace_bf0decdaf8e275fb3e39acb2af2e40a1" label="Mixed Materials"
+            <container id="aspace_217ed5ae6d43561e6b80eb5b4aac7ddc" label="Mixed Materials"
               type="digital-materials">UA31-31-0003-SET-0001</container>
           </did>
         </c02>
         <c02 id="aspace_d82aeec7c04c232181a1ab9e7da537ba" level="file">
           <did>
             <unittitle>Summary</unittitle>
-            <unitdate normal="2018/2019" type="inclusive">2018-2019</unitdate>
+            <unitdate calendar="gregorian" era="ce" normal="2000/2020" type="inclusive"
+              >2000-2020</unitdate>
+            <unitdate normal="2018/2019" type="bulk">2018-2019 (bulk dates only w/ expression and
+              normal)</unitdate>
             <physdesc id="aspace_e66029623d82f883e8a206014b979ce7">5 document files; approximately
               30 megabytes</physdesc>
-            <container id="aspace_652cdebd586ef56c0a6c03cf043679ac" label="Mixed Materials"
+            <container id="aspace_9dc158aa9793e8e880105a92a46ebf42" label="Mixed Materials"
               type="digital-materials">UA31-31-0003-SET-0001</container>
           </did>
         </c02>
@@ -178,7 +182,7 @@
             <unitdate normal="2018/2019" type="inclusive">2018-2019</unitdate>
             <physdesc id="aspace_7b1e442110ef1ada0e893fd228949d81">3 document files; less than 1
               megabyte.</physdesc>
-            <container id="aspace_31ef8e670fb8b0beb58db177c1553568" label="Mixed Materials"
+            <container id="aspace_39108256ee0ef165089cb90336a7e4c2" label="Mixed Materials"
               type="digital-materials">UA31-31-0003-SET-0001</container>
           </did>
         </c02>
