@@ -1,0 +1,13 @@
+#content.show-document {
+
+  /* Start Over/Back to Search & 1-of-n navigation are confusing  */
+  /* on component show pages, so hide those elements.             */
+
+  #appliedParams {
+    display: none;
+  }
+  .pagination-search-widgets {
+    display: none;
+  }
+
+}

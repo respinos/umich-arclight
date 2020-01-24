@@ -1,0 +1,24 @@
+/* Overrides styles in ArcLight core */
+/* Last checked for updates: ArcLight v0.3.0 */
+/* https://github.com/projectblacklight/arclight/blob/master/app/assets/stylesheets/arclight/modules/layout.scss */
+
+// Show page breadcrumbs.
+// Don't indent
+@for $i from 1 to 14 {
+  .breadcrumb-item.breadcrumb-item-#{$i}.media {
+      &::before {
+        padding-right: 0;
+      }
+      padding-left: 0;
+  }
+}
+
+// Show page metadata.
+// Don't indent
+@for $i from 1 to 14 {
+  .al-metadata-section.breadcrumb-item-#{$i} {
+    @media (min-width: 768px) {
+      padding-left: 0;
+    }
+  }
+}

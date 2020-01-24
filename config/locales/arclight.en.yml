@@ -5,3 +5,6 @@ en:
     views:
       home:
         title: Archival Collections at Duke
+      show:
+        collapse: Collapse
+        expand: Show More ...

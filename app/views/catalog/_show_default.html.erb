@@ -1,0 +1,159 @@
+<%# Overrides ArcLight Core partial. %>
+<%# Last checked for updates: ArcLight v0.3.0. %>
+<%# https://github.com/projectblacklight/arclight/blob/master/app/views/catalog/_show_default.html.erb %>
+
+<% content_for(:container_header) do %>
+  <%# ===================== %>
+  <%# Collection Masthead   %>
+  <%# ===================== %>
+  <div class='row collection-banner'>
+    <div class='col-auto'>
+      <%= content_tag :h1 do %>
+        <%= link_to document.collection_name, solr_document_path(document.eadid) %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+
+<% content_for(:sidebar) do %>
+  <div class='row'>
+    <div class='col-md-12' id='context'>
+
+      <%# ========================== %>
+      <%# Collection Overview Nav    %>
+      <%# ========================== %>
+      <%# Adapted from:%>
+      <%#  https://github.com/projectblacklight/arclight/blob/master/app/views/catalog/_collection_context_nav.html.erb %>
+
+      <ul class='nav flex-column'>
+        <% unless blacklight_config.show.metadata_partials.nil? %>
+          <% blacklight_config.show.metadata_partials.each do |item| %>
+            <% next unless fields_have_content?(collection_doc(document), item) %>
+            <li class='nav-item'>
+              <%= link_to t("arclight.views.show.sections.#{item}"),
+                [
+                  solr_document_path(document.eadid),
+                  "##{t("arclight.views.show.sections.#{item}").parameterize}"
+                ].join, class: 'nav-link'
+              %>
+            </li>
+          <% end %>
+        <% end %>
+      </ul>
+
+      <hr/>
+
+      <%# ========================= %>
+      <%# Hierarchy Tree Navigation %>
+      <%# ========================= %>
+      <div class='tab-content'>
+        <div class='tab-pane active'>
+          <%= render 'component_context' %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<% parents = Arclight::Parents.from_solr_document(document).as_parents %>
+
+<% if document.level == 'collection' %>
+  <div>
+    <%# ========================== %>
+    <%# Collection Overview        %>
+    <%# ========================== %>
+    <%# Adapted from: %>
+    <%# https://github.com/projectblacklight/arclight/blob/master/app/views/catalog/_collection_context.html.erb %>
+
+    <% unless blacklight_config.show.metadata_partials.nil? %>
+      <% blacklight_config.show.metadata_partials.each do |metadata| %>
+        <% next unless fields_have_content?(@document, metadata) %>
+        <%= render partial: 'custom_metadata',
+          locals: { document: @document, field_accessor: metadata } %>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>
+
+<% if document.digital_objects.present? %>
+
+  <%# ==================================== %>
+  <%# DAOs on This Level (Not Descendants) %>
+  <%# ==================================== %>
+  <div class='row'>
+    <div class='col-md-12'>
+      <h2><%= t('arclight.views.show.online_content') %></h2>
+      <%= content_tag :p, class: "media breadcrumb-item breadcrumb-item-#{parents.length + 3}" do %>
+        <span class="media-body al-online-content-icon" aria-hidden="true"><%= blacklight_icon :online %></span>
+        <span class="col text-muted">
+          <%= t('arclight.views.show.online_content') %>
+        </span>
+        <%= render_document_partial(document, 'arclight_viewer') %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+
+
+<%# ==================================== %>
+<%# DAOs in Descendant Nodes             %>
+<%# ==================================== %>
+<%# Hide for now. TBD how to render      %>
+<!--
+<% if document.online_content? && document.children? %>
+  <div class='row'>
+    <div class='col-md-12' id='online-content'>
+      <h2><%= t('arclight.views.show.online_content') %></h2>
+      <%= content_tag(
+        :div, '',
+        class: 'al-contents',
+        data: {
+          arclight: {
+            path: search_catalog_path,
+            name: document.collection_name,
+            access: 'online',
+            view: 'online_contents',
+            parent: document.reference,
+            search_field: 'within_collection'
+          }
+        }
+      ) %>
+
+    </div>
+  </div>
+<% end %>
+-->
+
+<%# ========================== %>
+<%# Browse Child Components    %>
+<%# ========================== %>
+<% if document.children? %>
+  <div class='row'>
+    <div class='col-md-12' id='main-components'>
+      <h2>Contents</h2>
+      <p>Coming Soon...</p>
+      <%#= render 'component_context' %>
+    </div>
+  </div>
+<% end %>
+
+
+<%# ========================== %>
+<%# Access Terms               %>
+<%# ========================== %>
+<%# TBD: better rendering with %>
+<%# separate self vs inherited %>
+<%# restrictions.              %>
+
+<div class='row'>
+  <div class='col-md-12' id='access'>
+    <hr/>
+    <h2><%= t 'arclight.views.show.access' %></h2>
+    <% unless blacklight_config.show.component_access_tab_items.nil? %>
+      <% items = blacklight_config.show.component_access_tab_items.select { |i|  fields_have_content?(@document, i) }  %>
+      <% items.each_with_index do |item, index| %>
+        <%= render partial: 'access_contents', locals: { document: @document, field_accessor: item, card_index: index} %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
