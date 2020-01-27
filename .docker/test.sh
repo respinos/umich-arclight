@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 
-IFS='' read -r -d '' USAGE <<EOF
+export COMPOSE_PROJECT_NAME=arclight-test
+export RAILS_ENV=test
+
+if [[ "$@" =~ ^(-h|(--)?help)$ ]]; then
+    cat <<EOF
+
 Docker Compose wrapper script for test environment.
 
     $ ./test.sh COMMAND
@@ -24,13 +29,10 @@ Examples:
     Run a (non-interactive) rake task in the running 'app' container:
 
     $ ./test.sh exec app bundle exec rake TASK
-EOF
 
-if [[ "$@" =~ ^(-h|(--)?help)$ ]]; then
-    echo "$USAGE"
+EOF
     exit 0
 fi
 
-export COMPOSE_PROJECT_NAME=arclight-test
 cd "$(dirname ${BASH_SOURCE[0]})"
-docker-compose -f docker-compose.yml -f docker-compose.test.yml "$@"
+docker-compose "$@"

@@ -9,16 +9,15 @@ stages:
 
 variables:
   APP_IMAGE: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
-  ENVIRONMENT_IMAGE: $CI_REGISTRY_IMAGE/$CI_ENVIRONMENT_SLUG:latest
+  DEPLOY_IMAGE: $CI_REGISTRY_IMAGE/$CI_ENVIRONMENT_SLUG:latest
 
 build_image:
   stage: build
   before_script:
     - docker info
-    - cd .docker
   script:
     - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
-    - ./build.sh
+    - .docker/build.sh -p always -e RAILS_ENV=production
     - docker push $APP_IMAGE
   tags:
     - docker
@@ -26,18 +25,14 @@ build_image:
 
 test_image:
   stage: test
-  variables:
-    RAILS_ENV: test
   before_script:
     - docker info
     - docker-compose version
-    - cd .docker
   script:
     - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
     - docker pull $APP_IMAGE
-    - docker-compose run --rm app bundle exec rubocop
-    - docker-compose run --rm app bundle exec rake db:reset spec
-    - docker-compose down
+    - .docker/build.sh --incremental -e RAILS_ENV=test
+    - .docker/run_test_suite.sh
   tags:
     - docker
     - test
@@ -62,8 +57,8 @@ release_latest:
   script:
     - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
     - docker pull $APP_IMAGE
-    - docker tag $APP_IMAGE $ENVIRONMENT_IMAGE
-    - docker push $ENVIRONMENT_IMAGE
+    - docker tag $APP_IMAGE $DEPLOY_IMAGE
+    - docker push $DEPLOY_IMAGE
   after_script:
     - sudo systemctl restart docker-compose@dul-arclight
 

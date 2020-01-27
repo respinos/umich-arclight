@@ -18,7 +18,5 @@ services:
   app:
     volumes:
       - ..:/opt/app-root
-    environment:
-      - RAILS_ENV=development
     ports:
       - "${RAILS_PORT}:3000"

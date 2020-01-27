@@ -2,7 +2,7 @@
 
 source 'https://rubygems.org'
 
-gem 'arclight', git: 'https://github.com/projectblacklight/arclight.git'
+gem 'arclight', '0.3.0'
 gem 'blacklight-locale_picker'
 gem 'blacklight_range_limit', '~> 7.1'
 gem 'bootstrap', '~> 4.0'
