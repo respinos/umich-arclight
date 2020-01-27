@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
-IFS='' read -r -d '' USAGE <<EOF
+if [[ "$@" =~ ^(-h|(--)?help)$ ]]; then
+    cat <<EOF
+
 Wrapper script for running test suite with clean database.
 
     $ ./run_test_suite.sh
-EOF
 
-if [[ "$@" =~ ^(-h|(--)?help)$ ]]; then
-    echo "$USAGE"
+EOF
     exit 0
 fi
 

@@ -1,20 +1,20 @@
 #!/bin/bash
 
-IFS='' read -r -d '' USAGE <<EOF
+BUILDER_IMAGE=gitlab-registry.oit.duke.edu/devops/containers/rails-ruby26:latest
+BUILD_CONTEXT=$(git rev-parse --show-toplevel)
+
+if [[ "$@" =~ ^(-h|(--)?help)$ ]]; then
+    cat <<EOF
+
 Build a container image for the project based on the latest commit.
 
     ./build.sh [--incremental]
 
 Use the '--incremental' flag to re-use artifacts from the previous build.
-EOF
 
-if [[ "$@" =~ ^(-h|(--)?help)$ ]]; then
-    echo "$USAGE"
+EOF
     exit 0
 fi
-
-BUILDER_IMAGE=gitlab-registry.oit.duke.edu/devops/containers/rails:latest
-BUILD_CONTEXT=$(git rev-parse --show-toplevel)
 
 if ! [[ "$@" =~ (-c|--copy) ]]; then
     if ! git diff-index --quiet HEAD -- ; then
@@ -42,5 +42,4 @@ s2i build \
     file://${BUILD_CONTEXT} \
     ${BUILDER_IMAGE} \
     ${APP_IMAGE:-dul-arclight} \
-    --exclude '(^|/)\.(git|docker)(/|$)' \
     "$@"
