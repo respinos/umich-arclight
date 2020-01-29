@@ -1,0 +1,7 @@
+<%# Override ArcLight Core partial %>
+<%# https://github.com/projectblacklight/arclight/blob/master/app/views/catalog/_show_collection.html.erb %>
+
+<%# Just use the same default show view as a component; parse out minor    %>
+<%# differences for collections using conditionals in show_default partial %>
+
+<%= render partial: 'show_default', locals: { document: document }  %>

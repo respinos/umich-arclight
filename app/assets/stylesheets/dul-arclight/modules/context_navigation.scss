@@ -1,0 +1,55 @@
+/* ===================================== */
+/* Styles for sidebar context navigation */
+/* ===================================== */
+
+#sidebar {
+  background: #f6f6f6;
+}
+
+#context {
+  .tab-pane {
+    padding: 0;
+    border: 0;
+  }
+
+  li.al-collection-context {
+    .document-title-heading {
+        font-size: 1rem;
+      }
+      .documentHeader {
+        margin-bottom: 0.75rem;
+      }
+  }
+
+  #collection-context .al-hierarchy-level-1 .document-title-heading {
+    font-size: 0.85rem;
+  }
+
+  .al-hierarchy-highlight {
+    a.tree-nav-leaf {
+      font-weight: bold;
+    }
+    ul a.tree-nav-leaf {
+      font-weight: normal;
+    }
+  }
+
+  .context-navigator {
+    margin-top: 0.8rem;
+    .prev-siblings button { /* Expand & collapse */
+      width: 100%;
+      text-align: left;
+      text-transform: uppercase;
+      padding-left: 2rem;
+      background-color: #aaa;
+      border: none;
+      background-repeat: no-repeat;
+      background-size: 1rem auto;
+      background-position: 10px center;
+      background-image: asset-url("icons/expand-white.svg");
+      &.collapsed {
+        background-image: asset-url("icons/collapse-white.svg");
+      }
+    }
+  }
+}
