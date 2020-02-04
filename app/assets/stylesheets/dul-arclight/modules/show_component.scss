@@ -11,3 +11,30 @@
   }
 
 }
+
+/* =========================== */
+/* Child Components Index View */
+/* =========================== */
+.child-components {
+  h3.document-title-heading {
+    font-size: 1.1rem;
+  }
+  .al-document-container {
+    font-size: 0.9rem;
+  }
+  article {
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+    &:nth-of-type(odd) {
+      background: #f8f8f8;
+    }
+  }
+  .al-document-extent {
+    @include extent-badge;
+    font-size: 0.75rem;
+  }
+
+  .al-document-abstract-or-scope {
+    max-width: none;
+  }
+}

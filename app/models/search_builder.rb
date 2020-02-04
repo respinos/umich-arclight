@@ -2,6 +2,7 @@
 class SearchBuilder < Blacklight::SearchBuilder
   include Blacklight::Solr::SearchBuilderBehavior
   include Arclight::SearchBehavior
+  include DulArclight::SearchBehavior
   include BlacklightRangeLimit::RangeLimitBuilder
 
 

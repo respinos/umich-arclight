@@ -94,12 +94,37 @@
   </div>
 <% end %>
 
+<% if document.children? %>
+
+  <%# ========================== %>
+  <%# Child Components           %>
+  <%# ========================== %>
+
+  <h2>Contents</h2>
+  <%= content_tag(
+    :div, '',
+    class: 'al-contents child-components',
+    data: {
+      arclight: {
+        path: search_catalog_path,
+        name: document.collection_name,
+        view: 'child_components',
+        parent: document.reference,
+        directparent: document.reference,
+        search_field: 'within_collection',
+        per_page: '100'
+      }
+    }
+  ) %>
+<% end %>
+
+<!--
 
 <%# ==================================== %>
 <%# DAOs in Descendant Nodes             %>
 <%# ==================================== %>
 <%# Hide for now. TBD how to render      %>
-<!--
+
 <% if document.online_content? && document.children? %>
   <div class='row'>
     <div class='col-md-12' id='online-content'>
@@ -123,19 +148,6 @@
   </div>
 <% end %>
 -->
-
-<%# ========================== %>
-<%# Browse Child Components    %>
-<%# ========================== %>
-<% if document.children? %>
-  <div class='row'>
-    <div class='col-md-12' id='main-components'>
-      <h2>Contents</h2>
-      <p>Coming Soon...</p>
-      <%#= render 'component_context' %>
-    </div>
-  </div>
-<% end %>
 
 
 <%# ========================== %>
