@@ -1,6 +1,13 @@
 // Copy of ArcLight core JS for overriding behavior.
 // Last checked for updates: ArcLight v0.3.0.
 
+// Added data.arclight.directparent for listing only
+// the child components of the current component rather
+// than all descendants. Added per_page option so different
+// paginated AJAX-loaded results can include different
+// numbers of results loaded per page (e.g., all online vs.
+// child components).
+
 // See
 // https://github.com/projectblacklight/arclight/blob/master/app/assets/javascripts/arclight/collection_navigation.js
 
@@ -27,9 +34,11 @@
           'f[has_online_content_ssim][]': data.arclight.access,
           'f[collection_sim][]': data.arclight.name,
           'f[parent_ssim][]': data.arclight.parent,
+          'f[parent_ssi][]': data.arclight.directparent,
           page: page,
           search_field: data.arclight.search_field,
-          view: data.arclight.view || 'hierarchy'
+          view: data.arclight.view,
+          per_page: data.arclight.per_page
         }
       }).done(function (response) {
         var resp = $.parseHTML(response);
@@ -58,7 +67,9 @@
           var pages = [];
           var $target = $(e.target);
           e.preventDefault();
-          pages = /page=(\d+)&/.exec($target.attr('href'));
+          // DUL CUSTOMIZATION: use &page to not pick up per_page parameter
+          pages = /&page=(\d+)&/.exec($target.attr('href'));
+
           if (pages) {
             CollectionNavigation.init($el, pages[1]);
           } else {

@@ -4,7 +4,7 @@ class CatalogController < ApplicationController
 
   include BlacklightRangeLimit::ControllerOverride
   include Blacklight::Catalog
-  include Arclight::Catalog
+  include DulArclight::Catalog
   include Arclight::FieldConfigHelpers
 
   configure_blacklight do |config|
@@ -383,6 +383,14 @@ class CatalogController < ApplicationController
     # Online Contents Index View
     config.view.online_contents
     config.view.online_contents.display_control = false
+
+    ##
+    # DUL Customization for listing children of components
+    # Child Components Index View
+    # Modeled after Online Contents
+    config.view.child_components
+    config.view.child_components.display_control = false
+    config.view.child_components.partials = %i[index_child_components]
 
     ##
     # Collection Context
