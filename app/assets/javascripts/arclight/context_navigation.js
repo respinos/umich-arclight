@@ -1,5 +1,5 @@
 // Copy of ArcLight core JS for overriding behavior.
-// Last checked for updates: ArcLight v0.3.0. 
+// Last checked for updates: ArcLight v0.3.0.
 //
 // See:
 // https://github.com/projectblacklight/arclight/blob/master/app/assets/javascripts/arclight/context_navigation.js
@@ -143,7 +143,9 @@ class ContextNavigation {
     if (this.originalParents && this.originalParents[this.data.arclight.level - 1]) {
       return this.originalParents[this.data.arclight.level - 1];
     }
-    return this.data.arclight.originalDocument.replace(this.eadid, '');
+    // DUL CUSTOMIZATION: Account for DUL component IDs which have "_" between
+    // the eadid & component ref.
+    return this.data.arclight.originalDocument.replace(this.eadid+'_', '');
   }
 
   getData() {

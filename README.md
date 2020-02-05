@@ -14,7 +14,7 @@ Discovery & access application for archival material at Duke University Librarie
 
 You can index a set of sample Duke EAD files into Solr (takes a couple minutes):
 
-`$ bundle exec rake sample:seed`
+`$ bundle exec rake seed:samples`
 
 
 ## Resources
