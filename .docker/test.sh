@@ -5,7 +5,6 @@ export RAILS_ENV=test
 
 if [[ "$@" =~ ^(-h|(--)?help)$ ]]; then
     cat <<EOF
-
 Docker Compose wrapper script for test environment.
 
     $ ./test.sh COMMAND
@@ -14,11 +13,11 @@ See 'docker-compose COMMAND --help' for details on commands and options.
 
 Examples:
 
-    Start the development environment [-d in the background]:
+    Start the test environment [-d in the background]:
 
     $ ./test.sh up [-d]
 
-    Stop the development environment:
+    Stop the test environment:
 
     $ ./test.sh down
 

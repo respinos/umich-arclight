@@ -5,7 +5,6 @@ export RAILS_ENV=development
 
 if [[ "$@" =~ ^(-h|(--)?help)$ ]]; then
     cat <<EOF
-
 Docker Compose wrapper script for development environment.
 
     $ ./dev.sh COMMAND
