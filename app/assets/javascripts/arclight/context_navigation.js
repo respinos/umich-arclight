@@ -134,9 +134,10 @@ class ContextNavigation {
     this.ul = $('<ul class="al-context-nav-parent"></ul>');
   }
 
+  // DUL CUSTOMIZATION: Account for custom id with underscore
   // Gets the targetId to select, based off of parents and current level
   get targetId() {
-    return `${this.eadid}${this.originalParents[this.data.arclight.level]}`;
+    return `${this.eadid}_${this.originalParents[this.data.arclight.level]}`;
   }
 
   get requestParent() {
