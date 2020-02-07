@@ -8,19 +8,21 @@
 require 'spec_helper'
 
 RSpec.describe CatalogController, type: :controller do
+  # Modeled after ArcLight core, see:
+  # https://github.com/projectblacklight/arclight/blob/master/spec/controllers/catalog_controller_spec.rb
   describe 'index action customizations' do
-    context 'online_contents view' do
+    context 'child_components view' do
       it 'does not start a search_session' do
         allow(controller).to receive(:search_results)
         session[:history] = []
-        get :index, params: { q: 'foo', view: 'online_contents' }
+        get :index, params: { q: 'foo', view: 'child_components' }
         expect(session[:history]).to be_empty
       end
 
       it 'does not store a preferred_view' do
         allow(controller).to receive(:search_results)
         session[:preferred_view] = 'list'
-        get :index, params: { q: 'foo', view: 'online_contents' }
+        get :index, params: { q: 'foo', view: 'child_components' }
         expect(session[:preferred_view]).to eq 'list'
       end
     end
@@ -39,16 +41,6 @@ RSpec.describe CatalogController, type: :controller do
         get :index, params: { q: 'foo', view: 'gallery' }
         expect(session[:preferred_view]).to eq 'gallery'
       end
-    end
-  end
-
-  describe '#facet_limit_for' do
-    let(:blacklight_config) { controller.blacklight_config }
-
-    it 'defaults to a limit of 10 for shown field facets' do
-      expect(blacklight_config.facet_fields.key?('collection_sim')).to be true
-      expect(blacklight_config.facet_fields['collection_sim'].limit).to eq 10
-      expect(controller.facet_limit_for('collection_sim')).to eq 10
     end
   end
 end
