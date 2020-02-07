@@ -1,7 +1,7 @@
 #!/bin/bash
 
-BUILDER_IMAGE=gitlab-registry.oit.duke.edu/devops/containers/rails-ruby26:latest
 BUILD_CONTEXT=$(git rev-parse --show-toplevel)
+BUILDER_IMAGE=$(cat $(dirname ${BASH_SOURCE[0]})/BUILDER_IMAGE)
 
 if [[ "$@" =~ ^(-h|(--)?help)$ ]]; then
     cat <<EOF
