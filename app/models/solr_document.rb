@@ -5,6 +5,10 @@ class SolrDocument
 
   # self.unique_key = 'id'
 
+  def bibnum
+    first('bibnum_ssi')
+  end
+
   # Email uses the semantic field mappings below to generate the body of an email.
   SolrDocument.use_extension(Blacklight::Document::Email)
 
