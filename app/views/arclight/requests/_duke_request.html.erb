@@ -1,0 +1,8 @@
+<%# Modeled loosely on: %>
+<%# https://github.com/projectblacklight/arclight/blob/master/app/views/arclight/requests/_aeon_web_ead.html.erb %>
+<% document ||= @document %>
+
+  <% duke_request ||= Arclight::Requests::DukeRequest.new(document) %>
+  <% duke_request_url = duke_request.try(:url) %>
+
+<%= link_to t('arclight.request.container'), duke_request_url, target: '_blank', class: 'btn btn-secondary btn-sm' %>

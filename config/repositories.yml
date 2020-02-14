@@ -12,10 +12,10 @@ rubenstein:
   phone: '919-660-5822'
   contact_info: 'special-collections@duke.edu'
   thumbnail_url: 'https://library.duke.edu/sites/default/files/rubenstein/arclight/duke-rubenstein.jpg'
-  #request_types:
-  #  google_form:
-  #    request_url: 'https://docs.google.com/a/stanford.edu/forms/d/e/1FAIpQLSeOamhY_IcFw4sPnz0ddwWWkrPaHbM5wp7JVbOLOL_mIusEyw/viewform'
-  #    request_mappings: "document_url=entry.1980510262&collection_name=entry.619150170&collection_creator=entry.14428541&eadid=entry.996397105&containers=entry.1125277048&title=entry.862815208"
+  request_types:
+    duke_request:
+      request_url: 'https://requests.library.duke.edu/item/'
+      request_mappings: 'none'
 ua:
   name: 'Duke University Archives'
   visit_note: "Register online to request material for use in our reading room and track the status of your requests. Requests for material must be made 2 full business days in advance of your visit. Most of our collections are stored at the Library Service Center, our off-site repository."
@@ -30,10 +30,10 @@ ua:
   phone: '919-660-5822'
   contact_info: 'special-collections@duke.edu'
   thumbnail_url: 'https://library.duke.edu/sites/default/files/rubenstein/arclight/duke-ua.jpg'
-  #request_types:
-  #  aeon_web_ead:
-  #    request_url: 'https://sample.request.com'
-  #    request_mappings: 'Action=10&Form=31&Value=ead_url'
+  request_types:
+    duke_request:
+      request_url: 'https://requests.library.duke.edu/item/'
+      request_mappings: 'none'
 adf:
   name: 'American Dance Festival Archives'
   visit_note: "Materials from the ADF Archives may be viewed by appointment in the David M. Rubenstein Rare Book & Manuscript Library at Duke University. Visits may be arranged in advance by contacting the ADF archivist at adfarchives@americandancefestival.org. Visitors will need to comply with Duke's registration and security policies."
@@ -48,15 +48,7 @@ adf:
   phone: '919-684-6402'
   contact_info: 'adfarchives@americandancefestival.org'
   thumbnail_url: 'https://library.duke.edu/sites/default/files/rubenstein/arclight/duke-adf.jpg'
-  #request_types:
-  #  aeon_external_request_endpoint:
-  #    request_url: https://example.com/aeon/aeon.dll
-  #    request_mappings:
-  #      url_params:
-  #        Action: 11
-  #        Type: 200
-  #      static:
-  #        SystemId: ArcLight
-  #        ItemInfo1: manuscript
-  #      accessor:
-  #        ItemTitle: collection_name
+  request_types:
+    duke_request:
+      request_url: 'https://requests.library.duke.edu/item/'
+      request_mappings: 'none'
