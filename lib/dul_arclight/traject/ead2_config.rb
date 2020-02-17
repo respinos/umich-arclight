@@ -14,7 +14,8 @@ require 'arclight/normalized_date'
 require 'arclight/normalized_title'
 require 'active_model/conversion' ## Needed for Arclight::Repository
 require 'active_support/core_ext/array/wrap'
-require 'arclight/digital_object'
+# DUL Customization: use custom digital object model
+require_relative '../digital_object'
 require 'arclight/year_range'
 require 'arclight/repository'
 require 'arclight/missing_id_strategy'
@@ -196,12 +197,15 @@ to_field 'has_online_content_ssim', extract_xpath('.//dao') do |_record, accumul
   accumulator.replace([accumulator.any?])
 end
 
+# DUL Customization: capture the DAO @role attribute
 to_field 'digital_objects_ssm', extract_xpath('/ead/archdesc/did/dao|/ead/archdesc/dao', to_text: false) do |_record, accumulator|
   accumulator.map! do |dao|
     label = dao.attributes['title']&.value ||
+            dao.attributes['xlink:title']&.value ||
             dao.xpath('daodesc/p')&.text
     href = (dao.attributes['href'] || dao.attributes['xlink:href'])&.value
-    Arclight::DigitalObject.new(label: label, href: href).to_json
+    role = (dao.attributes['role'] || dao.attributes['xlink:role'])&.value
+    DulArclight::DigitalObject.new(label: label, href: href, role: role).to_json
   end
 end
 
@@ -425,12 +429,15 @@ compose 'components', ->(record, accumulator, _context) { accumulator.concat rec
       .map(&:text))
   end
 
+  # DUL Customization: capture the DAO @role attribute
   to_field 'digital_objects_ssm', extract_xpath('./dao|./did/dao', to_text: false) do |_record, accumulator|
     accumulator.map! do |dao|
       label = dao.attributes['title']&.value ||
+              dao.attributes['xlink:title']&.value ||
               dao.xpath('daodesc/p')&.text
       href = (dao.attributes['href'] || dao.attributes['xlink:href'])&.value
-      Arclight::DigitalObject.new(label: label, href: href).to_json
+      role = (dao.attributes['role'] || dao.attributes['xlink:role'])&.value
+      DulArclight::DigitalObject.new(label: label, href: href, role: role).to_json
     end
   end
 

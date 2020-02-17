@@ -1,10 +1,10 @@
 # frozen_string_literal: true
+
 class SearchBuilder < Blacklight::SearchBuilder
   include Blacklight::Solr::SearchBuilderBehavior
   include Arclight::SearchBehavior
   include DulArclight::SearchBehavior
   include BlacklightRangeLimit::RangeLimitBuilder
-
 
   ##
   # @example Adding a new step to the processor chain
