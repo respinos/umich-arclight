@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
+require 'dul_arclight/digital_object'
+
 class SolrDocument
   include Blacklight::Solr::Document
   include Arclight::SolrDocument
-  include DulArclight
-  require 'uri'
 
   # self.unique_key = 'id'
 
