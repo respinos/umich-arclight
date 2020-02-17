@@ -594,6 +594,7 @@
             <container id="aspace_57bec386dc18378d25e4df3ba4933404"
               parent="aspace_161e60cd7c0381f034b6ad0d68d53853" type="image"
               >123456789987654321-alphanumeric-long-ass-child-container-indicator</container>
+            <dao xlink:actuate="onRequest" xlink:href="http://wayback.archive-it.org/1858/*/http://polisci.duke.edu/" xlink:role="web-resource-link" xlink:show="new" xlink:title="Department of Political Science" xpointer="UA.01.15.0014.ref61.1"/>
           </did>
           <accruals id="aspace_ref93">
             <head>Accruals note</head>
