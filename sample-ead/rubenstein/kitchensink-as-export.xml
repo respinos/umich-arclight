@@ -274,19 +274,16 @@
     <scopecontent id="aspace_ref52">
       <head>Scope and Contents note</head>
       <p> This note has some EAD formatting tags!: <emph render="bold">Emph Bold!</emph>, <emph
-          render="italic">Emph Italic</emph>
-        <emph render="bolditalic">Emph Bolditalic!</emph>
-        <title render="bold">Title Bold!</title>
-        <title render="italic">Title Italic!</title>
-        <title render="underline">Title Underline!</title>
-        <title render="doublequote">Title Doublequote</title> Here's some other stuff that's not
-        formatted.</p>
+          render="italic">Emph Italic</emph>, <emph render="bolditalic">Emph Bolditalic!</emph>,
+          <title render="bold">Title Bold!</title>, <title render="italic">Title Italic!</title>,
+          <title render="underline">Title Underline!</title>, <title render="doublequote">Title
+          Doublequote</title>. Here's some other stuff that's not formatted.</p>
       <p>Here's some inline tagging that should be displayed but not indexed:</p>
       <p>The persname, corpname, subject, geogname, famname, date, and genreform, should all display
         exactly the same on the line below:</p>
       <p>The <persname>persname</persname>, <corpname>corpname</corpname>,
           <subject>subject</subject>, <geogname>geogname</geogname>, <famname>famname</famname>,
-          <date>date</date>,and <genreform>genreform</genreform>.</p>
+          <date>date</date>, and <genreform>genreform</genreform>.</p>
     </scopecontent>
     <scopecontent id="aspace_ref53">
       <head>Scope and contents label |||</head>
@@ -327,12 +324,16 @@
         </table> Does anything above display?</p>
     </scopecontent>
     <bibliography id="aspace_ref9">
-      <head>Bibliography</head> <p>Bibliography note no "title" content ||| 5th note input . Can be
-        wrapped in tags thus (but why not bibref?): <blockquote> <p>content in blockquote||| </p></blockquote>
-      </p></bibliography>
+      <head>Bibliography</head>
+      <p>Bibliography note no "title" content ||| 5th note input . Can be wrapped in tags thus (but
+        why not bibref?): <blockquote>
+          <p>content in blockquote||| </p>
+        </blockquote>
+      </p>
+    </bibliography>
     <bibliography id="aspace_ref10">
       <head>Bibliography note "Title" area (in other notes this box is labeled "label") |||</head>
-     <p>Simple note in bibliography.</p>
+      <p>Simple note in bibliography.</p>
       <bibref>Bibliography Item 1</bibref>
       <bibref>Bibliography Item 2</bibref>
       <bibref>Bibliography Item 3</bibref>
@@ -533,7 +534,7 @@
           <head>Immediate Source of Acquisition note</head>
           <p>immediate source of acquisition, series-level text, no label |||</p>
         </acqinfo>
-        
+
         <accessrestrict>
           <legalstatus id="aspace_e26491a59e701817b30d1424ac2d9891">legal status, series-level text,
             no label |||</legalstatus>
