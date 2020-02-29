@@ -90,7 +90,8 @@
       <h2><%= t('arclight.views.show.online_content') %> <span class="media-body al-online-content-icon" aria-hidden="true"><%= blacklight_icon :online %></span></h2>
 
       <%# Single DAO with DUL specific role: render respective DUL viewer %>
-      <% if ['image-service', 'web-resource-link'].include? document.dao_single_role %>
+      <% if ['audio-streaming', 'image-service', 'video-streaming',
+              'web-resource-link'].include? document.dao_single_role %>
         <%= render partial: ['arclight/viewers/', document.dao_single_role].join,
               locals: { document: @document } %>
 
