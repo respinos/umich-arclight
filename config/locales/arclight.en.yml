@@ -1,10 +1,11 @@
 ---
 en:
   arclight:
-    masthead_heading: Archival Collections at Duke
+    masthead_heading: "Archival Collections at Duke"
     views:
       home:
-        title: Archival Collections at Duke
+        title: "Archival Collections at Duke"
       show:
-        collapse: Collapse
-        expand: Show More ...
+        collapse: "Collapse"
+        expand: "Show More ..."
+        context: "Navigate the Collection"

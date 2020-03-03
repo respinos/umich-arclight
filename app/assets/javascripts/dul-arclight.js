@@ -33,4 +33,14 @@ Blacklight.onLoad(function () {
       $('input#group').remove();
     }
   });
+
+
+
+  /* =========== */
+  /* Context Nav */
+  /* =========== */
+
+  // Remove 'sr-only' class from context header
+  $('#context h2').removeClass("sr-only");
+
 });
