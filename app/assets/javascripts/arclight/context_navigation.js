@@ -129,21 +129,40 @@ class ContextNavigation {
     this.data = this.el.data();
     this.parentLi = this.el.parent();
     this.eadid = this.data.arclight.eadid;
-    this.originalParents = originalParents || this.data.arclight.originalParents;
+    // DUL CUSTOMIZATION: let this.originalParents stay null. This is needed for
+    // navigation instantiated via +/- click, see addListenersForPlusMinus().
+    // In those cases, we want to disregard the original component's ancestors and
+    // instead populate the context navigator using the clicked component's ID
+    // to find its children.
+    this.originalParents = originalParents;
     this.originalDocument = originalDocument || this.data.arclight.originalDocument;
     this.ul = $('<ul class="al-context-nav-parent"></ul>');
   }
 
-  // DUL CUSTOMIZATION: Account for custom id with underscore
-  // Gets the targetId to select, based off of parents and current level
   get targetId() {
-    return `${this.eadid}_${this.originalParents[this.data.arclight.level]}`;
+    // Gets the targetId to select, based off of parents and current level.
+    // DUL CUSTOMIZATION: Accommodate cases where no parents are provided, i.e.,
+    // collection view or a +/- click.
+    if (this.originalParents && this.originalParents[this.data.arclight.level]) {
+      // DUL CUSTOMIZATION: Account for custom id with underscore
+      return `${this.eadid}_${this.originalParents[this.data.arclight.level]}`;
+    }
+    return this.data.arclight.originalDocument;
   }
 
   get requestParent() {
+    // When populating a context navigator with a list of child components, which
+    // component is the parent in the query that fetches the list?
+
+    // Cases where you're viewing a component page (use its ancestor trail)...
     if (this.originalParents && this.originalParents[this.data.arclight.level - 1]) {
       return this.originalParents[this.data.arclight.level - 1];
     }
+
+    // Cases where there are no parents provided...
+    //   1) when on a top-level collection page
+    //   2) when +/- gets clicked
+
     // DUL CUSTOMIZATION: Account for DUL component IDs which have "_" between
     // the eadid & component ref.
     return this.data.arclight.originalDocument.replace(this.eadid+'_', '');
@@ -361,8 +380,12 @@ class ContextNavigation {
       const targetArea = $($(e.target).attr('href'));
       if (!targetArea.data().resolved) {
         targetArea.find('.context-navigator').each((i, ee) => {
+
           const contextNavigation = new ContextNavigation(
-            ee, that.originalParents, that.originalDocument
+            // DUL CUSTOMIZATION: send null for originalParents. We want to
+            // disregard the original component's ancestor trail and instead use
+            // the current ID as the parent in the query to populate the navigator.
+            ee, null, that.originalDocument
           );
           contextNavigation.getData();
         });
@@ -377,7 +400,11 @@ class ContextNavigation {
  */
 Blacklight.onLoad(function () {
   $('.context-navigator').each(function (i, e) {
-    const contextNavigation = new ContextNavigation(e);
+    // DUL CUSTOMIZATION: explicitly send the navigator's originalParents & originalDocument
+    // as parameters when instantiating ContextNavigation.
+    const contextNavigation = new ContextNavigation(
+        e, $(this).data('arclight').originalParents, $(this).data('arclight').originalDocument
+      );
     contextNavigation.getData();
   });
 });
