@@ -107,6 +107,7 @@ to_field 'unitid_ssm', extract_xpath('/ead/archdesc/did/unitid')
 to_field 'unitid_teim', extract_xpath('/ead/archdesc/did/unitid')
 to_field 'collection_unitid_ssm', extract_xpath('/ead/archdesc/did/unitid')
 
+# DUL CUSTOMIZATION: strip whitespace & newlines from normalized title
 to_field 'normalized_title_ssm' do |_record, accumulator, context|
   dates = Arclight::NormalizedDate.new(
     context.output_hash['unitdate_inclusive_ssm'],
@@ -114,15 +115,16 @@ to_field 'normalized_title_ssm' do |_record, accumulator, context|
     context.output_hash['unitdate_other_ssim']
   ).to_s
   title = context.output_hash['title_ssm'].first
-  accumulator << Arclight::NormalizedTitle.new(title, dates).to_s
+  accumulator << Arclight::NormalizedTitle.new(title, dates).to_s&.gsub(/\s+/, " ")
 end
 
+# DUL CUSTOMIZATION: strip whitespace & newlines from normalized date
 to_field 'normalized_date_ssm' do |_record, accumulator, context|
   accumulator << Arclight::NormalizedDate.new(
     context.output_hash['unitdate_inclusive_ssm'],
     context.output_hash['unitdate_bulk_ssim'],
     context.output_hash['unitdate_other_ssim']
-  ).to_s
+  ).to_s&.gsub(/\s+/, " ")
 end
 
 to_field 'collection_ssm' do |_record, accumulator, context|
