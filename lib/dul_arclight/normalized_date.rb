@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
-module Arclight
+# Overrides ArcLight core NormalizedDate rules for local customization.
+# Last checked for updates: ArcLight v0.3.0.
+# https://github.com/projectblacklight/arclight/blob/master/lib/arclight/normalized_date.rb
+
+module DulArclight
   ##
   # A utility class to normalize dates, typically by joining inclusive and bulk dates
   # e.g., "1990-2000, bulk 1990-1999"
@@ -20,7 +24,9 @@ module Arclight
         end
       end&.join(', ')
 
-      @bulk = Array.wrap(bulk).compact.map(&:strip).join(', ')
+      # DUL CUSTOMIZATION: strip out the word "bulk" if at the start of the value for
+      # a type="bulk" unitdate. This prevents "bulk bulk" from displaying.
+      @bulk = Array.wrap(bulk).compact.map { |i| i.sub('bulk', '') }.map(&:strip).join(', ')
       @other = Array.wrap(other).compact.map(&:strip).join(', ')
     end
 
@@ -39,16 +45,11 @@ module Arclight
 
     # @see http://www2.archivists.org/standards/DACS/part_I/chapter_2/4_date for rules
     def normalize
-      if inclusive.present?
-        result = inclusive.to_s
-        result << ", bulk #{bulk}" if bulk.present?
-      elsif other.present?
-        result = other.to_s
-      else
-        result = nil
-      end
-
-      result&.strip
+      result = []
+      result << inclusive if inclusive.present?
+      result << other if other.present?
+      result << "bulk #{bulk}" if bulk.present?
+      result.compact.map(&:strip).join(', ')
     end
   end
 end
