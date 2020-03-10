@@ -1,10 +1,18 @@
 /* Need these to be able to use ArcLight mixins in DUL-Arclight */
 @import 'bootstrap/functions';
 @import 'bootstrap/variables';
+@import 'bootstrap/mixins';
 @import 'arclight/variables';
+
+@import "font-awesome-sprockets";
+@import "font-awesome";
 
 @import 'arclight-overrides/modules/layout';
 
 @import 'dul-arclight/modules/layout.scss';
 @import 'dul-arclight/modules/context_navigation.scss';
 @import 'dul-arclight/modules/show_component.scss';
+
+@import 'dul-arclight/dul_variables.scss';
+@import 'dul-arclight/dul_styles.scss';
+@import 'dul-arclight/dul_masthead.scss';

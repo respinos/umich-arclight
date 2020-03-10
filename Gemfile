@@ -9,6 +9,7 @@ gem 'bootstrap', '~> 4.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'devise'
 gem 'devise-guests', '~> 0.6'
+gem 'font-awesome-sass', '~> 5.12.0'
 gem 'jquery-rails'
 gem 'mini_racer', platforms: :ruby
 gem 'pg'
