@@ -36,6 +36,26 @@ Blacklight.onLoad(function () {
 
 
 
+  /* ================= */
+  /* MASTHEAD BEHAVIOR */
+  /* ================= */
+
+
+  /* DUL masthead primary navigation menu toggle */
+  $('a#full-menu-toggle').on('click',function(e) {
+
+    e.preventDefault();
+
+    $('#dul-masthead-region-megamenu').slideToggle();
+
+    // toggle FA content
+    var el  = $('a#full-menu-toggle span.nav-icon'); 
+    el.html(el.html() == '<i class="fas fa-bars"></i>' ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>');
+      
+  });
+
+
+
   /* =========== */
   /* Context Nav */
   /* =========== */

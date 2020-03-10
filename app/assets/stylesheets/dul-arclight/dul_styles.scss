@@ -1,0 +1,13 @@
+
+//== Layout
+
+body {
+  font-family: "Source Sans Pro", Calibri, Candara, Arial, sans-serif;
+}
+
+@include media-breakpoint-up(xl) {
+  .container, .container-sm, .container-md, .container-lg, .container-xl {
+      max-width: 1860px;
+  }
+}
+

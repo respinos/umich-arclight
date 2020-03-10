@@ -1,0 +1,71 @@
+<%# Copied from ArcLight core in order to customize locally %>
+<%# Last checked for updates:      %>
+<%# ArcLight v0.3.0. %>
+<%# https://github.com/projectblacklight/arclight/blob/master/app/views/shared/_header_navbar.html.erb #%>
+
+<header>
+
+  <nav id="header-navbar" class="navbar navbar-expand-md topbar" aria-label="utilities" role="navigation">
+
+    <div class="<%= container_classes %>">
+
+      <%# logo %>
+      <div class="col-sm-12 col-md-5 col-lg-5 col-xl-4" id="logo-col">
+        <%= link_to "https://library.duke.edu", :class=>"navbar-dul", :title=> t('blacklight.branding.library_name') do %>
+          <div class="navbar-logo"><span class="sr-only"><%= t('blacklight.branding.library_name') %></span></div>
+        <% end %>
+
+
+        <div class="navbar-product-name">
+          <a href="/">
+            <span class="product-name-primary">
+              <%= t('blacklight.branding.primary_html') %> <span class="extra"><%= t('blacklight.branding.primary_html_extra') %></span>
+            </span>
+            <span class="product-name-secondary">
+              <%= t('blacklight.branding.secondary_html') %>
+            </span>
+          </a>
+        </div>
+
+      </div>
+
+      <%# search bar %>
+      <div class="col-sm-12 col-md-6 col-lg-5 col-xl-5 flex-column" id="search-col">
+        <%= render_search_bar %>
+      </div>
+      
+      <%# util nav %>
+      <div class="col-sm-12 col-md-1 col-lg-2 col-xl-3" id="primary-menu">
+
+        <div class="collapse navbar-collapse justify-content-md-end" id="user-util-collapse">
+          <%= render 'shared/user_util_links' %>
+        </div>
+
+        <%# Mobile menu button %>
+        <div id="mobile-menu">
+          <button type="button" class="mobile-menu-right-toggle navbar-toggle btn collapsed" data-toggle="collapse" data-target="#mobile-only-menu" title="Menu" aria-label="Toggle navigation">
+            <span class="fa fa-bars"></span>
+            <span class="sr-only">Menu</span>
+          </button>
+        </div>
+
+      </div>            
+
+    </div>
+    
+  </div>
+
+</header>
+
+<div id="dul-masthead-row">
+    <div class="container">
+      <div class="row justify-content-end mr-4 ml-4">
+        <%= render 'shared/dul_megamenu_holder' %>
+      </div>
+    </div>
+  </div>
+
+  <%= javascript_include_tag '//library.duke.edu/masthead/load-masthead.js.php?width=1820&amp;fixed=false' %>
+
+  <%= render partial: 'shared/mobile_menu' %>
+
