@@ -55,6 +55,13 @@ Blacklight.onLoad(function () {
   });
 
 
+  /* ============== */
+  /* Search Results */
+  /* ============== */
+
+  // Remove 'sr-only' class from applied search params label
+  $('#appliedParams span.constraints-label').removeClass("sr-only");
+  
 
   /* =========== */
   /* Context Nav */
@@ -62,5 +69,59 @@ Blacklight.onLoad(function () {
 
   // Remove 'sr-only' class from context header
   $('#context h2').removeClass("sr-only");
+
+
+
+  /* ======++++++++++++++===== */
+  /* Augment truncation toggle */
+  /* =====++++++++++++++====== */
+
+  updatAllText = function() {
+    $('.responsiveTruncatorToggle').text("show more").append(" <i class='fas fa-chevron-circle-down'></i>").wrapInner("<span class='btn-wrapper'></span>");
+    $('.responsiveTruncatorToggle').addClass('showing-less');
+  }
+
+  toggleExpanded = function() {
+    if ( $($this).parent('.card-text').hasClass('expanded') ) {
+      $($this).parent('.card-text').removeClass('expanded');
+    } else {
+      $($this).parent('.card-text').addClass('expanded');
+    }
+  }
+
+  toggleText = function() {
+    if ($($this).hasClass('showing-less')) {
+      $($this).removeClass('showing-less').addClass('showing-more');
+      $($this).text("show less").append(" <i class='fas fa-chevron-circle-up'></i>").wrapInner("<span class='btn-wrapper'></span>");
+    } else {
+      $($this).removeClass('showing-more').addClass('showing-less');
+      $($this).text("show more").append(" <i class='fas fa-chevron-circle-down'></i>").wrapInner("<span class='btn-wrapper'></span>");
+    }
+  }
+
+  // initial page load
+  updatAllText();
+
+  // click button
+  $('.responsiveTruncatorToggle').click(function() {
+    $this = this;
+    toggleExpanded($this);
+    toggleText($this);
+  });
+  
+  $(window).bind("resize", function() {
+
+    $('.responsiveTruncatorToggle').parent('.card-text').removeClass('expanded');
+    
+    updatAllText();
+
+    // need to do this again after binding resize?
+    $('.responsiveTruncatorToggle').click(function() {
+      $this = this;
+      toggleExpanded($this);
+      toggleText($this);
+    });
+
+  });
 
 });
