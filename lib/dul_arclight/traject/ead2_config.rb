@@ -10,7 +10,8 @@ require 'traject/nokogiri_reader'
 require 'traject_plus'
 require 'traject_plus/macros'
 require 'arclight/level_label'
-require 'arclight/normalized_date'
+# DUL Customization: use custom normalized date
+require_relative '../normalized_date'
 require 'arclight/normalized_title'
 require 'active_model/conversion' ## Needed for Arclight::Repository
 require 'active_support/core_ext/array/wrap'
@@ -108,23 +109,25 @@ to_field 'unitid_teim', extract_xpath('/ead/archdesc/did/unitid')
 to_field 'collection_unitid_ssm', extract_xpath('/ead/archdesc/did/unitid')
 
 # DUL CUSTOMIZATION: strip whitespace & newlines from normalized title
+# Also, use DUL rules for NormalizedDate
 to_field 'normalized_title_ssm' do |_record, accumulator, context|
-  dates = Arclight::NormalizedDate.new(
+  dates = DulArclight::NormalizedDate.new(
     context.output_hash['unitdate_inclusive_ssm'],
     context.output_hash['unitdate_bulk_ssim'],
     context.output_hash['unitdate_other_ssim']
   ).to_s
   title = context.output_hash['title_ssm'].first
-  accumulator << Arclight::NormalizedTitle.new(title, dates).to_s&.gsub(/\s+/, " ")
+  accumulator << Arclight::NormalizedTitle.new(title, dates).to_s&.gsub(/\s+/, ' ')
 end
 
 # DUL CUSTOMIZATION: strip whitespace & newlines from normalized date
+# Also, use DUL rules for NormalizedDate
 to_field 'normalized_date_ssm' do |_record, accumulator, context|
-  accumulator << Arclight::NormalizedDate.new(
+  accumulator << DulArclight::NormalizedDate.new(
     context.output_hash['unitdate_inclusive_ssm'],
     context.output_hash['unitdate_bulk_ssim'],
     context.output_hash['unitdate_other_ssim']
-  ).to_s&.gsub(/\s+/, " ")
+  ).to_s&.gsub(/\s+/, ' ')
 end
 
 to_field 'collection_ssm' do |_record, accumulator, context|
@@ -296,8 +299,9 @@ compose 'components', ->(record, accumulator, _context) { accumulator.concat rec
   to_field 'unitdate_inclusive_ssm', extract_xpath('./did/unitdate[@type="inclusive"]')
   to_field 'unitdate_other_ssim', extract_xpath('./did/unitdate[not(@type)]')
 
+  # DUL CUSTOMIZATION: use DUL rules for NormalizedDate
   to_field 'normalized_title_ssm' do |_record, accumulator, context|
-    dates = Arclight::NormalizedDate.new(
+    dates = DulArclight::NormalizedDate.new(
       context.output_hash['unitdate_inclusive_ssm'],
       context.output_hash['unitdate_bulk_ssim'],
       context.output_hash['unitdate_other_ssim']
@@ -306,8 +310,9 @@ compose 'components', ->(record, accumulator, _context) { accumulator.concat rec
     accumulator << Arclight::NormalizedTitle.new(title, dates).to_s
   end
 
+  # DUL CUSTOMIZATION: use DUL rules for NormalizedDate
   to_field 'normalized_date_ssm' do |_record, accumulator, context|
-    accumulator << Arclight::NormalizedDate.new(
+    accumulator << DulArclight::NormalizedDate.new(
       context.output_hash['unitdate_inclusive_ssm'],
       context.output_hash['unitdate_bulk_ssim'],
       context.output_hash['unitdate_other_ssim']
