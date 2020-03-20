@@ -41,3 +41,20 @@ namespace :seed do
     end
   end
 end
+
+namespace :dul_arclight do
+  # Full reindex of all EAD data (In /data/*)
+  # Note: this erases all data before reindexing.
+  # TBD: non-destructive reindexing & accounting for deleted files.
+  # Based on https://github.com/sul-dlss/arclight-demo/blob/master/Rakefile
+  # ==============================
+  desc 'Index all EAD files into Solr'
+  task full_reindex: [:'arclight:destroy_index_docs'] do
+    puts 'Indexing all data from /data directory...'
+    # Identify the configured repos
+    repo_config.keys.map do |repository|
+      # Index a directory with a given repository ID that matches its filename
+      system("DIR=/data/#{repository} REPOSITORY_ID=#{repository} rake arclight:index_dir")
+    end
+  end
+end
