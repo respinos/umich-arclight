@@ -4,7 +4,6 @@
 
 require 'spec_helper'
 
-
 # Removed this spec for now - we can revisit once there is actual
 # content for the homepage
 

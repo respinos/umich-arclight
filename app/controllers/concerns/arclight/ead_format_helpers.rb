@@ -33,13 +33,15 @@ module Arclight
     def ead_to_html_scrubber
       Loofah::Scrubber.new do |node|
         format_render_attributes(node) if node.attr('render').present?
+        format_colliding_tags(node) if
+          %w[abbr address blockquote div label table tbody thead title].include? node.name
         format_lists(node) if %w[list chronlist].include? node.name
         node
       end
     end
 
     def condense_whitespace(str)
-      str.squish.strip.gsub(/>[\n\s]+</, '><')
+      str.squish.strip.gsub(/>[\n\s]+</, '> <')
     end
 
     def wrap_in_paragraph(value)
@@ -136,7 +138,7 @@ module Arclight
       end
     end
 
-    def format_deflist_as_table(node, labels, items, defitems)
+    def format_deflist_as_table(node, labels, items, defitems) # rubocop:disable Metrics/MethodLength
       node.name = 'table'
       node['class'] = 'table deflist'
       listhead_node = node.at_css('listhead')
@@ -165,7 +167,7 @@ module Arclight
       defitems.each { |defitem_node| defitem_node.swap(defitem_node.children) } # unwrap
     end
 
-    def format_chronlists(node)
+    def format_chronlists(node) # rubocop:disable Metrics/MethodLength
       node.name = 'table'
       node['class'] = 'table chronlist'
       eventgrps = node.css('eventgrp')
@@ -226,6 +228,15 @@ module Arclight
         event_node['class'] = 'chronlist-item-event'
       end
       multi_events.each { |event_node| event_node.name = 'div' }
+    end
+
+    # Some elements are in common between EAD & HTML:
+    # abbr address blockquote div head label p table tbody thead title
+    #
+    # For any that we don't want to end up in our page HTML (e.g., we
+    # want <p> but not <title>), we need to unwrap the contents.
+    def format_colliding_tags(node)
+      node.replace(node.children)
     end
   end
 end
