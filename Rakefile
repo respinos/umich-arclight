@@ -60,7 +60,7 @@ namespace :dul_arclight do
   desc 'Full destroy and reindex of all EAD data (In /data/*)'
   # NOTE: this erases all index data before reindexing.
   # ====================================================
-  task reindex_full_rebuild: [:'arclight:destroy_index_docs', :'dul_arclight:reindex_all'] do
+  task reindex_full_rebuild: %i[arclight:destroy_index_docs dul_arclight:reindex_all] do
     puts 'Index has been destroyed and rebuilt from /data directory.'
   end
 end
