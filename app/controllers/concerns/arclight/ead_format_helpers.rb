@@ -35,6 +35,7 @@ module Arclight
         format_render_attributes(node) if node.attr('render').present?
         format_colliding_tags(node) if
           %w[abbr address blockquote div label table tbody thead title].include? node.name
+        format_links(node) if %w[extptr extref extrefloc ptr ref].include? node.name
         format_lists(node) if %w[list chronlist].include? node.name
         node
       end
@@ -237,6 +238,16 @@ module Arclight
     # want <p> but not <title>), we need to unwrap the contents.
     def format_colliding_tags(node)
       node.replace(node.children)
+    end
+
+    def format_links(node)
+      node.remove_attribute('target')
+      if %w[extptr extref extrefloc].include? node.name
+        node['target'] = '_blank'
+        node['class'] = 'external-link'
+      end
+      node.content = node['title'] if (%w[extptr ptr].include? node.name) && node['title'].present?
+      node.name = 'a' if node['href'].present?
     end
   end
 end
