@@ -2,14 +2,18 @@
 en:
   arclight:
     masthead_heading: "Archival Collections at Duke"
+    truncation:
+      show_more: "show less"
+      show_less: "show more"
     views:
       home:
         title: "Archival Collections at Duke"
+      repositories:
+        browse: "Browse"
       show:
         collapse: "Collapse"
         expand: "Show More ..."
         context: "Navigate the Collection"
-
     within_collection_dropdown:
       all_collections: "All Collections"
       this_collection: "This Collection"

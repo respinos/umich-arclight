@@ -46,7 +46,7 @@ $brand-info:            #004ccc !default;
 $gray-darker:           #222222 !default;
 $gray-dark:             #333333 !default;
 $gray:                  #555555 !default;
-$gray-light:            #767676 !default;
+$gray-light:            #676767 !default;
 $gray-light-more:       #cccccc !default;
 $gray-lighter:          #eeeeee !default;
 $facet-grey:            #f5f5f5 !default;
@@ -54,4 +54,5 @@ $gray-lightest:         #fafafa !default;
 
 
 $primary-link-color: #004CCC;
-$secondary-link-color: shade( $primary-link-color, 25% );
+$secondary-link-color: #003999;
+$link-hover-color: #3370d6;

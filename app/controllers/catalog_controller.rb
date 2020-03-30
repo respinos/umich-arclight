@@ -375,8 +375,8 @@ class CatalogController < ApplicationController
     end
 
     # Insert the breadcrumbs at the beginning
-    config.show.partials.unshift(:show_upper_metadata)
-    config.show.partials.unshift(:show_breadcrumbs)
+    # config.show.partials.unshift(:show_upper_metadata)
+    # config.show.partials.unshift(:show_breadcrumbs)
     config.show.partials.delete(:show_header)
 
     ##
