@@ -185,6 +185,9 @@ a {
   background-color:#fff;
   border-radius: 0;
 
+  border-bottom: 1px dotted shade($gray-lighter, 5%);
+  padding-bottom: 1.5rem;
+
   .breadcrumb-item {
     flex: unset;
     color: $gray-light;
@@ -411,9 +414,9 @@ a {
 
   }
 
-  .col-auto {
-    display: none;
-  }
+  // .col-auto {
+  //   display: none;
+  // }
   .al-search-result-index-article {
     margin-left: 0;
     .documentHeader {
