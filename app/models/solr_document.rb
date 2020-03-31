@@ -8,8 +8,8 @@ class SolrDocument
 
   # self.unique_key = 'id'
 
-  def bibnum
-    first('bibnum_ssi')
+  def bibnums
+    fetch('bibnum_ssim', [])
   end
 
   # ===============
