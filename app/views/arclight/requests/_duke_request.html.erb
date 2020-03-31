@@ -5,4 +5,12 @@
   <% duke_request ||= Arclight::Requests::DukeRequest.new(document) %>
   <% duke_request_url = duke_request.try(:url) %>
 
-<%= link_to t('arclight.request.container'), duke_request_url, target: '_blank', class: 'btn btn-secondary btn-sm' %>
+  <%# A single Aleph ID: link to the Duke Requests system for the bib record. %>
+  <% if document.bibnums.count == 1 %>
+    <%= link_to t('arclight.request.container'), duke_request_url, target: '_blank', class: 'btn btn-secondary btn-sm' %>
+
+  <%# Multiple Aleph IDs need to link to the catalog search results %>
+  <% elsif document.bibnums.count > 1 %>
+    <% catalog_serp_url = duke_request.try(:catalog_serp_url) %>
+    <%= link_to t('arclight.request.container'), catalog_serp_url, target: '_blank', class: 'btn btn-secondary btn-sm', data: { toggle: 'tooltip' }, title: "Select items for onsite use using the library catalog. Since this collection guide represents multiple collections, first choose the collection that includes the material you'd like to request, then click Request." %>
+  <% end %>

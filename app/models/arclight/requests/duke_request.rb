@@ -25,7 +25,13 @@ module Arclight
       ##
       # Full url of request link
       def url
-        [base_request_url, document.bibnum].join
+        [base_request_url, document.bibnums.first].join
+      end
+
+      ##
+      # Catalog SERP result URL (for cases w/2+ aleph numbers)
+      def catalog_serp_url
+        ['https://find.library.duke.edu/?search_field=isbn_issn&q=', document.eadid].join
       end
     end
   end

@@ -59,15 +59,15 @@ RSpec.describe 'EAD 2 traject indexing', type: :feature do
   describe 'Bib number indexing' do
     describe 'collection level' do
       it 'gets bib number' do
-        expect(result['bibnum_ssi'].first).to eq '002164677'
+        expect(result['bibnum_ssim'].first).to eq '002164677'
       end
     end
 
     describe 'component level' do
       it 'gets bib number from collection / top level' do
         component = result['components'].find { |c| c['id'] == ['rushbenjaminandjulia_aspace_60bc65ac982c71ade8c13641188f6dbc'] }
-        expect(component).to include 'bibnum_ssi'
-        expect(component['bibnum_ssi'].first).to eq '002164677'
+        expect(component).to include 'bibnum_ssim'
+        expect(component['bibnum_ssim'].first).to eq '002164677'
       end
     end
   end

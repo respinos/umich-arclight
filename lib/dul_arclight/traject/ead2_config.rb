@@ -88,7 +88,7 @@ to_field 'unitdate_inclusive_ssm', extract_xpath('/ead/archdesc/did/unitdate[@ty
 to_field 'unitdate_other_ssim', extract_xpath('/ead/archdesc/did/unitdate[not(@type)]')
 
 # Aleph ID (esp. for request integration)
-to_field 'bibnum_ssi', extract_xpath('/ead/eadheader/filedesc/notestmt/note/p/num[@type="aleph"]')
+to_field 'bibnum_ssim', extract_xpath('/ead/eadheader/filedesc/notestmt/note/p/num[@type="aleph"]')
 
 # All top-level docs treated as 'collection' for routing / display purposes
 to_field 'level_ssm' do |_record, accumulator|
@@ -320,7 +320,7 @@ compose 'components', ->(record, accumulator, _context) { accumulator.concat rec
   end
 
   # Aleph ID (esp. for request integration)
-  to_field 'bibnum_ssi', extract_xpath('/ead/eadheader/filedesc/notestmt/note/p/num[@type="aleph"]')
+  to_field 'bibnum_ssim', extract_xpath('/ead/eadheader/filedesc/notestmt/note/p/num[@type="aleph"]')
 
   to_field 'component_level_isim' do |record, accumulator|
     accumulator << 1 + NokogiriXpathExtensions.new.is_component(record.ancestors).count

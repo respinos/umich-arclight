@@ -20,6 +20,9 @@ Blacklight.onLoad(function () {
   }
 
   $('body').popover(popOverSettings);
+  $('body').tooltip({
+    selector: '[data-toggle="tooltip"]'
+  });
 
   /* =================== */
   /* SEARCH BOX BEHAVIOR */
