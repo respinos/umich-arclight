@@ -13,6 +13,9 @@ en:
           one: "1 result in this collection"
           other: "%{count} results in this collection"
           zero: "0 results in this collection"
+        top_group_results:
+          one: "Top %{count} result in this collection"
+          other: "Top %{count} results in this collection — "
       repositories:
         browse: "Browse"
       show:
