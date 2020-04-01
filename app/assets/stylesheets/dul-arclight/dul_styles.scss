@@ -585,7 +585,8 @@ a {
 
 }
 
-.card-text {
+.card-text,
+.al-grouped-title-bar {
   .responsiveTruncatorToggle {
     &::before {
       background: linear-gradient(
