@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- NOTE: changes to this file must also be replicated to -->
+<!-- DevOps/antsy/files/arclight/solr/conf/solrconfig.xml  -->
+
 <!--
  Licensed to the Apache Software Foundation (ASF) under one or more
  contributor license agreements.  See the NOTICE file distributed with
@@ -134,33 +138,44 @@
        <str name="fl">
          id,
          score,
-         abstract_ssm,
-         accessrestrict_ssm,
+         abstract_tesim,
+         accessrestrict_tesim,
+         accruals_tesim,
+         altformavail_tesim,
+         appraisal_tesim,
+         arrangement_tesim,
+         bioghist_tesim,
          child_component_count_isim,
          collection_ssm,
          collection_unitid_ssm,
+         component_level_isim,
          containers_ssim,
          creator_ssm,
+         custodhist_tesim,
+         ead_ssi,
          extent_ssm,
          geogname_ssm,
          has_online_content_ssim,
          language_ssm,
          level_ssm,
-         repository_ssm,
-         scopecontent_ssm,
-         title_ssm,
+         names_coll_ssim,
          normalized_title_ssm,
          normalized_date_ssm,
-         unitid_ssm,
+         originalsloc_tesim,
+         parent_access_restrict_tesim,
+         parent_access_terms_tesim,
          parent_ssim,
          parent_unittitles_ssm,
-         ead_ssi,
+         places_ssim,
+         physloc_tesim,
+         phystech_tesim,
+         processinfo_tesim,
          ref_ssm,
-         component_level_isim,
-         parent_access_restrict_ssm,
-         parent_access_terms_ssm,
-         names_coll_ssim
-         places_ssim
+         repository_ssm,
+         scopecontent_tesim,
+         title_ssm,
+         unitid_ssm,
+         userestrict_tesim
        </str>
 
        <str name="facet">true</str>

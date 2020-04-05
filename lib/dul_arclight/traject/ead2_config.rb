@@ -26,6 +26,15 @@ require 'arclight/traject/nokogiri_namespaceless_reader'
 extend TrajectPlus::Macros
 # rubocop:enable Style/MixinUsage
 
+# DUL Customization:
+# For "to_text: false" fields, normalize consecutive spaces or newlines into one space.
+# TODO: Make this kind of compression happen globally for all EAD content, or at least
+# for more fields.
+normalize_space = proc do |rec, acc|
+  acc.map! { |node| node.to_xml.gsub(/[[:space:]]+/, ' ') } if rec.is_a? Nokogiri::XML::Document
+end
+
+
 NAME_ELEMENTS = %w[corpname famname name persname].freeze
 
 SEARCHABLE_NOTES_FIELDS = %w[
@@ -229,13 +238,13 @@ to_field 'date_range_sim', extract_xpath('/ead/archdesc/did/unitdate/@normal', t
 end
 
 SEARCHABLE_NOTES_FIELDS.map do |selector|
-  to_field "#{selector}_ssm", extract_xpath("/ead/archdesc/#{selector}/*[local-name()!='head']", to_text: false)
+  to_field "#{selector}_tesim", extract_xpath("/ead/archdesc/#{selector}/*[local-name()!='head']", to_text: false), normalize_space
   to_field "#{selector}_heading_ssm", extract_xpath("/ead/archdesc/#{selector}/head") unless selector == 'prefercite'
   to_field "#{selector}_teim", extract_xpath("/ead/archdesc/#{selector}/*[local-name()!='head']")
 end
 
 DID_SEARCHABLE_NOTES_FIELDS.map do |selector|
-  to_field "#{selector}_ssm", extract_xpath("/ead/archdesc/did/#{selector}", to_text: false)
+  to_field "#{selector}_tesim", extract_xpath("/ead/archdesc/did/#{selector}", to_text: false), normalize_space
 end
 
 NAME_ELEMENTS.map do |selector|
@@ -423,14 +432,14 @@ compose 'components', ->(record, accumulator, _context) { accumulator.concat rec
   end
 
   # Get the <accessrestrict> from the closest ancestor that has one (includes top-level)
-  to_field 'parent_access_restrict_ssm' do |record, accumulator|
+  to_field 'parent_access_restrict_tesim' do |record, accumulator|
     accumulator.concat Array
       .wrap(record.xpath('(./ancestor::*/accessrestrict)[last()]/*[local-name()!="head"]')
       .map(&:text))
   end
 
   # Get the <userestrict> from self OR the closest ancestor that has one (includes top-level)
-  to_field 'parent_access_terms_ssm' do |record, accumulator|
+  to_field 'parent_access_terms_tesim' do |record, accumulator|
     accumulator.concat Array
       .wrap(record.xpath('(./ancestor-or-self::*/userestrict)[last()]/*[local-name()!="head"]')
       .map(&:text))
@@ -491,12 +500,12 @@ compose 'components', ->(record, accumulator, _context) { accumulator.concat rec
   end
 
   SEARCHABLE_NOTES_FIELDS.map do |selector|
-    to_field "#{selector}_ssm", extract_xpath("./#{selector}/*[local-name()!='head']", to_text: false)
+    to_field "#{selector}_tesim", extract_xpath("./#{selector}/*[local-name()!='head']", to_text: false), normalize_space
     to_field "#{selector}_heading_ssm", extract_xpath("./#{selector}/head")
     to_field "#{selector}_teim", extract_xpath("./#{selector}/*[local-name()!='head']")
   end
   DID_SEARCHABLE_NOTES_FIELDS.map do |selector|
-    to_field "#{selector}_ssm", extract_xpath("./did/#{selector}", to_text: false)
+    to_field "#{selector}_tesim", extract_xpath("./did/#{selector}", to_text: false), normalize_space
   end
   to_field 'did_note_ssm', extract_xpath('./did/note')
 end
