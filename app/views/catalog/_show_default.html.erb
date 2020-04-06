@@ -29,7 +29,7 @@
             <li class='nav-item'>
               <%= link_to t("arclight.views.show.sections.#{item}"),
                 [
-                  solr_document_path(document.eadid),
+                  solr_document_path(normalize_id(document.eadid)),
                   "##{t("arclight.views.show.sections.#{item}").parameterize}"
                 ].join, class: 'nav-link'
               %>
@@ -95,7 +95,7 @@
 <div class='row collection-banner'>
   <div class='col-auto'>
     <%= content_tag :div, class: "collection-name-wrapper" do %>
-      <%= link_to document.collection_name, solr_document_path(document.eadid) %>
+      <%= link_to document.collection_name, solr_document_path(normalize_id(document.eadid)) %>
     <% end %>
 
     <h1><%= document.normalized_title %></h1>
