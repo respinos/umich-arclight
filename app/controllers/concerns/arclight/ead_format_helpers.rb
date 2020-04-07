@@ -35,6 +35,7 @@ module Arclight
         format_render_attributes(node) if node.attr('render').present?
         format_colliding_tags(node) if
           %w[abbr address blockquote div label table tbody thead title].include? node.name
+        format_archrefs(node) if %w[archref].include? node.name
         format_links(node) if %w[extptr extref extrefloc ptr ref].include? node.name
         format_lists(node) if %w[list chronlist].include? node.name
         node
@@ -235,9 +236,28 @@ module Arclight
     # abbr address blockquote div head label p table tbody thead title
     #
     # For any that we don't want to end up in our page HTML (e.g., we
-    # want <p> but not <title>), we need to unwrap the contents.
+    # want <p> but not <title>), change it into a span.
     def format_colliding_tags(node)
-      node.replace(node.children)
+      node.name = 'span'
+    end
+
+    # Format references to other finding aids, e.g., archref or otherfindaid
+    def format_archrefs(node)
+      # If an archref has sibling archrefs, grab all of them as a nodeset, wrap
+      # them in a <ul> & wrap each item in an <li>. Seems odd but common for such
+      # encoding to imply a list. See https://www.loc.gov/ead/tglib/elements/archref.html
+      archref_sibs = node.xpath('./self::archref | ./following-sibling::archref')
+      if archref_sibs.count > 1
+        archref_sibs.wrap('<ul/>')
+        archref_sibs.map { |a| a.wrap('<li/>') }
+      end
+
+      # Format <repository> element within an archref (probably DUL-specific)
+      archref_repos = node.xpath('.//repository')
+      archref_repos&.map do |r|
+        r.name = 'em'
+        r.prepend_child(' &mdash; ')
+      end
     end
 
     def format_links(node)
