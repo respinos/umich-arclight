@@ -25,7 +25,7 @@ RSpec.describe 'EAD 2 traject indexing', type: :feature do
   end
 
   let(:nokogiri_reader) do
-    Arclight::Traject::NokogiriNamespacelessReader.new(fixture_file.to_s, indexer.settings)
+    DulArclight::Traject::DulCompressedReader.new(fixture_file.to_s, indexer.settings)
   end
 
   let(:records) do
