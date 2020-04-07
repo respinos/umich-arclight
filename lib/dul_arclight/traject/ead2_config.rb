@@ -20,20 +20,15 @@ require_relative '../digital_object'
 require 'arclight/year_range'
 require 'arclight/repository'
 require 'arclight/missing_id_strategy'
-require 'arclight/traject/nokogiri_namespaceless_reader'
+
+# DUL Customization: extend the ArcLight core namespaceless
+# Nokogiri reader so it also squishes consecutive spaces / newline
+# characters. See DulArclight::Traject::DulCompressedReader
+require_relative 'dul_compressed_reader'
 
 # rubocop:disable Style/MixinUsage
 extend TrajectPlus::Macros
 # rubocop:enable Style/MixinUsage
-
-# DUL Customization:
-# For "to_text: false" fields, normalize consecutive spaces or newlines into one space.
-# TODO: Make this kind of compression happen globally for all EAD content, or at least
-# for more fields.
-normalize_space = proc do |rec, acc|
-  acc.map! { |node| node.to_xml.gsub(/[[:space:]]+/, ' ') } if rec.is_a? Nokogiri::XML::Document
-end
-
 
 NAME_ELEMENTS = %w[corpname famname name persname].freeze
 
@@ -67,7 +62,9 @@ DID_SEARCHABLE_NOTES_FIELDS = %w[
 ].freeze
 
 settings do
-  provide 'reader_class_name', 'Arclight::Traject::NokogiriNamespacelessReader'
+  # DUL Customization: Swap out Arclight::Traject::NokogiriNamespacelessReader with
+  # custom DulCompressedReader to remove namespaces AND squish unwanted whitespace.
+  provide 'reader_class_name', 'DulArclight::Traject::DulCompressedReader'
   provide 'solr_writer.commit_on_close', 'true'
   provide 'repository', ENV['REPOSITORY_ID']
   provide 'logger', Logger.new($stderr)
@@ -238,13 +235,13 @@ to_field 'date_range_sim', extract_xpath('/ead/archdesc/did/unitdate/@normal', t
 end
 
 SEARCHABLE_NOTES_FIELDS.map do |selector|
-  to_field "#{selector}_tesim", extract_xpath("/ead/archdesc/#{selector}/*[local-name()!='head']", to_text: false), normalize_space
+  to_field "#{selector}_tesim", extract_xpath("/ead/archdesc/#{selector}/*[local-name()!='head']", to_text: false)
   to_field "#{selector}_heading_ssm", extract_xpath("/ead/archdesc/#{selector}/head") unless selector == 'prefercite'
   to_field "#{selector}_teim", extract_xpath("/ead/archdesc/#{selector}/*[local-name()!='head']")
 end
 
 DID_SEARCHABLE_NOTES_FIELDS.map do |selector|
-  to_field "#{selector}_tesim", extract_xpath("/ead/archdesc/did/#{selector}", to_text: false), normalize_space
+  to_field "#{selector}_tesim", extract_xpath("/ead/archdesc/did/#{selector}", to_text: false)
 end
 
 NAME_ELEMENTS.map do |selector|
@@ -500,12 +497,12 @@ compose 'components', ->(record, accumulator, _context) { accumulator.concat rec
   end
 
   SEARCHABLE_NOTES_FIELDS.map do |selector|
-    to_field "#{selector}_tesim", extract_xpath("./#{selector}/*[local-name()!='head']", to_text: false), normalize_space
+    to_field "#{selector}_tesim", extract_xpath("./#{selector}/*[local-name()!='head']", to_text: false)
     to_field "#{selector}_heading_ssm", extract_xpath("./#{selector}/head")
     to_field "#{selector}_teim", extract_xpath("./#{selector}/*[local-name()!='head']")
   end
   DID_SEARCHABLE_NOTES_FIELDS.map do |selector|
-    to_field "#{selector}_tesim", extract_xpath("./did/#{selector}", to_text: false), normalize_space
+    to_field "#{selector}_tesim", extract_xpath("./did/#{selector}", to_text: false)
   end
   to_field 'did_note_ssm', extract_xpath('./did/note')
 end
