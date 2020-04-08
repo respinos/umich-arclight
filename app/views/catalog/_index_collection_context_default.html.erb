@@ -8,7 +8,7 @@
 <%# space available; some elements have been moved to a popover  %>
 <%# or removed entirely.   %>
 
-<li id="<%= document.id %>" class="al-collection-context row d-flex align-items-start">
+<li id="nav_<%= document.id %>" class="al-collection-context row d-flex align-items-start">
   <div class="documentHeader row" data-document-id="<%= document.id %>">
     <% requestable = item_requestable?('', { document: document }) %>
 
@@ -20,7 +20,7 @@
       <div class="al-toggle-children-container">
         <%= link_to(
           blacklight_icon(:plus),
-          "##{document.id}-collapsible-hierarchy",
+          "#nav_#{document.id}-collapsible-hierarchy",
           class: "al-toggle-view-children #{!show_expanded?(document) ? 'collapsed' : ''}",
           'aria-label': t('arclight.hierarchy.view_all'),
             data: {
@@ -67,7 +67,7 @@
       </div>
 
   <% if document.number_of_children > 0 %>
-    <%= content_tag(:div, id: "#{document.id}-collapsible-hierarchy",
+    <%= content_tag(:div, id: "nav_#{document.id}-collapsible-hierarchy",
       class: "collapse al-collection-context-collapsible al-hierarchy-level-#{document.component_level} #{'show' if show_expanded?(document)}",
       data: { resolved: false }
     ) do %>
