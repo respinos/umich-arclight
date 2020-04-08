@@ -9,3 +9,19 @@
 #content.show-document {
   padding-top: 1rem;
 }
+
+/* Match style for chronlist-head & list-head */
+/* See https://github.com/projectblacklight/arclight/blob/master/app/assets/stylesheets/arclight/modules/layout.scss#L167-L172 */
+.index-head {
+  caption-side: top;
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+}
+
+/* NOTE: this seems to work for the indexes we currently have. */
+/* Might not be appropriate for all ArcLight implementers. */
+table.indexentries td:first-of-type {
+  width: 67%;
+}

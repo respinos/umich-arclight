@@ -22,6 +22,8 @@ en:
         collapse: "Collapse"
         expand: "Show More ..."
         context: "Navigate the Collection"
+        sections:
+          indexes_field: "Other Indexes"
     within_collection_dropdown:
       all_collections: "All Collections"
       this_collection: "This Collection"

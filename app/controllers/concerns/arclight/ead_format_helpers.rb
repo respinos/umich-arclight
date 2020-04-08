@@ -33,13 +33,21 @@ module Arclight
     def ead_to_html_scrubber
       Loofah::Scrubber.new do |node|
         format_render_attributes(node) if node.attr('render').present?
+
+        # Some elements are in common between EAD & HTML:
+        # abbr address blockquote div head label p table tbody thead title
         format_colliding_tags(node) if
-          %w[abbr address blockquote div label table tbody thead title].include? node.name
-        format_archrefs(node) if %w[archref].include? node.name
-        format_links(node) if %w[extptr extref extrefloc ptr ref].include? node.name
-        format_lists(node) if %w[list chronlist].include? node.name
+          %w[abbr address blockquote div label title].include? node.name
+        format_special_elements(node)
         node
       end
+    end
+
+    def format_special_elements(node)
+      format_archrefs(node) if %w[archref].include? node.name
+      format_links(node) if %w[extptr extref extrefloc ptr ref].include? node.name
+      format_lists(node) if %w[list chronlist].include? node.name
+      format_indexes(node) if %w[index].include? node.name
     end
 
     def condense_whitespace(str)
@@ -241,14 +249,14 @@ module Arclight
       node.name = 'span'
     end
 
-    # Format references to other finding aids, e.g., archref or otherfindaid
+    # Format references to other finding aids
     def format_archrefs(node)
       # If an archref has sibling archrefs, grab all of them as a nodeset, wrap
       # them in a <ul> & wrap each item in an <li>. Seems odd but common for such
       # encoding to imply a list. See https://www.loc.gov/ead/tglib/elements/archref.html
       archref_sibs = node.xpath('./self::archref | ./following-sibling::archref')
       if archref_sibs.count > 1
-        archref_sibs.wrap('<ul/>')
+        archref_sibs.wrap('<ul/>') # TODO: this is not wrapping the nodeset, it's wrapping each node in it.
         archref_sibs.map { |a| a.wrap('<li/>') }
       end
 
@@ -268,6 +276,30 @@ module Arclight
       end
       node.content = node['title'] if (%w[extptr ptr].include? node.name) && node['title'].present?
       node.name = 'a' if node['href'].present?
+    end
+
+    def format_indexes(node)
+      # Grab all of the indexentry children as a nodeset, move them into
+      # a <table>, wrap each entry in a <tr> & each value in a <td>.
+      index_head = node.at_css('head')
+      index_head.name = 'h3'
+      index_head.add_class('index-head')
+      index_head['id'] = ['index-', index_head.text].join.parameterize
+      format_indexentries(node)
+      node.name = 'div'
+    end
+
+    def format_indexentries(node)
+      indexentries = node.css('indexentry')
+      indexentries.first.previous = '<table class="table indexentries" />'
+      indexentries.map do |i|
+        i.parent = node.at_css('table.table.indexentries')
+        i.wrap('<tr/>')
+        i.element_children.map { |c| c.wrap('<td/>') }
+        # Assuming two columns in an index, create a blank cell for entries
+        # with a missing value.
+        i.add_child('<td/>') if i.element_children.count == 1
+      end
     end
   end
 end

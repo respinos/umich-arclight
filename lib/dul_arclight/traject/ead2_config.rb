@@ -257,6 +257,9 @@ to_field 'language_ssm', extract_xpath('/ead/archdesc/did/langmaterial')
 
 to_field 'descrules_ssm', extract_xpath('/ead/eadheader/profiledesc/descrules')
 
+# DUL CUSTOMIZATION: add index
+to_field 'indexes_tesim', extract_xpath('/ead/archdesc/index', to_text: false)
+
 # =============================
 # Each component child document
 # <c> <c01> <c12>
@@ -505,6 +508,9 @@ compose 'components', ->(record, accumulator, _context) { accumulator.concat rec
     to_field "#{selector}_tesim", extract_xpath("./did/#{selector}", to_text: false)
   end
   to_field 'did_note_ssm', extract_xpath('./did/note')
+
+  # DUL CUSTOMIZATION: add index
+  to_field 'indexes_tesim', extract_xpath('./index', to_text: false)
 end
 
 each_record do |_record, context|

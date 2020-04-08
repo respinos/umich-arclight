@@ -229,6 +229,7 @@ class CatalogController < ApplicationController
       background_field
       related_field
       indexed_terms_field
+      indexes_field
     ]
 
     config.show.context_access_tab_items = %i[
@@ -241,6 +242,7 @@ class CatalogController < ApplicationController
     config.show.component_metadata_partials = %i[
       component_field
       component_indexed_terms_field
+      component_indexes_field
     ]
 
     config.show.component_access_tab_items = %i[
@@ -300,6 +302,9 @@ class CatalogController < ApplicationController
       last_word_connector: '<br/>'
     }
 
+    # Collection Show Page - Indexes Section
+    config.add_indexes_field 'indexes_tesim', label: 'Other Indexes to the Collection', helper_method: :render_html_tags
+
     # ==========================
     # COMPONENT SHOW PAGE FIELDS
     # ==========================
@@ -342,6 +347,9 @@ class CatalogController < ApplicationController
       two_words_connector: '<br/>',
       last_word_connector: '<br/>'
     }
+
+    # Component Show Page - Indexes Section
+    config.add_component_indexes_field 'indexes_tesim', label: 'Other Indexes', helper_method: :render_html_tags
 
     # =================
     # ACCESS TAB FIELDS
