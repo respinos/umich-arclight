@@ -377,7 +377,8 @@ class ContextNavigation {
     const that = this;
     this.ul.find('.al-toggle-view-children').on('click', (e) => {
       e.preventDefault();
-      const targetArea = $($(e.target).attr('href'));
+      const targetHref = $(e.target).attr('href');
+      const targetArea = $(targetHref);
       if (!targetArea.data().resolved) {
         targetArea.find('.context-navigator').each((i, ee) => {
 
