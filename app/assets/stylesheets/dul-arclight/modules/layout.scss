@@ -12,7 +12,7 @@
 
 /* Match style for chronlist-head & list-head */
 /* See https://github.com/projectblacklight/arclight/blob/master/app/assets/stylesheets/arclight/modules/layout.scss#L167-L172 */
-.index-head {
+.index-head, .table-head {
   caption-side: top;
   font-size: 1.25rem;
   font-weight: 500;
