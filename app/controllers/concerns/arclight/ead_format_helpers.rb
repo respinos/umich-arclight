@@ -257,11 +257,17 @@ module Arclight
       # encoding to imply a list. See https://www.loc.gov/ead/tglib/elements/archref.html
       archref_sibs = node.xpath('./self::archref | ./following-sibling::archref')
       if archref_sibs.count > 1
-        archref_sibs.wrap('<ul/>') # TODO: this is not wrapping the nodeset, it's wrapping each node in it.
-        archref_sibs.map { |a| a.wrap('<li/>') }
+        archref_sibs.first.previous = '<ul/>'
+        archref_sibs.map do |a|
+          a.parent = a.previous_element
+          a.wrap('<li/>')
+        end
       end
+      format_archref_repos(node)
+    end
 
-      # Format <repository> element within an archref (probably DUL-specific)
+    # Format <repository> element within an archref (probably DUL-specific)
+    def format_archref_repos(node)
       archref_repos = node.xpath('.//repository')
       archref_repos&.map do |r|
         r.name = 'em'
@@ -279,9 +285,8 @@ module Arclight
       node.name = 'a' if node['href'].present?
     end
 
+    # Format EAD <index> elements
     def format_indexes(node)
-      # Grab all of the indexentry children as a nodeset, move them into
-      # a <table>, wrap each entry in a <tr> & each value in a <td>.
       index_head = node.at_css('head')
       index_head&.name = 'h3'
       index_head&.add_class('index-head')
@@ -290,6 +295,8 @@ module Arclight
       node.name = 'div'
     end
 
+    # Grab all of the indexentry children as a nodeset, move them into
+    # a <table>, wrap each entry in a <tr> & each value in a <td>.
     def format_indexentries(node)
       indexentries = node.css('indexentry')
       return unless indexentries.present?
