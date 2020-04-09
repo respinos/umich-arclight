@@ -33,13 +33,22 @@ module Arclight
     def ead_to_html_scrubber
       Loofah::Scrubber.new do |node|
         format_render_attributes(node) if node.attr('render').present?
+
+        # Some elements are in common between EAD & HTML:
+        # abbr address blockquote div head label p table tbody thead title
         format_colliding_tags(node) if
-          %w[abbr address blockquote div label table tbody thead title].include? node.name
-        format_archrefs(node) if %w[archref].include? node.name
-        format_links(node) if %w[extptr extref extrefloc ptr ref].include? node.name
-        format_lists(node) if %w[list chronlist].include? node.name
+          %w[abbr address blockquote div label title].include? node.name
+        format_special_elements(node)
         node
       end
+    end
+
+    def format_special_elements(node)
+      format_archrefs(node) if %w[archref].include? node.name
+      format_links(node) if %w[extptr extref extrefloc ptr ref].include? node.name
+      format_lists(node) if %w[list chronlist].include? node.name
+      format_indexes(node) if node.name == 'index'
+      format_tables(node) if node.name == 'table'
     end
 
     def condense_whitespace(str)
@@ -236,23 +245,29 @@ module Arclight
     # abbr address blockquote div head label p table tbody thead title
     #
     # For any that we don't want to end up in our page HTML (e.g., we
-    # want <p> but not <title>), change it into a span.
+    # want <p> but not <title>), just change it into a span.
     def format_colliding_tags(node)
       node.name = 'span'
     end
 
-    # Format references to other finding aids, e.g., archref or otherfindaid
+    # Format references to other finding aids
     def format_archrefs(node)
       # If an archref has sibling archrefs, grab all of them as a nodeset, wrap
       # them in a <ul> & wrap each item in an <li>. Seems odd but common for such
       # encoding to imply a list. See https://www.loc.gov/ead/tglib/elements/archref.html
       archref_sibs = node.xpath('./self::archref | ./following-sibling::archref')
       if archref_sibs.count > 1
-        archref_sibs.wrap('<ul/>')
-        archref_sibs.map { |a| a.wrap('<li/>') }
+        archref_sibs.first.previous = '<ul/>'
+        archref_sibs.map do |a|
+          a.parent = a.previous_element
+          a.wrap('<li/>')
+        end
       end
+      format_archref_repos(node)
+    end
 
-      # Format <repository> element within an archref (probably DUL-specific)
+    # Format <repository> element within an archref (probably DUL-specific)
+    def format_archref_repos(node)
       archref_repos = node.xpath('.//repository')
       archref_repos&.map do |r|
         r.name = 'em'
@@ -268,6 +283,56 @@ module Arclight
       end
       node.content = node['title'] if (%w[extptr ptr].include? node.name) && node['title'].present?
       node.name = 'a' if node['href'].present?
+    end
+
+    # Format EAD <index> elements
+    def format_indexes(node)
+      index_head = node.at_css('head')
+      index_head&.name = 'h3'
+      index_head&.add_class('index-head')
+      index_head['id'] = ['index-', index_head.text].join.parameterize if index_head.present?
+      format_indexentries(node)
+      node.name = 'div'
+    end
+
+    # Grab all of the indexentry children as a nodeset, move them into
+    # a <table>, wrap each entry in a <tr> & each value in a <td>.
+    def format_indexentries(node)
+      indexentries = node.css('indexentry')
+      return unless indexentries.present?
+
+      indexentries.first.previous = '<table class="table indexentries" />'
+      indexentries.map do |i|
+        i.parent = node.at_css('table.table.indexentries')
+        i.wrap('<tr/>')
+        i.element_children.map { |c| c.wrap('<td/>') }
+        # Assuming two columns in an index, create a blank cell for entries
+        # with a missing value.
+        i.add_child('<td/>') if i.element_children.count == 1
+      end
+    end
+
+    # Format EAD <table> elements, converting <tgroup> to HTML <table>.
+    # Ignoring <colspec>, @colname, @colwidth complex rendering logic for now.
+    def format_tables(node)
+      node.name = 'div' if node.css('tgroup').present?
+      format_table_head(node)
+      tgroups = node.css('tgroup')
+      tgroups&.map do |t|
+        t.name = 'table'
+        t.add_class('table')
+        t.css('row').map { |r| r.name = 'tr' }
+        t.css('thead entry').map { |e| e.name = 'th' }
+        t.css('tbody entry').map { |e| e.name = 'td' }
+      end
+    end
+
+    def format_table_head(node)
+      table_head = node.at_css('head')
+      return unless table_head.present?
+
+      table_head.name = 'h3'
+      table_head.add_class('table-head')
     end
   end
 end
