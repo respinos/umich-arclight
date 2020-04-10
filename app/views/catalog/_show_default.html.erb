@@ -60,24 +60,22 @@
 
 <% parents = Arclight::Parents.from_solr_document(document).as_parents %>
 <nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
-    
-    <li class="breadcrumb-item breadcrumb-home-link">
-      <%= link_to t('arclight.routes.home'), root_path %>
-    </li>
 
-    <li class="breadcrumb-item  breadcrumb-item-1">
-      <% if document.repository_config.present? %>
-        <%= link_to(document.repository_config.name, arclight_engine.repository_path(document.repository_config.slug)) %>
-      <% else %>
-        <%= t('arclight.show_breadcrumb_label') %>
-      <% end %>
-    </li>
+  <%= content_tag :div, class: "collection-name-wrapper" do %>
+    <%= link_to solr_document_path(normalize_id(document.eadid)) do %>
+      <i class="fas fa-archive"></i>
+      <span class="collection-name"><%= document.collection_name %></span>
+    <% end %>
+  <% end %>
+
+  <ol class="breadcrumb">
 
     <% parents.each_with_index.map do |parent, index| %>
-      <%= content_tag :li, class: "breadcrumb-item breadcrumb-item-#{index + 1}" do %>
-        <%= link_to parent.label, solr_document_path(parent.global_id) %>
-      <% end %> 
+      <% if (index != 0) %>
+        <%= content_tag :li, class: "breadcrumb-item breadcrumb-item-#{index}" do %>
+          <%= link_to parent.label, solr_document_path(parent.global_id) %>
+        <% end %>
+      <% end %>
     <% end %>
 
     <%= content_tag :li, class: "breadcrumb-item breadcrumb-item-#{parents.length + 2}" do %>
@@ -94,12 +92,7 @@
 <%# ===================== %>
 <div class='row collection-banner'>
   <div class='col-auto'>
-    <%= content_tag :div, class: "collection-name-wrapper" do %>
-      <%= link_to document.collection_name, solr_document_path(normalize_id(document.eadid)) %>
-    <% end %>
-
     <h1><%= document.normalized_title %></h1>
-
   </div>
 </div>
 

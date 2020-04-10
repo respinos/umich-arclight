@@ -12,8 +12,8 @@ RSpec.describe 'Component Page', type: :feature do
   end
 
   describe 'page layout' do
-    it 'shows collection name in mast' do
-      expect(page).to have_css('.collection-banner', text: /Benjamin and Julia Stockton Rush papers/)
+    it 'shows collection name above breadcrumb' do
+      expect(page).to have_css('.collection-name', text: /Benjamin and Julia Stockton Rush papers/)
     end
 
     it 'has component title in an h1' do
