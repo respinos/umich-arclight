@@ -7,6 +7,17 @@ class CatalogController < ApplicationController
   include DulArclight::Catalog
   include Arclight::FieldConfigHelpers
 
+  # DUL CUSTOMIZATION: temporary patch for
+  # ArcLight bug https://github.com/projectblacklight/arclight/issues/741
+  # Patched for now by copying the raw method from Blacklight https://github.com/projectblacklight/blacklight/blob/master/app/controllers/concerns/blacklight/catalog.rb#L57-L63
+  # Last checked for updates: ArcLight v0.3.2
+  def raw
+    raise(ActionController::RoutingError, "Not Found") unless blacklight_config.raw_endpoint.enabled
+
+    _, @document = search_service.fetch(params[:id])
+    render json: @document
+  end
+
   configure_blacklight do |config|
     ## Class for sending and receiving requests from a search index
     # config.repository_class = Blacklight::Solr::Repository
@@ -16,6 +27,9 @@ class CatalogController < ApplicationController
     #
     ## Model that maps search index responses to the blacklight response model
     # config.response_model = Blacklight::Solr::Response
+
+    ## Enable getting JSON at /raw endpoint
+    config.raw_endpoint.enabled = true
 
     ## Default parameters to send to solr for all search-like requests. See also SearchBuilder#processed_parameters
     config.default_solr_params = {
