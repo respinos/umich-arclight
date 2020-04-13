@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ead xmlns="urn:isbn:1-931666-22-9" xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="urn:isbn:1-931666-22-9 http://www.loc.gov/ead/ead.xsd">
+   <eadheader countryencoding="iso3166-1" dateencoding="iso8601" findaidstatus="published"
+      langencoding="iso639-2b" repositoryencoding="iso15511">
+      <eadid url="http://library.duke.edu/rubenstein/findingaids/appleberrydilmus/"
+         >appleberrydilmus</eadid>
+      <filedesc>
+         <titlestmt>
+            <titleproper>Guide to the Dilmus Appleberry Papers, 1810-1927, bulk 1850-1896
+                  <num>RL.10098</num>
+            </titleproper>
+            <author>Bob Malme</author>
+         </titlestmt>
+         <publicationstmt>
+            <publisher>David M. Rubenstein Rare Book &amp; Manuscript Library</publisher>
+            <address>
+               <addressline>103 Perkins Library, Duke University</addressline>
+               <addressline>Durham 27708-0185</addressline>
+               <addressline>919-660-5822</addressline>
+               <addressline>special-collections@duke.edu</addressline>
+               <addressline>URL: <extptr xlink:href="http://library.duke.edu/rubenstein/"
+                     xlink:show="new" xlink:title="http://library.duke.edu/rubenstein/"
+                     xlink:type="simple"/>
+               </addressline>
+            </address>
+         </publicationstmt>
+         <notestmt>
+            <note>
+               <p>Aleph Number: <num type="aleph">000842380</num>
+               </p>
+            </note>
+         </notestmt>
+      </filedesc>
+      <profiledesc>
+         <creation>This finding aid was produced using ArchivesSpace on <date>2015-07-29 17:33:10
+               -0400</date>.</creation>
+         <langusage>English</langusage>
+         <descrules>Describing Archives: A Content Standard</descrules>
+      </profiledesc>
+   </eadheader>
+   <archdesc level="collection">
+      <did>
+         <langmaterial>
+            <language langcode="eng">English</language>
+         </langmaterial>
+         <repository>
+            <corpname>David M. Rubenstein Rare Book &amp; Manuscript Library</corpname>
+         </repository>
+         <unittitle>Dilmus J. Appleberry papers</unittitle>
+         <origination label="creator">
+            <persname rules="dacs" source="naf">TEST Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam iaculis sapien vitae eleifend rutrum. Ut tempor at massa sit amet finibus. Morbi aliquet, leo et cursus lobortis, leo lacus venenatis justo, ut auctor sapien ligula lacinia mi. Quisque suscipit eget nibh ac dapibus. Nulla facilisi. Pellentesque scelerisque felis et velit pretium venenatis. Donec semper tempor sagittis. Etiam eleifend tincidunt quam in blandit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut malesuada aliquam diam, non facilisis quam. Quisque id lectus vestibulum, faucibus arcu eget, pulvinar arcu. Fusce aliquam, risus vel consectetur maximus, nulla diam lacinia urna, eget condimentum leo neque sed nisi.
+
+Donec convallis, quam dapibus cursus fermentum, urna ipsum mollis ex, ut ornare ante mauris vitae est. Donec sollicitudin tempor pretium. Aenean sed lorem ligula. Sed a arcu ex. Aenean blandit sem at sem porta, nec fringilla augue luctus. Curabitur congue pretium ipsum, ut vestibulum tortor scelerisque vel. Sed interdum vitae neque non egestas. Quisque non sapien eu nunc fermentum congue quis at ipsum. Integer suscipit nulla metus, ac ultrices elit condimentum eget. Praesent id consequat est. Pellentesque ac tempor quam. Fusce feugiat semper ante, quis egestas lorem sollicitudin sed.
+
+Vivamus sit amet euismod sem. Pellentesque eu vestibulum justo, in placerat est. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla bibendum fermentum felis a posuere. Quisque quis fermentum dui. Fusce non mi a enim iaculis pharetra. Nulla facilisi. In facilisis tortor vel ipsum venenatis, a pharetra orci aliquam. Pellentesque porta maximus nulla ac ornare. Duis quis tristique nibh. Proin lacus erat, convallis ac arcu eu, tempus suscipit quam.
+
+Cras in feugiat quam. Donec ultrices non velit a auctor. Nulla congue pharetra mauris quis sodales. Proin vitae dapibus risus. Aenean non felis id turpis accumsan porta. Cras vitae molestie libero. Ut mauris massa, faucibus a nulla in, molestie egestas diam. In semper augue vitae odio gravida tincidunt. Sed gravida eros convallis, consectetur eros quis, iaculis nulla. Nunc convallis ut lorem at feugiat. Maecenas eu turpis eu dolor rhoncus porttitor. Nam ac mi in est rutrum venenatis. Sed dapibus interdum dapibus. Duis sit amet turpis tellus. Duis sit amet ipsum eu lectus tempus cursus sollicitudin vitae purus.
+
+Suspendisse laoreet quis orci vel aliquet. Morbi viverra purus vitae libero hendrerit, quis semper augue luctus. Vivamus in suscipit dolor. Integer pellentesque elit quis nisi elementum, at rhoncus justo luctus. Integer porttitor a tortor et sodales. Fusce rhoncus, purus ac maximus sollicitudin, erat elit aliquam odio, nec luctus purus ante at dui. Ut molestie nisi non urna gravida aliquet. Maecenas rhoncus placerat porttitor. Donec purus eros, ultricies sed ornare ut, ornare sit amet eros. Aliquam eleifend lacus et libero interdum tincidunt. Nulla facilisi. Pellentesque et mauris ut quam bibendum convallis. In ex leo, bibendum in urna sit amet, efficitur aliquam tellus.
+
+Duis at facilisis nisi. Pellentesque laoreet gravida mauris, ac egestas augue eleifend quis. Phasellus elementum mi erat, sagittis dignissim nibh euismod sed. Duis odio orci, ornare vel eleifend at, pellentesque et urna. Nam volutpat sagittis maximus. Pellentesque lectus risus, sodales nec interdum id, cursus in quam. Mauris placerat congue risus nec aliquam. Vivamus bibendum, leo non tincidunt hendrerit, arcu metus consectetur nisi, interdum ornare ante enim vel nisi. Maecenas porta orci eu faucibus vestibulum. Nullam ut sapien enim. Duis nec aliquam turpis.
+
+Donec dignissim euismod dui, eget tempor neque commodo vel. Pellentesque massa felis, molestie quis vestibulum id, sagittis nec ante. Nulla fermentum enim nisl. Mauris tortor urna, aliquet non ipsum quis, laoreet faucibus ligula. Sed accumsan suscipit ipsum at lobortis. Duis dictum purus id lectus tempus vulputate. Quisque fringilla urna libero, sit amet tempus velit placerat eu. Donec ullamcorper mi non orci fringilla, a mattis diam ultrices. Morbi mollis, eros sed porttitor consequat, nunc ex tincidunt nisl, id rhoncus mi magna quis risus. Fusce imperdiet luctus dui. Fusce fermentum dolor non dictum blandit. Vivamus erat mi, pretium quis blandit at, suscipit ac lacus. Duis varius, magna sed luctus facilisis, arcu nunc molestie lorem, vitae maximus erat nisl nec sapien.
+
+Donec risus ex, consequat in massa mollis, tempus mollis arcu. Pellentesque efficitur porttitor dolor, et vulputate ex sollicitudin a. Nullam consequat justo ac velit fermentum tincidunt. Etiam sed condimentum libero. In pulvinar luctus maximus. Maecenas suscipit lorem sed tellus tincidunt gravida. Praesent convallis nulla luctus purus euismod, nec volutpat sapien laoreet. Mauris accumsan, sapien sed commodo tincidunt, ante urna iaculis metus, eget rhoncus diam felis non sapien. Aenean in lorem facilisis, sodales orci eu, fermentum nibh.
+
+Aenean suscipit ante posuere sapien elementum, eu vestibulum ipsum fringilla. Maecenas ultrices nisi sed tellus dignissim venenatis. Nunc feugiat eu nisl sit amet placerat. Aliquam erat volutpat. Fusce felis ante, pellentesque a magna eget, faucibus faucibus ligula. Nullam at posuere ligula. Cras rutrum ut quam ac feugiat. Praesent eu tempus risus. Donec ullamcorper eget nunc a commodo. In eu pretium dui. Aenean scelerisque viverra porta. Duis pellentesque consectetur iaculis. Pellentesque ullamcorper ornare feugiat. Quisque eu felis faucibus lacus posuere suscipit eget non nunc. Maecenas et leo vel neque convallis vestibulum eu vitae tellus.
+
+Nunc ut urna erat. Mauris facilisis tempor placerat. Sed quis massa at diam eleifend dapibus a at ligula. Sed vel sapien eu tortor semper luctus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Interdum et malesuada fames ac ante ipsum primis in faucibus. Morbi maximus venenatis mi, vel egestas elit tempus vel. Duis venenatis vehicula arcu quis gravida. Maecenas malesuada nunc vel pellentesque euismod. Vestibulum eu ultricies velit, non viverra mi. Integer et metus nec lacus fermentum vestibulum vitae ac nisl. Morbi non mi elit. Cras sed odio augue. Morbi sollicitudin elementum nisl, condimentum consectetur risus tempor quis.
+
+Phasellus tincidunt, quam sed imperdiet vehicula, ipsum urna dictum quam, at consequat mi orci quis arcu. Proin a neque eu orci aliquam molestie. Suspendisse quis dignissim justo. Sed eleifend aliquet odio id euismod. Mauris eget semper lorem. Nunc tempor mi a tempor pharetra. Nunc metus purus, consectetur et vehicula sed, tincidunt sed augue. Quisque commodo venenatis tellus, ac ultricies risus fringilla vitae. In aliquam lectus nec imperdiet fringilla. Maecenas posuere dolor non est elementum, tincidunt ornare tortor venenatis. Proin ornare quam lacus, a aliquam justo maximus ac. Suspendisse potenti. Mauris aliquam augue ut est semper interdum. Aenean lectus metus, convallis ut scelerisque sed, efficitur efficitur magna. Integer in pulvinar dolor.
+
+Duis ut sapien eu lacus venenatis pulvinar in et justo. Curabitur facilisis mauris a ultricies tincidunt. Praesent leo mi, ultrices et lacus nec, scelerisque porttitor urna. Ut vitae dictum ex. Nam elit tellus, facilisis eu fringilla ac, laoreet nec dui. Quisque vitae finibus sapien. Proin vestibulum sagittis ornare. Maecenas id lectus lacus. Sed purus urna, suscipit vitae consectetur sed, condimentum eu ipsum. Quisque ac tempor leo, nec sodales lorem. Donec eget odio ligula. Donec id sodales tortor. Nulla facilisi. Aliquam erat volutpat.
+
+Suspendisse nulla ex, auctor ac mauris eu, accumsan eleifend nibh. Nam auctor, neque eu vestibulum interdum, purus magna posuere erat, in pharetra felis justo vel massa. Phasellus tempus, ipsum et consectetur rutrum, sem augue tempus eros, ac pretium ex velit non tortor. Phasellus nec sollicitudin erat. Praesent vestibulum nunc commodo ligula convallis, id ultricies nunc dignissim. Suspendisse a tincidunt velit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Fusce rutrum dui convallis arcu luctus dictum. Nullam id ante ac neque sodales vulputate. Praesent eget leo sem. Vivamus pretium urna et odio consequat, ac lacinia elit fringilla. Aenean eu augue at dui elementum efficitur.
+
+Vestibulum non placerat velit. Ut consectetur blandit justo ac facilisis. Fusce tempus turpis eu viverra lacinia. Nunc congue nisl augue, non dapibus nisl aliquam quis. Nulla ultrices odio at neque ullamcorper faucibus. Vivamus vulputate commodo ante, nec lobortis erat placerat nec. In egestas, ipsum sit amet euismod vestibulum, dolor nisi aliquet lorem, non varius ipsum mi sed orci. Suspendisse turpis sapien, tristique et erat quis, porta pharetra diam. Duis mollis ex mauris, a cursus tellus pharetra sed. Cras hendrerit tempus consequat. Nulla ullamcorper metus erat, a pharetra orci laoreet sed. Aliquam congue et quam ac molestie.
+
+Donec venenatis, velit a volutpat commodo, mauris ante pulvinar ex, vel vulputate orci turpis ac felis. Duis vehicula enim purus, vel ornare massa mollis a. Aliquam dapibus, libero ac mollis ullamcorper, eros massa ultricies justo, sit amet vehicula odio risus sed arcu. Nulla condimentum lobortis elementum. Fusce mattis, nibh eget suscipit dignissim, turpis arcu posuere lacus, ac lacinia ante nunc vitae metus. Maecenas efficitur bibendum aliquet. Suspendisse potenti. Proin elit ante, viverra maximus tortor ac, vulputate rhoncus orci.
+
+Sed quis finibus ante. Integer mauris leo, placerat et rutrum eget, placerat quis ante. Morbi varius blandit vulputate. Curabitur non neque feugiat, bibendum mauris eget, mollis ante. Proin maximus felis feugiat neque blandit tincidunt. Fusce in lorem viverra ante hendrerit consectetur. Pellentesque fringilla vehicula orci, quis vehicula magna tristique lobortis. Phasellus faucibus neque ac luctus volutpat. Donec vitae mi magna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean fermentum augue ex, ornare semper nibh imperdiet ut. Fusce vel finibus arcu, a tristique odio. In hac habitasse platea dictumst. Suspendisse consequat congue vulputate.
+
+Nunc pretium vel tortor a tincidunt. Sed sed volutpat nisl. In egestas laoreet vulputate. Suspendisse sed velit scelerisque, euismod libero eget, aliquet est. Nullam malesuada lacinia risus eget imperdiet. Suspendisse dolor nisi, accumsan elementum turpis ut, lobortis bibendum massa. Suspendisse vehicula velit ac porttitor tempus. Quisque porttitor vehicula ligula, at interdum lacus aliquet et. Sed et egestas neque, a malesuada est. Aenean ultrices, nisi id sodales ornare, sem ante rhoncus lacus, sit amet consequat enim risus et diam. Curabitur ultrices et ex eu dictum. Sed eros sapien, dictum sit amet accumsan dapibus, dignissim non magna. Suspendisse dictum dignissim porttitor. Proin eu euismod sapien. Mauris quis nulla eleifend, scelerisque lorem ut, vehicula libero.
+
+Etiam dui odio, dictum eu feugiat eget, lacinia sit amet augue. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras cursus elit dolor, quis tristique nunc aliquet luctus. In in massa malesuada odio venenatis lacinia nec ut mi. In mattis enim urna, in pretium nulla convallis vel. Ut viverra pellentesque eros nec blandit. Maecenas ultricies tellus ac elit rutrum, id efficitur ex aliquet.
+
+Vestibulum suscipit fringilla ante in feugiat. Integer ac commodo mi. Integer a viverra mauris, ac tristique lectus. Nam non blandit neque. Praesent ex lacus, vehicula id lectus mollis, gravida consectetur libero. Maecenas placerat, erat vitae ornare tincidunt, magna turpis dictum quam, molestie aliquam libero diam eget ex. Quisque eros erat, molestie nec lacinia finibus, pellentesque at nibh. Etiam eget erat risus. Integer et neque vel massa rutrum lacinia. Sed congue ante vitae hendrerit elementum. Fusce eu cursus nisi, at euismod nunc. Quisque vestibulum diam sit amet scelerisque lobortis. Nullam scelerisque mauris enim, tincidunt euismod nisi rhoncus eget. Nunc iaculis accumsan libero, a congue est mollis et. Donec at euismod neque, sed finibus erat. Nunc hendrerit, erat ut convallis dictum, quam ipsum laoreet nisi, eget vulputate metus ex eu tellus.
+
+Morbi eu turpis vel magna rhoncus faucibus. Nam ac lectus congue, scelerisque felis nec, vulputate massa. Proin in mauris congue, venenatis augue ut, eleifend sapien. Aenean pharetra ipsum sed purus varius lobortis sed a eros. Nam lorem libero, sagittis nec ante porta, feugiat lobortis velit. Proin vehicula, mi quis porttitor bibendum, dui ex ullamcorper nisi, ut porta ex justo sed turpis. Praesent sem magna, facilisis at nunc nec, venenatis pharetra urna. Praesent quis risus id eros mollis pellentesque. Duis egestas a tortor elementum sollicitudin. Nam a lectus dolor. Nullam pretium, lorem nec lobortis pellentesque, tellus odio vestibulum lorem, non dictum magna eros in tellus. Vivamus ultrices eu nulla eget tincidunt.
+
+Aenean vitae purus et leo viverra auctor. Suspendisse et suscipit purus, ut porttitor justo. Maecenas sodales sed enim egestas elementum. Donec a pretium nisl, nec pulvinar velit. Curabitur posuere placerat augue ullamcorper vulputate. Pellentesque lectus nibh, vestibulum non urna et, facilisis pretium turpis. Phasellus cursus suscipit ipsum, faucibus porttitor ante. Morbi vestibulum aliquet felis non blandit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce eu lorem condimentum ante viverra viverra. Sed venenatis sagittis tortor sit amet cursus. Ut laoreet at felis et lobortis. Nulla nec eros leo.
+
+Phasellus consectetur lobortis erat, eu dignissim nibh. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse pharetra ac sapien vitae pharetra. Nunc lectus nunc, convallis at auctor vitae, ullamcorper at ligula. Aenean vitae gravida urna. Suspendisse ac pulvinar turpis. Fusce sit amet mi congue, congue leo ac, egestas ex. Suspendisse potenti. Nulla quis ex quam.
+
+Pellentesque a neque vel diam feugiat tincidunt. Proin aliquet quam ac ligula mattis tristique a sit amet turpis. Nunc vehicula, elit eget laoreet iaculis, justo sapien molestie diam, at hendrerit orci libero id dui. Phasellus dictum massa nec lorem feugiat, ac finibus libero auctor. Curabitur ac sapien ac arcu vestibulum rhoncus non sit amet urna. Donec eu tortor quis nunc vulputate feugiat. Nulla hendrerit pulvinar massa ut molestie. Pellentesque viverra justo tellus, vel iaculis sapien rhoncus et. Vestibulum eget mi odio. Etiam non gravida erat.
+
+Morbi nec vehicula erat, vitae consectetur metus. Quisque nec sem non odio porttitor commodo eu ut sapien. Phasellus accumsan finibus risus, a efficitur dui tempus quis. Proin pharetra metus in lorem vestibulum, id tempus risus cursus. Suspendisse eget eros vel velit pulvinar lobortis in at lectus. Ut bibendum porttitor metus id volutpat. Vivamus lacinia vehicula ipsum, in elementum nulla pulvinar ac. Nam ut rutrum massa.
+
+Fusce lobortis nibh non mi egestas, eget pharetra mauris lacinia. Sed tempus ex nec euismod efficitur. Integer euismod, leo sed pellentesque pretium, augue augue auctor mi, quis elementum dui orci et tortor. Donec accumsan magna sed nisi malesuada molestie. Curabitur dictum nunc ac velit vehicula, in lacinia tellus sollicitudin. Nunc quis purus egestas, rutrum lorem in, efficitur metus. Quisque nisi tellus, malesuada id imperdiet id, vestibulum vel sapien. Nam lectus massa, vestibulum ut dignissim ut, pharetra eget eros. Maecenas ac massa pellentesque neque ornare ullamcorper. Nam ut dolor pulvinar, imperdiet dui a, cursus turpis. Cras iaculis tellus et metus efficitur, non viverra purus rutrum. Donec fringilla sem non elit placerat, in luctus nunc vulputate. Pellentesque vitae libero ut nibh pretium lacinia. Aliquam pharetra lacus id ligula mattis congue. Aliquam eleifend orci nunc, ut ornare eros venenatis et.
+
+Pellentesque interdum felis turpis, a pellentesque est pharetra eu. Aliquam suscipit felis a odio ullamcorper ornare. In quis suscipit tellus. Maecenas vel eleifend enim. Nulla vitae ipsum sapien. Phasellus eu lorem ultricies risus lacinia imperdiet. Fusce in gravida eros. Cras convallis ex non rhoncus blandit. Nullam id sem dictum, elementum justo blandit, luctus tellus. Phasellus at vulputate quam. Quisque sodales pulvinar magna eget porttitor. Donec elit turpis, pellentesque vel cursus id, elementum et tellus. Proin pretium tortor lorem, id malesuada dolor hendrerit et.
+
+Vivamus quis placerat massa. Donec malesuada, leo non hendrerit tempor, risus libero aliquet justo, quis ornare velit elit vel nulla. In non orci ac velit feugiat tempus eget vitae nibh. Nam sed congue urna, scelerisque viverra lectus. Aenean bibendum faucibus erat, sed scelerisque nibh pretium quis. Vestibulum condimentum lorem id leo lacinia, eu suscipit odio hendrerit. Sed convallis felis urna, commodo posuere diam mattis sit amet. Nulla lectus ex, pretium vel enim sed, volutpat posuere ante. Morbi in odio at sapien pretium tincidunt ac sed tellus. Phasellus vitae odio in massa hendrerit iaculis. Integer mollis lacus quam, ac sagittis orci fringilla a. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec tempus, magna vitae imperdiet pharetra, lacus orci congue justo, a commodo lacus elit efficitur sem.
+
+Quisque condimentum ligula sed arcu tincidunt, at vestibulum tellus vehicula. Pellentesque viverra libero vitae nisl blandit maximus. Integer lobortis arcu quam, in sagittis nisl fermentum ac. Sed luctus ullamcorper leo. Fusce iaculis elit felis, vitae convallis mi porta non. Ut vehicula tristique lorem id sollicitudin. Sed id risus vel quam interdum mattis a vel tortor. Aenean euismod ante vitae odio hendrerit, id dignissim erat mollis. Nam eget odio et nulla convallis consequat. Aenean auctor blandit urna sed iaculis.
+
+Nunc quam elit, consequat eu ornare ac, laoreet ut ante. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer nec condimentum metus, a semper leo. Donec sagittis massa eget tristique feugiat. Fusce in pulvinar lorem. Morbi porttitor gravida nibh quis eleifend. Donec ultricies porttitor risus.
+
+Integer nec fermentum leo, et euismod metus. Nulla nisl velit, hendrerit ac est nec, accumsan rutrum tellus. Nulla ornare dui turpis, non hendrerit quam suscipit nec. Nulla nisi eros, imperdiet efficitur felis sit amet, fringilla aliquam nibh. Ut a lectus pretium, finibus purus eu, luctus est. Etiam scelerisque nisi ut dolor ullamcorper consectetur. Vivamus justo purus, feugiat eu purus nec, condimentum vulputate nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In quis quam non justo consequat sagittis ut et ex. Sed sed metus porttitor purus semper placerat ut non odio. Phasellus enim nisl, suscipit eget volutpat eu, egestas nec urna. Quisque suscipit justo sed viverra iaculis. Cras in lobortis sapien. Sed vitae porttitor enim. Praesent et justo quis mauris elementum feugiat. Pellentesque posuere mi vitae hendrerit placerat.
+
+Sed et lacus efficitur, suscipit metus eu, ullamcorper augue. Nunc mollis erat facilisis tellus efficitur dignissim. Integer semper tristique neque, eu malesuada felis volutpat efficitur. Morbi ut justo lorem. Donec in tellus sit amet mi faucibus ultricies. Sed id sem quis leo vulputate viverra nec at purus. Curabitur ut volutpat felis.
+
+Duis consectetur lacinia elit rhoncus aliquam. Quisque laoreet ligula eu nisi placerat, vitae tempor arcu feugiat. Suspendisse in ultrices enim, ac blandit nisl. Praesent ut venenatis sem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer a libero vulputate, dignissim ante eget, sollicitudin lectus. Nullam suscipit ex ut sodales scelerisque. Suspendisse tincidunt ornare odio, vel dignissim ante ultrices malesuada. Nullam semper vitae lacus ac sollicitudin. Nulla turpis neque, auctor ut velit et, ultricies euismod elit. Nunc tincidunt porttitor nunc eget scelerisque. Curabitur viverra pretium sodales. Sed iaculis lobortis nisi. Proin varius libero dui, a iaculis tellus cursus at.
+
+Pellentesque gravida lacus sed elit efficitur, ut fringilla nulla luctus. Ut consequat justo at dui gravida, auctor aliquet est pellentesque. Integer lacinia placerat libero mollis ultrices. Proin enim est, mollis id lobortis et, lobortis in risus. Pellentesque at finibus lectus, vel consectetur mauris. Donec feugiat blandit venenatis. Suspendisse vitae arcu diam. Suspendisse consequat libero nibh, ac faucibus lectus viverra at. Phasellus porta nunc tortor, id vehicula felis porta vitae.
+
+Sed placerat lectus non congue volutpat. Sed placerat leo sit amet arcu eleifend, euismod ultricies mauris vehicula. Nunc laoreet vitae nisl vitae ultrices. Praesent rutrum mauris orci, sit amet ultricies libero gravida id. Aenean malesuada, nisl et elementum aliquet, orci lacus eleifend nibh, in sodales quam mi sed nisi. Donec in elementum ante. In id odio ligula.
+
+Donec molestie risus ac viverra pharetra. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur fermentum pulvinar tincidunt. Integer tincidunt dui auctor ipsum posuere gravida. Pellentesque vitae consequat urna. Proin eget mi quis leo volutpat tempor. Donec blandit sagittis convallis. Fusce vitae ultrices leo, non vehicula sapien. Curabitur fringilla varius faucibus. Integer aliquet placerat ligula, at accumsan ipsum accumsan ac. Curabitur quis justo vitae ante porta iaculis. Mauris elementum consectetur lorem at semper. Vestibulum semper augue at scelerisque accumsan.
+
+Vivamus nec ullamcorper enim. Praesent tempus, enim eget ullamcorper euismod, risus turpis condimentum arcu, sed mollis dui dui a felis. Vestibulum rutrum pharetra erat et bibendum. Integer vitae neque vulputate, ullamcorper eros vitae, condimentum ipsum. Donec interdum, justo gravida aliquam maximus, arcu turpis commodo leo, sit amet iaculis arcu est vel erat. Sed ut mauris tellus. Etiam pretium pharetra faucibus. Cras congue aliquam sapien, quis sodales ex ultricies non. Suspendisse ex nibh, commodo vel vehicula eget, commodo aliquet augue. Donec id risus purus. Suspendisse viverra erat tortor. Donec venenatis ex erat. Praesent convallis tincidunt scelerisque. Donec lacinia, nisl sit amet venenatis lobortis, est ipsum tempus leo, sed luctus arcu neque eu elit. Aenean egestas hendrerit elementum. Sed metus ligula, malesuada tempus hendrerit quis, facilisis placerat enim.
+
+Sed finibus nunc quis eros mollis eleifend. Nam et ipsum nisi. Phasellus id sapien commodo, hendrerit nisi eu, egestas libero. Praesent tristique pulvinar pellentesque. Sed ex purus, tempor sit amet lacinia eget, ullamcorper ut tellus. In ultricies tincidunt eros sit amet consequat. Quisque sit amet tortor at augue auctor tempor. Aenean pretium neque sed ante ullamcorper, id elementum ante commodo. Mauris eu dignissim orci. Donec gravida, ante ac vehicula tempor, neque justo venenatis orci, sed finibus purus neque a sem. Donec aliquam molestie nunc, vitae ultricies velit lacinia rutrum.
+
+Suspendisse in mauris sem. In blandit eu urna feugiat commodo. Donec at porta dui, sed malesuada justo. Sed id ante id mi rutrum varius venenatis a ante. Ut ut dapibus dolor. Pellentesque placerat diam non viverra tincidunt. Phasellus luctus nulla et fringilla aliquam. Etiam et malesuada odio. Ut et tristique risus. Vestibulum ac dui diam.
+
+Ut sit amet urna imperdiet magna molestie sagittis. Curabitur commodo suscipit tempus. Nulla facilisi. Pellentesque tincidunt in mauris eget lobortis. Donec at lectus quis massa consequat cursus quis sed velit. Ut tincidunt ipsum sit amet efficitur ultrices. Mauris condimentum sapien sed bibendum elementum. Quisque tempus ullamcorper augue, eget auctor ligula sodales ultrices. Ut sagittis dui vel felis ornare egestas. Nam fermentum at mi et lacinia. Morbi finibus neque eu augue consequat pretium a ut risus. Nam varius ex in augue condimentum ornare. Donec ornare metus a erat cursus gravida.
+
+Suspendisse pulvinar accumsan lacus, quis feugiat dui euismod sit amet. Ut vel diam ultrices, volutpat magna at, sagittis nibh. Suspendisse potenti. In vitae tortor ullamcorper dolor pharetra fringilla non fringilla leo. Curabitur pretium aliquam nunc, sed placerat ex ornare vel. Aenean id congue ipsum, et tincidunt turpis. Fusce eleifend magna at felis fringilla ullamcorper. Donec semper volutpat ipsum, vel elementum dolor ultricies et. Vestibulum vitae urna gravida, vulputate lectus in, ultrices nisl. In hac habitasse platea dictumst. Proin convallis eu felis at dapibus. Vivamus rhoncus, sapien vitae eleifend laoreet, purus nisl suscipit lectus, at placerat eros dui eu mauris.
+
+Quisque id orci scelerisque, maximus tortor non, eleifend massa. Nam malesuada risus convallis cursus suscipit. In fermentum magna non orci tristique mollis. Nulla eu lacinia nisl. Phasellus luctus, orci sed tincidunt varius, mauris sapien placerat metus, in accumsan erat leo at elit. Maecenas dapibus justo eros, vitae posuere massa ornare quis. Phasellus ullamcorper scelerisque lectus eu rutrum. Cras mollis ligula vel dictum gravida. Nam venenatis rhoncus ipsum eu mollis.
+
+Ut auctor, erat eu accumsan maximus, massa mauris luctus mauris, eu gravida nibh nibh bibendum justo. Nam aliquet metus ac justo fringilla porttitor. Aenean massa urna, laoreet sed malesuada id, pellentesque ut turpis. Vestibulum sagittis tempor massa, ut pharetra felis ornare tristique. Etiam est erat, placerat sed finibus facilisis, bibendum ut nisl. Quisque luctus euismod dictum. Praesent facilisis, arcu et tincidunt venenatis, leo elit iaculis lorem, tincidunt porttitor mauris ipsum sed mi. Pellentesque lectus nulla, bibendum non sagittis fermentum, posuere vel lacus.
+
+Pellentesque accumsan, lectus nec suscipit volutpat, erat ipsum dignissim augue, ut posuere lorem lectus a nibh. Fusce non dui posuere, iaculis quam non, consectetur risus. Donec ornare feugiat lorem quis facilisis. Nulla suscipit tempus tellus dictum volutpat. Morbi ac nulla ac nisi molestie tincidunt quis nec odio. Ut massa nisl, luctus et metus ac, vulputate placerat sem. Mauris dictum, mauris sit amet sollicitudin volutpat, dui orci porttitor ipsum, eget interdum mi neque eget risus. Ut leo ante, fermentum ac turpis at, dictum condimentum lacus.
+
+Donec nunc arcu, aliquam in porta eget, vehicula vel turpis. Curabitur ac risus at metus ultricies interdum. Praesent augue metus, pellentesque ut mollis ut, pharetra a tortor. In laoreet magna in quam vehicula, ut mollis augue consequat. Aliquam at lectus sem. Ut ullamcorper congue diam, ac congue mi condimentum egestas. Aliquam erat volutpat. Nunc in tellus vel arcu tempor ullamcorper a vitae ante. Proin dictum tellus vel lacus ornare, eu imperdiet nulla luctus. Donec tincidunt faucibus enim ut imperdiet.
+
+Cras purus mi, porttitor sit amet bibendum non, luctus sed eros. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla lacinia sit amet orci quis sollicitudin. Fusce venenatis ullamcorper sagittis. Aliquam efficitur aliquam rutrum. Praesent ac ex risus. In blandit tellus nec magna ultricies laoreet. Nulla congue convallis ante quis lobortis. In mi nisi, luctus viverra tristique nec, dignissim in tellus. Nunc in odio vulputate, condimentum urna nec, gravida velit. Donec volutpat, diam vitae tincidunt consequat, lectus risus venenatis ex, a mattis nulla tellus a est. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas et enim a erat euismod dapibus. Fusce commodo nulla urna, et iaculis eros fermentum ac.
+
+Cras ut fringilla tortor. Curabitur nec dictum nulla. Cras dolor libero, molestie a ante id, tempor congue est. Sed et fringilla dolor, ac tincidunt erat. Sed bibendum at arcu ac vulputate. Nunc facilisis vel dui vitae gravida. Fusce mollis lectus sed metus efficitur mattis. Aenean tempor consectetur diam nec scelerisque. Duis blandit augue quis mi fringilla, a semper eros luctus. Quisque in ullamcorper nisl. In arcu odio, interdum eget pulvinar at, lobortis sed lacus. Suspendisse condimentum felis id turpis viverra, ut pretium mauris ullamcorper. Curabitur nec tortor et velit dignissim bibendum ut vitae libero. Nullam bibendum justo odio, et volutpat nibh convallis eget.
+
+Nam ac risus ut lacus suscipit consectetur vitae vel felis. Duis vestibulum sodales nulla, nec volutpat dui iaculis quis. Aenean efficitur dignissim leo, a sodales mi aliquet nec. Ut dignissim odio eget nisi vehicula blandit. Duis eget fermentum lacus. Aenean placerat pulvinar quam sit amet tempus. Nunc vitae odio sapien. Suspendisse mollis ipsum in tellus pharetra, ac consequat libero vestibulum. Proin et orci auctor, ultrices orci non, tincidunt elit. Sed sit amet interdum lectus. Curabitur vestibulum est at ante lacinia maximus. Suspendisse cursus arcu quis turpis scelerisque vestibulum. Etiam in dolor at leo porttitor ultricies vitae eu justo. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+In pretium pulvinar pretium. Integer ultricies massa massa, id efficitur eros pulvinar eu. Mauris lacinia, arcu at tincidunt vestibulum, augue leo iaculis libero, eget malesuada tellus neque at massa. Vestibulum convallis rutrum leo, nec feugiat erat lacinia et. Ut gravida non ipsum at imperdiet. Nam eu congue justo. Proin ipsum justo, euismod ac nunc vitae, bibendum commodo ex. Aliquam tellus nisi, pulvinar a tellus sed, lacinia molestie tellus. Aenean tincidunt, elit dignissim ornare scelerisque, est ex ultrices nunc, et euismod ex orci egestas enim. Integer interdum finibus dui ut tincidunt. Aenean rhoncus tellus in risus volutpat, sed malesuada tortor varius. Nam scelerisque elit id lobortis convallis.
+
+Praesent mollis aliquam sapien eu consectetur. Nam ac sapien imperdiet neque sollicitudin accumsan. Vivamus vulputate facilisis magna luctus consequat. Duis lobortis urna sit amet dolor accumsan, sit amet eleifend odio semper. Integer efficitur, nibh nec egestas sagittis, sapien lectus hendrerit urna, vel vehicula eros turpis eget libero. Integer maximus, nisi at tristique sodales, purus erat pretium sapien, vitae suscipit urna quam eget nulla. Vivamus eu risus nulla. Aenean ac elit ultricies, sodales nunc ut, maximus lorem. Vestibulum porttitor pellentesque erat, in sollicitudin velit tristique convallis.
+
+Duis quis massa leo. Phasellus non mauris sapien. Morbi rhoncus orci at eros dictum, ut dapibus justo sodales. Aenean ac consequat nisl. Morbi auctor, ligula et cursus luctus, enim dui consectetur leo, eget blandit elit urna at tellus. Donec porttitor, tellus non mattis congue, nisi ligula hendrerit nulla, vitae placerat magna nibh a justo. Nullam rutrum, diam a convallis aliquam, metus leo euismod nisl, in ornare elit lacus vitae massa. Sed posuere risus sed dui fermentum blandit. Vivamus hendrerit imperdiet odio sed tristique. Suspendisse vel dictum arcu. Integer interdum erat egestas neque aliquam, mollis eleifend sem accumsan.
+
+Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris sodales turpis et justo tincidunt, sodales tincidunt est feugiat. In vitae cursus enim. Maecenas in accumsan velit, eu laoreet diam. Proin eu odio dapibus, blandit sem in, rutrum diam. Phasellus hendrerit nisi in ipsum efficitur finibus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec sed nisi elit. Suspendisse sed lectus at dolor commodo vulputate. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin venenatis vitae ex vel ullamcorper. Aliquam quis velit ornare, tristique ipsum a, tristique magna. Duis condimentum suscipit volutpat.
+
+Duis viverra sit amet risus quis rhoncus. Suspendisse consectetur, sem eget tristique malesuada, dolor arcu malesuada tortor, ut bibendum tellus sapien ut dolor. Nunc consectetur semper mauris, vitae pharetra urna convallis quis. Vestibulum ultrices sagittis tristique. Aliquam vestibulum diam non rutrum molestie. Phasellus posuere porttitor lectus a congue. Cras eu rhoncus ligula, in mollis dolor. Nulla lacinia sagittis massa. Nullam at molestie justo. Nam ut porta elit. Aliquam fermentum eros ante, et tincidunt odio auctor ut.
+
+Suspendisse nisl urna, congue sed pulvinar vitae, malesuada et nulla. Quisque bibendum viverra diam quis ultricies. Integer imperdiet metus et tellus euismod, nec lobortis erat posuere. Nunc eu consequat lacus. Integer massa ligula, consectetur non massa tempor, scelerisque elementum metus. Curabitur mollis quis turpis a sodales. Mauris sagittis ullamcorper ipsum a semper.
+
+Ut ex justo, malesuada id scelerisque ac, luctus sed diam. Sed hendrerit, leo quis mattis suscipit, massa arcu dictum ligula, vitae maximus purus ligula quis magna. Vivamus mattis sem ex, nec vestibulum justo fermentum eget. Ut vel est sit amet nisi sagittis porttitor a et nibh. Sed dignissim vestibulum ligula at efficitur. Curabitur nulla massa, egestas et velit a, luctus blandit urna. Praesent sit amet sem ut nulla ornare elementum. Curabitur in efficitur ipsum, efficitur maximus ante. Mauris non luctus nunc, posuere volutpat quam. Nunc porta bibendum arcu, id mollis justo tincidunt sit amet. Suspendisse a diam sit amet diam lacinia consequat ut quis eros. Maecenas commodo in nunc pharetra rhoncus.
+
+Donec orci lorem, lobortis vel pulvinar eu, porttitor non augue. Ut a risus quis diam dapibus malesuada a sed eros. Fusce in vestibulum nulla. Sed id condimentum nibh. Praesent tempus maximus ullamcorper. Maecenas at pharetra augue, quis finibus magna. Nunc ultrices pellentesque porttitor. Integer tellus ipsum, commodo quis interdum non, egestas vel diam. Curabitur ultrices magna mi. Aenean eu molestie metus, eu scelerisque diam. Quisque at dui quis mauris bibendum cursus. Ut eu urna erat. Nulla placerat libero eros, et consectetur purus dapibus eget. Vivamus tellus ex, facilisis quis consectetur id, rutrum sed nibh.
+
+Ut porta purus leo, sed ultricies odio finibus placerat. Vestibulum cursus feugiat auctor. Cras convallis id magna in ultricies. Ut dictum sodales interdum. Maecenas cursus, quam in imperdiet commodo, nunc mauris bibendum elit, id congue risus metus ac velit. Nunc fermentum, lorem non sollicitudin facilisis, metus justo mattis eros, vel sagittis purus est viverra urna. Donec sed efficitur purus, ut porta lorem. In hac habitasse platea dictumst. Donec in varius ex. Nam lobortis porttitor venenatis. Quisque eu risus vitae arcu fringilla molestie. Donec tincidunt augue vitae purus pellentesque, nec condimentum eros accumsan. Maecenas nec ligula nisl.
+
+Mauris quis mi eget turpis accumsan hendrerit. Ut suscipit eros non augue accumsan, et ullamcorper risus lacinia. Aenean finibus orci sed vestibulum pharetra. Sed tincidunt mollis ligula a ultrices. Curabitur non rutrum felis. Donec ac ullamcorper sapien, vestibulum egestas nibh. Mauris quis blandit nisi. Etiam consectetur laoreet augue et facilisis. Suspendisse potenti. Vestibulum eu vulputate nulla. Donec at nisi massa nunc.</persname>
+         </origination>
+         <unitid>RL.10098</unitid>
+         <physdesc altrender="whole">
+            <extent altrender="materialtype spaceoccupied">2.5 Linear Feet</extent>
+            <extent altrender="carrier">5 boxes, 1,750 items</extent>
+         </physdesc>
+         <unitdate normal="1850/1896" type="inclusive">1810-1927, bulk 1850-1896</unitdate>
+         <abstract id="aspace_423c4102f9846cdea6dfb2a1d1704f7f">Business, family, and legal
+            correspondence, accounts, bills, invoices, indentures, land surveys, and other papers.
+            Correspondents whose names appear most often are Pettit and Leake, a legal firm of
+            Goochland Court House, Va., Altantic and Virginia Fertilizing Co. of Richmond, Va., and
+            Appleberry's nephew, Thomas A. Bledsoe.</abstract>
+         <langmaterial id="aspace_9e4139e5ced772102b34714da420cc81">Materials in
+            English</langmaterial>
+         <physloc id="aspace_85d519d924695c29d9c6be231dcaf084">For current information on the
+            location of these materials, please consult the Library's online catalog.</physloc>
+      </did>
+      <accessrestrict id="aspace_158f9e8c2b15a99aaff240cdb14c62b2">
+         <head>Access Restrictions</head>
+         <p>Collection is open for research.</p>
+         <p>Researchers must register and agree to copyright and privacy laws before using this
+            collection.</p>
+         <p>All or portions of this collection may be housed off-site in Duke University's Library
+            Service Center. The library may require up to 48-hours to retrieve these materials for
+            research use.</p>
+         <p>Please contact Research Services staff before visiting the David M. Rubenstein Rare Book
+            &amp; Manuscript Library to use this collection.</p>
+      </accessrestrict>
+      <acqinfo id="aspace_7373aac884661bfbef4deed3d3036ce2">
+         <head>Provenance</head>
+         <p>The Dilmus Appleberry Papers were received by the David M. Rubenstein Rare Book &amp;
+            Manuscript Library in 1933.</p>
+      </acqinfo>
+      <prefercite id="aspace_d2da88dab78fb318864a304e21373877">
+         <head>Preferred Citation</head>
+         <p>[Identification of item], in the Dilmus Appleberry Papers Collection, David M.
+            Rubenstein Rare Book &amp; Manuscript Library, Duke University.</p>
+      </prefercite>
+      <scopecontent id="aspace_c2114d8c9306537f82cb74e3d5b568a7">
+         <head>Collection Overview</head>
+         <p>This collection contains business, family, and legal correspondence of plantation owner
+            Dilmus Appleberry. It is largely composed of accounts, bills, invoices, indentures, and
+            land surveys. Letters, some of a business nature, comprise about five percent of the
+            collection. Correspondents whose names appear most often are Pettit and Leake, a legal
+            firm of Goochland Court House; Atlantic and Virginia Fertilizing Company of Richmond,
+            Virginia; and Dilmus Appleberry's nephew, Thomas A. Bledsoe.</p>
+      </scopecontent>
+      <userestrict id="aspace_e7ccf691d1a3fe58e73f58da027b5d92">
+         <head>Use Restrictions</head>
+         <p>The copyright interests in this collection have not been transferred to Duke University.
+            For more information, consult the copyright section of the Regulations and Procedures of
+            the David M. Rubenstein Rare Book &amp; Manuscript Library.</p>
+      </userestrict>
+      <processinfo id="aspace_05c0ee2357259da11e7cfd24fc8b79bf">
+         <head>Processing Information</head>
+         <p>Processed by: Rubenstein Library staff</p>
+      </processinfo>
+      <bioghist id="aspace_bbfe30949941c0d937b115fc922f4185">
+         <head>Biographical Note</head>
+         <p>Dilmus J. Appleberry was a plantation owner of Fluvanna County, Virginia.</p>
+      </bioghist>
+      <controlaccess>
+         <geogname source="lcsh">Virginia -- Economic conditions</geogname>
+         <subject source="lcsh">Plantations -- Virginia</subject>
+         <corpname rules="dacs" source="ingest">Pettit and Leake (Goochland Va.)</corpname>
+         <persname rules="dacs" source="naf">Bledsoe, Thomas A.</persname>
+         <corpname rules="dacs" source="ingest">Atlantic &amp; Virginia Fertilizing
+            Company</corpname>
+         <persname rules="dacs" source="naf">Appleberry, Dilmus J.</persname>
+      </controlaccess>
+      <dsc>
+         <c01 id="aspace_ref13_lvr" level="series">
+            <did>
+               <unittitle>Dilmus J. Appleberry papers</unittitle>
+               <unitdate normal="1810/1927" type="inclusive">1810-1927</unitdate>
+            </did>
+            <c02 id="aspace_ref8_n1o" level="file">
+               <did>
+                  <unittitle>Correspondence</unittitle>
+                  <unitdate type="inclusive">1810-1869</unitdate>
+                  <container id="aspace_3cc2582cd26003f972b3f0aa65cceb89" label="Mixed Materials"
+                     type="box">1</container>
+               </did>
+            </c02>
+            <c02 id="aspace_ref9_1l5" level="file">
+               <did>
+                  <unittitle>Correspondence</unittitle>
+                  <unitdate type="inclusive">1870-1878</unitdate>
+                  <container id="aspace_2f3bad521ecd33abb5df9743e1555393" label="Mixed Materials"
+                     type="box">2</container>
+               </did>
+            </c02>
+            <c02 id="aspace_ref10_z5a" level="file">
+               <did>
+                  <unittitle>Correspondence</unittitle>
+                  <unitdate type="inclusive">1879-1894</unitdate>
+                  <container id="aspace_6c4345cb5432de158639c91b4cb8dca9" label="Mixed Materials"
+                     type="box">3</container>
+               </did>
+            </c02>
+            <c02 id="aspace_ref11_0fe" level="file">
+               <did>
+                  <unittitle>Correspondence</unittitle>
+                  <unitdate type="inclusive">1895-1927</unitdate>
+                  <container id="aspace_ff63e8d540369cde8a47a2cf85009a75" label="Mixed Materials"
+                     type="box">4</container>
+               </did>
+            </c02>
+            <c02 id="aspace_ref12_ye5" level="file">
+               <did>
+                  <unittitle>Correspondence</unittitle>
+                  <unitdate type="inclusive">undated</unitdate>
+                  <container id="aspace_77dc84c9ee2a7ad6ed770dd17c0f0af1" label="Mixed Materials"
+                     type="box">5</container>
+               </did>
+            </c02>
+            <c02 id="aspace_ref18_hz9" level="file">
+               <did>
+                  <unittitle>Correspondence</unittitle>
+                  <unitdate type="inclusive">1901</unitdate>
+                  <container id="aspace_3b1eb36b88dbc3b307e7a762f2b8526a" label="Mixed Materials"
+                     type="box">6</container>
+                  <container id="aspace_2f25601c963ae8e56540097a9a2422ca"
+                     parent="aspace_3b1eb36b88dbc3b307e7a762f2b8526a" type="folder">3</container>
+               </did>
+            </c02>
+            <c02 id="aspace_ref19_dh3" level="file">
+               <did>
+                  <unittitle>Correspondence</unittitle>
+                  <container id="aspace_cb9f907040d19a868d3da3920fb69452" label="Mixed Materials"
+                     type="box">7</container>
+               </did>
+            </c02>
+         </c01>
+      </dsc>
+   </archdesc>
+</ead>
