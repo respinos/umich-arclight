@@ -81,6 +81,14 @@
         <dimensions id="aspace_ref243">Dimensions note with label text of content|||</dimensions>
       </physdesc>
       <physdesc id="aspace_ref43">General physical description note no label |||</physdesc>
+      <physdesc altrender="whole">
+        <extent altrender="materialtype spaceoccupied">784 Linear Feet</extent>
+      </physdesc>
+      <physdesc altrender="whole">
+        <extent altrender="materialtype spaceoccupied">5.1 Gigabytes</extent>
+        <extent altrender="carrier">Audiovisual objects in RL00090-SET-0001 are not included because
+          they require Audiovisual processing before access!!</extent>
+      </physdesc>
       <physloc id="aspace_ref28">Location note no label |||</physloc>
       <physloc id="aspace_ref11">Location note (maybe physloc?) content. |||</physloc>
       <materialspec id="aspace_ref46">Material specific details note no label |||</materialspec>
