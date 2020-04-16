@@ -252,8 +252,10 @@ end
 
 to_field 'corpname_sim', extract_xpath('//corpname')
 
-to_field 'language_sim', extract_xpath('/ead/archdesc/did/langmaterial')
-to_field 'language_ssm', extract_xpath('/ead/archdesc/did/langmaterial')
+# DUL CUSTOMIZATION: separate language vs langmaterial fields that don't have language
+# Probably just a DUL modification; mix of conventions in use in our data
+to_field 'language_ssm', extract_xpath('/ead/archdesc/did/langmaterial/language')
+to_field 'langmaterial_ssm', extract_xpath('/ead/archdesc/did/langmaterial[not(descendant::language)]')
 
 to_field 'descrules_ssm', extract_xpath('/ead/eadheader/profiledesc/descrules')
 
@@ -275,6 +277,7 @@ end
 # <c> <c01> <c12>
 # =============================
 
+# rubocop:disable Metrics/BlockLength
 compose 'components', ->(record, accumulator, _context) { accumulator.concat record.xpath('//*[is_component(.)]', NokogiriXpathExtensions.new) } do
   to_field 'ref_ssi' do |record, accumulator, context|
     accumulator << if record.attribute('id').blank?
@@ -502,7 +505,11 @@ compose 'components', ->(record, accumulator, _context) { accumulator.concat rec
   to_field 'acqinfo_ssim', extract_xpath('./acqinfo/*[local-name()!="head"]')
   to_field 'acqinfo_ssim', extract_xpath('./descgrp/acqinfo/*[local-name()!="head"]')
 
-  to_field 'language_ssm', extract_xpath('./did/langmaterial')
+  # DUL CUSTOMIZATION: separate language vs langmaterial fields that don't have language
+  # Probably just a DUL modification; mix of conventions in use in our data
+  to_field 'language_ssm', extract_xpath('./did/langmaterial/language')
+  to_field 'langmaterial_ssm', extract_xpath('./did/langmaterial[not(descendant::language)]')
+
   to_field 'containers_ssim' do |record, accumulator|
     record.xpath('./did/container').each do |node|
       accumulator << [node.attribute('type'), node.text].join(' ').strip
@@ -522,6 +529,7 @@ compose 'components', ->(record, accumulator, _context) { accumulator.concat rec
   # DUL CUSTOMIZATION: add index
   to_field 'indexes_tesim', extract_xpath('./index', to_text: false)
 end
+# rubocop:enable Metrics/BlockLength
 
 each_record do |_record, context|
   context.output_hash['components'] &&= context.output_hash['components'].select { |c| c.keys.any? }

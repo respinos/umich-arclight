@@ -12,7 +12,7 @@ class CatalogController < ApplicationController
   # Patched for now by copying the raw method from Blacklight https://github.com/projectblacklight/blacklight/blob/master/app/controllers/concerns/blacklight/catalog.rb#L57-L63
   # Last checked for updates: ArcLight v0.3.2
   def raw
-    raise(ActionController::RoutingError, "Not Found") unless blacklight_config.raw_endpoint.enabled
+    raise(ActionController::RoutingError, 'Not Found') unless blacklight_config.raw_endpoint.enabled
 
     _, @document = search_service.fetch(params[:id])
     render json: @document
@@ -274,7 +274,16 @@ class CatalogController < ApplicationController
     config.add_summary_field 'creators_ssim', label: 'Creator', link_to_facet: true
     config.add_summary_field 'abstract_tesim', label: 'Abstract', helper_method: :render_html_tags
     config.add_summary_field 'extent_ssm', label: 'Extent'
-    config.add_summary_field 'language_ssm', label: 'Language'
+
+    config.add_summary_field 'languages', label: 'Language', accessor: 'languages', separator_options: {
+      words_connector: '<br/>',
+      two_words_connector: '<br/>',
+      last_word_connector: '<br/>'
+    },
+      if: lambda { |_context, _field_config, document|
+            document.languages.present?
+          }
+
     config.add_summary_field 'prefercite_tesim', label: 'Preferred citation', helper_method: :render_html_tags
 
     # Collection Show Page - Background Section
@@ -342,6 +351,15 @@ class CatalogController < ApplicationController
     config.add_component_field 'accruals_tesim', label: 'Accruals', helper_method: :render_html_tags
     config.add_component_field 'phystech_tesim', label: 'Physical / technical requirements', helper_method: :render_html_tags
     config.add_component_field 'physloc_tesim', label: 'Physical location', helper_method: :render_html_tags
+
+    config.add_component_field 'languages', label: 'Language', accessor: 'languages', separator_options: {
+      words_connector: '<br/>',
+      two_words_connector: '<br/>',
+      last_word_connector: '<br/>'
+    },
+      if: lambda { |_context, _field_config, document|
+            document.languages.present?
+          }
 
     # Component Show Page - Indexed Terms Section
     config.add_component_indexed_terms_field 'access_subjects_ssim', label: 'Subjects', link_to_facet: true, separator_options: {
