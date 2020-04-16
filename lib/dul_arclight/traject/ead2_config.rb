@@ -260,6 +260,16 @@ to_field 'descrules_ssm', extract_xpath('/ead/eadheader/profiledesc/descrules')
 # DUL CUSTOMIZATION: add index
 to_field 'indexes_tesim', extract_xpath('/ead/archdesc/index', to_text: false)
 
+# DUL CUSTOMIZATION: count the child components from the top-level
+to_field 'child_component_count_isim' do |record, accumulator|
+  accumulator << record.xpath('/ead/archdesc/dsc/*[is_component(.)]', NokogiriXpathExtensions.new).count
+end
+
+# DUL CUSTOMIZATION: count all descendant components from the top-level
+to_field 'total_component_count_isim' do |record, accumulator|
+  accumulator << record.xpath('/ead/archdesc/dsc//*[is_component(.)]', NokogiriXpathExtensions.new).count
+end
+
 # =============================
 # Each component child document
 # <c> <c01> <c12>
