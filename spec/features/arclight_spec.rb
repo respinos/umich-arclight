@@ -2,12 +2,19 @@
 
 require 'spec_helper'
 
-# Removed this spec for now - we can revisit once there is actual
-# content for the homepage
-#
-# RSpec.describe 'Arclight', type: :feature do
-#   xit 'navigates to homepage' do
-#     visit '/'
-#     expect(page).to have_css 'h1', text: 'Archival Collections at Duke'
-#   end
-# end
+RSpec.describe 'Arclight', type: :feature do
+  it 'navigates to homepage' do
+    visit '/'
+    expect(page).to have_css 'h1', text: 'Find Archival Materials'
+    expect(page).to have_css 'h3', text: 'About This Site'
+    expect(page).to have_css 'h3', text: 'Find More in the Catalog'
+    expect(page).to have_css 'h3', text: 'Ask a Librarian'
+  end
+
+  it 'navigates to advanced search' do
+    visit '/advanced'
+    expect(page).to have_css 'h1', text: 'Advanced Search'
+    expect(page).to have_css 'input', id: 'q'
+  end
+
+end

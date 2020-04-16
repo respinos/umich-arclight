@@ -1,0 +1,14 @@
+<%# Advanced Search -- for use in modal context %>
+
+<div class="modal-header">
+  <h1 class="modal-title"><%= t('dul_arclight.advanced_search.title') %></h1>
+  <button type="button" class="blacklight-modal-close close" data-dismiss="modal" aria-label="<%= t('blacklight.modal.close') %>">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+<div class="modal-body">
+
+  <%= render "catalog/search_form_advanced" %>
+
+</div>

@@ -3,3 +3,12 @@ en:
     home:
       browse_all: "Browse All Collections"
       browse_ua: "Browse University Archives"
+    advanced_search:
+      title: "Advanced Search"
+      within_collections_label: "Search within"
+      search_fields_label: "Search across"
+      restrict_to_ua: "within University Archives"
+      available_online: "has Online Access"
+      search_label: "Search for"
+      submit: "Search"
+      start_over: "Start Over"
