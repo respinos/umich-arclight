@@ -22,10 +22,10 @@ module HomepageHelper
 
   def collection_count
     search_service = Blacklight.repository_class.new(blacklight_config)
-    @response = search_service.search(
+    query = search_service.search(
       q: "level_sim:Collection",
       rows: 1
     )
-    @response.response['numFound']
+    query.response['numFound']
   end
 end
