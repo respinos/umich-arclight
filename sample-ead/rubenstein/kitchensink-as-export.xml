@@ -771,6 +771,10 @@
             <unittitle>Folder title of Folder 6 |||</unittitle>
             <container id="aspace_6c61792a10d392a49f1b975e18d9470d" label="mixed materials"
               type="Box-folder">1.6</container>
+              <langmaterial>
+                <language langcode="eng">English (component-level langmaterial/language tag; no other langmaterial)</language>
+                <language langcode="fre">French (component-level langmaterial/language tag; no other langmaterial)</language>
+              </langmaterial>
           </did>
         </c02>
         <c02 id="aspace_ref75" level="item">
@@ -781,6 +785,10 @@
             <unitdate calendar="gregorian" era="ce">no date</unitdate>
             <container id="aspace_becf3932797608baf722bab611a19b0b" label="mixed materials"
               type="Box-folder">1.7</container>
+            <langmaterial>
+              <language langcode="eng">English (component-level langmaterial/language tag with another langmaterial present)</language>
+            </langmaterial>
+            <langmaterial>Materials are in English. (component-level langmaterial with no language tag)</langmaterial>
           </did>
         </c02>
         <c02 id="aspace_ref76" level="item">
