@@ -4,10 +4,10 @@
 # Helpers used for the DUL-Arclight homepage
 module HomepageHelper
   def config_features
-    @config ||= begin
+    @config_features ||= begin
                   YAML.safe_load(::File.read(config_filename))
-                rescue Errno::ENOENT
-                  {}
+                         rescue Errno::ENOENT
+                           {}
                 end
   end
 
@@ -23,7 +23,7 @@ module HomepageHelper
   def collection_count
     search_service = Blacklight.repository_class.new(blacklight_config)
     query = search_service.search(
-      q: "level_sim:Collection",
+      q: 'level_sim:Collection',
       rows: 1
     )
     query.response['numFound']
