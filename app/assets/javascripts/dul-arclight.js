@@ -127,4 +127,28 @@ Blacklight.onLoad(function () {
 
   });
 
+
+  /* =================== */
+  /* Hide sidebar header */
+  /* =================== */
+  
+  if ($("body").hasClass("blacklight-catalog-show")) {
+    
+    // wait for placeholder content to go away
+    var checkExist = setInterval(function() {
+
+      var placeholderPath = $("#collection-context .al-hierarchy-placeholder").html();
+      var navPath = $("#collection-context .context-navigator .al-context-nav-parent").html();
+
+      if (undefined === placeholderPath) {
+          if (navPath.length == 0) {
+            $("#context hr").fadeOut();
+            $("#context .tab-content .tab-pane h2").fadeOut();
+          }
+          clearInterval(checkExist);
+      } 
+    }, 100);
+
+  }
+
 });
