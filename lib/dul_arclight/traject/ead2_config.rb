@@ -85,6 +85,7 @@ end
 to_field 'id', extract_xpath('/ead/eadheader/eadid'), strip, gsub('.', '-')
 to_field 'title_filing_si', extract_xpath('/ead/eadheader/filedesc/titlestmt/titleproper[@type="filing"]')
 to_field 'title_ssm', extract_xpath('/ead/archdesc/did/unittitle')
+to_field 'title_formatted_ssm', extract_xpath('/ead/archdesc/did/unittitle', to_text: false)
 to_field 'title_teim', extract_xpath('/ead/archdesc/did/unittitle')
 to_field 'ead_ssi', extract_xpath('/ead/eadheader/eadid')
 
@@ -114,26 +115,27 @@ to_field 'unitid_ssm', extract_xpath('/ead/archdesc/did/unitid')
 to_field 'unitid_teim', extract_xpath('/ead/archdesc/did/unitid')
 to_field 'collection_unitid_ssm', extract_xpath('/ead/archdesc/did/unitid')
 
-# DUL CUSTOMIZATION: strip whitespace & newlines from normalized title
-# Also, use DUL rules for NormalizedDate
-to_field 'normalized_title_ssm' do |_record, accumulator, context|
-  dates = DulArclight::NormalizedDate.new(
-    context.output_hash['unitdate_inclusive_ssm'],
-    context.output_hash['unitdate_bulk_ssim'],
-    context.output_hash['unitdate_other_ssim']
-  ).to_s
-  title = context.output_hash['title_ssm'].first
-  accumulator << Arclight::NormalizedTitle.new(title, dates).to_s&.gsub(/\s+/, ' ')
-end
-
-# DUL CUSTOMIZATION: strip whitespace & newlines from normalized date
-# Also, use DUL rules for NormalizedDate
+# DUL CUSTOMIZATION: use DUL rules for NormalizedDate
 to_field 'normalized_date_ssm' do |_record, accumulator, context|
   accumulator << DulArclight::NormalizedDate.new(
     context.output_hash['unitdate_inclusive_ssm'],
     context.output_hash['unitdate_bulk_ssim'],
     context.output_hash['unitdate_other_ssim']
-  ).to_s&.gsub(/\s+/, ' ')
+  ).to_s
+end
+
+# DUL CUSTOMIZATION: use DUL rules for NormalizedDate in title normalization
+to_field 'normalized_title_ssm' do |_record, accumulator, context|
+  dates = context.output_hash['normalized_date_ssm']&.first
+  title = context.output_hash['title_ssm']&.first
+  accumulator << Arclight::NormalizedTitle.new(title, dates).to_s
+end
+
+# DUL CUSTOMIZATION: preserve formatting tags in titles
+to_field 'normalized_title_formatted_ssm' do |_record, accumulator, context|
+  dates = context.output_hash['normalized_date_ssm']&.first
+  title = context.output_hash['title_formatted_ssm']&.first.to_s
+  accumulator << Arclight::NormalizedTitle.new(title, dates).to_s
 end
 
 to_field 'collection_ssm' do |_record, accumulator, context|
@@ -315,22 +317,12 @@ compose 'components', ->(record, accumulator, _context) { accumulator.concat rec
 
   to_field 'title_filing_si', extract_xpath('./did/unittitle'), first_only
   to_field 'title_ssm', extract_xpath('./did/unittitle')
+  to_field 'title_formatted_ssm', extract_xpath('./did/unittitle', to_text: false)
   to_field 'title_teim', extract_xpath('./did/unittitle')
 
   to_field 'unitdate_bulk_ssim', extract_xpath('./did/unitdate[@type="bulk"]')
   to_field 'unitdate_inclusive_ssm', extract_xpath('./did/unitdate[@type="inclusive"]')
   to_field 'unitdate_other_ssim', extract_xpath('./did/unitdate[not(@type)]')
-
-  # DUL CUSTOMIZATION: use DUL rules for NormalizedDate
-  to_field 'normalized_title_ssm' do |_record, accumulator, context|
-    dates = DulArclight::NormalizedDate.new(
-      context.output_hash['unitdate_inclusive_ssm'],
-      context.output_hash['unitdate_bulk_ssim'],
-      context.output_hash['unitdate_other_ssim']
-    ).to_s
-    title = context.output_hash['title_ssm']&.first
-    accumulator << Arclight::NormalizedTitle.new(title, dates).to_s
-  end
 
   # DUL CUSTOMIZATION: use DUL rules for NormalizedDate
   to_field 'normalized_date_ssm' do |_record, accumulator, context|
@@ -339,6 +331,20 @@ compose 'components', ->(record, accumulator, _context) { accumulator.concat rec
       context.output_hash['unitdate_bulk_ssim'],
       context.output_hash['unitdate_other_ssim']
     ).to_s
+  end
+
+  # DUL CUSTOMIZATION: use DUL rules for NormalizedDate in title normalization
+  to_field 'normalized_title_ssm' do |_record, accumulator, context|
+    dates = context.output_hash['normalized_date_ssm']&.first
+    title = context.output_hash['title_ssm']&.first
+    accumulator << Arclight::NormalizedTitle.new(title, dates).to_s
+  end
+
+  # DUL CUSTOMIZATION: use DUL rules for NormalizedDate
+  to_field 'normalized_title_formatted_ssm' do |_record, accumulator, context|
+    dates = context.output_hash['normalized_date_ssm']&.first
+    title = context.output_hash['title_formatted_ssm']&.first.to_s
+    accumulator << Arclight::NormalizedTitle.new(title, dates).to_s
   end
 
   # Aleph ID (esp. for request integration)

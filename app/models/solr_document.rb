@@ -8,6 +8,13 @@ class SolrDocument
 
   # self.unique_key = 'id'
 
+  # DUL CUSTOMIZATION: Allow for formatting tags to render in collection/component
+  # titles in some views.
+  def normalized_title
+    value = first('normalized_title_formatted_ssm') || first('normalized_title_ssm').to_s
+    render_html_tags(value: [value]) if value.present?
+  end
+
   def bibnums
     fetch('bibnum_ssim', [])
   end
