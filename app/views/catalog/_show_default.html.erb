@@ -154,7 +154,7 @@
   </div>
 <% end %>
 
-<% if document.children? %>
+<% if document.children? && document.level != 'collection' %>
 
   <%# ========================== %>
   <%# Child Components           %>
