@@ -1,0 +1,41 @@
+<%# Overrides ArcLight Core partial. %>
+<%# This will serve as DUL's authoritative index view partial %>
+<%# whether results are grouped or not. See: %>
+<%# https://github.com/projectblacklight/arclight/blob/master/app/views/catalog/_arclight_index_default.html.erb %>
+<%# Last checked for updates: ArcLight v0.3.2. %>
+
+<div class="al-search-result-index-article row d-flex align-items-start">
+  <% counter = document_counter_with_offset(document_counter) %>
+  <div class="col-auto">
+    <%= render partial: 'arclight_document_header_icon', locals: { document: document }  %>
+  </div>
+
+  <div class="col col-no-left-padding d-flex flex-wrap">
+    <div class="documentHeader my-w-75 w-md-100 order-0 al-document-highlight" data-document-id="<%= document.id %>">
+      <h3 class="index_title document-title-heading">
+        <%= link_to_document document, document.title_with_highlighting || document_show_link_field(document), counter: document_counter %>
+        <%= content_tag('span', class: 'al-document-extent badge') do %>
+          <%= document.extent %>
+        <% end if document.extent %>
+      </h3>
+    </div>
+
+    <div class="my-w-25 w-md-100 order-12 order-md-1">
+      <%= render_index_doc_actions document, wrapping_class: 'd-flex justify-content-end' %>
+    </div>
+
+    <div class="order-2">
+      <%= content_tag('div', class: 'al-document-highlight highlight-snippets') do %>
+        <%= document.highlights_without_title&.join('<br/>')&.html_safe %>
+      <% end if document.highlights_without_title.present? %>
+
+      <%= content_tag('div', class: 'al-document-abstract-or-scope col') do %>
+        <%= content_tag('div', 'data-arclight-truncate' => true) do %>
+          <%= document.abstract_or_scope %>
+        <% end %>
+      <% end if document.abstract_or_scope %>
+
+      <%= render partial: 'index_breadcrumb_default', locals: { document: document } %>
+    </div>
+  </div>
+</div>

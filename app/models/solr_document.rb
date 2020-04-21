@@ -25,6 +25,26 @@ class SolrDocument
     fetch('langmaterial_ssm') { fetch('language_ssm', []) }
   end
 
+  # ==============================
+  # Highlights (for query matches)
+  # ==============================
+
+  # DUL-Custom methods for highlighting search terms in search results views.
+  # We want to be able to highlight the keyword within the component title in a
+  # search result, and don't want to repeat the title in the highlights section if
+  # it is the text that matched the query (true for the vast majority of searches).
+
+  # TODO: write some tests for this customization.
+
+  def title_with_highlighting
+    highlights[highlight_index].html_safe if title_should_have_highlighting?
+  end
+
+  def highlights_without_title
+    highlights&.reject! { |h| h[highlight_index] if highlight_index.present? }
+    highlights
+  end
+
   # ===============
   # Digital Objects
   # ===============
@@ -84,4 +104,18 @@ class SolrDocument
   # and Blacklight::Document::SemanticFields#to_semantic_values
   # Recommendation: Use field names from Dublin Core
   use_extension(Blacklight::Document::DublinCore)
+
+  private
+
+  def stripped_snippets
+    highlights&.map { |h| ActionController::Base.helpers.strip_tags(h).strip.squish }
+  end
+
+  def title_should_have_highlighting?
+    highlight_index.present?
+  end
+
+  def highlight_index
+    stripped_snippets&.find_index { |s| first('normalized_title_ssm').strip.squish.start_with?(s) }
+  end
 end

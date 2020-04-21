@@ -3,6 +3,7 @@
 @import 'bootstrap/variables';
 @import 'bootstrap/mixins';
 @import 'arclight/variables';
+@import 'dul-arclight/dul_variables.scss';
 
 @import "font-awesome-sprockets";
 @import "font-awesome";
@@ -13,8 +14,7 @@
 @import 'dul-arclight/modules/context_navigation.scss';
 @import 'dul-arclight/modules/show_component.scss';
 @import 'dul-arclight/modules/homepage.scss';
+@import 'dul-arclight/modules/search_results.scss';
 
-
-@import 'dul-arclight/dul_variables.scss';
 @import 'dul-arclight/dul_styles.scss';
 @import 'dul-arclight/dul_masthead.scss';

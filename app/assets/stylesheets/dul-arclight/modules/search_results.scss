@@ -1,0 +1,43 @@
+.view-type {
+  /* Hide the list/compact view toggler in favor of only */
+  /* maintaining one view that should be a good default  */
+  display: none;
+}
+
+.al-document-highlight {
+  padding-top: 0;
+  padding-left: 0;
+  font-size: inherit;
+  font-style: inherit;
+  margin-bottom: 0;
+
+  em {
+    background-color: tint($dandelion, 60%);
+    font-style: normal;
+    padding: 0 0.15em;
+    margin: 0 -0.15em;
+  }
+}
+
+.highlight-snippets {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 0.8em 0;
+}
+
+.grouped-documents {
+  h3.document-title-heading {
+    font-size: 1.2rem;
+  }
+  .al-document-container {
+    display: none;
+  }
+  .breadcrumb-links {
+    a:first-of-type {
+      display: none; /* don't show the collection title */
+    }
+    a:first-of-type+span {
+      display: none; /* hide the first separator */
+    }
+  }
+}
