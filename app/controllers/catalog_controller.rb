@@ -450,9 +450,11 @@ class CatalogController < ApplicationController
     config.view.collection_context.display_control = false
     config.view.collection_context.partials = %i[index_collection_context]
 
+    # DUL CUSTOMIZATION: remove compact index view in favor of just
+    # having one index view type (and keeping it fairly sparse)
     ##
     # Compact index view
-    config.view.compact
-    config.view.compact.partials = %i[arclight_index_compact]
+    # config.view.compact
+    # config.view.compact.partials = %i[arclight_index_compact]
   end
 end

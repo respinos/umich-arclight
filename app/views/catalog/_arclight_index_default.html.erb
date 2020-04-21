@@ -11,9 +11,9 @@
   </div>
 
   <div class="col col-no-left-padding d-flex flex-wrap">
-    <div class="documentHeader my-w-75 w-md-100 order-0" data-document-id="<%= document.id %>">
+    <div class="documentHeader my-w-75 w-md-100 order-0 al-document-highlight" data-document-id="<%= document.id %>">
       <h3 class="index_title document-title-heading">
-        <%= link_to_document document, document_show_link_field(document), counter: counter %>
+        <%= link_to_document document, document.title_with_highlighting || document_show_link_field(document), counter: document_counter %>
         <%= content_tag('span', class: 'al-document-extent badge') do %>
           <%= document.extent %>
         <% end if document.extent %>
@@ -25,25 +25,15 @@
     </div>
 
     <div class="order-2">
-      <div class="row">
-        <%= content_tag('div', class: 'al-document-highlight col') do %>
-          <%= document.highlights.join('<br/>').html_safe %>
-        <% end if document.highlights %>
-      </div>
+      <%= content_tag('div', class: 'al-document-highlight highlight-snippets') do %>
+        <%= document.highlights_without_title&.join('<br/>')&.html_safe %>
+      <% end if document.highlights_without_title.present? %>
 
-      <div class="row">
-        <%= content_tag('div', class: 'al-document-creator col') do %>
-          <%= document.creator %>
-        <% end if document.creator %>
-      </div>
-
-      <div class="row">
-        <%= content_tag('div', class: 'al-document-abstract-or-scope col') do %>
-          <%= content_tag('div', 'data-arclight-truncate' => true) do %>
-            <%= document.abstract_or_scope %>
-          <% end %>
-        <% end if document.abstract_or_scope %>
-      </div>
+      <%= content_tag('div', class: 'al-document-abstract-or-scope col') do %>
+        <%= content_tag('div', 'data-arclight-truncate' => true) do %>
+          <%= document.abstract_or_scope %>
+        <% end %>
+      <% end if document.abstract_or_scope %>
 
       <%= render partial: 'index_breadcrumb_default', locals: { document: document } %>
     </div>
