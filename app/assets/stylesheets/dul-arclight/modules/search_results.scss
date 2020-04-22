@@ -19,6 +19,10 @@
   }
 }
 
+.al-document-abstract-or-scope {
+  max-width: none !important;
+}
+
 .highlight-snippets {
   font-size: 0.9rem;
   color: #555;
@@ -28,6 +32,9 @@
 .grouped-documents {
   h3.document-title-heading {
     font-size: 1.2rem;
+  }
+  .al-document-abstract-or-scope {
+    max-width: none !important;
   }
   .al-document-container {
     display: none;

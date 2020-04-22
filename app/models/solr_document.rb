@@ -25,6 +25,12 @@ class SolrDocument
     fetch('langmaterial_ssm') { fetch('language_ssm', []) }
   end
 
+  # DUL override ArcLight core method to reflect changing the fields from _sim to _tesim
+  def abstract_or_scope
+    value = first('abstract_tesim') || first('scopecontent_tesim')
+    render_html_tags(value: [value]) if value.present?
+  end
+
   # ==============================
   # Highlights (for query matches)
   # ==============================
