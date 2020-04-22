@@ -22,7 +22,8 @@
       <%# text input %>
       <div class="text-input-wrapper">
         <label for="q" class="sr-only"><%= t('blacklight.search.form.search.label') %></label>
-        <%= text_field_tag :q, params[:q], placeholder: t('blacklight.search.form.search.placeholder'), class: "search-q q form-control", id: "q", autofocus: presenter.autofocus?, data: { autocomplete_enabled: presenter.autocomplete_enabled?, autocomplete_path: search_action_path(action: :suggest) }  %>
+        <%# DUL Customization: make homepage autofocus the search box %>
+        <%= text_field_tag :q, params[:q], placeholder: t('blacklight.search.form.search.placeholder'), class: "search-q q form-control", id: "q", autofocus: homepage? ? true : presenter.autofocus?, data: { autocomplete_enabled: presenter.autocomplete_enabled?, autocomplete_path: search_action_path(action: :suggest) }  %>
       </div>
       
       <%# search btn -%>
@@ -37,17 +38,5 @@
   </div>
 <% end %>
 
-<%# advanced search link and bookmarks button %>
-<div class="search-extra-controls flex-fill">  
-  <div class='input-group'>   
-    
-    <%# define this in a controller? %>
-    <a class="advanced_search" href="/advanced">Advanced Search</a>
-
-    <%= link_to bookmarks_path, id:'bookmarks_nav' do %>
-      <i class="fas fa-bookmark"></i> <span class="bookmarks-label"><%= t('blacklight.header_links.bookmarks') %></span>
-      <span class="open-paren">(</span><span data-role='bookmark-counter'><%= current_or_guest_user.bookmarks.count %></span><span class="close-paren">)</span>
-    <% end %>
-  
-  </div>       
-</div>
+<%# Show the extra controls everywhere except homepage %>
+<%= render 'search_extra_controls' unless homepage? %>

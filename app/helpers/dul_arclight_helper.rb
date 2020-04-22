@@ -3,6 +3,11 @@
 # Helper methods specific to DUL ArcLight
 # ---------------------------------------
 module DulArclightHelper
+  # Shorthand to distinguish the homepage among other index presenter driven pages
+  def homepage?
+    current_page?(root_path) && !has_search_parameters?
+  end
+
   ##
   # @param [SolrDocument]
   def collection_doc(document)

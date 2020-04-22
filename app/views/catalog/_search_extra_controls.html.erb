@@ -1,0 +1,14 @@
+<%# advanced search link and bookmarks button %>
+<div class="search-extra-controls flex-fill">  
+  <div class='input-group'>
+
+    <%# define this in a controller? %>
+    <a class="advanced_search" href="/advanced">Advanced Search</a>
+
+    <%= link_to bookmarks_path, id:'bookmarks_nav' do %>
+      <i class="fas fa-bookmark"></i> <span class="bookmarks-label"><%= t('blacklight.header_links.bookmarks') %></span>
+      <span class="open-paren">(</span><span data-role='bookmark-counter'><%= current_or_guest_user.bookmarks.count %></span><span class="close-paren">)</span>
+    <% end %>
+
+  </div>
+</div>
