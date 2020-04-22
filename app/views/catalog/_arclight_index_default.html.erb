@@ -29,7 +29,7 @@
         <%= document.highlights_without_title&.join('<br/>')&.html_safe %>
       <% end if document.highlights_without_title.present? %>
 
-      <%= content_tag('div', class: 'al-document-abstract-or-scope col') do %>
+      <%= content_tag('div', class: 'al-document-abstract-or-scope') do %>
         <%= content_tag('div', 'data-arclight-truncate' => true) do %>
           <%= document.abstract_or_scope %>
         <% end %>
