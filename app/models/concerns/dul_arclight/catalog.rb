@@ -9,7 +9,8 @@ module DulArclight
   ##
   # DUL-ArcLight specific methods for the Catalog
   module Catalog
-    extend Arclight::Catalog
+    extend ActiveSupport::Concern
+    include Arclight::Catalog
 
     ##
     # Overriding the Blacklight method so that the hierarchy view does not start
