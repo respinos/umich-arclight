@@ -15,6 +15,7 @@
 
 #header-navbar {
   background: $dul-masthead-blue;
+  min-height: 87px;
   padding-top: none;
   border-top: none;
   padding: 15px 0 10px 0;
@@ -26,9 +27,13 @@
               0 4px 4px rgba(0,0,0,0.06), 
               0 8px 8px rgba(0,0,0,0.06),
               0 16px 16px rgba(0,0,0,0.06);
-  
+
   @include media-breakpoint-up(md) {
     padding-top: 5px;
+  }
+
+  .container {
+    position: relative;
   }
   
   
@@ -289,11 +294,11 @@
 
   #mobile-menu {
     position: absolute;
-    top: -7.5rem;
+    top: 0;
     right: 0;
 
     @include media-breakpoint-up(md) {
-      top: -1.75rem;
+      top: 0.5rem;
     }
     
     @include media-breakpoint-up(lg) {

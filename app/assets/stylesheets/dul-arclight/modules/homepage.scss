@@ -1,128 +1,178 @@
 /* Styles for DUL-ArcLight homepage */
 
-.main-feature {
-  background-color: #ccc;
-  min-height: 300px;
-  background: #f0f0f0;
-  box-shadow: 0 1px 1px rgba(0,0,0,0.06),
-              0 2px 2px rgba(0,0,0,0.06),
-              0 4px 4px rgba(0,0,0,0.06),
-              0 8px 8px rgba(0,0,0,0.06),
-              0 16px 16px rgba(0,0,0,0.06);
+.homepage {
+
+  /* ---------------------- */
+  /* HORIZONTAL BAR AT TOP  */
+  /* ---------------------- */
+  &.main-feature {
+    background-color: #ccc;
+    min-height: 300px;
+    background: #f0f0f0;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.06),
+                0 2px 2px rgba(0,0,0,0.06),
+                0 4px 4px rgba(0,0,0,0.06),
+                0 8px 8px rgba(0,0,0,0.06),
+                0 16px 16px rgba(0,0,0,0.06);
   }
 
-.imgback { /* the featured image area */
-  background-repeat: no-repeat;
-  position: absolute;
-  background-size: cover;
-  right: 0;
-  min-height: 300px;
-  @include media-breakpoint-down(sm) {
-    display: none;
-  }
-  &.imgback-image {
-    background-image: url('https://library.duke.edu/sites/default/files/rubenstein/panels/banner-1.jpg');
+  /* ---------------------- */
+  /* FEATURED IMAGES AREA   */
+  /* ---------------------- */
+  .imgback {
+    background-repeat: no-repeat;
+    position: absolute;
     background-size: cover;
     right: 0;
-    background-position: 50% 50%;
-    -webkit-clip-path: polygon(50px 0,100% 0,100% 100%,0 100%);
-    z-index: 90;
-    background-color: #ddd;
-    background-position: 15% 50%;
-  }
-  &.imgback-shadow { /* transparent diagonal white stripe */
-    -webkit-clip-path: polygon(50px 0, 70px 0, 20px 100%,0 100%);
-    clip-path: polygon(50px 0, 70px 0, 20px 100%,0 100%);
-    z-index: 95;
-    box-shadow: -30px 30px -30px 30px;
-    background-color: #eee;
-    opacity: 0.8;
-  }
-  .feature-caption {
-    color: white;
-    position: absolute;
-    bottom: 0px;
-    right: 0px;
-    background-color: rgba(0,0,0,0.4);
-    padding: 10px 10px 10px 20px;
-    margin-left: 20px;
-    -webkit-clip-path: polygon(8px 0, 100% 0, 100% 100%, 0 100%);
-    clip-path: polygon(8px 0, 100% 0, 100% 100%, 0 100%);
-    @include media-breakpoint-only(xl) {
-      padding-right: 25px;
+    min-height: 300px;
+    @include media-breakpoint-down(sm) {
+      display: none;
     }
-    a {
-      font-weight: bold;
+    &.imgback-image {
+      background-size: cover;
+      right: 0;
+      background-position: 50% 50%;
+      -webkit-clip-path: polygon(50px 0,100% 0,100% 100%,0 100%);
+      z-index: 90;
+      background-color: #ddd;
+      background-position: 15% 50%;
+    }
+    &.imgback-shadow { /* transparent diagonal white stripe */
+      -webkit-clip-path: polygon(50px 0, 70px 0, 20px 100%,0 100%);
+      clip-path: polygon(50px 0, 70px 0, 20px 100%,0 100%);
+      z-index: 95;
+      box-shadow: -30px 30px -30px 30px;
+      background-color: #eee;
+      opacity: 0.8;
+    }
+    .feature-caption {
       color: white;
-      &:hover {
-        text-decoration: underline;
+      position: absolute;
+      bottom: 0px;
+      right: 0px;
+      background-color: rgba(0,0,0,0.4);
+      padding: 10px 10px 10px 20px;
+      margin-left: 20px;
+      -webkit-clip-path: polygon(8px 0, 100% 0, 100% 100%, 0 100%);
+      clip-path: polygon(8px 0, 100% 0, 100% 100%, 0 100%);
+      @include media-breakpoint-only(xl) {
+        padding-right: 25px;
+      }
+      a {
+        font-weight: bold;
+        color: white;
+        &:hover {
+          text-decoration: underline;
+        }
       }
     }
   }
-}
 
-h1.main-title {
-  color: black;
-  margin-top: 28px;
-  font-size: 3rem;
-  @include media-breakpoint-only(xs) {
-    font-size: 2.75rem;
-  }
-  @include media-breakpoint-only(sm) {
+  /* ---------------------- */
+  /* MAIN TITLE ON HOMEPAGE */
+  /* ---------------------- */
+
+  h1.main-title {
+    color: black;
+    margin-top: 0.4em;
+    margin-bottom: 0;
     font-size: 3rem;
+    @include media-breakpoint-only(xs) {
+      font-size: 2.75rem;
+    }
+    @include media-breakpoint-only(sm) {
+      font-size: 3rem;
+    }
+    @include media-breakpoint-only(md) {
+      font-size: 2.4rem;
+    }
+    @include media-breakpoint-only(lg) {
+      font-size: 2.75rem;
+    }
   }
-  @include media-breakpoint-only(md) {
-    font-size: 2.4rem;
-  }
-  @include media-breakpoint-only(lg) {
-    font-size: 2.75rem;
-  }
-}
 
-.collection-count {
-  font-weight: 500;
-  font-size: 22px;
-}
-
-hr.extended-divider {
-  margin-right: -34px; /* extend out to the diagonal slice */
-  margin-bottom: 20px;
-  @include media-breakpoint-only(xl) {
-    margin-bottom: 25px;
+  .collection-count {
+    font-weight: 500;
+    font-size: 22px;
   }
-  @include media-breakpoint-down(sm) {
-    margin-right: 0;
-  }
-}
 
-.rl-banner {
-  text-transform: uppercase;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 1.25em;
-  color: inherit;
-  &:hover {
-    text-decoration: none;
+  /* ---------------------- */
+  /* SEARCH BOX ON HOMEPAGE */
+  /* ---------------------- */
+  form {
+    .text-input-wrapper, .twitter-typeahead {
+      width: 100%;
+    }
+    .within-collection-dropdown {
+      display: none;
+    }
+    .twitter-typeahead input {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+  .search-extra-controls {
+    display: inline;
+    .input-group {
+      display: inline;
+      a {
+        font-size: 15px;
+        margin-left: 0.6em;
+      }
+      .bookmarks-label {
+        @include media-breakpoint-down(md) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  hr.extended-divider {
+    margin-right: -34px; /* extend out to the diagonal slice */
+    margin-bottom: 20px;
+    @include media-breakpoint-only(xl) {
+      margin-bottom: 25px;
+    }
+    @include media-breakpoint-only(md) {
+      margin-top: 25px !important;
+    }
+    @include media-breakpoint-down(sm) {
+      margin-right: 0;
+    }
+  }
+
+  /* ---------------------- */
+  /*  RL LOGO ON HOMEPAGE   */
+  /* ---------------------- */
+  .rl-banner {
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.25em;
     color: inherit;
+    &:hover {
+      text-decoration: none;
+      color: inherit;
+    }
+    @include media-breakpoint-up(xl) {
+      font-size: 16.5px;
+    }
   }
-  @include media-breakpoint-up(xl) {
-    font-size: 16.5px;
-  }
-}
 
-br.rl-break {
-  @include media-breakpoint-only(xl) {
-    display: none;
+  br.rl-break {
+    @include media-breakpoint-only(xl) {
+      display: none;
+    }
   }
-}
 
-img.rl-logo {
-  height: 40px;
-  width: 50px;
-  float: left;
-  margin-right: 8px;
-  @include media-breakpoint-only(xl) {
-    height: 32px;
-    width: 40px;
+  img.rl-logo {
+    height: 40px;
+    width: 50px;
+    float: left;
+    margin-right: 8px;
+    @include media-breakpoint-only(xl) {
+      height: 32px;
+      width: 40px;
+    }
   }
 }
