@@ -3,7 +3,7 @@
   <div class='input-group'>
 
     <%# define this in a controller? %>
-    <a class="advanced_search" href="/advanced">Advanced Search</a>
+    <%= link_to t('dul_arclight.advanced_search.title'), '/advanced', data: { blacklight_modal: "trigger" }, class: 'advanced_search' %>
 
     <%= link_to bookmarks_path, id:'bookmarks_nav' do %>
       <i class="fas fa-bookmark"></i> <span class="bookmarks-label"><%= t('blacklight.header_links.bookmarks') %></span>

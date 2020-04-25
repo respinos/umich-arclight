@@ -26,5 +26,8 @@ Rails.application.routes.draw do
       delete 'clear'
     end
   end
+
+  resource :advanced_search, only: [:show], as: 'advanced_search', path: '/advanced', controller: 'advanced_search'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
