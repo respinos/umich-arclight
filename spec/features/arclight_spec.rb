@@ -16,5 +16,4 @@ RSpec.describe 'Arclight', type: :feature do
     expect(page).to have_css 'h1', text: 'Advanced Search'
     expect(page).to have_css 'input', id: 'q'
   end
-
 end
