@@ -5,7 +5,11 @@ class CatalogController < ApplicationController
   include BlacklightRangeLimit::ControllerOverride
   include Blacklight::Catalog
   include DulArclight::Catalog
-  include Arclight::FieldConfigHelpers
+
+  # DUL CUSTOMIZATION: extend FieldConfigHelpers to convert
+  # singular extent values e.g. "1 cubic feet"
+  # include Arclight::FieldConfigHelpers
+  include DulArclight::FieldConfigHelpers
 
   # DUL CUSTOMIZATION: temporary patch for
   # ArcLight bug https://github.com/projectblacklight/arclight/issues/741
@@ -126,11 +130,14 @@ class CatalogController < ApplicationController
     config.add_index_field 'creator_ssm', label: 'Creator'
     config.add_index_field 'language_ssm', label: 'Language'
     config.add_index_field 'scopecontent_tesim', label: 'Scope Content', helper_method: :render_html_tags
-    config.add_index_field 'extent_ssm', label: 'Physical Description', separator_options: {
-      words_connector: '<br/>',
-      two_words_connector: '<br/>',
-      last_word_connector: '<br/>'
-    }
+
+    # DUL CUSTOMIZATION: singularize extent
+    config.add_index_field 'extent_ssm', label: 'Physical Description', helper_method: :singularize_extent,
+      separator_options: {
+        words_connector: '<br/>',
+        two_words_connector: '<br/>',
+        last_word_connector: '<br/>'
+      }
     config.add_index_field 'accessrestrict_tesim', label: 'Conditions Governing Access', helper_method: :render_html_tags
     config.add_index_field 'collection_ssm', label: 'Collection Title'
     config.add_index_field 'geogname_ssm', label: 'Place'
@@ -277,11 +284,14 @@ class CatalogController < ApplicationController
     # Collection Show Page - Summary Section
     config.add_summary_field 'creators_ssim', label: 'Creator', link_to_facet: true
     config.add_summary_field 'abstract_tesim', label: 'Abstract', helper_method: :render_html_tags
-    config.add_summary_field 'extent_ssm', label: 'Extent', separator_options: {
-      words_connector: '<br/>',
-      two_words_connector: '<br/>',
-      last_word_connector: '<br/>'
-    }
+
+    # DUL CUSTOMIZATION: singularize extent
+    config.add_summary_field 'extent_ssm', label: 'Extent', helper_method: :singularize_extent,
+      separator_options: {
+        words_connector: '<br/>',
+        two_words_connector: '<br/>',
+        last_word_connector: '<br/>'
+      }
 
     config.add_summary_field 'languages', label: 'Language', accessor: 'languages', separator_options: {
       words_connector: '<br/>',
@@ -349,11 +359,15 @@ class CatalogController < ApplicationController
       document.containers.present?
     }
     config.add_component_field 'abstract_tesim', label: 'Abstract', helper_method: :render_html_tags
-    config.add_component_field 'extent_ssm', label: 'Extent', separator_options: {
-      words_connector: '<br/>',
-      two_words_connector: '<br/>',
-      last_word_connector: '<br/>'
-    }
+
+    # DUL CUSTOMIZATION: singularize extent
+    config.add_component_field 'extent_ssm', label: 'Extent', helper_method: :singularize_extent,
+      separator_options: {
+        words_connector: '<br/>',
+        two_words_connector: '<br/>',
+        last_word_connector: '<br/>'
+      }
+
     config.add_component_field 'scopecontent_tesim', label: 'Scope and Content', helper_method: :render_html_tags
     config.add_component_field 'acqinfo_ssim', label: 'Acquisition information', helper_method: :render_html_tags
     config.add_component_field 'appraisal_tesim', label: 'Appraisal information', helper_method: :render_html_tags

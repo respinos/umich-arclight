@@ -14,3 +14,12 @@
 # ActiveSupport::Inflector.inflections(:en) do |inflect|
 #   inflect.acronym 'RESTful'
 # end
+
+# DUL CUSTOMIZATION: account for inflections that ActiveSupport misses,
+# e.g., 1 linear feet; 1.0 Cubic Feet; 1 film feet, etc...
+ActiveSupport::Inflector.inflections(:en) do |inflect|
+  inflect.singular(/^(.+) feet/, '\1 foot')
+  inflect.singular(/^(.+) Feet/, '\1 Foot')
+  inflect.irregular 'leaf', 'leaves'
+  inflect.irregular 'Leaf', 'Leaves'
+end
