@@ -79,7 +79,7 @@ Blacklight.onLoad(function () {
   /* Augment truncation toggle */
   /* =====++++++++++++++====== */
 
-  updatAllText = function() {
+  updateAllTruncatedText = function() {
     $('.responsiveTruncatorToggle').text("show more").append(" <i class='fas fa-chevron-circle-down'></i>").wrapInner("<span class='btn-wrapper'></span>");
     $('.responsiveTruncatorToggle').addClass('showing-less');
   }
@@ -103,7 +103,7 @@ Blacklight.onLoad(function () {
   }
 
   // initial page load
-  updatAllText();
+  updateAllTruncatedText();
 
   // click button
   $('.responsiveTruncatorToggle').click(function() {
@@ -116,7 +116,7 @@ Blacklight.onLoad(function () {
 
     $('.responsiveTruncatorToggle').parent('.card-text').removeClass('expanded');
     
-    updatAllText();
+    updateAllTruncatedText();
 
     // need to do this again after binding resize?
     $('.responsiveTruncatorToggle').click(function() {
@@ -128,14 +128,14 @@ Blacklight.onLoad(function () {
   });
 
 
-  /* =================== */
-  /* Hide sidebar header */
-  /* =================== */
+  /* ======================================== */
+  /* Hide sidebar header && document children */
+  /* ======================================== */
   
   if ($("body").hasClass("blacklight-catalog-show")) {
     
-    // wait for placeholder content to go away
-    var checkExist = setInterval(function() {
+    // wait for collection placeholder content to go away
+    var checkExistCollection = setInterval(function() {
 
       var placeholderPath = $("#collection-context .al-hierarchy-placeholder").html();
       var navPath = $("#collection-context .context-navigator .al-context-nav-parent").html();
@@ -145,7 +145,19 @@ Blacklight.onLoad(function () {
             $("#context hr").fadeOut();
             $("#context .tab-content .tab-pane h2").fadeOut();
           }
-          clearInterval(checkExist);
+          clearInterval(checkExistCollection);
+      } 
+    }, 100);
+
+
+    // wait for document placeholder content to go away
+    var checkExistDocument = setInterval(function() {
+
+      var placeholderPath = $("#document .al-hierarchy-placeholder").html();
+
+      if (undefined === placeholderPath) {
+          updateAllTruncatedText();
+          clearInterval(checkExistDocument);
       } 
     }, 100);
 
