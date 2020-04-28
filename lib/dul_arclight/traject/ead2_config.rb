@@ -224,6 +224,12 @@ end
 
 to_field 'extent_ssm', extract_xpath('/ead/archdesc/did/physdesc/extent')
 to_field 'extent_teim', extract_xpath('/ead/archdesc/did/physdesc/extent')
+
+# DUL CUSTOMIZATION: Capture text in physical description; separate values for text directly
+# in physdesc vs. in individual child elements e.g., <extent>, <dimensions>, or <physfacet>
+to_field 'physdesc_tesim', extract_xpath('/ead/archdesc/did/physdesc/child::*')
+to_field 'physdesc_tesim', extract_xpath('/ead/archdesc/did/physdesc[not(child::*)]')
+
 to_field 'genreform_sim', extract_xpath('/ead/archdesc/controlaccess/genreform')
 to_field 'genreform_ssm', extract_xpath('/ead/archdesc/controlaccess/genreform')
 
@@ -414,6 +420,11 @@ compose 'components', ->(record, accumulator, _context) { accumulator.concat rec
 
   to_field 'extent_ssm', extract_xpath('./did/physdesc/extent')
   to_field 'extent_teim', extract_xpath('./did/physdesc/extent')
+
+  # DUL CUSTOMIZATION: Capture text in physical description; separate values for text directly
+  # in physdesc vs. in individual child elements e.g., <extent>, <dimensions>, or <physfacet>
+  to_field 'physdesc_tesim', extract_xpath('./did/physdesc/child::*')
+  to_field 'physdesc_tesim', extract_xpath('./did/physdesc[not(child::*)]')
 
   to_field 'creator_ssm', extract_xpath('./did/origination')
   to_field 'creator_ssim', extract_xpath('./did/origination')

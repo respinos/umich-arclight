@@ -4,6 +4,21 @@
   display: none;
 }
 
+
+#content #documents .al-document-extent,
+#content .al-grouped-results .al-document-extent {
+  position: relative;
+  font-size: .75rem;
+  margin-left: 0;
+  margin-top: .125rem;
+  max-width: 20em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: top;
+}
+
+
 .al-document-highlight {
   padding-top: 0;
   padding-left: 0;

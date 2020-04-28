@@ -132,7 +132,7 @@ class CatalogController < ApplicationController
     config.add_index_field 'scopecontent_tesim', label: 'Scope Content', helper_method: :render_html_tags
 
     # DUL CUSTOMIZATION: singularize extent
-    config.add_index_field 'extent_ssm', label: 'Physical Description', helper_method: :singularize_extent,
+    config.add_index_field 'physdesc_tesim', label: 'Extent', helper_method: :singularize_extent,
       separator_options: {
         words_connector: '<br/>',
         two_words_connector: '<br/>',
@@ -286,7 +286,7 @@ class CatalogController < ApplicationController
     config.add_summary_field 'abstract_tesim', label: 'Abstract', helper_method: :render_html_tags
 
     # DUL CUSTOMIZATION: singularize extent
-    config.add_summary_field 'extent_ssm', label: 'Extent', helper_method: :singularize_extent,
+    config.add_summary_field 'physdesc_tesim', label: 'Extent', helper_method: :singularize_extent,
       separator_options: {
         words_connector: '<br/>',
         two_words_connector: '<br/>',
@@ -362,8 +362,8 @@ class CatalogController < ApplicationController
     }
     config.add_component_field 'abstract_tesim', label: 'Abstract', helper_method: :render_html_tags
 
-    # DUL CUSTOMIZATION: singularize extent
-    config.add_component_field 'extent_ssm', label: 'Extent', helper_method: :singularize_extent,
+    # DUL CUSTOMIZATION: Present all physdesc as extent
+    config.add_component_field 'physdesc_tesim', label: 'Extent', helper_method: :singularize_extent,
       separator_options: {
         words_connector: '<br/>',
         two_words_connector: '<br/>',
