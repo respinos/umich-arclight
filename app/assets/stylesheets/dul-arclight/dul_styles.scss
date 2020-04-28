@@ -714,7 +714,8 @@ a {
 }
 
 .card-text,
-.al-grouped-title-bar {
+.al-grouped-title-bar,
+.child-components article:nth-of-type(odd) {
   .responsiveTruncatorToggle {
     &::before {
       background: linear-gradient(
@@ -724,6 +725,8 @@ a {
     }
   }
 }
+
+
 
 @include media-breakpoint-up(lg) {
   
