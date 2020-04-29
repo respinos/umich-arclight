@@ -3,8 +3,8 @@ en:
   arclight:
     masthead_heading: "Archival Collections at Duke"
     truncation:
-      show_more: "show less"
-      show_less: "show more"
+      show_more: "show more"
+      show_less: "show less"
     views:
       home:
         title: "Archival Collections at Duke"
