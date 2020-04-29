@@ -66,6 +66,7 @@ deploy_development:
   <<: *deploy_job_def
   environment:
     name: development
+    url: https://arclight-dev.lib.duke.edu
   tags:
     - development
   only:
@@ -73,13 +74,15 @@ deploy_development:
     - tags
     - /^release-.*$/
 
-.deploy_staging:
+deploy_staging:
   <<: *deploy_job_def
   environment:
     name: staging
+    url: https://arclight-test.lib.duke.edu
   tags:
     - staging
   only:
+    - develop
     - tags
     - /^release-.*$/
 
