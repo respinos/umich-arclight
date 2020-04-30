@@ -31,6 +31,16 @@ class SolrDocument
     render_html_tags(value: [value]) if value.present?
   end
 
+  # DUL override ArcLight core method, which was incorrectly lowercasing subsequent characters in
+  # attempt to capitalize the first letter; See:
+  # https://github.com/projectblacklight/arclight/blob/master/app/models/concerns/arclight/solr_document.rb#L124-L127
+  def containers
+    fetch('containers_ssim', []).map do |container|
+      container[0] = container[0].capitalize
+      container
+    end
+  end
+
   # ==============================
   # Highlights (for query matches)
   # ==============================
