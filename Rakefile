@@ -63,4 +63,14 @@ namespace :dul_arclight do
   task reindex_full_rebuild: %i[arclight:destroy_index_docs dul_arclight:reindex_all] do
     puts 'Index has been destroyed and rebuilt from /data directory.'
   end
+
+  desc 'Delete one finding aid and all its components from the index, use EADID=<eadid>'
+  task delete: :environment do
+    raise 'Please specify your EAD slug, ex. EADID=<eadid>' unless ENV['EADID']
+
+    puts "Deleting all documents from index with ead_ssi = #{ENV['EADID']}"
+    Blacklight.default_index.connection.delete_by_query("ead_ssi:#{ENV['EADID']}")
+    Blacklight.default_index.connection.commit
+    puts "Deleted #{ENV['EADID']}"
+  end
 end
