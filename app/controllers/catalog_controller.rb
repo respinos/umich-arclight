@@ -307,22 +307,24 @@ class CatalogController < ApplicationController
     # Collection Show Page - Background Section
     config.add_background_field 'scopecontent_tesim', label: 'Scope and Content', helper_method: :render_html_tags
     config.add_background_field 'bioghist_tesim', label: 'Biographical / Historical', helper_method: :render_html_tags
-    config.add_background_field 'acqinfo_ssim', label: 'Acquisition information', helper_method: :render_html_tags
-    config.add_background_field 'appraisal_tesim', label: 'Appraisal information', helper_method: :render_html_tags
-    config.add_background_field 'custodhist_tesim', label: 'Custodial history', helper_method: :render_html_tags
+    config.add_background_field 'acqinfo_ssim', label: 'Acquisition Information', helper_method: :render_html_tags
+    config.add_background_field 'appraisal_tesim', label: 'Appraisal Information', helper_method: :render_html_tags
+    config.add_background_field 'custodhist_tesim', label: 'Custodial History', helper_method: :render_html_tags
     config.add_background_field 'processinfo_tesim', label: 'Processing information', helper_method: :render_html_tags
     config.add_background_field 'arrangement_tesim', label: 'Arrangement', helper_method: :render_html_tags
+    config.add_background_field 'fileplan_tesim', label: 'File Plan', helper_method: :render_html_tags
     config.add_background_field 'accruals_tesim', label: 'Accruals', helper_method: :render_html_tags
-    config.add_background_field 'phystech_tesim', label: 'Physical / technical requirements', helper_method: :render_html_tags
-    config.add_background_field 'physloc_tesim', label: 'Physical location', helper_method: :render_html_tags
-    config.add_background_field 'descrules_ssm', label: 'Rules or conventions', helper_method: :render_html_tags
+    config.add_background_field 'phystech_tesim', label: 'Physical / Technical Requirements', helper_method: :render_html_tags
+    config.add_background_field 'physloc_tesim', label: 'Physical Location', helper_method: :render_html_tags
+    config.add_background_field 'odd_tesim', label: 'Other Descriptive Data', helper_method: :render_html_tags
+    config.add_background_field 'descrules_ssm', label: 'Rules or Conventions', helper_method: :render_html_tags
 
     # Collection Show Page - Related Section
-    config.add_related_field 'relatedmaterial_tesim', label: 'Related material', helper_method: :render_html_tags
-    config.add_related_field 'separatedmaterial_tesim', label: 'Separated material', helper_method: :render_html_tags
-    config.add_related_field 'otherfindaid_tesim', label: 'Other finding aids', helper_method: :render_html_tags
-    config.add_related_field 'altformavail_tesim', label: 'Alternative form available', helper_method: :render_html_tags
-    config.add_related_field 'originalsloc_tesim', label: 'Location of originals', helper_method: :render_html_tags
+    config.add_related_field 'relatedmaterial_tesim', label: 'Related Material', helper_method: :render_html_tags
+    config.add_related_field 'separatedmaterial_tesim', label: 'Separated Material', helper_method: :render_html_tags
+    config.add_related_field 'otherfindaid_tesim', label: 'Other Finding Aids', helper_method: :render_html_tags
+    config.add_related_field 'altformavail_tesim', label: 'Alternative Form Available', helper_method: :render_html_tags
+    config.add_related_field 'originalsloc_tesim', label: 'Location of Originals', helper_method: :render_html_tags
 
     # Collection Show Page - Indexed Terms Section
     config.add_indexed_terms_field 'access_subjects_ssim', label: 'Subjects', link_to_facet: true, separator_options: {
@@ -369,14 +371,16 @@ class CatalogController < ApplicationController
       }
 
     config.add_component_field 'scopecontent_tesim', label: 'Scope and Content', helper_method: :render_html_tags
-    config.add_component_field 'acqinfo_ssim', label: 'Acquisition information', helper_method: :render_html_tags
-    config.add_component_field 'appraisal_tesim', label: 'Appraisal information', helper_method: :render_html_tags
-    config.add_component_field 'custodhist_tesim', label: 'Custodial history', helper_method: :render_html_tags
-    config.add_component_field 'processinfo_tesim', label: 'Processing information', helper_method: :render_html_tags
+    config.add_component_field 'acqinfo_ssim', label: 'Acquisition Information', helper_method: :render_html_tags
+    config.add_component_field 'appraisal_tesim', label: 'Appraisal Information', helper_method: :render_html_tags
+    config.add_component_field 'custodhist_tesim', label: 'Custodial History', helper_method: :render_html_tags
+    config.add_component_field 'processinfo_tesim', label: 'Processing Information', helper_method: :render_html_tags
     config.add_component_field 'arrangement_tesim', label: 'Arrangement', helper_method: :render_html_tags
+    config.add_component_field 'fileplan_tesim', label: 'File Plan', helper_method: :render_html_tags
     config.add_component_field 'accruals_tesim', label: 'Accruals', helper_method: :render_html_tags
-    config.add_component_field 'phystech_tesim', label: 'Physical / technical requirements', helper_method: :render_html_tags
-    config.add_component_field 'physloc_tesim', label: 'Physical location', helper_method: :render_html_tags
+    config.add_component_field 'phystech_tesim', label: 'Physical / Technical Requirements', helper_method: :render_html_tags
+    config.add_component_field 'physloc_tesim', label: 'Physical Location', helper_method: :render_html_tags
+    config.add_component_field 'odd_tesim', label: 'Other Descriptive Data', helper_method: :render_html_tags
 
     config.add_component_field 'languages', label: 'Language', accessor: 'languages', separator_options: {
       words_connector: '<br/>',
@@ -424,13 +428,13 @@ class CatalogController < ApplicationController
     config.add_component_terms_field 'parent_access_terms_tesim', label: 'Parent Terms of Access', helper_method: :render_html_tags
 
     # Collection and Component Show Page Access Tab - In Person Section
-    config.add_in_person_field 'repository_ssm', if: :repository_config_present, label: 'Location of this collection',
+    config.add_in_person_field 'repository_ssm', if: :repository_config_present, label: 'Location of This Collection',
       helper_method: :context_access_tab_repository
     config.add_in_person_field 'id', if: :before_you_visit_note_present, label: 'Before you visit',
       helper_method: :context_access_tab_visit_note # Using ID because we know it will always exist
 
     # Collection and Component Show Page Access Tab - How to Cite Section
-    config.add_cite_field 'prefercite_tesim', label: 'Preferred citation', helper_method: :render_html_tags
+    config.add_cite_field 'prefercite_tesim', label: 'Preferred Citation', helper_method: :render_html_tags
 
     # Collection and Component Show Page Access Tab - Contact Section
     config.add_contact_field 'repository_ssm', if: :repository_config_present, label: 'Contact', helper_method: :access_repository_contact
