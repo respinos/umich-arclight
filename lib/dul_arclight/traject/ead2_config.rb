@@ -506,8 +506,7 @@ compose 'components', ->(record, accumulator, _context) { accumulator.concat rec
     accumulator.concat(context.output_hash.fetch('access_subjects_ssim', []))
   end
 
-  to_field 'acqinfo_ssim', extract_xpath('/ead/archdesc/acqinfo/*[local-name()!="head"]')
-  to_field 'acqinfo_ssim', extract_xpath('/ead/archdesc/descgrp/acqinfo/*[local-name()!="head"]')
+  # DUL CUSTOMIZATION: Components no longer inherit collection-level acqinfo values
   to_field 'acqinfo_ssim', extract_xpath('./acqinfo/*[local-name()!="head"]')
   to_field 'acqinfo_ssim', extract_xpath('./descgrp/acqinfo/*[local-name()!="head"]')
 
