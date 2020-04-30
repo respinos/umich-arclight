@@ -586,6 +586,17 @@ a {
 
   }
 
+
+  /* series results */
+
+  #document.blacklight-series article.document div.al-document-abstract-or-scope {
+    max-width: calc(100% - 1rem) !important;
+
+    .responsiveTruncatorToggle {
+      margin-right: -.5rem;
+    }
+  }
+
 }
 
 
@@ -647,6 +658,7 @@ a {
   }
 
   &.showing-more {
+    margin-top: 1rem;
     .btn-wrapper {
       margin-top: -.75rem;
     }

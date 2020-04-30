@@ -80,8 +80,8 @@ Blacklight.onLoad(function () {
   /* =====++++++++++++++====== */
 
   updateAllTruncatedText = function() {
-    $('.responsiveTruncatorToggle').text("show more").append(" <i class='fas fa-chevron-circle-down'></i>").wrapInner("<span class='btn-wrapper'></span>");
-    $('.responsiveTruncatorToggle').addClass('showing-less');
+    $('#documents .responsiveTruncatorToggle').text("show more").append(" <i class='fas fa-chevron-circle-down'></i>").wrapInner("<span class='btn-wrapper'></span>");
+    $('#documents .responsiveTruncatorToggle').addClass('showing-less');
   }
 
   toggleExpanded = function() {
@@ -105,12 +105,13 @@ Blacklight.onLoad(function () {
   // initial page load
   updateAllTruncatedText();
 
-  // click button
-  $('.responsiveTruncatorToggle').click(function() {
+  // click collection button
+  $('#content article.blacklight-collection .responsiveTruncatorToggle').click(function() {
     $this = this;
     toggleExpanded($this);
     toggleText($this);
   });
+
   
   $(window).bind("resize", function() {
 
@@ -126,6 +127,44 @@ Blacklight.onLoad(function () {
     });
 
   });
+
+
+  // account for dynamically loaded content
+  if ($("#document").hasClass("blacklight-series")) {
+
+    // wait for document placeholder content to go away
+    var checkExistDocument = setInterval(function() {
+
+      var placeholderPath = $("#document .al-hierarchy-placeholder").html();
+
+      if (undefined === placeholderPath) {
+          updateAllTruncatedText();
+
+          // click series button
+          $( "#document.blacklight-series #documents .responsiveTruncatorToggle" ).on( "click", function() {
+            $this = this;
+            toggleExpanded($this);
+            toggleText($this);
+          });
+
+          $(window).bind("resize", function() {
+            updateAllTruncatedText();
+
+            // need to do this again after binding resize?
+            $( "#document.blacklight-series #documents .responsiveTruncatorToggle" ).on( "click", function() {
+              $this = this;
+              toggleExpanded($this);
+              toggleText($this);
+            });
+
+          });
+
+          clearInterval(checkExistDocument);
+      } 
+    }, 100);
+
+  }
+
 
 
   /* ======================================== */
@@ -148,19 +187,6 @@ Blacklight.onLoad(function () {
           clearInterval(checkExistCollection);
       } 
     }, 100);
-
-
-    // wait for document placeholder content to go away
-    var checkExistDocument = setInterval(function() {
-
-      var placeholderPath = $("#document .al-hierarchy-placeholder").html();
-
-      if (undefined === placeholderPath) {
-          updateAllTruncatedText();
-          clearInterval(checkExistDocument);
-      } 
-    }, 100);
-
   }
 
 });
