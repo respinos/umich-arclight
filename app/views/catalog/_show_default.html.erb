@@ -135,7 +135,7 @@
 
   <div class='row'>
     <div class='col-md-12'>
-      <h2><%= t('arclight.views.show.online_content') %> <span class="media-body al-online-content-icon" aria-hidden="true"><%= blacklight_icon :online %></span></h2>
+      <h2><%= t('arclight.views.show.online_content') %> <span class="media-body al-online-content-icon" aria-hidden="true" data-toggle="tooltip" title="<%= t('dul_arclight.tooltips.online') %>"><%= blacklight_icon :online %></span></h2>
 
       <%# Single DAO with DUL specific role: render respective DUL viewer %>
       <% if ['audio-streaming', 'image-service', 'video-streaming',
