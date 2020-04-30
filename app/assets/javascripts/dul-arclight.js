@@ -80,8 +80,8 @@ Blacklight.onLoad(function () {
   /* =====++++++++++++++====== */
 
   updateAllTruncatedText = function() {
-    $('#documents .responsiveTruncatorToggle').text("show more").append(" <i class='fas fa-chevron-circle-down'></i>").wrapInner("<span class='btn-wrapper'></span>");
-    $('#documents .responsiveTruncatorToggle').addClass('showing-less');
+    $('#documents .responsiveTruncatorToggle, #results-nav-and-constraints .responsiveTruncatorToggle').text("show more").append(" <i class='fas fa-chevron-circle-down'></i>").wrapInner("<span class='btn-wrapper'></span>");
+    $('#documents .responsiveTruncatorToggle, #results-nav-and-constraints .responsiveTruncatorToggle').addClass('showing-less');
   }
 
   toggleExpanded = function() {
@@ -105,13 +105,12 @@ Blacklight.onLoad(function () {
   // initial page load
   updateAllTruncatedText();
 
-  // click collection button
-  $('#content article.blacklight-collection .responsiveTruncatorToggle').click(function() {
+  // click collection or card button
+  $('#content article.blacklight-collection .responsiveTruncatorToggle, #results-nav-and-constraints .responsiveTruncatorToggle').click(function() {
     $this = this;
     toggleExpanded($this);
     toggleText($this);
   });
-
   
   $(window).bind("resize", function() {
 
