@@ -130,7 +130,7 @@ Blacklight.onLoad(function () {
 
 
   // account for dynamically loaded content
-  if ($("#document").hasClass("blacklight-series")) {
+  if ($("body").hasClass("blacklight-catalog-show")) {
 
     // wait for document placeholder content to go away
     var checkExistDocument = setInterval(function() {
@@ -141,7 +141,7 @@ Blacklight.onLoad(function () {
           updateAllTruncatedText();
 
           // click series button
-          $( "#document.blacklight-series #documents .responsiveTruncatorToggle" ).on( "click", function() {
+          $( "#document #documents .responsiveTruncatorToggle" ).on( "click", function() {
             $this = this;
             toggleExpanded($this);
             toggleText($this);
@@ -151,7 +151,7 @@ Blacklight.onLoad(function () {
             updateAllTruncatedText();
 
             // need to do this again after binding resize?
-            $( "#document.blacklight-series #documents .responsiveTruncatorToggle" ).on( "click", function() {
+            $( "#document #documents .responsiveTruncatorToggle" ).on( "click", function() {
               $this = this;
               toggleExpanded($this);
               toggleText($this);
