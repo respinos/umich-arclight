@@ -5,6 +5,7 @@ require 'dul_arclight/digital_object'
 class SolrDocument
   include Blacklight::Solr::Document
   include Arclight::SolrDocument
+  include DulArclight::FieldConfigHelpers
 
   # self.unique_key = 'id'
 
@@ -27,7 +28,7 @@ class SolrDocument
 
   # DUL override ArcLight core method to reflect changing the fields from _sim to _tesim
   def abstract_or_scope
-    value = first('abstract_tesim') || first('scopecontent_tesim')
+    value = first('abstract_tesim') || first('scopecontent_tesim').to_s
     render_html_tags(value: [value]) if value.present?
   end
 
@@ -39,6 +40,16 @@ class SolrDocument
       container[0] = container[0].capitalize
       container
     end
+  end
+
+  # DUL override ArcLight core; we want all extent values, and to singularize e.g. 1 boxes.
+  # We'll use document.extent for the "extent badge", which excludes other physdec text.
+  # beyond extent that we want to appear in collection/component show views.
+  def extent
+    values = fetch('extent_ssm', []).map! do |value|
+      correct_singular_value(value)
+    end
+    values.join(' &mdash; ').html_safe if values.present?
   end
 
   # ==============================

@@ -566,7 +566,7 @@ a {
 
     .grouped-documents {
       .documentHeader {
-        margin-lefT: 0;
+        margin-left: 0;
       }
     }
 
@@ -575,13 +575,6 @@ a {
       &:hover {
         border-bottom: 1px solid $primary-link-color;
       }
-    }
-
-    .al-document-extent {
-      position: absolute;
-      font-size: .75rem;
-      margin-left: .5rem;
-      margin-top: .125rem;
     }
 
   }

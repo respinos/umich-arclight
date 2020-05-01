@@ -21,10 +21,16 @@ module DulArclight
     def singularize_extent(args)
       options = args[:config].try(:separator_options) || {}
       values = args[:value] || []
+      return unless values.present?
+
       values.map! do |value|
-        chars_before_space = value.match(/([^\s]+)/)
-        %w[1 1.0].include?(chars_before_space.to_s) ? value.singularize : value
+        correct_singular_value(value)
       end.to_sentence(options).html_safe
+    end
+
+    def correct_singular_value(value)
+      chars_before_space = value.match(/([^\s]+)/)
+      %w[1 1.0].include?(chars_before_space.to_s) ? value.singularize : value
     end
   end
 end
