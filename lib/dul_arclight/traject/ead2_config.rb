@@ -246,10 +246,11 @@ DID_SEARCHABLE_NOTES_FIELDS.map do |selector|
   to_field "#{selector}_tesim", extract_xpath("/ead/archdesc/did/#{selector}", to_text: false)
 end
 
+# DUL CUSTOMIZATION: exclude repository/corpname since it's always Rubenstein.
 NAME_ELEMENTS.map do |selector|
   to_field 'names_coll_ssim', extract_xpath("/ead/archdesc/controlaccess/#{selector}")
-  to_field 'names_ssim', extract_xpath("//#{selector}")
-  to_field "#{selector}_ssm", extract_xpath("//#{selector}")
+  to_field 'names_ssim', extract_xpath("//#{selector}[not(parent::repository)]")
+  to_field "#{selector}_ssm", extract_xpath("//#{selector}[not(parent::repository)]")
 end
 
 to_field 'corpname_sim', extract_xpath('//corpname')
