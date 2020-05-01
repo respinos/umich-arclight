@@ -25,3 +25,5 @@
 
 # rspec failure tracking
 .rspec_status
+
+/solr/arclight/data

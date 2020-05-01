@@ -2,14 +2,13 @@ version: '3.7'
 
 volumes:
   pg_data:
-  solr_data:
 
 services:
   solr:
     ports:
       - "${SOLR_PORT}:8983"
     volumes:
-      - solr_data:/opt/solr/server/solr/mycores
+      - ../solr/arclight:/var/solr/data/arclight
 
   db:
     volumes:
