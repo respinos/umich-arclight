@@ -12,14 +12,8 @@
       <%# Adapted from:%>
       <%#  https://github.com/projectblacklight/arclight/blob/master/app/views/catalog/_collection_context_nav.html.erb %>
 
-      <div class="actions-wrapper  d-flex">
-
+      <div class="actions-wrapper d-flex">
         <%= render partial: 'arclight/requests', locals: { document: document } %>
-
-        <div class='al-show-actions-box-bookmarks flex-md-fill'>
-          <%= render partial: 'catalog/bookmark_control', locals: { document: document } %>
-        </div>
-
       </div>
 
       <ul class='nav flex-column'>
@@ -51,6 +45,7 @@
     </div>
   </div>
 <% end %>
+
 
 <%# =================== %>
 <%# upper breadcrumbs   %>
@@ -86,6 +81,22 @@
 </nav>
 
 
+<%# =================== %>
+<%# Actions (bookmarks) %>
+<%# =================== %>
+
+<div class="series-action-wrapper">
+
+  <div class="actions-wrapper d-flex">
+
+    <div class='al-show-actions-box-bookmarks flex-md-fill'>
+      <%= render partial: 'catalog/arclight_bookmark_control', locals: { document: document } %>
+    </div>
+
+  </div>
+
+</div>
+
 
 <%# ===================== %>
 <%# Collection Masthead   %>
@@ -96,6 +107,8 @@
     <h1><%= document.normalized_title %></h1>
   </div>
 </div>
+
+
 
 
 <%# ================ %>

@@ -12,3 +12,6 @@ en:
       my_account: "My Accounts"
       menu: "Menu"
       menu_long: "Expand/Collapse Menu"
+    search:
+      bookmarks:
+        label: "Bookmark:"

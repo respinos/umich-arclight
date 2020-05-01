@@ -14,3 +14,6 @@ en:
       start_over: "Start Over"
     tooltips:
       online: "Available Online"
+      bookmarks:
+        present: "In Bookmarks"
+        absent: "Add to Bookmarks"

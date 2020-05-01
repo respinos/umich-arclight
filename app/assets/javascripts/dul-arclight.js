@@ -75,9 +75,9 @@ Blacklight.onLoad(function () {
 
 
 
-  /* ======++++++++++++++===== */
+  /* ========================= */
   /* Augment truncation toggle */
-  /* =====++++++++++++++====== */
+  /* ========================= */
 
   updateAllTruncatedText = function() {
     $('#documents .responsiveTruncatorToggle, #results-nav-and-constraints .responsiveTruncatorToggle').text("show more").append(" <i class='fas fa-chevron-circle-down'></i>").wrapInner("<span class='btn-wrapper'></span>");
