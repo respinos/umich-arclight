@@ -1,0 +1,11 @@
+version: '3.7'
+
+services:
+  solr:
+    volumes:
+      - ../solr/arclight/conf:/solr_config:ro
+    entrypoint:
+      - docker-entrypoint.sh
+      - solr-precreate
+      - "${SOLR_CORE}"
+      - /solr_config

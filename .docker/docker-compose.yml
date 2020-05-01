@@ -13,13 +13,6 @@ services:
 
   solr:
     image: "${SOLR_IMAGE}"
-    volumes:
-      - ../solr/conf:/solr_config:ro
-    entrypoint:
-      - docker-entrypoint.sh
-      - solr-precreate
-      - "${SOLR_CORE}"
-      - /solr_config
 
   app:
     image: "${APP_IMAGE}"
@@ -34,4 +27,5 @@ services:
       - wait-for-it
       - db:5432
       - '--'
-    command: run
+    command:
+      - /usr/libexec/s2i/run
