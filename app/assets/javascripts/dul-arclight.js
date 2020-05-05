@@ -79,9 +79,16 @@ Blacklight.onLoad(function () {
   /* Augment truncation toggle */
   /* =====++++++++++++++====== */
 
+  var $pathsToTarget = '';
+  $pathsToTarget += '#documents .responsiveTruncatorToggle';
+  $pathsToTarget += ', ';
+  $pathsToTarget += '#results-nav-and-constraints .responsiveTruncatorToggle';
+  $pathsToTarget += ', ';
+  $pathsToTarget += '#content .al-grouped-results .responsiveTruncatorToggle';
+
   updateAllTruncatedText = function() {
-    $('#documents .responsiveTruncatorToggle, #results-nav-and-constraints .responsiveTruncatorToggle').text("show more").append(" <i class='fas fa-chevron-circle-down'></i>").wrapInner("<span class='btn-wrapper'></span>");
-    $('#documents .responsiveTruncatorToggle, #results-nav-and-constraints .responsiveTruncatorToggle').addClass('showing-less');
+    $( $pathsToTarget ).text("show more").append(" <i class='fas fa-chevron-circle-down'></i>").wrapInner("<span class='btn-wrapper'></span>");
+    $( $pathsToTarget ).addClass('showing-less');
   }
 
   toggleExpanded = function() {
@@ -106,7 +113,7 @@ Blacklight.onLoad(function () {
   updateAllTruncatedText();
 
   // click collection or card button
-  $('#content article.blacklight-collection .responsiveTruncatorToggle, #results-nav-and-constraints .responsiveTruncatorToggle').click(function() {
+  $( $pathsToTarget ).click(function() {
     $this = this;
     toggleExpanded($this);
     toggleText($this);
