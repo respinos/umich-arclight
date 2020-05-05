@@ -75,9 +75,9 @@ Blacklight.onLoad(function () {
 
 
 
-  /* ======++++++++++++++===== */
+  /* ========================= */
   /* Augment truncation toggle */
-  /* =====++++++++++++++====== */
+  /* ========================= */
 
   var $pathsToTarget = '';
   $pathsToTarget += '#documents .responsiveTruncatorToggle';
