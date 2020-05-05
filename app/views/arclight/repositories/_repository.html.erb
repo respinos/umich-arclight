@@ -10,7 +10,7 @@
 
     <div class="card-img-top">
       <% if (params[:id] != repository.slug) %>
-        <%= link_to(arclight_engine.repository_path(repository.slug)) do %>
+        <%= link_to(repository_collections_path(repository)) do %>
           <%= image_tag repository.thumbnail_url, alt: repository.name, class: 'card-img' %>
         <% end %>
       <% else %>
@@ -22,7 +22,7 @@
     <div class="card-body">
 
       <h5 class="card-title text-center">
-        <%= link_to_unless(params[:id] == repository.slug, repository.name, arclight_engine.repository_path(repository.slug)) %>
+        <%= link_to_unless(params[:id] == repository.slug, repository.name, repository_collections_path(repository)) %>
       </h5>
 
       <p class="card-text" data-arclight-truncate="true">
@@ -34,7 +34,7 @@
     <div class="card-footer">
       
        <div class="collection-count-wrapper text-center">
-        <%= link_to(arclight_engine.repository_path(repository.slug), class: 'btn btn-primary')  do %>
+        <%= link_to(repository_collections_path(repository), class: 'btn btn-primary')  do %>
           <%= t('arclight.views.repositories.browse') %> <%= t(:'arclight.views.repositories.number_of_collections', count: repository.collection_count) %>
         <% end %>
       </div>
@@ -45,7 +45,7 @@
 
 
 <% else %>
-<%# renders as hporizontal for single use %>
+<%# renders as horizontal for single use %>
 
   <div class="card card-horizontal al-repository">
 
@@ -57,7 +57,7 @@
 
     <div class="card-body">
       <h5 class="card-title">
-        <%= link_to_unless(params[:id] == repository.slug, repository.name, arclight_engine.repository_path(repository.slug)) %>
+        <%= link_to_unless(params[:id] == repository.slug, repository.name, repository_collections_path(repository)) %>
       </h5>
       <p class="card-text" data-arclight-truncate="true">
         <%= repository.description %>

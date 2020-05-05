@@ -1,0 +1,25 @@
+<%# Overrides ArcLight Core partial. Modified repository link. %>
+<%# Last checked for updates: ArcLight v0.3.0. See: %>
+<%# https://github.com/projectblacklight/arclight/blob/master/app/views/arclight/repositories/_repository.html.erb %>
+
+<div class='al-in-person-repository-name'>
+  <% if repository.thumbnail_url %>
+    <%= image_tag repository.thumbnail_url, alt: '', class: 'img-fluid float-left' %>
+  <% end %>
+  <div>
+    <%# The repository_collections_path method doesn't seem to work here: returns absolute URL %>
+    <%# beginning with http://example.org %>
+    <%= link_to(repository.name, search_action_path(f: { level_sim: ["Collection"], repository_sim: [repository.name] })) %>
+  </div>
+</div>
+<div class='al-in-person-repository-location'>
+  <address>
+    <% %i[building address1 address2 city_state_zip_country].each do |f| %>
+      <% if repository.send(f).present? %>
+        <div class='al-repository-contact-<%= f %>'>
+          <%= repository.send(f) %>
+        </div>
+      <% end %>
+    <% end %>
+  </address>
+</div>
