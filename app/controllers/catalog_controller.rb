@@ -116,6 +116,7 @@ class CatalogController < ApplicationController
     config.add_facet_field 'geogname_sim', label: 'Place', limit: 10
     config.add_facet_field 'places_ssim', label: 'Places', show: false
     config.add_facet_field 'access_subjects_ssim', label: 'Subject', limit: 10
+    config.add_facet_field 'formats_ssim', label: 'Format', limit: 10
 
     # Have BL send all facet field names to Solr, which has been the default
     # previously. Simply remove these lines if you'd rather use Solr request
@@ -203,6 +204,16 @@ class CatalogController < ApplicationController
         pf:  '${pf_subject}'
       }
     end
+
+    # TODO: add format?
+    # config.add_search_field 'format', label: 'Format' do |field|
+    #   field.qt = 'search'
+    #   field.solr_parameters = {
+    #     qf:  '${qf_format}',
+    #     pf:  '${pf_format}'
+    #   }
+    # end
+
     config.add_search_field 'title', label: 'Title' do |field|
       field.qt = 'search'
       field.solr_parameters = {
@@ -333,6 +344,12 @@ class CatalogController < ApplicationController
       last_word_connector: '<br/>'
     }
 
+    config.add_indexed_terms_field 'formats_ssim', label: 'Formats', link_to_facet: true, separator_options: {
+      words_connector: '<br/>',
+      two_words_connector: '<br/>',
+      last_word_connector: '<br/>'
+    }
+
     config.add_indexed_terms_field 'names_coll_ssim', label: 'Names', separator_options: {
       words_connector: '<br/>',
       two_words_connector: '<br/>',
@@ -393,6 +410,12 @@ class CatalogController < ApplicationController
 
     # Component Show Page - Indexed Terms Section
     config.add_component_indexed_terms_field 'access_subjects_ssim', label: 'Subjects', link_to_facet: true, separator_options: {
+      words_connector: '<br/>',
+      two_words_connector: '<br/>',
+      last_word_connector: '<br/>'
+    }
+
+    config.add_component_indexed_terms_field 'formats_ssim', label: 'Formats', link_to_facet: true, separator_options: {
       words_connector: '<br/>',
       two_words_connector: '<br/>',
       last_word_connector: '<br/>'
