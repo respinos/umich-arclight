@@ -343,7 +343,7 @@
    <copyField source="access_subjects_ssim" dest="text" />
    <!-- grab the searchable notes -->
    <copyField source="abstract_teim" dest="text" />
-   <copyField source="accessrestricct_teim" dest="text" />
+   <copyField source="accessrestrict_teim" dest="text" />
    <copyField source="accruals_teim" dest="text" />
    <copyField source="acqinfo_teim" dest="text" />
    <copyField source="altformavail_teim" dest="text" />
