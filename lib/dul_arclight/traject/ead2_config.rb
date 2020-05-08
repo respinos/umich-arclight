@@ -207,7 +207,8 @@ to_field 'acqinfo_ssim', extract_xpath('/ead/archdesc/descgrp/acqinfo/*[local-na
 
 to_field 'access_subjects_ssim', extract_xpath('/ead/archdesc/controlaccess', to_text: false) do |_record, accumulator|
   accumulator.map! do |element|
-    %w[subject function occupation genreform].map do |selector|
+    # DUL CUSTOMIZATION: pull out genreform into its own field
+    %w[subject function occupation].map do |selector|
       element.xpath(".//#{selector}").map(&:text)
     end
   end.flatten!
@@ -215,6 +216,12 @@ end
 
 to_field 'access_subjects_ssm' do |_record, accumulator, context|
   accumulator.concat Array.wrap(context.output_hash['access_subjects_ssim'])
+end
+
+# DUL CUSTOMIZATION: capture formats (genreform) field separately from subjects
+to_field 'formats_ssim', extract_xpath('/ead/archdesc/controlaccess/genreform')
+to_field 'formats_ssm' do |_record, accumulator, context|
+  accumulator.concat Array.wrap(context.output_hash['formats_ssim'])
 end
 
 to_field 'has_online_content_ssim', extract_xpath('.//dao') do |_record, accumulator|
@@ -240,9 +247,6 @@ to_field 'extent_teim', extract_xpath('/ead/archdesc/did/physdesc/extent')
 # in physdesc vs. in individual child elements e.g., <extent>, <dimensions>, or <physfacet>
 to_field 'physdesc_tesim', extract_xpath('/ead/archdesc/did/physdesc/child::*')
 to_field 'physdesc_tesim', extract_xpath('/ead/archdesc/did/physdesc[not(child::*)]')
-
-to_field 'genreform_sim', extract_xpath('/ead/archdesc/controlaccess/genreform')
-to_field 'genreform_ssm', extract_xpath('/ead/archdesc/controlaccess/genreform')
 
 to_field 'date_range_sim', extract_xpath('/ead/archdesc/did/unitdate/@normal', to_text: false) do |_record, accumulator|
   range = Arclight::YearRange.new
@@ -537,7 +541,8 @@ compose 'components', ->(record, accumulator, _context) { accumulator.concat rec
 
   to_field 'access_subjects_ssim', extract_xpath('./controlaccess', to_text: false) do |_record, accumulator|
     accumulator.map! do |element|
-      %w[subject function occupation genreform].map do |selector|
+      # DUL CUSTOMIZATION: pull out genreform into its own field
+      %w[subject function occupation].map do |selector|
         element.xpath(".//#{selector}").map(&:text)
       end
     end.flatten!
@@ -545,6 +550,12 @@ compose 'components', ->(record, accumulator, _context) { accumulator.concat rec
 
   to_field 'access_subjects_ssm' do |_record, accumulator, context|
     accumulator.concat(context.output_hash.fetch('access_subjects_ssim', []))
+  end
+
+  # DUL CUSTOMIZATION: capture formats (genreform) field separately from subjects
+  to_field 'formats_ssim', extract_xpath('./controlaccess/genreform')
+  to_field 'formats_ssm' do |_record, accumulator, context|
+    accumulator.concat(context.output_hash.fetch('formats_ssim', []))
   end
 
   # DUL CUSTOMIZATION: Components no longer inherit collection-level acqinfo values
