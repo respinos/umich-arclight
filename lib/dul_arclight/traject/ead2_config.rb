@@ -32,8 +32,9 @@ extend TrajectPlus::Macros
 
 NAME_ELEMENTS = %w[corpname famname name persname].freeze
 
+# DUL CUSTOMIZATION: separate out restrictions <accessrestrict> <userestrict> from
+# other searchable notes, in order to revise inheritance rules during indexing.
 SEARCHABLE_NOTES_FIELDS = %w[
-  accessrestrict
   accruals
   altformavail
   appraisal
@@ -52,13 +53,19 @@ SEARCHABLE_NOTES_FIELDS = %w[
   relatedmaterial
   scopecontent
   separatedmaterial
-  userestrict
 ].freeze
 
 DID_SEARCHABLE_NOTES_FIELDS = %w[
   abstract
   materialspec
   physloc
+].freeze
+
+# DUL CUSTOMIZATION: separated from SEARCHABLE_NOTES for more
+# refined indexing
+RESTRICTION_FIELDS = %w[
+  accessrestrict
+  userestrict
 ].freeze
 
 settings do
@@ -195,8 +202,6 @@ to_field 'places_sim', extract_xpath('/ead/archdesc/controlaccess/geogname')
 to_field 'places_ssim', extract_xpath('/ead/archdesc/controlaccess/geogname')
 to_field 'places_ssm', extract_xpath('/ead/archdesc/controlaccess/geogname')
 
-to_field 'access_terms_ssm', extract_xpath('/ead/archdesc/userestrict/*[local-name()!="head"]')
-
 to_field 'acqinfo_ssim', extract_xpath('/ead/archdesc/acqinfo/*[local-name()!="head"]')
 to_field 'acqinfo_ssim', extract_xpath('/ead/archdesc/descgrp/acqinfo/*[local-name()!="head"]')
 
@@ -256,6 +261,13 @@ end
 
 DID_SEARCHABLE_NOTES_FIELDS.map do |selector|
   to_field "#{selector}_tesim", extract_xpath("/ead/archdesc/did/#{selector}", to_text: false)
+end
+
+# DUL CUSTOMIZATION
+RESTRICTION_FIELDS.map do |selector|
+  to_field "#{selector}_tesim", extract_xpath("/ead/archdesc/#{selector}/*[local-name()!='head']", to_text: false)
+  to_field "#{selector}_heading_ssm", extract_xpath("/ead/archdesc/#{selector}/head")
+  to_field "#{selector}_teim", extract_xpath("/ead/archdesc/#{selector}/*[local-name()!='head']")
 end
 
 # DUL CUSTOMIZATION: exclude repository/corpname since it's always Rubenstein.
@@ -468,18 +480,29 @@ compose 'components', ->(record, accumulator, _context) { accumulator.concat rec
     accumulator.replace([context.position])
   end
 
-  # Get the <accessrestrict> from the closest ancestor that has one (includes top-level)
-  to_field 'parent_access_restrict_tesim' do |record, accumulator|
-    accumulator.concat Array
-      .wrap(record.xpath('(./ancestor::*/accessrestrict)[last()]/*[local-name()!="head"]')
-      .map(&:text))
+  # DUL CUSTOMIZATION: redefine parent as top-level collection <accessrestrict>
+  to_field 'parent_access_restrict_tesim' do |_record, accumulator, context|
+    accumulator.concat Array.wrap(context.clipboard[:parent].output_hash['accessrestrict_tesim'])
   end
 
-  # Get the <userestrict> from self OR the closest ancestor that has one (includes top-level)
-  to_field 'parent_access_terms_tesim' do |record, accumulator|
-    accumulator.concat Array
-      .wrap(record.xpath('(./ancestor-or-self::*/userestrict)[last()]/*[local-name()!="head"]')
-      .map(&:text))
+  # DUL CUSTOMIZATION: redefine parent as top-level collection <userestrict>
+  to_field 'parent_access_terms_tesim' do |_record, accumulator, context|
+    accumulator.concat Array.wrap(context.clipboard[:parent].output_hash['userestrict_tesim'])
+  end
+
+  # DUL CUSTOMIZATION: redefine component <accessrestrict> & <userestrict> as own values OR values from
+  # the nearest non-collection ancestor that has these values.
+  RESTRICTION_FIELDS.map do |selector|
+    to_field "#{selector}_tesim", extract_xpath("./#{selector}/*[local-name()!='head']", to_text: false)
+
+    # Capture closest ancestor's restrictions BUT only under these conditions:
+    # 1) the component doesn't have its own restrictions
+    # 2) the ancestor is in the <dsc> (i.e., not top-level)
+    to_field "#{selector}_tesim",
+             extract_xpath("./ancestor::*/#{selector}/*[local-name()!='head'][ancestor::dsc][position() = 1]",
+                           to_text: false) do |_record, accumulator, context|
+      accumulator.replace [] if context.output_hash["#{selector}_tesim"].present?
+    end
   end
 
   # DUL Customization: capture the DAO @role attribute
