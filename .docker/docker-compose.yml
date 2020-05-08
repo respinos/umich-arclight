@@ -19,9 +19,12 @@ services:
     depends_on:
       - db
       - solr
+    volumes:
+      - ../spec/fixtures:/data:ro
     environment:
       - RAILS_ENV
       - DATABASE_URL
+      - REDIS_URL
       - SOLR_URL
     entrypoint:
       - wait-for-it

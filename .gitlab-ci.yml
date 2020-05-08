@@ -11,7 +11,7 @@ variables:
   APP_IMAGE: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
   DEPLOY_IMAGE: $CI_REGISTRY_IMAGE/$CI_ENVIRONMENT_SLUG:latest
 
-build_image:
+build_job:
   stage: build
   before_script:
     - docker info
@@ -23,7 +23,7 @@ build_image:
     - docker
     - build
 
-test_image:
+test_job:
   stage: test
   before_script:
     - docker info
@@ -37,7 +37,7 @@ test_image:
     - docker
     - test
 
-release_latest:
+release_job:
   stage: release
   only:
     - master
@@ -49,7 +49,7 @@ release_latest:
     - docker tag $APP_IMAGE $CI_REGISTRY_IMAGE:latest
     - docker push $CI_REGISTRY_IMAGE:latest
 
-.deploy_job_template: &deploy_job_def
+.deploy:
   stage: deploy
   before_script:
     - docker info
@@ -63,19 +63,20 @@ release_latest:
     - sudo systemctl restart docker-compose@dul-arclight
 
 deploy_development:
-  <<: *deploy_job_def
+  extends: .deploy
   environment:
     name: development
     url: https://arclight-dev.lib.duke.edu
   tags:
     - development
   only:
-    # - develop
-    - tags
+    - develop
+    - update-ead
     - /^release-.*$/
+    - /^hotfix-.*$/
 
-deploy_staging:
-  <<: *deploy_job_def
+.deploy_staging:
+  extends: .deploy
   environment:
     name: staging
     url: https://arclight-test.lib.duke.edu
@@ -85,14 +86,15 @@ deploy_staging:
     - develop
     - tags
     - /^release-.*$/
+    - /^hotfix-.*$/
 
 .deploy_production:
-  <<: *deploy_job_def
+  extends: .deploy
   environment:
     name: production
+    url: https://arclight.lib.duke.edu
   tags:
     - production
   only:
     - master
-    - tags
   when: manual

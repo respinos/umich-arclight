@@ -17,5 +17,33 @@ services:
   app:
     volumes:
       - ..:/opt/app-root
+      - ${FINDING_AID_DATA}:/data:ro
     ports:
       - "${RAILS_PORT}:3000"
+
+  redis:
+    image: "${REDIS_IMAGE}"
+
+  resque:
+    image: "${APP_IMAGE}"
+    depends_on:
+      - redis
+    volumes:
+      - ..:/opt/app-root
+      - ${FINDING_AID_DATA}:/data:ro
+    environment:
+      - RAILS_ENV
+      - DATABASE_URL
+      - REDIS_URL
+      - SOLR_URL
+      - QUEUE=*
+      - COUNT=2
+    entrypoint:
+      - wait-for-it
+      - db:5432
+      - '--'
+    command:
+      - bundle
+      - exec
+      - rake
+      - resque:workers
