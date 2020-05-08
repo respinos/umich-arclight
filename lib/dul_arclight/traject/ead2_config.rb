@@ -83,6 +83,12 @@ end
 # ==================
 
 to_field 'id', extract_xpath('/ead/eadheader/eadid'), strip, gsub('.', '-')
+
+# DUL CUSTOMIZATION: add high component position to collection so the collection record
+# appears after all components. Default was nil, which sorted between first [0] & second [1] component.
+to_field 'sort_ii' do |_record, accumulator|
+  accumulator << '999999'
+end
 to_field 'title_filing_si', extract_xpath('/ead/eadheader/filedesc/titlestmt/titleproper[@type="filing"]')
 to_field 'title_ssm', extract_xpath('/ead/archdesc/did/unittitle')
 to_field 'title_formatted_ssm', extract_xpath('/ead/archdesc/did/unittitle', to_text: false)
