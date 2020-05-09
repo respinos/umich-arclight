@@ -71,11 +71,10 @@ deploy_development:
     - development
   only:
     - develop
-    - update-ead
     - /^release-.*$/
     - /^hotfix-.*$/
 
-.deploy_staging:
+deploy_staging:
   extends: .deploy
   environment:
     name: staging
