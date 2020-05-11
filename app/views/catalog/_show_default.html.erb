@@ -37,11 +37,13 @@
       <%# ========================= %>
       <%# Hierarchy Tree Navigation %>
       <%# ========================= %>
-      <div class='tab-content'>
-        <div class='tab-pane active'>
-          <%= render 'component_context' %>
+      <% if document.number_of_children > 0 %>
+        <div class='tab-content'>
+          <div class='tab-pane active'>
+            <%= render 'component_context' %>
+          </div>
         </div>
-      </div>
+      <% end %>
     </div>
   </div>
 <% end %>

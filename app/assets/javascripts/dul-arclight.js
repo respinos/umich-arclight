@@ -172,30 +172,6 @@ Blacklight.onLoad(function () {
   }
 
 
-
-  /* ======================================== */
-  /* Hide sidebar header && document children */
-  /* ======================================== */
-  
-  if ($("body").hasClass("blacklight-catalog-show")) {
-    
-    // wait for collection placeholder content to go away
-    var checkExistCollection = setInterval(function() {
-
-      var placeholderPath = $("#collection-context .al-hierarchy-placeholder").html();
-      var navPath = $("#collection-context .context-navigator .al-context-nav-parent").html();
-
-      if (undefined === placeholderPath) {
-          if (navPath.length == 0) {
-            $("#context hr").fadeOut();
-            $("#context .tab-content .tab-pane h2").fadeOut();
-          }
-          clearInterval(checkExistCollection);
-      } 
-    }, 100);
-  }
-
-
   /* ================================================ */
   /* Reload DUL masthead when turbolinks is triggered */
   /* ================================================ */
