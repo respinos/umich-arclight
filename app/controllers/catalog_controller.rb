@@ -116,6 +116,7 @@ class CatalogController < ApplicationController
     config.add_facet_field 'geogname_sim', label: 'Place', limit: 10
     config.add_facet_field 'places_ssim', label: 'Places', show: false
     config.add_facet_field 'access_subjects_ssim', label: 'Subject', limit: 10
+    config.add_facet_field 'formats_ssim', label: 'Format', limit: 10
 
     # Have BL send all facet field names to Solr, which has been the default
     # previously. Simply remove these lines if you'd rather use Solr request
@@ -132,7 +133,7 @@ class CatalogController < ApplicationController
     config.add_index_field 'scopecontent_tesim', label: 'Scope Content', helper_method: :render_html_tags
 
     # DUL CUSTOMIZATION: singularize extent
-    config.add_index_field 'extent_ssm', label: 'Physical Description', helper_method: :singularize_extent,
+    config.add_index_field 'physdesc_tesim', label: 'Extent', helper_method: :singularize_extent,
       separator_options: {
         words_connector: '<br/>',
         two_words_connector: '<br/>',
@@ -203,6 +204,16 @@ class CatalogController < ApplicationController
         pf:  '${pf_subject}'
       }
     end
+
+    # TODO: add format?
+    # config.add_search_field 'format', label: 'Format' do |field|
+    #   field.qt = 'search'
+    #   field.solr_parameters = {
+    #     qf:  '${qf_format}',
+    #     pf:  '${pf_format}'
+    #   }
+    # end
+
     config.add_search_field 'title', label: 'Title' do |field|
       field.qt = 'search'
       field.solr_parameters = {
@@ -215,13 +226,17 @@ class CatalogController < ApplicationController
     # label in pulldown is followed by the name of the SOLR field to sort by and
     # whether the sort is ascending or descending (it must be asc or desc
     # except in the relevancy case).
-    config.add_sort_field 'score desc, title_sort asc', label: 'relevance'
+
+    # DUL CUSTOMIZATION: relevance tiebreaker uses component order (sort_ii)
+    # instead of title ABC.
+    config.add_sort_field 'score desc, sort_ii asc, title_sort asc', label: 'relevance'
     config.add_sort_field 'date_sort asc', label: 'date (ascending)'
     config.add_sort_field 'date_sort desc', label: 'date (descending)'
     config.add_sort_field 'creator_sort asc', label: 'creator (A-Z)'
     config.add_sort_field 'creator_sort desc', label: 'creator (Z-A)'
     config.add_sort_field 'title_sort asc', label: 'title (A-Z)'
     config.add_sort_field 'title_sort desc', label: 'title (Z-A)'
+    config.add_sort_field 'sort_ii asc', label: 'component position'
 
     # If there are more than this many search results, no spelling ("did you
     # mean") suggestion is offered.
@@ -286,7 +301,7 @@ class CatalogController < ApplicationController
     config.add_summary_field 'abstract_tesim', label: 'Abstract', helper_method: :render_html_tags
 
     # DUL CUSTOMIZATION: singularize extent
-    config.add_summary_field 'extent_ssm', label: 'Extent', helper_method: :singularize_extent,
+    config.add_summary_field 'physdesc_tesim', label: 'Extent', helper_method: :singularize_extent,
       separator_options: {
         words_connector: '<br/>',
         two_words_connector: '<br/>',
@@ -333,6 +348,12 @@ class CatalogController < ApplicationController
       last_word_connector: '<br/>'
     }
 
+    config.add_indexed_terms_field 'formats_ssim', label: 'Formats', link_to_facet: true, separator_options: {
+      words_connector: '<br/>',
+      two_words_connector: '<br/>',
+      last_word_connector: '<br/>'
+    }
+
     config.add_indexed_terms_field 'names_coll_ssim', label: 'Names', separator_options: {
       words_connector: '<br/>',
       two_words_connector: '<br/>',
@@ -362,8 +383,8 @@ class CatalogController < ApplicationController
     }
     config.add_component_field 'abstract_tesim', label: 'Abstract', helper_method: :render_html_tags
 
-    # DUL CUSTOMIZATION: singularize extent
-    config.add_component_field 'extent_ssm', label: 'Extent', helper_method: :singularize_extent,
+    # DUL CUSTOMIZATION: Present all physdesc as extent
+    config.add_component_field 'physdesc_tesim', label: 'Extent', helper_method: :singularize_extent,
       separator_options: {
         words_connector: '<br/>',
         two_words_connector: '<br/>',
@@ -393,6 +414,12 @@ class CatalogController < ApplicationController
 
     # Component Show Page - Indexed Terms Section
     config.add_component_indexed_terms_field 'access_subjects_ssim', label: 'Subjects', link_to_facet: true, separator_options: {
+      words_connector: '<br/>',
+      two_words_connector: '<br/>',
+      last_word_connector: '<br/>'
+    }
+
+    config.add_component_indexed_terms_field 'formats_ssim', label: 'Formats', link_to_facet: true, separator_options: {
       words_connector: '<br/>',
       two_words_connector: '<br/>',
       last_word_connector: '<br/>'

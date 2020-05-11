@@ -1,5 +1,5 @@
 // Copy of ArcLight core JS for overriding behavior.
-// Last checked for updates: ArcLight v0.3.0.
+// Last checked for updates: ArcLight v0.3.2.
 //
 // See:
 // https://github.com/projectblacklight/arclight/blob/master/app/assets/javascripts/arclight/context_navigation.js
@@ -129,20 +129,13 @@ class ContextNavigation {
     this.data = this.el.data();
     this.parentLi = this.el.parent();
     this.eadid = this.data.arclight.eadid;
-    // DUL CUSTOMIZATION: let this.originalParents stay null. This is needed for
-    // navigation instantiated via +/- click, see addListenersForPlusMinus().
-    // In those cases, we want to disregard the original component's ancestors and
-    // instead populate the context navigator using the clicked component's ID
-    // to find its children.
-    this.originalParents = originalParents;
+    this.originalParents = originalParents; // let originalParents stay null
     this.originalDocument = originalDocument || this.data.arclight.originalDocument;
     this.ul = $('<ul class="al-context-nav-parent"></ul>');
   }
 
+  // Gets the targetId to select, based off of parents and current level
   get targetId() {
-    // Gets the targetId to select, based off of parents and current level.
-    // DUL CUSTOMIZATION: Accommodate cases where no parents are provided, i.e.,
-    // collection view or a +/- click.
     if (this.originalParents && this.originalParents[this.data.arclight.level]) {
       // DUL CUSTOMIZATION: Account for custom id with underscore
       return `${this.eadid}_${this.originalParents[this.data.arclight.level]}`;
@@ -151,14 +144,10 @@ class ContextNavigation {
   }
 
   get requestParent() {
-    // When populating a context navigator with a list of child components, which
-    // component is the parent in the query that fetches the list?
-
     // Cases where you're viewing a component page (use its ancestor trail)...
     if (this.originalParents && this.originalParents[this.data.arclight.level - 1]) {
       return this.originalParents[this.data.arclight.level - 1];
     }
-
     // Cases where there are no parents provided...
     //   1) when on a top-level collection page
     //   2) when +/- gets clicked
@@ -377,15 +366,13 @@ class ContextNavigation {
     const that = this;
     this.ul.find('.al-toggle-view-children').on('click', (e) => {
       e.preventDefault();
-      const targetHref = $(e.target).attr('href');
-      const targetArea = $(targetHref);
+      const targetArea = $($(e.target).attr('href'));
       if (!targetArea.data().resolved) {
         targetArea.find('.context-navigator').each((i, ee) => {
-
           const contextNavigation = new ContextNavigation(
-            // DUL CUSTOMIZATION: send null for originalParents. We want to
-            // disregard the original component's ancestor trail and instead use
-            // the current ID as the parent in the query to populate the navigator.
+            // Send null for originalParents. We want to disregard the original
+            // component's ancestor trail and instead use the current ID as the
+            // parent in the query to populate the navigator.
             ee, null, that.originalDocument
           );
           contextNavigation.getData();
@@ -401,8 +388,6 @@ class ContextNavigation {
  */
 Blacklight.onLoad(function () {
   $('.context-navigator').each(function (i, e) {
-    // DUL CUSTOMIZATION: explicitly send the navigator's originalParents & originalDocument
-    // as parameters when instantiating ContextNavigation.
     const contextNavigation = new ContextNavigation(
         e, $(this).data('arclight').originalParents, $(this).data('arclight').originalDocument
       );

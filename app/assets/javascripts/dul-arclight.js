@@ -75,13 +75,20 @@ Blacklight.onLoad(function () {
 
 
 
-  /* ======++++++++++++++===== */
+  /* ========================= */
   /* Augment truncation toggle */
-  /* =====++++++++++++++====== */
+  /* ========================= */
+
+  var $pathsToTarget = '';
+  $pathsToTarget += '#documents .responsiveTruncatorToggle';
+  $pathsToTarget += ', ';
+  $pathsToTarget += '#results-nav-and-constraints .responsiveTruncatorToggle';
+  $pathsToTarget += ', ';
+  $pathsToTarget += '#content .al-grouped-results .responsiveTruncatorToggle';
 
   updateAllTruncatedText = function() {
-    $('#documents .responsiveTruncatorToggle, #results-nav-and-constraints .responsiveTruncatorToggle').text("show more").append(" <i class='fas fa-chevron-circle-down'></i>").wrapInner("<span class='btn-wrapper'></span>");
-    $('#documents .responsiveTruncatorToggle, #results-nav-and-constraints .responsiveTruncatorToggle').addClass('showing-less');
+    $( $pathsToTarget ).text("show more").append(" <i class='fas fa-chevron-circle-down'></i>").wrapInner("<span class='btn-wrapper'></span>");
+    $( $pathsToTarget ).addClass('showing-less');
   }
 
   toggleExpanded = function() {
@@ -106,7 +113,7 @@ Blacklight.onLoad(function () {
   updateAllTruncatedText();
 
   // click collection or card button
-  $('#content article.blacklight-collection .responsiveTruncatorToggle, #results-nav-and-constraints .responsiveTruncatorToggle').click(function() {
+  $( $pathsToTarget ).click(function() {
     $this = this;
     toggleExpanded($this);
     toggleText($this);
@@ -165,27 +172,32 @@ Blacklight.onLoad(function () {
   }
 
 
+  /* ================================================ */
+  /* Reload DUL masthead when turbolinks is triggered */
+  /* ================================================ */
 
-  /* ======================================== */
-  /* Hide sidebar header && document children */
-  /* ======================================== */
-  
-  if ($("body").hasClass("blacklight-catalog-show")) {
-    
-    // wait for collection placeholder content to go away
-    var checkExistCollection = setInterval(function() {
+  $(document).on('ready turbolinks:load', function() {
+    $(window).trigger(loadMastHTML());
+  });
 
-      var placeholderPath = $("#collection-context .al-hierarchy-placeholder").html();
-      var navPath = $("#collection-context .context-navigator .al-context-nav-parent").html();
+  loadMastHTML = function() {
 
-      if (undefined === placeholderPath) {
-          if (navPath.length == 0) {
-            $("#context hr").fadeOut();
-            $("#context .tab-content .tab-pane h2").fadeOut();
-          }
-          clearInterval(checkExistCollection);
-      } 
-    }, 100);
+    //console.log('turbolinks triggered!');
+
+    var $DULmastheadURL = 'https://library.duke.edu/masthead/load-masthead.js.php?width=1820&amp;fixed=false&ajax_reload=true';
+
+    $( "#dul-masthead-filler" ).load( $DULmastheadURL, function( response, status, xhr ) {
+      if ( status == "error" ) {
+        console.log( 'There was an error loading external masthead html:' );
+        console.log ( xhr.status + ' -- ' + xhr.statusText );
+      }
+      
+    });
+
   }
 
 });
+
+
+
+

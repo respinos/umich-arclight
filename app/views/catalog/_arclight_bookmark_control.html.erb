@@ -1,0 +1,48 @@
+<%# Overrides ArcLight Core partial. %>
+<%# Adds BS tooltips to bookmark icons %>
+<%# Last checked for updates: ArcLight v0.3.2. %>
+<%# https://github.com/projectblacklight/arclight/blob/master/app/views/catalog/_arclight_bookmark_control.html %>
+
+<% if current_or_guest_user %>
+  <%-
+  # Note these two forms are pretty similar but for different :methods, classes, and labels.
+  # but it was simpler to leave them seperate instead of DRYing them, got confusing trying that.
+  # the data-doc-id attribute is used by our JS that converts to a checkbox/label.
+  -%>
+
+  <%= content_tag( :span, t('blacklight.search.bookmarks.label'), class: 'bookmark_label sr-only', id: "bookmark_toggle_#{document.id.to_s.parameterize}_label" ) %>
+  
+  <% unless bookmarked? document %>
+    <%= form_tag(bookmark_path(document),
+                 method: :put,
+                 class: 'bookmark-toggle col-auto',
+                 'aria-labeledby' => "bookmark_toggle_#{document.id.to_s.parameterize}_label",
+                 data: {
+                   'doc-id' => document.id,
+                   present: "<span data-toggle='tooltip' title='#{t('dul_arclight.tooltips.bookmarks.present')}'>#{blacklight_icon(:bookmark)}<span class=\"sr-only\">#{t('blacklight.search.bookmarks.present')}</span>",
+                   absent: "<span data-toggle='tooltip' title='#{t('dul_arclight.tooltips.bookmarks.absent')}'>#{blacklight_icon(:bookmark)}<span class=\"sr-only\">#{t('blacklight.search.bookmarks.absent')}</span>",
+                   inprogress: t('blacklight.search.bookmarks.inprogress')
+                }) do %>
+      <%= submit_tag(t('blacklight.bookmarks.add.button'),
+                     id: "bookmark_toggle_#{document.id.to_s.parameterize}",
+                     class: "bookmark-add btn btn-outline-secondary") %>
+    <% end %>
+  <% else %>
+    <%= form_tag(bookmark_path(document),
+                 method: :delete,
+                 class: "bookmark-toggle col-auto",
+                 'aria-labeledby' => "bookmark_toggle_#{document.id.to_s.parameterize}_label",
+                 data: {
+                   'doc-id' => document.id,
+                   present: "<span data-toggle='tooltip' title='#{t('dul_arclight.tooltips.bookmarks.present')}'>#{blacklight_icon(:bookmark)}<span class=\"sr-only\">#{t('blacklight.search.bookmarks.present')}</span>",
+                   absent: "<span data-toggle='tooltip' title='#{t('dul_arclight.tooltips.bookmarks.absent')}'>#{blacklight_icon(:bookmark)}<span class=\"sr-only\">#{t('blacklight.search.bookmarks.absent')}</span>",
+                   inprogress: t('blacklight.search.bookmarks.inprogress')
+                }) do %>
+      <%= submit_tag(t('blacklight.bookmarks.remove.button'),
+                     id: "bookmark_toggle_#{document.id.to_s.parameterize}",
+                     class: "bookmark-remove btn btn-outline-secondary") %>
+    <% end %>
+  <% end %>
+<% else %>
+  &nbsp;
+<% end %>

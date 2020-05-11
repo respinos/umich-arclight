@@ -12,14 +12,8 @@
       <%# Adapted from:%>
       <%#  https://github.com/projectblacklight/arclight/blob/master/app/views/catalog/_collection_context_nav.html.erb %>
 
-      <div class="actions-wrapper  d-flex">
-
+      <div class="actions-wrapper d-flex">
         <%= render partial: 'arclight/requests', locals: { document: document } %>
-
-        <div class='al-show-actions-box-bookmarks flex-md-fill'>
-          <%= render partial: 'catalog/bookmark_control', locals: { document: document } %>
-        </div>
-
       </div>
 
       <ul class='nav flex-column'>
@@ -43,14 +37,17 @@
       <%# ========================= %>
       <%# Hierarchy Tree Navigation %>
       <%# ========================= %>
-      <div class='tab-content'>
-        <div class='tab-pane active'>
-          <%= render 'component_context' %>
+      <% if document.number_of_children > 0 %>
+        <div class='tab-content'>
+          <div class='tab-pane active'>
+            <%= render 'component_context' %>
+          </div>
         </div>
-      </div>
+      <% end %>
     </div>
   </div>
 <% end %>
+
 
 <%# =================== %>
 <%# upper breadcrumbs   %>
@@ -86,6 +83,22 @@
 </nav>
 
 
+<%# =================== %>
+<%# Actions (bookmarks) %>
+<%# =================== %>
+
+<div class="series-action-wrapper">
+
+  <div class="actions-wrapper d-flex">
+
+    <div class='al-show-actions-box-bookmarks flex-md-fill'>
+      <%= render partial: 'catalog/arclight_bookmark_control', locals: { document: document } %>
+    </div>
+
+  </div>
+
+</div>
+
 
 <%# ===================== %>
 <%# Collection Masthead   %>
@@ -96,6 +109,8 @@
     <h1><%= document.normalized_title %></h1>
   </div>
 </div>
+
+
 
 
 <%# ================ %>
@@ -135,7 +150,7 @@
 
   <div class='row'>
     <div class='col-md-12'>
-      <h2><%= t('arclight.views.show.online_content') %> <span class="media-body al-online-content-icon" aria-hidden="true"><%= blacklight_icon :online %></span></h2>
+      <h2><%= t('arclight.views.show.online_content') %> <span class="media-body al-online-content-icon" aria-hidden="true" data-toggle="tooltip" title="<%= t('dul_arclight.tooltips.online') %>"><%= blacklight_icon :online %></span></h2>
 
       <%# Single DAO with DUL specific role: render respective DUL viewer %>
       <% if ['audio-streaming', 'image-service', 'video-streaming',

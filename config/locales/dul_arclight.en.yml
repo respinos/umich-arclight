@@ -12,3 +12,8 @@ en:
       search_label: "Search for"
       submit: "Search"
       start_over: "Start Over"
+    tooltips:
+      online: "Available Online"
+      bookmarks:
+        present: "In Bookmarks"
+        absent: "Add to Bookmarks"

@@ -23,7 +23,7 @@ Examples:
 
     Start an interactive bash shell in the running 'app' container:
 
-    $ ./test.sh exec app bash
+    $ ./test-interactive.sh
 
     Run a (non-interactive) rake task in the running 'app' container:
 
@@ -34,4 +34,4 @@ EOF
 fi
 
 cd "$(dirname ${BASH_SOURCE[0]})"
-docker-compose "$@"
+docker-compose -f docker-compose.yml -f docker-compose.test.yml "$@"
