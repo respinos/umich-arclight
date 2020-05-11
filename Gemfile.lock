@@ -44,7 +44,7 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
-    arclight (0.3.0)
+    arclight (0.3.2)
       blacklight (~> 7.2)
       blacklight_range_limit (~> 7.1)
       rails (~> 5.0)
@@ -126,15 +126,15 @@ GEM
       sassc (>= 1.11)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
-    hashie (4.0.0)
-    http (4.3.0)
+    hashie (4.1.0)
+    http (4.4.1)
       addressable (~> 2.3)
       http-cookie (~> 1.0)
       http-form_data (~> 2.2)
       http-parser (~> 1.2.0)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
-    http-form_data (2.2.0)
+    http-form_data (2.3.0)
     http-parser (1.2.1)
       ffi-compiler (>= 1.0, < 2.0)
     httpclient (2.8.3)
@@ -356,7 +356,7 @@ GEM
       execjs (>= 0.3.0, < 3)
     unf (0.1.4)
       unf_ext
-    unf_ext (0.0.7.6)
+    unf_ext (0.0.7.7)
     unicode-display_width (1.6.0)
     vegas (0.1.11)
       rack (>= 1.0.0)
@@ -376,13 +376,13 @@ GEM
     websocket-extensions (0.1.4)
     xpath (3.2.0)
       nokogiri (~> 1.8)
-    yell (2.2.1)
+    yell (2.2.2)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  arclight (= 0.3.0)
+  arclight (= 0.3.2)
   better_errors
   binding_of_caller
   blacklight-locale_picker
