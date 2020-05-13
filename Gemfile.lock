@@ -75,6 +75,9 @@ GEM
       rails (>= 5.1, < 7)
     blacklight-locale_picker (0.1.0)
       rails (~> 5.2.3)
+    blacklight_dynamic_sitemap (0.2.0)
+      blacklight (> 6.0)
+      rails (~> 5.0)
     blacklight_range_limit (7.4.0)
       blacklight (>= 7.0)
     bootstrap (4.4.1)
@@ -392,6 +395,7 @@ DEPENDENCIES
   binding_of_caller
   blacklight-hierarchy (= 4.0.0)
   blacklight-locale_picker
+  blacklight_dynamic_sitemap (= 0.2.0)
   blacklight_range_limit (~> 7.1)
   bootstrap (~> 4.0)
   byebug
