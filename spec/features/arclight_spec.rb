@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-RSpec.describe 'Arclight', type: :feature do
+RSpec.describe 'DUL Arclight Pages', type: :feature do
   it 'navigates to homepage' do
     visit '/'
     expect(page).to have_css 'h1', text: 'Find Archival Materials'
@@ -15,5 +15,11 @@ RSpec.describe 'Arclight', type: :feature do
     visit '/advanced'
     expect(page).to have_css 'h1', text: 'Advanced Search'
     expect(page).to have_css 'input', id: 'q'
+  end
+
+  it 'displays UA record groups page, with links & titles' do
+    visit '/collections/ua-record-groups'
+    expect(page).to have_link('Student/Campus Life',
+                              href: '/catalog?f%5Bua_record_group_ssim%5D%5B%5D=31')
   end
 end

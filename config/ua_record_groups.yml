@@ -1,0 +1,828 @@
+# NOTE: number keys (e.g., 01) need to be quoted else they are implicitly
+# treated as integers (1)
+
+'01':
+  title: General Information and University History
+  description: |
+    This record group showcases University Archives' collection of general history materials
+    that span Duke's more than 170-year history.  It includes materials from Trinity College in
+    Randolph County to the move to Durham and the renaming to Duke University in 1924.  Subgroups
+    are arranged topically.  Additionally, the reference collections are located in this group
+    and they provide a good overview on many popular topics related to Duke's history.
+  subgroups:
+    '01':
+      title: Biographical files
+    '02':
+      title: Trinity College (Randolph County, N.C.)
+    '03':
+      title: Trinity College (Durham)
+    '04':
+      title: Trinity Park School
+    '05':
+      title: On-Campus Assemblies and Festivals
+    '06':
+      title: Campus-Wide Events and Anniversaries
+    '07':
+      title: Art, Artifacts, and Relics
+    '08':
+      title: Awards, Scholarships, and Memorials
+    '09':
+      title: Commencement and Convocation
+    '10':
+      title: African American History at Duke (Reword)
+    '11':
+      title: Reference Collections
+    '12':
+      title: University House
+    '13':
+      title: Oversize Collection
+    '14':
+      title: University-Wide Publications (800s)
+    '15':
+      title: Audio/Video (A/V), Photographic, and Visual materials
+      description: |
+        These are collections of A/V, photographic and other visual materials that are not part
+        of a larger records group, but instead are intentionally created collections by format.
+
+'02':
+  title: Board of Trustees
+  description: |
+    The Board of Trustees is the governing body of Duke University.  It is responsible for
+    creating the educational and fiscal policies that direct the University. The Duke University
+    Board of Trustees has been operating since 1924, and developed from the Trinity College Board
+    of Trustees that existed from 1859 to 1924.
+  subgroups:
+    '01':
+      title: Board of Trustees General Records
+    '02':
+      title: Executive Committee Minutes
+
+'03':
+  title: Presidents
+  description: |
+    Since its beginning as Union Institute, Duke University has had fourteen Presidents. Listed
+    below, are the Office of the President's Records and the individual papers of some of the
+    Presidents. Note: If you are interested in a particular President who does not have individual
+    papers, check the Office of the President. Duke's Presidents: Brantley York, 1838-1842; Braxton
+    Craven, 1842-1863, 1866-1882; Marquis Lafayette Wood, 1883-1884; Trustee Committee of
+    Management; John Franklin Crowell, 1887-1894; John Carlisle Kilgo, 1894-1910; William Preston
+    Few, 1910-1940; Robert Lee Flowers, 1941-1948; Arthur Hollis Edens, 1949-1960; Julian Deryl
+    Hart, 1960-1963; Douglas Maitland Knight, 1963-1969; Terry Sanford, 1969-1985; H. Keith H.
+    Brodie, 1985-1993; Nannerl Overholser Keohane, 1993-2004; Richard H. Brodhead, 2004-; For more
+    information on the Presidents, visit: http://library.duke.edu/uarchives/history/presidents.html
+  subgroups:
+    '01':
+      title: Office of the President's Records
+    '02':
+      title: Committees
+    '03':
+      title: Special Assistant to the President Records
+    '50':
+      title: Brantley York
+    '51':
+      title: Braxton Craven
+    '52':
+      title: Marquis Lafayette Wood, 1883-1884
+    '53':
+      title: John Franklin Crowell
+    '54':
+      title: John C. Kilgo
+    '55':
+      title: William Preston Few
+    '56':
+      title: Robert Lee Flowers
+    '57':
+      title: A. Hollis Edens
+    '58':
+      title: J. Deryl Hart
+    '59':
+      title: Douglas M. Knight
+    '60':
+      title: Terry Sanford
+    '61':
+      title: H. Keith H. Brodie
+    '62':
+      title: Nannerl O. Keohane
+    '63':
+      title: Richard H. Brodhead
+
+'04':
+  title: University Secretary
+  description: |
+    The University Secretary is an officer of the University whose major role is to coordinate
+    affairs of the Board of Trustees.  The University Secretary reports to the President. The
+    Office of the University Secretary at Duke University was established by by-law in 1903.
+  subgroups:
+    '01':
+      title: Office of the University Secretary General records
+    '02':
+      title: Committees
+
+'05':
+  title: Office of the Provost
+  description: |
+    The Provost is the chief academic officer who is tasked with overseeing the academic and
+    research missions of the University. The Provost reports to the President.  Each school's
+    individual dean and senior academic staff report to the Provost.
+  subgroups:
+    '01':
+      title: Office of the Provost Records
+    '02':
+      title: Committees
+    '50':
+      title: William P. Few
+    '51':
+      title: William I. Cranford
+    '52':
+      title: William H. Wannamaker
+    '53':
+      title: Paul M. Gross
+    '54':
+      title: R. Taylor Cole
+    '55':
+      title: Marcus E. Hobbs
+    '56':
+      title: John O. Blackburn
+    '57':
+      title: Frederic N. Cleaveland
+    '58':
+      title: William Bevan
+    '59':
+      title: H. Keith H. Brodie
+    '60':
+      title: Phillip Griffiths
+    '61':
+      title: Thomas Langford
+    '62':
+      title: John Strohbehn
+    '63':
+      title: Peter Lange
+
+'06':
+  title: Office of the Chancellor (inactive)
+  description: |
+    The office was formally established in March 1969 when President D. M. Knight wanted an officer
+    to assist with an increasing executive workload. The Chancellor was given responsibility for
+    the internal operation of the University. Under the University By-laws of May 10, 1988, the
+    Chancellor was an executive officer with powers and duties assigned by the President. The
+    occupants of the office have been the following: Robert L. Flowers (1949-1951 honorary title),
+    Barnes Woodhall (1969-1970, pro tem), A. Kenneth Pye (1970-1971), John O. Blackburn
+    (1971-1976), A. Kenneth Pye (1976-1982), and H. Keith H. Brodie (1982-1985). The position is
+    not currently active.
+  subgroups:
+    '01':
+      title: Office of the Chancellor
+    '50':
+      title: Barnes Woodhall
+    '51':
+      title: A. Kenneth Pye
+    '52':
+      title: John O. Blackburn
+    '53':
+      title: H. Keith H. Brodie
+
+'07':
+  title: Academic Affairs
+  description: |
+    Academic Affairs is headed by the Vice Provost of Academic Affairs, who reports directly to the
+    Provost.  The office has a wide range of responsibilities including faculty development, global
+    programs, and undergraduate education.
+  subgroups:
+    '01':
+      title: Division of Student Affairs General Records
+    '02':
+      title: Finance and Administration
+      description: |
+        Accounting Division; University Payroll Office; Duke University Personnel Policy Manual;
+        University Budget Office; Student Information Services and Systems (SISS); Undergraduate
+        Financial Aid Office; Human Resources Policies and Manuals; Institutional Research
+    '03':
+      title: Faculty Diversity and Development
+    '04':
+      title: Global Strategy and Programs
+      description: |
+        Center for International Studies; International Studies Center Records, 1952-1957; The
+        Committee on African Studies (inactive)
+    '05':
+      title: The Arts
+    '06':
+      title: Undergraduate Education
+      description: |
+        Civic Engagement; Global Education; Office of Undergraduate Scholars and Fellows
+    '07':
+      title: Interdisciplinary Studies
+    '08':
+      title: Duke University Press
+    '09':
+      title: Undergraduate Admissions
+    '10':
+      title: Nasher Museum of Art
+    '11':
+      title: Global Health Institute
+    '12':
+      title: Institute for Genome Sciences and Policy
+
+'08':
+  title: Libraries
+  description: |
+    The Duke University Libraries consist of the William R. Perkins Library, the Bostock Library,
+    the Rubenstein Library, Lilly Library, Music Library, the Marine Laboratory Library, and the
+    Library Service Center.
+  subgroups:
+    '01':
+      title: Administration
+    '02':
+      title: Committees
+    '03':
+      title: Trinity College Library
+    '04':
+      title: Library Council
+    '05':
+      title: Friends of Duke University Library
+    '06':
+      title: Library Technical Services records
+    '07':
+      title: Perkins/Bostock Library
+    '08':
+      title: Rubenstein Library and University Archives
+    '09':
+      title: Library Service Center
+    '10':
+      title: Lilly Library
+    '11':
+      title: Marine Lab Library
+    '12':
+      title: Music Library
+
+'09':
+  title: Student Affairs
+  description: |
+    The Division of Student Affairs is responsible for a wide array of programs and activities to
+    engage students outside of the classroom.  It is tasked with supporting student groups, student
+    health, career center, and many other integral components to student life.  The Division is
+    headed by the Vice President of Student Affairs. Note: Records of individual student groups are
+    located in the Record Group titled "Campus Life." Departments Include: Resource Administration;
+    Housing, Dining, and Residence Life; Campus Life (includes Center for Lesbian, Gay, Bisexual,
+    and Transgender life; Intercultural Initiatives; Jewish Life; Mary Lou Williams Center for
+    Black Culture; Muslim Life; University Center Activities and Events; Women's Center and
+    GVPI); Dean of Students (includes Case Management; Counseling and Psychological Services
+    (CAPS); Emergency Response; Parent and Family Programs; Student Conduct; Student Health;
+    Student Health Insurance; Student Wellness Center);
+  subgroups:
+    '01':
+      title: Dean and Vice Provost of Undergraduate Education
+    '02':
+      title: Vice President of Student Affairs
+    '03':
+      title: Committees
+    '04':
+      title: Division of Student Affairs General Records
+    '05':
+      title: Office of Student Activities and Facilities Records
+    '06':
+      title: Housing, Dining, and Residence Life
+    '07':
+      title: Dept. of Health, Physical Education and Recreation.
+      description: |
+        Currently a division in the Office of Student Affairs
+    '08':
+      title: The Office of Intercultural Affairs
+      description: |
+        Some predecessor offices included the Office of Black Affairs, and the Office of Minority
+        Affairs, and the Center for Multicultural Affairs.
+    '09':
+      title: Student Conduct
+    '10':
+      title: Duke Center Wellness Center
+    '11':
+      title: Counseling and Psychological Services (CAPS)
+    '12':
+      title: University Center Activities and Events
+    '13':
+      title: Student Union
+    '14':
+      title: Career Center
+      description: |
+        Former names: Appointments Office; Office of Placement Services; and Career Development
+        Center
+    '15':
+      title: International House
+    '16':
+      title: Mary Lou Williams Center for Black Culture Records, 1983-1998.
+    '17':
+      title: Women's Center
+    '18':
+      title: Center for Lesbian, Gay, Bisexual, and Transgender life
+    '19':
+      title: Jewish Life
+    '20':
+      title: Muslim Life
+
+'10':
+  title: Executive VP and Treasurer & Administration (Business and Finance)
+  description: |
+    Executive Vice President is the chief business and financial officer for Duke University,
+    responsible for the management of all financial and administrative services of the University.
+    This office's responsibilities include facilities, financial services, and information
+    technology, among other departments. This position has evolved significantly over the past
+    fifty years and other titles for the position are displayed below. Current Position: Executive
+    Vice President and Treasurer (Financial Services, Office of the Treasurer); Comptroller and
+    Business Manager (1958); Business Manager (1961); Vice President for Business &
+    Finance/Treasurer (1965); Two Offices (a split occurred briefly); Vice President and Treasurer
+    and then the Vice President for Business and Finance (1967); Vice President for Business and
+    Finance (1975); Executive Vice President and Vice President, Planning and Treasurer (two
+    different positions) (1988); Executive VP of Administration (?) (1991); Executive VP and
+    Treasurer
+  subgroups:
+    '01':
+      title: |
+        Executive VP and Treasurer
+      description: |
+        And all previous titles, Duke University and Trinity College
+    '02':
+      title: Business and Finance Division Records
+      description: Business Division records, 1938-1948
+    '03':
+      title: Administration
+      description: |
+        VP of Administration; Human Resources; Communication Services (aka Media Services);
+        Disability Management; Police, Safety, and Security; Parking and Transportation; Auxiliary
+        Services
+    '04':
+      title: Financial Services
+      description: |
+        VP of Finance; Office of Corporate and Venture Development Patent Administration; Real
+        Estate Office; Bursar
+    '05':
+      title: Facilities
+    '06':
+      title: Information Technology (VP and CIO)
+    '07':
+      title: University Architect
+    '08':
+      title: Sarah P. Duke Gardens
+    '09':
+      title: Duke Forest
+
+'11':
+  title: Office for Institutional Equity
+  description: |
+    The Equal Opportunity Office was created in 1972 by Chancellor John S. Blackburn to ensure
+    University compliance with equal opportunity and affirmative action legislation. In 1982, the
+    office was renamed the Opportunity Development Center. In 1985 the office was abolished by
+    then-President Brodie; however the functions of the office were still carried out by the former
+    director Dolores S. Burke, who was named Special Assistant to the President, and later, Special
+    Advisor to the Executive Vice President for Administration. In 1995, the responsibilities were
+    transferred to the newly created Office of the Vice President for Institutional Equity. The
+    name of the office changed to Office for Institutional Equity in the 2004/2005 academic year.
+  subgroups:
+    '01':
+      title: Office for Institutional Equity Records
+    '02':
+      title: Vice President for Institutional Equity
+      description: |
+        Formerly Vice President and Vice Provost; The position was supplanted in 1995 by the Vice
+        President for Institutional Equity.
+
+'12':
+  title: Public Affairs and Government Relations
+  description: |
+    The Office of Public Affairs and Government Relations coordinates and manages communications
+    strategies with the university's many audiences. It includes the offices responsible for
+    federal, state and local government relations, local community affairs, campus news and
+    communications and audiovisual services: Office of News and Communication; University
+    Photography; Federal Relations; Office of Community Affairs; Government Relations. Note: Due
+    to the breadth of its material, the Office of News and Communications has its own record group
+    titled News Services Files (RG 27).
+  subgroups:
+    '01':
+      title: Office of Public Affairs and Government Relations
+    '02':
+      title: Duke's chief spokesperson
+    '03':
+      title: Duke Photography
+
+'13':
+  title: Athletics
+  description: |
+    This record group includes materials from the various offices that have overseen Duke
+    University Intercollegiate athletics; including Trinity College Athletic Association, which
+    represented athletics at Trinity.
+  subgroups:
+    '01':
+      title: Department of Athletics
+    '02':
+      title: Sports Information Office
+    '03':
+      title: Athletic Council
+    '04':
+      title: Trinity College Athletic Association
+
+'14':
+  title: Alumni Affairs and Development
+  description: |
+    The Office of University Development is responsible for fund-raising programs in the areas of
+    annual gifts, capital gifts, and program support.  The Office of Alumni Affairs at Duke
+    University administers the Duke Alumni Association, a nonprofit organization serving over
+    120,000 alumni and former students of Duke University, in addition to thousands of parents and
+    friends of the university. These two offices are separate; but are grouped together due to
+    their size and similar functions.
+  subgroups:
+    '01':
+      title: Office of Alumni Affairs
+    '02':
+      title: Office of University Development (active)
+
+'15':
+  title: Durham and Regional Affairs
+  description: |
+    The Office of Durham and Regional Affairs (DARA) coordinates the university's partnerships with
+    Durham and the Research Triangle region, including but not limited to local government, the
+    Research Triangle Park, Durham Public Schools, and area colleges and universities. Some of the
+    programs it oversees include Duke-Durham Neighborhood Partnership and the Community Service
+    Center.
+  subgroups:
+    '01':
+      title: Office of Durham and Regional Affairs
+      description: |
+        Prior name: Office of Regional Programs
+    '02':
+      title: Community Service Center Records
+    '03':
+      title: The Duke-Durham Neighborhood Partnership (DDNP)
+
+'16':
+  title: Duke Management Company
+  description: |
+    In 1989, Duke University's Board of Trustees approved the formation of Duke Management Company
+    (DUMAC) as a separate, non-profit support corporation of Duke University. DUMAC recommends
+    investment policy and strategy, seeks and analyzes specific opportunities, and manages ongoing
+    operations and activities. DUMAC operates under a cascading delegation of authority from the
+    Board of Trustees and the DUMAC Board of Directors.
+  subgroups:
+    '01':
+      title: Duke Management Company General Records
+
+'17':
+  title: Duke Chapel
+  description: |
+    Located on Duke University's West Campus, Duke Chapel is the centerpiece of campus.
+    Construction of the Chapel was begun in October of 1930 and completed two years later. It was
+    first used for Commencement in 1932 and was formally dedicated on June 2, 1935. Duke Chapel
+    continues to operate as an interdenominational Christian church.
+  subgroups:
+    '01':
+      title: General Duke Chapel Records
+    '02':
+      title: Dean of the Chapel
+    '03':
+      title: Friends of Duke Chapel
+
+'18':
+  title: Nicholas School
+  description: |
+    The Nicholas School was formally created in 1991, but it represents a coming together of three
+    entities. The School of Forestry and Environmental Studies and the Duke University Marine Lab
+    (both formed in 1938) came together in 1991 to become the School of Environment, which was
+    named the Nicholas School in 1995 following a $20 million gift from Peter M. and Ginny Nicholas
+    of Boston. In 1997, the Department of Geology (formed in 1936) joined the school as the
+    Division of Earth and Ocean Sciences, bringing with it new resources and a new name for the
+    school in December 2000-the Nicholas School of the Environment and Earth Sciences. In August
+    2008, the school's name was shortened to the Nicholas School of the Environment, following
+    approval by the Duke University Board of Trustees.
+  subgroups:
+    '01':
+      title: Nicholas School of the Environment General Records
+    '02':
+      title: School of Forestry and Environmental Studies
+    '03':
+      title: Marine Laboratory
+    '04':
+      title: Centers, Programs, and Institutes
+
+'19':
+  title: Divinity School
+  description: |
+    The Duke Divinity School was founded in 1926 and is the University's first graduate
+    professional school.  The Theological Society's records are Included in this record group; the
+    theological society was founded in 1870 on the Trinity College (Randolph County, N.C.) campus.
+  subgroups:
+    '01':
+      title: Divinity School General Records
+    '02':
+      title: Committee
+    '03':
+      title: Field Education
+    '04':
+      title: Theological Society
+      description: Precursor to Divinity School
+    '05':
+      title: Office of Black Church Studies
+    '06':
+      title: Leadership Education
+    '07':
+      title: Deans
+
+'20':
+  title: School of Law
+  description: |
+    The School of Law dates its origins as far back as 1850. The school experienced many
+    organizational changes and several temporary closures in its early years. In 1904, the school
+    formally reopened and became the School of Law through the help of the endowment established by
+    James Buchanan Duke and Benjamin Newton Duke. Note, many of the Dean records are located in the
+    School of Law General Records collection.
+  subgroups:
+    '01':
+      title: School of Law General Records
+    '02':
+      title: Deans
+    '03':
+      title: Committees
+    '04':
+      title: Centers, Programs, and Institutes
+    '05':
+      title: Goodson Law Library
+
+'21':
+  title: Pratt School of Engineering
+  description: |
+    In 1887, a formal course in engineering was introduced at Trinity College and it
+    became a regular course offering in 1903. When Trinity became Duke University in 1924,
+    engineering underwent vigorous development. In 1927, engineering was organized into separate
+    departments of civil and electrical engineering. The Department of Mechanical Engineering began
+    in 1931. Duke established the Division of Engineering in 1937. Two years late, Duke's Board of
+    Trustees authorized the formation of the College of Engineering.  In 1999, the school was named
+    for 1947 electrical engineering graduate Edmund T. Pratt Jr.
+  subgroups:
+    '01':
+      title: School of Engineering General Records
+    '02':
+      title: Centers, Programs, and Institutes
+
+'22':
+  title: Sanford School of Public Policy
+  description: |
+    Established in 1971 as the Institute of Policy Sciences and Public Affairs, the Sanford School
+    of Public Policy has one of the nation's largest public policy undergraduate programs. The
+    School also offers selective master's degrees programs in public policy (MPP) and international
+    development policy, and a PhD program. The School is named for its founder, the late Terry
+    Sanford, North Carolina governor (1961-65), United States senator (1987-1993) and Duke
+    University president (1969-1985).
+  subgroups:
+    '01':
+      title: Sanford School of Public Policy General Records
+    '02':
+      title: Centers, Programs, and Institutes
+
+'23':
+  title: Fuqua School of Business
+  description: |
+    The Graduate School of Business Administration was chartered in 1969 and its first class was
+    enrolled in 1970.  In 1980, its name was changed to the Fuqua School of business in honor of
+    J.B. Fuqua, who donated $10 million to the school.  Fuqua is home to many centers and
+    institutes, including the Center for the Advancement of Social Entrepreneurship (CASE) and
+    Corporate Sustainability Initiative (CSI).
+  subgroups:
+    '01':
+      title: Fuqua School of Business General Records
+    '02':
+      title: Development Office
+    '03':
+      title: Ford Library
+    '04':
+      title: Centers, Programs, and Institutes
+
+'24':
+  title: Graduate School
+  description: |
+    The Graduate School of Arts and Sciences at Duke University was formally established in 1926,
+    although some graduate instruction had been offered previously at Trinity College and Duke
+    University. In 1968 the name was shortened to the Graduate School. Today, the Graduate school
+    administers master's and Ph.D. programs in over 60 departments and programs.
+  subgroups:
+    '01':
+      title: General Graduate School Records
+
+'25':
+  title: Trinity College of Arts and Sciences
+  description: |
+    After James B. Duke founded Duke University in 1924, the Universities former name, Trinity
+    College, became the undergraduate college for men. In 1930, the Woman's College for
+    undergraduate women opened on East Campus; Trinity College moved to the new West Campus. In
+    1972, Trinity College and the Woman's College merged into the coeducational Trinity College of
+    Arts & Sciences. Note: although most of the individual departments are part of the Graduate
+    School or other professional schools on campus, their records are centralized in RG 25.
+  subgroups:
+    '01':
+      title: General Trinity College of Arts and Sciences Records
+    '02':
+      title: Deans Office
+    '03':
+      title: Committees
+    '04':
+      title: Men's Undergraduate College
+    '05':
+      title: Woman's College
+    '06':
+      title: African and African American Studies
+    '07':
+      title: Air Force ROTC (Aerospace Studies)
+    '08':
+      title: Army ROTC (Military Science)
+    '09':
+      title: Art, Art History, and Visual Studies
+    '10':
+      title: Asian and Middle Eastern Studies
+    '11':
+      title: Biology
+    '12':
+      title: Chemistry
+    '13':
+      title: Classical Studies
+    '14':
+      title: Computer Science
+    '15':
+      title: Cultural Anthropology
+    '16':
+      title: Dance
+    '17':
+      title: Economics
+    '18':
+      title: Education
+    '19':
+      title: English
+    '20':
+      title: Evolutionary Anthropology
+    '21':
+      title: Germanic Languages and Literature
+    '22':
+      title: Health, Wellness, and Physical Education
+    '23':
+      title: History
+    '24':
+      title: International Comparative Studies
+    '25':
+      title: Linguistics
+    '26':
+      title: Literature
+    '27':
+      title: Mathematics
+    '28':
+      title: Music
+    '29':
+      title: Navy ROTC (Naval Science)
+    '30':
+      title: Neuroscience
+    '31':
+      title: Philosophy
+    '32':
+      title: Physics
+    '33':
+      title: Political Science
+    '34':
+      title: Psychology and Neuroscience
+    '35':
+      title: Religion
+    '36':
+      title: Romance Studies
+    '37':
+      title: Slavic and Eurasian Studies
+    '38':
+      title: Sociology
+    '39':
+      title: Statistical Science
+    '40':
+      title: Theater Studies
+    '41':
+      title: Women's Studies
+    '42':
+      title: FOCUS Program
+    '43':
+      title: Continuing Studies and Summer Session
+    '44':
+      title: Programs
+
+'26':
+  title: Interdisciplinary Institutes, Research Centers, and Departments
+  description: |
+    This record group compiles the many interdisciplinary programs at Duke University. Independent
+    programs are those programs that operate independently of the university, but still hold some
+    affiliation. University-wide programs are those that are cross-departmental within the
+    University structure.
+  subgroups:
+    '01':
+      title: Independent Program
+      description: Operates independently; but is university affiliated
+    '02':
+      title: Committees
+    '03':
+      title: University-wide Interdisciplinary program
+      description: Combines university academic departments
+
+'27':
+  title: News Services Files
+  description: |
+    The Duke News Service informs the public and the university community about research, programs,
+    and events at Duke. This record group includes news service biographical files on faculty,
+    staff, alumni, trustees, and news service subject files that contain clippings, speeches, and
+    other topical materials.
+  subgroups:
+    '01':
+      title: The Office of News and Communications General Records
+    '02':
+      title: Radio TV Services
+    '03':
+      title: The Duke Community Reporter
+
+'28':
+  title: Faculty and Staff Organizations
+  description: |
+    This record group is a compilation of the faculty and staff organizations that have existed
+    throughout Trinity College and Duke's history.
+  subgroups:
+    '01':
+      title: General Organizations
+    '02':
+      title: Committees
+    '03':
+      title: Academic Council (subgroup)
+
+'29':
+  title: Papers of Faculty, Staff, and Associates
+  description: |
+    This record group includes the individual collections of prominent faculty, staff, alumni,
+    and associates.  Note, alumni papers are those collections that primarily comprise of materials
+    created after the individual's studies at Duke University. Materials representative of a
+    student's time at Duke are located in the record group titled "Student Papers and Materials
+    (RG 30)."
+  subgroups:
+    '01':
+      title: General Faculty Records
+    '02':
+      title: Individual Papers
+
+'30':
+  title: Student and Alumni Papers and Materials
+  description: |
+    This record group includes materials that are representative of a student's time on campus. If
+    a collection primarily holds materials related to an individual's life outside of their time at
+    Duke, then their collection will most likely be located in the record group titled "Papers of
+    Faculty, Staff, Alumni, and Associates (RG29)."
+  subgroups:
+    '01':
+      title: Individual Student Papers
+
+'31':
+  title: Student/Campus Life
+  description: |
+    This record group represents student life on Duke's campus, including student organization,
+    residence halls, living groups, and fraternities and sororities.  There are over 400 active
+    student organizations at Duke University.  Additionally, many more have existed throughout
+    Duke's over 170 year-old history.  This record group divides the student organization
+    topically. See also: Student Activism Reference Collection, 1934-[ongoing].; Student Life
+    Reference Collection, 1963-ongoing; Student Organizations Reference Collection, 1913-[ongoing].
+  subgroups:
+    '01':
+      title: Student Organizations – Publications and Undergraduate Publication Board
+    '02':
+      title: Student Organizations-Government
+    '03':
+      title: Student Organizations-Honorary and Recognition
+    '04':
+      title: Student Organizations- Religious and Cultural Organizations
+    '05':
+      title: Student Organizations – LGBTQ
+    '06':
+      title: Student Organizations - International and Language
+    '07':
+      title: Student Organizations – Music, Theatre, and Performance
+    '08':
+      title: Student Organizations - Law, Political, and Social Action
+    '09':
+      title: Student Organizations – Art and Literature
+    '10':
+      title: Student Organizations - Professional and Occupational
+    '11':
+      title: Student Organizations - Recreational Sports
+    '12':
+      title: Student Organizations - Special Interest
+    '13':
+      title: Student Organizations - Service
+    '14':
+      title: Student Organizations – Sciences and Mathematics
+    '15':
+      title: Student Organizations – Environmental
+    '16':
+      title: Residence Halls
+    '17':
+      title: Living groups
+    '18':
+      title: Inter-greek Council (IGC)
+    '19':
+      title: Interfraternity Council (IFC)
+    '20':
+      title: National Pan-Hellenic Council (NPHC)
+    '21':
+      title: PanHellenic Association
+    '22':
+      title: Social Fraternities and Sororities

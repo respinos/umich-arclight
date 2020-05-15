@@ -1,0 +1,16 @@
+<div class="p-4">
+  <h1>University Archives Record Groups</h1>
+  <hr/>
+  <div class="ua-record-groups">
+    <% @record_groups.each do |key, value| %>
+      <%= render partial: 'group',
+            locals: {
+              group: key.to_s,
+              info: value,
+              collection_count: @record_group_counts.dig(key) || 0 } %>
+    <% end %>
+  </div>
+
+<%= content_for(:page_title) do %>
+  University Archives Record Groups - Duke University Libraries
+<% end %>

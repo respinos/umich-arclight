@@ -149,7 +149,7 @@ module Arclight
       end
     end
 
-    def format_deflist_as_table(node, labels, items, defitems) # rubocop:disable Metrics/MethodLength
+    def format_deflist_as_table(node, labels, items, defitems)
       node.name = 'table'
       node['class'] = 'table deflist'
       listhead_node = node.at_css('listhead')
@@ -178,7 +178,7 @@ module Arclight
       defitems.each { |defitem_node| defitem_node.swap(defitem_node.children) } # unwrap
     end
 
-    def format_chronlists(node) # rubocop:disable Metrics/MethodLength
+    def format_chronlists(node)
       node.name = 'table'
       node['class'] = 'table chronlist'
       eventgrps = node.css('eventgrp')

@@ -29,6 +29,8 @@ Rails.application.routes.draw do
 
   resource :advanced_search, only: [:show], as: 'advanced_search', path: '/advanced', controller: 'advanced_search'
 
+  resources :ua_record_groups, only: [:index], as: 'ua_record_groups', path: '/collections/ua-record-groups', controller: 'ua_record_groups'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   post '/index_finding_aids', to: 'index_finding_aids#create'
