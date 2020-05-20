@@ -54,20 +54,42 @@ RSpec.describe 'EAD 2 traject indexing', type: :feature do
         ]
       end
     end
-  end
 
-  describe 'Bib number indexing' do
-    describe 'collection level' do
-      it 'gets bib number' do
-        expect(result['bibnum_ssim'].first).to eq '002164677'
+    describe 'Bib number indexing' do
+      describe 'collection level' do
+        it 'gets bib number' do
+          expect(result['bibnum_ssim'].first).to eq '002164677'
+        end
+      end
+
+      describe 'component level' do
+        it 'gets bib number from collection / top level' do
+          component = result['components'].find { |c| c['id'] == ['rushbenjaminandjulia_aspace_60bc65ac982c71ade8c13641188f6dbc'] }
+          expect(component).to include 'bibnum_ssim'
+          expect(component['bibnum_ssim'].first).to eq '002164677'
+        end
       end
     end
 
-    describe 'component level' do
-      it 'gets bib number from collection / top level' do
-        component = result['components'].find { |c| c['id'] == ['rushbenjaminandjulia_aspace_60bc65ac982c71ade8c13641188f6dbc'] }
-        expect(component).to include 'bibnum_ssim'
-        expect(component['bibnum_ssim'].first).to eq '002164677'
+    describe 'UA record groups for non-UA collections' do
+      it 'skips record groups unless archdesc/did/unitid begins with UA.' do
+        expect(result['ua_record_group_ssim']).to be_nil
+      end
+    end
+  end
+
+  describe 'UA collection indexing' do
+    let(:fixture_path) do
+      Rails.root.join('spec', 'fixtures', 'ead', 'ua', 'uaduketaekwondo.xml')
+    end
+
+    describe 'UA record groups' do
+      it 'captures the top level group' do
+        expect(result['ua_record_group_ssim']).to include('31')
+      end
+
+      it 'captures the sub group preceded by its parent group' do
+        expect(result['ua_record_group_ssim']).to include('31:11')
       end
     end
   end

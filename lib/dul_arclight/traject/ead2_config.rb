@@ -128,6 +128,17 @@ to_field 'unitid_ssm', extract_xpath('/ead/archdesc/did/unitid')
 to_field 'unitid_teim', extract_xpath('/ead/archdesc/did/unitid')
 to_field 'collection_unitid_ssm', extract_xpath('/ead/archdesc/did/unitid')
 
+# DUL CUSTOMIZATION: UA Record Groups
+to_field 'ua_record_group_ssim' do |_record, accumulator, context|
+  id = context.output_hash['collection_unitid_ssm'].first.split('.')
+  if id[0] == 'UA'
+    group = id[1]
+    subgroup = id[2]
+    accumulator << group
+    accumulator << [group, subgroup].join(':')
+  end
+end
+
 # DUL CUSTOMIZATION: use DUL rules for NormalizedDate
 to_field 'normalized_date_ssm' do |_record, accumulator, context|
   accumulator << DulArclight::NormalizedDate.new(

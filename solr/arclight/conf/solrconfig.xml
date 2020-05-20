@@ -176,6 +176,7 @@
          repository_ssm,
          scopecontent_tesim,
          title_ssm,
+    <!-- ua_record_group_ssim, -->
          unitid_ssm,
          userestrict_tesim
        </str>

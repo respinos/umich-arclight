@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class CatalogController < ApplicationController
-
   include BlacklightRangeLimit::ControllerOverride
   include Blacklight::Catalog
   include DulArclight::Catalog
@@ -10,6 +9,7 @@ class CatalogController < ApplicationController
   # singular extent values e.g. "1 cubic feet"
   # include Arclight::FieldConfigHelpers
   include DulArclight::FieldConfigHelpers
+  include HierarchyHelper
 
   # DUL CUSTOMIZATION: temporary patch for
   # ArcLight bug https://github.com/projectblacklight/arclight/issues/741
@@ -118,6 +118,18 @@ class CatalogController < ApplicationController
     config.add_facet_field 'access_subjects_ssim', label: 'Subject', limit: 10
     config.add_facet_field 'formats_ssim', label: 'Format', limit: 10
 
+    # DUL CUSTOMIZATION: Add UA Record Group hierarchical facet
+    config.add_facet_field 'ua_record_group_ssim',
+                           label: 'University Archives Record Group',
+                           helper_method: :ua_record_group_display,
+                           partial: 'blacklight/hierarchy/facet_hierarchy'
+
+    config.facet_display = {
+      hierarchy: {
+        'ua_record_group' => [['ssim'], ':']
+      }
+    }
+
     # Have BL send all facet field names to Solr, which has been the default
     # previously. Simply remove these lines if you'd rather use Solr request
     # handler defaults, or have no facets.
@@ -134,11 +146,11 @@ class CatalogController < ApplicationController
 
     # DUL CUSTOMIZATION: singularize extent
     config.add_index_field 'physdesc_tesim', label: 'Extent', helper_method: :singularize_extent,
-      separator_options: {
-        words_connector: '<br/>',
-        two_words_connector: '<br/>',
-        last_word_connector: '<br/>'
-      }
+                                             separator_options: {
+                                               words_connector: '<br/>',
+                                               two_words_connector: '<br/>',
+                                               last_word_connector: '<br/>'
+                                             }
     config.add_index_field 'accessrestrict_tesim', label: 'Conditions Governing Access', helper_method: :render_html_tags
     config.add_index_field 'collection_ssm', label: 'Collection Title'
     config.add_index_field 'geogname_ssm', label: 'Place'
@@ -186,22 +198,22 @@ class CatalogController < ApplicationController
     config.add_search_field 'name', label: 'Name' do |field|
       field.qt = 'search'
       field.solr_parameters = {
-        qf:  '${qf_name}',
-        pf:  '${pf_name}'
+        qf: '${qf_name}',
+        pf: '${pf_name}'
       }
     end
     config.add_search_field 'place', label: 'Place' do |field|
       field.qt = 'search'
       field.solr_parameters = {
-        qf:  '${qf_place}',
-        pf:  '${pf_place}'
+        qf: '${qf_place}',
+        pf: '${pf_place}'
       }
     end
     config.add_search_field 'subject', label: 'Subject' do |field|
       field.qt = 'search'
       field.solr_parameters = {
-        qf:  '${qf_subject}',
-        pf:  '${pf_subject}'
+        qf: '${qf_subject}',
+        pf: '${pf_subject}'
       }
     end
 
@@ -217,8 +229,8 @@ class CatalogController < ApplicationController
     config.add_search_field 'title', label: 'Title' do |field|
       field.qt = 'search'
       field.solr_parameters = {
-        qf:  '${qf_title}',
-        pf:  '${pf_title}'
+        qf: '${qf_title}',
+        pf: '${pf_title}'
       }
     end
 
@@ -302,20 +314,27 @@ class CatalogController < ApplicationController
 
     # DUL CUSTOMIZATION: singularize extent
     config.add_summary_field 'physdesc_tesim', label: 'Extent', helper_method: :singularize_extent,
-      separator_options: {
-        words_connector: '<br/>',
-        two_words_connector: '<br/>',
-        last_word_connector: '<br/>'
-      }
+                                               separator_options: {
+                                                 words_connector: '<br/>',
+                                                 two_words_connector: '<br/>',
+                                                 last_word_connector: '<br/>'
+                                               }
 
     config.add_summary_field 'languages', label: 'Language', accessor: 'languages', separator_options: {
       words_connector: '<br/>',
       two_words_connector: '<br/>',
       last_word_connector: '<br/>'
     },
-      if: lambda { |_context, _field_config, document|
-            document.languages.present?
-          }
+                                          if: lambda { |_context, _field_config, document|
+                                                document.languages.present?
+                                              }
+
+    config.add_summary_field 'ua_record_group_ssim', label: 'University Archives Record Group',
+                                                     helper_method: :link_to_ua_record_group_facet, separator_options: {
+                                                       words_connector: '<br/>',
+                                                       two_words_connector: '<br/>',
+                                                       last_word_connector: '<br/>'
+                                                     }
 
     config.add_summary_field 'prefercite_tesim', label: 'Preferred citation', helper_method: :render_html_tags
 
@@ -385,11 +404,11 @@ class CatalogController < ApplicationController
 
     # DUL CUSTOMIZATION: Present all physdesc as extent
     config.add_component_field 'physdesc_tesim', label: 'Extent', helper_method: :singularize_extent,
-      separator_options: {
-        words_connector: '<br/>',
-        two_words_connector: '<br/>',
-        last_word_connector: '<br/>'
-      }
+                                                 separator_options: {
+                                                   words_connector: '<br/>',
+                                                   two_words_connector: '<br/>',
+                                                   last_word_connector: '<br/>'
+                                                 }
 
     config.add_component_field 'scopecontent_tesim', label: 'Scope and Content', helper_method: :render_html_tags
     config.add_component_field 'acqinfo_ssim', label: 'Acquisition Information', helper_method: :render_html_tags
@@ -408,9 +427,9 @@ class CatalogController < ApplicationController
       two_words_connector: '<br/>',
       last_word_connector: '<br/>'
     },
-      if: lambda { |_context, _field_config, document|
-            document.languages.present?
-          }
+                                            if: lambda { |_context, _field_config, document|
+                                                  document.languages.present?
+                                                }
 
     # Component Show Page - Indexed Terms Section
     config.add_component_indexed_terms_field 'access_subjects_ssim', label: 'Subjects', link_to_facet: true, separator_options: {
@@ -456,9 +475,9 @@ class CatalogController < ApplicationController
 
     # Collection and Component Show Page Access Tab - In Person Section
     config.add_in_person_field 'repository_ssm', if: :repository_config_present, label: 'Location of This Collection',
-      helper_method: :context_access_tab_repository
+                                                 helper_method: :context_access_tab_repository
     config.add_in_person_field 'id', if: :before_you_visit_note_present, label: 'Before you visit',
-      helper_method: :context_access_tab_visit_note # Using ID because we know it will always exist
+                                     helper_method: :context_access_tab_visit_note # Using ID because we know it will always exist
 
     # Collection and Component Show Page Access Tab - How to Cite Section
     config.add_cite_field 'prefercite_tesim', label: 'Preferred Citation', helper_method: :render_html_tags

@@ -63,3 +63,9 @@
     }
   }
 }
+
+/* Override Blacklight-Hierarchy gem styles */
+/* ======================================== */
+.facet-hierarchy .h-leaf {
+  font-size: 0.9rem;
+}
