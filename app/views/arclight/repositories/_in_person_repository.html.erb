@@ -4,7 +4,9 @@
 
 <div class='al-in-person-repository-name'>
   <% if repository.thumbnail_url %>
-    <%= image_tag repository.thumbnail_url, alt: '', class: 'img-fluid float-left' %>
+    <div class="img-wrapper">
+      <%= image_tag repository.thumbnail_url, alt: '', class: 'img-fluid' %>
+    </div>
   <% end %>
   <div>
     <%# The repository_collections_path method doesn't seem to work here: returns absolute URL %>

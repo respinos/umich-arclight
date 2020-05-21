@@ -42,6 +42,14 @@ class SolrDocument
     end
   end
 
+  def component?
+    parent_ids.present?
+  end
+
+  def restricted_component?
+    component? && (fetch('accessrestrict_tesim', []).present? || fetch('userestrict_tesim', []).present?)
+  end
+
   # DUL override ArcLight core; we want all extent values, and to singularize e.g. 1 boxes.
   # We'll use document.extent for the "extent badge", which excludes other physdec text.
   # beyond extent that we want to appear in collection/component show views.

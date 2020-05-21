@@ -6,6 +6,14 @@
 <% doc_presenter = show_presenter(document).with_field_group(field_accessor) %>
   <dl>
     <% generic_document_fields(field_accessor).each do |field_name, field| %>
+
+      <%# skip location for non-ADF %>
+      <% if field_name == 'repository_ssm' %>
+        <% if document.repository != 'American Dance Festival Archives' %>
+          <% next %>
+        <% end %>
+      <% end %>
+
       <% if generic_should_render_field?(field_accessor, document, field) %>
         <dt class="blacklight-<%= field_name.parameterize %>">
           <%= generic_render_document_field_label(field_accessor, document, field: field_name).upcase %>
