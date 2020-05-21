@@ -112,6 +112,7 @@
        -->
 
        <str name="qf">
+         ead_ssi^500
          collection_title_tesim^150
          title_tesim^100
          name_tesim^10
@@ -121,6 +122,7 @@
          text
        </str>
        <str name="pf">
+         ead_ssi^500
          collection_title_tesim^150
          title_tesim^100
          name_tesim^10
