@@ -277,19 +277,18 @@ class CatalogController < ApplicationController
 
     config.show.metadata_partials = %i[
       summary_field
-      access_field
       background_field
       related_field
       indexed_terms_field
       indexes_field
     ]
 
-    config.show.context_access_tab_items = %i[
-      terms_field
-      cite_field
-      in_person_field
-      contact_field
-    ]
+    # config.show.context_access_tab_items = %i[
+    #   terms_field
+    #   cite_field
+    #   in_person_field
+    #   contact_field
+    # ]
 
     config.show.component_metadata_partials = %i[
       component_field
@@ -299,9 +298,9 @@ class CatalogController < ApplicationController
 
     config.show.component_access_tab_items = %i[
       component_terms_field
-      cite_field
       in_person_field
       contact_field
+      cite_field
     ]
 
     # ===========================
@@ -336,7 +335,11 @@ class CatalogController < ApplicationController
                                                        last_word_connector: '<br/>'
                                                      }
 
-    config.add_summary_field 'prefercite_tesim', label: 'Preferred citation', helper_method: :render_html_tags
+    # config.add_summary_field 'prefercite_tesim', label: 'Preferred citation', helper_method: :render_html_tags
+
+    # Collection Show Page - Using These Materials Section
+    config.add_using_field 'accessrestrict_tesim', label: 'Restrictions', helper_method: :render_html_tags
+    config.add_using_field 'userestrict_tesim', label: 'Terms of Access', helper_method: :render_html_tags
 
     # Collection Show Page - Background Section
     config.add_background_field 'scopecontent_tesim', label: 'Scope and Content', helper_method: :render_html_tags
@@ -391,6 +394,9 @@ class CatalogController < ApplicationController
     # ==========================
     # COMPONENT SHOW PAGE FIELDS
     # ==========================
+
+    config.add_component_using_field 'accessrestrict_tesim', label: 'Restrictions', helper_method: :render_html_tags
+    config.add_component_using_field 'userestrict_tesim', label: 'Use & Permissions', helper_method: :render_html_tags
 
     # Component Show Page - Metadata Section
     config.add_component_field 'containers', label: 'Containers', accessor: 'containers', separator_options: {
@@ -467,11 +473,11 @@ class CatalogController < ApplicationController
     config.add_terms_field 'accessrestrict_tesim', label: 'Restrictions', helper_method: :render_html_tags
     config.add_terms_field 'userestrict_tesim', label: 'Terms of Access', helper_method: :render_html_tags
 
-    # Component Show Page Access Tab - Terms and Condition Section
-    config.add_component_terms_field 'accessrestrict_tesim', label: 'Restrictions', helper_method: :render_html_tags
+    # Component Show Page Access Tab - Terms and Conditions Section
+    # config.add_component_terms_field 'accessrestrict_tesim', label: 'Restrictions', helper_method: :render_html_tags
+    config.add_component_terms_field 'parent_access_restrict_tesim', label: 'Restrictions', helper_method: :render_html_tags
     config.add_component_terms_field 'userestrict_tesim', label: 'Terms of Access', helper_method: :render_html_tags
-    config.add_component_terms_field 'parent_access_restrict_tesim', label: 'Parent Restrictions', helper_method: :render_html_tags
-    config.add_component_terms_field 'parent_access_terms_tesim', label: 'Parent Terms of Access', helper_method: :render_html_tags
+    config.add_component_terms_field 'parent_access_terms_tesim', label: 'Use and Permissions', helper_method: :render_html_tags
 
     # Collection and Component Show Page Access Tab - In Person Section
     config.add_in_person_field 'repository_ssm', if: :repository_config_present, label: 'Location of This Collection',
@@ -479,11 +485,11 @@ class CatalogController < ApplicationController
     config.add_in_person_field 'id', if: :before_you_visit_note_present, label: 'Before you visit',
                                      helper_method: :context_access_tab_visit_note # Using ID because we know it will always exist
 
-    # Collection and Component Show Page Access Tab - How to Cite Section
-    config.add_cite_field 'prefercite_tesim', label: 'Preferred Citation', helper_method: :render_html_tags
-
     # Collection and Component Show Page Access Tab - Contact Section
     config.add_contact_field 'repository_ssm', if: :repository_config_present, label: 'Contact', helper_method: :access_repository_contact
+
+    # Collection and Component Show Page Access Tab - How to Cite Section
+    config.add_cite_field 'prefercite_tesim', label: 'Preferred Citation', helper_method: :render_html_tags
 
     # Remove unused show document actions
     %i[citation email sms].each do |action|

@@ -191,6 +191,11 @@ a {
   color: $gray;
   border-top: 1px dotted shade($gray-lighter, 5%);
   padding-top: 1rem;
+
+  #summary & {
+    border-top: 3px solid lighten($gray-light, 5%);
+  }
+
 }
 
 .al-show-sub-heading + dl > dt {
@@ -207,6 +212,10 @@ a {
 
 #document dl {
   margin-bottom: 2rem;
+}
+
+#restrictions-preview dl {
+  margin-bottom: 0;
 }
 
 .collection-name-wrapper {
@@ -280,7 +289,7 @@ a {
 
 /* item metadata */
 
-#document .al-metadata-section {
+#document dl.al-metadata-section {
   background-color: $facet-grey;
   border-top: 1px dotted $gray-light-more;
   padding: 1rem;
@@ -640,6 +649,96 @@ a {
     }
 
   }
+
+
+  .collection-overview-wrapper {
+    .access-preview-snippet {
+      float: right;
+      width: 33%;
+      margin-left: 2rem;
+      margin-bottom: 2rem;
+      margin-top: 3px;
+      background: $facet-grey;
+      padding: 1rem;
+      border-left: 3px solid $gray-light-more;
+
+      .al-show-sub-heading {
+        border-top: none;
+        padding-top: 0;
+      }
+
+      @include media-breakpoint-down(lg) {
+        width: 100%;
+        border-left: none;
+      }
+
+      dl.access-snippet {
+        margin-bottom: 1rem;
+        & + dl {
+          display: none;
+        }
+      }
+    }
+  }
+
+  #using-these-materials {
+    dl {
+      margin-bottom: 1rem;
+    }
+  }
+
+  #access-restriction-snippet {
+    background: $access-restriction-warning;
+    padding: 1rem;
+    border-top: 1px solid #dee2e6;
+    margin-bottom: 2rem;
+
+    dl.access-snippet {
+      margin-bottom: 1rem;
+      & + dl {
+        display: none;
+      }
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+
+  }
+  
+  dt.blacklight-repository_ssm,
+  dt.blacklight-prefercite_tesim,
+  dt.blacklight-id {
+    font-size: 14px;
+  }
+
+  .al-in-person-repository-name {
+    .img-wrapper {
+      float: right;
+      background: $gray-lighter;
+      padding: 5px;
+      margin: 0 0 1rem 1rem;
+      
+      @include media-breakpoint-down(md) {
+        float: none;
+        width: 100%;
+        margin: 0 0 1rem 0;
+        text-align: center;
+      }
+
+    }
+    img {
+
+    }
+  }
+
+  dd.blacklight-repository_ssm {
+    .al-in-person-repository-location {
+      margin-bottom: 2rem;
+   }
+  }
+
+
 
 
   /* series results */
