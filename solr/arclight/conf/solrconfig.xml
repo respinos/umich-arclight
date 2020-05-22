@@ -119,6 +119,7 @@
          place_tesim^10
          unitid_identifier_match^5
          subject_tesim^2
+         format_tesim^2
          text
        </str>
        <str name="pf">
@@ -129,6 +130,7 @@
          place_tesim^10
          unitid_identifier_match^5
          subject_tesim^2
+         format_tesim^2
          text
        </str>
 
@@ -150,7 +152,12 @@
        <str name="pf_subject">
          subject_tesim
        </str>
-       <!-- TODO: add format? -->
+       <str name="qf_format">
+         format_tesim
+       </str>
+       <str name="pf_format">
+         format_tesim
+       </str>
        <str name="qf_title">
          title_tesim
        </str>

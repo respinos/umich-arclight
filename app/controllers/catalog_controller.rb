@@ -217,14 +217,13 @@ class CatalogController < ApplicationController
       }
     end
 
-    # TODO: add format?
-    # config.add_search_field 'format', label: 'Format' do |field|
-    #   field.qt = 'search'
-    #   field.solr_parameters = {
-    #     qf:  '${qf_format}',
-    #     pf:  '${pf_format}'
-    #   }
-    # end
+    config.add_search_field 'format', label: 'Format' do |field|
+      field.qt = 'search'
+      field.solr_parameters = {
+        qf:  '${qf_format}',
+        pf:  '${pf_format}'
+      }
+    end
 
     config.add_search_field 'title', label: 'Title' do |field|
       field.qt = 'search'
