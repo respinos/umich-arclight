@@ -283,12 +283,12 @@ class CatalogController < ApplicationController
       indexes_field
     ]
 
-    # config.show.context_access_tab_items = %i[
-    #   terms_field
-    #   cite_field
-    #   in_person_field
-    #   contact_field
-    # ]
+    config.show.context_access_tab_items = %i[
+      terms_field
+      in_person_field
+      contact_field
+      cite_field
+    ]
 
     config.show.component_metadata_partials = %i[
       component_field
@@ -339,7 +339,7 @@ class CatalogController < ApplicationController
 
     # Collection Show Page - Using These Materials Section
     config.add_using_field 'accessrestrict_tesim', label: 'Restrictions', helper_method: :render_html_tags
-    config.add_using_field 'userestrict_tesim', label: 'Terms of Access', helper_method: :render_html_tags
+    config.add_using_field 'userestrict_tesim', label: 'Use and Permissions', helper_method: :render_html_tags
 
     # Collection Show Page - Background Section
     config.add_background_field 'scopecontent_tesim', label: 'Scope and Content', helper_method: :render_html_tags
@@ -471,12 +471,12 @@ class CatalogController < ApplicationController
 
     # Collection Show Page Access Tab - Terms and Conditions Section
     config.add_terms_field 'accessrestrict_tesim', label: 'Restrictions', helper_method: :render_html_tags
-    config.add_terms_field 'userestrict_tesim', label: 'Terms of Access', helper_method: :render_html_tags
+    config.add_terms_field 'userestrict_tesim', label: 'Use and Permissions', helper_method: :render_html_tags
 
     # Component Show Page Access Tab - Terms and Conditions Section
     # config.add_component_terms_field 'accessrestrict_tesim', label: 'Restrictions', helper_method: :render_html_tags
     config.add_component_terms_field 'parent_access_restrict_tesim', label: 'Restrictions', helper_method: :render_html_tags
-    config.add_component_terms_field 'userestrict_tesim', label: 'Terms of Access', helper_method: :render_html_tags
+    # config.add_component_terms_field 'userestrict_tesim', label: 'Use and Permissions', helper_method: :render_html_tags
     config.add_component_terms_field 'parent_access_terms_tesim', label: 'Use and Permissions', helper_method: :render_html_tags
 
     # Collection and Component Show Page Access Tab - In Person Section
