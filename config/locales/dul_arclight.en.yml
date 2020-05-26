@@ -17,6 +17,7 @@ en:
       bookmarks:
         present: "In Bookmarks"
         absent: "Add to Bookmarks"
+      restricted: "Some restrictions apply"
     views:
       show:
         access:

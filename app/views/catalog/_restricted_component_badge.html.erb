@@ -1,0 +1,5 @@
+<% if document.restricted_component? %>
+  <span data-toggle="tooltip" title="<%= t('dul_arclight.tooltips.restricted') %>">
+    <%= blacklight_icon :exclamation_triangle_solid, classes: 'al-restricted-component-icon' %>
+  </span>
+<% end %>

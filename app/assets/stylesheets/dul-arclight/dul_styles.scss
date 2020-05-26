@@ -501,11 +501,17 @@ a {
 }
 
 .al-online-content-icon {
-  padding-left: .2rem;
+  padding-left: 0.2rem;
   svg {
     fill: $green;
   }
+}
 
+.al-restricted-component-icon {
+  padding-left: 0.2rem;
+  svg {
+    color: $dandelion;
+  }
 }
 
 .al-hierarchy-highlight > .documentHeader {
