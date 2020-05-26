@@ -8,6 +8,8 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
+@import "blacklight/hierarchy/hierarchy.scss";
+
 @import 'arclight-overrides/modules/layout';
 
 @import 'dul-arclight/modules/layout.scss';
@@ -15,6 +17,7 @@
 @import 'dul-arclight/modules/show_component.scss';
 @import 'dul-arclight/modules/homepage.scss';
 @import 'dul-arclight/modules/search_results.scss';
+@import 'dul-arclight/modules/ua_record_groups.scss';
 
 @import 'dul-arclight/dul_styles.scss';
 @import 'dul-arclight/dul_masthead.scss';

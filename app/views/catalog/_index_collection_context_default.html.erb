@@ -66,7 +66,7 @@
 
       </div>
 
-  <% if document.number_of_children > 0 %>
+  <% if document.children? %>
     <%= content_tag(:div, id: "nav_#{document.id}-collapsible-hierarchy",
       class: "collapse al-collection-context-collapsible al-hierarchy-level-#{document.component_level} #{'show' if show_expanded?(document)}",
       data: { resolved: false }

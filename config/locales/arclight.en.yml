@@ -23,6 +23,7 @@ en:
         expand: "Show More ..."
         context: "Navigate the Collection"
         sections:
+          using_field: "Using These Materials"
           indexes_field: "Other Indexes"
     within_collection_dropdown:
       all_collections: "All Collections"

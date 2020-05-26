@@ -334,7 +334,7 @@
    <copyField source="places_ssm" dest="place_tesim"/>
    <copyField source="names_ssim" dest="name_tesim"/>
    <copyField source="access_subjects_ssim" dest="subject_tesim"/>
-   <!-- TODO: add format? -->
+   <copyField source="formats_ssim" dest="format_tesim"/>
 
    <!-- The catch all `text` field -->
    <!-- grab the fielded searches -->
@@ -342,6 +342,8 @@
    <copyField source="places_ssm" dest="text" />
    <copyField source="names_ssim" dest="text" />
    <copyField source="access_subjects_ssim" dest="text" />
+   <copyField source="formats_ssim" dest="text" />
+
    <!-- grab the searchable notes -->
    <copyField source="abstract_teim" dest="text" />
    <copyField source="accessrestrict_teim" dest="text" />
@@ -387,5 +389,5 @@
    <copyField source="repository_sim" dest="suggest"/>
    <copyField source="places_ssim" dest="suggest"/>
    <copyField source="access_subjects_ssim" dest="suggest"/>
-
+   <copyField source="formats_ssim" dest="suggest"/>
 </schema>

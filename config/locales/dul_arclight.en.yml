@@ -17,3 +17,8 @@ en:
       bookmarks:
         present: "In Bookmarks"
         absent: "Add to Bookmarks"
+    views:
+      show:
+        access:
+          more: "More..."
+          more_restriction: "More about accessing and using these materials..."

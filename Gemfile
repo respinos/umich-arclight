@@ -3,7 +3,9 @@
 source 'https://rubygems.org'
 
 gem 'arclight', '0.3.2'
+gem 'blacklight-hierarchy', '4.0.0'
 gem 'blacklight-locale_picker'
+gem 'blacklight_dynamic_sitemap', '0.2.0'
 gem 'blacklight_range_limit', '~> 7.1'
 gem 'bootstrap', '~> 4.0'
 gem 'coffee-rails', '~> 4.2'

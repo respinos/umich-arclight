@@ -54,6 +54,29 @@
 
   <requestHandler name="/analysis/field" startup="lazy" class="solr.FieldAnalysisRequestHandler" />
 
+  <!--  DUL CUSTOMIZATION: add hashed IDs for use by dynamic sitemap
+        generator. See documentation at:
+        https://github.com/sul-dlss/blacklight_dynamic_sitemap -->
+
+  <updateRequestProcessorChain name="add_hashed_id" default="true">
+    <processor class="solr.processor.SignatureUpdateProcessorFactory">
+      <bool name="enabled">true</bool>
+      <str name="signatureField">hashed_id_ssi</str>
+      <bool name="overwriteDupes">false</bool>
+      <str name="fields">id</str>
+      <str name="signatureClass">solr.processor.Lookup3Signature</str>
+    </processor>
+
+    <processor class="solr.LogUpdateProcessorFactory" />
+    <processor class="solr.RunUpdateProcessorFactory" />
+  </updateRequestProcessorChain>
+
+  <requestHandler name="/update" class="solr.UpdateRequestHandler">
+    <lst name="defaults">
+      <str name="update.chain">add_hashed_id</str>
+    </lst>
+  </requestHandler>
+
   <!-- config for the admin interface -->
   <admin>
     <defaultQuery>*:*</defaultQuery>
@@ -89,21 +112,25 @@
        -->
 
        <str name="qf">
+         ead_ssi^500
          collection_title_tesim^150
          title_tesim^100
          name_tesim^10
          place_tesim^10
          unitid_identifier_match^5
          subject_tesim^2
+         format_tesim^2
          text
        </str>
        <str name="pf">
+         ead_ssi^500
          collection_title_tesim^150
          title_tesim^100
          name_tesim^10
          place_tesim^10
          unitid_identifier_match^5
          subject_tesim^2
+         format_tesim^2
          text
        </str>
 
@@ -125,7 +152,12 @@
        <str name="pf_subject">
          subject_tesim
        </str>
-       <!-- TODO: add format? -->
+       <str name="qf_format">
+         format_tesim
+       </str>
+       <str name="pf_format">
+         format_tesim
+       </str>
        <str name="qf_title">
          title_tesim
        </str>
@@ -176,6 +208,7 @@
          repository_ssm,
          scopecontent_tesim,
          title_ssm,
+    <!-- ua_record_group_ssim, -->
          unitid_ssm,
          userestrict_tesim
        </str>

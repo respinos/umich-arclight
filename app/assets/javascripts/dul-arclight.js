@@ -73,6 +73,26 @@ Blacklight.onLoad(function () {
   // Remove 'sr-only' class from context header
   $('#context h2').removeClass("sr-only");
 
+  // smooth scroll
+  $('.smooth-scroll').click(function() {
+    var sectionTo = $(this).attr('href');
+    $('html, body').animate({
+      scrollTop: $(sectionTo).offset().top
+    }, 1500);
+  });
+
+
+  /* ========================= */
+  /* Hide empty metadata boxes */
+  /* ========================= */
+
+  fadeOutContent('#document dl.al-metadata-section');
+
+  function fadeOutContent(targetElement) {
+    if (!$(targetElement + ':has(*)').length) {
+      $(targetElement).fadeOut();
+    }
+  }
 
 
   /* ========================= */

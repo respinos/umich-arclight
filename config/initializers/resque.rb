@@ -1,5 +1,3 @@
 require 'resque'
 
-if ENV['REDIS_URL'].present?
-  Resque.redis = ENV['REDIS_URL']
-end
+Resque.redis = ENV['REDIS_URL'] if ENV['REDIS_URL'].present?

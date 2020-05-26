@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   concern :range_searchable, BlacklightRangeLimit::Routes::RangeSearchable.new
   mount Blacklight::Engine => '/'
+  mount BlacklightDynamicSitemap::Engine => '/'
+
     mount Arclight::Engine => '/'
 
   root to: "catalog#index"
@@ -28,6 +30,8 @@ Rails.application.routes.draw do
   end
 
   resource :advanced_search, only: [:show], as: 'advanced_search', path: '/advanced', controller: 'advanced_search'
+
+  resources :ua_record_groups, only: [:index], as: 'ua_record_groups', path: '/collections/ua-record-groups', controller: 'ua_record_groups'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
