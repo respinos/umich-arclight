@@ -22,3 +22,5 @@ en:
         access:
           more: "More..."
           more_restriction: "More about accessing and using these materials..."
+        sidebar:
+          collection_title: "Collection"

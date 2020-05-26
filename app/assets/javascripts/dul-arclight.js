@@ -70,9 +70,6 @@ Blacklight.onLoad(function () {
   /* Context Nav */
   /* =========== */
 
-  // Remove 'sr-only' class from context header
-  $('#context h2').removeClass("sr-only");
-
   // smooth scroll
   $('.smooth-scroll').click(function() {
     var sectionTo = $(this).attr('href');
