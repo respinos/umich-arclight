@@ -239,6 +239,11 @@ to_field 'has_online_content_ssim', extract_xpath('.//dao') do |_record, accumul
   accumulator.replace([accumulator.any?])
 end
 
+# DUL CUSTOMIZATION: count all DAOs from the top-level down
+to_field 'total_digital_object_count_isim' do |record, accumulator|
+  accumulator << record.xpath('.//dao').count
+end
+
 # DUL Customization: capture the DAO @role attribute
 to_field 'digital_objects_ssm', extract_xpath('/ead/archdesc/did/dao|/ead/archdesc/dao', to_text: false) do |_record, accumulator|
   accumulator.map! do |dao|
@@ -518,6 +523,11 @@ compose 'components', ->(record, accumulator, _context) { accumulator.concat rec
                            to_text: false) do |_record, accumulator, context|
       accumulator.replace [] if context.output_hash["#{selector}_tesim"].present?
     end
+  end
+
+  # DUL CUSTOMIZATION: count all DAOs from this level down
+  to_field 'total_digital_object_count_isim' do |record, accumulator|
+    accumulator << record.xpath('.//dao').count
   end
 
   # DUL Customization: capture the DAO @role attribute

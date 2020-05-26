@@ -50,6 +50,10 @@ class SolrDocument
     component? && (fetch('accessrestrict_tesim', []).present? || fetch('userestrict_tesim', []).present?)
   end
 
+  def total_component_count
+    first('total_component_count_isim') || 0
+  end
+
   # DUL override ArcLight core; we want all extent values, and to singularize e.g. 1 boxes.
   # We'll use document.extent for the "extent badge", which excludes other physdec text.
   # beyond extent that we want to appear in collection/component show views.
@@ -91,6 +95,11 @@ class SolrDocument
     digital_objects_field.map do |object|
       DulArclight::DigitalObject.from_json(object)
     end
+  end
+
+  # This count includes all descendant components' DAOs
+  def total_digital_object_count
+    first('total_digital_object_count_isim') || 0
   end
 
   # Several DUL-Custom DAO methods to determine the nature of

@@ -220,8 +220,8 @@ class CatalogController < ApplicationController
     config.add_search_field 'format', label: 'Format' do |field|
       field.qt = 'search'
       field.solr_parameters = {
-        qf:  '${qf_format}',
-        pf:  '${pf_format}'
+        qf: '${qf_format}',
+        pf: '${pf_format}'
       }
     end
 
@@ -326,6 +326,8 @@ class CatalogController < ApplicationController
                                           if: lambda { |_context, _field_config, document|
                                                 document.languages.present?
                                               }
+
+    config.add_summary_field 'collection_unitid_ssm', label: 'Collection ID'
 
     config.add_summary_field 'ua_record_group_ssim', label: 'University Archives Record Group',
                                                      helper_method: :link_to_ua_record_group_facet, separator_options: {
