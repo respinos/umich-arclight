@@ -4,7 +4,7 @@
   <div class="col-md-12">
     <div class="imgback imgback-shadow col-md-5 col-lg-6 col-xl-7 hidden-sm-down"></div>
     <div class="imgback imgback-image col-md-5 col-lg-6 col-xl-7 hidden-sm-down"
-        style="background-image: url(<%= @random_feature['image_url'] %>)">
+        style="background-image: url(<%= feature_img_url(@random_feature['image']) %>)">
       <div class="feature-caption"><%= @random_feature['caption_html'].html_safe %></div>
     </div>
 
