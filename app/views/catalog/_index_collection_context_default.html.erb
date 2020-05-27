@@ -57,6 +57,14 @@
         <% end %>
 
         <%# -------------------- %>
+        <%# RESTRICTED BADGE     %>
+        <%# -------------------- %>
+
+        <% if document.restricted_component? %>
+          <%= render partial: 'restricted_component_badge', locals: { document: document } %>
+        <% end %>
+
+        <%# -------------------- %>
         <%# ONLINE CONTENT BADGE %>
         <%# -------------------- %>
 
