@@ -24,7 +24,7 @@
       <%= render_index_doc_actions document, wrapping_class: 'd-flex justify-content-end' %>
     </div>
 
-    <div class="order-2">
+    <div class="order-2 scope-wrapper">
       <div class="row">
         <%= content_tag('div', class: 'al-document-highlight col') do %>
           <%= document.highlights.join('<br/>').html_safe %>

@@ -24,7 +24,7 @@
       <%= render_index_doc_actions document, wrapping_class: 'd-flex justify-content-end' %>
     </div>
 
-    <div class="order-2">
+    <div class="order-2 scope-wrapper">
       <%= content_tag('div', class: 'al-document-highlight highlight-snippets') do %>
         <%= document.highlights_without_title&.join('<br/>')&.html_safe %>
       <% end if document.highlights_without_title.present? %>
