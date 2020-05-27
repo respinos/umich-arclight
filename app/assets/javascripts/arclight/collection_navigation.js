@@ -84,6 +84,12 @@
           $el.trigger('navigation.contains.elements');
         }
         Blacklight.doBookmarkToggleBehavior();
+
+        // DUL CUSTOMIZATION: 'deep' clone sortAndPerPage and append ID
+        if ( $( sortPerPage ).text().indexOf('Previous') > -1 ) {
+          $( sortPerPage ).clone( true ).prop('id', 'sortAndPerPageBottom' ).insertAfter('#documents');
+        }
+
       });
     }
   };
