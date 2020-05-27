@@ -118,10 +118,12 @@ class CatalogController < ApplicationController
     config.add_facet_field 'access_subjects_ssim', label: 'Subject', limit: 10
     config.add_facet_field 'formats_ssim', label: 'Format', limit: 10
 
-    # DUL CUSTOMIZATION: Add UA Record Group hierarchical facet
+    # DUL CUSTOMIZATION: Add UA Record Group hierarchical facet. Limit must be higher
+    # than the total number of groups + subgroups
     config.add_facet_field 'ua_record_group_ssim',
                            label: 'University Archives Record Group',
                            helper_method: :ua_record_group_display,
+                           limit: 9999,
                            partial: 'blacklight/hierarchy/facet_hierarchy'
 
     config.facet_display = {
