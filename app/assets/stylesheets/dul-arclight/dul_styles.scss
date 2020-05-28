@@ -782,7 +782,16 @@ a {
    }
   }
 
+  #documents {
+    margin-bottom: 1rem;
+  }
 
+  #sortAndPerPageBottom {
+    border-bottom: none;
+    padding-bottom: 0;
+    padding-top: 1em;
+    border-top: 1px solid #dee2e6;
+  }
 
 
   /* series results */
