@@ -23,5 +23,7 @@ en:
         access:
           more: "More..."
           more_restriction: "More about accessing and using these materials..."
+        containers:
+          see_all: "See all containers"
         sidebar:
           collection_title: "Collection"
