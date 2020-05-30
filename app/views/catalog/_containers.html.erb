@@ -6,6 +6,6 @@
   <% if document.containers.present? && !online_contents_context? %>
     <%= document.containers.join(', ') %>
   <% elsif document.children? && document.level != 'collection' %>
-    <%= t('dul_arclight.views.show.containers.see_all') %>
+    <%= link_to_document document, t('dul_arclight.views.show.containers.see_all') %>
   <% end %>
 <% end %>
