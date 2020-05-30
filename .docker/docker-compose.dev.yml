@@ -17,7 +17,6 @@ services:
   app:
     volumes:
       - ..:/opt/app-root
-      - ${FINDING_AID_DATA}:/data:ro
     ports:
       - "${RAILS_PORT}:3000"
 
@@ -30,14 +29,16 @@ services:
       - redis
     volumes:
       - ..:/opt/app-root
-      - ${FINDING_AID_DATA}:/data:ro
     environment:
       - RAILS_ENV
       - DATABASE_URL
+      - FINDING_AID_DATA
       - REDIS_URL
       - SOLR_URL
       - QUEUE=*
       - COUNT=2
+    healthcheck:
+      disable: true
     entrypoint:
       - wait-for-it
       - db:5432
@@ -56,7 +57,6 @@ services:
       - redis
     volumes:
       - ..:/opt/app-root
-      - ${FINDING_AID_DATA}:/data:ro
     environment:
       - RAILS_ENV
       - DATABASE_URL
