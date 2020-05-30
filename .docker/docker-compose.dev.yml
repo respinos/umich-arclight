@@ -47,3 +47,33 @@ services:
       - exec
       - rake
       - resque:workers
+
+  resque-web:
+    image: "${APP_IMAGE}"
+    ports:
+      - "8080:8080"
+    depends_on:
+      - redis
+    volumes:
+      - ..:/opt/app-root
+      - ${FINDING_AID_DATA}:/data:ro
+    environment:
+      - RAILS_ENV
+      - DATABASE_URL
+      - REDIS_URL
+      - SOLR_URL
+    healthcheck:
+      disable: true
+    entrypoint:
+      - wait-for-it
+      - redis:6379
+      - '--'
+    command:
+      - bundle
+      - exec
+      - resque-web
+      - '-p'
+      - '8080'
+      - '-r'
+      - redis:6379
+      - '-F'
