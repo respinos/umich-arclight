@@ -62,7 +62,7 @@ class SolrDocument
   # We'll use document.extent for the "extent badge", which excludes other physdec text.
   # beyond extent that we want to appear in collection/component show views.
   def extent
-    values = fetch('extent_ssm', []).map! do |value|
+    values = fetch('physdesc_tesim', []).map! do |value|
       correct_singular_value(value)
     end
     values.join(' &mdash; ').html_safe if values.present?

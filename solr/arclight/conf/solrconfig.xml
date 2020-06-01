@@ -201,6 +201,7 @@
          parent_ssim,
          parent_unittitles_ssm,
          places_ssim,
+         physdesc_tesim,
          physloc_tesim,
          phystech_tesim,
          processinfo_tesim,
