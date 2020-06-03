@@ -87,7 +87,7 @@ deploy_staging:
     - /^release-.*$/
     - /^hotfix-.*$/
 
-.deploy_production:
+deploy_production:
   extends: .deploy
   environment:
     name: production
