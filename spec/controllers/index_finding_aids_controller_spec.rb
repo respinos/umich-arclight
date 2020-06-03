@@ -14,7 +14,7 @@ RSpec.describe IndexFindingAidsController, type: :controller do
             'id' => 'da1560886d4f094c3e6c9ef40349f7d38b5d27d7',
             'added' => [],
             'modified' => ['ead/rubenstein/rushbenjaminandjulia.xml'],
-            'removed' => []
+            'removed' => ['ead/rubenstein/appleberrydilmus.xml']
           }
         ]
       }
@@ -40,6 +40,10 @@ RSpec.describe IndexFindingAidsController, type: :controller do
       expect(IndexFindingAidJob)
         .to receive(:perform_later)
         .with('spec/fixtures/ead/rubenstein/rushbenjaminandjulia.xml', 'rubenstein')
+        .and_call_original
+      expect(DeleteFindingAidJob)
+        .to receive(:perform_later)
+        .with('appleberrydilmus')
         .and_call_original
       request.headers['X-Gitlab-Token'] = token
       request.headers['X-Gitlab-Event'] = 'Push Hook'

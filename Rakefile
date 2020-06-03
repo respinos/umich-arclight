@@ -75,8 +75,7 @@ namespace :dul_arclight do
     raise 'Please specify your EAD slug, ex. EADID=<eadid>' unless ENV['EADID']
 
     puts "Deleting all documents from index with ead_ssi = #{ENV['EADID']}"
-    Blacklight.default_index.connection.delete_by_query("ead_ssi:#{ENV['EADID']}")
-    Blacklight.default_index.connection.commit
+    DeleteFindingAidJob.perform_now(ENV['EADID'])
     puts "Deleted #{ENV['EADID']}"
   end
 
