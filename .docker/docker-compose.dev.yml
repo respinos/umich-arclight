@@ -26,7 +26,9 @@ services:
   resque:
     image: "${APP_IMAGE}"
     depends_on:
+      - db
       - redis
+      - solr
     volumes:
       - ..:/opt/app-root
     environment:
@@ -35,10 +37,9 @@ services:
       - FINDING_AID_DATA
       - REDIS_URL
       - SOLR_URL
-      - QUEUE=*
-      - COUNT=2
     healthcheck:
       disable: true
+    stop_signal: SIGQUIT
     entrypoint:
       - wait-for-it
       - db:5432
@@ -47,7 +48,7 @@ services:
       - bundle
       - exec
       - rake
-      - resque:workers
+      - resque:pool
 
   resque-web:
     image: "${APP_IMAGE}"
