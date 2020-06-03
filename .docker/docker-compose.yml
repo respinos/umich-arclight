@@ -2,7 +2,7 @@ version: '3.7'
 
 networks:
   default:
-    name: "${COMPOSE_PROJECT_NAME}"
+    name: "arclight-${RAILS_ENV}"
 
 services:
   db:
@@ -19,11 +19,10 @@ services:
     depends_on:
       - db
       - solr
-    volumes:
-      - ../spec/fixtures:/data:ro
     environment:
       - RAILS_ENV
       - DATABASE_URL
+      - FINDING_AID_DATA
       - REDIS_URL
       - SOLR_URL
     entrypoint:

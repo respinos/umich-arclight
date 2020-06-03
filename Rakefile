@@ -35,7 +35,7 @@ namespace :seed do
   task samples: [:'arclight:destroy_index_docs'] do
     puts 'Seeding index with data from sample-ead directory...'
     # Identify the configured repos
-    repo_config.keys.map do |repository|
+    repo_config.keys.each do |repository|
       # Index a directory with a given repository ID that matches its filename
       system("DIR=./sample-ead/#{repository} REPOSITORY_ID=#{repository} rake arclight:index_dir")
     end
@@ -55,9 +55,9 @@ namespace :dul_arclight do
   task :reindex_all do
     puts 'Indexing all data from /data/ead directory...'
     # Identify the configured repos
-    repo_config.keys.map do |repository|
+    repo_config.keys.each do |repository|
       # Index a directory with a given repository ID that matches its filename
-      system("DIR=/data/ead/#{repository} REPOSITORY_ID=#{repository} rake arclight:index_dir")
+      system("DIR=#{ENV['FINDING_AID_DATA']}/#{repository} REPOSITORY_ID=#{repository} rake arclight:index_dir")
     end
   end
 
@@ -83,7 +83,8 @@ namespace :dul_arclight do
   # =========================================================================
   # UNSEEN indexing tasks: could be used in cases where one needs to resume a
   # long-running indexing command that has gotten interrupted.
-  # Might be just a stopgap until we can set up background job processing.
+  # TODO: Remove these tasks if the resque background job processing sufficiently
+  #       addresses these indexing needs.
   # =========================================================================
   desc 'Index a file but only if its slug is not already found in the index. Use FILE=<path/to/ead.xml> and REPOSITORY_ID=<myid>'
   # Modeled after:
@@ -101,7 +102,7 @@ namespace :dul_arclight do
     if num_found.zero?
       system('rake arclight:index')
     else
-      puts "Skipping #{doc_id} -- already indexed\n"
+      puts "Skipping #{doc_id} -- already indexed"
     end
   end
 
@@ -115,11 +116,11 @@ namespace :dul_arclight do
   end
 
   task :reindex_all_unseen do
-    puts 'Indexing all data from /data/ead directory...'
+    puts "Indexing all data from #{ENV['FINDING_AID_DATA']} directory..."
     # Identify the configured repos
-    repo_config.keys.map do |repository|
+    repo_config.keys.each do |repository|
       # Index a directory with a given repository ID that matches its filename
-      system("DIR=/data/ead/#{repository} REPOSITORY_ID=#{repository} rake dul_arclight:index_dir_unseen")
+      system("DIR=#{ENV['FINDING_AID_DATA']}/#{repository} REPOSITORY_ID=#{repository} rake dul_arclight:index_dir_unseen")
     end
   end
 end

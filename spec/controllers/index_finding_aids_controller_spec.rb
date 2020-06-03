@@ -39,7 +39,7 @@ RSpec.describe IndexFindingAidsController, type: :controller do
     specify do
       expect(IndexFindingAidJob)
         .to receive(:perform_later)
-        .with('/data/ead/rubenstein/rushbenjaminandjulia.xml', 'rubenstein')
+        .with('spec/fixtures/ead/rubenstein/rushbenjaminandjulia.xml', 'rubenstein')
         .and_call_original
       request.headers['X-Gitlab-Token'] = token
       request.headers['X-Gitlab-Event'] = 'Push Hook'

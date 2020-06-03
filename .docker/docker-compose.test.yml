@@ -1,6 +1,9 @@
 version: '3.7'
 
 services:
+  app:
+    volumes:
+      - ../spec/fixtures:/data:ro
   solr:
     volumes:
       - ../solr/arclight/conf:/solr_config:ro

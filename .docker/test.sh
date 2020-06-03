@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
-export COMPOSE_PROJECT_NAME=arclight-test
 export RAILS_ENV=test
+export FINDING_AID_DATA="spec/fixtures"
+export COMPOSE_PROJECT_NAME="dul-arclight-${RAILS_ENV}"
 
 if [[ "$@" =~ ^(-h|(--)?help)$ ]]; then
     cat <<EOF

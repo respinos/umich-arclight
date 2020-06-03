@@ -1,6 +1,8 @@
 require 'dul_arclight/errors'
 
 class IndexFindingAidJob < ApplicationJob
+  queue_as :index
+
   def perform(path, repo_id)
     env = { 'REPOSITORY_ID' => repo_id }
 
