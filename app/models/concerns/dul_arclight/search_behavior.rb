@@ -9,7 +9,12 @@ module DulArclight
   ##
   # Customized Search Behavior for DUL-Arclight
   module SearchBehavior
+    extend ActiveSupport::Concern
     extend Arclight::SearchBehavior
+
+    included do
+      self.default_processor_chain += [:add_solr_debug]
+    end
 
     ##
     # Override Blacklight's method so that some views don't add Solr facets into the request.
@@ -37,5 +42,17 @@ module DulArclight
       solr_params[:sort] = 'sort_ii asc' if %w[online_contents collection_context child_components].include? blacklight_params[:view]
       solr_params
     end
+
+    # Debug mode includes relevance score and Solr links when using ?debug=true
+    # Inspired by:
+    # https://github.com/trln/trln_argon/blob/master/lib/trln_argon/argon_search_builder/add_solr_debug_info.rb
+    def add_solr_debug(solr_params)
+      # NOTE: parent:[subquery] part is necessary for Group By collection queries.
+      #       The score is not returned by default in grouped queries
+      solr_params.merge!({ fl: '*,score,parent:[subquery]' }) if blacklight_params[:debug] == 'true'
+
+      solr_params
+    end
+
   end
 end
