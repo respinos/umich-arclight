@@ -125,6 +125,12 @@ class CatalogController < ApplicationController
                            helper_method: :ua_record_group_display,
                            partial: 'blacklight/hierarchy/facet_hierarchy'
 
+    config.add_facet_field 'has_online_content_ssim',
+                           label: 'Online Access',
+                           query: {
+                             online: { label: 'Online access', fq: 'has_online_content_ssim:true' }
+                           }
+
     config.facet_display = {
       hierarchy: {
         'ua_record_group' => [['ssim'], ':']
@@ -156,9 +162,8 @@ class CatalogController < ApplicationController
     config.add_index_field 'collection_ssm', label: 'Collection Title'
     config.add_index_field 'geogname_ssm', label: 'Place'
 
-    config.add_facet_field 'has_online_content_ssim', label: 'Online Access', query: {
-      online: { label: 'Online access', fq: 'has_online_content_ssim:true' }
-    }
+    # DEBUG fields displayed in search results when debug=true is present in the request.
+    config.add_index_field 'score'
 
     # solr fields to be displayed in the show (single result) view
     #   The ordering of the field names is the order of the display

@@ -20,6 +20,10 @@ class SolrDocument
     fetch('bibnum_ssim', [])
   end
 
+  def score
+    fetch('score', [])
+  end
+
   # DUL-specific language display logic: If there's at least one <langmaterial> with no
   # child <language>, use that/those. Fall back to using langmaterial/language values.
   def languages
