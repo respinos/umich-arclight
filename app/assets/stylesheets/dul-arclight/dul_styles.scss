@@ -1066,3 +1066,29 @@ body.blacklight-repositories-index {
 h1.modal-title {
   font-size: 2rem;
 }
+
+
+/* bookmarks */
+
+body.blacklight-bookmarks-index {
+  #content {
+
+    padding-top: 1rem;
+
+    #sortAndPerPage > div {
+      display: inline-block;
+    }
+
+    .bookmarksTools {
+
+      a {
+        border: 1px solid #ddd;
+      }
+
+      a:hover {
+        background-color: #eee;
+      }
+
+    }
+  }
+}
