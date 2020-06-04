@@ -1,6 +1,8 @@
 en:
   blacklight:
     application_name: 'Archives at Duke'
+    bookmarks:
+      disclaimer_html: '<strong>Please note:</strong> saved bookmarks may expire'
     branding:
       library_name: "Duke University Libraries"
       primary_html: "Archives"
@@ -15,3 +17,5 @@ en:
     search:
       bookmarks:
         label: "Bookmark:"
+    tools:
+      email: "Email Bookmarks"

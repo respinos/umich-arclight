@@ -213,6 +213,14 @@ Blacklight.onLoad(function () {
 
   }
 
+
+  /* ================================================ */
+  /* Add FA icons */
+  /* ================================================ */
+  
+   $( "#content #emailLink" ).html('<i class="fas fa-envelope"></i> Email Bookmarks');
+  
+
 });
 
 
