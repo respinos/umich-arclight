@@ -49,10 +49,9 @@ module DulArclight
     def add_solr_debug(solr_params)
       # NOTE: parent:[subquery] part is necessary for Group By collection queries.
       #       The score is not returned by default in grouped queries
-      solr_params.merge!({ fl: '*,score,parent:[subquery]' }) if blacklight_params[:debug] == 'true'
+      solr_params.merge!(fl: '*,score,parent:[subquery]') if blacklight_params[:debug] == 'true'
 
       solr_params
     end
-
   end
 end
