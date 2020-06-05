@@ -21,11 +21,11 @@ class IndexFindingAidsController < ApplicationController
 
   def enqueue_index_jobs
     adds_mods.each do |path|
-      if m = path.scan(COMMITTED_FILE_PATTERN).first
-        repo_id = m.first
-        full_path = File.join(DulArclight.finding_aid_data, path)
-        IndexFindingAidJob.perform_later(full_path, repo_id)
-      end
+      next unless m = path.scan(COMMITTED_FILE_PATTERN).first
+
+      repo_id = m.first
+      full_path = File.join(DulArclight.finding_aid_data, path)
+      IndexFindingAidJob.perform_later(full_path, repo_id)
     end
   end
 
@@ -60,16 +60,19 @@ class IndexFindingAidsController < ApplicationController
 
   def validate_push_event
     return if request.headers['X-Gitlab-Event'] == GITLAB_PUSH_EVENT
+
     head :forbidden
   end
 
   def validate_token
     return if request.headers['X-Gitlab-Token'] == DulArclight.gitlab_token
+
     head :unauthorized
   end
 
   def update_finding_aid_data
     return if system('git pull', chdir: DulArclight.finding_aid_data)
+
     head :internal_server_error
   end
 end
