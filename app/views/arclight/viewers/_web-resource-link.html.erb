@@ -1,3 +1,7 @@
-<%= link_to document.digital_objects.first.href, target: '_blank' do %>
-  <strong>View</strong>
-<% end %>
+<div>
+  <%= link_to obj.href, target: '_blank' do %>
+    <strong>View</strong>
+  <% end %>
+  <%= content_tag(:span, ['&mdash; ', obj.label].join.html_safe,
+                  { class: 'text-muted' }) if obj.label.present? %>
+</div>

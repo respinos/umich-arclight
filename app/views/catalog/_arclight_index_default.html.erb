@@ -5,6 +5,12 @@
 <%# Last checked for updates: ArcLight v0.3.2. %>
 
 <div class="al-search-result-index-article row d-flex align-items-start">
+  <% if display_debug_info? %>
+    <div class="badge badge-warning relevance-score">
+      <%= number_with_precision(document.score, precision: 2, delimiter: ',') %>
+    </div>
+  <% end %>
+
   <% counter = document_counter_with_offset(document_counter) %>
   <div class="col-auto">
     <%= render partial: 'arclight_document_header_icon', locals: { document: document }  %>
@@ -24,7 +30,7 @@
       <%= render_index_doc_actions document, wrapping_class: 'd-flex justify-content-end' %>
     </div>
 
-    <div class="order-2">
+    <div class="order-2 scope-wrapper">
       <%= content_tag('div', class: 'al-document-highlight highlight-snippets') do %>
         <%= document.highlights_without_title&.join('<br/>')&.html_safe %>
       <% end if document.highlights_without_title.present? %>

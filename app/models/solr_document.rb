@@ -20,6 +20,10 @@ class SolrDocument
     fetch('bibnum_ssim', [])
   end
 
+  def score
+    fetch('score', [])
+  end
+
   # DUL-specific language display logic: If there's at least one <langmaterial> with no
   # child <language>, use that/those. Fall back to using langmaterial/language values.
   def languages
@@ -50,11 +54,15 @@ class SolrDocument
     component? && (fetch('accessrestrict_tesim', []).present? || fetch('userestrict_tesim', []).present?)
   end
 
+  def total_component_count
+    first('total_component_count_isim') || 0
+  end
+
   # DUL override ArcLight core; we want all extent values, and to singularize e.g. 1 boxes.
   # We'll use document.extent for the "extent badge", which excludes other physdec text.
   # beyond extent that we want to appear in collection/component show views.
   def extent
-    values = fetch('extent_ssm', []).map! do |value|
+    values = fetch('physdesc_tesim', []).map! do |value|
       correct_singular_value(value)
     end
     values.join(' &mdash; ').html_safe if values.present?
@@ -93,6 +101,15 @@ class SolrDocument
     end
   end
 
+  def non_ddr_digital_objects
+    digital_objects.reject { |obj| ddr_url?(obj.href) }
+  end
+
+  # This count includes all descendant components' DAOs
+  def total_digital_object_count
+    first('total_digital_object_count_isim') || 0
+  end
+
   # Several DUL-Custom DAO methods to determine the nature of
   # digital objects on a component or collection in order to
   # render the respective link or inline viewer.
@@ -118,7 +135,7 @@ class SolrDocument
   # For now, a DDR digital object is determined by an href attribute
   # pointing to the idn.duke.edu domain.
   def ddr_dao_count
-    digital_objects.map { |obj| URI.parse(obj.href).host == 'idn.duke.edu' }.count
+    digital_objects.select { |obj| ddr_url?(obj.href) }.count
   rescue URI::InvalidURIError
     0
   end
@@ -141,6 +158,10 @@ class SolrDocument
   use_extension(Blacklight::Document::DublinCore)
 
   private
+
+  def ddr_url?(url)
+    URI.parse(url).host == 'idn.duke.edu'
+  end
 
   def stripped_snippets
     highlights&.map { |h| ActionController::Base.helpers.strip_tags(h).strip.squish }

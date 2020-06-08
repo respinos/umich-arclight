@@ -201,6 +201,7 @@
          parent_ssim,
          parent_unittitles_ssm,
          places_ssim,
+         physdesc_tesim,
          physloc_tesim,
          phystech_tesim,
          processinfo_tesim,
@@ -339,7 +340,8 @@
       <str name="indexPath">suggester_infix_dir</str>
       <str name="highlight">false</str>
       <str name="suggestAnalyzerFieldType">text</str>
-      <str name="buildOnCommit">true</str>
+      <!-- DUL CUSTOMIZATION: Build on optimize instead of commit -->
+      <str name="buildOnOptimize">true</str>
       <str name="field">suggest</str>
     </lst>
   </searchComponent>

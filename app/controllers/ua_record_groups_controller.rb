@@ -15,6 +15,8 @@ class UaRecordGroupsController < ApplicationController
     results = search_service.search(
       q: 'level_sim:Collection',
       'facet.field': 'ua_record_group_ssim',
+      # Facet limit default is 100; -1 shows unlimited facet values.
+      'f.ua_record_group_ssim.facet.limit': '-1',
       rows: 0
     )
     Hash[*results.facet_fields['ua_record_group_ssim']]

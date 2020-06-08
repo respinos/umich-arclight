@@ -17,7 +17,6 @@ services:
   app:
     volumes:
       - ..:/opt/app-root
-      - ${FINDING_AID_DATA}:/data:ro
     ports:
       - "${RAILS_PORT}:3000"
 
@@ -27,17 +26,20 @@ services:
   resque:
     image: "${APP_IMAGE}"
     depends_on:
+      - db
       - redis
+      - solr
     volumes:
       - ..:/opt/app-root
-      - ${FINDING_AID_DATA}:/data:ro
     environment:
       - RAILS_ENV
       - DATABASE_URL
+      - FINDING_AID_DATA
       - REDIS_URL
       - SOLR_URL
-      - QUEUE=*
-      - COUNT=2
+    healthcheck:
+      disable: true
+    stop_signal: SIGQUIT
     entrypoint:
       - wait-for-it
       - db:5432
@@ -46,4 +48,33 @@ services:
       - bundle
       - exec
       - rake
-      - resque:workers
+      - resque:pool
+
+  resque-web:
+    image: "${APP_IMAGE}"
+    ports:
+      - "8080:8080"
+    depends_on:
+      - redis
+    volumes:
+      - ..:/opt/app-root
+    environment:
+      - RAILS_ENV
+      - DATABASE_URL
+      - REDIS_URL
+      - SOLR_URL
+    healthcheck:
+      disable: true
+    entrypoint:
+      - wait-for-it
+      - redis:6379
+      - '--'
+    command:
+      - bundle
+      - exec
+      - resque-web
+      - '-p'
+      - '8080'
+      - '-r'
+      - redis:6379
+      - '-F'

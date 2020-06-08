@@ -1,0 +1,11 @@
+<%# Overrides ArcLight Core partial. %>
+<%# Last checked for updates: ArcLight v0.3.2. %>
+<%# https://github.com/projectblacklight/arclight/blob/master/app/views/catalog/_containers.html.erb %>
+
+<%= content_tag('div', class: 'al-document-container col text-muted') do %>
+  <% if document.containers.present? && !online_contents_context? %>
+    <%= document.containers.join(', ') %>
+  <% elsif document.children? && document.level != 'collection' %>
+    <%= link_to_document document, t('dul_arclight.views.show.containers.see_all') %>
+  <% end %>
+<% end %>

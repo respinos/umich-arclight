@@ -73,9 +73,10 @@ class CatalogController < ApplicationController
     config.add_results_collection_tool(:per_page_widget)
     config.add_results_collection_tool(:view_type_group)
 
+    config.add_show_tools_partial(:bookmark, partial: 'bookmark_control', if: :render_bookmarks_control?)
+    config.add_show_tools_partial(:email, callback: :email_action, validator: :validate_email_params)
+
     # DUL Customization: Remove Show Tools
-    # config.add_show_tools_partial(:bookmark, partial: 'bookmark_control', if: :render_bookmarks_control?)
-    # config.add_show_tools_partial(:email, callback: :email_action, validator: :validate_email_params)
     # config.add_show_tools_partial(:sms, if: :render_sms_action?, callback: :sms_action, validator: :validate_sms_params)
     # config.add_show_tools_partial(:citation)
 
@@ -118,11 +119,17 @@ class CatalogController < ApplicationController
     config.add_facet_field 'access_subjects_ssim', label: 'Subject', limit: 10
     config.add_facet_field 'formats_ssim', label: 'Format', limit: 10
 
-    # DUL CUSTOMIZATION: Add UA Record Group hierarchical facet
+    # DUL CUSTOMIZATION: Add UA Record Group hierarchical facet.
     config.add_facet_field 'ua_record_group_ssim',
                            label: 'University Archives Record Group',
                            helper_method: :ua_record_group_display,
                            partial: 'blacklight/hierarchy/facet_hierarchy'
+
+    config.add_facet_field 'has_online_content_ssim',
+                           label: 'Online Access',
+                           query: {
+                             online: { label: 'Online access', fq: 'has_online_content_ssim:true' }
+                           }
 
     config.facet_display = {
       hierarchy: {
@@ -155,9 +162,8 @@ class CatalogController < ApplicationController
     config.add_index_field 'collection_ssm', label: 'Collection Title'
     config.add_index_field 'geogname_ssm', label: 'Place'
 
-    config.add_facet_field 'has_online_content_ssim', label: 'Online Access', query: {
-      online: { label: 'Online access', fq: 'has_online_content_ssim:true' }
-    }
+    # DEBUG fields displayed in search results when debug=true is present in the request.
+    config.add_index_field 'score'
 
     # solr fields to be displayed in the show (single result) view
     #   The ordering of the field names is the order of the display
@@ -220,8 +226,8 @@ class CatalogController < ApplicationController
     config.add_search_field 'format', label: 'Format' do |field|
       field.qt = 'search'
       field.solr_parameters = {
-        qf:  '${qf_format}',
-        pf:  '${pf_format}'
+        qf: '${qf_format}',
+        pf: '${pf_format}'
       }
     end
 
@@ -270,6 +276,7 @@ class CatalogController < ApplicationController
     ##
     # Configuration for index actions
     config.index.document_actions << :containers
+    config.index.document_actions << :restricted_component_badge
     config.index.document_actions << :online_content_label
     config.add_results_document_tool :arclight_bookmark_control, partial: 'arclight_bookmark_control'
     config.index.document_actions.delete(:bookmark)
@@ -326,6 +333,8 @@ class CatalogController < ApplicationController
                                           if: lambda { |_context, _field_config, document|
                                                 document.languages.present?
                                               }
+
+    config.add_summary_field 'collection_unitid_ssm', label: 'Collection ID'
 
     config.add_summary_field 'ua_record_group_ssim', label: 'University Archives Record Group',
                                                      helper_method: :link_to_ua_record_group_facet, separator_options: {
@@ -490,10 +499,11 @@ class CatalogController < ApplicationController
     # Collection and Component Show Page Access Tab - How to Cite Section
     config.add_cite_field 'prefercite_tesim', label: 'Preferred Citation', helper_method: :render_html_tags
 
+    # DUL CUSTOMIZATION: turn bookmark controls back on
     # Remove unused show document actions
-    %i[citation email sms].each do |action|
-      config.view_config(:show).document_actions.delete(action)
-    end
+    # %i[citation email sms].each do |action|
+    #   config.view_config(:show).document_actions.delete(action)
+    # end
 
     # Insert the breadcrumbs at the beginning
     # config.show.partials.unshift(:show_upper_metadata)

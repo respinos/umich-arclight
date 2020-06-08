@@ -32,4 +32,9 @@ module DulArclightHelper
       aria_hidden_breadcrumb_separator
     )
   end
+
+  # Generate a link to a catalog record using the Aleph ID
+  def catalog_item_url(bibnum)
+    ['https://find.library.duke.edu/catalog/DUKE', bibnum].join
+  end
 end

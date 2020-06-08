@@ -1,54 +1,74 @@
 image_list:
   1:
-    caption_html: Image of an owl from John James Audubon's Birds of America
-    image_url: https://library.duke.edu/sites/default/files/rubenstein/panels/banner-1.jpg
+    caption_html: |
+      1981-82 poster from <a href="/catalog/uamensbasketballposters_aspace_ref62_pnw">
+      Men's Basketball Poster Collection</a>
+    image: dbpst001001.jpg
   2:
-    caption_html: A manuscript from somewhere
-    image_url: https://library.duke.edu/sites/default/files/rubenstein/panels/banner-2.jpg
+    caption_html: |
+      Duke Chapel window from <a href="/catalog/uaduchapelill_aspace_e08929103acb6a3679d7b7590c0b98fc">
+      Duke Chapel Illuminated photographs</a>
+    image: dcist001008001.jpg
   3:
-    caption_html: A woodcut
-    image_url: https://library.duke.edu/sites/default/files/rubenstein/panels/banner-3.jpg
+    caption_html: |
+      East Campus, 1925 from <a href="/catalog/uapropplat_aspace_ref13_vib">
+      Duke Property Plats</a>
+    image: dppsi010010100.jpg
   4:
-    caption_html: Example caption <a href="#">with a link to somewhere</a>
-    image_url: https://library.duke.edu/sites/default/files/rubenstein/panels/banner-4.jpg
+    caption_html: |
+      Scrapbook of tobacco trading cards, <a href="/catalog/dukeandsons_aspace_ref79_zil">
+      W. Duke, Sons & Co. Advertising Materials</a>
+    image: dscsi070010230.jpg
   5:
-    caption_html: Image from the <a href="/catalog/uaallenbldg">Allen building takeover collection</a>
-    image_url: https://library.duke.edu/sites/default/files/rubenstein/panels/banner-5.jpg
+    caption_html: |
+      Child in Tiger Costume, from the <a href="/catalog/gamblesidney">Sidney D. Gamble
+      Photographs</a>
+    image: gamble_258A_1474.jpg
   6:
-    caption_html: Example caption
-    image_url: https://library.duke.edu/sites/default/files/rubenstein/panels/banner-6.jpg
+    caption_html: |
+      Photograph N318, from <a href="catalog/mangumhugh_aspace_ref31_lhf">Hugh Mangum
+      Photographs</a>
+    image: hmpgp123180000.jpg
   7:
     caption_html: |
-      Prosthetic glass eyeballs from <a href="/catalog/homartifacts_aspace_ref1241_u4n">History of Medicine
-      artifacts collection</a>
-    image_url: https://library.duke.edu/sites/default/files/rubenstein/panels/banner-7.jpg
+      Prosthetic glass eyeballs from <a href="/catalog/homartifacts_aspace_ref1241_u4n">
+      History of Medicine Artifacts Collection</a>
+    image: homst03008001.jpg
   8:
-    caption_html: TV0597 from Ad*Access
-    image_url: https://library.duke.edu/sites/default/files/rubenstein/panels/banner-8.jpg
+    caption_html: |
+      Passive resistance training, SNCC from <a href="/catalog/karalesjames_aspace_ref410_pdt">
+      James H. Karales photographs</a>
+    image: kfpst0030060010.jpg
   9:
-    caption_html: I'm Batman
-    image_url: https://library.duke.edu/sites/default/files/rubenstein/panels/banner-9.jpg
+    caption_html: |
+      Alix Shulman holding poster, Miss America protest, Atlantic City, 1968, from the
+      <a href="/catalog/shulmanalix">Alix Kates Shulman Papers</a>
+    image: maddc070610010.jpg
   10:
-    caption_html:  Example caption
-    image_url: https://library.duke.edu/sites/default/files/rubenstein/panels/banner-10.jpg
+    caption_html: |
+      Freedom Trash Can, Miss America protest, Atlantic City, 1968, from the
+      <a href="/catalog/shulmanalix">Alix Kates Shulman Papers</a>
+    image: maddc070630010.jpg
   11:
-    caption_html:  Example caption
-    image_url: https://library.duke.edu/sites/default/files/rubenstein/panels/banner-11.jpg
+    caption_html: |
+      Michael Jordan hits head on backboard in Cameron Indoor Stadium (1983),
+      from <a href="/catalog/uamensbballfilms_aspace_8fcf9ac7f214cc32dc0d23d4329f7c76">
+      Men's Basketball Game Film collection</a>
+    image: r4sx68b8f.jpg
   12:
-    caption_html:  Example caption
-    image_url: https://library.duke.edu/sites/default/files/rubenstein/panels/banner-12.jpg
+    caption_html: |
+      Watercolor sketches, 1906-1907, in the
+      <a href="/catalog/stewartharrietsanderson_aspace_ref14_5db">
+      Harriet Sanderson Stewart Diaries</a>
+    image: wtddy100043130.jpg
   13:
-    caption_html: "Ignatius Sancho: an African man of letters"
-    image_url: https://library.duke.edu/sites/default/files/rubenstein/panels/banner-13.jpg
+    caption_html: |
+      Mountaineering, optical lantern transparency from
+      <a href="/catalog/womantheworldover_aspace_14792452e1b28986b7ca542c95e29990">
+      Woman: The World Over</a>
+    image: wwost001028001.jpg
   14:
-    caption_html:  Example caption
-    image_url: https://library.duke.edu/sites/default/files/rubenstein/panels/banner-14.jpg
-  15:
-    caption_html:  Example caption
-    image_url: https://library.duke.edu/sites/default/files/rubenstein/panels/banner-15.jpg
-  16:
-    caption_html: Viriginia Woolf's writing desk
-    image_url: https://library.duke.edu/sites/default/files/rubenstein/panels/banner-16.jpg
-  17:
-    caption_html:  Example caption
-    image_url: https://library.duke.edu/sites/default/files/rubenstein/panels/banner-17.jpg
+    caption_html: |
+      Kool Cigarettes Billboard, from the <a href="/catalog/rcmaxwellco_aspace_ref625_fw8">
+      R.C. Maxwell Company Records</a>
+    image: XXX4740.jpg

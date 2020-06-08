@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ead xmlns="urn:isbn:1-931666-22-9" xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="urn:isbn:1-931666-22-9 http://www.loc.gov/ead/ead.xsd">
+  <eadheader countryencoding="iso3166-1" dateencoding="iso8601" findaidstatus="published"
+    langencoding="iso639-2b" repositoryencoding="iso15511">
+    <eadid url="http://library.duke.edu/rubenstein/findingaids/daotest/"
+      >daotest</eadid>
+    <filedesc>
+      <titlestmt>
+        <titleproper>Guide to the Digital Objects Testing Papers, 1810-1927, bulk 1850-1896
+            <num>DAO.12345</num>
+        </titleproper>
+        <author>Nobody</author>
+      </titlestmt>
+      <publicationstmt>
+        <publisher>David M. Rubenstein Rare Book &amp; Manuscript Library</publisher>
+        <address>
+          <addressline>103 Perkins Library, Duke University</addressline>
+          <addressline>Durham 27708-0185</addressline>
+          <addressline>919-660-5822</addressline>
+          <addressline>special-collections@duke.edu</addressline>
+          <addressline>URL: <extptr xlink:href="http://library.duke.edu/rubenstein/"
+              xlink:show="new" xlink:title="http://library.duke.edu/rubenstein/"
+              xlink:type="simple"/>
+          </addressline>
+        </address>
+      </publicationstmt>
+    </filedesc>
+  </eadheader>
+  <archdesc level="collection">
+    <did>
+      <langmaterial>
+        <language langcode="eng">English</language>
+      </langmaterial>
+      <repository>
+        <corpname>David M. Rubenstein Rare Book &amp; Manuscript Library</corpname>
+      </repository>
+      <unittitle>DAO Testing Papers</unittitle>
+      <origination label="creator">
+        <persname rules="dacs" source="naf">Last, First</persname>
+      </origination>
+      <unitid>DAO.12345</unitid>
+      <physdesc altrender="whole">
+        <extent altrender="materialtype spaceoccupied">2.5 Linear Feet</extent>
+        <extent altrender="carrier">5 boxes, 1,750 items</extent>
+      </physdesc>
+      <unitdate normal="1850/1896" type="inclusive">1810-1927, bulk 1850-1896</unitdate>
+      <abstract id="aspace_test423c4102f9846cdea6dfb2a1d1704f7f">An example test fixture with many kinds of digital objects.</abstract>
+      <langmaterial id="aspace_test9e4139e5ced772102b34714da420cc81">Materials in
+        English</langmaterial>
+      <physloc id="aspace_test85d519d924695c29d9c6be231dcaf084">For current information on the
+        location of these materials, please consult the Library's online catalog.</physloc>
+    </did>
+    <accessrestrict id="aspace_test158f9e8c2b15a99aaff240cdb14c62b2">
+      <head>Access Restrictions</head>
+      <p>Collection is open for research.</p>
+    </accessrestrict>
+    <scopecontent id="aspace_testc2114d8c9306537f82cb74e3d5b568a7">
+      <head>Collection Overview</head>
+      <p>This is a made-up collection fixture for testing that contains several example digital objects.</p>
+    </scopecontent>
+    <dsc>
+      <c01 id="aspace_testdaoseries1" level="series">
+        <did>
+          <unittitle>Single DAO on a Component</unittitle>
+        </did>
+        <c02 id="aspace_testdao01" level="file">
+          <did>
+            <unittitle>DDR Image (image-service)</unittitle>
+            <dao xlink:actuate="onRequest"
+                 xlink:href="https://idn.duke.edu/ark:/87924/r49z75"
+                 xlink:role="image-service"
+                 xlink:show="new"
+                 xlink:title="John Quincy Adams (St. Petersburg, Russia) letter to Benjamin Rush (Philadelphia), 1811 January 11"
+                 xpointer="ark:/87924/r49z75"/>
+          </did>
+        </c02>
+        <c02 id="aspace_testdao02" level="file">
+          <did>
+            <unittitle>DDR Video (video-streaming)</unittitle>
+            <dao xlink:actuate="onRequest"
+                 xlink:href="https://idn.duke.edu/ark:/87924/r4h991t4b"
+                 xlink:role="video-streaming"
+                 xlink:show="new"
+                 xlink:title="Scenes from Albany, GA"
+                 xpointer="ark:/87924/r4h991t4b"/>
+          </did>
+        </c02>
+        <c02 id="aspace_testdao03" level="file">
+          <did>
+            <unittitle>DDR Audio (audio-streaming)</unittitle>
+            <dao xlink:actuate="onRequest"
+                 xlink:href="https://idn.duke.edu/ark:/87924/r4j962q52" 
+                 xlink:role="audio-streaming"
+                 xlink:show="new"
+                 xlink:title="Family audio correspondence"
+                 xpointer="ark:/87924/r4j962q52"/>
+          </did>
+        </c02>
+        <c02 id="aspace_testdao04" level="file">
+          <did>
+            <unittitle>Web Archive (web-archive)</unittitle>
+            <dao xlink:actuate="onRequest"
+                 xlink:href="https://wayback.archive-it.org/2930/*/http://acluofnc.org"
+                 xlink:role="web-archive"
+                 xlink:show="new"
+                 xlink:title="ACLU of North Carolina website"
+                 xpointer="RL00012-WEB-0001"/>
+          </did>
+        </c02>
+        <c02 id="aspace_testdao05" level="file">
+          <did>
+            <unittitle>Web Resource Link (web-resource-link)</unittitle>
+            <dao actuate="onRequest"
+                 href="https://blogs.library.duke.edu"
+                 role="web-resouce-link"
+                 show="new"
+                 title="A test title of a web-resource-link DAO" />
+          </did>
+        </c02>
+        <c02 id="aspace_testdao06" level="file">
+          <did>
+            <unittitle>Generic DAO (general or missing role)</unittitle>
+            <dao actuate="onRequest"
+                 href="https://library.duke.edu"
+                 show="new"
+                 title="A test title of a generic DAO" />
+          </did>
+        </c02>
+      </c01>
+      <c01 id="aspace_testdaoseries2" level="series">
+        <did>
+          <unittitle>Multiple DAOs on a Component</unittitle>
+        </did>
+        <c02 id="aspace_testdao10" level="file">
+          <did>
+          <unittitle>Multiple Web Archive (web-archive) links</unittitle>
+          <dao actuate="onRequest"
+               href="http://wayback.archive-it.org/1858/*/http://web.duke.edu/"
+               role="web-archive"
+               show="new"
+               title="Duke University Web Directory 1"
+               xpointer="UA.01.15.0014.ref7.1"/>
+          <dao actuate="onRequest"
+            href="http://wayback.archive-it.org/1858/*/http://www.duke.edu/web/"
+            role="web-archive"
+            show="new"
+            title="Duke University Web Directory 2"
+            xpointer="UA.01.15.0014.ref7.1"/>
+          <dao actuate="onRequest"
+               href="http://wayback.archive-it.org/1858/*/http://web.duke.edu/index.html"
+               role="web-archive"
+               show="new"
+               title="Duke University Web Directory 3"
+               xpointer="UA.01.15.0014.ref7.1"/>
+          </did>
+        </c02>
+        <c02 id="aspace_testdao11" level="file">
+          <did>
+          <unittitle>Multiple DDR Image (image-service) DAOs</unittitle>
+          <dao xlink:actuate="onRequest"
+               xlink:href="https://idn.duke.edu/ark:/87924/r3222rb2d"
+               xlink:role="image-service"
+               xlink:show="new"
+               xlink:title="Correspondence, 1823-1835, letter 1"
+               xpointer="ark:/87924/r3222rb2d"/>
+          <dao xlink:actuate="onRequest"
+               xlink:href="https://idn.duke.edu/ark:/87924/r3xg9fh2g"
+               xlink:role="image-service"
+               xlink:show="new"
+               xlink:title="Correspondence, 1823-1835, letter 2"
+               xpointer="ark:/87924/r3xg9fh2g"/>
+          </did>
+        </c02>
+        <c02 id="aspace_testdao12" level="file">
+          <did>
+          <unittitle>One DDR DAO plus a non-DDR DAO</unittitle>
+          <dao xlink:actuate="onRequest"
+               xlink:href="https://idn.duke.edu/ark:/87924/r4j962q52" 
+               xlink:role="audio-streaming"
+               xlink:show="new"
+               xlink:title="Family audio correspondence"
+               xpointer="ark:/87924/r4j962q52"/>
+          <dao actuate="onRequest"
+               href="https://library.duke.edu"
+               show="new"
+               title="A test title of a generic DAO" />
+          </did>
+        </c02>
+        <c02 id="aspace_testdao13" level="file">
+          <did>
+          <unittitle>Mix of Multiple DDR DAOs and Non-DDR DAOs</unittitle>
+          <dao xlink:actuate="onRequest"
+               xlink:href="https://idn.duke.edu/ark:/87924/r3280546x"
+               xlink:role="image-service"
+               xlink:show="new"
+               xlink:title="Correspondence, 1823-1835, letter 3"
+               xpointer="ark:/87924/r3280546x"/>
+          <dao xlink:actuate="onRequest"
+               xlink:href="https://idn.duke.edu/ark:/87924/r4h991t4b"
+               xlink:role="video-streaming"
+               xlink:show="new"
+               xlink:title="Scenes from Albany, GA movement, includes activist meetings and protests downtown"
+               xpointer="ark:/87924/r4h991t4b"/>
+          <dao actuate="onRequest"
+               href="https://library.duke.edu"
+               show="new"
+               title="A test title of a generic DAO" />
+          </did>
+        </c02>
+      </c01>
+    </dsc>
+  </archdesc>
+</ead>
