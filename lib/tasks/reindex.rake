@@ -16,7 +16,7 @@ namespace :dul_arclight do
     repo_config.keys.each do |repo_id|
       puts repo_id
 
-      Dir.glob(File.join(DulArclight.finding_aid_data, repo_id, '*.xml')) do |path|
+      Dir.glob(File.join(DulArclight.finding_aid_data, 'ead', repo_id, '*.xml')) do |path|
         puts path
         IndexFindingAidJob.perform_later(path, repo_id)
       end
