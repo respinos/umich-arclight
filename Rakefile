@@ -37,34 +37,38 @@ namespace :seed do
     # Identify the configured repos
     repo_config.keys.each do |repository|
       # Index a directory with a given repository ID that matches its filename
-      system("DIR=./sample-ead/#{repository} REPOSITORY_ID=#{repository} rake arclight:index_dir")
+      system("DIR=./sample-ead/ead/#{repository} REPOSITORY_ID=#{repository} rake arclight:index_dir")
     end
   end
 end
 
 namespace :dul_arclight do
-  # =========================================================================
+  # =============================================================================
   # FULL REINDEXING TASKS: process all of the finding aids
-  # =========================================================================
+  # NOTE: These tasks pre-date our use of resque for indexing.
+  #       See dul_arclight:reindex_everything
+  # TODO: Remove these tasks if the resque background job processing sufficiently
+  #       addresses these indexing needs.
+  # =============================================================================
 
-  desc 'Full reindex of all EAD data (In /data/ead/*)'
+  desc 'Full reindex of all EAD data from configured data directory for this environment'
   # NOTE: this will remove any deleted components from
   # the index but will NOT remove any deleted collections
   # (EAD files).
   # =====================================================
   task :reindex_all do
-    puts 'Indexing all data from /data/ead directory...'
+    puts "Indexing all data from #{ENV['FINDING_AID_DATA']}"
     # Identify the configured repos
     repo_config.keys.each do |repository|
       # Index a directory with a given repository ID that matches its filename
-      system("DIR=#{ENV['FINDING_AID_DATA']}/#{repository} REPOSITORY_ID=#{repository} rake arclight:index_dir")
+      system("DIR=#{ENV['FINDING_AID_DATA']}/ead/#{repository} REPOSITORY_ID=#{repository} rake arclight:index_dir")
     end
   end
 
-  desc 'Full destroy and reindex of all EAD data (In /data/*)'
+  desc 'Full destroy and reindex of all EAD data from configured data directory for this environment'
   # NOTE: this erases all index data before reindexing.
   task reindex_full_rebuild: %i[arclight:destroy_index_docs dul_arclight:reindex_all] do
-    puts 'Index has been destroyed and rebuilt from /data directory.'
+    puts "Index has been destroyed and rebuilt from #{ENV['FINDING_AID_DATA']}."
   end
 
   # =========================================================================
@@ -82,6 +86,8 @@ namespace :dul_arclight do
   # =========================================================================
   # UNSEEN indexing tasks: could be used in cases where one needs to resume a
   # long-running indexing command that has gotten interrupted.
+  # NOTE: These tasks pre-date our use of resque for indexing.
+  #       See dul_arclight:reindex_everything
   # TODO: Remove these tasks if the resque background job processing sufficiently
   #       addresses these indexing needs.
   # =========================================================================
@@ -119,7 +125,7 @@ namespace :dul_arclight do
     # Identify the configured repos
     repo_config.keys.each do |repository|
       # Index a directory with a given repository ID that matches its filename
-      system("DIR=#{ENV['FINDING_AID_DATA']}/#{repository} REPOSITORY_ID=#{repository} rake dul_arclight:index_dir_unseen")
+      system("DIR=#{ENV['FINDING_AID_DATA']}/ead/#{repository} REPOSITORY_ID=#{repository} rake dul_arclight:index_dir_unseen")
     end
   end
 end
