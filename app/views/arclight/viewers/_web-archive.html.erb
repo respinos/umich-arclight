@@ -1,6 +1,6 @@
 <div>
   <%= link_to obj.href, target: '_blank' do %>
-    <strong>View</strong>
+    <strong>View Web Archive</strong>
   <% end %>
   <%= content_tag(:span, ['&mdash; ', obj.label].join.html_safe,
                   { class: 'text-muted' }) if obj.label.present? %>

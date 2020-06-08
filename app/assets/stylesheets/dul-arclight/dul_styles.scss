@@ -180,6 +180,7 @@ a {
   color: $gray;
   border-top: 1px dotted shade($gray-lighter, 5%);
   padding-top: 1rem;
+  margin-top: 1rem;
 
   #summary & {
     border-top: 3px solid lighten($gray-light, 5%);
