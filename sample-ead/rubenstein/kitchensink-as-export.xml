@@ -26,8 +26,8 @@
           <addressline>Duke University</addressline>
           <addressline>Durham 27708</addressline>
           <addressline>special-collections@duke.edu</addressline>
-          <addressline>URL: <extptr xlink:href="http://library.duke.edu/rubenstein/"
-              xlink:show="new" xlink:title="http://library.duke.edu/rubenstein/" xlink:type="simple"
+          <addressline>URL: <extptr href="http://library.duke.edu/rubenstein/"
+              show="new" title="http://library.duke.edu/rubenstein/" type="simple"
             /></addressline>
         </address>
       </publicationstmt>
@@ -104,10 +104,15 @@
         parent="aspace_2da3b769dee914e6183d02d58648d36b" type="Folder"
         >1-collection-level-instance-do-we-even-do-this?</container>
     </did>
-    <dao xlink:actuate="onRequest" xlink:href="DigitalObjectID|||" xlink:role="undefined"
-      xlink:show="new"
-      xlink:title="Title (i.e. Everything but the kitchen sink, unitttitle): A Collection-level DAO |||"
-      xpointer="d13a0bf5-a766-4ae6-8b73-27267bfd5057"/>
+    <dao xlink:actuate="onRequest" xlink:href="https://idn.duke.edu/ark:/87924/r3qb9vd2v"
+      xlink:role="image-service" xlink:show="new"
+      xlink:title="Correspondence, 1837, letter 77" xpointer="ark:/87924/r3qb9vd2v"/>
+    <dao xlink:actuate="onRequest" xlink:href="https://idn.duke.edu/ark:/87924/r37w67c20"
+      xlink:role="image-service" xlink:show="new"
+      xlink:title="Correspondence, 1837, letter 78" xpointer="ark:/87924/r37w67c20"/>
+    <dao actuate="onRequest" href="https://library.duke.edu" role="undefined"
+      show="new"
+      title="A test generic DAO that is one of several on a component along with multi DDR DAOs" />
     <separatedmaterial id="aspace_ref18">
       <head>Separated Materials label |||</head>
       <p>Separated Materials note content 1st note in "Notes, etc" tab, umpteenth note added, but
@@ -603,7 +608,7 @@
             <container id="aspace_57bec386dc18378d25e4df3ba4933404"
               parent="aspace_161e60cd7c0381f034b6ad0d68d53853" type="image"
               >123456789987654321-alphanumeric-long-ass-child-container-indicator</container>
-            <dao xlink:actuate="onRequest" xlink:href="http://wayback.archive-it.org/1858/*/http://polisci.duke.edu/" xlink:role="web-resource-link" xlink:show="new" xlink:title="Department of Political Science" xpointer="UA.01.15.0014.ref61.1"/>
+            <dao actuate="onRequest" href="http://wayback.archive-it.org/1858/*/http://polisci.duke.edu/" role="web-resource-link" show="new" xlink:title="Department of Political Science" xpointer="UA.01.15.0014.ref61.1"/>
           </did>
           <accruals id="aspace_ref93">
             <head>Accruals note</head>
@@ -807,6 +812,19 @@
             <unitdate normal="1890/1890" type="inclusive">[1890?]</unitdate>
             <container id="aspace_86da677edb3bff004553b000325e4c09" label="mixed materials"
               type="Box-folder">1.8</container>
+            <dao xlink:actuate="onRequest"
+                          xlink:href="https://wayback.archive-it.org/2930/*/http://acluofnc.org"
+                          xlink:role="web-archive" xlink:show="new" xlink:title="ACLU of North Carolina website"
+                          xpointer="RL00012-WEB-0001"/>
+          </did>
+        </c02>
+        <c02 id="aspace_ref7_78w" level="file">
+          <did>
+            <unittitle>Duke University Web Directory</unittitle>
+            <unitdate>2011-ongoing</unitdate>
+            <dao actuate="onRequest" href="http://wayback.archive-it.org/1858/*/http://web.duke.edu/" role="web-archive" show="new" title="Duke University Web Directory" xpointer="UA.01.15.0014.ref7.1"/>
+            <dao actuate="onRequest" href="http://wayback.archive-it.org/1858/*/http://www.duke.edu/web/" role="web-archive" show="new" title="Duke University Web Directory" xpointer="UA.01.15.0014.ref7.1"/>
+            <dao actuate="onRequest" href="http://wayback.archive-it.org/1858/*/http://web.duke.edu/index.html" role="web-archive" show="new" title="Duke University Web Directory" xpointer="UA.01.15.0014.ref7.1"/>
           </did>
         </c02>
       </c01>
@@ -1342,6 +1360,15 @@
                   type="Box">2</container>
                 <container id="aspace_824e1deb1f8d991c5829778ee491ca37"
                   parent="aspace_4a25f6530ee1cdf26d0d45328a5d27ca" type="Folder">2-3</container>
+                  <dao xlink:actuate="onRequest" xlink:href="https://idn.duke.edu/ark:/87924/r3qb9vd2v"
+                    xlink:role="image-service" xlink:show="new"
+                    xlink:title="Correspondence, 1837, letter 77" xpointer="ark:/87924/r3qb9vd2v"/>
+                  <dao xlink:actuate="onRequest" xlink:href="https://idn.duke.edu/ark:/87924/r37w67c20"
+                    xlink:role="image-service" xlink:show="new"
+                    xlink:title="Correspondence, 1837, letter 78" xpointer="ark:/87924/r37w67c20"/>
+                  <dao actuate="onRequest" href="https://library.duke.edu" role="undefined"
+                    show="new"
+                    title="A test generic DAO that is one of several on a component along with multi DDR DAOs" />
               </did>
             </c04>
           </c03>
@@ -1352,6 +1379,9 @@
           <unittitle>ELIZABETH BLODGETT AND LIVINGSTON HALL</unittitle>
           <unitid>Series I</unitid>
           <unitdate normal="1823/2006" type="inclusive">1823-2006</unitdate>
+          <dao actuate="onRequest" href="https://library.duke.edu" role="undefined"
+            show="new"
+            title="A test title of a generic DAO" />
         </did>
         <odd id="aspace_ref241">
           <head>Storage Units Summary</head>

@@ -101,6 +101,10 @@ class SolrDocument
     end
   end
 
+  def non_ddr_digital_objects
+    digital_objects.reject { |obj| ddr_url?(obj.href) }
+  end
+
   # This count includes all descendant components' DAOs
   def total_digital_object_count
     first('total_digital_object_count_isim') || 0
@@ -131,7 +135,7 @@ class SolrDocument
   # For now, a DDR digital object is determined by an href attribute
   # pointing to the idn.duke.edu domain.
   def ddr_dao_count
-    digital_objects.map { |obj| URI.parse(obj.href).host == 'idn.duke.edu' }.count
+    digital_objects.select { |obj| ddr_url?(obj.href) }.count
   rescue URI::InvalidURIError
     0
   end
@@ -154,6 +158,10 @@ class SolrDocument
   use_extension(Blacklight::Document::DublinCore)
 
   private
+
+  def ddr_url?(url)
+    URI.parse(url).host == 'idn.duke.edu'
+  end
 
   def stripped_snippets
     highlights&.map { |h| ActionController::Base.helpers.strip_tags(h).strip.squish }

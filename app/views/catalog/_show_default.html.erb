@@ -208,28 +208,21 @@
   <%# DAOs on This Level (Not Descendants) %>
   <%# ==================================== %>
 
-  <%# TODO: account for the possibility of a mix of DDR & non-DDR DAOs present %>
-  <%# on the same component. %>
-  <%# TODO: Apply this logic for top (collection) level DAOs as well. %>
-
   <div class='row'>
     <div class='col-md-12'>
       <h2><%= t('arclight.views.show.online_content') %> <span class="media-body al-online-content-icon" aria-hidden="true" data-toggle="tooltip" title="<%= t('dul_arclight.tooltips.online') %>"><%= blacklight_icon :online %></span></h2>
 
-      <%# Single DAO with DUL specific role: render respective DUL viewer %>
-      <% if ['audio-streaming', 'image-service', 'video-streaming',
-              'web-resource-link'].include? document.dao_single_role %>
-        <%= render partial: ['arclight/viewers/', document.dao_single_role].join,
-              locals: { document: @document } %>
-
-      <%# Multiple DAOs pointing to DDR links: render a link to DDR search %>
-      <% elsif document.multiple_ddr_daos? %>
+      <% if document.multiple_ddr_daos? %>
         <%= render partial: 'arclight/viewers/multi-ddr-link', locals: { document: @document } %>
-
-      <%# Fall back to default ArcLight core DAO viewer %>
+        <% document.non_ddr_digital_objects.each do |obj| %>
+          <%= render_object_viewer(obj) %>
+        <% end %>
       <% else %>
-        <%= render_document_partial(document, 'arclight_viewer') %>
+        <% document.digital_objects.each do |obj| %>
+          <%= render_object_viewer(obj) %>
+        <% end %>
       <% end %>
+
     </div>
   </div>
 <% end %>
