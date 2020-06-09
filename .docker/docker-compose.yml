@@ -23,6 +23,8 @@ services:
       - RAILS_ENV
       - DATABASE_URL
       - FINDING_AID_DATA
+      - GOOGLE_ANALYTICS_DEBUG
+      - GOOGLE_ANALYTICS_TRACKING_ID
       - REDIS_URL
       - SOLR_URL
     entrypoint:
