@@ -29,3 +29,5 @@ en:
           see_all: "See all containers"
         sidebar:
           collection_title: "Collection"
+    email:
+      library_note: "This message was sent from the Duke University Libraries Collections Guides system. Please do not reply to this message. For assistance, see https://library.duke.edu/research/ask."

@@ -1,0 +1,14 @@
+<%# Overrides Blacklight Core partial. %>
+<%# Last checked for updates: Blacklight v7.8 %>
+<%# https://github.com/projectblacklight/blacklight/blob/master/app/views/record_mailer/email_record.text.erb %>
+
+<%= t('dul_arclight.email.library_note') %>
+<%= "\n" %>
+
+<%= t('blacklight.email.text.message') %>:
+<%="\s\s#{@message}\n"%>
+
+<% @documents.each do |document| %>
+  <%= document.to_email_text %>
+  <%= "\n" %>
+<% end %>
