@@ -22,7 +22,7 @@
           </a>
           <div class="dropdown-menu">
             <%= link_to t('dul_arclight.home.browse_all'), arclight_engine.collections_path, { class: 'dropdown-item'} %>
-            <%= link_to t('dul_arclight.home.browse_ua'), search_action_path(f: { level_sim: ["Collection"], repository_sim: ["Duke University Archives"] }), { class: 'dropdown-item'} %>
+            <%= link_to t('dul_arclight.home.browse_ua'), ua_record_groups_path, { class: 'dropdown-item'} %>
           </div>
         </div>
 
