@@ -20,6 +20,10 @@ en:
         present: "In Bookmarks"
         absent: "Add to Bookmarks"
       restricted: "Some restrictions apply"
+    ua_record_groups:
+      page_title: "University Archives Record Groups"
+      nav_header: "Browse by Group"
+      browse_all: "Browse all University Archives Collections"
     views:
       show:
         access:

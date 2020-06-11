@@ -1,9 +1,22 @@
+ul.record-group-nav {
+  li {
+    padding-left: 1.5em;
+    text-indent: -1.5em;
+    line-height: 1.2em;
+    margin-bottom: 0.5em;
+  }
+}
+
+.record-group-link {
+  margin-right: 0.3em;
+}
+
 .collection-count-badge {
   @include extent-badge; /* mixin from arclight */
   font-weight: bold;
   font-size: 1rem;
   vertical-align: middle;
-  margin-left: 1em;
+  white-space: nowrap;
 }
 
 ul.subgroup-list {

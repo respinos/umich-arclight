@@ -1,0 +1,6 @@
+<% if collection_count.positive? %>
+  <li>
+    <%= group %>.
+    <%= link_to info.dig('title'), anchor: group %>
+  </li>
+<% end %>

@@ -2,7 +2,7 @@
   <div class="record-group mb-5" id="<%= group %>">
     <h2>
       <span class="font-weight-bold"><%= group %>. </span>
-      <%= link_to search_action_path(f: { ua_record_group_ssim: [group] }).to_s do %>
+      <%= link_to search_action_path(f: { ua_record_group_ssim: [group] }).to_s, { class: 'record-group-link' } do %>
        <%= info.dig('title') -%>
       <% end %>
       <span class="collection-count-badge">

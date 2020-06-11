@@ -1,5 +1,21 @@
+<% content_for(:sidebar) do %>
+  <h2 class="mt-3 mb-3">
+    <%= t('dul_arclight.ua_record_groups.nav_header') %>
+  </h2>
+  <ul class="nav flex-column record-group-nav">
+    <% @record_groups.each do |key, value| %>
+      <%= render partial: 'group_nav_link',
+            locals: {
+              group: key.to_s,
+              info: value,
+              collection_count: @record_group_counts.dig(key) || 0 } %>
+    <% end %>
+  </ul>
+<% end %>
+
 <div class="p-4">
-  <h1>University Archives Record Groups</h1>
+  <h1><%= t('dul_arclight.ua_record_groups.page_title') %></h1>
+  <%= link_to t('dul_arclight.ua_record_groups.browse_all'), search_action_path(f: { level_sim: ["Collection"], repository_sim: ["Duke University Archives"] }), { class: 'btn btn-success'} %>
   <hr/>
   <div class="ua-record-groups">
     <% @record_groups.each do |key, value| %>
