@@ -5,13 +5,10 @@
 <%= t('dul_arclight.email.library_note') %>
 <%= "\n" %>
 <%= "____________________" %>
-<%= "\n\n" %>
+<%= "\n" %>
 
-<%= t('blacklight.email.text.message') %>
-<%= ":" %>
-<%="\s\s" %>
-<%= @message %>
-<%="\n"%>
+<%= t('blacklight.email.text.message', :message => @message) %>
+<%= "\n" %>
 
 <% @documents.each do |document| %>
 <%= document.to_email_text %>
