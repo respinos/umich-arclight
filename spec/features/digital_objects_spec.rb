@@ -48,6 +48,15 @@ RSpec.describe 'Digital Objects', type: :feature do
       end
     end
 
+    context 'when electronic record (electronic-record-master)' do
+      let(:doc_id) { 'daotest_aspace_testdao14' }
+
+      it 'renders a request button alongside the title' do
+        expect(page).to have_link('Request This Record', href: %r{^https://duke.aeon.atlas-sys.com})
+        expect(page).to have_css('span', text: 'A test title of an electronic-record-master DAO')
+      end
+    end
+
     context 'when generic default DAO' do
       let(:doc_id) { 'daotest_aspace_testdao06' }
 

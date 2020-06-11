@@ -818,6 +818,26 @@
                           xpointer="RL00012-WEB-0001"/>
           </did>
         </c02>
+        <c02 id="aspace_testref39_q1w" level="file">
+          <did>
+            <unittitle>Example with an electronic record (master) DAO</unittitle>
+            <physdesc altrender="whole">
+              <extent altrender="materialtype spaceoccupied">4 folders</extent>
+            </physdesc>
+            <container id="aspace_1d28570ee71ed30c8d74c0560d081313" label="Mixed Materials" type="box">4</container>
+            <dao xlink:actuate="onRequest" xlink:href="\\somewhere.oit.duke.edu\some\path\RL10042_mcgeefamily\extracted_files_bag\data\RL10042-LFF-0006" xlink:role="electronic-record-master" xlink:show="new" xlink:title="Parents to John David, 1958-1960 digitized selections" xpointer="RL10042-LFF-0006"/>
+          </did>
+          <phystech id="aspace_1ad745b51507fe36fe970baa1f9d0e05">
+            <head>Physical Characteristics and Technical Requirements</head>
+            <p>Electronic records consist of 303 image files (JPEG format) extracted from USB thumb drive, approximately 0.07 gigabytes.</p>
+          </phystech>
+        </c02>
+        <c02 id="aspace_testref40_q1x" level="file">
+          <did>
+            <unittitle>Example with an electronic record (use copy) DAO</unittitle>
+            <dao xlink:actuate="onRequest" xlink:href="\\somewhere.oit.duke.edu\some\path\RL10042_mcgeefamily\extracted_files_bag\data\RL10042-LFF-0007" xlink:role="electronic-record-use-copy" xlink:show="new" xlink:title="Parents to John David, 1958-1960 digitized selections" xpointer="RL10042-LFF-0006"/>
+          </did>
+        </c02>
         <c02 id="aspace_ref7_78w" level="file">
           <did>
             <unittitle>Duke University Web Directory</unittitle>
