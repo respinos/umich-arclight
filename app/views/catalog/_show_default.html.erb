@@ -215,11 +215,11 @@
       <% if document.multiple_ddr_daos? %>
         <%= render partial: 'arclight/viewers/multi-ddr-link', locals: { document: @document } %>
         <% document.non_ddr_digital_objects.each do |obj| %>
-          <%= render_object_viewer(obj) %>
+          <%= render_object_viewer(obj, document) %>
         <% end %>
       <% else %>
         <% document.digital_objects.each do |obj| %>
-          <%= render_object_viewer(obj) %>
+          <%= render_object_viewer(obj, document) %>
         <% end %>
       <% end %>
 

@@ -14,6 +14,9 @@ en:
       start_over: "Start Over"
     digital_objects:
       ddr_embed_link: View Item Page / More Info / Download
+      request_this_record: Request This Record
+      electronic-record-master: Electronic Record (Master)
+      electronic-record-use-copy: Electronic Record (Use Copy)
     tooltips:
       online: "Available Online"
       bookmarks:

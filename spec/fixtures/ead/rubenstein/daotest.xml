@@ -91,7 +91,7 @@
           <did>
             <unittitle>DDR Audio (audio-streaming)</unittitle>
             <dao xlink:actuate="onRequest"
-                 xlink:href="https://idn.duke.edu/ark:/87924/r4j962q52" 
+                 xlink:href="https://idn.duke.edu/ark:/87924/r4j962q52"
                  xlink:role="audio-streaming"
                  xlink:show="new"
                  xlink:title="Family audio correspondence"
@@ -135,78 +135,87 @@
         </did>
         <c02 id="aspace_testdao10" level="file">
           <did>
-          <unittitle>Multiple Web Archive (web-archive) links</unittitle>
-          <dao actuate="onRequest"
-               href="http://wayback.archive-it.org/1858/*/http://web.duke.edu/"
-               role="web-archive"
-               show="new"
-               title="Duke University Web Directory 1"
-               xpointer="UA.01.15.0014.ref7.1"/>
-          <dao actuate="onRequest"
-            href="http://wayback.archive-it.org/1858/*/http://www.duke.edu/web/"
-            role="web-archive"
-            show="new"
-            title="Duke University Web Directory 2"
-            xpointer="UA.01.15.0014.ref7.1"/>
-          <dao actuate="onRequest"
-               href="http://wayback.archive-it.org/1858/*/http://web.duke.edu/index.html"
-               role="web-archive"
-               show="new"
-               title="Duke University Web Directory 3"
-               xpointer="UA.01.15.0014.ref7.1"/>
+            <unittitle>Multiple Web Archive (web-archive) links</unittitle>
+            <dao actuate="onRequest"
+                 href="http://wayback.archive-it.org/1858/*/http://web.duke.edu/"
+                 role="web-archive"
+                 show="new"
+                 title="Duke University Web Directory 1"
+                 xpointer="UA.01.15.0014.ref7.1"/>
+            <dao actuate="onRequest"
+              href="http://wayback.archive-it.org/1858/*/http://www.duke.edu/web/"
+              role="web-archive"
+              show="new"
+              title="Duke University Web Directory 2"
+              xpointer="UA.01.15.0014.ref7.1"/>
+            <dao actuate="onRequest"
+                 href="http://wayback.archive-it.org/1858/*/http://web.duke.edu/index.html"
+                 role="web-archive"
+                 show="new"
+                 title="Duke University Web Directory 3"
+                 xpointer="UA.01.15.0014.ref7.1"/>
           </did>
         </c02>
         <c02 id="aspace_testdao11" level="file">
           <did>
-          <unittitle>Multiple DDR Image (image-service) DAOs</unittitle>
-          <dao xlink:actuate="onRequest"
-               xlink:href="https://idn.duke.edu/ark:/87924/r3222rb2d"
-               xlink:role="image-service"
-               xlink:show="new"
-               xlink:title="Correspondence, 1823-1835, letter 1"
-               xpointer="ark:/87924/r3222rb2d"/>
-          <dao xlink:actuate="onRequest"
-               xlink:href="https://idn.duke.edu/ark:/87924/r3xg9fh2g"
-               xlink:role="image-service"
-               xlink:show="new"
-               xlink:title="Correspondence, 1823-1835, letter 2"
-               xpointer="ark:/87924/r3xg9fh2g"/>
+            <unittitle>Multiple DDR Image (image-service) DAOs</unittitle>
+            <dao xlink:actuate="onRequest"
+                 xlink:href="https://idn.duke.edu/ark:/87924/r3222rb2d"
+                 xlink:role="image-service"
+                 xlink:show="new"
+                 xlink:title="Correspondence, 1823-1835, letter 1"
+                 xpointer="ark:/87924/r3222rb2d"/>
+            <dao xlink:actuate="onRequest"
+                 xlink:href="https://idn.duke.edu/ark:/87924/r3xg9fh2g"
+                 xlink:role="image-service"
+                 xlink:show="new"
+                 xlink:title="Correspondence, 1823-1835, letter 2"
+                 xpointer="ark:/87924/r3xg9fh2g"/>
           </did>
         </c02>
         <c02 id="aspace_testdao12" level="file">
           <did>
-          <unittitle>One DDR DAO plus a non-DDR DAO</unittitle>
-          <dao xlink:actuate="onRequest"
-               xlink:href="https://idn.duke.edu/ark:/87924/r4j962q52" 
-               xlink:role="audio-streaming"
-               xlink:show="new"
-               xlink:title="Family audio correspondence"
-               xpointer="ark:/87924/r4j962q52"/>
-          <dao actuate="onRequest"
-               href="https://library.duke.edu"
-               show="new"
-               title="A test title of a generic DAO" />
+            <unittitle>One DDR DAO plus a non-DDR DAO</unittitle>
+            <dao xlink:actuate="onRequest"
+                 xlink:href="https://idn.duke.edu/ark:/87924/r4j962q52"
+                 xlink:role="audio-streaming"
+                 xlink:show="new"
+                 xlink:title="Family audio correspondence"
+                 xpointer="ark:/87924/r4j962q52"/>
+            <dao actuate="onRequest"
+                 href="https://library.duke.edu"
+                 show="new"
+                 title="A test title of a generic DAO" />
           </did>
         </c02>
         <c02 id="aspace_testdao13" level="file">
           <did>
-          <unittitle>Mix of Multiple DDR DAOs and Non-DDR DAOs</unittitle>
-          <dao xlink:actuate="onRequest"
-               xlink:href="https://idn.duke.edu/ark:/87924/r3280546x"
-               xlink:role="image-service"
-               xlink:show="new"
-               xlink:title="Correspondence, 1823-1835, letter 3"
-               xpointer="ark:/87924/r3280546x"/>
-          <dao xlink:actuate="onRequest"
-               xlink:href="https://idn.duke.edu/ark:/87924/r4h991t4b"
-               xlink:role="video-streaming"
-               xlink:show="new"
-               xlink:title="Scenes from Albany, GA movement, includes activist meetings and protests downtown"
-               xpointer="ark:/87924/r4h991t4b"/>
-          <dao actuate="onRequest"
-               href="https://library.duke.edu"
-               show="new"
-               title="A test title of a generic DAO" />
+            <unittitle>Mix of Multiple DDR DAOs and Non-DDR DAOs</unittitle>
+            <dao xlink:actuate="onRequest"
+                 xlink:href="https://idn.duke.edu/ark:/87924/r3280546x"
+                 xlink:role="image-service"
+                 xlink:show="new"
+                 xlink:title="Correspondence, 1823-1835, letter 3"
+                 xpointer="ark:/87924/r3280546x"/>
+            <dao xlink:actuate="onRequest"
+                 xlink:href="https://idn.duke.edu/ark:/87924/r4h991t4b"
+                 xlink:role="video-streaming"
+                 xlink:show="new"
+                 xlink:title="Scenes from Albany, GA movement, includes activist meetings and protests downtown"
+                 xpointer="ark:/87924/r4h991t4b"/>
+            <dao actuate="onRequest"
+                 href="https://library.duke.edu"
+                 show="new"
+                 title="A test title of a generic DAO" />
+          </did>
+        </c02>
+        <c02 id="aspace_testdao14" level="file">
+          <did>
+            <unittitle>Example with an electronic record DAO</unittitle>
+            <physdesc altrender="whole">
+              <extent altrender="materialtype spaceoccupied">4 folders</extent>
+            </physdesc>
+            <dao xlink:actuate="onRequest" xlink:href="\\somewhere.oit.duke.edu\some\path\RL10042_mcgeefamily\extracted_files_bag\data\RL10042-LFF-0006" xlink:role="electronic-record-master" xlink:show="new" xlink:title="A test title of an electronic-record-master DAO" xpointer="RL10042-LFF-0006"/>
           </did>
         </c02>
       </c01>

@@ -50,8 +50,16 @@ class SolrDocument
     parent_ids.present?
   end
 
+  def accessrestrict
+    fetch('accessrestrict_tesim', [])
+  end
+
+  def userestrict
+    fetch('userestrict_tesim', [])
+  end
+
   def restricted_component?
-    component? && (fetch('accessrestrict_tesim', []).present? || fetch('userestrict_tesim', []).present?)
+    component? && (accessrestrict.present? || userestrict.present?)
   end
 
   def total_component_count
