@@ -1,4 +1,42 @@
 describe DigitalObjectHelper, type: :helper do
+  describe '#online_access_items?' do
+    before do
+      allow(helper).to receive(:ONLINE_ACCESS_DAOS).and_return(
+        %w[audio-streaming image-service video-streaming web-archive web-resource-link]
+      )
+    end
+
+    context 'when collection has no DAOs' do
+      let(:doc) do
+        instance_double('document', all_dao_roles: [])
+      end
+
+      it 'has no online access' do
+        expect(helper.online_access_items?(doc)).to be false
+      end
+    end
+
+    context 'when collection has DAOs but not ones that are accessible' do
+      let(:doc) do
+        instance_double('document', all_dao_roles: %w[electronic-record-master electronic-record-use-copy])
+      end
+
+      it 'has no online access' do
+        expect(helper.online_access_items?(doc)).to be false
+      end
+    end
+
+    context 'when collection has at least one DAO with an online-accessible role' do
+      let(:doc) do
+        instance_double('document', all_dao_roles: %w[image-service electronic-record-use-copy])
+      end
+
+      it 'has online access' do
+        expect(helper.online_access_items?(doc)).to be true
+      end
+    end
+  end
+
   describe '#erec_aeon_link' do
     let(:obj) do
       DulArclight::DigitalObject.new(

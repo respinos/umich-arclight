@@ -13,6 +13,10 @@ en:
       submit: "Search"
       start_over: "Start Over"
     digital_objects:
+      online_banner:
+        message_text: Some materials from this collection are available online.
+        dc_html: <span class='fas fa-external-link-alt'></span> View Digital Collection
+        filter_online_html: <span class='fas fa-filter'></span> Only view items with online access
       ddr_embed_link: View Item Page / More Info / Download
       request_this_record: Request This Record
       electronic-record-master: Electronic Record (Master)

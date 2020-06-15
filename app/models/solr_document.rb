@@ -113,9 +113,18 @@ class SolrDocument
     digital_objects.reject { |obj| ddr_url?(obj.href) }
   end
 
+  def ddr_collection_objects
+    digital_objects.select { |obj| obj.role == 'ddr-collection-object' }
+  end
+
   # This count includes all descendant components' DAOs
   def total_digital_object_count
     first('total_digital_object_count_isim') || 0
+  end
+
+  # All unique values for @role in DAOs found anywhere in a collection
+  def all_dao_roles
+    fetch('all_dao_roles_ssim', [])
   end
 
   # Several DUL-Custom DAO methods to determine the nature of
@@ -130,6 +139,7 @@ class SolrDocument
   end
 
   # Get an array of all unique @role values present in the set of DAOs.
+  # NOTE: only on this level, not descendants.
   def dao_roles
     digital_objects.uniq(&:role).map { |dao| dao.role }
   end
@@ -141,9 +151,10 @@ class SolrDocument
   end
 
   # For now, a DDR digital object is determined by an href attribute
-  # pointing to the idn.duke.edu domain.
+  # with hostname idn.duke.edu or repository.duke.edu & is not a collection.
   def ddr_dao_count
-    digital_objects.select { |obj| ddr_url?(obj.href) }.count
+    all_ddr_daos = digital_objects.select { |obj| ddr_url?(obj.href) }
+    all_ddr_daos.reject { |obj| ddr_collection_objects.include? obj }.count
   rescue URI::InvalidURIError
     0
   end
@@ -168,7 +179,7 @@ class SolrDocument
   private
 
   def ddr_url?(url)
-    URI.parse(url).host == 'idn.duke.edu'
+    URI.parse(url).host.in? %w[idn.duke.edu repository.duke.edu]
   end
 
   def stripped_snippets

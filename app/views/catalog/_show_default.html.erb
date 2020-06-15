@@ -185,6 +185,10 @@
     <%# Adapted from: %>
     <%# https://github.com/projectblacklight/arclight/blob/master/app/views/catalog/_collection_context.html.erb %>
 
+    <% if show_online_access_banner?(document) %>
+      <%= render 'arclight/viewers/online_access_banner', document: @document %>
+    <% end %>
+
     <div class="access-preview-snippet">
       <%= render 'custom_metadata',
         document: @document, field_accessor: 'using_field', truncation_length: 200 %>

@@ -47,6 +47,15 @@
   margin: 0.8em 0;
 }
 
+.al-grouped-title-bar {
+  .bookmark-toggle {
+    padding-right: 2px;
+    svg {
+      fill: $secondary;
+    }
+  }
+}
+
 .grouped-documents {
   h3.document-title-heading {
     font-size: 1.2rem;
