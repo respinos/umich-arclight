@@ -128,4 +128,10 @@ namespace :dul_arclight do
       system("DIR=#{ENV['FINDING_AID_DATA']}/ead/#{repository} REPOSITORY_ID=#{repository} rake dul_arclight:index_dir_unseen")
     end
   end
+
+  desc "Re-build the Solr suggester data"
+  task :build_suggest => :environment do
+    BuildSuggestJob.perform_later
+    puts "BuildSuggestJob enqueued."
+  end
 end
