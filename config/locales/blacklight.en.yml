@@ -7,6 +7,16 @@ en:
       library_name: "Duke University Libraries"
       primary: "Archives & Manuscripts"
       secondary: "Collection Guides"
+    email:
+      text:
+        container: 'Container: %{container}'
+        in: 'In: %{in}'
+        subject:
+          one: 'Saved Bookmark from Collection Guides'
+          other: 'Saved Bookmarks from Collection Guides'
+        tile: 'Title: %{title}'
+      views:
+        note: 'This message was sent from the Rubenstein Library Collection Guides system. For research assistance, see: https://library.duke.edu/rubenstein/ask'
     header_links:
       ask: "Ask"
       ask_long: "Ask a Question"
