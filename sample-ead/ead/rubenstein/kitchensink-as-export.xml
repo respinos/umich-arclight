@@ -104,6 +104,9 @@
         parent="aspace_2da3b769dee914e6183d02d58648d36b" type="Folder"
         >1-collection-level-instance-do-we-even-do-this?</container>
     </did>
+    <dao xlink:actuate="onRequest" xlink:href="https://idn.duke.edu/ark:/87924/r3c824x2f"
+      xlink:role="ddr-collection-object" xlink:show="new"
+      xlink:title="Sidney D. Gamble Photographs Collection" xpointer="ark:/87924/r3c824x2f"/>
     <dao xlink:actuate="onRequest" xlink:href="https://idn.duke.edu/ark:/87924/r3qb9vd2v"
       xlink:role="image-service" xlink:show="new"
       xlink:title="Correspondence, 1837, letter 77" xpointer="ark:/87924/r3qb9vd2v"/>
@@ -112,7 +115,7 @@
       xlink:title="Correspondence, 1837, letter 78" xpointer="ark:/87924/r37w67c20"/>
     <dao actuate="onRequest" href="https://library.duke.edu" role="undefined"
       show="new"
-      title="A test generic DAO that is one of several on a component along with multi DDR DAOs" />
+      title="A test generic DAO on the top-level collection." />
     <separatedmaterial id="aspace_ref18">
       <head>Separated Materials label |||</head>
       <p>Separated Materials note content 1st note in "Notes, etc" tab, umpteenth note added, but

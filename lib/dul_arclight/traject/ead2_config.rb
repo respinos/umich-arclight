@@ -244,6 +244,12 @@ to_field 'total_digital_object_count_isim' do |record, accumulator|
   accumulator << record.xpath('.//dao').count
 end
 
+# DUL CUSTOMIZATION: get all unique DAO roles present anywhere in this collection
+to_field 'all_dao_roles_ssim' do |record, accumulator|
+  accumulator.concat record.xpath('.//dao/@role')
+  accumulator.uniq!(&:text)
+end
+
 # DUL CUSTOMIZATION: capture the DAO @role & @xpointer attributes
 to_field 'digital_objects_ssm', extract_xpath('/ead/archdesc/did/dao|/ead/archdesc/dao', to_text: false) do |_record, accumulator|
   accumulator.map! do |dao|

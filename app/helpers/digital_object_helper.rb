@@ -1,9 +1,20 @@
 # frozen_string_literal: true
 
+# Which DAO roles should render a customized viewer template?
 CUSTOM_DAO_ROLES = %w[
   audio-streaming
   electronic-record-master
   electronic-record-use-copy
+  image-service
+  video-streaming
+  web-archive
+  web-resource-link
+].freeze
+
+# Which DAO roles if present should activate the Online Access
+# banner at the top of a collection page?
+ONLINE_ACCESS_DAOS = %w[
+  audio-streaming
   image-service
   video-streaming
   web-archive
@@ -18,10 +29,19 @@ module DigitalObjectHelper
   # our own web-resource-link viewer if no custom viewer is found.
   def render_object_viewer(obj, doc = nil)
     if CUSTOM_DAO_ROLES.include? obj.role
-      render partial: ['arclight/viewers/', obj.role].join, locals: { obj: obj, doc: doc }
+      render ['arclight/viewers/', obj.role].join, obj: obj, doc: doc
     else
-      render partial: 'arclight/viewers/web-resource-link', locals: { obj: obj, doc: doc }
+      render 'arclight/viewers/web-resource-link', obj: obj, doc: doc
     end
+  end
+
+  def show_online_access_banner?(document)
+    online_access_items?(document) || document.ddr_collection_objects.present?
+  end
+
+  def online_access_items?(document)
+    # Do any of the DAOs have a role considered to be "Online Access"?
+    (document.all_dao_roles & ONLINE_ACCESS_DAOS).present?
   end
 
   # Link to a DDR search result (used with multiple DDR DAOs on a component)

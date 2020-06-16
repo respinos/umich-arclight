@@ -73,6 +73,9 @@
       <langmaterial id="aspace_ff8d82cbff853d3dd45eaa999e61cb9e">Materials are in
         English.</langmaterial>
     </did>
+    <dao xlink:actuate="onRequest" xlink:href="https://idn.duke.edu/ark:/87924/r49r4z"
+      xlink:role="ddr-collection-object" xlink:show="new"
+      xlink:title="Benjamin and Julia Stockton Rush Papers" xpointer="ark:/87924/r49r4z"/>
     <arrangement id="aspace_bdc3743e0b3cf367e34f4071d09177fa">
       <head>Arrangement</head>
       <p>Arranged into the following series: Letters, Writings, Financial Records, and Legal
