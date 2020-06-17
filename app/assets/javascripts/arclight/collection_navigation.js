@@ -1,5 +1,5 @@
 // Copy of ArcLight core JS for overriding behavior.
-// Last checked for updates: ArcLight v0.3.0.
+// Last checked for updates: ArcLight v0.3.2.
 
 // Added data.arclight.directparent for listing only
 // the child components of the current component rather
@@ -7,6 +7,9 @@
 // paginated AJAX-loaded results can include different
 // numbers of results loaded per page (e.g., all online vs.
 // child components).
+
+// Created a customized placeholder for child component section
+// that more closely resembles the content.
 
 // See
 // https://github.com/projectblacklight/arclight/blob/master/app/assets/javascripts/arclight/collection_navigation.js
@@ -18,15 +21,27 @@
     init: function (el, page = 1) {
       var $el = $(el);
       var data = $el.data();
-      // Add a placeholder so flashes of text are not as significant
-      var placeholder = '<div class="al-hierarchy-placeholder">' +
-                          '<h3 class="col-md-9"></h3>' +
-                          '<p class="col-md-6"></p>' +
-                          '<p class="col-md-12"></p>' +
-                          '<p class="col-md-3"></p>' +
-                        '</div>';
-      placeholder = new Array(3).join(placeholder);
-      $el.html(placeholder);
+
+      // DUL CUSTOMIZATION: Show a gridded placeholder that resembles
+      // the child component layout. CSS is used to show only the number
+      // of placeholder rows needed for the particular content, and
+      // add light animation.
+
+      const $markup = $('<div class="al-hierarchy-placeholder"></div>');
+      const elementMarkup = '<div class="row placeholder-row">' +
+        '<div class="col-8"><p></p></div>' +
+        '<div class="col-3"><p></p></div>' +
+        '<div class="col-1"><p></p></div>' +
+        '</div>';
+      const placeholder = Array(21).join(elementMarkup);
+      // NOTE: <section> element used instead of <div> or <p> to not throw off
+      // :nth-of-type calculations in CSS.
+      $markup.append('<section id="sortAndPerPage" class="sort-pagination clearfix">\
+                      <strong class="page-links">Loading...</strong>\
+                      </section>');
+      $markup.append(placeholder);
+      $el.html($markup);
+
       $.ajax({
         url: data.arclight.path,
         data: {

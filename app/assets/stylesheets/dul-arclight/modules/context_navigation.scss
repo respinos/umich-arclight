@@ -53,3 +53,59 @@
     }
   }
 }
+
+.load-warning {
+  font-size: 14px;
+  background: $gray-200;
+  padding: 0.5rem;
+  border-radius: 5px;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+/* ==================== */
+/* Loading Placeholders */
+/* ==================== */
+
+/* Only show the number of placeholder lines needed (up to 20) */
+@for $i from 1 to 20 {
+  /* The top-level collection navigator (usually list of series) */
+  .top-children-count-#{$i} #collection-context > .al-hierarchy-placeholder {
+    & > *:nth-of-type(n+#{$i + 1}) {
+      display: none;
+    }
+  }
+  /* All component navigators (below top level) */
+  .children-count-#{$i} > .al-hierarchy-placeholder {
+    & > *:nth-of-type(n+#{$i + 1}) {
+      display: none;
+    }
+  }
+}
+
+.al-hierarchy-placeholder {
+  p, .page-links {
+    animation: pulse 1.5s infinite ease-in-out;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.75; }
+}
+
+/* Placeholder area for child component nav in main content */
+.child-components {
+  .al-hierarchy-placeholder {
+    margin-top: 0;
+  }
+  .placeholder-row {
+    padding: 1.5rem 0 1rem 0;
+    margin: 0;
+    &:nth-of-type(odd) {
+      background: #f8f8f8;
+    }
+  }
+  #sortAndPerPage, #sortAndPerPageBottom {
+    padding-left: 0 !important;
+  }
+}
