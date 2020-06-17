@@ -76,8 +76,8 @@
 
   <% if document.children? %>
     <%= content_tag(:div, id: "nav_#{document.id}-collapsible-hierarchy",
-      class: "collapse al-collection-context-collapsible al-hierarchy-level-#{document.component_level} #{'show' if show_expanded?(document)}",
-      data: { resolved: false }
+      class: "collapse children-count-#{document.number_of_children} al-collection-context-collapsible al-hierarchy-level-#{document.component_level} #{'show' if show_expanded?(document)}",
+      data: { resolved: false, childrencount: document.number_of_children }
     ) do %>
       <%= generic_context_navigation(document, component_level: document.component_level + 1, original_parents: params[:original_parents]) %>
     <% end %>

@@ -69,7 +69,7 @@
       <%# Hierarchy Tree Navigation %>
       <%# ========================= %>
       <% if document.children? or document.parent_ids.present? %>
-        <div class="hierarchy-nav-wrapper">
+        <div class="hierarchy-nav-wrapper top-children-count-<%= collection_doc(document).number_of_children %>">
           <h2>
             <i class="fas fa-map-marker-alt"></i>
             <%= t("arclight.views.show.context") %>
@@ -240,7 +240,7 @@
   <h2>Contents</h2>
   <%= content_tag(
     :div, '',
-    class: 'al-contents child-components',
+    class: "al-contents child-components children-count-#{document.number_of_children}",
     data: {
       arclight: {
         path: search_catalog_path,
@@ -248,6 +248,7 @@
         view: 'child_components',
         parent: document.reference,
         directparent: document.reference,
+        childrencount: document.number_of_children,
         search_field: 'within_collection',
         per_page: '100'
       }

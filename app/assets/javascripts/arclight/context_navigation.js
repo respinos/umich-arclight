@@ -103,15 +103,19 @@ class Placeholder {
    */
   /* eslint-disable class-methods-use-this */
   buildElement() {
-    const elementMarkup = '<div class="al-hierarchy-placeholder">' +
-      '<h3 class="col-md-9"></h3>' +
-      '<p class="col-md-6"></p>' +
-      '<p class="col-md-12"></p>' +
-      '<p class="col-md-3"></p>' +
-      '</div>';
-    const markup = Array(3).join(elementMarkup);
 
-    return $(markup);
+    // DUL CUSTOMIZATION: Use only one wrapper div; repeat the placeholders in it.
+    // Bump from 3 to 6 so placeholder pattern repeats 5x. This makes it easier to
+    // conditionally show fewer lines using CSS.
+    const $markup = $('<div class="al-hierarchy-placeholder"></div>');
+    const elementMarkup = '' +
+      '<p class="col-9"></p>' +
+      '<p class="col-6"></p>' +
+      '<p class="col-10"></p>' +
+      '<p class="col-3"></p>';
+    const placeholder = Array(6).join(elementMarkup);
+    $markup.append(placeholder);
+    return $markup;
   }
   /* eslint-enable class-methods-use-this */
 
@@ -161,6 +165,18 @@ class ContextNavigation {
     const that = this;
     // Add a placeholder so flashes of text are not as significant
     const placeholder = new Placeholder();
+
+    // DUL CUSTOMIZATION: If there are a lot of children to load, add a
+    // gentle message about the potential delay.
+    var childrencount = parseInt(this.el.parent().data('childrencount'));
+    if(childrencount > 200) {
+      this.el.prepend('<div class="load-warning">\
+        <strong> <i class="fas fa-clock"></i> Loading ' +
+        childrencount.toLocaleString() +
+        ' items</strong><br/>' +
+        'This might take awhile.</div>');
+    }
+
     this.el.after(placeholder.$el);
     $.ajax({
       url: this.data.arclight.path,
