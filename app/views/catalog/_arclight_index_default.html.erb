@@ -17,7 +17,7 @@
   </div>
 
   <div class="col col-no-left-padding d-flex flex-wrap">
-    <div class="documentHeader my-w-75 w-md-100 order-0 al-document-highlight" data-document-id="<%= document.id %>">
+    <div class="documentHeader order-0 al-document-highlight" data-document-id="<%= document.id %>">
       <h3 class="index_title document-title-heading">
         <%= link_to_document document, document.title_with_highlighting || document_show_link_field(document), counter: document_counter %>
         <%= content_tag('span', class: 'al-document-extent badge') do %>
@@ -26,7 +26,7 @@
       </h3>
     </div>
 
-    <div class="my-w-25 w-md-100 order-12 order-md-1">
+    <div class="documentContent order-md-1">
       <%= render_index_doc_actions document, wrapping_class: 'd-flex justify-content-end' %>
     </div>
 
