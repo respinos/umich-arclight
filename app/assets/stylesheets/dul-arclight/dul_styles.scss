@@ -794,6 +794,41 @@ a {
     border-top: 1px solid #dee2e6;
   }
 
+  #documents {
+    .documentHeader {
+      padding-right: 15px;
+      width: 100%;
+      @include media-breakpoint-up(lg) {
+        width: 55%;
+      }
+      @include media-breakpoint-up(xl) {
+        width: 67%;
+      }
+    }
+    .documentContent {
+      width: 100%;
+      @include media-breakpoint-up(lg) {
+        width: 45%;
+      }
+      @include media-breakpoint-up(xl) {
+        width: 33%;
+      }
+    }
+    .al-document-container {
+      @include media-breakpoint-down(md) {
+        padding-left: 0;
+        padding-top: .4rem;
+        line-height: 1.2;
+      }
+    }
+    .breadcrumb-links {
+      @include media-breakpoint-down(md) {
+        padding-left: .4rem;
+      }
+    }
+
+  }
+
 
   /* series results */
 

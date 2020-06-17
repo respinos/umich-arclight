@@ -7,7 +7,7 @@
 
   <!--<div class="col col-no-left-padding d-flex flex-wrap">-->
   <div class="col d-flex flex-wrap">
-    <div class="documentHeader my-w-75 w-md-100 order-0" data-document-id="<%= document.id %>">
+    <div class="documentHeader order-0" data-document-id="<%= document.id %>">
       <h3 class="index_title document-title-heading">
         <%= link_to_document document, document_show_link_field(document), counter: counter %>
         <% if document.children? %>
@@ -20,7 +20,7 @@
       </h3>
     </div>
 
-    <div class="my-w-25 w-md-100 order-12 order-md-1">
+    <div class="documentContent order-md-1">
       <%= render_index_doc_actions document, wrapping_class: 'd-flex justify-content-end' %>
     </div>
 
