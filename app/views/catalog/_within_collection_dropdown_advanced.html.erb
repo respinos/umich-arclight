@@ -1,0 +1,32 @@
+<%# Copied from ArcLight core in order to customize locally %>
+<%# Last checked for updates: %>
+<%# ArcLight v0.3.0. %>
+<%# https://github.com/projectblacklight/arclight/blob/master/app/views/catalog/_within_collection_dropdown.html.erb #%>
+
+
+<div class="within-collection-dropdown input-group-prepend">
+  
+  <span class="sr-only" id="within_collection_label_advanced"><%= t('arclight.within_collection_dropdown.label_html') %></span>
+
+    <select
+      id="within_collection_advanced"
+      class="custom-select search-field rounded-0"
+      aria-labelledby="within_collection_label_advanced" 
+      <%= 'name="f[collection_sim][]"'.html_safe if within_collection_context? %>
+    >
+      <option
+        <%= "selected" unless within_collection_context? %>
+        value=""
+      >
+        <%= t('arclight.within_collection_dropdown.all_collections') %>
+      </option>
+      <option
+        value="<%= Array(params.dig(:f, :collection_sim)).first || @document && @document.collection_name %>"
+        <%= 'selected' if within_collection_context? %>
+        <%= 'disabled' unless within_collection_context? %>
+      >
+        <%= t('arclight.within_collection_dropdown.this_collection') %>
+      </option>
+    </select>
+
+</div>

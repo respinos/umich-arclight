@@ -14,7 +14,7 @@ RSpec.describe 'DUL Arclight Pages', type: :feature do
   it 'navigates to advanced search' do
     visit '/advanced'
     expect(page).to have_css 'h1', text: 'Advanced Search'
-    expect(page).to have_css 'input', id: 'q'
+    expect(page).to have_css 'input', id: 'q_advanced'
   end
 
   it 'displays UA record groups page, with links & titles' do
