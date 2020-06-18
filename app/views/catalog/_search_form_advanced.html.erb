@@ -7,20 +7,20 @@
 <%= form_tag search_action_url, method: :get, class: 'search-query-form advanced-search pr-0 flex-fill', role: 'search' do %>
   <%= render_hash_as_hidden_fields(search_state.params_for_search.except(:q, :search_field, :qt, :page, :utf8).merge(f: (search_state.params_for_search[:f] || {}).except(:collection_sim))) %>
   <%# DUL CUSTOMIZATION: default to group by collection %>
-  <%= hidden_field_tag :group, 'true' %>
+  <%= hidden_field_tag :group, 'true', {:id => "group_advanced"}%>
 
   <div class="form-group row">
     <%# select options %>
-    <label class="col-sm-4 col-form-label text-sm-right" for="within_collection"><%= t('dul_arclight.advanced_search.within_collections_label') %></label>
+    <label class="col-sm-4 col-form-label text-sm-right" for="within_collection_advanced"><%= t('dul_arclight.advanced_search.within_collections_label') %></label>
     <div class="col-sm-6">
-      <%= render 'catalog/within_collection_dropdown' %>
+      <%= render 'catalog/within_collection_dropdown_advanced' %>
     </div>
   </div>
 
   <div class="form-group row">
     <%# semi-fielded search options %>
     <% if search_fields.length > 1 %>
-      <label for="search_field" class="col-sm-4 col-form-label text-sm-right"><%= t('dul_arclight.advanced_search.search_fields_label') %></label>
+      <label for="search_field_advanced" class="col-sm-4 col-form-label text-sm-right"><%= t('dul_arclight.advanced_search.search_fields_label') %></label>
     <% end %>
 
     <% if search_fields.length > 1 %>
@@ -28,7 +28,7 @@
           <%= select_tag(:search_field,
                           options_for_select(search_fields, h(params[:search_field])),
                           title: t('blacklight.search.form.search_field.title'),
-                          id: "search_field",
+                          id: "search_field_advanced",
                           class: "custom-select search-field") %>
         </div>
     <% elsif search_fields.length == 1 %>
@@ -41,7 +41,7 @@
     <%# text input %>
     <label for="q" class="col-sm-4 col-form-label text-sm-right"><%= t('dul_arclight.advanced_search.search_label') %></label>
     <div class="col-sm-6">
-      <%= text_field_tag :q, params[:q], placeholder: t('blacklight.search.form.search.placeholder'), class: "search-q q rounded-0 form-control", id: "q" %>
+      <%= text_field_tag :q, params[:q], placeholder: t('blacklight.search.form.search.placeholder'), class: "search-q q rounded-0 form-control", id: "q_advanced" %>
     </div>
   </div>
 
@@ -78,7 +78,7 @@
       </button>
       
       <%# search btn -%>
-      <button type="submit" class="btn btn-primary search-btn" id="search">
+      <button type="submit" class="btn btn-primary search-btn" id="search_advanced">
         <span class=""><%= t('dul_arclight.advanced_search.submit') %></span>
         <i class="fas fa-search"></i>
       </button>
