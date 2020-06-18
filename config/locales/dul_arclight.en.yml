@@ -39,4 +39,5 @@ en:
         containers:
           see_all: "See all containers"
         sidebar:
-          collection_title: "Collection"
+          collection_title: Collection
+          collection_info_icon_label: Advanced collection info
