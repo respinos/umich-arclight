@@ -201,7 +201,7 @@ Blacklight.onLoad(function () {
 
     //console.log('turbolinks triggered!');
 
-    var $DULmastheadURL = 'https://library.duke.edu/masthead/load-masthead.js.php?width=1820&amp;fixed=false&ajax_reload=true';
+    var $DULmastheadURL = 'https://library.duke.edu/masthead/load-masthead.js.php?width=1820&amp;fixed=false&ajax_reload=true&div=true';
 
     $( "#dul-masthead-filler" ).load( $DULmastheadURL, function( response, status, xhr ) {
       if ( status == "error" ) {
