@@ -365,7 +365,13 @@ class ContextNavigation {
     this.el.parent().data('resolved', true);
     this.addListenersForPlusMinus();
     this.enablebuttons();
+
     Blacklight.doBookmarkToggleBehavior();
+
+    // DUL CUSTOMIZATION: Run client-side a11y patches once the dynamic content
+    // has loaded. See assets/javascripts/accessibility-patches.js.
+    applyAccessibilityPatches();
+
     this.el.trigger('navigation.contains.elements');
   }
 
