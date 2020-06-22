@@ -244,7 +244,13 @@ to_field 'total_digital_object_count_isim' do |record, accumulator|
   accumulator << record.xpath('.//dao').count
 end
 
-# DUL Customization: capture the DAO @role attribute
+# DUL CUSTOMIZATION: get all unique DAO roles present anywhere in this collection
+to_field 'all_dao_roles_ssim' do |record, accumulator|
+  accumulator.concat record.xpath('.//dao/@role')
+  accumulator.uniq!(&:text)
+end
+
+# DUL CUSTOMIZATION: capture the DAO @role & @xpointer attributes
 to_field 'digital_objects_ssm', extract_xpath('/ead/archdesc/did/dao|/ead/archdesc/dao', to_text: false) do |_record, accumulator|
   accumulator.map! do |dao|
     label = dao.attributes['title']&.value ||
@@ -252,7 +258,8 @@ to_field 'digital_objects_ssm', extract_xpath('/ead/archdesc/did/dao|/ead/archde
             dao.xpath('daodesc/p')&.text
     href = (dao.attributes['href'] || dao.attributes['xlink:href'])&.value
     role = (dao.attributes['role'] || dao.attributes['xlink:role'])&.value
-    DulArclight::DigitalObject.new(label: label, href: href, role: role).to_json
+    xpointer = (dao.attributes['xpointer'] || dao.attributes['xlink:xpointer'])&.value
+    DulArclight::DigitalObject.new(label: label, href: href, role: role, xpointer: xpointer).to_json
   end
 end
 
@@ -530,7 +537,7 @@ compose 'components', ->(record, accumulator, _context) { accumulator.concat rec
     accumulator << record.xpath('.//dao').count
   end
 
-  # DUL Customization: capture the DAO @role attribute
+  # DUL Customization: capture the DAO @role & @xpointer attribute
   to_field 'digital_objects_ssm', extract_xpath('./dao|./did/dao', to_text: false) do |_record, accumulator|
     accumulator.map! do |dao|
       label = dao.attributes['title']&.value ||
@@ -538,7 +545,8 @@ compose 'components', ->(record, accumulator, _context) { accumulator.concat rec
               dao.xpath('daodesc/p')&.text
       href = (dao.attributes['href'] || dao.attributes['xlink:href'])&.value
       role = (dao.attributes['role'] || dao.attributes['xlink:role'])&.value
-      DulArclight::DigitalObject.new(label: label, href: href, role: role).to_json
+      xpointer = (dao.attributes['xpointer'] || dao.attributes['xlink:xpointer'])&.value
+      DulArclight::DigitalObject.new(label: label, href: href, role: role, xpointer: xpointer).to_json
     end
   end
 

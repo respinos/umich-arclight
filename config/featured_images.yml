@@ -51,7 +51,7 @@ image_list:
     image: maddc070630010.jpg
   11:
     caption_html: |
-      Michael Jordan hits head on backboard in Cameron Indoor Stadium (1983),
+      Michael Jordan in Cameron Indoor Stadium (1983),
       from <a href="/catalog/uamensbballfilms_aspace_8fcf9ac7f214cc32dc0d23d4329f7c76">
       Men's Basketball Game Film collection</a>
     image: r4sx68b8f.jpg
@@ -72,3 +72,30 @@ image_list:
       Kool Cigarettes Billboard, from the <a href="/catalog/rcmaxwellco_aspace_ref625_fw8">
       R.C. Maxwell Company Records</a>
     image: XXX4740.jpg
+  15:
+    caption_html: |
+      Woman and dogs, Western North Carolina, from the 
+      <a href="/catalog/harrisalex_aspace_a0bd0ebe41ea36ec57a17a56af56810d">Alex Harris
+      Photographs</a>
+    image: ahpst002013.jpg
+  16:
+    caption_html: |
+      Soviet merchant, 1930 from <a href="/catalog/fetter_aspace_ref1767_uq9">Frank Whitson
+      Fetter papers</a>
+    image: esrph010010290.jpg
+  17:
+    caption_html: |
+      NC Mutual Life Insurance Office, Parrish Street, Durham, in the
+      <a href="/catalog/ncmutual_aspace_ref1194_ihw">NC Mutual Archives</a>
+    image: ncmst001.jpg
+  18:
+    caption_html: |
+      Early Motorola television, 1948, from the
+      <a href="/catalog/rcmaxwellco_aspace_ref679_po2">R.C. Maxwell Company Records</a>
+    image: XXH2867.jpg
+  19:
+    caption_html: |
+      John Quincy Adams letter to Benjamin Rush, 1811, in the
+      <a href="/catalog/rushbenjaminandjulia_aspace_43c9e6c4a080a76a450f8ef1ae2f99d7">
+      Benjamin and Julia Stockton Rush Papers</a>
+    image: brpst002001.jpg

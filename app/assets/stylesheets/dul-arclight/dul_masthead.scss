@@ -41,16 +41,26 @@
   /* BRANDING / LOGO */
   /* =============== */
   #logo-col {
+    padding-left: 0;
     @include media-breakpoint-up(lg) {
       min-width: 350px;
     }
-
+    @include media-breakpoint-down(sm) {
+      padding-left: 15px;
+    }
   }
 
 
   .navbar-dul {
     margin-right: 20px;
     float: left;
+    @include media-breakpoint-only(xs) {
+      margin-right: 10px;
+    }
+    @include media-breakpoint-only(md) {
+      margin-right: 10px;
+    }
+
     .navbar-logo {
       width: 134px;
       height: 44px;
@@ -58,31 +68,18 @@
       background-image: asset_url('dul-logos/dul-logo.png');
       margin-right: 0;
       margin-top: 0;
-      
-    }
-  }
-  
-  @include media-breakpoint-up(md) {
-    .navbar-dul {
-      margin-right: 10px;
-      .navbar-logo {
-        width: 22px;
+      @include media-breakpoint-only(xs) {
         background-image: asset_url('dul-logos/dul_devil.png');
+        width: 22px;
+        margin-top: -8px;
+      }
+      @include media-breakpoint-only(md) {
+        background-image: asset_url('dul-logos/dul_devil.png');
+        width: 22px;
+        margin-top: -8px;
       }
     }
   }
-
-  @include media-breakpoint-up(lg) {
-    .navbar-dul {
-      margin-right: 20px;
-      .navbar-logo {
-        width: 134px;
-        background-image: asset_url('dul-logos/dul-logo.png');
-      }
-    }
-  }
-
-
 
   #search-col {
     margin-top: .5rem;
@@ -90,10 +87,6 @@
 
     @include media-breakpoint-up(sm) {
       padding-right: 0;
-    }
-
-    @include media-breakpoint-up(md) {
-      
     }
 
     @include media-breakpoint-up(lg) {
@@ -121,26 +114,35 @@
     .product-name-primary {
       display: block;
       font-weight: bold;
-      font-size: 31px;
-      line-height: 22px;
+      font-size: 26px;
+      line-height: 19px;
       margin-top: 0;
       color: white;
-
-      .extra {
-        display: none;
-        @media (min-width: 1371px) {
-          display: inline-block;
-        }
+      @include media-breakpoint-only(lg) {
+        font-size: 24px;
+        line-height: 16px;
+        margin-top: 2px;
       }
-
+      @include media-breakpoint-only(md) {
+        font-size: 20px;
+        line-height: 14px;
+        margin-top: 0px;
+      }
+      @include media-breakpoint-down(sm) {
+        font-size: 23px;
+        line-height: 18px;
+      }
     }
     .product-name-secondary {
       display: block;
       color: #ccc;
-      font-size: 18px;
+      font-size: 20px;
       margin-top: 1px;
       padding-top: 0;
       padding-left: 1px;
+      @include media-breakpoint-only(md) {
+        font-size: 18px;
+      }
     }
   }
 
@@ -304,6 +306,11 @@
     @include media-breakpoint-up(lg) {
       display: none;
     }
+
+    @include media-breakpoint-down(sm) {
+      top: -0.4rem;
+    }
+
 
   }
 

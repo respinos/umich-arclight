@@ -6,15 +6,15 @@ RSpec.describe 'DUL Arclight Pages', type: :feature do
   it 'navigates to homepage' do
     visit '/'
     expect(page).to have_css 'h1', text: 'Find Archival Materials'
-    expect(page).to have_css 'h3', text: 'About This Site'
-    expect(page).to have_css 'h3', text: 'Find More in the Catalog'
-    expect(page).to have_css 'h3', text: 'Ask a Librarian'
+    expect(page).to have_css 'h2', text: 'About This Site'
+    expect(page).to have_css 'h2', text: 'Find More in the Catalog'
+    expect(page).to have_css 'h2', text: 'Ask a Librarian'
   end
 
   it 'navigates to advanced search' do
     visit '/advanced'
     expect(page).to have_css 'h1', text: 'Advanced Search'
-    expect(page).to have_css 'input', id: 'q'
+    expect(page).to have_css 'input', id: 'q_advanced'
   end
 
   it 'displays UA record groups page, with links & titles' do

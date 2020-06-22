@@ -171,6 +171,27 @@
       </analyzer>
     </fieldType>
 
+    <fieldType name="text_en_nstm" class="solr.TextField" positionIncrementGap="100">
+      <analyzer type="index">
+        <tokenizer class="solr.WhitespaceTokenizerFactory" />
+        <filter class="solr.KeywordRepeatFilterFactory" />
+        <filter class="solr.WordDelimiterGraphFilterFactory"/>
+        <filter class="solr.EnglishPossessiveFilterFactory"/>
+        <filter class="solr.ICUFoldingFilterFactory" />
+        <filter class="solr.FlattenGraphFilterFactory"/> <!-- required on index analyzers after graph filters -->
+        <filter class="solr.RemoveDuplicatesTokenFilterFactory" />
+      </analyzer>
+      <analyzer type="query">
+        <tokenizer class="solr.WhitespaceTokenizerFactory" />
+        <filter class="solr.KeywordRepeatFilterFactory" />
+        <filter class="solr.WordDelimiterGraphFilterFactory"/>
+        <filter class="solr.SynonymFilterFactory" synonyms="synonyms.txt" ignoreCase="true" expand="true"/>
+        <filter class="solr.ICUFoldingFilterFactory" />
+        <filter class="solr.EnglishPossessiveFilterFactory"/>
+        <filter class="solr.RemoveDuplicatesTokenFilterFactory" />
+      </analyzer>
+    </fieldType>
+
     <fieldType name="identifier_match" class="solr.TextField" positionIncrementGap="100">
       <analyzer type="index">
         <tokenizer class="solr.WhitespaceTokenizerFactory"/>
@@ -307,15 +328,17 @@
         unknown fields indexed and/or stored by default -->
    <!--dynamicField name="*" type="ignored" multiValued="true" /-->
 
-   <dynamicField name="*_tesim" type="text_en"   stored="true"  indexed="true"  multiValued="true"  />
-   <dynamicField name="*_teim"  type="text_en"   stored="false" indexed="true"  multiValued="true"  />
-   <dynamicField name="*_si"    type="string"    stored="false" indexed="true"  multiValued="false" />
-   <dynamicField name="*_sim"   type="string"    stored="false" indexed="true"  multiValued="true"  />
-   <dynamicField name="*_ssm"   type="string"    stored="true"  indexed="false" multiValued="true"  />
-   <dynamicField name="*_ssi"   type="string"    stored="true"  indexed="true"  multiValued="false" />
-   <dynamicField name="*_ssim"  type="string"    stored="true"  indexed="true"  multiValued="true"  />
-   <dynamicField name="*_isim"  type="pint"      stored="true"  indexed="true"  multiValued="true"  />
-   <dynamicField name="*_ii"    type="pint"      stored="false" indexed="true"  multiValued="false" />
+   <dynamicField name="*_tesim" type="text_en"      stored="true"  indexed="true"  multiValued="true"  />
+   <dynamicField name="*_teim"  type="text_en"      stored="false" indexed="true"  multiValued="true"  />
+   <dynamicField name="*_tenim" type="text_en_nstm" stored="false" indexed="true"  multiValued="true" />
+   <dynamicField name="*_si"    type="string"       stored="false" indexed="true"  multiValued="false" />
+   <dynamicField name="*_sim"   type="string"       stored="false" indexed="true"  multiValued="true"  />
+   <dynamicField name="*_ssm"   type="string"       stored="true"  indexed="false" multiValued="true"  />
+   <dynamicField name="*_ssi"   type="string"       stored="true"  indexed="true"  multiValued="false" />
+   <dynamicField name="*_ssim"  type="string"       stored="true"  indexed="true"  multiValued="true"  />
+   <dynamicField name="*_isim"  type="pint"         stored="true"  indexed="true"  multiValued="true"  />
+   <dynamicField name="*_ii"    type="pint"         stored="false" indexed="true"  multiValued="false" />
+   <copyField source="*_tesim" dest="*_tenim" />
  </fields>
 
  <!-- Field to use to determine and enforce document uniqueness.
@@ -343,6 +366,10 @@
    <copyField source="names_ssim" dest="text" />
    <copyField source="access_subjects_ssim" dest="text" />
    <copyField source="formats_ssim" dest="text" />
+   <copyField source="abstract_tesim" dest="text" />
+   <copyField source="subject_tesim" dest="text" />
+   <copyField source="format_tesim" dest="text" />
+   <copyField source="parent_unittitles_teim" dest="text" />
 
    <!-- grab the searchable notes -->
    <copyField source="abstract_teim" dest="text" />

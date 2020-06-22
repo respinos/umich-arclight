@@ -1,13 +1,19 @@
 en:
   blacklight:
-    application_name: 'Archives at Duke'
+    application_name: 'Archives & Manuscripts at Duke University Libraries'
     bookmarks:
       disclaimer_html: '<strong>Please note:</strong> saved bookmarks may expire'
     branding:
       library_name: "Duke University Libraries"
-      primary_html: "Archives"
-      primary_html_extra: "at Duke"
-      secondary_html: "Collection Guides"
+      primary: "Archives & Manuscripts"
+      secondary: "Collection Guides"
+    email:
+      text:
+        subject:
+          one: 'Saved Bookmark from Collection Guides'
+          other: 'Saved Bookmarks from Collection Guides'
+      views:
+        note: 'This message was sent from the Rubenstein Library Collection Guides system. For research assistance, see: https://library.duke.edu/rubenstein/ask'
     header_links:
       ask: "Ask"
       ask_long: "Ask a Question"

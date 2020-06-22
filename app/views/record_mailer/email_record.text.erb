@@ -1,0 +1,16 @@
+<%# Overrides Blacklight Core partial. %>
+<%# Last checked for updates: Blacklight v7.8 %>
+<%# https://github.com/projectblacklight/blacklight/blob/master/app/views/record_mailer/email_record.text.erb %>
+
+<%= t('blacklight.email.views.note') %>
+<%= "\n" %>
+<%= "____________________" %>
+<%= "\n" %>
+<%= t('blacklight.email.text.message', :message => @message) %>
+<%= "\n" %>
+<% @documents.each do |document| %>
+<%= document.to_email_text %>
+<%= t('blacklight.email.text.title', :value => document.normalized_title) %>
+<%= t('blacklight.email.text.url', :url =>polymorphic_url(document, @url_gen_params)) %>
+<%= "\n" %>
+<% end %>

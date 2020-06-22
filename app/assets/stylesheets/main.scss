@@ -3,22 +3,23 @@
 @import 'bootstrap/variables';
 @import 'bootstrap/mixins';
 @import 'arclight/variables';
-@import 'dul-arclight/dul_variables.scss';
+@import 'dul-arclight/dul_variables';
 
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
-@import "blacklight/hierarchy/hierarchy.scss";
+@import "blacklight/hierarchy/hierarchy";
 
 @import 'arclight-overrides/modules/layout';
+@import 'arclight-overrides/modules/search_results';
 
-@import 'dul-arclight/modules/layout.scss';
-@import 'dul-arclight/modules/context_navigation.scss';
-@import 'dul-arclight/modules/show_component.scss';
-@import 'dul-arclight/modules/homepage.scss';
-@import 'dul-arclight/modules/search_results.scss';
-@import 'dul-arclight/modules/digital_objects.scss';
-@import 'dul-arclight/modules/ua_record_groups.scss';
+@import 'dul-arclight/modules/layout';
+@import 'dul-arclight/modules/context_navigation';
+@import 'dul-arclight/modules/show_component';
+@import 'dul-arclight/modules/homepage';
+@import 'dul-arclight/modules/search_results';
+@import 'dul-arclight/modules/digital_objects';
+@import 'dul-arclight/modules/ua_record_groups';
 
-@import 'dul-arclight/dul_styles.scss';
-@import 'dul-arclight/dul_masthead.scss';
+@import 'dul-arclight/dul_styles';
+@import 'dul-arclight/dul_masthead';

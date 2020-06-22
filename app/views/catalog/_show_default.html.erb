@@ -36,7 +36,8 @@
         </div>
       </div>
 
-      <ul class='nav flex-column'>
+      <nav aria-label="About the collection">
+        <ul class='nav flex-column'>
         <% unless blacklight_config.show.metadata_partials.nil? %>
           <% blacklight_config.show.metadata_partials.each do |item| %>
             <% next unless fields_have_content?(collection_doc(document), item) %>
@@ -62,6 +63,7 @@
 
         <% end %>
       </ul>
+      </nav>
 
       <hr/>
 
@@ -69,7 +71,7 @@
       <%# Hierarchy Tree Navigation %>
       <%# ========================= %>
       <% if document.children? or document.parent_ids.present? %>
-        <div class="hierarchy-nav-wrapper">
+        <div role="navigation" aria-label="Navigate the collection contents" class="hierarchy-nav-wrapper top-children-count-<%= collection_doc(document).number_of_children %>">
           <h2>
             <i class="fas fa-map-marker-alt"></i>
             <%= t("arclight.views.show.context") %>
@@ -156,16 +158,16 @@
 
 <% if document.restricted_component? %>
   <div id="access-restriction-snippet">
-    <% doc_presenter = show_presenter(document).with_field_group('component_using_field') %>
-    <% generic_document_fields('component_using_field').each do |field_name, field| %>
-      <% if generic_should_render_field?('component_using_field', document, field) %>
-        <dt class="blacklight-<%= field_name.parameterize %>"><i class="fas fa-exclamation-triangle"></i> <%= generic_render_document_field_label('component_using_field', document, field: field_name) %></dt>
-        <dd class="blacklight-<%= field_name.parameterize %>"><%= doc_presenter.field_value field %></dd>
+    <dl>
+      <% doc_presenter = show_presenter(document).with_field_group('component_using_field') %>
+      <% generic_document_fields('component_using_field').each do |field_name, field| %>
+        <% if generic_should_render_field?('component_using_field', document, field) %>
+          <dt class="blacklight-<%= field_name.parameterize %>"><i class="fas fa-exclamation-triangle"></i> <%= generic_render_document_field_label('component_using_field', document, field: field_name) %></dt>
+          <dd class="blacklight-<%= field_name.parameterize %>"><%= doc_presenter.field_value field %></dd>
+        <% end %>
       <% end %>
-    <% end %>
-
+    </dl>
     <p><a class="smooth-scroll" href="#<%=t("arclight.views.show.sections.using_field").parameterize %>"><%= t('dul_arclight.views.show.access.more_restriction') %></a></p>
-
   </div>
 <% end %>
 
@@ -184,6 +186,10 @@
     <%# ========================== %>
     <%# Adapted from: %>
     <%# https://github.com/projectblacklight/arclight/blob/master/app/views/catalog/_collection_context.html.erb %>
+
+    <% if show_online_access_banner?(document) %>
+      <%= render 'arclight/viewers/online_access_banner', document: @document %>
+    <% end %>
 
     <div class="access-preview-snippet">
       <%= render 'custom_metadata',
@@ -215,11 +221,11 @@
       <% if document.multiple_ddr_daos? %>
         <%= render partial: 'arclight/viewers/multi-ddr-link', locals: { document: @document } %>
         <% document.non_ddr_digital_objects.each do |obj| %>
-          <%= render_object_viewer(obj) %>
+          <%= render_object_viewer(obj, document) %>
         <% end %>
       <% else %>
         <% document.digital_objects.each do |obj| %>
-          <%= render_object_viewer(obj) %>
+          <%= render_object_viewer(obj, document) %>
         <% end %>
       <% end %>
 
@@ -236,7 +242,7 @@
   <h2>Contents</h2>
   <%= content_tag(
     :div, '',
-    class: 'al-contents child-components',
+    class: "al-contents child-components children-count-#{document.number_of_children}",
     data: {
       arclight: {
         path: search_catalog_path,
@@ -244,6 +250,7 @@
         view: 'child_components',
         parent: document.reference,
         directparent: document.reference,
+        childrencount: document.number_of_children,
         search_field: 'within_collection',
         per_page: '100'
       }

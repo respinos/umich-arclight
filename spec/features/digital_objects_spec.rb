@@ -48,6 +48,15 @@ RSpec.describe 'Digital Objects', type: :feature do
       end
     end
 
+    context 'when electronic record (electronic-record-master)' do
+      let(:doc_id) { 'daotest_aspace_testdao14' }
+
+      it 'renders a request button alongside the title' do
+        expect(page).to have_link('Request This Record', href: %r{^https://duke.aeon.atlas-sys.com})
+        expect(page).to have_css('span', text: 'A test title of an electronic-record-master DAO')
+      end
+    end
+
     context 'when generic default DAO' do
       let(:doc_id) { 'daotest_aspace_testdao06' }
 
@@ -110,6 +119,46 @@ RSpec.describe 'Digital Objects', type: :feature do
         expect(page).to have_link('View')
         expect(page).to have_link('View')
         expect(page).to have_css('span', text: 'A test title of a generic DAO')
+      end
+    end
+  end
+
+  describe 'online access banner' do
+    context 'when no DAOs' do
+      let(:doc_id) { 'uaduketaekwondo' }
+
+      it 'does not render a banner' do
+        expect(page).not_to have_css('.online-banner-wrapper')
+      end
+    end
+
+    context 'when a DDR collection DAO is present' do
+      let(:doc_id) { 'strykerdeena' }
+
+      it 'renders a banner with a DDR link' do
+        expect(page).to have_css('.online-banner-wrapper')
+        expect(page).to have_link('View Digital Collection')
+        expect(page).not_to have_link('Only view items with online access')
+      end
+    end
+
+    context 'when no DDR collection DAO is present but inline DAOs are' do
+      let(:doc_id) { 'daotest' }
+
+      it 'renders a banner with only a filter link' do
+        expect(page).to have_css('.online-banner-wrapper')
+        expect(page).not_to have_link('View Digital Collection')
+        expect(page).to have_link('Only view items with online access')
+      end
+    end
+
+    context 'when both DDR collection DAO is present and inline DAOs are' do
+      let(:doc_id) { 'rushbenjaminandjulia' }
+
+      it 'renders a banner with both a DDR link and a filter link' do
+        expect(page).to have_css('.online-banner-wrapper')
+        expect(page).to have_link('View Digital Collection')
+        expect(page).to have_link('Only view items with online access')
       end
     end
   end

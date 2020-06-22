@@ -23,6 +23,8 @@
 //= require blacklight/blacklight
 //= require blacklight/hierarchy/hierarchy.js
 
+//= require accessibility-patches.js
+
 //= require_tree .
 
 
