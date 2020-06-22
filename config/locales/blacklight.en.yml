@@ -23,5 +23,9 @@ en:
     search:
       bookmarks:
         label: "Bookmark:"
+    skip_links:
+      back_to_top: 'Back to top'
+      collection_nav: 'Skip to collection navigation'
+      facets: 'Skip to limit your search'
     tools:
       email: "Email Bookmarks"
