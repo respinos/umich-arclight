@@ -39,7 +39,10 @@ class ExpandButton {
    * @return {jQuery} - a jQuery object containing the targeted <li>
    */
   findSiblings() {
-    const $siblings = this.$el.parent().children('li');
+    // DUL CUSTOMIZATION: Account for our change wrapping the <button> in an <li>
+    // for a11y: Add another .parent() & then target .al-collection-context
+    // class specifically (so the button li isn't considered a sibling).
+    const $siblings = this.$el.parent().parent().children('li.al-collection-context');
     return $siblings.slice(0, -1);
   }
 
@@ -67,6 +70,7 @@ class ExpandButton {
     this.expandText = data.expand;
 
     this.$el = $(`<button class="my-3 btn btn-secondary btn-sm">${this.expandText}</button>`);
+
     this.handleClick = this.handleClick.bind(this);
     this.$el.click(this.handleClick);
   }
@@ -174,7 +178,7 @@ class ContextNavigation {
         <strong> <i class="fas fa-clock"></i> Loading ' +
         childrencount.toLocaleString() +
         ' items</strong><br/>' +
-        'This might take awhile.</div>');
+        'This might take a while.</div>');
     }
 
     this.el.after(placeholder.$el);
@@ -203,7 +207,12 @@ class ContextNavigation {
     $ul.addClass('pl-0');
     $ul.addClass('prev-siblings');
     const button = new ExpandButton(this.data);
-    $ul.append(button.$el);
+
+    // DUL CUSTOMIZATION: wrap the <button> in an <li> for a11y & adjust the script;
+    // <button> not allowed as child of <ul>.
+    const $li = $('<li></li>');
+    $li.append(button.$el);
+    $ul.append($li);
     return $ul;
   }
 
