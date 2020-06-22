@@ -101,7 +101,7 @@
        <int name="rows">10</int>
 
        <str name="q.alt">*:*</str>
-       <str name="mm">2&lt;-1 5&lt;-2 6&lt;90%</str>
+       <str name="mm">3&lt;-1 5&lt;-2 6&lt;90%</str>
 
        <!-- this qf and pf are used by default, if not otherwise specified by
             client. The default blacklight_config will use these for the
@@ -112,57 +112,71 @@
        -->
 
        <str name="qf">
-         ead_ssi^500
-         collection_title_tesim^150
-         title_tesim^100
-         name_tesim^10
-         place_tesim^10
-         unitid_identifier_match^5
-         subject_tesim^2
-         format_tesim^2
+         ead_ssi^250
+         collection_title_tenim^125
+         collection_title_tesim^50
+         abstract_tenim^75
+         name_tenim^75
+         title_tenim^50
+         title_tesim^20
+         place_tenim^5
+         unitid_identifier_match^2
+         subject_tenim^2
+         format_tenim^2
          text
        </str>
        <str name="pf">
          ead_ssi^500
-         collection_title_tesim^150
-         title_tesim^100
-         name_tesim^10
-         place_tesim^10
+         collection_title_tenim^250
+         collection_title_tesim^100
+         abstract_tenim^150
+         name_tenim^150
+         title_tenim^100
+         title_tesim^40
+         place_tenim^10
          unitid_identifier_match^5
-         subject_tesim^2
-         format_tesim^2
+         subject_tenim^5
+         format_tenim^5
          text
        </str>
 
        <str name="qf_name">
-         name_tesim
+         name_tenim
        </str>
        <str name="pf_name">
-         name_tesim
+         name_tenim^2
        </str>
        <str name="qf_place">
-         place_tesim
+         place_tenim
        </str>
        <str name="pf_place">
-         place_tesim
+         place_tenim^2
        </str>
        <str name="qf_subject">
-         subject_tesim
+         subject_tenim
        </str>
        <str name="pf_subject">
-         subject_tesim
+         subject_tenim^2
        </str>
        <str name="qf_format">
+         format_tenim^3
          format_tesim
        </str>
        <str name="pf_format">
-         format_tesim
+         format_tenim^10
+         format_tesim^6
        </str>
        <str name="qf_title">
+         collection_title_tenim^10
+         collection_title_tesim^5
+         title_tenim^2
          title_tesim
        </str>
        <str name="pf_title">
-         title_tesim
+         collection_title_tenim^20
+         collection_title_tesim^15
+         title_tenim^10
+         title_tesim^5
        </str>
 
        <int name="ps">3</int>
