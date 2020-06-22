@@ -2,6 +2,12 @@
 <%# Last checked for updates: ArcLight v0.3.0. %>
 <%# https://github.com/projectblacklight/arclight/blob/master/app/views/catalog/_show_default.html.erb %>
 
+
+<%# DUL CUSTOMIZATION: Additional skip link for show views to get to collection nav. %>
+<% content_for(:skip_links) do -%>
+    <%= link_to t('blacklight.skip_links.collection_nav'), '#context', class: 'element-invisible element-focusable rounded-bottom py-2 px-3', data: { turbolinks: 'false' } %>
+<% end %>
+
 <% content_for(:sidebar) do %>
   <div class='row'>
     <div class='col-md-12' id='context'>
@@ -15,6 +21,7 @@
 
       <div class="actions-wrapper">
         <div class="al-show-actions">
+          <%= link_to t('blacklight.skip_links.back_to_top'), '#skip-link', class: 'element-invisible element-focusable rounded-bottom  mt-2 mb-2 py-2 px-3', data: { turbolinks: 'false' } %>
           <h2>
             <i class="fas fa-archive"></i>
             <%= t("dul_arclight.views.show.sidebar.collection_title") %>
@@ -88,6 +95,8 @@
   </div>
 <% end %>
 
+
+<%= link_to t('blacklight.skip_links.back_to_top'), '#skip-link', class: 'element-invisible element-focusable rounded-bottom py-2 px-3', data: { turbolinks: 'false' } %>
 
 <%# =================== %>
 <%# upper breadcrumbs   %>

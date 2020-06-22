@@ -1,3 +1,35 @@
+#skip-link {
+  /* Needs to be higher than our masthead z-index */
+  z-index: 101;
+
+  /* Hide BL's skip link to the search box. Two reasons:        */
+  /* 1) we have #search_field scope selector hidden in our UI;  */
+  /*    it is on advanced search only.                          */
+  /* 2) the search box is close enough to the top that it is    */
+  /*    reasonable to navigate there via keyboard.              */
+  a[href="#search_field"] {
+    display: none;
+  }
+}
+
+/* Borrowed from Blacklight, but generalized for use beyond #skip-link,   */
+/* particularly for our links to jump back to top via keyboard nav/focus. */
+/* See: */
+/* https://github.com/projectblacklight/blacklight/blob/master/app/assets/stylesheets/blacklight/_header.scss#L57-L81 */
+.element-invisible {
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px);
+  overflow: hidden;
+  height: 1px;
+  &.element-focusable:active, &.element-focusable:focus {
+    position: static !important;
+    clip: auto;
+    overflow: visible;
+    height: auto;
+    display: inline-block;
+  }
+}
+
 .collection-banner {
   border-bottom: 2px solid #ccc;
   padding-bottom: 0.5rem;
