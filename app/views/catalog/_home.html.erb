@@ -37,9 +37,28 @@
     </div>
   </div>
 </div>
-
 <div class="container">
-  <div class="row mt-5 mb-5">
+
+  <%# Configurable alert banner; set via un/commenting dul_arclight.home.alert.* %>
+  <%# keys in config/locales/dul_arclight.en.yml %>
+  <% if I18n.exists?('dul_arclight.home.alert') %>
+    <div class="mt-4 mb-4 col-md-12 banner-wrapper banner-warning d-flex flex-row">
+      <div class="banner-part banner-heading d-md-block d-lg-flex">
+        <%= blacklight_icon :exclamation_triangle_solid %>
+        <span class="banner-heading-text d-none d-lg-block pr-4">
+          <%= t('dul_arclight.home.alert.title') %>
+        </span>
+      </div>
+      <div class="banner-part banner-shadow"></div>
+      <div class="banner-part banner-message flex-grow-1 d-flex flex-column">
+        <div class="mb-0 banner-message-text p-2">
+          <%= t('dul_arclight.home.alert.message_html').html_safe %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="row mt-4 mb-5">
     <div class="col-md-5">
       <h2>About This Site</h2>
       <p>Use this site to search for descriptions of primary sources and other unique materials held in Duke&rsquo;s special collections and university archives. Materials include manuscripts, letters, photographs, film, video, oral histories, objects, digital materials, and more.</p>
