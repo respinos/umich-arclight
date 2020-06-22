@@ -829,6 +829,11 @@ a {
 
   }
 
+  .grouped-documents {
+    .documentContent {
+      flex-grow: 1;
+    }
+  }
 
   /* series results */
 
