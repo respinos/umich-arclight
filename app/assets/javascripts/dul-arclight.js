@@ -219,10 +219,5 @@ Blacklight.onLoad(function () {
   /* ================================================ */
   
    $( "#content #emailLink" ).html('<i class="fas fa-envelope"></i> Email Bookmarks');
-  
 
 });
-
-
-
-

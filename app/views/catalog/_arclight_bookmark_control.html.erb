@@ -1,7 +1,7 @@
 <%# Overrides ArcLight Core partial. %>
 <%# Adds BS tooltips to bookmark icons %>
 <%# Last checked for updates: ArcLight v0.3.2. %>
-<%# https://github.com/projectblacklight/arclight/blob/master/app/views/catalog/_arclight_bookmark_control.html %>
+<%# https://github.com/projectblacklight/arclight/blob/master/app/views/catalog/_arclight_bookmark_control.html.erb %>
 
 <% if current_or_guest_user %>
   <%-
@@ -10,13 +10,14 @@
   # the data-doc-id attribute is used by our JS that converts to a checkbox/label.
   -%>
 
-  <%= content_tag( :span, t('blacklight.search.bookmarks.label'), class: 'bookmark_label sr-only', id: "bookmark_toggle_#{document.id.to_s.parameterize}_label" ) %>
+  <%# DUL CUSTOMIZATION: add the doc title to the form label so it is unique (for a11y) %>
+  <%= content_tag( :label, [t('blacklight.search.bookmarks.label'), document.normalized_title].join(' '), class: 'bookmark_label sr-only', id: "bookmark_toggle_#{document.id.to_s.parameterize}_label" ) %>
   
   <% unless bookmarked? document %>
     <%= form_tag(bookmark_path(document),
                  method: :put,
                  class: 'bookmark-toggle col-auto',
-                 'aria-labeledby' => "bookmark_toggle_#{document.id.to_s.parameterize}_label",
+                 'aria-labelledby' => "bookmark_toggle_#{document.id.to_s.parameterize}_label",
                  data: {
                    'doc-id' => document.id,
                    present: "<span data-toggle='tooltip' title='#{t('dul_arclight.tooltips.bookmarks.present')}'>#{blacklight_icon(:bookmark)}<span class=\"sr-only\">#{t('blacklight.search.bookmarks.present')}</span>",
@@ -31,7 +32,7 @@
     <%= form_tag(bookmark_path(document),
                  method: :delete,
                  class: "bookmark-toggle col-auto",
-                 'aria-labeledby' => "bookmark_toggle_#{document.id.to_s.parameterize}_label",
+                 'aria-labelledby' => "bookmark_toggle_#{document.id.to_s.parameterize}_label",
                  data: {
                    'doc-id' => document.id,
                    present: "<span data-toggle='tooltip' title='#{t('dul_arclight.tooltips.bookmarks.present')}'>#{blacklight_icon(:bookmark)}<span class=\"sr-only\">#{t('blacklight.search.bookmarks.present')}</span>",

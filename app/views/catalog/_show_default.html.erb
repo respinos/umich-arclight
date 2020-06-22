@@ -36,7 +36,8 @@
         </div>
       </div>
 
-      <ul role="navigation" aria-label="About the collection" class='nav flex-column'>
+      <nav aria-label="About the collection">
+        <ul class='nav flex-column'>
         <% unless blacklight_config.show.metadata_partials.nil? %>
           <% blacklight_config.show.metadata_partials.each do |item| %>
             <% next unless fields_have_content?(collection_doc(document), item) %>
@@ -62,6 +63,7 @@
 
         <% end %>
       </ul>
+      </nav>
 
       <hr/>
 
