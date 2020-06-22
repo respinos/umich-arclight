@@ -253,7 +253,6 @@ class CatalogController < ApplicationController
     config.add_sort_field 'creator_sort desc', label: 'creator (Z-A)'
     config.add_sort_field 'title_sort asc', label: 'title (A-Z)'
     config.add_sort_field 'title_sort desc', label: 'title (Z-A)'
-    config.add_sort_field 'sort_ii asc', label: 'component position'
 
     # If there are more than this many search results, no spelling ("did you
     # mean") suggestion is offered.
