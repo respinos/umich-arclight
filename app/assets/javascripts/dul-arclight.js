@@ -11,6 +11,7 @@ Blacklight.onLoad(function () {
   var popOverSettings = {
       placement: 'right',
       container: 'body',
+      boundary: 'viewport',
       html: true,
       trigger: 'hover',
       selector: '[data-toggle="popover"]',
