@@ -128,7 +128,7 @@ RSpec.describe 'Digital Objects', type: :feature do
       let(:doc_id) { 'uaduketaekwondo' }
 
       it 'does not render a banner' do
-        expect(page).not_to have_css('.online-banner-wrapper')
+        expect(page).not_to have_css('.banner-online')
       end
     end
 
@@ -136,7 +136,7 @@ RSpec.describe 'Digital Objects', type: :feature do
       let(:doc_id) { 'strykerdeena' }
 
       it 'renders a banner with a DDR link' do
-        expect(page).to have_css('.online-banner-wrapper')
+        expect(page).to have_css('.banner-online')
         expect(page).to have_link('View Digital Collection')
         expect(page).not_to have_link('Only view items with online access')
       end
@@ -146,7 +146,7 @@ RSpec.describe 'Digital Objects', type: :feature do
       let(:doc_id) { 'daotest' }
 
       it 'renders a banner with only a filter link' do
-        expect(page).to have_css('.online-banner-wrapper')
+        expect(page).to have_css('.banner-online')
         expect(page).not_to have_link('View Digital Collection')
         expect(page).to have_link('Only view items with online access')
       end
@@ -156,7 +156,7 @@ RSpec.describe 'Digital Objects', type: :feature do
       let(:doc_id) { 'rushbenjaminandjulia' }
 
       it 'renders a banner with both a DDR link and a filter link' do
-        expect(page).to have_css('.online-banner-wrapper')
+        expect(page).to have_css('.banner-online')
         expect(page).to have_link('View Digital Collection')
         expect(page).to have_link('Only view items with online access')
       end

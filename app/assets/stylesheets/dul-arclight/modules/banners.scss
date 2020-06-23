@@ -1,0 +1,102 @@
+/* ====================== */
+/* BANNERS & ALERTS       */
+/* ====================== */
+
+.banner-wrapper {
+  min-height: 50px;
+  background-color: tint($brand-success, 93.5);
+  padding: 0;
+  margin-bottom: 20px;
+  .banner-part {
+    min-height:50px;
+    display: flex;
+
+    &.banner-heading {
+      align-items: center; /* vertical */
+      background: $brand-success;
+      color: white;
+      font-size: 20px;
+      -webkit-clip-path: polygon(0 0, 100% 0, calc(100% - 20px) 100%, 0 100%);
+      clip-path: polygon(0 0, 100% 0, calc(100% - 20px) 100%, 0 100%);
+      white-space: nowrap;
+      z-index: 85;
+      padding: 0 35px 0 15px;
+      line-height: 1.2em;
+
+      @include media-breakpoint-down(lg) {
+        display:block;
+        padding: 15px;
+      }
+
+      & .blacklight-icons svg {
+        fill: tint($brand-success, 70);
+        height: 1.2rem;
+        width: 1.2rem;
+        margin-right: 0.6rem;
+      }
+
+      & .banner-heading-text {
+        text-transform: uppercase;
+      }
+    }
+
+    &.banner-shadow {
+      background-color: tint($brand-success, 70);
+      width: 40px;
+      min-width: 40px;
+      max-width: 40px;
+      align-items: center; /* vertical */
+      -webkit-clip-path: polygon(20px 0, 100% 0, calc(100% - 20px) 100%, 0 100%);
+      clip-path: polygon(20px 0, 100% 0, calc(100% - 20px) 100%, 0 100%);
+      margin: 0 -20px;
+      z-index: 81;
+    }
+
+    &.banner-message {
+      right: 0;
+      top: 0;
+      z-index: 80;
+      padding: 10px 10px 10px 30px;
+      line-height: 1.4em;
+
+      & .banner-message-text {
+        font-weight: bold;
+        color: $brand-success;
+      }
+
+      & .banner-link {
+        font-size: 15px;
+        font-weight: normal;
+        color: #555;
+        margin-right: 0.6em;
+
+        & .fas {
+          font-size: 12px;
+          margin-right: 3px;
+        }
+      }
+    }
+  }
+
+  &.banner-warning {
+    background-color: tint($dandelion, 60);
+    .banner-heading {
+      color: shade($dandelion, 60);
+      background-color: $dandelion;
+      & .blacklight-icons svg {
+        fill: shade($dandelion, 60);
+      }
+    }
+    .banner-shadow {
+      background-color: tint($dandelion, 30);
+    }
+    .banner-message {
+      .banner-message-text {
+        font-weight: 600;
+        color: shade($dandelion, 60);
+      }
+    }
+  }
+
+}
+

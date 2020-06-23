@@ -1,14 +1,19 @@
-<div class="col-md-12 online-banner-wrapper d-flex flex-row">
-  <div class="online-banner online-banner-heading">
-    <%= blacklight_icon :online %> <span class="online-banner-heading-text">Online Access</span>
+<div class="col-md-12 banner-wrapper banner-online d-flex flex-row">
+  <div class="banner-part banner-heading d-lg-block d-xl-flex">
+    <%= blacklight_icon :online %>
+    <span class="banner-heading-text d-none d-xl-block">Online Access</span>
   </div>
-  <div class="online-banner online-banner-shadow"></div>
-  <div class="online-banner online-banner-message flex-grow-1 d-flex flex-column">
-    <div class="mb-0 online-banner-message-text">
+  <div class="banner-part banner-shadow"></div>
+  <div class="banner-part banner-message flex-grow-1 d-flex flex-column">
+    <div class="mb-0 banner-message-text">
       <%= t('dul_arclight.digital_objects.online_banner.message_text') %><br/>
       <div class="dc-links d-flex flex-wrap">
         <% document.ddr_collection_objects.each do |obj| %>
-          <%= link_to t('dul_arclight.digital_objects.online_banner.dc_html').html_safe, obj.href, class: 'online-banner-link online-banner-link-ddr', title: [obj.label, 'Duke Digital Repository'].join(' - '), data: { toggle: 'tooltip' } %><br/>
+          <%= link_to t('dul_arclight.digital_objects.online_banner.dc_html').html_safe,
+                obj.href,
+                class: 'banner-link banner-link-ddr',
+                title: [obj.label, 'Duke Digital Repository'].join(' - '),
+                data: { toggle: 'tooltip' } %><br/>
         <% end %>
         
         <% if online_access_items?(document) %>
@@ -16,7 +21,7 @@
               search_action_path(f: {
                   collection_sim: [document.collection_name],
                   has_online_content_ssim: ["online"] }),
-                  class: 'online-banner-link online-banner-link-filter' %>
+                  class: 'banner-link banner-link-filter' %>
         <% end %>
       </div>
     </div>
