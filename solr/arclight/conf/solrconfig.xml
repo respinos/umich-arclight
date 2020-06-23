@@ -205,6 +205,7 @@
          has_online_content_ssim,
          language_ssm,
          level_ssm,
+         materialspec_tesim,
          names_coll_ssim,
          normalized_title_ssm,
          normalized_title_formatted_ssm,
