@@ -360,6 +360,7 @@ class CatalogController < ApplicationController
     config.add_background_field 'accruals_tesim', label: 'Accruals', helper_method: :render_html_tags
     config.add_background_field 'phystech_tesim', label: 'Physical / Technical Requirements', helper_method: :render_html_tags
     config.add_background_field 'physloc_tesim', label: 'Physical Location', helper_method: :render_html_tags
+    config.add_background_field 'materialspec_tesim', label: 'Material Specific Details', helper_method: :render_html_tags
     config.add_background_field 'odd_tesim', label: 'Other Descriptive Data', helper_method: :render_html_tags
     config.add_background_field 'descrules_ssm', label: 'Rules or Conventions', helper_method: :render_html_tags
 
@@ -433,6 +434,7 @@ class CatalogController < ApplicationController
     config.add_component_field 'accruals_tesim', label: 'Accruals', helper_method: :render_html_tags
     config.add_component_field 'phystech_tesim', label: 'Physical / Technical Requirements', helper_method: :render_html_tags
     config.add_component_field 'physloc_tesim', label: 'Physical Location', helper_method: :render_html_tags
+    config.add_component_field 'materialspec_tesim', label: 'Material Specific Details', helper_method: :render_html_tags
     config.add_component_field 'odd_tesim', label: 'Other Descriptive Data', helper_method: :render_html_tags
 
     config.add_component_field 'languages', label: 'Language', accessor: 'languages', separator_options: {

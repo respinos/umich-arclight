@@ -288,6 +288,7 @@ end
 
 DID_SEARCHABLE_NOTES_FIELDS.map do |selector|
   to_field "#{selector}_tesim", extract_xpath("/ead/archdesc/did/#{selector}", to_text: false)
+  to_field "#{selector}_teim", extract_xpath("/ead/archdesc/did/#{selector}/*[local-name()!='head']")
 end
 
 # DUL CUSTOMIZATION
@@ -609,6 +610,7 @@ compose 'components', ->(record, accumulator, _context) { accumulator.concat rec
   end
   DID_SEARCHABLE_NOTES_FIELDS.map do |selector|
     to_field "#{selector}_tesim", extract_xpath("./did/#{selector}", to_text: false)
+    to_field "#{selector}_teim", extract_xpath("./did/#{selector}/*[local-name()!='head']")
   end
   to_field 'did_note_ssm', extract_xpath('./did/note')
 
