@@ -11,12 +11,6 @@ RSpec.describe 'DUL Arclight Pages', type: :feature do
     expect(page).to have_css 'h2', text: 'Ask a Librarian'
   end
 
-  it 'navigates to advanced search' do
-    visit '/advanced'
-    expect(page).to have_css 'h1', text: 'Advanced Search'
-    expect(page).to have_css 'input', id: 'q_advanced'
-  end
-
   it 'displays UA record groups page, with links & titles' do
     visit '/collections/ua-record-groups'
     expect(page).to have_link('Student/Campus Life',

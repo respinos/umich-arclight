@@ -29,8 +29,6 @@ Rails.application.routes.draw do
     end
   end
 
-  resource :advanced_search, only: [:show], as: 'advanced_search', path: '/advanced', controller: 'advanced_search'
-
   resources :ua_record_groups, only: [:index], as: 'ua_record_groups', path: '/collections/ua-record-groups', controller: 'ua_record_groups'
 
   post '/index_finding_aids', to: 'index_finding_aids#create'
