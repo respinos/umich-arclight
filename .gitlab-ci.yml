@@ -33,11 +33,12 @@ test:
     - test
 
 include:
-  template: Dependency-Scanning.gitlab-ci.yml
+  - project: devops/ci-config
+    file: /templates/bundler-audit.gitlab-ci.yml
 
-dependency_scanning:
+bundler-audit:
   tags:
-    - dependency_scanning
+    - test
 
 release:
   stage: release
