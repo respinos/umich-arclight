@@ -1108,6 +1108,11 @@ h1.modal-title {
   font-size: 2rem;
 }
 
+#advanced-search-modal {
+  .within-collection-dropdown {
+    width: auto !important;
+  }
+}
 
 /* bookmarks */
 
