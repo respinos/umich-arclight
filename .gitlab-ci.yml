@@ -71,7 +71,7 @@ deploy_development:
   extends: .deploy
   environment:
     name: development
-    url: https://arclight-dev.lib.duke.edu
+    url: https://archives-dev.lib.duke.edu
   tags:
     - development
   only:
@@ -83,7 +83,7 @@ deploy_staging:
   extends: .deploy
   environment:
     name: staging
-    url: https://arclight-test.lib.duke.edu
+    url: https://archives-test.lib.duke.edu
   tags:
     - staging
   only:
@@ -96,7 +96,7 @@ deploy_production:
   extends: .deploy
   environment:
     name: production
-    url: https://arclight.lib.duke.edu
+    url: https://archives.lib.duke.edu
   tags:
     - production
   only:
