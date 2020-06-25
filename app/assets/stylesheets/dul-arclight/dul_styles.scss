@@ -551,6 +551,7 @@ a {
 
 #content {
 
+  padding-bottom: 1rem;
   /* actions */
 
   .series-action-wrapper {
@@ -1137,4 +1138,29 @@ body.blacklight-bookmarks-index {
 
     }
   }
+}
+
+
+/* report-a-problem link */
+
+.report-a-problem-wrapper {
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    z-index: 10000;
+    margin-bottom: -6px;
+
+    &:hover {
+      margin-bottom: -3px;
+    }
+
+    .btn {
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: .125em;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      border-radius: .2rem .2rem 0 0;
+      border: 3px solid #fff;
+      padding: .5rem .7rem .7rem .7rem;
+    }
 }
