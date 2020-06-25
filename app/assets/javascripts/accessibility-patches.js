@@ -77,6 +77,18 @@ function applyAccessibilityPatches() {
 
   $("div.toggle-bookmark:not(:last-of-type)").remove();
 
+
+  /* ---------------------------------- */
+  /* Area: Grouped Results Wrapper      */
+  /* ---------------------------------- */
+  /* Issue: keyboard nav link to "Skip to First Result" needs a #documents    */
+  /* id when in grouped view for search results, else that link goes nowhere. */ 
+  /* https://github.com/projectblacklight/arclight/blob/master/app/views/catalog/_group.html.erb#L2 */
+  /* Platform: ArcLight */
+  /* Version fixed in: TBD */
+
+  $("div.al-grouped-results").attr('id', 'documents');
+
 }
 
 Blacklight.onLoad(function () {

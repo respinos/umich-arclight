@@ -3,10 +3,20 @@ en:
     home:
       browse_all: "Browse All Collections"
       browse_ua: "Browse University Archives"
+
+      # Un/comment every line in the alert block with # to toggle activation
+      alert:
+        title: "Coronavirus Response"
+        message_html: |
+          <a href="https://library.duke.edu/rubenstein/about/coronavirus">Learn about changes
+          to Rubenstein Library services</a> during the Coronavirus response. The Rubenstein
+          Library remains <strong>closed</strong> until further notice while staff continue
+          to provide consulting, resources, and services online.
+
     advanced_search:
       title: "Advanced Search"
-      within_collections_label: "Search within"
-      search_fields_label: "Search across"
+      within_collections_label: "Search in"
+      search_fields_label: "Search field"
       restrict_to_ua: "within University Archives"
       available_online: "has Online Access"
       search_label: "Search for"

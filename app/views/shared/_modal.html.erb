@@ -1,0 +1,26 @@
+<%# Override Blacklight core modal partial to be able to add DUL custom modals %>
+<%# See: %>
+<%# https://github.com/projectblacklight/blacklight/blob/master/app/views/shared/_modal.html.erb %>
+<%# Last checked for updates: ArcLight v0.3.2 / Blacklight 7.2.0 %>
+
+<%# From Blacklight: %>
+<div id="blacklight-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+    </div>
+  </div>
+</div>
+
+<%# DUL CUSTOM modals %>
+<%# TODO: revisit in the future if we discover a workable way to just %>
+<%# use the existing Blacklight modal. Challenges encountered         %>
+<%# trying this: 1) the form contents need knowledge of the current   %>
+<%# document to know whether/which collection scope can be toggled;   %>
+<%# 2) the Blacklight modal does not seem to support Bootstrap's      %>
+<%# $(e.relatedTarget) for passing data-attribute values in; 3) AJAX  %>
+<%# loading the contents from a page at a route e.g., /advanced makes %>
+<%# it harder to use jQuery to modify the dropdown options. For now   %>
+<%# we will just output the markup in our own modal at the bottom of  %>
+<%# every page. %>
+
+<%= render 'catalog/search_form_advanced_modal.html.erb' %>

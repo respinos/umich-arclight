@@ -31,9 +31,13 @@ class SolrDocument
   end
 
   # DUL override ArcLight core method to reflect changing the fields from _sim to _tesim
+  # and also to include all values, not just the first abstract or scope.
   def abstract_or_scope
-    value = first('abstract_tesim') || first('scopecontent_tesim').to_s
-    render_html_tags(value: [value]) if value.present?
+    abstracts = fetch('abstract_tesim', [])
+    scopes = fetch('scopecontent_tesim', [])
+    values = (abstracts + scopes).join(' ')
+
+    render_html_tags(value: [values]) if values.present?
   end
 
   # DUL override ArcLight core method, which was incorrectly lowercasing subsequent characters in
