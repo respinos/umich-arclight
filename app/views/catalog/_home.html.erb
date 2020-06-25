@@ -60,16 +60,21 @@
 
   <div class="row mt-4 mb-5">
     <div class="col-md-5">
-      <h2>About This Site</h2>
-      <p>Use this portal to search for descriptions of primary sources and other unique, original, or rare materials held at Duke University's Rubenstein Library. Materials include manuscripts, letters, organizational records, photographs, audio visual recordings, oral histories, objects, zines, digital materials, and much more.</p>
+      <h2><%= t('dul_arclight.home.about.heading') %></h2>
+      <p><%= t('dul_arclight.home.about.text_html').html_safe %></p>
     </div>
     <div class="col-md-4">
-      <h2>Find More in the Catalog</h2>
+      <h2><%= t('dul_arclight.home.catalog.heading') %></h2>
       <p>Not all of the Rubenstein's collections are described on this site. <a href="https://find.library.duke.edu/?f_inclusive%5Blocation_hierarchy_f%5D%5B%5D=duke%3Adukeruby&amp;f_inclusive%5Blocation_hierarchy_f%5D%5B%5D=duke%3Adukeunis&amp;search_field=all_fields&amp;q=&amp;f%5Blocation_hierarchy_f%5D%5B%5D=">Search the catalog</a> to find additional manuscripts, rare books, and other items held in the Rubenstein.</p>
     </div>
     <div class="col-md-3">
-      <h2>Ask a Librarian</h2>
+      <h2><%= t('dul_arclight.home.ask.heading') %></h2>
       <p>Need help or have questions? <a href="https://library.duke.edu/rubenstein/ask?referrer=<%= request.original_url %>">Contact a librarian or archivist</a> for more information.</p>
     </div>
   </div>
 </div>
+
+<% content_for :twitter_og_meta do %>
+  <meta name="description" content="<%= t('dul_arclight.home.about.text_html') %>" />
+  <meta name="og:description" content="<%= t('dul_arclight.home.about.text_html') %>" />
+<% end %>

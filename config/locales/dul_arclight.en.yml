@@ -3,6 +3,17 @@ en:
     home:
       browse_all: "Browse All Collections"
       browse_ua: "Browse University Archives"
+      about:
+        heading: About This Site
+        text_html: |
+          Use this portal to search for descriptions of primary sources and other unique,
+          original, or rare materials held at Duke University's Rubenstein Library. Materials
+          include manuscripts, letters, organizational records, photographs, audio visual
+          recordings, oral histories, objects, zines, digital materials, and much more.
+      catalog:
+        heading: Find More in the Catalog
+      ask:
+        heading: Ask a Librarian
 
       # Un/comment every line in the alert block with # to toggle activation
       alert:
@@ -51,3 +62,7 @@ en:
         sidebar:
           collection_title: Collection
           collection_info_icon_label: Advanced collection info
+
+    twitter_og:
+      site_name: David M. Rubenstein Rare Book & Manuscript Library
+      twitter_handle: "@rubensteinlib"
