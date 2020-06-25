@@ -1,5 +1,6 @@
 <%# Override ArcLight Core partial %>
 <%# https://github.com/projectblacklight/arclight/blob/master/app/views/catalog/_custom_metadata.html.erb %>
+<%# Last checked for updates: ArcLight v0.3.2 %>
 
 <%# nixing bootstrap columns %>
 
@@ -10,6 +11,12 @@
   <h2 class='al-show-sub-heading'>
     <%= t("arclight.views.show.sections.#{field_accessor}", level: document.level) %>
   </h2>
+
+  <%# DUL CUSTOMIZATION: Optionally add boilerplate text to a field group %>
+  <%# using an i18n key. %>
+  <% if I18n.exists?("dul_arclight.views.show.field_group_note.#{field_accessor}") %>
+    <p><%= t("dul_arclight.views.show.field_group_note.#{field_accessor}").html_safe %></p>
+  <% end %>
 
   <dl>
     <% generic_document_fields(field_accessor).each do |field_name, field| %>

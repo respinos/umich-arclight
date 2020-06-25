@@ -34,6 +34,7 @@ en:
       search_label: "Search for"
       submit: "Search"
       start_over: "Start Over"
+
     digital_objects:
       online_banner:
         message_text: Some materials from this collection are available online.
@@ -43,16 +44,19 @@ en:
       request_this_record: Request This Record
       electronic-record-master: Electronic Record (Master)
       electronic-record-use-copy: Electronic Record (Use Copy)
+
     tooltips:
       online: "Available Online"
       bookmarks:
         present: "In Bookmarks"
         absent: "Add to Bookmarks"
       restricted: "Some restrictions apply"
+
     ua_record_groups:
       page_title: "University Archives Record Groups"
       nav_header: "Browse by Group"
       browse_all: "Browse all University Archives Collections"
+
     views:
       show:
         access:
@@ -60,6 +64,11 @@ en:
           more_restriction: "More about accessing and using these materials..."
         containers:
           see_all: "See all containers"
+        field_group_note:
+          indexed_terms_field: |
+            Click on terms below to find related finding aids on this site. For other related
+            materials in the Duke University Libraries, search for these terms in the
+            <a href="https://find.library.duke.edu/">Catalog</a>.
         sidebar:
           collection_title: Collection
           collection_info_icon_label: Advanced collection info
