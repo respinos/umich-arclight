@@ -6,10 +6,11 @@ en:
       about:
         heading: About This Site
         text_html: |
-          Use this portal to search for descriptions of primary sources and other unique,
-          original, or rare materials held at Duke University's Rubenstein Library. Materials
-          include manuscripts, letters, organizational records, photographs, audio visual
-          recordings, oral histories, objects, zines, digital materials, and much more.
+          Use this portal to search and explore finding aids, also called collection guides.
+          Finding aids describe collections of primary sources and other unique, original, or
+          rare materials held at Duke University's Rubenstein Library. Materials include
+          manuscripts, letters, organizational records, photographs, audio visual recordings,
+          oral histories, objects, zines, digital materials, and much more.
       catalog:
         heading: Find More in the Catalog
       ask:
