@@ -14,6 +14,6 @@ module BlacklightHelper
   # @return [String]
   #
   def render_page_title
-    ( strip_tags(content_for(:page_title)) if content_for?(:page_title) ) || strip_tags(@page_title) || application_name
+    (sanitize(content_for(:page_title), tags:[]) if content_for?(:page_title)) || sanitize(@page_title, tags:[]) || application_name
   end
 end
