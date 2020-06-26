@@ -195,7 +195,7 @@ Blacklight.onLoad(function () {
   /* ================================================ */
 
   $(document).on('ready turbolinks:load', function() {
-    $(window).trigger(loadMastHTML());
+    loadMastHTML();
   });
 
   loadMastHTML = function() {
@@ -213,7 +213,7 @@ Blacklight.onLoad(function () {
     });
 
   }
-
+  
 
   /* ================================================ */
   /* Add FA icons */
