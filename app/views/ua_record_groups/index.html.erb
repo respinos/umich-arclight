@@ -1,16 +1,20 @@
 <% content_for(:sidebar) do %>
-  <h2 class="mt-3 mb-3">
-    <%= t('dul_arclight.ua_record_groups.nav_header') %>
-  </h2>
-  <ul class="nav flex-column record-group-nav">
-    <% @record_groups.each do |key, value| %>
-      <%= render partial: 'group_nav_link',
-            locals: {
-              group: key.to_s,
-              info: value,
-              collection_count: @record_group_counts.dig(key) || 0 } %>
-    <% end %>
-  </ul>
+  <nav class='sticky-nav sidebar-scroll-wrapper ua-record-group-scroller'>
+
+      <h2 class="mt-3 mb-3">
+        <%= t('dul_arclight.ua_record_groups.nav_header') %>
+      </h2>
+      <ul class="nav flex-column record-group-nav">
+        <% @record_groups.each do |key, value| %>
+          <%= render partial: 'group_nav_link',
+                locals: {
+                  group: key.to_s,
+                  info: value,
+                  collection_count: @record_group_counts.dig(key) || 0 } %>
+        <% end %>
+      </ul>
+
+  </nav>
 <% end %>
 
 <div class="p-4">
