@@ -5,6 +5,6 @@
       <%= info.dig('title') -%>
     <% end %>
     <span>(<%= number_with_delimiter(collection_count) %>)</span>
-    <p class="small"><%= info.dig('description') %></p>
+    <p class="small"><%= info.dig('description')&.html_safe %></p>
   </li>
 <% end %>
