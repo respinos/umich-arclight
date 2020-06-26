@@ -286,6 +286,7 @@ class CatalogController < ApplicationController
       related_field
       indexed_terms_field
       indexes_field
+      using_field
     ]
 
     config.show.context_access_tab_items = %i[

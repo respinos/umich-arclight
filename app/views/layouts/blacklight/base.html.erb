@@ -21,6 +21,12 @@
     <%= csrf_meta_tags %>
     <%= content_for(:head) %>
 
+    <%# DUL CUSTOMIZATION: Google Analytics head tags %>
+    <% if DulArclight.google_analytics_tracking_id.present? %>
+      <%= render partial: "shared/google_analytics_head", locals: {
+        ga_tracking_id: DulArclight.google_analytics_tracking_id } %>
+    <% end %>
+
     <%# DUL CUSTOMIZATION: Open Graph & Twitter card metadata %>
     <meta property="og:site_name" content="<%= t('dul_arclight.twitter_og.site_name') %>"/>
     <meta name="twitter:site" content="<%= t('dul_arclight.twitter_og.twitter_handle') %>"/>
@@ -38,33 +44,39 @@
     </div>
     <%= render partial: 'shared/header_navbar' %>
 
-  <main id="main-container" class="<%= container_classes %>" role="main" aria-label="<%= t('blacklight.main.aria.main_container') %>">
-    <%= content_for(:container_header) %>
+    <main id="main-container" class="<%= container_classes %>" role="main" aria-label="<%= t('blacklight.main.aria.main_container') %>">
+      <%= content_for(:container_header) %>
 
-    <%= render partial: 'shared/flash_msg', layout: 'shared/flash_messages' %>
+      <%= render partial: 'shared/flash_msg', layout: 'shared/flash_messages' %>
 
-    <div class="row">
-      <%= content_for?(:content) ? yield(:content) : yield %>
-    </div>
+      <div class="row">
+        <%= content_for?(:content) ? yield(:content) : yield %>
+      </div>
 
-  </main>
+    </main>
 
-  <%= render partial: 'shared/footer' %>
-  <%= render partial: 'shared/modal' %>
+    <%= render partial: 'shared/footer' %>
+    <%= render partial: 'shared/modal' %>
 
-  <%# DUL CUSTOMIZATION: Advanced Search modal %>
-  <%# TODO: revisit in the future if we discover a workable way to just %>
-  <%# use the existing Blacklight modal. Challenges encountered         %>
-  <%# trying this: 1) the form contents need knowledge of the current   %>
-  <%# document to know whether/which collection scope can be toggled;   %>
-  <%# 2) the Blacklight modal does not seem to support Bootstrap's      %>
-  <%# $(e.relatedTarget) for passing data-attribute values in; 3) AJAX  %>
-  <%# loading the contents from a page at a route e.g., /advanced makes %>
-  <%# it harder to use jQuery to modify the dropdown options. For now   %>
-  <%# we will just output the markup in our own modal at the bottom of  %>
-  <%# every page. %>
+    <%# DUL CUSTOMIZATION: Advanced Search modal %>
+    <%# TODO: revisit in the future if we discover a workable way to just %>
+    <%# use the existing Blacklight modal. Challenges encountered         %>
+    <%# trying this: 1) the form contents need knowledge of the current   %>
+    <%# document to know whether/which collection scope can be toggled;   %>
+    <%# 2) the Blacklight modal does not seem to support Bootstrap's      %>
+    <%# $(e.relatedTarget) for passing data-attribute values in; 3) AJAX  %>
+    <%# loading the contents from a page at a route e.g., /advanced makes %>
+    <%# it harder to use jQuery to modify the dropdown options. For now   %>
+    <%# we will just output the markup in our own modal at the bottom of  %>
+    <%# every page. %>
 
-  <%= render 'catalog/search_form_advanced_modal.html.erb' %>
+    <%= render 'catalog/search_form_advanced_modal.html.erb' %>
+
+    <%# DUL CUSTOMIZATION: Google Analytics end-body tags %>
+    <% if DulArclight.google_analytics_tracking_id.present? %>
+      <%= render partial: "shared/google_analytics_body", locals: {
+        ga_tracking_id: DulArclight.google_analytics_tracking_id } %>
+    <% end %>
 
   </body>
 </html>

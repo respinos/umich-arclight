@@ -1,0 +1,49 @@
+<%# Google Analytics code that lives in the <body>. %>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script>
+  <%# Set GA Custom Dimensions before config. Setting them here -%>
+  <%# ensures they are sent with every page view & event logged -%>
+  <%# from the current page. See: -%>
+  <%# https://developers.google.com/analytics/devguides/collection/gtagjs/setting-values -%>
+
+  gtag('set', {
+    'collection_id': '<%= ga_collection_id %>',
+    'page_type': '<%= ga_page_type %>'
+  });
+
+  <%# Send a pageview hit, along with some configured options: %>
+  gtag('config', '<%= ga_tracking_id %>', {
+    'anonymize_ip': true,
+    'transport_type': 'beacon',
+
+    <%# Turbolinks makes this necessary... we need to explicitly %>
+    <%# set the page title and path sent to Google for each      %>
+    <%# pageview, else it would not update between pages as a    %>
+    <%# user navigates. %>
+
+    'page_title': document.title,
+    'page_path': window.location.pathname,
+
+    <%# GA Custom Dimensions map to dimension<index>: -%>
+    <%# https://developers.google.com/analytics/devguides/collection/gtagjs/custom-dims-mets -%>
+
+    <%# Adding more dimensions requires adding via the Analytics website -%>
+    <%# for each GA property: %>
+    <%# Admin > {Property} > Custom Definitions > Custom Dimensions -%>
+
+    'custom_map': {
+      'dimension1': 'collection_id',
+      'dimension2': 'page_type'
+    }
+  });
+
+  <% if DulArclight.google_analytics_debug == 'true' %>
+    console.log(
+      [
+        'GA Collection ID: <%= ga_collection_id %>',
+        'GA Page Type: <%= ga_page_type %>',
+        'GA Tracking ID: <%= ga_tracking_id %>'
+      ].join(' --- '));
+  <% end %>
+</script>
