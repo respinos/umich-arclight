@@ -8,4 +8,12 @@ module DulArclight
   mattr_accessor :finding_aid_data do
     ENV.fetch('FINDING_AID_DATA', '/data')
   end
+
+  mattr_accessor :google_analytics_tracking_id do
+    ENV['GOOGLE_ANALYTICS_TRACKING_ID']
+  end
+
+  mattr_accessor :google_analytics_debug do
+    ENV['GOOGLE_ANALYTICS_DEBUG']
+  end
 end

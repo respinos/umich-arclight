@@ -58,21 +58,10 @@
                     [
                       solr_document_path(normalize_id(document.eadid)),
                       "##{t("arclight.views.show.sections.#{item}").parameterize}"
-                    ].join, class: 'nav-link'
+                    ].join, class: 'nav-link', data: { turbolinks: 'false' }
                   %>
                 </li>
               <% end %>
-
-              <%# manually adding 'using' nav item %>
-              <li class='nav-item'>
-                <%= link_to t("arclight.views.show.sections.using_field"),
-                    [
-                      solr_document_path(normalize_id(document.eadid)),
-                      "##{t("arclight.views.show.sections.using_field").parameterize}"
-                    ].join, class: 'nav-link'
-                  %>
-              </li>
-
             <% end %>
           </ul>
         </nav>

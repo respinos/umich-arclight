@@ -1,6 +1,6 @@
 <% if collection_count.positive? %>
   <li>
     <%= group %>.
-    <%= link_to info.dig('title'), anchor: group %>
+    <%= link_to info.dig('title'), url_for(anchor: group), data: { turbolinks: 'false' } %>
   </li>
 <% end %>
