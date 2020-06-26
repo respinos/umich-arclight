@@ -76,3 +76,7 @@ en:
     twitter_og:
       site_name: David M. Rubenstein Rare Book & Manuscript Library
       twitter_handle: "@rubensteinlib"
+
+    report_a_problem:
+      title: "Report a Problem"
+      link: "https://duke.qualtrics.com/to-be-determined"
