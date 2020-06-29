@@ -128,6 +128,15 @@
                  title="A test title of a generic DAO" />
           </did>
         </c02>
+        <c02 id="aspace_testdao14" level="file">
+          <did>
+            <unittitle>Electronic record DAO that should not appear as "online access" (electronic-record-master)</unittitle>
+            <physdesc altrender="whole">
+              <extent altrender="materialtype spaceoccupied">4 folders</extent>
+            </physdesc>
+            <dao xlink:actuate="onRequest" xlink:href="\\somewhere.oit.duke.edu\some\path\RL10042_mcgeefamily\extracted_files_bag\data\RL10042-LFF-0006" xlink:role="electronic-record-master" xlink:show="new" xlink:title="A test title of an electronic-record-master DAO" xpointer="RL10042-LFF-0006"/>
+          </did>
+        </c02>
       </c01>
       <c01 id="aspace_testdaoseries2" level="series">
         <did>
@@ -207,15 +216,6 @@
                  href="https://library.duke.edu"
                  show="new"
                  title="A test title of a generic DAO" />
-          </did>
-        </c02>
-        <c02 id="aspace_testdao14" level="file">
-          <did>
-            <unittitle>Example with an electronic record DAO</unittitle>
-            <physdesc altrender="whole">
-              <extent altrender="materialtype spaceoccupied">4 folders</extent>
-            </physdesc>
-            <dao xlink:actuate="onRequest" xlink:href="\\somewhere.oit.duke.edu\some\path\RL10042_mcgeefamily\extracted_files_bag\data\RL10042-LFF-0006" xlink:role="electronic-record-master" xlink:show="new" xlink:title="A test title of an electronic-record-master DAO" xpointer="RL10042-LFF-0006"/>
           </did>
         </c02>
       </c01>
