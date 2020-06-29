@@ -37,4 +37,15 @@ module DulArclightHelper
   def catalog_item_url(bibnum)
     ['https://find.library.duke.edu/catalog/DUKE', bibnum].join
   end
+
+  # Should I display my scope / abstract in a search result?
+  def display_scope?(document)
+    document.abstract_or_scope.present? && !collection_result_in_group?(document)
+  end
+
+  private
+
+  def collection_result_in_group?(document)
+    grouped? && (document.level == 'collection')
+  end
 end
