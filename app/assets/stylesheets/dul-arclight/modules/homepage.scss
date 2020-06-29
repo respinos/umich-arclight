@@ -32,6 +32,7 @@
       background-size: cover;
       right: 0;
       background-position: 50% 50%;
+      clip-path: polygon(50px 0,100% 0,100% 100%,0 100%);
       -webkit-clip-path: polygon(50px 0,100% 0,100% 100%,0 100%);
       z-index: 90;
       background-color: #ddd;
