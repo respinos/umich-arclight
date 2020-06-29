@@ -232,13 +232,15 @@ to_field 'formats_ssm' do |_record, accumulator, context|
   accumulator.concat Array.wrap(context.output_hash['formats_ssim'])
 end
 
-to_field 'has_online_content_ssim', extract_xpath('.//dao') do |_record, accumulator|
+# DUL CUSTOMIZATION: omit electronic-record-* DAOs so they don't count as online access
+to_field 'has_online_content_ssim', extract_xpath('.//dao[not(starts-with(@role,"electronic-record"))]') do |_record, accumulator|
   accumulator.replace([accumulator.any?])
 end
 
-# DUL CUSTOMIZATION: count all DAOs from the top-level down
+# DUL CUSTOMIZATION: count all DAOs from the top-level down; omit the electronic-record-*
+# ones.
 to_field 'total_digital_object_count_isim' do |record, accumulator|
-  accumulator << record.xpath('.//dao').count
+  accumulator << record.xpath('.//dao[not(starts-with(@role,"electronic-record"))]').count
 end
 
 # DUL CUSTOMIZATION: get all unique DAO roles present anywhere in this collection
@@ -478,7 +480,10 @@ compose 'components', ->(record, accumulator, _context) { accumulator.concat rec
   to_field 'collection_creator_ssm' do |_record, accumulator, context|
     accumulator.concat Array.wrap(context.clipboard[:parent].output_hash['creator_ssm'])
   end
-  to_field 'has_online_content_ssim', extract_xpath('.//dao') do |_record, accumulator|
+
+  # DUL CUSTOMIZATION: omit DAO @role electronic-record-* from counting as online content
+  # as they are not really online and thus shouldn't get the icon/facet value.
+  to_field 'has_online_content_ssim', extract_xpath('.//dao[not(starts-with(@role,"electronic-record"))]') do |_record, accumulator|
     accumulator.replace([accumulator.any?])
   end
   to_field 'child_component_count_isim' do |record, accumulator|
@@ -530,9 +535,10 @@ compose 'components', ->(record, accumulator, _context) { accumulator.concat rec
     end
   end
 
-  # DUL CUSTOMIZATION: count all DAOs from this level down
+  # DUL CUSTOMIZATION: count all online access DAOs from this level down; omit the
+  # electronic-record ones as they are not really online access.
   to_field 'total_digital_object_count_isim' do |record, accumulator|
-    accumulator << record.xpath('.//dao').count
+    accumulator << record.xpath('.//dao[not(starts-with(@role,"electronic-record"))]').count
   end
 
   # DUL Customization: capture the DAO @role & @xpointer attribute
