@@ -129,9 +129,9 @@ namespace :dul_arclight do
     end
   end
 
-  desc "Re-build the Solr suggester data"
-  task :build_suggest => :environment do
+  desc 'Re-build the Solr suggester data'
+  task build_suggest: :environment do
     BuildSuggestJob.perform_later
-    puts "BuildSuggestJob enqueued."
+    puts 'BuildSuggestJob enqueued.'
   end
 end
