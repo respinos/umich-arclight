@@ -103,7 +103,7 @@ class SolrDocument
   end
 
   def highlights_without_title
-    highlights&.reject! { |h| h[highlight_index] if highlight_index.present? }
+    highlights.delete_at(highlight_index) if highlight_index.present?
     highlights
   end
 
