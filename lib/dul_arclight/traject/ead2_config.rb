@@ -183,9 +183,6 @@ to_field 'repository_sim' do |_record, accumulator, context|
   accumulator << context.clipboard[:repository]
 end
 
-to_field 'geogname_ssm', extract_xpath('/ead/archdesc/controlaccess/geogname')
-to_field 'geogname_sim', extract_xpath('/ead/archdesc/controlaccess/geogname')
-
 to_field 'creator_ssm', extract_xpath('/ead/archdesc/did/origination')
 to_field 'creator_sim', extract_xpath('/ead/archdesc/did/origination')
 to_field 'creator_ssim', extract_xpath('/ead/archdesc/did/origination')
@@ -565,8 +562,9 @@ compose 'components', ->(record, accumulator, _context) { accumulator.concat rec
     to_field "#{selector}_ssm", extract_xpath(".//#{selector}")
   end
 
-  to_field 'geogname_sim', extract_xpath('./controlaccess/geogname')
-  to_field 'geogname_ssm', extract_xpath('./controlaccess/geogname')
+  # DUL CUSTOMIZATION: Bugfix field geogname --> places
+  to_field 'places_sim', extract_xpath('./controlaccess/geogname')
+  to_field 'places_ssm', extract_xpath('./controlaccess/geogname')
   to_field 'places_ssim', extract_xpath('./controlaccess/geogname')
 
   to_field 'access_subjects_ssim', extract_xpath('./controlaccess', to_text: false) do |_record, accumulator|
