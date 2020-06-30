@@ -109,6 +109,11 @@
     .twitter-typeahead input {
       border-top-right-radius: 0;
       border-bottom-right-radius: 0;
+
+      &.search-q {
+        background-color: #fff !important;
+      }
+
     }
   }
   .search-extra-controls {
