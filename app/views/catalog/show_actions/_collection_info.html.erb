@@ -20,7 +20,9 @@
           <td>
             <% document.bibnums.each do |bibnum| %>
               <div>
-                <%= link_to bibnum, catalog_item_url(bibnum), target: '_blank'%>
+                <%= link_to bibnum, catalog_item_url(bibnum), target: '_blank',
+                      aria: { label: 'catalog link' },
+                      data: { ga_label: 'catalog link'} %>
               </div>
             <% end %>
           </td>
@@ -38,7 +40,10 @@
                 <%= blacklight_icon :online, classes: 'al-online-content-icon' %>
               </span>
               <%= link_to number_with_delimiter(document.total_digital_object_count),
-                    search_action_path(f: { collection_sim: [document.collection_name], has_online_content_ssim: ["online"] }) %>
+                    search_action_path(f: { collection_sim: [document.collection_name],
+                                        has_online_content_ssim: ["online"] }),
+                    aria: { label: 'limit to components with online access' },
+                    data: { ga_label: 'filter to online access' } %>
             </td>
           </tr>
         <% end %>

@@ -554,7 +554,7 @@ a {
   padding-bottom: 1rem;
   /* actions */
 
-  .series-action-wrapper {
+  .show-action-wrapper {
     float: right;
     padding-top: .85rem;
     margin-top: 0.75rem;
@@ -581,7 +581,7 @@ a {
   }
 
   #document.blacklight-collection {
-    .series-action-wrapper {
+    .show-action-wrapper {
       padding-top: 0;
       border-top: none;
     }
