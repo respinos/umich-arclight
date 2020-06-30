@@ -56,6 +56,8 @@ en:
       page_title: "University Archives Record Groups"
       nav_header: "Browse by Group"
       browse_all: "Browse all University Archives Collections"
+      about_text: "What is a record group?"
+      about_link: "https://library.duke.edu/rubenstein/uarchives/about/record-groups"
 
     views:
       show:
