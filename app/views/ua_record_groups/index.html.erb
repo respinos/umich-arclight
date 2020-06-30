@@ -20,6 +20,8 @@
 <div class="p-4">
   <h1><%= t('dul_arclight.ua_record_groups.page_title') %></h1>
   <%= link_to t('dul_arclight.ua_record_groups.browse_all'), search_action_path(f: { level_sim: ["Collection"], repository_sim: ["Duke University Archives"] }), { class: 'btn btn-success'} %>
+
+  <%= link_to t('dul_arclight.ua_record_groups.about_text'), t('dul_arclight.ua_record_groups.about_link'), { class: 'btn btn-link text-muted ml-2', target: '_blank' } %>
   <hr/>
   <div class="ua-record-groups">
     <% @record_groups.each do |key, value| %>
