@@ -17,9 +17,9 @@
       <div class="intro-buttons mt-2">
         <div class="btn-group">
           <%= link_to t('dul_arclight.home.browse_all'), arclight_engine.collections_path, { class: 'btn btn-sm btn-primary'} %>
-          <a href="#" type="button" class="btn btn-primary btn-sm dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <button href="#" type="button" class="btn btn-primary btn-sm dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <span class="sr-only">Toggle Dropdown</span>
-          </a>
+          </button>
           <div class="dropdown-menu">
             <%= link_to t('dul_arclight.home.browse_all'), arclight_engine.collections_path, { class: 'dropdown-item'} %>
             <%= link_to t('dul_arclight.home.browse_ua'), ua_record_groups_path, { class: 'dropdown-item'} %>
