@@ -6,7 +6,7 @@
 
 <% doc_presenter = show_presenter(document).with_field_group(field_accessor) %>
 
-  <%= content_tag(:div, id: ( field_accessor == 'using_field' ?  'restrictions-preview' : t("arclight.views.show.sections.#{field_accessor}").parameterize) ) do %>
+  <%= content_tag(:div, id: ( field_accessor == 'using_field' ?  'restrictions-preview' : t("arclight.views.show.sections.#{field_accessor}").parameterize), class: 'metadata-section' ) do %>
 
   <h2 class='al-show-sub-heading'>
     <%= t("arclight.views.show.sections.#{field_accessor}", level: document.level) %>

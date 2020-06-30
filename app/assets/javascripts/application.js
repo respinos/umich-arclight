@@ -24,6 +24,7 @@
 //= require blacklight/hierarchy/hierarchy.js
 
 //= require accessibility-patches.js
+//= require google-analytics-event-tracking.js
 
 //= require_tree .
 

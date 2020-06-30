@@ -23,7 +23,7 @@
       <%#  https://github.com/projectblacklight/arclight/blob/master/app/views/catalog/_collection_context_nav.html.erb %>
 
 
-      <div class="actions-wrapper">
+      <div id="collection-actions" class="actions-wrapper">
         <div class="al-show-actions">
           <%= link_to t('blacklight.skip_links.back_to_top'), '#skip-link', class: 'element-invisible element-focusable rounded-bottom  mt-2 mb-2 py-2 px-3', data: { turbolinks: 'false' } %>
           <h2>
@@ -48,7 +48,7 @@
       </div>
 
       <section class="sidebar-scroll-wrapper">
-        <nav aria-label="About the collection">
+        <nav id="about-collection-nav" aria-label="About the collection">
           <ul class='nav flex-column'>
             <% unless blacklight_config.show.metadata_partials.nil? %>
               <% blacklight_config.show.metadata_partials.each do |item| %>
@@ -72,7 +72,7 @@
         <%# Hierarchy Tree Navigation %>
         <%# ========================= %>
         <% if document.children? or document.parent_ids.present? %>
-          <div role="navigation" aria-label="Navigate the collection contents" class="hierarchy-nav-wrapper top-children-count-<%= collection_doc(document).number_of_children %>">
+          <div id="context-tree-nav" role="navigation" aria-label="Navigate the collection contents" class="hierarchy-nav-wrapper top-children-count-<%= collection_doc(document).number_of_children %>">
             <h2 class="navigate-header">
               <i class="fas fa-map-marker-alt"></i>
               <%= t("arclight.views.show.context") %>
@@ -99,7 +99,7 @@
 -- with some small tweaks %>
 
 <% parents = Arclight::Parents.from_solr_document(document).as_parents %>
-<nav aria-label="breadcrumb">
+<nav id="component-breadcrumb" aria-label="breadcrumb">
 
   <%= content_tag :div, class: "collection-name-wrapper" do %>
     <%= link_to solr_document_path(normalize_id(document.eadid)) do %>
@@ -130,7 +130,7 @@
 <%# Actions (bookmarks) %>
 <%# =================== %>
 
-<div class="series-action-wrapper">
+<div class="show-action-wrapper">
 
   <div class="actions-wrapper d-flex">
 
@@ -217,7 +217,7 @@
   <%# DAOs on This Level (Not Descendants) %>
   <%# ==================================== %>
 
-  <div class='row'>
+  <div class='row' id='online-content'>
     <div class='col-md-12'>
       <h2><%= t('arclight.views.show.online_content') %> <span class="media-body al-online-content-icon" aria-hidden="true" data-toggle="tooltip" title="<%= t('dul_arclight.tooltips.online') %>"><%= blacklight_icon :online %></span></h2>
 
