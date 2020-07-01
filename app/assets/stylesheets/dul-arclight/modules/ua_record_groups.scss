@@ -1,3 +1,7 @@
+.sidebar-scroll-wrapper.ua-record-group-scroller {
+  height: 100vh;
+}
+
 ul.record-group-nav {
   li {
     padding-left: 1.5em;
@@ -45,8 +49,8 @@ dd.blacklight-ua_record_group_ssim {
       content: ' ';
       padding-left: .25rem;
       display: block;
-      border-bottom: 2px solid #e6e6e6;
-      border-left: 2px solid #e6e6e6;
+      border-bottom: 2px solid shade($gray-lighter, 2);
+      border-left: 2px solid shade($gray-lighter, 2);
       width: 0.8rem;
       left: 0.2rem;
       position: absolute;

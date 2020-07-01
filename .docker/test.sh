@@ -3,6 +3,7 @@
 export RAILS_ENV=test
 export FINDING_AID_DATA="spec/fixtures"
 export COMPOSE_PROJECT_NAME="dul-arclight-${RAILS_ENV}"
+export GOOGLE_ANALYTICS_TRACKING_ID="UA-167959564-4"
 
 if [[ "$@" =~ ^(-h|(--)?help)$ ]]; then
     cat <<EOF

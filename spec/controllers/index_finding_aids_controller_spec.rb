@@ -22,6 +22,7 @@ RSpec.describe IndexFindingAidsController, type: :controller do
 
     before do
       allow(DulArclight).to receive(:gitlab_token) { token }
+      allow(DulArclight).to receive(:finding_aid_data).and_return('spec/fixtures')
       allow(controller).to receive(:update_finding_aid_data).and_return(nil)
     end
 

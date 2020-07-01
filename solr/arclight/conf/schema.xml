@@ -354,10 +354,15 @@
 
    <!-- field-based searches -->
    <copyField source="normalized_title_ssm" dest="title_tesim"/>
-   <copyField source="places_ssm" dest="place_tesim"/>
+   <copyField source="normalized_title_ssm" dest="title_tenim"/>
+   <copyField source="places_ssim" dest="place_tesim"/>
+   <copyField source="places_ssim" dest="place_tenim"/>
    <copyField source="names_ssim" dest="name_tesim"/>
+   <copyField source="names_ssim" dest="name_tenim"/>
    <copyField source="access_subjects_ssim" dest="subject_tesim"/>
+   <copyField source="access_subjects_ssim" dest="subject_tenim"/>
    <copyField source="formats_ssim" dest="format_tesim"/>
+   <copyField source="formats_ssim" dest="format_tenim"/>
 
    <!-- The catch all `text` field -->
    <!-- grab the fielded searches -->

@@ -44,7 +44,7 @@
           class: 'tree-nav-leaf', title: document.level, counter: counter,
           data: {
             toggle: 'popover',
-            content: [document.containers.join(', '), document.abstract_or_scope].reject(&:blank?).join('<br/>')
+            content: [document.containers.join(', '), document.short_description].reject(&:blank?).join('<br/>')
             }
         %>
 

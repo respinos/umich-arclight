@@ -3,6 +3,18 @@ en:
     home:
       browse_all: "Browse All Collections"
       browse_ua: "Browse University Archives"
+      about:
+        heading: About This Site
+        text_html: |
+          Use this portal to search and explore finding aids, also called collection guides.
+          Finding aids describe collections of primary sources and other unique, original, or
+          rare materials held at Duke University's Rubenstein Library. Materials include
+          manuscripts, letters, organizational records, photographs, audio visual recordings,
+          oral histories, objects, zines, digital materials, and much more.
+      catalog:
+        heading: Find More in the Catalog
+      ask:
+        heading: Ask a Librarian
 
       # Un/comment every line in the alert block with # to toggle activation
       alert:
@@ -22,6 +34,7 @@ en:
       search_label: "Search for"
       submit: "Search"
       start_over: "Start Over"
+
     digital_objects:
       online_banner:
         message_text: Some materials from this collection are available online.
@@ -31,16 +44,21 @@ en:
       request_this_record: Request This Record
       electronic-record-master: Electronic Record (Master)
       electronic-record-use-copy: Electronic Record (Use Copy)
+
     tooltips:
       online: "Available Online"
       bookmarks:
         present: "In Bookmarks"
         absent: "Add to Bookmarks"
       restricted: "Some restrictions apply"
+
     ua_record_groups:
       page_title: "University Archives Record Groups"
       nav_header: "Browse by Group"
       browse_all: "Browse all University Archives Collections"
+      about_text: "What is a record group?"
+      about_link: "https://library.duke.edu/rubenstein/uarchives/about/record-groups"
+
     views:
       show:
         access:
@@ -48,6 +66,19 @@ en:
           more_restriction: "More about accessing and using these materials..."
         containers:
           see_all: "See all containers"
+        field_group_note:
+          indexed_terms_field: |
+            Click on terms below to find related finding aids on this site. For other related
+            materials in the Duke University Libraries, search for these terms in the
+            <a href="https://find.library.duke.edu/">Catalog</a>.
         sidebar:
           collection_title: Collection
           collection_info_icon_label: Advanced collection info
+
+    twitter_og:
+      site_name: David M. Rubenstein Rare Book & Manuscript Library
+      twitter_handle: "@rubensteinlib"
+
+    feedback:
+      title: "Feedback"
+      link: "https://duke.qualtrics.com/jfe/form/SV_3DiP6inIB0B8yBn"

@@ -6,6 +6,7 @@ class SolrDocument
   include Blacklight::Solr::Document
   include Arclight::SolrDocument
   include DulArclight::FieldConfigHelpers
+  include ActionView::Helpers::TextHelper # for short description
 
   # self.unique_key = 'id'
 
@@ -38,6 +39,12 @@ class SolrDocument
     values = (abstracts + scopes).join(' ')
 
     render_html_tags(value: [values]) if values.present?
+  end
+
+  # DUL custom property for a tagless short description of a collection or component.
+  # Can be used e.g., in meta tags.
+  def short_description
+    truncate(strip_tags(abstract_or_scope), length: 400, separator: ' ')
   end
 
   # DUL override ArcLight core method, which was incorrectly lowercasing subsequent characters in
@@ -96,7 +103,7 @@ class SolrDocument
   end
 
   def highlights_without_title
-    highlights&.reject! { |h| h[highlight_index] if highlight_index.present? }
+    highlights.delete_at(highlight_index) if highlight_index.present?
     highlights
   end
 

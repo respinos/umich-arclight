@@ -39,7 +39,7 @@
         <%= content_tag('div', 'data-arclight-truncate' => true) do %>
           <%= document.abstract_or_scope %>
         <% end %>
-      <% end if document.abstract_or_scope %>
+      <% end if display_scope?(document) %>
 
       <%= render partial: 'index_breadcrumb_default', locals: { document: document } %>
     </div>

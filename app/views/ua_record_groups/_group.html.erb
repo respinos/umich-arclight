@@ -10,7 +10,7 @@
         <%= "collection".pluralize(collection_count) %>
       </span>
     </h2>
-    <p><%= info.dig('description') %></p>
+    <p><%= info.dig('description')&.html_safe %></p>
 
     <ul class="subgroup-list list-unstyled">
       <% info.dig('subgroups')&.each do |key, value| %>

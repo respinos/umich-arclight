@@ -32,6 +32,7 @@
       background-size: cover;
       right: 0;
       background-position: 50% 50%;
+      clip-path: polygon(50px 0,100% 0,100% 100%,0 100%);
       -webkit-clip-path: polygon(50px 0,100% 0,100% 100%,0 100%);
       z-index: 90;
       background-color: #ddd;
@@ -108,7 +109,22 @@
     .twitter-typeahead input {
       border-top-right-radius: 0;
       border-bottom-right-radius: 0;
+
+      &.search-q {
+        background-color: white !important;
+      }
+
     }
+
+    .search-btn {
+      background-color: $brand-success;
+      border-color: shade($brand-success, 5%);
+      &:hover, &:active, &:focus {
+        background-color: shade($brand-success, 10%);
+        border-color: shade($brand-success, 15%);
+      }
+    }
+
   }
   .search-extra-controls {
     display: inline;

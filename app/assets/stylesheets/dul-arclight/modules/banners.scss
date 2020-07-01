@@ -20,7 +20,7 @@
       clip-path: polygon(0 0, 100% 0, calc(100% - 20px) 100%, 0 100%);
       white-space: nowrap;
       z-index: 85;
-      padding: 0 35px 0 15px;
+      padding: 0 60px 0 15px;
       line-height: 1.2em;
 
       @include media-breakpoint-down(lg) {
@@ -49,13 +49,11 @@
       -webkit-clip-path: polygon(20px 0, 100% 0, calc(100% - 20px) 100%, 0 100%);
       clip-path: polygon(20px 0, 100% 0, calc(100% - 20px) 100%, 0 100%);
       margin: 0 -20px;
-      z-index: 81;
     }
 
     &.banner-message {
       right: 0;
       top: 0;
-      z-index: 80;
       padding: 10px 10px 10px 30px;
       line-height: 1.4em;
 
@@ -67,7 +65,7 @@
       & .banner-link {
         font-size: 15px;
         font-weight: normal;
-        color: #555;
+        color: $gray;
         margin-right: 0.6em;
 
         & .fas {
@@ -100,3 +98,73 @@
 
 }
 
+
+
+.alert-success {
+  background-color: tint($brand-success, 80);
+  color: shade($brand-success, 50);
+
+  p, a {
+    color: shade($brand-success, 50);
+  }
+
+  a.btn {
+    border-color: $brand-success;
+    background-color: $brand-success;
+    color: tint($brand-success, 90);
+  }
+
+  .close:hover {
+    color: shade($brand-success, 50);
+  }
+}
+
+.alert-warning {
+  background-color: tint($brand-warning, 80);
+  color: shade($brand-warning, 50);
+
+  p, a {
+    color: shade($brand-warning, 50);
+  }
+
+  a.btn {
+    border-color: $brand-warning;
+    background-color: $brand-warning;
+    color: shade($brand-warning, 90);
+  }
+
+  .close:hover {
+    color: shade($brand-warning, 50);
+  }
+
+}
+
+.alert-danger {
+  background-color: $brand-danger;
+  color: white;
+
+  p, a {
+    color: white;
+  }
+
+  a.btn {
+    border-color: shade($brand-danger, 50);
+    background-color: shade($brand-danger, 50);
+    color: tint($brand-danger, 90);
+  }
+}
+
+.alert-info {
+  background-color: $brand-primary;
+  color: white;
+
+  p, a {
+    color: white;
+  }
+
+  a.btn {
+    border-color: shade($brand-primary, 50);
+    background-color: shade($brand-primary, 50);
+    color: tint($brand-primary, 80);
+  }
+}

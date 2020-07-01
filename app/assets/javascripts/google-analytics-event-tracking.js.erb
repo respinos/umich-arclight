@@ -1,0 +1,579 @@
+/*
+Configure which elements and interactions generate GA Event data using
+the @selectors hash.  Each element selector is a top-level hash key, so
+must be unique. Selectors can be combined (comma-separated).
+
+OPTIONS FOR CUSTOMIZING THE DATA SENT FOR EACH ELEMENT MATCHED BY SELECTOR
+==========================================================================
+(Order doesn't matter)
+
+1. event
+2. link
+3. category
+4. action
+5. label
+6. document_listener
+7. intercept
+
+
+////////////////////
+
+1. event
+--------
+Which event on the element has to happen to send GA Event Track data?
+default: 'click contextmenu'
+This catches both left ('click') & right ('contextmenu') clicks.
+Other possibilities: 'submit', 'focus', etc. Also can use custom events, e.g.,
+'foo' will catch $('#element').trigger('foo')... this technique
+is used for A/V player events in DDR.
+
+2. link
+-------
+Which DOM element provides context for the event? (especially for default values)
+default: $(this) -- whatever element was specified by the selector
+
+3. category
+-----------
+The Category value to submit to GA Event Tracking. Limited by Google to 150 bytes.
+default: result of defaultCategory(link)
+
+4. action
+----------
+The Action value to submit to GA Event Tracking. Limited by Google to 500 bytes.
+default: result of defaultAction(link)
+
+5. label
+--------
+The Label value to submit to GA Event Tracking. Limited by Google to 500 bytes.
+default: result of defaultLabel(link)
+
+
+6. document_listener
+--------------------
+
+By default, listeners will get attached to the document node in the DOM via
+delegated event handling, e.g.:
+
+  $(document).on('click', 'div.something a', function(){ ... });
+
+With Turbolinks on, this is required, else listeners aren't registered on elements that
+get put into the DOM via Turbolinks. This syntax also enables listening for events on elements
+that are dynamically added to the DOM after the initial pageload, which happens a lot in ArcLight.
+
+If we ever need to register a listener directly on the element identified by the selector, e.g.:
+
+  $('div.something a').on('click', function(){ ... });
+
+... this can be supported by setting document_listener: false
+
+Possible values: false
+
+
+7. intercept
+------------
+Optional instructions inserted immediately after the click/event. In some cases we need to
+prevent the default browser behavior for the action; others we need to stop the click
+from propagating up to parent elements to prevent unwanted click events. E.g.:
+
+  e.preventDefault();
+  e.stopPropagation();
+
+======================================================================================
+*/
+
+<%
+@selectors = {
+
+  #// ===================
+  #// HOMEPAGE
+  #// ===================
+
+  ".main-feature .feature-caption a": {
+    category: "'homepage'",
+    action: "'featured item link'"
+  },
+  "#browse-links button, #browse-links a": {
+    category: "'homepage'",
+    action: "'browse'"
+  },
+  ".homepage a.rl-banner": {
+    category: "'homepage'",
+    action: "'browse'"
+  },
+  "#homepage-alert a": {
+    category: "'homepage'",
+    action: "'main alert'"
+  },
+  "#homepage-text-blocks a": {
+    category: "'homepage'",
+    action: "'home text blocks'"
+  },
+
+  #// ===================
+  #// MASTHEAD / FOOTER
+  #// ===================
+
+  "#skip-link a": {
+    category: "'masthead'",
+    action: "'skip link'"
+  },
+
+  "#header-navbar a.navbar-dul": {
+    category: "'masthead'",
+    action: "'branding'",
+    label: "'DUL logo'"
+  },
+  "#header-navbar .navbar-product-name a": {
+    category: "'masthead'",
+    action: "'branding'",
+    label: "'finding aids home'"
+  },
+
+  "#header-navbar #primary-menu a": {
+    category: "'masthead'",
+    action: "'primary menu'"
+  },
+
+  "#dul-masthead-row a": {
+    category: "'masthead'",
+    action: "'shared DUL menu'"
+  },
+
+  "#announcement a": {
+    category: "'footer'",
+    action: "'overlay links'"
+  },
+
+  #// ===================
+  #// SEARCH BOX
+  #// ===================
+
+  "form.search-query-form:not(.advanced-search)": {
+    event: "submit",
+    category: "'search box'",
+    action: "'submit basic search'",
+    label: "$('input#q').val()"
+  },
+
+  "form.search-query-form.advanced-search": {
+    event: "submit",
+    category: "'search box'",
+    action: "'submit advanced search'",
+    label: "$('input#q_advanced').val()"
+  },
+
+  ".tt-menu .tt-suggestion": {
+    category: "'search box'",
+    action: "'typeahead suggestion'",
+    label: "'suggested terms click'"
+  },
+
+  "form.search-query-form.advanced-search select#within_collection_advanced": {
+    category: "'search box'",
+    action: "'search scope selector'",
+    label: "'search within collection dropdown click'"
+  },
+
+  "form.search-query-form.advanced-search select#search_field_advanced": {
+    category: "'search box'",
+    action: "'search scope selector'",
+    label: "'search field dropdown click'"
+  },
+
+  "form.search-query-form.advanced-search input[type=checkbox]": {
+    category: "'search box'",
+    action: "'search scope selector'",
+    label: "$(this).val();"
+  },
+
+  "form.search-query-form.advanced-search button#reset": {
+    category: "'search box'",
+    action: "'start over'"
+  },
+
+  ".search-extra-controls a:not(#bookmarks_nav)": {
+    category: "'search box'",
+    action: "'extra controls'"
+  },
+
+  ".search-extra-controls #bookmarks_nav": {
+    category: "'search box'",
+    action: "'extra controls'",
+    label: "'view bookmarks'"
+  },
+
+  #// ================================
+  #// COLLECTION / COMPONENT SHOW PAGE
+  #// ================================
+
+  #// Collection-Specific Selectors
+  "#document .banner-online a": {
+    category: "'collection or component'",
+    action: "'online access banner'"
+  },
+
+  "#document .metadata-section a": {
+    category: "'collection or component'",
+    action: "'metadata link'",
+    label: "link.closest('[id]').attr('id')"
+  },
+
+  "#document .access-preview-snippet a": {
+    category: "'collection or component'",
+    action: "'access restrictions snippet'"
+  },
+
+  #// Component-Specific Selectors
+  "#document #component-breadcrumb a": {
+    category: "'collection or component'",
+    action: "'breadcrumb'"
+  },
+
+  "#document .al-metadata-section a": {
+    category: "'collection or component'",
+    action: "'metadata link'"
+  },
+
+  "#documents.documents-child_components .document-title-heading a": {
+    category: "'collection or component'",
+    action: "'child component title link'"
+  },
+
+  "#document .child-components #sortAndPerPage .page-links a": {
+    category: "'collection or component'",
+    action: "'child component list pagination (top)'"
+  },
+
+  "#document .child-components #sortAndPerPageBottom .page-links a": {
+    category: "'collection or component'",
+    action: "'child component list pagination (bottom)'"
+  },
+
+  #// Shared Between Collection & Component
+  "#document #online-content a": {
+    category: "'collection or component'",
+    action: "'online content'"
+  },
+
+  #// Sidebar Nav
+  "#sidebar #collection-actions a": {
+    category: "'collection sidebar'",
+    action: "'collection actions'"
+  },
+
+  "#sidebar #about-collection-nav a": {
+    category: "'collection sidebar'",
+    action: "'collection section nav'"
+  },
+
+  "#sidebar #context-tree-nav a.tree-nav-leaf": {
+    category: "'collection sidebar'",
+    action: "'collection context tree nav'",
+    label: "'leaf click'"
+  },
+
+  "#sidebar #context-tree-nav button": {
+    category: "'collection sidebar'",
+    action: "'collection context tree nav'",
+    label: "'expander' + ($(this).hasClass('collapsed') ? ' [expand]' : ' [collapse]')"
+  },
+
+  "#sidebar #context-tree-nav a.al-toggle-view-children": {
+    category: "'collection sidebar'",
+    action: "'collection context tree nav'",
+    label: "'+/-' + (($(this).attr('aria-expanded') == 'true') ? ' [expand]' : ' [collapse]')"
+  },
+
+  #// =========================
+  #// SEARCH & BROWSE RESULTS
+  #// =========================
+  #// Can't just target #documents b/c of AJAX-fetched search results that get
+  #// rendered in non-search result pages (e.g., child components or sidebar nav)
+
+  #// You Searched For...
+  "body.blacklight-catalog-index #appliedParams a": {
+    category: "'search results'",
+    action: "'search revision'"
+  },
+
+  "body.blacklight-catalog-index #documents .document .document-title-heading a": {
+    category: "'search results'",
+    action: "'search result title link'"
+  },
+
+  "body.blacklight-catalog-index #documents .document .breadcrumb-links a": {
+    category: "'search results'",
+    action: "'search result breadcrumb link'"
+  },
+
+  "body.blacklight-catalog-index #sortAndPerPage #sort-dropdown a, #sortAndPerPage #sort-dropdown button": {
+    category: "'search results'",
+    action: "'sort by'"
+  },
+
+  "body.blacklight-catalog-index #sortAndPerPage #per_page-dropdown a, #sortAndPerPage #per_page-dropdown button": {
+    category: "'search results'",
+    action: "'per page'"
+  },
+
+  "body.blacklight-catalog-index #sortAndPerPage .result-type-group a": {
+    category: "'search results'",
+    action: "'toggle grouping results'"
+  },
+
+  #// Grouped results specific elements
+  "body.blacklight-catalog-index #documents .al-grouped-title-bar h3 a": {
+    category: "'search results'",
+    action: "'search result group title link'"
+  },
+
+  "body.blacklight-catalog-index #documents .al-grouped-title-bar .al-grouped-repository a": {
+    category: "'search results'",
+    action: "'search result grouped repository link'"
+  },
+
+  "body.blacklight-catalog-index #documents .al-grouped-more a": {
+    category: "'search results'",
+    action: "'search result group: view all from group'"
+  },
+
+  "body.blacklight-catalog-index #sortAndPerPage .page-links a": {
+    category: "'search results'",
+    action: "'pagination'"
+  },
+
+  #// ================================
+  #// FACETS
+  #// ================================
+
+  "#facets .facet-field-heading button": {
+    category: "'facets'",
+    action: "$(this).attr('data-target').substring(1)"
+  },
+
+  "#facets ul.facet-values a": {
+    category: "'facets'"
+  },
+
+  #// Hierarchical Facets
+  "#facets .facet-hierarchy a.facet_select": {
+    category: "'facets'"
+  },
+  "#facets .facet-hierarchy button": {
+    category: "'facets'"
+  },
+
+  "#blacklight-modal.facet-browse a": {
+    category: "'facets'"
+  },
+
+  #// Date Range Facet
+  "#facets #facet-date_range_sim input#range_date_range_sim_begin": {
+    category: "'facets'",
+    action: "'facet-date_range_sim'",
+    label: "'year range begin'",
+  },
+
+  "#facets #facet-date_range_sim input#range_date_range_sim_end": {
+    category: "'facets'",
+    action: "'facet-date_range_sim'",
+    label: "'year range end'",
+  },
+
+  "#facets #facet-date_range_sim .slider-track": {
+    category: "'facets'",
+    action: "'facet-date_range_sim'",
+    label: "'year range slider'",
+  },
+
+  "#facets #facet-date_range_sim .chart_js": {
+    category: "'facets'",
+    action: "'facet-date_range_sim'",
+    label: "'year range histogram'",
+  },
+
+  "#facets #facet-date_range_sim form": {
+    event: "submit",
+    category: "'facets'",
+    action: "'facet-date_range_sim'",
+    label: "'year range submit limit'",
+  },
+
+  #// ================================
+  #// UA RECORD GROUPS PAGE
+  #// ================================
+
+  "body.blacklight-ua_record_groups #sidebar a": {
+    category: "'UA record groups'",
+    action: "'UA sidebar nav'"
+  },
+
+  "body.blacklight-ua_record_groups #content a": {
+    category: "'UA record groups'",
+    action: "'UA content link'"
+  },
+
+  #// ================================
+  #// BOOKMARKS PAGE
+  #// ================================
+
+  "body.blacklight-bookmarks .bookmarksTools": {
+    category: "'bookmarks page'",
+    action: "'bookmarks tools'"
+  },
+  "body.blacklight-bookmarks .search-widgets": {
+    category: "'bookmarks page'",
+    action: "'bookmarks widgets'"
+  },
+}
+
+%>
+
+var eventTracking = (function () {
+
+  var config = {
+    categoryDataAttribute: 'ga-category',
+    actionDataAttribute: 'ga-action',
+    labelDataAttribute: 'ga-label'
+  }
+
+  // PUBLIC METHODS
+  // ===============
+
+  function listenForClicks () {
+
+    <%# Create an event listener for each selector configured above %>
+
+    <% @selectors.each do |selector, props| %>
+      <% if (props[:document_listener] === false) %>
+        $('<%= selector %>').on('<%= props[:event] || "click contextmenu" %>', function(e){
+      <% else %>
+        $(document).on('<%= props[:event] || "click contextmenu" %>', '<%= selector %>', function(e){
+      <% end %>
+           <%= props[:intercept] %>
+           var link = <%= props[:link] || "$(this)" %>;
+           var ga_event = {};
+           ga_event.category = <%= props[:category] || "defaultCategory(link)" %>;
+           ga_event.action = <%= props[:action] || "defaultAction(link)" %>;
+           ga_event.label = <%= props[:label] || "defaultLabel(link)" %>;
+           ga_event.custom_dimensions = {};
+           sendEventData(ga_event);
+         });
+    <% end %>
+
+  }
+
+  // PRIVATE METHODS
+  // ===============
+  
+  function defaultCategory (link) {
+    var category;
+
+    // Default Category Determination Progression: 
+    // 1. a@data-ga-category
+    // 2. id of 1st parent element with id
+
+    if (link.data(config.categoryDataAttribute)) { 
+      category = link.data(config.categoryDataAttribute);
+    } else if (link.parent().closest('[id]').attr('id')) {
+      category = link.parent().closest('[id]').attr('id'); // id from nearest ancestor with one
+    } else {
+      category = "top-level";
+    }
+    return category;
+  }
+
+  function defaultAction (link) {
+    var action;
+
+    // Default Action Determination Progression: 
+    // 1. a@data-ga-action
+    // 2. a@id self
+    // 3. id of 1st parent element w/id
+
+    if (link.data(config.actionDataAttribute)) {
+      action = link.data(config.actionDataAttribute);
+    } else if ( link.closest('[id]').attr('id') ) {
+      action = link.closest('[id]').attr('id'); // own id, else nearest ancestor with one
+    } else {
+      action = "top-level";
+    }
+    return action;
+  }
+
+  function defaultLabel (link) {
+    var label;
+
+    // Default Label Determination Progression: 
+    // 1. @data-ga-label
+    // 2. use the link text or a property, different for <a>, <button>, <input> elements
+
+    if (link.data(config.labelDataAttribute)) {
+      label = link.data(config.labelDataAttribute);
+    } else {
+
+      if(link.is("[data-toggle=dropdown]")) {
+        label = "dropdown" + (link.attr('aria-expanded') == 'false' ? ' [collapse]' : ' [expand]');
+      } else if (link.is('a')) {
+        label = ($.trim(link.text()) || link.children('img:first').attr('alt') || link.attr('title'));
+      } else if (link.is('button')) {
+        label = (link.attr('aria-label') || link.attr('title') || $.trim(link.text()) );
+          if(link.is("[data-toggle=collapse]")) {
+            label += (link.attr('aria-expanded') == 'false' ? ' [collapse]' : ' [expand]');
+          }
+      } else if (link.is('input')) {
+        label = (link.attr('name') || link.attr('value') || link.attr('placeholder'));
+      } else {
+        label = "no label";
+      }
+    }
+
+    label = label.replace(/\n/g, " ");
+    return label;
+  }
+
+  function sendEventData(ga_event) {
+
+    var tracking_id = $('#google-analytics-configs').data('ga-tracking-id');
+    var debug_on = $('#google-analytics-configs').data('ga-debug').toString();
+    if (tracking_id.length > 0) {
+      sendDataToGoogleAnalytics(ga_event);
+    }
+    if (debug_on == 'true') {
+      console.log('GA Event Track', [ga_event.category, ga_event.action, ga_event.label]);
+    }
+  }
+
+  function sendDataToGoogleAnalytics(ga_event) {
+
+    <%# See https://developers.google.com/analytics/devguides/collection/gtagjs/events %>
+
+    gtag('event', ga_event.action, {
+      'event_category': ga_event.category,
+      'event_label': ga_event.label
+    });
+
+  }
+
+  return {
+    // Expose Public Methods
+    listenForClicks: listenForClicks
+  };
+
+})();
+
+$( document ).ready(function() {
+  eventTracking.listenForClicks();
+
+  // Facet values and modal "more" browse helper
+  // -------------------------------------------
+
+  $(document).on('click', 'ul.facet-values a, .facet_pagination a.more_facets_link', function(e){
+    var link = $(this);
+    // Carry the facet ID over to the modal "more" browse so clicks in there
+    // can be attributed to the respective facet in GA Event Tracking.
+    $('#blacklight-modal').addClass('facet-browse');
+    $('#blacklight-modal .modal-dialog').first().attr('id', link.closest('[id]').attr('id'));
+  });
+
+});

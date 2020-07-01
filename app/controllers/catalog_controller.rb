@@ -114,8 +114,7 @@ class CatalogController < ApplicationController
     config.add_facet_field 'level_sim', label: 'Level', limit: 10
     config.add_facet_field 'names_ssim', label: 'Names', limit: 10
     config.add_facet_field 'repository_sim', label: 'Repository', limit: 10
-    config.add_facet_field 'geogname_sim', label: 'Place', limit: 10
-    config.add_facet_field 'places_ssim', label: 'Places', show: false
+    config.add_facet_field 'places_ssim', label: 'Place', limit: 10
     config.add_facet_field 'access_subjects_ssim', label: 'Subject', limit: 10
     config.add_facet_field 'formats_ssim', label: 'Format', limit: 10
 
@@ -160,7 +159,7 @@ class CatalogController < ApplicationController
                                              }
     config.add_index_field 'accessrestrict_tesim', label: 'Conditions Governing Access', helper_method: :render_html_tags
     config.add_index_field 'collection_ssm', label: 'Collection Title'
-    config.add_index_field 'geogname_ssm', label: 'Place'
+    config.add_index_field 'places_ssim', label: 'Place'
 
     # DEBUG fields displayed in search results when debug=true is present in the request.
     config.add_index_field 'score'
@@ -280,6 +279,9 @@ class CatalogController < ApplicationController
     config.add_results_document_tool :arclight_bookmark_control, partial: 'arclight_bookmark_control'
     config.index.document_actions.delete(:bookmark)
 
+    # NOTE cannot add using_field here since it is to appear at the bottom
+    # of the collection show page after other elements that are not part
+    # of the metadata_partials config.
     config.show.metadata_partials = %i[
       summary_field
       background_field
@@ -483,9 +485,7 @@ class CatalogController < ApplicationController
     config.add_terms_field 'userestrict_tesim', label: 'Use and Permissions', helper_method: :render_html_tags
 
     # Component Show Page Access Tab - Terms and Conditions Section
-    # config.add_component_terms_field 'accessrestrict_tesim', label: 'Restrictions', helper_method: :render_html_tags
     config.add_component_terms_field 'parent_access_restrict_tesim', label: 'Restrictions', helper_method: :render_html_tags
-    # config.add_component_terms_field 'userestrict_tesim', label: 'Use and Permissions', helper_method: :render_html_tags
     config.add_component_terms_field 'parent_access_terms_tesim', label: 'Use and Permissions', helper_method: :render_html_tags
 
     # Collection and Component Show Page Access Tab - In Person Section
