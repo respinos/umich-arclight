@@ -20,12 +20,12 @@ body {
 a {
   color: $primary-link-color;
   &:hover, &:active, &:focus {
-    color: $link-hover-color
+    color: $link-hover-color;
   }
 }
 
 #main-container {
-  background-color: #fff;
+  background-color: white;
 }
 
 .btn-primary {
@@ -37,13 +37,50 @@ a {
   }
 }
 
+.btn-success {
+  background-color: $brand-success;
+  border-color: $brand-success;
+  &:hover, &:active, &:focus {
+    border-color: shade($brand-success, 20%);
+    background-color: shade($brand-success, 20%);
+  }
+}
+
+.btn-danger {
+  background-color: $brand-danger;
+  border-color: $brand-danger;
+  &:hover, &:active, &:focus {
+    border-color: shade($brand-danger, 20%);
+    background-color: shade($brand-danger, 20%);
+  }
+}
+
+.btn-warning {
+  background-color: $brand-warning;
+  border-color: $brand-warning;
+  &:hover, &:active, &:focus {
+    border-color: shade($brand-warning, 20%);
+    background-color: shade($brand-warning, 20%);
+  }
+}
+
+.btn-info {
+  background-color: $brand-info;
+  border-color: $brand-info;
+  &:hover, &:active, &:focus {
+    border-color: shade($brand-info, 20%);
+    background-color: shade($brand-info, 20%);
+  }
+}
+
+
 .catalog_startOverLink {
   margin-right: 1rem;
 }
 
 .applied-filter .constraint-value:hover, 
 .applied-filter .constraint-value:active {
-  background-color: #fff;
+  background-color: white;
   color: $gray;
 }
 
@@ -112,7 +149,7 @@ a {
 .al-show-actions-box {
   position: absolute;
   right: 0;
-  background-color: #fff;
+  background-color: white;
   border: none;
   height: unset;
 }
@@ -257,7 +294,7 @@ a {
   margin-left: .9rem;
   margin-bottom: 1rem;
   list-style: none;
-  background-color:#fff;
+  background-color: white;
   border-radius: 0;
 
   .breadcrumb-item {
@@ -288,7 +325,8 @@ a {
 #access {
   
   h2 {
-    border-top: 1px dotted #e2e2e2;
+    /*border-top: 1px dotted #e2e2e2;*/
+    border-top: 1px solid shade($gray-lighter, 3);
     padding-top: 1rem;
   }
 
@@ -312,8 +350,8 @@ a {
 
 
 #sidebar {
-  background: #fff;
   z-index: 20;
+  background: white;
   padding-top: 10px;
   box-shadow: 1px 0 1px -1px rgba(0, 0, 0, 0.06),
               2px 0 2px -2px rgba(0, 0, 0, 0.06),
@@ -345,7 +383,7 @@ a {
       background: #f5f5f5;
       margin: -15px -15px 15px -15px !important;
       padding: 15px;
-      border-bottom: 1px solid #ccc;
+      border-bottom: 1px solid $gray-light-more;
       padding-bottom: 25px;
       @include media-breakpoint-down(sm) {
         margin: 0 0 15px 0 !important;
@@ -517,7 +555,7 @@ a {
 }
 
 .al-hierarchy-highlight > .documentHeader {
-  // background-color: #fff;
+  // background-color: white;
   margin-right: -1.9rem;
   background-color: unset;
 }
@@ -539,7 +577,7 @@ a {
   }
 
   .facet-limit-active .collapse-toggle {
-    color: #fff;
+    color: white;
   }
 
 }
@@ -576,7 +614,8 @@ a {
       padding-right: 0 !important;
       padding-left: 0 !important;
       .blacklight-icons svg {
-        fill: #6c757d;
+        // fill: #6c757d;
+        fill: $gray-light;
       }
     }
   }
@@ -607,11 +646,11 @@ a {
         }
 
         .btn-outline-secondary {
-          background-color: #fff;
+          background-color: white;
         }
 
         .btn.remove:hover {
-          color: #cc3300;
+          color: $brand-danger;
         }
 
       }
@@ -737,7 +776,7 @@ a {
   #access-restriction-snippet {
     background: $access-restriction-warning;
     padding: 1rem;
-    border-top: 1px solid #dee2e6;
+    border-top: 1px solid $access-restriction-gray;
     margin-bottom: 2rem;
 
     dl.access-snippet {
@@ -793,7 +832,7 @@ a {
     border-bottom: none;
     padding-bottom: 0;
     padding-top: 1em;
-    border-top: 1px solid #dee2e6;
+    border-top: 1px solid $access-restriction-gray;
   }
 
   #documents {
@@ -867,7 +906,7 @@ a {
     margin-right: 0;
     background: linear-gradient(
       to left,
-      #fff, rgba(255,255,255,.1)
+      white, rgba(255,255,255,.1)
     );
   }
 
@@ -1130,11 +1169,11 @@ body.blacklight-bookmarks-index {
     .bookmarksTools {
 
       a {
-        border: 1px solid #ddd;
+        border: 1px solid shade($gray-lighter, 6);
       }
 
       a:hover {
-        background-color: #eee;
+        background-color: $gray-lighter;
       }
 
     }
@@ -1161,7 +1200,7 @@ body.blacklight-bookmarks-index {
       letter-spacing: .125em;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
       border-radius: .2rem .2rem 0 0;
-      border: 3px solid #fff;
+      border: 3px solid white;
       padding: .5rem .7rem .7rem .7rem;
     }
 }

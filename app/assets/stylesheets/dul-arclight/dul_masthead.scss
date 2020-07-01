@@ -107,7 +107,7 @@
       &:hover, &:active, &:focus {
        text-decoration: none;
        .product-name-secondary {
-         color: #ddd;
+         color: shade($gray-lighter, 6);
        }
       }
     }
@@ -135,7 +135,7 @@
     }
     .product-name-secondary {
       display: block;
-      color: #ccc;
+      color: $gray-light-more;
       font-size: 20px;
       margin-top: 1px;
       padding-top: 0;
@@ -167,7 +167,7 @@
     border-radius: 0 !important;
 
     &.search-q {
-      background-color: #fff !important;
+      background-color: white !important;
     }
 
   }
@@ -238,7 +238,7 @@
       }
 
       a {
-        color: #ddd;
+        color: shade($gray-lighter, 6);
         text-transform: none;
         margin-bottom: 0;
         font-size: 15px;
@@ -266,12 +266,10 @@
 
       
       @include media-breakpoint-between(md, lg) {
-
         .nav-label,
         .nav-label-signedin {
           display: none;
         }
-
       }
 
     }
@@ -287,7 +285,7 @@
   }
 
   #mast-search .dropdown-menu {
-    background-color: #fff;
+    background-color: white;
   }
 
   .dropdown-toggle.current-user {
@@ -330,7 +328,7 @@
   }
 
   .btn.navbar-toggle {
-    color: #ddd;
+    color: shade($gray-lighter, 6);
     font-size: 24px;
     background-color: inherit;
     border: none;

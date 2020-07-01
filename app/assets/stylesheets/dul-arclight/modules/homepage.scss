@@ -111,10 +111,20 @@
       border-bottom-right-radius: 0;
 
       &.search-q {
-        background-color: #fff !important;
+        background-color: white !important;
       }
 
     }
+
+    .search-btn {
+      background-color: $brand-success;
+      border-color: shade($brand-success, 5%);
+      &:hover, &:active, &:focus {
+        background-color: shade($brand-success, 10%);
+        border-color: shade($brand-success, 15%);
+      }
+    }
+
   }
   .search-extra-controls {
     display: inline;

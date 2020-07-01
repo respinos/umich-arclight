@@ -43,7 +43,7 @@
 
 .highlight-snippets {
   font-size: 0.9rem;
-  color: #555;
+  color: $gray;
   margin: 0.8em 0;
 }
 
@@ -91,3 +91,20 @@
     color: #333;
   }
 }
+
+/* Range slider */
+
+// changing the graphs seems to require tapping into the JS functions for chart_js
+// this plugin looks potentially promising: https://github.com/mcldev/ChartJS-Sass/
+
+// #facet-date_range_sim {
+//   .slider-handle {
+//     background-color: $brand-primary;
+//     background-image: -webkit-gradient(linear, left top, left bottom, from($brand-secondary), to($brand-primary));
+//     background-image: linear-gradient(to bottom, $brand-secondary, $brand-primary);
+//   }
+
+//   .slider_js .slider-selection {
+//     background: $shackleford;
+//   }
+// }
