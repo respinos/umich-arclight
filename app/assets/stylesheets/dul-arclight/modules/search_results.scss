@@ -78,6 +78,16 @@
 
 /* Override Blacklight-Hierarchy gem styles */
 /* ======================================== */
-.facet-hierarchy .h-leaf {
-  font-size: 0.9rem;
+.facet-hierarchy {
+  .h-leaf {
+    font-size: 0.9rem;
+  }
+  .toggle-handle {
+    padding: 2px 5px;
+    margin-right: 0.4rem;
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+    background-color: $gray-lighter;
+    color: #333;
+  }
 }
