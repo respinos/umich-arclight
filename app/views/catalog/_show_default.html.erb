@@ -62,6 +62,17 @@
                   %>
                 </li>
               <% end %>
+
+              <%# Manually adding 'using' nav link. We want the link in the sidebar but the %>
+              <%# actual 'using' section is detached from the show.metadata_partials config. %>
+              <li class='nav-item'>
+                <%= link_to t("arclight.views.show.sections.using_field"),
+                    [
+                      solr_document_path(normalize_id(document.eadid)),
+                      "##{t("arclight.views.show.sections.using_field").parameterize}"
+                    ].join, class: 'nav-link', data: { turbolinks: 'false' }
+                  %>
+              </li>
             <% end %>
           </ul>
         </nav>
@@ -295,6 +306,9 @@
 <%# ==================================== %>
 <%# Access (Using these materials) Terms %>
 <%# ==================================== %>
+<%# For now this is manually added at the bottom %>
+<%# of a collection/component page. TBD how to   %>
+<%# refactor to use controller config instead.   %>
 
 <% unless blacklight_config.show.component_access_tab_items.nil? && 
           blacklight_config.show.context_access_tab_items.nil? %>
