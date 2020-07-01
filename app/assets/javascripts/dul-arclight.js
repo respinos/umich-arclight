@@ -21,6 +21,11 @@ Blacklight.onLoad(function () {
   }
 
   $('body').popover(popOverSettings);
+
+  $("#sidebar .sidebar-scroll-wrapper").scroll(function() {
+    $('[data-toggle="popover"]').popover('hide');
+  });
+
   $('body').tooltip({
     selector: '[data-toggle="tooltip"]'
   });
