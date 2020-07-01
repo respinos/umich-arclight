@@ -21,6 +21,9 @@
     <%= csrf_meta_tags %>
     <%= content_for(:head) %>
 
+    <%# Needed to enable Google Search Console %>
+    <meta name="google-site-verification" content="JuhY7qlmlvIHFXEt0p3Y0yjW617hqz125HaEzj0uWW0" />
+
     <%# DUL CUSTOMIZATION: Google Analytics head tags %>
     <% if DulArclight.google_analytics_tracking_id.present? %>
       <%= render partial: "shared/google_analytics_head", locals: {
