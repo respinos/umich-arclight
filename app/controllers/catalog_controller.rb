@@ -279,13 +279,15 @@ class CatalogController < ApplicationController
     config.add_results_document_tool :arclight_bookmark_control, partial: 'arclight_bookmark_control'
     config.index.document_actions.delete(:bookmark)
 
+    # NOTE cannot add using_field here since it is to appear at the bottom
+    # of the collection show page after other elements that are not part
+    # of the metadata_partials config.
     config.show.metadata_partials = %i[
       summary_field
       background_field
       related_field
       indexed_terms_field
       indexes_field
-      using_field
     ]
 
     config.show.context_access_tab_items = %i[
@@ -483,9 +485,7 @@ class CatalogController < ApplicationController
     config.add_terms_field 'userestrict_tesim', label: 'Use and Permissions', helper_method: :render_html_tags
 
     # Component Show Page Access Tab - Terms and Conditions Section
-    # config.add_component_terms_field 'accessrestrict_tesim', label: 'Restrictions', helper_method: :render_html_tags
     config.add_component_terms_field 'parent_access_restrict_tesim', label: 'Restrictions', helper_method: :render_html_tags
-    # config.add_component_terms_field 'userestrict_tesim', label: 'Use and Permissions', helper_method: :render_html_tags
     config.add_component_terms_field 'parent_access_terms_tesim', label: 'Use and Permissions', helper_method: :render_html_tags
 
     # Collection and Component Show Page Access Tab - In Person Section
