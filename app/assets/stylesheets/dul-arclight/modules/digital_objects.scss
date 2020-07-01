@@ -22,21 +22,21 @@ iframe.ddr-embed-iframe {
     background-repeat: no-repeat;
     background-image:
       /* layer 4: inner box */
-      linear-gradient(#555 475px, transparent 0),
+      linear-gradient($gray 475px, transparent 0),
 
       /* layer 3: subtitle */
-      linear-gradient(to top, #ccc 14px, transparent 0),
+      linear-gradient(to top, $gray-light-more 14px, transparent 0),
 
       /* layer 2: title */
-      linear-gradient(to top, #eee 18px, transparent 0),
+      linear-gradient(to top, $gray-lighter 18px, transparent 0),
 
       /* layer 1: title bar */
       /* dark gray rectangle with 65px height */
-      linear-gradient(to top, #222 65px, transparent 0),
+      linear-gradient(to top, $gray-darker 65px, transparent 0),
 
       /* layer 0: full bg */
       /* gray rectangle that covers whole element */
-      linear-gradient(#333 100%, transparent 0);
+      linear-gradient($gray-dark 100%, transparent 0);
 
     background-size:
       375px 475px, /* inner box */
@@ -57,21 +57,21 @@ iframe.ddr-embed-iframe {
     background-repeat: no-repeat;
     background-image:
       /* layer 4: inner box */
-      linear-gradient(#555 475px, transparent 0),
+      linear-gradient($gray 475px, transparent 0),
 
       /* layer 3: subtitle */
-      linear-gradient(to top, #ccc 14px, transparent 0),
+      linear-gradient(to top, $gray-light-more 14px, transparent 0),
 
       /* layer 2: title */
-      linear-gradient(to top, #eee 18px, transparent 0),
+      linear-gradient(to top, $gray-lighter 18px, transparent 0),
 
       /* layer 1: title bar */
       /* dark gray rectangle with 65px height */
-      linear-gradient(to top, #222 65px, transparent 0),
+      linear-gradient(to top, $gray-darker 65px, transparent 0),
 
       /* layer 0: full bg */
       /* gray rectangle that covers whole element */
-      linear-gradient(#333 100%, transparent 0);
+      linear-gradient($gray-dark 100%, transparent 0);
 
     background-size:
       90% 4px, /* inner box */
@@ -93,21 +93,21 @@ iframe.ddr-embed-iframe {
     background-image:
 
       /* layer 4: play button */
-      radial-gradient(circle 45px, #333 99%, transparent 0),
+      radial-gradient(circle 45px, $gray-dark 99%, transparent 0),
 
       /* layer 3: subtitle */
-      linear-gradient(to top, #ccc 14px, transparent 0),
+      linear-gradient(to top, $gray-light-more 14px, transparent 0),
 
       /* layer 2: title */
-      linear-gradient(to top, #eee 18px, transparent 0),
+      linear-gradient(to top, $gray-lighter 18px, transparent 0),
 
       /* layer 1: title bar */
       /* dark gray rectangle with 65px height */
-      linear-gradient(to top, #222 65px, transparent 0),
+      linear-gradient(to top, $gray-darker 65px, transparent 0),
 
       /* layer 0: full bg */
       /* gray rectangle that covers whole element */
-      linear-gradient(#111 100%, transparent 0);
+      linear-gradient(shade($gray-darker, 6) 100%, transparent 0);
 
     background-size:
       130px 130px, /* inner box */
