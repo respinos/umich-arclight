@@ -3,8 +3,8 @@
 <%# https://github.com/projectblacklight/arclight/blob/master/app/views/catalog/_show_default.html.erb %>
 
 <% content_for :twitter_og_meta do %>
-  <meta name="description" content="<%= document.short_description %>" />
-  <meta property="og:description" content="<%= document.short_description %>" />
+  <meta name="description" content="<%= meta_tag_description(document) %>" />
+  <meta property="og:description" content="<%= meta_tag_description(document) %>" />
 <% end %>
 
 <%# DUL CUSTOMIZATION: Additional skip link for show views to get to collection nav. %>

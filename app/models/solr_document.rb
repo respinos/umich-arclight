@@ -42,7 +42,7 @@ class SolrDocument
   end
 
   # DUL custom property for a tagless short description of a collection or component.
-  # Can be used e.g., in meta tags.
+  # Can be used e.g., in meta tags or popovers/tooltips.
   def short_description
     truncate(strip_tags(abstract_or_scope), length: 400, separator: ' ')
   end
