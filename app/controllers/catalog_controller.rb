@@ -120,6 +120,7 @@ class CatalogController < ApplicationController
 
     # DUL CUSTOMIZATION: Add UA Record Group hierarchical facet.
     config.add_facet_field 'ua_record_group_ssim',
+                           limit: 99999,
                            label: 'University Archives Record Group',
                            helper_method: :ua_record_group_display,
                            partial: 'blacklight/hierarchy/facet_hierarchy'
