@@ -20,7 +20,7 @@
 
     <%#  ask a question %>
     <li>
-      <a href="https://library.duke.edu/rubenstein/ask?referrer=<%= request.original_url %>" class="ask-a-librarian" title="<%= t('blacklight.header_links.ask_long') %>">
+      <a href="<%= ask_rubenstein_url %>" class="ask-a-librarian" title="<%= t('blacklight.header_links.ask_long') %>">
         <span class="nav-icon"><i class="fas fa-comment"></i></span><span class="nav-label"><%= t('blacklight.header_links.ask') %></span>
       </a>
     </li>
