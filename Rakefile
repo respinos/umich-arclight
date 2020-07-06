@@ -83,52 +83,6 @@ namespace :dul_arclight do
     puts "Deleted #{ENV['EADID']}"
   end
 
-  # =========================================================================
-  # UNSEEN indexing tasks: could be used in cases where one needs to resume a
-  # long-running indexing command that has gotten interrupted.
-  # NOTE: These tasks pre-date our use of resque for indexing.
-  #       See dul_arclight:reindex_everything
-  # TODO: Remove these tasks if the resque background job processing sufficiently
-  #       addresses these indexing needs.
-  # =========================================================================
-  desc 'Index a file but only if its slug is not already found in the index. Use FILE=<path/to/ead.xml> and REPOSITORY_ID=<myid>'
-  # Modeled after:
-  # https://github.com/projectblacklight/blacklight/blob/master/lib/railties/blacklight.rake#L43
-  task :index_unseen, [:controller_name] => [:environment] do
-    raise 'Please specify your EAD document, ex. FILE=<path/to/ead.xml>' unless ENV['FILE']
-
-    print "Checking if #{ENV['FILE']} is already indexed...\n"
-
-    doc_id = File.basename(ENV['FILE'], '.*')
-    puts "Checking for #{doc_id} in Solr\n"
-    response = Blacklight.default_index.connection.select(params: { q: "id:#{doc_id}" })
-    num_found = response.fetch('response')&.fetch('numFound')
-
-    if num_found.zero?
-      system('rake arclight:index')
-    else
-      puts "Skipping #{doc_id} -- already indexed"
-    end
-  end
-
-  desc 'Index a directory of EADs, skipping files already indexed. Use DIR=<path/to/directory> and REPOSITORY_ID=<myid>'
-  task :index_dir_unseen do
-    raise 'Please specify your directory, ex. DIR=<path/to/directory>' unless ENV['DIR']
-
-    Dir.glob(File.join(ENV['DIR'], '*.xml')).each do |file|
-      system("rake dul_arclight:index_unseen FILE=#{file}")
-    end
-  end
-
-  task :reindex_all_unseen do
-    puts "Indexing all data from #{ENV['FINDING_AID_DATA']} directory..."
-    # Identify the configured repos
-    repo_config.keys.each do |repository|
-      # Index a directory with a given repository ID that matches its filename
-      system("DIR=#{ENV['FINDING_AID_DATA']}/ead/#{repository} REPOSITORY_ID=#{repository} rake dul_arclight:index_dir_unseen")
-    end
-  end
-
   desc 'Re-build the Solr suggester data'
   task build_suggest: :environment do
     BuildSuggestJob.perform_later

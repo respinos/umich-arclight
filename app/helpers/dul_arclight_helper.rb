@@ -33,6 +33,10 @@ module DulArclightHelper
     )
   end
 
+  def meta_tag_description(document)
+    [meta_tag_description_context(document), document.short_description].compact.join(' // ')
+  end
+
   # Generate a link to a catalog record using the Aleph ID
   def catalog_item_url(bibnum)
     ['https://find.library.duke.edu/catalog/DUKE', bibnum].join
@@ -43,9 +47,19 @@ module DulArclightHelper
     document.abstract_or_scope.present? && !collection_result_in_group?(document)
   end
 
+  def ask_rubenstein_url
+    base_url = 'https://library.duke.edu/rubenstein/ask'
+    [base_url, { referrer: request.original_url }.to_param].join('?')
+  end
+
   private
 
   def collection_result_in_group?(document)
     grouped? && (document.level == 'collection')
   end
+
+  def meta_tag_description_context(document)
+    ['In: ', document.parent_labels.join(' > ')].join unless document.level == 'collection'
+  end
+
 end
