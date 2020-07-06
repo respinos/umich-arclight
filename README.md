@@ -2,6 +2,8 @@
 
 Discovery & access application for archival material at Duke University Libraries. A front-end for archival finding aids / collection guides, built on the [ArcLight](https://github.com/projectblacklight/arclight) engine.
 
+The application currently runs at [https://archives.lib.duke.edu](https://archives.lib.duke.edu).
+
 ## Requirements
 
 * [Ruby](https://www.ruby-lang.org/en/) 2.6 or later
@@ -9,8 +11,7 @@ Discovery & access application for archival material at Duke University Librarie
 
 ## Getting Started
 
-
-### Indexing
+Please consult the '''[DUL-ArcLight wiki](https://gitlab.oit.duke.edu/dul-its/dul-arclight/-/wikis/home)''' for full documentation. Here are a few common commands...
 
 You can index a set of sample Duke EAD files into Solr (takes a couple minutes):
 
