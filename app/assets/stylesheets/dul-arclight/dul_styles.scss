@@ -421,6 +421,9 @@ a {
     .collection-info-table {
       td:first-of-type {
         font-weight: bold;
+        a {
+          font-weight: normal;
+        }
       }
       td:nth-of-type(2) {
         text-align: right;
@@ -800,11 +803,11 @@ a {
     }
 
   }
-  
-  dt.blacklight-repository_ssm,
-  dt.blacklight-prefercite_tesim,
-  dt.blacklight-id {
-    font-size: 14px;
+
+  #using-these-materials-section {
+    dl > dt {
+      font-size: 0.875rem;
+    }
   }
 
   .al-in-person-repository-name {
@@ -1161,31 +1164,6 @@ h1.modal-title {
 #advanced-search-modal {
   .within-collection-dropdown {
     width: auto !important;
-  }
-}
-
-/* bookmarks */
-
-body.blacklight-bookmarks-index {
-  #content {
-
-    padding-top: 1rem;
-
-    #sortAndPerPage > div {
-      display: inline-block;
-    }
-
-    .bookmarksTools {
-
-      a {
-        border: 1px solid shade($gray-lighter, 6);
-      }
-
-      a:hover {
-        background-color: $gray-lighter;
-      }
-
-    }
   }
 }
 

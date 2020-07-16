@@ -245,6 +245,14 @@ class CatalogController < ApplicationController
       }
     end
 
+    config.add_search_field 'identifier', label: 'Identifier' do |field|
+      field.qt = 'search'
+      field.solr_parameters = {
+        qf: '${qf_identifier}',
+        pf: '${pf_identifier}'
+      }
+    end
+
     # "sort results by" select (pulldown)
     # label in pulldown is followed by the name of the SOLR field to sort by and
     # whether the sort is ascending or descending (it must be asc or desc
@@ -350,8 +358,6 @@ class CatalogController < ApplicationController
                                                        two_words_connector: '<br/>',
                                                        last_word_connector: '<br/>'
                                                      }
-
-    # config.add_summary_field 'prefercite_tesim', label: 'Preferred citation', helper_method: :render_html_tags
 
     # Collection Show Page - Using These Materials Section
     config.add_using_field 'accessrestrict_tesim', label: 'Restrictions', helper_method: :render_html_tags
@@ -506,6 +512,7 @@ class CatalogController < ApplicationController
 
     # Collection and Component Show Page Access Tab - How to Cite Section
     config.add_cite_field 'prefercite_tesim', label: 'Preferred Citation', helper_method: :render_html_tags
+    config.add_cite_field 'permalink_ssi', label: 'Permalink', helper_method: :render_links
 
     # DUL CUSTOMIZATION: turn bookmark controls back on
     # Remove unused show document actions

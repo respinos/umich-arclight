@@ -10,10 +10,19 @@
             <td><%= document.unitid %></td>
           </tr>
         <% end %>
+
         <tr>
           <td>EAD ID</td>
           <td><%= document.eadid %></td>
         </tr>
+
+        <% if document.ark.present? %>
+          <tr>
+            <td>ARK</td>
+            <td><%= document.ark %></td>
+          </tr>
+        <% end %>
+
         <% if document.bibnums.present? %>
         <tr>
           <td>Catalog record</td>
@@ -32,6 +41,7 @@
           <td>Total components</td>
           <td><%= number_with_delimiter(document.total_component_count) %></td>
         </tr>
+
         <% if document.total_digital_object_count.positive? %>
           <tr>
             <td>Items available online</td>
@@ -47,6 +57,16 @@
             </td>
           </tr>
         <% end %>
+
+        <% if document.ark.present? %>
+          <tr>
+            <td colspan="2">
+              Permalink<br/>
+              <%= link_to document.permalink, document.permalink %>
+            </td>
+          </tr>
+        <% end %>
+
       </tbody>
     </table>
   </div>

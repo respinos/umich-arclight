@@ -8,7 +8,9 @@
               findaidstatus="published"
               langencoding="iso639-2b"
               repositoryencoding="iso15511">
-      <eadid url="http://library.duke.edu/rubenstein/findingaids/25under25/">25under25</eadid>
+      <eadid countrycode="US" mainagencycode="US-NcD" url="https://idn.duke.edu/ark:/87924/m1159q"
+        >25under25</eadid>
+
       <filedesc>
          <titlestmt>
             <titleproper>Guide to the 25 Under 25 Photographs, 2003
