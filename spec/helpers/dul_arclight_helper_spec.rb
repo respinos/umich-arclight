@@ -4,8 +4,8 @@ describe DulArclightHelper, type: :helper do
   describe '#ask_rubenstein_url' do
     let(:request) do
       instance_double('request',
-             original_url: 'https://archives.lib.duke.edu/?' \
-                           'utf8=%E2%9C%93&group=true&search_field=all_fields&q=duke+chapel')
+                      original_url: 'https://archives.lib.duke.edu/?' \
+                                    'utf8=%E2%9C%93&group=true&search_field=all_fields&q=duke+chapel')
     end
 
     before { allow(helper).to receive(:request).and_return(request) }

@@ -57,6 +57,10 @@ class CatalogController < ApplicationController
     #  # q: '{!term f=id v=$id}'
     # }
 
+    # DUL CUSTOMIZATION: CSV response especially for exporting
+    # Bookmarks to a digitization guide.
+    config.index.respond_to.csv = true
+
     # solr field configuration for search results/index views
     config.index.title_field = 'normalized_title_ssm'
     config.index.display_type_field = 'level_ssm'
@@ -75,8 +79,10 @@ class CatalogController < ApplicationController
 
     config.add_show_tools_partial(:bookmark, partial: 'bookmark_control', if: :render_bookmarks_control?)
     config.add_show_tools_partial(:email, callback: :email_action, validator: :validate_email_params)
+    # DUL CUSTOMIZATION: Add CSV export especially for bookmarks
+    config.add_show_tools_partial(:export_csv, partial: 'export_csv')
 
-    # DUL Customization: Remove Show Tools
+    # DUL Customization: Remove Some Show Tools
     # config.add_show_tools_partial(:sms, if: :render_sms_action?, callback: :sms_action, validator: :validate_sms_params)
     # config.add_show_tools_partial(:citation)
 
@@ -120,7 +126,7 @@ class CatalogController < ApplicationController
 
     # DUL CUSTOMIZATION: Add UA Record Group hierarchical facet.
     config.add_facet_field 'ua_record_group_ssim',
-                           limit: 99999,
+                           limit: 99_999,
                            label: 'University Archives Record Group',
                            helper_method: :ua_record_group_display,
                            partial: 'blacklight/hierarchy/facet_hierarchy'

@@ -23,6 +23,14 @@
     </div>
 
     <%= render partial: 'tools', locals: { document_list: @response.documents } %>
+
+    <% if @response.total > @response.documents.count %>
+      <div class="mb-5 text-muted">
+        <%= t('blacklight.bookmarks.per_page_warning', bookmark_count: number_with_delimiter(@response.total)).html_safe %>
+        <hr/>
+      </div>
+    <% end %>
+
     <h2 class='section-heading sr-only'><%= t('blacklight.bookmarks.list_title') %></h2>
     <%= render_document_index %>
     <%= render 'results_pagination' %>
