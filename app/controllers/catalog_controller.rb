@@ -237,6 +237,14 @@ class CatalogController < ApplicationController
       }
     end
 
+    config.add_search_field 'container', label: 'Container' do |field|
+      field.qt = 'search'
+      field.solr_parameters = {
+        qf: '${qf_container}',
+        pf: '${pf_container}'
+      }
+    end
+
     config.add_search_field 'title', label: 'Title' do |field|
       field.qt = 'search'
       field.solr_parameters = {
