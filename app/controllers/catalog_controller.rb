@@ -369,7 +369,7 @@ class CatalogController < ApplicationController
 
     # Collection Show Page - Using These Materials Section
     config.add_using_field 'accessrestrict_tesim', label: 'Restrictions', helper_method: :render_html_tags
-    config.add_using_field 'userestrict_tesim', label: 'Use and Permissions', helper_method: :render_html_tags
+    config.add_using_field 'userestrict_tesim', label: 'Use & Permissions', helper_method: :convert_rights_urls
 
     # Collection Show Page - Background Section
     config.add_background_field 'scopecontent_tesim', label: 'Scope and Content', helper_method: :render_html_tags
@@ -427,7 +427,7 @@ class CatalogController < ApplicationController
     # ==========================
 
     config.add_component_using_field 'accessrestrict_tesim', label: 'Restrictions', helper_method: :render_html_tags
-    config.add_component_using_field 'userestrict_tesim', label: 'Use & Permissions', helper_method: :render_html_tags
+    config.add_component_using_field 'userestrict_tesim', label: 'Use & Permissions', helper_method: :convert_rights_urls
 
     # Component Show Page - Metadata Section
     config.add_component_field 'containers', label: 'Containers', accessor: 'containers', separator_options: {
@@ -503,11 +503,11 @@ class CatalogController < ApplicationController
 
     # Collection Show Page Access Tab - Terms and Conditions Section
     config.add_terms_field 'accessrestrict_tesim', label: 'Restrictions', helper_method: :render_html_tags
-    config.add_terms_field 'userestrict_tesim', label: 'Use and Permissions', helper_method: :render_html_tags
+    config.add_terms_field 'userestrict_tesim', label: 'Use & Permissions', helper_method: :convert_rights_urls
 
     # Component Show Page Access Tab - Terms and Conditions Section
     config.add_component_terms_field 'parent_access_restrict_tesim', label: 'Restrictions', helper_method: :render_html_tags
-    config.add_component_terms_field 'parent_access_terms_tesim', label: 'Use and Permissions', helper_method: :render_html_tags
+    config.add_component_terms_field 'parent_access_terms_tesim', label: 'Use & Permissions', helper_method: :convert_rights_urls
 
     # Collection and Component Show Page Access Tab - In Person Section
     config.add_in_person_field 'repository_ssm', if: :repository_config_present, label: 'Location of This Collection',
