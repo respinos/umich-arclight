@@ -13,10 +13,20 @@ module DulArclight
 
     included do
       if respond_to?(:helper_method)
+        helper_method :render_links
         helper_method :singularize_extent
         helper_method :link_to_ua_record_group_facet
         helper_method :ua_record_group_display
       end
+    end
+
+    def render_links(args)
+      options = args[:config].try(:separator_options) || {}
+      values = args[:value] || []
+
+      values.map do |value|
+        view_context.link_to(value, value)
+      end.to_sentence(options).html_safe
     end
 
     # Use singular form of descriptors for extents like "1 boxes", "1 folders", or "1 albums".

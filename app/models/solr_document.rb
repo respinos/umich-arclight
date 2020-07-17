@@ -17,6 +17,15 @@ class SolrDocument
     render_html_tags(value: [value]) if value.present?
   end
 
+  # DUL CUSTOMIZATION: ARK & Permalink
+  def ark
+    fetch('ark_ssi', '')
+  end
+
+  def permalink
+    fetch('permalink_ssi', '')
+  end
+
   # DUL CUSTOMIZATION: get the non-prefixed ArchivesSpace ID for a component.
   # esp. for digitization guide / DDR import starter from bookmark export.
   def aspace_id

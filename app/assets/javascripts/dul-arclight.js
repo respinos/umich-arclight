@@ -30,6 +30,12 @@ Blacklight.onLoad(function () {
     selector: '[data-toggle="tooltip"]'
   });
 
+  /* Enable clicking in the collection info dropdown w/o closing it. E.g., to */
+  /* select/copy a permalink or Aleph ID */
+  $(document).on('click', '.dropdown-menu.collection-info-menu', function (e) {
+    e.stopPropagation();
+  });
+
   /* =================== */
   /* SEARCH BOX BEHAVIOR */
   /* =================== */
