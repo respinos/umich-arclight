@@ -127,6 +127,7 @@
          unitid_identifier_match^2
          subject_tenim^2
          format_tenim^2
+         container_tenim
          text
        </str>
        <str name="pf">
@@ -145,6 +146,7 @@
          unitid_identifier_match^5
          subject_tenim^5
          format_tenim^5
+         container_tenim^2
          text
        </str>
 
@@ -173,6 +175,14 @@
        <str name="pf_format">
          format_tenim^10
          format_tesim^6
+       </str>
+       <str name="qf_container">
+         container_tenim^3
+         container_tesim
+       </str>
+       <str name="pf_container">
+         container_tenim^10
+         container_tesim^6
        </str>
        <str name="qf_title">
          collection_title_tenim^10
