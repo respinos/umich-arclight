@@ -99,7 +99,11 @@ end
 
 # DUL CUSTOMIZATION: Permalink & ARK. NOTE the ARK will be derived from the
 # permalink, and not the other way around; ARK is not stored atomically in the EAD.
-to_field 'permalink_ssi', extract_xpath('/ead/eadheader/eadid/@url', to_text: false)
+# Strip out any wayward spaces or linebreaks that might end up in the url attribute.
+to_field 'permalink_ssi', extract_xpath('/ead/eadheader/eadid/@url', to_text: false) do |_record, accumulator|
+  accumulator.map! { |url| url.text().gsub(/[[:space:]]/, '') }
+end
+
 to_field 'ark_ssi' do |_record, accumulator, context|
   permalink = context.output_hash['permalink_ssi'].first
   path = URI(permalink).path&.delete_prefix!('/')
