@@ -118,11 +118,11 @@ module DulArclight
 
     def svg_icon_tag(slug)
       # decorative images should have blank alt text
-      view_context.image_tag(svg_icon_url(slug), class: 'rights-icon', alt: '')
+      view_context.image_tag(svg_icon_path(slug), class: 'rights-icon', alt: '')
     end
 
-    def svg_icon_url(slug)
-      view_context.asset_url(['icons/rights/', slug].join)
+    def svg_icon_path(slug)
+      view_context.asset_path(['icons/rights/', slug, '.svg'].join)
     end
   end
 end
