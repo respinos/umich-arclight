@@ -1,0 +1,80 @@
+# RIGHTSSTATEMENTS.ORG
+# ==============================================
+'http://rightsstatements.org/vocab/InC/1.0/':
+  title: 'In Copyright'
+  icon_1: inc
+'http://rightsstatements.org/vocab/InC-OW-EU/1.0/':
+  title: 'In Copyright - EU Orphan Work'
+  icon_1: inc
+'http://rightsstatements.org/vocab/InC-EDU/1.0/':
+  title: 'In Copyright - Educational Use Permitted'
+  icon_1: inc
+'http://rightsstatements.org/vocab/InC-NC/1.0/':
+  title: 'In Copyright - Non-Commercial Use Permitted'
+  icon_1: inc
+'http://rightsstatements.org/vocab/InC-RUU/1.0/':
+  title: 'In Copyright - Rights-Holder(s) Unlocatable or Unidentifiable'
+  icon_1: inc
+'http://rightsstatements.org/vocab/NoC-CR/1.0/':
+  title: 'No Copyright - Contractual Restrictions'
+  icon_1: noc
+'http://rightsstatements.org/vocab/NoC-NC/1.0/':
+  title: 'No Copyright - Non-Commercial Use Only'
+  icon_1: noc
+'http://rightsstatements.org/vocab/NoC-OKLR/1.0/':
+  title: 'No Copyright - Other Known Legal Restrictions'
+  icon_1: noc
+'http://rightsstatements.org/vocab/NoC-US/1.0/':
+  title: 'No Copyright - United States'
+  icon_1: noc
+'http://rightsstatements.org/vocab/CNE/1.0/':
+  title: 'Copyright Not Evaluated'
+  icon_1: other
+'http://rightsstatements.org/vocab/UND/1.0/':
+  title: 'Copyright Undetermined'
+  icon_1: other
+'http://rightsstatements.org/vocab/NKC/1.0/':
+  title: 'No Known Copyright'
+  icon_1: other
+
+# CREATIVE COMMONS v4.0
+# TBD whether we need to support 3.0 or earlier
+# ==============================================
+'https://creativecommons.org/licenses/by/4.0/':
+  title: 'Attribution 4.0 International (CC BY 4.0)'
+  icon_1: cc
+  icon_2: by
+'https://creativecommons.org/licenses/by-sa/4.0/':
+  title: 'Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)'
+  icon_1: cc
+  icon_2: by
+  icon_3: sa
+'https://creativecommons.org/licenses/by-nc/4.0/':
+  title: 'Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)'
+  icon_1: cc
+  icon_2: by
+  icon_3: nc
+'https://creativecommons.org/licenses/by-nc-sa/4.0/':
+  title: 'Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)'
+  icon_1: cc
+  icon_2: by
+  icon_3: nc
+  icon_4: sa
+'https://creativecommons.org/licenses/by-nd/4.0/':
+  title: 'Attribution-NoDerivatives 4.0 International (CC BY-ND 4.0)'
+  icon_1: cc
+  icon_2: by
+  icon_3: nd
+'https://creativecommons.org/licenses/by-nc-nd/4.0/':
+  title: 'Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)'
+  icon_1: cc
+  icon_2: by
+  icon_3: nc
+  icon_4: nd
+'https://creativecommons.org/publicdomain/zero/1.0/':
+  title: 'CC0 1.0 Universal (CC0 1.0) Public Domain Dedication'
+  icon_1: cc
+  icon_2: zero
+'https://creativecommons.org/publicdomain/mark/1.0/':
+  title: 'No Copyright'
+  icon_1: noc
