@@ -307,7 +307,7 @@
 <% unless blacklight_config.show.component_access_tab_items.nil? && 
           blacklight_config.show.context_access_tab_items.nil? %>
   <div class='row'>
-    <div class='col-md-12'>
+    <div class='col-md-12' id='using-these-materials-section'>
       <h2 class="al-show-sub-heading" id='<%=t("arclight.views.show.sections.using_field").parameterize %>'><%= t('arclight.views.show.sections.using_field') %></h2>
         <% if document.component? %>
           <% items = blacklight_config.show.component_access_tab_items.select { |i|  fields_have_content?(@document, i) } %>

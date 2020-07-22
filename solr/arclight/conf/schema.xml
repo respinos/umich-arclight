@@ -363,6 +363,8 @@
    <copyField source="access_subjects_ssim" dest="subject_tenim"/>
    <copyField source="formats_ssim" dest="format_tesim"/>
    <copyField source="formats_ssim" dest="format_tenim"/>
+   <copyField source="containers_ssim" dest="container_tesim"/>
+   <copyField source="containers_ssim" dest="container_tenim"/>
 
    <!-- The catch all `text` field -->
    <!-- grab the fielded searches -->
@@ -371,6 +373,7 @@
    <copyField source="names_ssim" dest="text" />
    <copyField source="access_subjects_ssim" dest="text" />
    <copyField source="formats_ssim" dest="text" />
+   <copyField source="containers_ssim" dest="text" />
    <copyField source="abstract_tesim" dest="text" />
    <copyField source="subject_tesim" dest="text" />
    <copyField source="format_tesim" dest="text" />

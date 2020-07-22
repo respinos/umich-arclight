@@ -57,6 +57,10 @@ class CatalogController < ApplicationController
     #  # q: '{!term f=id v=$id}'
     # }
 
+    # DUL CUSTOMIZATION: CSV response especially for exporting
+    # Bookmarks to a digitization guide.
+    config.index.respond_to.csv = true
+
     # solr field configuration for search results/index views
     config.index.title_field = 'normalized_title_ssm'
     config.index.display_type_field = 'level_ssm'
@@ -75,8 +79,10 @@ class CatalogController < ApplicationController
 
     config.add_show_tools_partial(:bookmark, partial: 'bookmark_control', if: :render_bookmarks_control?)
     config.add_show_tools_partial(:email, callback: :email_action, validator: :validate_email_params)
+    # DUL CUSTOMIZATION: Add CSV export especially for bookmarks
+    config.add_show_tools_partial(:export_csv, partial: 'export_csv')
 
-    # DUL Customization: Remove Show Tools
+    # DUL Customization: Remove Some Show Tools
     # config.add_show_tools_partial(:sms, if: :render_sms_action?, callback: :sms_action, validator: :validate_sms_params)
     # config.add_show_tools_partial(:citation)
 
@@ -120,7 +126,7 @@ class CatalogController < ApplicationController
 
     # DUL CUSTOMIZATION: Add UA Record Group hierarchical facet.
     config.add_facet_field 'ua_record_group_ssim',
-                           limit: 99999,
+                           limit: 99_999,
                            label: 'University Archives Record Group',
                            helper_method: :ua_record_group_display,
                            partial: 'blacklight/hierarchy/facet_hierarchy'
@@ -231,11 +237,27 @@ class CatalogController < ApplicationController
       }
     end
 
+    config.add_search_field 'container', label: 'Container' do |field|
+      field.qt = 'search'
+      field.solr_parameters = {
+        qf: '${qf_container}',
+        pf: '${pf_container}'
+      }
+    end
+
     config.add_search_field 'title', label: 'Title' do |field|
       field.qt = 'search'
       field.solr_parameters = {
         qf: '${qf_title}',
         pf: '${pf_title}'
+      }
+    end
+
+    config.add_search_field 'identifier', label: 'Identifier' do |field|
+      field.qt = 'search'
+      field.solr_parameters = {
+        qf: '${qf_identifier}',
+        pf: '${pf_identifier}'
       }
     end
 
@@ -345,11 +367,9 @@ class CatalogController < ApplicationController
                                                        last_word_connector: '<br/>'
                                                      }
 
-    # config.add_summary_field 'prefercite_tesim', label: 'Preferred citation', helper_method: :render_html_tags
-
     # Collection Show Page - Using These Materials Section
     config.add_using_field 'accessrestrict_tesim', label: 'Restrictions', helper_method: :render_html_tags
-    config.add_using_field 'userestrict_tesim', label: 'Use and Permissions', helper_method: :render_html_tags
+    config.add_using_field 'userestrict_tesim', label: 'Use & Permissions', helper_method: :convert_rights_urls
 
     # Collection Show Page - Background Section
     config.add_background_field 'scopecontent_tesim', label: 'Scope and Content', helper_method: :render_html_tags
@@ -407,7 +427,7 @@ class CatalogController < ApplicationController
     # ==========================
 
     config.add_component_using_field 'accessrestrict_tesim', label: 'Restrictions', helper_method: :render_html_tags
-    config.add_component_using_field 'userestrict_tesim', label: 'Use & Permissions', helper_method: :render_html_tags
+    config.add_component_using_field 'userestrict_tesim', label: 'Use & Permissions', helper_method: :convert_rights_urls
 
     # Component Show Page - Metadata Section
     config.add_component_field 'containers', label: 'Containers', accessor: 'containers', separator_options: {
@@ -483,11 +503,11 @@ class CatalogController < ApplicationController
 
     # Collection Show Page Access Tab - Terms and Conditions Section
     config.add_terms_field 'accessrestrict_tesim', label: 'Restrictions', helper_method: :render_html_tags
-    config.add_terms_field 'userestrict_tesim', label: 'Use and Permissions', helper_method: :render_html_tags
+    config.add_terms_field 'userestrict_tesim', label: 'Use & Permissions', helper_method: :convert_rights_urls
 
     # Component Show Page Access Tab - Terms and Conditions Section
     config.add_component_terms_field 'parent_access_restrict_tesim', label: 'Restrictions', helper_method: :render_html_tags
-    config.add_component_terms_field 'parent_access_terms_tesim', label: 'Use and Permissions', helper_method: :render_html_tags
+    config.add_component_terms_field 'parent_access_terms_tesim', label: 'Use & Permissions', helper_method: :convert_rights_urls
 
     # Collection and Component Show Page Access Tab - In Person Section
     config.add_in_person_field 'repository_ssm', if: :repository_config_present, label: 'Location of This Collection',
@@ -500,6 +520,7 @@ class CatalogController < ApplicationController
 
     # Collection and Component Show Page Access Tab - How to Cite Section
     config.add_cite_field 'prefercite_tesim', label: 'Preferred Citation', helper_method: :render_html_tags
+    config.add_cite_field 'permalink_ssi', label: 'Permalink', helper_method: :render_links
 
     # DUL CUSTOMIZATION: turn bookmark controls back on
     # Remove unused show document actions

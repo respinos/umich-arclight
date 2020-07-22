@@ -112,31 +112,41 @@
        -->
 
        <str name="qf">
-         ead_ssi^250
-         collection_title_tenim^125
-         collection_title_tesim^50
+         id^250
+         ark_ssi^250
+         bibnum_ssim^250
+         unitid_ssm^250
+         collection_title_tenim^250
+         collection_title_tesim^150
          abstract_tenim^75
          name_tenim^75
          title_tenim^50
          title_tesim^20
          place_tenim^5
+         ead_ssi^10
          unitid_identifier_match^2
          subject_tenim^2
          format_tenim^2
+         container_tenim
          text
        </str>
        <str name="pf">
-         ead_ssi^500
-         collection_title_tenim^250
-         collection_title_tesim^100
+         id^500
+         ark_ssi^500
+         bibnum_ssim^500
+         unitid_ssm^500
+         collection_title_tenim^500
+         collection_title_tesim^300
          abstract_tenim^150
          name_tenim^150
          title_tenim^100
          title_tesim^40
          place_tenim^10
+         ead_ssi^10
          unitid_identifier_match^5
          subject_tenim^5
          format_tenim^5
+         container_tenim^2
          text
        </str>
 
@@ -166,6 +176,14 @@
          format_tenim^10
          format_tesim^6
        </str>
+       <str name="qf_container">
+         container_tenim^3
+         container_tesim
+       </str>
+       <str name="pf_container">
+         container_tenim^10
+         container_tesim^6
+       </str>
        <str name="qf_title">
          collection_title_tenim^10
          collection_title_tesim^5
@@ -177,6 +195,18 @@
          collection_title_tesim^15
          title_tenim^10
          title_tesim^5
+       </str>
+       <str name="qf_identifier">
+         id^100
+         ark_ssi^100
+         bibnum_ssim^50
+         unitid_ssm^50
+       </str>
+       <str name="pf_identifier">
+         id^200
+         ark_ssi^200
+         bibnum_ssim^100
+         unitid_ssm^100
        </str>
 
        <int name="ps">3</int>
@@ -190,7 +220,9 @@
          accruals_tesim,
          altformavail_tesim,
          appraisal_tesim,
+         ark_ssi,
          arrangement_tesim,
+         bibnum_ssim,
          bioghist_tesim,
          child_component_count_isim,
          collection_ssm,
@@ -214,12 +246,14 @@
          parent_access_restrict_tesim,
          parent_access_terms_tesim,
          parent_ssim,
+         parent_levels_ssm,
          parent_unittitles_ssm,
          places_ssim,
          physdesc_tesim,
          physloc_tesim,
          phystech_tesim,
          processinfo_tesim,
+         ref_ssi,
          ref_ssm,
          repository_ssm,
          scopecontent_tesim,

@@ -61,5 +61,4 @@ module DulArclightHelper
   def meta_tag_description_context(document)
     ['In: ', document.parent_labels.join(' > ')].join unless document.level == 'collection'
   end
-
 end

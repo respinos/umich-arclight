@@ -78,6 +78,8 @@
     </accessrestrict>
     <userestrict id="aspace_7793421ee833c61dfa983086b577627d">
       <head>Copyright Notice</head>
+      <p>https://creativecommons.org/licenses/by/3.0/</p>
+      <p>Example test of a userestrict rights URL that is not configured for auto conversion to icons</p>
       <p>The copyright interests in this collection have not been transferred to Duke University.
         For more information, consult the copyright section of the Regulations and Procedures of the
         David M. Rubenstein Rare Book &amp; Manuscript Library.</p>

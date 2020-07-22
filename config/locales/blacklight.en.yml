@@ -3,6 +3,12 @@ en:
     application_name: 'Archives & Manuscripts at Duke University Libraries'
     bookmarks:
       disclaimer_html: '<strong>Please note:</strong> saved bookmarks may expire'
+      per_page_warning: |
+        <strong>You have %{bookmark_count} items bookmarked, so they don't all appear on this
+        page</strong>. Emailing or exporting them will only include this current page of
+        bookmarks. You can email each page separately and/or increase the number shown per
+        page <em>(up to 100)</em>.
+      export_csv: Export CSV
     branding:
       library_name: "Duke University Libraries"
       primary: "Archives & Manuscripts"

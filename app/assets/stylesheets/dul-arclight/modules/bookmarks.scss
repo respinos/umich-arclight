@@ -1,0 +1,22 @@
+body.blacklight-bookmarks-index {
+  #content {
+
+    padding-top: 1rem;
+
+    #sortAndPerPage > div {
+      display: inline-block;
+    }
+
+    .bookmarksTools {
+
+      a {
+        border: 1px solid shade($gray-lighter, 6);
+      }
+
+      a:hover {
+        background-color: $gray-lighter;
+      }
+
+    }
+  }
+}

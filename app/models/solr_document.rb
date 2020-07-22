@@ -17,6 +17,21 @@ class SolrDocument
     render_html_tags(value: [value]) if value.present?
   end
 
+  # DUL CUSTOMIZATION: ARK & Permalink
+  def ark
+    fetch('ark_ssi', '')
+  end
+
+  def permalink
+    fetch('permalink_ssi', '')
+  end
+
+  # DUL CUSTOMIZATION: get the non-prefixed ArchivesSpace ID for a component.
+  # esp. for digitization guide / DDR import starter from bookmark export.
+  def aspace_id
+    fetch('ref_ssi', '').delete_prefix('aspace_')
+  end
+
   def bibnums
     fetch('bibnum_ssim', [])
   end
@@ -77,14 +92,31 @@ class SolrDocument
     first('total_component_count_isim') || 0
   end
 
+  def physdesc
+    fetch('physdesc_tesim', []).map! { |value| correct_singular_value(value) }
+  end
+
   # DUL override ArcLight core; we want all extent values, and to singularize e.g. 1 boxes.
-  # We'll use document.extent for the "extent badge", which excludes other physdec text.
-  # beyond extent that we want to appear in collection/component show views.
+  # document.extent is used for the "extent badge"; note other locations in the app use
+  # the full physdesc field and may still be labeled as "Extent".
   def extent
-    values = fetch('physdesc_tesim', []).map! do |value|
-      correct_singular_value(value)
-    end
-    values.join(' &mdash; ').html_safe if values.present?
+    physdesc.join(' &mdash; ').html_safe if physdesc.present?
+  end
+
+  # Find the Series title by reconciling the arrays of parent labels & parent levels
+  # NOTE: this method exists primarily for CSV exports of bookmarks for starter
+  # digitization guides & batch metadata upload to DDR.
+  def series_title
+    i = parent_levels.find_index('Series')
+    parent_labels[i] if i.present?
+  end
+
+  # Find the Subseries title by reconciling the arrays of parent labels & parent levels
+  # NOTE: this method exists primarily for CSV exports of bookmarks for starter
+  # digitization guides & batch metadata upload to DDR.
+  def subseries_title
+    i = parent_levels.find_index('Subseries')
+    parent_labels[i] if i.present?
   end
 
   # ==============================

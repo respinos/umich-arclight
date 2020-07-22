@@ -5,6 +5,60 @@
 require 'spec_helper'
 
 RSpec.describe SolrDocument do
+  describe '#aspace_id' do
+    let(:document) do
+      described_class.new(
+        ref_ssi: 'aspace_42ff52d27fd631ce27a32aee71f6114e'
+      )
+    end
+
+    it 'gets the nonprefixed aspace id' do
+      expect(document.aspace_id).to eq '42ff52d27fd631ce27a32aee71f6114e'
+    end
+  end
+
+  describe '#series_title' do
+    let(:document) do
+      described_class.new(
+        id: 'rushbenjaminandjulia_aspace_42ff52d27fd631ce27a32aee71f6114e',
+        parent_unittitles_ssm: [
+          'Benjamin and Julia Stockton Rush papers, bulk 1766-1845 and undated',
+          'Letters, 1777-1824'
+        ],
+        parent_levels_ssm: %w[
+          collection
+          Series
+        ]
+      )
+    end
+
+    it 'uses the label from the first component that is a series' do
+      expect(document.series_title).to eq 'Letters, 1777-1824'
+    end
+  end
+
+  describe '#subseries_title' do
+    let(:document) do
+      described_class.new(
+        id: 'uapresfew_aspace_ref334_5q6',
+        parent_unittitles_ssm: [
+          'William Preston Few records and papers, 1814-1971 and undated (bulk 1911-1940)',
+          'Subject Files',
+          'Trinity College'
+        ],
+        parent_levels_ssm: %w[
+          collection
+          Series
+          Subseries
+        ]
+      )
+    end
+
+    it 'uses the label from the first component that is a subseries' do
+      expect(document.subseries_title).to eq 'Trinity College'
+    end
+  end
+
   describe '#single_dao?' do
     let(:document) do
       described_class.new(
