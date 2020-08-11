@@ -21,6 +21,12 @@ class NavigationDocument {
     this.el.find('li.al-collection-context').addClass('collapsed');
   }
 
+  // DUL CUSTOMIZATION: Mark the context nav list items that should be collapsible
+  // via Expand/Collapse click. It differs in different contexts.
+  makeCollapsible() {
+    this.el.find('li.al-collection-context').addClass('collapsible');
+  }
+
   render() {
     return this.el.html();
   }
@@ -38,12 +44,15 @@ class ExpandButton {
    * @param {jQuery} $li - the <button> element
    * @return {jQuery} - a jQuery object containing the targeted <li>
    */
-  findSiblings() {
+  findCollapsibleSiblings() {
     // DUL CUSTOMIZATION: Account for our change wrapping the <button> in an <li>
     // for a11y: Add another .parent() & then target .al-collection-context
     // class specifically (so the button li isn't considered a sibling).
-    const $siblings = this.$el.parent().parent().children('li.al-collection-context');
-    return $siblings.slice(0, -1);
+    // Also, just get the .collapsible siblings, which will be different for
+    // a current nested component's Expand button (1st preceding sibling doesn't collapse)
+    // vs. an ancestor component's Expand button (all preceding siblings do collapse)
+    const $siblings = this.$el.parent().parent().children('li.al-collection-context.collapsible');
+    return $siblings;
   }
 
   /**
@@ -53,7 +62,7 @@ class ExpandButton {
    *   <button> element
    */
   handleClick() {
-    const $targeted = this.findSiblings();
+    const $targeted = this.findCollapsibleSiblings();
 
     $targeted.toggleClass('collapsed');
     this.$el.toggleClass('collapsed');
@@ -76,24 +85,8 @@ class ExpandButton {
   }
 }
 
-/**
- * Modeling <button> Elements which hide or retrieve <li> elements for sibling
- *   documents nested within the <li> elements of the <ul> tree
- * @class
- */
-class NestedExpandButton extends ExpandButton {
-  /**
-   * This retrieves the <li> elements which are hidden/rendered in response to
-   *   clicking the <button> element
-   * @param {jQuery} $li - the <button> element
-   * @return {jQuery} - a jQuery object containing the targeted <li>
-   */
-  findSiblings() {
-    const highlighted = this.$el.siblings('.al-hierarchy-highlight');
-    const $siblings = highlighted.prevAll('.al-collection-context');
-    return $siblings.slice(0, -1);
-  }
-}
+// DUL CUSTOMIZATION: removed this class as it is unused:
+// class NestedExpandButton extends ExpandButton { }
 
 /**
  * Models the placeholder display elements for content loading from AJAX
@@ -233,6 +226,7 @@ class ContextNavigation {
     if (prevSiblingDocs.length > 1 && originalDocumentIndex > 0) {
       const hiddenPrevSiblingDocs = prevSiblingDocs.slice(0, -1);
       hiddenPrevSiblingDocs.forEach(siblingDoc => {
+        siblingDoc.makeCollapsible();
         siblingDoc.collapse();
       });
 
@@ -280,6 +274,7 @@ class ContextNavigation {
     let renderedBeforeDocs;
     if (beforeDocs.length > 1) {
       beforeDocs.forEach(function (parentDoc) {
+        parentDoc.makeCollapsible();
         parentDoc.collapse();
       });
       renderedBeforeDocs = beforeDocs.map(newDoc => newDoc.render()).join('');
@@ -316,27 +311,8 @@ class ContextNavigation {
     });
   }
 
-
-  /**
-   * Update the ancestors for <li> elements
-   * @param {jQuery} $li - the <li> element for the current, highlighted
-   *   Document in the <ul> context list of collections, components, and
-   *   containers
-   */
-  /* eslint-disable class-methods-use-this */
-  updateListSiblings($li) {
-    const prevSiblings = $li.prevAll('.al-collection-context');
-    if (prevSiblings.length > 1) {
-      const hiddenNextSiblings = prevSiblings.slice(0, -1);
-      hiddenNextSiblings.toggleClass('collapsed');
-
-      const button = new NestedExpandButton();
-
-      const lastHiddenNextSibling = hiddenNextSiblings[hiddenNextSiblings.length - 1];
-      button.$el.insertAfter(lastHiddenNextSibling);
-    }
-  }
-  /* eslint-enable class-methods-use-this */
+  // DUL CUSTOMIZATION: Removed this function as it is unused:
+  // updateListSiblings($li) { }
 
   /**
    * This updates the elements in the View DOM using an AJAX response containing
