@@ -43,14 +43,14 @@
   <%# keys in config/locales/dul_arclight.en.yml %>
   <% if I18n.exists?('dul_arclight.home.alert') %>
     <div id="homepage-alert" class="mt-4 mb-4 col-md-12 banner-wrapper banner-warning d-flex flex-row">
-      <div class="banner-part banner-heading d-md-block d-lg-flex">
+      <div class="banner-part banner-heading">
         <%= blacklight_icon :exclamation_triangle_solid %>
-        <span class="banner-heading-text d-none d-lg-block pr-4">
+        <span class="banner-heading-text d-none d-lg-inline pr-4">
           <%= t('dul_arclight.home.alert.title') %>
         </span>
       </div>
       <div class="banner-part banner-shadow"></div>
-      <div class="banner-part banner-message flex-grow-1 d-flex flex-column">
+      <div class="banner-part banner-message flex-grow-1">
         <div class="mb-0 banner-message-text p-2">
           <%= t('dul_arclight.home.alert.message_html').html_safe %>
         </div>

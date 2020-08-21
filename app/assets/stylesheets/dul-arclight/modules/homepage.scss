@@ -44,6 +44,14 @@
       box-shadow: -30px 30px -30px 30px;
       background-color: #eee;
       opacity: 0.8;
+      /* Microsoft Edge doesn't support clip-path, so just remove it */
+      @supports (-ms-ime-align:auto) {
+        display: none;
+      }
+      /* IE10+, hide it. No clip-path support. */
+      @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        display: none;
+      }
     }
     .feature-caption {
       color: white;
