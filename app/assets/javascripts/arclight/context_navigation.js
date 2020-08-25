@@ -373,8 +373,11 @@ class ContextNavigation {
     const that = this;
     this.ul.find('.al-toggle-view-children').on('click', (e) => {
       e.preventDefault();
-      const targetArea = $($(e.target).attr('href'));
-      if (!targetArea.data().resolved) {
+      // DUL CUSTOMIZATION: Edge bugfix: use .currentTarget instead of .target
+      const targetArea = $($(e.currentTarget).attr('href'));
+
+      // DUL CUSTOMIZATION: don't use data().resolved
+      if (!targetArea.data('resolved') == true) {
         targetArea.find('.context-navigator').each((i, ee) => {
           const contextNavigation = new ContextNavigation(
             // Send null for originalParents. We want to disregard the original

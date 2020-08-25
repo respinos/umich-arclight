@@ -18,8 +18,9 @@
 
     <% if document.children? %>
       <div class="al-toggle-children-container">
+        <%# DUL CUSTOMIZATION: remove the hard-coded plus icon, use CSS instead %>
         <%= link_to(
-          blacklight_icon(:plus),
+          '',
           "#nav_#{document.id}-collapsible-hierarchy",
           class: "al-toggle-view-children #{!show_expanded?(document) ? 'collapsed' : ''}",
           'aria-label': t('arclight.hierarchy.view_all'),

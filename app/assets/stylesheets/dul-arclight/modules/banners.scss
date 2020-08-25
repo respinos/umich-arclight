@@ -23,8 +23,17 @@
       line-height: 1.2em;
 
       @include media-breakpoint-down(lg) {
-        display:block;
         padding: 15px;
+      }
+
+      @include media-breakpoint-down(md) {
+        display: block;
+      }
+
+      /* IE10+: don't flex. Doesn't correctly center/wrap. */
+      @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        display: inline;
+        padding-top: 1.5rem;
       }
 
       & .blacklight-icons svg {
