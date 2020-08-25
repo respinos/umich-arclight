@@ -1,45 +1,31 @@
 #!/bin/bash
 
-BUILD_CONTEXT=$(git rev-parse --show-toplevel)
-BUILDER_IMAGE=$(cat $(dirname ${BASH_SOURCE[0]})/BUILDER_IMAGE)
+APP_IMAGE=${APP_IMAGE:-dul-arclight}
+BUILD_CONTEXT="file://$(git rev-parse --show-toplevel)"
+BUILDER_IMAGE=${BUILDER_IMAGE:-gitlab-registry.oit.duke.edu/devops/containers/images/rails/ruby26:latest}
+BUILD_OPTS=( "$@" )
 
-if [[ "$@" =~ ^(-h|(--)?help)$ ]]; then
-    cat <<EOF
-
-Build a container image for the project based on the latest commit.
-
-    ./build.sh [--incremental]
-
-Use the '--incremental' flag to re-use artifacts from the previous build.
-
-EOF
-    exit 0
+if ! [[ "${BUILD_OPTS[@]}" =~ (-c|--copy) ]] && \
+	! git diff-index --quiet HEAD -- ; then
+    BUILD_OPTS+=( -c )
 fi
 
-if ! [[ "$@" =~ (-c|--copy) ]]; then
-    if ! git diff-index --quiet HEAD -- ; then
-        cat <<EOF
-
-WARNING: You have uncommitted changes in your working tree.
-
-The build will be based on the latest commit:
-
-    $(git log --pretty=oneline | head -1)
-
-(Use the -c/--copy option with caution to build from the working directory as is.)
-
-EOF
-        echo -n "Continue (y/N)? "
-        read answer
-        if [ "${answer}" != "y" ]; then
-            echo -e "\nBuild aborted.\n"
-            exit 0
-        fi
-    fi
+# handle incremental option
+if [[ ! "${BUILD_OPTS[@]}" =~ --incremental ]] && \
+       [[ -n "$(docker image ls -q ${APP_IMAGE})" ]]; then
+    BUILD_OPTS+=( --incremental )
 fi
 
-s2i build \
-    file://${BUILD_CONTEXT} \
-    ${BUILDER_IMAGE} \
-    ${APP_IMAGE:-dul-arclight} \
-    "$@"
+# pull policy
+if [[ ! "${BUILD_OPTS[@]}" =~ (-p|--pull-policy) ]]; then
+    BUILD_OPTS+=( -p always )
+fi
+
+[[ -n "${BUILD_OPTS[@]}" ]] && echo "s2i build options: ${BUILD_OPTS[@]}"
+
+echo "---> Building runtime image ..."
+SECONDS=0
+
+if s2i build ${BUILD_CONTEXT} ${BUILDER_IMAGE} ${APP_IMAGE} ${BUILD_OPTS[@]}; then
+   echo "Image successfully built in $SECONDS seconds."
+fi
