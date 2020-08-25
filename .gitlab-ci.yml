@@ -65,7 +65,7 @@ release:
     - docker tag $APP_IMAGE $DEPLOY_IMAGE
     - docker push $DEPLOY_IMAGE
   after_script:
-    - sudo systemctl restart docker-compose@dul-arclight
+    - sudo systemctl restart docker-stack@dul-arclight
 
 deploy_development:
   extends: .deploy
