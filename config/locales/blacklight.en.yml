@@ -15,11 +15,19 @@ en:
       secondary: "Collection Guides"
     email:
       text:
+        title: "Title: %{value}"
+        description: "Description: %{value}"
+        in: "In: %{value}"
+        physdesc: "Physical Description: %{value}"
+        containers: "Containers: %{value}"
+        url: "URL: %{value}"
         subject:
           one: 'Saved Bookmark from Collection Guides'
           other: 'Saved Bookmarks from Collection Guides'
       views:
-        note: 'This message was sent from the Rubenstein Library Collection Guides system. For research assistance, see: https://library.duke.edu/rubenstein/ask'
+        note: |
+          This message was sent from the Rubenstein Library Collection Guides system. For
+          research assistance, see: https://library.duke.edu/rubenstein/ask
     header_links:
       ask: "Ask"
       ask_long: "Ask a Question"

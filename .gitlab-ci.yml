@@ -76,6 +76,7 @@ deploy_development:
     - develop
     - /^release-.*$/
     - /^hotfix-.*$/
+    - /^aery-.*$/
 
 deploy_staging:
   extends: .deploy
