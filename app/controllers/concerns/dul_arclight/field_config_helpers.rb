@@ -18,7 +18,14 @@ module DulArclight
         helper_method :link_to_ua_record_group_facet
         helper_method :ua_record_group_display
         helper_method :convert_rights_urls
+        helper_method :keep_raw_values
       end
+    end
+
+    # Sometimes we really just want to return an array and not use Blacklight's default
+    # Array#to_sentence
+    def keep_raw_values(args)
+      args[:value] || []
     end
 
     def convert_rights_urls(args)

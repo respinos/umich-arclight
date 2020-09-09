@@ -29,6 +29,15 @@ RSpec.describe DulArclight::FieldConfigHelpers do
     allow(helper).to receive(:view_context) { ActionView::Base.new }
   end
 
+  describe '#keep_raw_values' do
+    it 'returns the raw array of values' do
+      content = helper.keep_raw_values(
+        value: %w[one two three]
+      )
+      expect(content).to eq(%w[one two three])
+    end
+  end
+
   describe '#convert_rights_urls' do
     context 'when a paragraph contains *only* a URL' do
       context 'when the rights URL is present in config' do
