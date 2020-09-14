@@ -8,6 +8,11 @@ class SolrDocument
   include DulArclight::FieldConfigHelpers
   include ActionView::Helpers::TextHelper # for short description
 
+  # DUL CUSTOMIZATION: map fields to generate the body of an email.
+  # Borrowed from Blacklight core Blacklight::Solr::Document
+  # https://github.com/projectblacklight/blacklight/blob/master/lib/generators/blacklight/templates/solr_document.rb#L7-L8
+  SolrDocument.use_extension(Blacklight::Document::Email)
+
   # self.unique_key = 'id'
 
   # DUL CUSTOMIZATION: Allow for formatting tags to render in collection/component

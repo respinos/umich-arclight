@@ -148,25 +148,25 @@ class CatalogController < ApplicationController
     # handler defaults, or have no facets.
     config.add_facet_fields_to_solr_request!
 
-    # solr fields to be displayed in the index (search results) view
-    #   The ordering of the field names is the order of the display
-    config.add_index_field 'unitid_ssm', label: 'Unit ID'
-    config.add_index_field 'repository_ssm', label: 'Repository'
-    config.add_index_field 'normalized_date_ssm', label: 'Date'
-    config.add_index_field 'creator_ssm', label: 'Creator'
-    config.add_index_field 'language_ssm', label: 'Language'
-    config.add_index_field 'scopecontent_tesim', label: 'Scope Content', helper_method: :render_html_tags
-
-    # DUL CUSTOMIZATION: singularize extent
-    config.add_index_field 'physdesc_tesim', label: 'Extent', helper_method: :singularize_extent,
-                                             separator_options: {
-                                               words_connector: '<br/>',
-                                               two_words_connector: '<br/>',
-                                               last_word_connector: '<br/>'
-                                             }
-    config.add_index_field 'accessrestrict_tesim', label: 'Conditions Governing Access', helper_method: :render_html_tags
-    config.add_index_field 'collection_ssm', label: 'Collection Title'
-    config.add_index_field 'places_ssim', label: 'Place'
+    # DUL CUSTOMIZATIONS FOR INDEX FIELDS
+    # These add_index_field configs seem to only impact the data available in the search results
+    # catalog.json API. They do NOT impact the presentation of search results in the UI since
+    # ArcLight's templates use a custom display. We use an accessor in some cases to call methods
+    # on the solr_document model to get values.
+    # By default Blacklight concatenates arrays with Array#to_sentence, which we don't always want.
+    # To get just a raw array, use DUL-custom helper method 'keep_raw_values'
+    config.add_index_field 'normalized_title', accessor: :normalized_title, label: 'Title'
+    config.add_index_field 'short_description', accessor: :short_description, label: 'Description'
+    config.add_index_field 'parent_labels', accessor: :parent_labels, label: 'In', helper_method: 'keep_raw_values'
+    config.add_index_field 'parent_ids', accessor: :parent_ids, label: 'Ancestor IDs', helper_method: 'keep_raw_values'
+    config.add_index_field 'level', accessor: :level, label: 'Level'
+    config.add_index_field 'extent', accessor: :extent, label: 'Extent'
+    config.add_index_field 'containers', accessor: :containers, label: 'Containers'
+    config.add_index_field 'collection_name', accessor: :collection_name, label: 'Collection'
+    config.add_index_field 'eadid', accessor: :eadid, label: 'EAD ID'
+    config.add_index_field 'online_content?', accessor: :online_content?, label: 'Online Content'
+    config.add_index_field 'component?', accessor: :component?, label: 'Component'
+    config.add_index_field 'restricted_component?', accessor: :restricted_component?, label: 'Restrictions'
 
     # DEBUG fields displayed in search results when debug=true is present in the request.
     config.add_index_field 'score'

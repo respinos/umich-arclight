@@ -14,7 +14,7 @@ build:
     - docker info
   script:
     - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
-    - .docker/build.sh -p always -e RAILS_ENV=production
+    - .docker/build.sh -e RAILS_ENV=production
     - docker push $APP_IMAGE
   tags:
     - build
@@ -26,7 +26,7 @@ test:
   script:
     - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
     - docker pull $APP_IMAGE
-    - .docker/build.sh --incremental -e RAILS_ENV=test
+    - .docker/build.sh -e RAILS_ENV=test
     - .docker/run_test_suite.sh
   tags:
     - test
@@ -76,6 +76,7 @@ deploy_development:
     - develop
     - /^release-.*$/
     - /^hotfix-.*$/
+    - /^aery-.*$/
 
 deploy_staging:
   extends: .deploy
