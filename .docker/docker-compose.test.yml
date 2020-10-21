@@ -4,11 +4,17 @@ services:
   app:
     volumes:
       - ../spec/fixtures:/data:ro
+    environment:
+      - RAILS_ENV=test
+      - FINDING_AID_DATA=spec/fixtures
+    command:
+      - bundle
+      - exec
+      - rake
+      - seed:fixtures
+      - db:reset
+      - spec
+
   solr:
-    volumes:
-      - ../solr/arclight/conf:/solr_config:ro
-    entrypoint:
-      - docker-entrypoint.sh
-      - solr-precreate
-      - "${SOLR_CORE}"
-      - /solr_config
+    logging:
+      driver: none

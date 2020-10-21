@@ -6,7 +6,7 @@ volumes:
 services:
   solr:
     ports:
-      - "${SOLR_PORT}:8983"
+      - "8983:8983"
     volumes:
       - ../solr/arclight:/var/solr/data/arclight
 
@@ -18,13 +18,16 @@ services:
     volumes:
       - ..:/opt/app-root
     ports:
-      - "${RAILS_PORT}:3000"
+      - "3000:3000"
+    environment:
+      - RAILS_ENV=development
+      - FINDING_AID_DATA=../sample-ead
 
   redis:
-    image: "${REDIS_IMAGE}"
+    image: gitlab-registry.oit.duke.edu/devops/containers/redis/5:latest
 
   resque:
-    image: "${APP_IMAGE}"
+    image: dul-arclight
     depends_on:
       - db
       - redis
@@ -32,11 +35,11 @@ services:
     volumes:
       - ..:/opt/app-root
     environment:
-      - RAILS_ENV
-      - DATABASE_URL
-      - FINDING_AID_DATA
-      - REDIS_URL
-      - SOLR_URL
+      - DATABASE_URL=postgresql://postgres:arclight@db/arclight
+      - FINDING_AID_DATA=../../finding-aid-data
+      - RAILS_ENV=development
+      - REDIS_URL=redis://redis:6379
+      - SOLR_URL=http://solr:8983/solr/arclight
     healthcheck:
       disable: true
     stop_signal: SIGQUIT
@@ -51,7 +54,7 @@ services:
       - resque:pool
 
   resque-web:
-    image: "${APP_IMAGE}"
+    image: dul-arclight
     ports:
       - "8080:8080"
     depends_on:
@@ -59,10 +62,10 @@ services:
     volumes:
       - ..:/opt/app-root
     environment:
-      - RAILS_ENV
-      - DATABASE_URL
-      - REDIS_URL
-      - SOLR_URL
+      - DATABASE_URL=postgresql://postgres:arclight@db/arclight
+      - RAILS_ENV=development
+      - REDIS_URL=redis://redis:6379
+      - SOLR_URL=http://solr:8983/solr/arclight
     healthcheck:
       disable: true
     entrypoint:

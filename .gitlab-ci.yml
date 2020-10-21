@@ -1,67 +1,43 @@
+include:
+  - project: devops/ci-config
+    file: /templates/container-flexible.gitlab-ci.yml
+  - project: devops/ci-config
+    file: /templates/bundler-audit.gitlab-ci.yml
+
 stages:
   - build
   - test
-  - release
   - deploy
 
 variables:
-  APP_IMAGE: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
-  DEPLOY_IMAGE: $CI_REGISTRY_IMAGE/$CI_ENVIRONMENT_SLUG:latest
+  build_tag: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA
+  deploy_tag: $CI_REGISTRY_IMAGE/$CI_ENVIRONMENT_SLUG:latest
 
 build:
-  stage: build
-  before_script:
-    - docker info
-  script:
-    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
-    - .docker/build.sh -e RAILS_ENV=production
-    - docker push $APP_IMAGE
-  tags:
-    - build
+  extends: .build
 
 test:
-  stage: test
-  before_script:
-    - docker info
-  script:
-    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
-    - docker pull $APP_IMAGE
-    - .docker/build.sh -e RAILS_ENV=test
-    - .docker/run_test_suite.sh
-  tags:
-    - test
+  extends: .test
 
-include:
-  - project: devops/ci-config
-    file: /templates/bundler-audit.gitlab-ci.yml
+rubocop:
+  extends: .test
+  script:
+    - make rubocop
+  allow_failure: true
 
 bundler-audit:
   tags:
     - test
 
-release:
-  stage: release
-  only:
-    - master
-  before_script:
-    - docker info
-  script:
-    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
-    - docker pull $APP_IMAGE
-    - docker tag $APP_IMAGE $CI_REGISTRY_IMAGE:latest
-    - docker push $CI_REGISTRY_IMAGE:latest
-  tags:
-    - release
-
 .deploy:
   stage: deploy
   before_script:
     - docker info
-  script:
     - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
-    - docker pull $APP_IMAGE
-    - docker tag $APP_IMAGE $DEPLOY_IMAGE
-    - docker push $DEPLOY_IMAGE
+    - docker pull $build_tag
+  script:
+    - docker tag $build_tag $deploy_tag
+    - docker push $deploy_tag
   after_script:
     - sudo systemctl reload docker-stack@dul-arclight
 
