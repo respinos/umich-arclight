@@ -1,35 +1,30 @@
 version: '3.7'
 
-networks:
-  default:
-    name: "arclight-${RAILS_ENV}"
-
 services:
   db:
-    image: "${POSTGRES_IMAGE}"
+    image: postgres:12-alpine
     environment:
-      - POSTGRES_DB
-      - POSTGRES_PASSWORD
+      - POSTGRES_DB=arclight
+      - POSTGRES_PASSWORD=arclight
 
   solr:
-    image: "${SOLR_IMAGE}"
+    image: solr:8-slim
+    volumes:
+      - ../solr/arclight/conf:/solr_config:ro
+    entrypoint:
+      - docker-entrypoint.sh
+      - solr-precreate
+      - arclight
+      - /solr_config
 
   app:
-    image: "${APP_IMAGE}"
+    image: "${build_tag:-dul-arclight}"
     depends_on:
       - db
       - solr
     environment:
-      - RAILS_ENV
-      - DATABASE_URL
-      - FINDING_AID_DATA
-      - GOOGLE_ANALYTICS_DEBUG
-      - GOOGLE_ANALYTICS_TRACKING_ID
-      - REDIS_URL
-      - SOLR_URL
-    entrypoint:
-      - wait-for-it
-      - db:5432
-      - '--'
-    command:
-      - /usr/libexec/s2i/run
+      - DATABASE_URL=postgresql://postgres:arclight@db/arclight
+      - GOOGLE_ANALYTICS_DEBUG=true
+      - GOOGLE_ANALYTICS_TRACKING_ID=UA-167959564-4
+      - REDIS_URL=redis://redis:6379
+      - SOLR_URL=http://solr:8983/solr/arclight
