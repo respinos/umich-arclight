@@ -1,11 +1,2 @@
 @import 'bootstrap';
 @import 'blacklight/blacklight';
-
-/* Blacklight 7.5.0 is missing a base height & width             */
-/* for icon SVGs. Remove this if addressed in future BL version. */
-/* See https://github.com/projectblacklight/blacklight/pull/2225 */
-
-.blacklight-icons svg {
-  height: $font-size-base;
-  width: $font-size-base;
-}
