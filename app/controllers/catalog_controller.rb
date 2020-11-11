@@ -113,6 +113,12 @@ class CatalogController < ApplicationController
     #  (useful when user clicks "more" on a large facet and wants to navigate alphabetically across a large set of results)
     # :index_range can be an array or range of prefixes that will be used to create the navigation (note: It is case sensitive when searching values)
 
+    config.add_facet_field 'has_online_content_ssim',
+                           label: 'Online Access',
+                           collapse: false,
+                           query: {
+                             online: { label: 'Available Online', fq: 'has_online_content_ssim:true' }
+                           }
     config.add_facet_field 'collection_sim', label: 'Collection', limit: 10
     config.add_facet_field 'creator_ssim', label: 'Creator', limit: 10
     config.add_facet_field 'creators_ssim', label: 'Creator', show: false
@@ -130,12 +136,6 @@ class CatalogController < ApplicationController
                            label: 'University Archives Record Group',
                            helper_method: :ua_record_group_display,
                            partial: 'blacklight/hierarchy/facet_hierarchy'
-
-    config.add_facet_field 'has_online_content_ssim',
-                           label: 'Online Access',
-                           query: {
-                             online: { label: 'Online access', fq: 'has_online_content_ssim:true' }
-                           }
 
     config.facet_display = {
       hierarchy: {
