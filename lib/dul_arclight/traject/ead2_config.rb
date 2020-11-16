@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # Copy of ArcLight Core Traject indexing config for DUL customizations
-# Last checked for updates: ArcLight v0.3.0.
+# Last checked for updates: ArcLight v0.3.3.
 # https://github.com/projectblacklight/arclight/blob/master/lib/arclight/traject/ead2_config.rb
 
 require 'logger'
@@ -9,6 +9,7 @@ require 'traject'
 require 'traject/nokogiri_reader'
 require 'traject_plus'
 require 'traject_plus/macros'
+require 'arclight/exceptions'
 require 'arclight/level_label'
 # DUL Customization: use custom normalized date
 require_relative '../normalized_date'

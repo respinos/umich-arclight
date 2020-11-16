@@ -21,6 +21,11 @@
 //= require twitter/typeahead
 //= require bootstrap
 //= require blacklight/blacklight
+
+// Required by Arclight
+//= require arclight/arclight
+//= require stickyfill
+
 //= require blacklight/hierarchy/hierarchy.js
 
 //= require accessibility-patches.js
