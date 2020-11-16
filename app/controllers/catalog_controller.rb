@@ -429,7 +429,12 @@ class CatalogController < ApplicationController
     config.add_component_using_field 'accessrestrict_tesim', label: 'Restrictions', helper_method: :render_html_tags
     config.add_component_using_field 'userestrict_tesim', label: 'Use & Permissions', helper_method: :convert_rights_urls
 
+
+
     # Component Show Page - Metadata Section
+
+    # DUL CUSTOMIZATION: add creators field; it's missing in ArcLight core.
+    config.add_component_field 'creators_ssim', label: 'Creator', link_to_facet: true
     config.add_component_field 'containers', label: 'Containers', accessor: 'containers', separator_options: {
       words_connector: ', ',
       two_words_connector: ', ',
