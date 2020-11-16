@@ -217,8 +217,6 @@ to_field 'creator_corpname_ssim', extract_xpath('/ead/archdesc/did/origination/c
 to_field 'creator_famname_ssm', extract_xpath('/ead/archdesc/did/origination/famname')
 to_field 'creator_famname_ssim', extract_xpath('/ead/archdesc/did/origination/famname')
 
-to_field 'persname_sim', extract_xpath('//persname')
-
 to_field 'creators_ssim' do |_record, accumulator, context|
   accumulator.concat context.output_hash['creator_persname_ssm'] if context.output_hash['creator_persname_ssm']
   accumulator.concat context.output_hash['creator_corpname_ssm'] if context.output_hash['creator_corpname_ssm']
@@ -318,12 +316,10 @@ end
 
 # DUL CUSTOMIZATION: exclude repository/corpname since it's always Rubenstein.
 NAME_ELEMENTS.map do |selector|
-  to_field 'names_coll_ssim', extract_xpath("/ead/archdesc/controlaccess/#{selector}")
-  to_field 'names_ssim', extract_xpath("//#{selector}[not(parent::repository)]")
-  to_field "#{selector}_ssm", extract_xpath("//#{selector}[not(parent::repository)]")
+  to_field 'names_coll_ssim', extract_xpath("/ead/archdesc/controlaccess/#{selector}"), unique
+  to_field 'names_ssim', extract_xpath("//#{selector}[not(parent::repository)]"), unique
+  to_field "#{selector}_ssm", extract_xpath("//#{selector}[not(parent::repository)]"), unique
 end
-
-to_field 'corpname_sim', extract_xpath('//corpname')
 
 # DUL CUSTOMIZATION: separate language vs langmaterial fields that don't have language
 # Probably just a DUL modification; mix of conventions in use in our data
@@ -583,8 +579,8 @@ compose 'components', ->(record, accumulator, _context) { accumulator.concat rec
   end
 
   NAME_ELEMENTS.map do |selector|
-    to_field 'names_ssim', extract_xpath("./controlaccess/#{selector}")
-    to_field "#{selector}_ssm", extract_xpath(".//#{selector}")
+    to_field 'names_ssim', extract_xpath("./controlaccess/#{selector}"), unique
+    to_field "#{selector}_ssm", extract_xpath(".//#{selector}"), unique
   end
 
   # DUL CUSTOMIZATION: Bugfix field geogname --> places
