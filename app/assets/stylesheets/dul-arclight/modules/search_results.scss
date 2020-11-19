@@ -76,6 +76,27 @@
   }
 }
 
+/* Available Online Facet */
+#facets {
+  .blacklight-has_online_content_ssim {
+    .card-header {
+      display: none;
+    }
+    ul.facet-values li {
+      /* Had to create a green icon rather than fill the existing  */
+      /* one using CSS, as recoloring an icon that is a background */
+      /* image doesn't work */
+      .facet-label {
+        background-image: asset-url("blacklight/online-green.svg");
+        background-repeat: no-repeat;
+        background-position-y: 5px;
+        background-size: 20px;
+        padding-left: 45px;
+      }
+    }
+  }
+}
+
 /* Override Blacklight-Hierarchy gem styles */
 /* ======================================== */
 .facet-hierarchy {

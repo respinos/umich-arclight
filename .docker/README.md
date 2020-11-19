@@ -7,11 +7,13 @@
 - [docker-compose](https://docs.docker.com/compose/install/)
   (Linux only - included in Docker Desktop for Mac/Windows)
 - [source-to-image](https://github.com/openshift/source-to-image#installation)
+- [GNU Make](https://www.gnu.org/software/make/) - Mac can get in XCode
+  Command Line Tools (CLT) or via Home Brew.
 
 ## Wrapper scripts
 
-The `.docker` directory contains wrapper scripts and other files for building
-the application image locally and running development and test environments.
+The `.docker` directory contains wrapper scripts and other files for
+running development and test environments.
 Details of usage are given below.
 
 ## Build
@@ -20,18 +22,10 @@ For iterative development, a build should be run whenever there is a change in
 gem dependencies (Gemfile.lock).  Other changes in source code may only require a
 restart of the `app` container (or of the rails server within the container).
 
-In the `.docker` directory, run:
+    $ make
 
-    $ ./build.sh [--incremental] [--copy/-c] [-p always]
-
-- Use the `--incremental` flag to re-use artifacts (i.e., gems) from the previous build,
-  if available. (Obviously on the first build it will not be able to do this, so you will
-  see a non-fatal error message accordingly.)
-- Use the `--copy` or `-c` flag to use the local working copy of your code, rather than
-  the last commit.  This is useful for iterative development where re-building is
-  necessary and you may not want to commit changes before testing.
-- Use `-p always` to ensure you get the latest version of the builder image as the
-  base for your build.  It's a good idea to do this every so often.
+The standard build process will pull the base image, inject the application
+source directory, and copy gems from a previous if available.
 
 ## Development
 
@@ -43,8 +37,6 @@ You may wish to add the `-d` option to push the process to the background; note,
 may not be fully available as soon as the script exits; Docker considers a service "up" when the
 container has started, not necessarily when the main process (e.g., Rails server, Postgres, etc.)
 is ready to fully initialized.
-
-For more information, run `./dev.sh --help`.
 
 To access an interactive shell in the `app` container run the `bash` command:
 
@@ -66,20 +58,24 @@ To stop the development environment:
 
     $ ./dev.sh down
 
+(You should use this command if you interrupted the stack running the foreground
+with Ctrl-C.)
+
 ## Test
 
-For iterative development, it may be useful to start the test environment. The Rails and Solr
-ports are not published by default; it is assumed that you will be using the command line
-in the `app` container to run tests, e.g.:
+For iterative development, it may be useful to run the test environment interactively:
 
-    $ ./test.sh run --rm app bash
+    $ ./test-interactive.sh
 
-To run the test suite:
+This command will drop you into an interactive bash shell in the `app` container
+with your local code mounted in the application root directory.
 
-    $ ./run_test_suite.sh
+From there, you can run various `rspec` commands or the whole test suite (`bundle exec rake spec`).
 
-To ensure that the test environment is cleaned up run:
+WHen you exit the interactive test environment, the test stack will shut down.
 
-    $ ./test.sh down
+To run the test suite using the *latest build*, not including subsequent changes, run:
 
-Fore more information, run `./test.sh --help`.
+    $ make test
+
+This command is intended primarily for CI usage.
