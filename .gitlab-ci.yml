@@ -39,7 +39,7 @@ bundler-audit:
     - docker tag $build_tag $deploy_tag
     - docker push $deploy_tag
   after_script:
-    - sudo systemctl reload-or-restart docker-stack@dul-arclight
+    - sudo -n systemctl reload-or-restart docker-stack@dul-arclight
 
 deploy_development:
   extends: .deploy
