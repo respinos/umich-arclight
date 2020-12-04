@@ -280,6 +280,12 @@
        <str name="spellcheck.extendedResults">true</str>
        <str name="spellcheck.collate">false</str>
        <str name="spellcheck.count">5</str>
+
+       <!-- DUL CUSTOMIZATION: use <mark> tag instead of <em> for -->
+       <!-- search result hit highlighting. -->
+       <str name="hl.simple.pre">&lt;mark&gt;</str>
+       <str name="hl.simple.post">&lt;/mark&gt;</str>
+
      </lst>
     <arr name="last-components">
       <str>spellcheck</str>
