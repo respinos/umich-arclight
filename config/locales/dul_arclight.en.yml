@@ -74,6 +74,13 @@ en:
         sidebar:
           collection_title: Collection
           collection_info_icon_label: Advanced collection info
+          request:
+            tooltip: Select items for onsite use using the library catalog.
+            current_containers: |
+              The item you are currently viewing is in:<br/><strong>%{containers}</strong>
+            multi_aleph: |
+              Since this collection guide represents multiple collections, first choose the
+              collection that includes the material you'd like to request, then click Request.
 
     twitter_og:
       site_name: David M. Rubenstein Rare Book & Manuscript Library

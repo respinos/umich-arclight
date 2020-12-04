@@ -93,6 +93,12 @@ module DulArclight
       label.html_safe
     end
 
+    # Override existing ArcLight core helper to support .html_safe
+    def context_access_tab_visit_note(args)
+      document = args[:document]
+      document.repository_config.visit_note.html_safe
+    end
+
     private
 
     def just_a_url?(text)

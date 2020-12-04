@@ -367,9 +367,9 @@ class CatalogController < ApplicationController
                                                        last_word_connector: '<br/>'
                                                      }
 
-    # Collection Show Page - Using These Materials Section
-    config.add_using_field 'accessrestrict_tesim', label: 'Restrictions', helper_method: :render_html_tags
-    config.add_using_field 'userestrict_tesim', label: 'Use & Permissions', helper_method: :convert_rights_urls
+    # Collection Show Page - Top Restrictions Snippet Section
+    config.add_restrictions_field 'accessrestrict_tesim', label: 'Restrictions', helper_method: :render_html_tags
+    config.add_restrictions_field 'userestrict_tesim', label: 'Use & Permissions', helper_method: :convert_rights_urls
 
     # Collection Show Page - Background Section
     config.add_background_field 'scopecontent_tesim', label: 'Scope and Content', helper_method: :render_html_tags
@@ -426,9 +426,9 @@ class CatalogController < ApplicationController
     # COMPONENT SHOW PAGE FIELDS
     # ==========================
 
-    config.add_component_using_field 'accessrestrict_tesim', label: 'Restrictions', helper_method: :render_html_tags
-    config.add_component_using_field 'userestrict_tesim', label: 'Use & Permissions', helper_method: :convert_rights_urls
-
+    # Restrictions Displayed in a Warning Box
+    config.add_component_restrictions_field 'accessrestrict_tesim', label: 'Restrictions', helper_method: :render_html_tags
+    config.add_component_restrictions_field 'userestrict_tesim', label: 'Use & Permissions', helper_method: :convert_rights_urls
 
 
     # Component Show Page - Metadata Section

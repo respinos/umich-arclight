@@ -165,17 +165,10 @@
 <%# Adapted from https://github.com/projectblacklight/arclight/blob/master/app/views/catalog/_show_upper_metadata_default.html.erb %>
 
 <% if document.restricted_component? %>
-  <div id="access-restriction-snippet">
-    <dl>
-      <% doc_presenter = show_presenter(document).with_field_group('component_using_field') %>
-      <% generic_document_fields('component_using_field').each do |field_name, field| %>
-        <% if generic_should_render_field?('component_using_field', document, field) %>
-          <dt class="blacklight-<%= field_name.parameterize %>"><i class="fas fa-exclamation-triangle"></i> <%= generic_render_document_field_label('component_using_field', document, field: field_name) %></dt>
-          <dd class="blacklight-<%= field_name.parameterize %>"><%= doc_presenter.field_value field %></dd>
-        <% end %>
-      <% end %>
-    </dl>
-    <p><a class="smooth-scroll" href="#<%=t("arclight.views.show.sections.using_field").parameterize %>"><%= t('dul_arclight.views.show.access.more_restriction') %></a></p>
+  <div id="component-restrictions">
+    <%= render 'custom_metadata',
+      document: @document, field_accessor: 'component_restrictions_field', skip_headings: true %>
+      <p><a class="smooth-scroll" href="#<%= t("arclight.views.show.sections.using_field").parameterize %>"><%= t('dul_arclight.views.show.access.more_restriction') %></a></p>
   </div>
 <% end %>
 
@@ -188,6 +181,7 @@
 <% parents = Arclight::Parents.from_solr_document(document).as_parents %>
 
 <% if document.level == 'collection' %>
+
   <div class="collection-overview-wrapper">
     <%# ========================== %>
     <%# Collection Overview        %>
@@ -200,8 +194,10 @@
     <% end %>
 
     <div class="access-preview-snippet">
+      <%= render 'using_header' %>
+
       <%= render 'custom_metadata',
-        document: @document, field_accessor: 'using_field', truncation_length: 200 %>
+        document: @document, field_accessor: 'restrictions_field', truncation_length: 200, skip_headings: true %>
       <p><a class="smooth-scroll" href="#<%=t("arclight.views.show.sections.using_field").parameterize %>">More ...</a></p>
     </div>
 
@@ -300,24 +296,24 @@
 <%# ==================================== %>
 <%# Access (Using these materials) Terms %>
 <%# ==================================== %>
-<%# For now this is manually added at the bottom %>
-<%# of a collection/component page. TBD how to   %>
-<%# refactor to use controller config instead.   %>
 
-<% unless blacklight_config.show.component_access_tab_items.nil? && 
-          blacklight_config.show.context_access_tab_items.nil? %>
-  <div class='row'>
-    <div class='col-md-12' id='using-these-materials-section'>
-      <h2 class="al-show-sub-heading" id='<%=t("arclight.views.show.sections.using_field").parameterize %>'><%= t('arclight.views.show.sections.using_field') %></h2>
-        <% if document.component? %>
-          <% items = blacklight_config.show.component_access_tab_items.select { |i|  fields_have_content?(@document, i) } %>
-        <% else %>
-          <% items = blacklight_config.show.context_access_tab_items.select { |i|  fields_have_content?(@document, i) } %>
-        <% end %>
+<%# This logic is a meld of these two ArcLight core partials %>
+<%# https://github.com/projectblacklight/arclight/blob/master/app/views/catalog/_show_default.html.erb#L57-L65 %>
+<%# %>
 
-        <% items.each_with_index do |item, index| %>
-          <%= render partial: 'access_contents', locals: { document: @document, field_accessor: item, card_index: index} %>
-        <% end %>
-    </div>
-  </div>
-<% end %>
+<div id='<%= t("arclight.views.show.sections.using_field").parameterize %>'>
+  <% unless blacklight_config.show.component_access_tab_items.nil? &&
+            blacklight_config.show.context_access_tab_items.nil? %>
+    <%= render 'using_header' %>
+    <% if document.component? %>
+      <% items = blacklight_config.show.component_access_tab_items.select { |i|  fields_have_content?(@document, i) } %>
+    <% else %>
+      <% items = blacklight_config.show.context_access_tab_items.select { |i|  fields_have_content?(@document, i) } %>
+    <% end %>
+
+    <% items.each_with_index do |item, index| %>
+      <%= render 'access_contents',
+        document: @document, field_accessor: item %>
+    <% end %>
+  <% end %>
+</div>
