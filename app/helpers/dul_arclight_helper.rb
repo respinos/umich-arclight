@@ -54,12 +54,10 @@ module DulArclightHelper
 
   def request_tooltip(document)
     tooltips = [I18n.t('dul_arclight.views.show.sidebar.request.tooltip')]
-    if document.bibnums.count > 1
-      tooltips << I18n.t('dul_arclight.views.show.sidebar.request.multi_aleph')
-    end
+    tooltips << I18n.t('dul_arclight.views.show.sidebar.request.multi_aleph') if document.bibnums.count > 1
     if document.containers.present?
       tooltips << I18n.t('dul_arclight.views.show.sidebar.request.current_containers',
-        containers: document.containers.join(', '))
+                         containers: document.containers.join(', '))
     end
     tooltips.join('<br/><br/>')
   end
