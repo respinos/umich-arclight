@@ -77,6 +77,12 @@ class SolrDocument
     end
   end
 
+  # DUL override ArcLight core method; fall back to the ID if ref_ssm isn't present.
+  # Currently only components get a ref_ssm.
+  def reference
+    first('ref_ssm') || fetch('id')
+  end
+
   def component?
     parent_ids.present?
   end

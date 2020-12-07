@@ -23,6 +23,7 @@ en:
         expand: "Show More ..."
         context: "Navigate the Collection"
         sections:
+          contents: "Contents"
           component_indexed_terms_field: Subjects
           indexed_terms_field: Subjects
           using_field: "Using These Materials"
