@@ -22,4 +22,5 @@ ActiveSupport::Inflector.inflections(:en) do |inflect|
   inflect.singular(/^(.+) Feet/, '\1 Foot')
   inflect.irregular 'leaf', 'leaves'
   inflect.irregular 'Leaf', 'Leaves'
+  inflect.uncountable %w( VHS )
 end

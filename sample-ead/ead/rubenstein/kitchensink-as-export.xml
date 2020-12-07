@@ -877,9 +877,73 @@
         </c02>
         <c02 id="aspace_ref58" level="item">
           <did>
-            <unittitle>Folder title of Folder 2 |||</unittitle>
+            <unittitle>Folder title of Folder 2 (Singular and Plural Extent Tests)|||</unittitle>
             <unitid>UniqueID2|||</unitid>
             <unitdate normal="1880/1900" type="inclusive">1880-1900</unitdate>
+            <physdesc altrender="whole">
+              <extent>1 audiocassettes</extent>
+              <extent>2 audiocassettes</extent>
+              <extent>1 audiovisual items</extent>
+              <extent>2 audiovisual items</extent>
+              <extent>1 boxes</extent>
+              <extent>2 boxes</extent>
+              <extent>1 cdrs</extent>
+              <extent>2 cdrs</extent>
+              <extent>1 CD-Rs</extent>
+              <extent>2 CD-Rs</extent>
+              <extent>1 copies</extent>
+              <extent>2 copies</extent>
+              <extent>1 files</extent>
+              <extent>2 files</extent>
+              <extent>1 film feet</extent>
+              <extent>2 film feet</extent>
+              <extent>1 folders</extent>
+              <extent>2 folders</extent>
+              <extent>1 gigabytes</extent>
+              <extent>2 gigabytes</extent>
+              <extent>1 items</extent>
+              <extent>2 items</extent>
+              <extent>1 leaves</extent>
+              <extent>2 leaves</extent>
+              <extent>1 linear feet</extent>
+              <extent>2 linear feet</extent>
+              <extent>1 megabytes</extent>
+              <extent>2 megabytes</extent>
+              <extent>1 minutes</extent>
+              <extent>2 minutes</extent>
+              <extent>1 photographs</extent>
+              <extent>2 photographs</extent>
+              <extent>1 reels</extent>
+              <extent>2 reels</extent>
+              <extent>1 tapes</extent>
+              <extent>2 tapes</extent>
+              <extent>1 terabytes</extent>
+              <extent>2 terabytes</extent>
+              <extent>1 volumes</extent>
+              <extent>2 volumes</extent>
+              <extent>1 disks</extent>
+              <extent>2 disks</extent>
+              <extent>1 DVD</extent>
+              <extent>2 DVD</extent>
+              <extent>1 DVDs</extent>
+              <extent>2 DVDs</extent>
+              <extent>1 slides</extent>
+              <extent>2 slides</extent>
+              <extent>1 prints</extent>
+              <extent>2 prints</extent>
+              <extent>1 albums</extent>
+              <extent>2 albums</extent>
+              <extent>1 VHS</extent>
+              <extent>2 VHS</extent>
+              <extent>1 VHS tapes</extent>
+              <extent>2 VHS tapes</extent>
+              <extent>1 sheets</extent>
+              <extent>2 sheets</extent>
+              <extent>1 pages</extent>
+              <extent>2 pages</extent>
+              <extent>1 discs</extent>
+              <extent>2 discs</extent>
+            </physdesc>
             <container id="aspace_b7ed89e55b9af9602dae329f022e4837" label="mixed materials"
               type="Box">2</container>
             <container id="aspace_5bc76b2bf75d61d76dbd899cbbbd8988"
