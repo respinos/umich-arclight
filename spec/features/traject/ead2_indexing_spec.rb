@@ -4,6 +4,7 @@
 # https://github.com/projectblacklight/arclight/blob/master/spec/features/traject/ead2_indexing_spec.rb
 
 require 'spec_helper'
+require 'nokogiri'
 
 RSpec.describe 'EAD 2 traject indexing', type: :feature do
   subject(:result) do
@@ -90,6 +91,70 @@ RSpec.describe 'EAD 2 traject indexing', type: :feature do
 
       it 'captures the sub group preceded by its parent group' do
         expect(result['ua_record_group_ssim']).to include('31:11')
+      end
+    end
+  end
+
+  describe 'restrictions inheritance & indexing' do
+    let(:fixture_path) do
+      Rails.root.join('spec', 'fixtures', 'ead', 'rubenstein', 'restrictionstest.xml')
+    end
+
+    describe 'series with own restrictions' do
+      it 'gets its own restrictions' do
+        component = result['components'].find { |c| c['id'] == ['restrictionstest_aspace_testrestrict_series_a'] }
+        expect(component['accessrestrict_tesim'].count).to eq 1
+        expect(component['accessrestrict_tesim'].first.to_xml).to eq '<p>Access Restriction A</p>'
+      end
+    end
+
+    describe 'series without restrictions' do
+      it 'gets no restrictions, not even from top-level archdesc' do
+        component = result['components'].find { |c| c['id'] == ['restrictionstest_aspace_testrestrict_series_b'] }
+        expect(component['accessrestrict_tesim']).to be nil
+        expect(component['userestrict_tesim']).to be nil
+      end
+    end
+
+    describe 'subseries with restrictions under a restricted series' do
+      it 'gets only its own restrictions, not from its parent series' do
+        component = result['components'].find { |c| c['id'] == ['restrictionstest_aspace_testrestrict_subseries_c'] }
+        expect(component['accessrestrict_tesim'].count).to eq 1
+        expect(component['accessrestrict_tesim'].first.to_xml).to eq '<p>Access Restriction C</p>'
+      end
+    end
+
+    describe 'subseries without restrictions under a restricted series' do
+      it 'gets restrictions from its parent series' do
+        component = result['components'].find { |c| c['id'] == ['restrictionstest_aspace_testrestrict_subseries_d'] }
+        expect(component['accessrestrict_tesim'].count).to eq 1
+        expect(component['accessrestrict_tesim'].first.to_xml).to eq '<p>Access Restriction A</p>'
+        expect(component['userestrict_tesim'].count).to eq 1
+        expect(component['userestrict_tesim'].first.to_xml).to eq '<p>Use Restriction A</p>'
+      end
+    end
+
+    describe 'subseries without restrictions, under a series without restrictions' do
+      it 'gets no restrictions, not even from top-level archdesc' do
+        component = result['components'].find { |c| c['id'] == ['restrictionstest_aspace_testrestrict_subseries_f'] }
+        expect(component['accessrestrict_tesim']).to be nil
+        expect(component['userestrict_tesim']).to be nil
+      end
+    end
+
+    describe 'file with restrictions under a restricted subseries' do
+      it 'gets only its own restrictions, not from its parent subseries nor its ancestor series' do
+        component = result['components'].find { |c| c['id'] == ['restrictionstest_aspace_testrestrict_file_h'] }
+        expect(component['accessrestrict_tesim'].count).to eq 1
+        expect(component['accessrestrict_tesim'].first.to_xml).to eq '<p>Access Restriction H</p>'
+      end
+    end
+
+    describe 'file without restrictions 2 deep under a restricted series' do
+      it 'gets restrictions from its grandparent series' do
+        component = result['components'].find { |c| c['id'] == ['restrictionstest_aspace_testrestrict_file_i'] }
+        expect(component['accessrestrict_tesim'].count).to eq 1
+        expect(component['accessrestrict_tesim'].first.to_xml).to eq '<p>Access Restriction A</p>'
       end
     end
   end

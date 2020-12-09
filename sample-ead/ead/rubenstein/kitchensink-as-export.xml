@@ -1124,6 +1124,9 @@
           <unittitle>Series title of series of Real folder/item examples |||</unittitle>
           <unitid>Series VI |||</unitid>
         </did>
+        <accessrestrict>
+          <p>Series-level access restriction on c01</p>
+        </accessrestrict>
         <c02 id="aspace_ref226" level="otherlevel" otherlevel="subsubseries">
           <did>
             <unittitle>Subsubseries title of Rawls papers lots of notes in folder-level descriptions
@@ -1289,6 +1292,12 @@
           <did>
             <unittitle>Subseries title of subseries of Schlesinger examples |||</unittitle>
           </did>
+          <accessrestrict>
+            <p>Subseries-level access restriction on c02</p>
+          </accessrestrict>
+          <accessrestrict>
+            <p>A second accessrestrict on the c02!</p>
+          </accessrestrict>
           <c03 id="aspace_ref193" level="item">
             <did>
               <unittitle>Donor lists removed from #95.12.</unittitle>
@@ -1297,6 +1306,9 @@
             <accessrestrict id="aspace_ref194">
               <head>Conditions Governing Access note</head>
               <p>WRITTEN PERMISSION REQUIRED UNTIL JANUARY 1, 2041.</p>
+            </accessrestrict>
+            <accessrestrict>
+              <p>A second accessrestrict on the c03!</p>
             </accessrestrict>
             <odd id="aspace_ref196">
               <head>Kate's -- note -- about -- input</head>
