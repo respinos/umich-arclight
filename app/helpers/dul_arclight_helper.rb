@@ -62,6 +62,11 @@ module DulArclightHelper
     tooltips.join('<br/><br/>')
   end
 
+  def formatted_last_modified(timestamp)
+    date = DateTime.parse(timestamp)
+    date.strftime('%F')
+  end
+
   private
 
   def collection_result_in_group?(document)

@@ -15,6 +15,11 @@ class SolrDocument
 
   # self.unique_key = 'id'
 
+  # DUL CUSTOMIZATION: Capture last modified (last indexed) date
+  def last_modified
+    fetch('timestamp', '')
+  end
+
   # DUL CUSTOMIZATION: Allow for formatting tags to render in collection/component
   # titles in some views.
   def normalized_title
