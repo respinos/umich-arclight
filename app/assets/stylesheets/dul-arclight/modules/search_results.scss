@@ -29,6 +29,11 @@
   font-style: inherit;
   margin-bottom: 0;
 
+  em {
+    background-color: inherit;
+    font-weight: inherit;
+  }
+
   mark {
     background-color: tint($dandelion, 60%);
     color: inherit;
