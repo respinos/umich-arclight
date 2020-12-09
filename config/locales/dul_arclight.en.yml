@@ -81,6 +81,9 @@ en:
             multi_aleph: |
               Since this collection guide represents multiple collections, first choose the
               collection that includes the material you'd like to request, then click Request.
+            email: |
+              Email <strong>%{email}</strong> to request onsite use.<br/><br/>This collection does not have a record in
+              the library catalog.
 
     twitter_og:
       site_name: David M. Rubenstein Rare Book & Manuscript Library

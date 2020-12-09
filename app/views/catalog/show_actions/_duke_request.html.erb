@@ -29,4 +29,19 @@
         placement: 'bottom',
         html: true
       } %>
+
+  <%# No Aleph ID = not requestable; email someone instead %>
+  <% else %>
+      <%= link_to t('arclight.request.container'),
+        ['mailto:', document&.repository_config&.contact_info].join,
+        target: '_blank',
+        class: 'btn btn-secondary btn-sm al-show-actions-box-request',
+        title: t('dul_arclight.views.show.sidebar.request.email',
+          email: document&.repository_config&.contact_info),
+        data: {
+          toggle: 'tooltip',
+          placement: 'bottom',
+          container: 'body',
+          html: true
+        } %>
   <% end %>
