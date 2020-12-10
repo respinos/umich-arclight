@@ -62,7 +62,7 @@ module DulArclightHelper
     tooltips.join('<br/><br/>')
   end
 
-  def formatted_last_modified(timestamp)
+  def formatted_last_indexed(timestamp)
     date = DateTime.parse(timestamp)
     date.strftime('%F')
   end

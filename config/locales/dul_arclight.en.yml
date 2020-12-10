@@ -64,6 +64,10 @@ en:
         access:
           more: "More..."
           more_restriction: "More about accessing and using these materials..."
+          help_links:
+            citations: "Citations, Permissions, & Copyright"
+            requesting: "How to Request"
+            visitors: "Info for Visitors"
         containers:
           see_all: "See all containers"
         field_group_note:

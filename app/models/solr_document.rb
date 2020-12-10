@@ -15,8 +15,8 @@ class SolrDocument
 
   # self.unique_key = 'id'
 
-  # DUL CUSTOMIZATION: Capture last modified (last indexed) date
-  def last_modified
+  # DUL CUSTOMIZATION: Capture last indexed date
+  def last_indexed
     fetch('timestamp', '')
   end
 

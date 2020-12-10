@@ -6,13 +6,16 @@
 <p>
   <ul class="list-unstyled using-resources">
     <li>
-      <a href="https://library.duke.edu/rubenstein/about/visit" target="_blank">Info for Visitors</a>
+      <%= link_to t("dul_arclight.views.show.access.help_links.visitors"),
+            "https://library.duke.edu/rubenstein/about/visit", target: "_blank" %>
     </li>
     <li>
-      <a href="https://library.duke.edu/rubenstein/research/requesting-material" target="_blank">How to Request</a>
+      <%= link_to t("dul_arclight.views.show.access.help_links.requesting"),
+            "https://library.duke.edu/rubenstein/research/requesting-material", target: "_blank" %>
     </li>
     <li>
-      <a href="https://library.duke.edu/rubenstein/research/citations-and-permissions" target="_blank">Citations, Permissions, & Copyright</a>
+      <%= link_to t("dul_arclight.views.show.access.help_links.citations"),
+            "https://library.duke.edu/rubenstein/research/citations-and-permissions", target: "_blank" %>
     </li>
   </ul>
 </p>
