@@ -73,6 +73,10 @@ a {
   }
 }
 
+.tooltip-inner {
+    max-width: 300px;
+}
+
 
 .catalog_startOverLink {
   margin-right: 1rem;
@@ -225,7 +229,7 @@ a {
   text-transform: unset;
   color: $gray;
   border-top: 1px dotted shade($gray-lighter, 5%);
-  padding-top: 1rem;
+  padding-top: 1.5rem;
   margin-top: 1rem;
 
   #summary & {
@@ -709,9 +713,6 @@ a {
 
   }
 
-  // .col-auto {
-  //   display: none;
-  // }
   .al-search-result-index-article {
     margin-left: 0;
     .documentHeader {
@@ -755,24 +756,17 @@ a {
       margin-bottom: 2rem;
       margin-top: 3px;
       background: $facet-grey;
-      padding: 1rem;
+      padding: 0 1rem 1rem 1rem;
       border-left: 3px solid $gray-light-more;
 
       .al-show-sub-heading {
         border-top: none;
-        padding-top: 0;
+        margin-top: 0;
       }
 
       @include media-breakpoint-down(lg) {
         width: 100%;
         border-left: none;
-      }
-
-      dl.access-snippet {
-        margin-bottom: 1rem;
-        & + dl {
-          display: none;
-        }
       }
     }
   }
@@ -781,31 +775,46 @@ a {
     dl {
       margin-bottom: 1rem;
     }
+    dl > dt {
+      font-size: 0.875rem;
+    }
+
+    hr {
+      display: none;
+    }
   }
 
-  #access-restriction-snippet {
+  ul.using-resources {
+    li {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    a:before {
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      content: '\f058';
+      margin-right: 0.35rem;
+      display: inline-block;
+      text-decoration: none;
+    }
+  }
+
+  #component-restrictions {
     background: $access-restriction-warning;
     padding: 1rem;
     border-top: 1px solid $access-restriction-gray;
     margin-bottom: 2rem;
 
-    dl.access-snippet {
-      margin-bottom: 1rem;
-      & + dl {
-        display: none;
+    dt {
+      &:before {
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        content: '\f071';
+        margin-right: 0.35rem;
       }
     }
 
-    p {
-      margin-bottom: 0;
-    }
-
-  }
-
-  #using-these-materials-section {
-    dl > dt {
-      font-size: 0.875rem;
-    }
   }
 
   .al-in-person-repository-name {
@@ -1166,9 +1175,9 @@ h1.modal-title {
 }
 
 
-/* feedback link */
+/* Contact Us link */
 
-.feedback-wrapper {
+.contact-wrapper {
     position: fixed;
     bottom: 0;
     right: 15px;

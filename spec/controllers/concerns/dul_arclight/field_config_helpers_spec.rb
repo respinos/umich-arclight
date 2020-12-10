@@ -45,8 +45,11 @@ RSpec.describe DulArclight::FieldConfigHelpers do
           content = helper.convert_rights_urls(
             value: ['<p>https://creativecommons.org/licenses/by-nc-nd/4.0/</p>']
           )
+
           expect(content).to match(
+            # rubocop:disable Metrics/LineLength
             %r{^<p class="rights-statement"><a rel="license" itemprop="license" target="_blank" href="https://creativecommons.org/licenses/by-nc-nd/4.0/"><img class="rights-icon"}
+            # rubocop:enable Metrics/LineLength
           )
           expect(content.scan('rights-icon').size).to be 4
         end

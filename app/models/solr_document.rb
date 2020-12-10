@@ -15,6 +15,11 @@ class SolrDocument
 
   # self.unique_key = 'id'
 
+  # DUL CUSTOMIZATION: Capture last indexed date
+  def last_indexed
+    fetch('timestamp', '')
+  end
+
   # DUL CUSTOMIZATION: Allow for formatting tags to render in collection/component
   # titles in some views.
   def normalized_title
@@ -75,6 +80,12 @@ class SolrDocument
       container[0] = container[0].capitalize
       container
     end
+  end
+
+  # DUL override ArcLight core method; fall back to the ID if ref_ssm isn't present.
+  # Currently only components get a ref_ssm.
+  def reference
+    first('ref_ssm') || fetch('id')
   end
 
   def component?

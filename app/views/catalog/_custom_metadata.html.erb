@@ -6,16 +6,19 @@
 
 <% doc_presenter = show_presenter(document).with_field_group(field_accessor) %>
 
-  <%= content_tag(:div, id: ( field_accessor == 'using_field' ?  'restrictions-preview' : t("arclight.views.show.sections.#{field_accessor}").parameterize), class: 'metadata-section' ) do %>
+  <%= content_tag(:div, id: ( field_accessor == 'restrictions_field' ?  'restrictions-preview' : t("arclight.views.show.sections.#{field_accessor}").parameterize), class: 'metadata-section' ) do %>
 
-  <h2 class='al-show-sub-heading'>
-    <%= t("arclight.views.show.sections.#{field_accessor}", level: document.level) %>
-  </h2>
+  <%# DUL CUSTOMIZATION: enable rendering just the content w/o headings %>
+  <% unless local_assigns[:skip_headings].present? %>
+    <h2 class='al-show-sub-heading'>
+      <%= t("arclight.views.show.sections.#{field_accessor}", level: document.level) %>
+    </h2>
 
-  <%# DUL CUSTOMIZATION: Optionally add boilerplate text to a field group %>
-  <%# using an i18n key. %>
-  <% if I18n.exists?("dul_arclight.views.show.field_group_note.#{field_accessor}") %>
-    <p><%= t("dul_arclight.views.show.field_group_note.#{field_accessor}").html_safe %></p>
+    <%# DUL CUSTOMIZATION: Optionally add boilerplate text to a field group %>
+    <%# using an i18n key. %>
+    <% if I18n.exists?("dul_arclight.views.show.field_group_note.#{field_accessor}") %>
+      <p><%= t("dul_arclight.views.show.field_group_note.#{field_accessor}").html_safe %></p>
+    <% end %>
   <% end %>
 
   <dl>

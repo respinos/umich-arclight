@@ -1,0 +1,17 @@
+/* Truncate multiline display for long typeahead suggestions */
+
+.twitter-typeahead .tt-suggestion {
+  display: block; /* Fallback for non-webkit */
+  display: -webkit-box;
+  max-height: 85px; /* Fallback for non-webkit = font-size*$line-height*$lines-to-show */
+  font-size: 14px;
+  line-height: 1.4em;
+  -webkit-line-clamp: 4; 
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  &.tt-cursor, &:hover {
+    background: $facet-grey;
+  }
+}

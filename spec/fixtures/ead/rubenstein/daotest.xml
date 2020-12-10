@@ -98,6 +98,17 @@
                  xpointer="ark:/87924/r4j962q52"/>
           </did>
         </c02>
+        <c02 id="aspace_testdao03a" level="file">
+          <did>
+            <unittitle>DDR Item Lookup (ddr-item-lookup)</unittitle>
+            <dao xlink:actuate="onRequest"
+              xlink:href="https://repository.duke.edu/catalog?f[aspace_id_ssi][]=ce1d91c28328e9c2fc88f2c9c5e5d5ca"
+              xlink:role="ddr-item-lookup"
+              xlink:show="new"
+              xlink:title="Administrative records, 2009-2012"
+              xpointer="ce1d91c28328e9c2fc88f2c9c5e5d5ca"/>
+          </did>
+        </c02>
         <c02 id="aspace_testdao04" level="file">
           <did>
             <unittitle>Web Archive (web-archive)</unittitle>

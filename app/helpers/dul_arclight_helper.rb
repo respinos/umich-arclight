@@ -52,6 +52,21 @@ module DulArclightHelper
     [base_url, { referrer: request.original_url }.to_param].join('?')
   end
 
+  def request_tooltip(document)
+    tooltips = [I18n.t('dul_arclight.views.show.sidebar.request.tooltip')]
+    tooltips << I18n.t('dul_arclight.views.show.sidebar.request.multi_aleph') if document.bibnums.count > 1
+    if document.containers.present?
+      tooltips << I18n.t('dul_arclight.views.show.sidebar.request.current_containers',
+                         containers: document.containers.join(', '))
+    end
+    tooltips.join('<br/><br/>')
+  end
+
+  def formatted_last_indexed(timestamp)
+    date = DateTime.parse(timestamp)
+    date.strftime('%F')
+  end
+
   private
 
   def collection_result_in_group?(document)

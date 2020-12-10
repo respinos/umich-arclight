@@ -545,7 +545,7 @@ compose 'components', ->(record, accumulator, _context) { accumulator.concat rec
     # 1) the component doesn't have its own restrictions
     # 2) the ancestor is in the <dsc> (i.e., not top-level)
     to_field "#{selector}_tesim",
-             extract_xpath("./ancestor::*/#{selector}/*[local-name()!='head'][ancestor::dsc][position() = 1]",
+             extract_xpath("./ancestor::*[#{selector}][ancestor::dsc][position()=1]/#{selector}/*[local-name()!='head']",
                            to_text: false) do |_record, accumulator, context|
       accumulator.replace [] if context.output_hash["#{selector}_tesim"].present?
     end

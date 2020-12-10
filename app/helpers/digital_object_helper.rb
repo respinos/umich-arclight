@@ -5,6 +5,7 @@ CUSTOM_DAO_ROLES = %w[
   audio-streaming
   electronic-record-master
   electronic-record-use-copy
+  ddr-item-lookup
   image-service
   video-streaming
   web-archive
@@ -16,6 +17,7 @@ CUSTOM_DAO_ROLES = %w[
 ONLINE_ACCESS_DAOS = %w[
   audio-streaming
   image-service
+  ddr-item-lookup
   video-streaming
   web-archive
   web-resource-link
@@ -62,6 +64,20 @@ module DigitalObjectHelper
     [base_url, '?', aeon_params(obj, doc)].join
   end
 
+  # For a DDR search results URL DAO (ddr-item-lookup)
+  # TODO: consider whether to make these requests client-side via AJAX.
+  # Would need to revise CORS config for DDR JSON API endpoints to permit
+  # cross-origin requests.
+  def ddr_query_hit_count(query_url)
+    Timeout.timeout(2) do
+      doc = JSON.parse(URI.open(json_url_from_query(query_url)).read)
+      doc.dig('response', 'pages', 'total_count')
+    end
+  rescue *HTTP_ERRORS => e
+    Rails.logger.error { "#{e.message} #{e.backtrace.join("\n")}" }
+    nil
+  end
+
   private
 
   def aeon_params(obj, doc)
@@ -86,4 +102,20 @@ module DigitalObjectHelper
       }.reject { |_, v| v.blank? }
     params_with_values&.to_query
   end
+
+  # Return a Blacklight catalog.json search results API URL from a UI search result URL.
+  def json_url_from_query(query_url)
+    uri = URI(query_url)
+    uri.path << '.json'
+    uri.to_s
+  end
+
+  # What errors could digital object-related HTTP requests yield?
+  HTTP_ERRORS = [
+    EOFError,
+    Errno::ECONNRESET,
+    Errno::EINVAL,
+    SocketError,
+    Timeout::Error
+  ].freeze
 end

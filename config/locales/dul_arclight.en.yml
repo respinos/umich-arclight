@@ -64,6 +64,10 @@ en:
         access:
           more: "More..."
           more_restriction: "More about accessing and using these materials..."
+          help_links:
+            citations: "Citations, Permissions, & Copyright"
+            requesting: "How to Request"
+            visitors: "Info for Visitors"
         containers:
           see_all: "See all containers"
         field_group_note:
@@ -74,11 +78,20 @@ en:
         sidebar:
           collection_title: Collection
           collection_info_icon_label: Advanced collection info
+          request:
+            tooltip: Select items for onsite use using the library catalog.
+            current_containers: |
+              The item you are currently viewing is in:<br/><strong>%{containers}</strong>
+            multi_aleph: |
+              Since this collection guide represents multiple collections, first choose the
+              collection that includes the material you'd like to request, then click Request.
+            email: |
+              Email <strong>%{email}</strong> to request onsite use.<br/><br/>This collection does not have a record in
+              the library catalog.
 
     twitter_og:
       site_name: David M. Rubenstein Rare Book & Manuscript Library
       twitter_handle: "@rubensteinlib"
 
-    feedback:
-      title: "Feedback"
-      link: "https://duke.qualtrics.com/jfe/form/SV_3DiP6inIB0B8yBn"
+    contact:
+      title: "Contact Us"
