@@ -30,8 +30,13 @@
   margin-bottom: 0;
 
   em {
+    background-color: inherit;
+    font-weight: inherit;
+  }
+
+  mark {
     background-color: tint($dandelion, 60%);
-    font-style: normal;
+    color: inherit;
     padding: 0 0.15em;
     margin: 0 -0.15em;
   }
