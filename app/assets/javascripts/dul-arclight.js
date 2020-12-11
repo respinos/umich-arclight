@@ -30,6 +30,11 @@ Blacklight.onLoad(function () {
     selector: '[data-toggle="tooltip"]'
   });
 
+  /* Ensure all tooltips disappear after clicking the icon/label */
+  $(document).on('click', 'label.toggle-bookmark', function (e) {
+    $('.tooltip').hide();
+  });
+
   /* Enable clicking in the collection info dropdown w/o closing it. E.g., to */
   /* select/copy a permalink or Aleph ID */
   $(document).on('click', '.dropdown-menu.collection-info-menu', function (e) {
