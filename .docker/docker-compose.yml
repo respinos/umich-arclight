@@ -22,6 +22,7 @@ services:
     depends_on:
       - db
       - solr
+    container_name: app
     environment:
       - DATABASE_URL=postgresql://postgres:arclight@db/arclight
       - GOOGLE_ANALYTICS_DEBUG=true
