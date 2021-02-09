@@ -1,7 +1,7 @@
 SHELL = /bin/bash
 
 build_tag ?= dul-arclight
-builder_image ?= gitlab-registry.oit.duke.edu/devops/containers/ruby:2.6
+builder_image ?= gitlab-registry.oit.duke.edu/devops/containers/ruby/2.6:v1
 
 build_opts = --incremental
 $(shell git diff-index --quiet HEAD --)
