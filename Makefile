@@ -1,9 +1,10 @@
 SHELL = /bin/bash
 
 build_tag ?= dul-arclight
-builder_image ?= gitlab-registry.oit.duke.edu/devops/containers/ruby/2.6:v1
+builder_image ?= gitlab-registry.oit.duke.edu/devops/containers/ruby/2.6:main
 
-build_opts = --incremental
+build_opts = --assemble-user 0 --incremental
+
 $(shell git diff-index --quiet HEAD --)
 ifeq ($(.SHELLSTATUS), 1)
 	build_opts := $(build_opts) --copy
