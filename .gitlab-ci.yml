@@ -102,6 +102,7 @@ release_production:
   stage: deploy
   before_script:
     - docker info
+    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
   script:
     - docker pull $release_tag
     - sudo -n systemctl reload-or-restart docker-stack@dul-arclight
