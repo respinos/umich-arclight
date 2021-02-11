@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# Replicates much of the testing framework from ArcLight Core; see:
+# Compare to testing framework from ArcLight Core; see:
 # https://github.com/projectblacklight/arclight/blob/master/spec/spec_helper.rb
 
 ENV['RAILS_ENV'] ||= 'test'
@@ -11,23 +11,40 @@ require File.expand_path('../config/environment', __dir__)
 SPEC_ROOT = Pathname.new(__dir__)
 
 require 'rspec/rails'
-
 require 'selenium-webdriver'
-require 'webdrivers'
 
-Capybara.javascript_driver = :headless_chrome
+Capybara.javascript_driver = :selenium_remote
 
-Capybara.register_driver :headless_chrome do |app|
-  Capybara::Selenium::Driver.load_selenium
-  browser_options = ::Selenium::WebDriver::Chrome::Options.new.tap do |opts|
-    opts.args << '--headless'
-    opts.args << '--disable-gpu'
-    opts.args << '--no-sandbox'
-    opts.args << '--window-size=1280,1696'
-  end
-  Capybara::Selenium::Driver.new(app, browser: :chrome, options: browser_options)
+Capybara.register_driver :selenium_remote do |app|
+  capabilities = Selenium::WebDriver::Remote::Capabilities.chrome(
+  # See Chromium/Chromedriver capabilities:
+  # https://chromedriver.chromium.org/capabilities
+  # https://peter.sh/experiments/chromium-command-line-switches/
+    chromeOptions: { args: [
+      'headless',
+      'no-sandbox',
+      'disable-gpu',
+      'disable-infobars',
+      'window-size=1400,1000',
+      'enable-features=NetworkService,NetworkServiceInProcess'
+    ] }
+  )
+
+  Capybara::Selenium::Driver.new(app,
+                                 browser: :remote,
+                                 desired_capabilities: capabilities,
+                                 url: 'http://selenium:4444/wd/hub')
 end
 
+# Puma defaults to Threads: '0:4' (min_threads:max_threads);
+# Tests with AJAX requests seem to timeout & fail unless setting to 1:1
+Capybara.server = :puma, { Threads: '1:1' }
+
+Capybara.server_port = '3002'
+Capybara.server_host = '0.0.0.0'
+Capybara.app_host = "http://app:#{Capybara.server_port}"
+
+Capybara.always_include_port = true
 Capybara.default_max_wait_time = 15 # our ajax responses are sometimes slow
 
 Capybara.enable_aria_label = true
