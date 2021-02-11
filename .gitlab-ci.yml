@@ -12,7 +12,7 @@ stages:
 
 variables:
   build_tag: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA
-  deploy_tag: $CI_REGISTRY_IMAGE/$CI_ENVIRONMENT_SLUG:latest
+  release_tag: $CI_REGISTRY_IMAGE/$CI_ENVIRONMENT_SLUG:latest
 
 #
 # Environments
@@ -103,7 +103,7 @@ release_production:
   before_script:
     - docker info
   script:
-    - docker pull $deploy_tag
+    - docker pull $release_tag
     - sudo -n systemctl reload-or-restart docker-stack@dul-arclight
 
 deploy_development:
