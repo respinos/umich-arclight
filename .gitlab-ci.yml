@@ -7,14 +7,60 @@ include:
 stages:
   - build
   - test
+  - release
   - deploy
 
 variables:
   build_tag: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA
   deploy_tag: $CI_REGISTRY_IMAGE/$CI_ENVIRONMENT_SLUG:latest
 
+#
+# Environments
+#
+
+.development:
+  environment:
+    name: development
+    url: https://archives-dev.lib.duke.edu
+  tags:
+    - development
+  only:
+    - develop
+    - /^release-.*$/
+    - /^hotfix-.*$/
+    - /^aery-.*$/
+
+.staging:
+  environment:
+    name: staging
+    url: https://archives-test.lib.duke.edu
+  tags:
+    - staging
+  only:
+    - develop
+    - tags
+    - /^release-.*$/
+    - /^hotfix-.*$/
+
+.production:
+  environment:
+    name: production
+    url: https://archives.lib.duke.edu
+  tags:
+    - production
+  only:
+    - master
+
+#
+# Jobs
+#
+
 build:
   extends: .build
+
+#
+# Test jobs
+#
 
 test:
   extends: .test
@@ -29,51 +75,49 @@ bundler-audit:
   tags:
     - test
 
+#
+# Release jobs
+#
+
+release_development:
+  extends:
+    - .release
+    - .development
+
+release_staging:
+  extends:
+    - .release
+    - .staging
+
+release_production:
+  extends:
+    - .release
+    - .production
+
+#
+# Deploy jobs
+#
+
 .deploy:
   stage: deploy
   before_script:
     - docker info
-    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
-    - docker pull $build_tag
   script:
-    - docker tag $build_tag $deploy_tag
-    - docker push $deploy_tag
-  after_script:
+    - docker pull $deploy_tag
     - sudo -n systemctl reload-or-restart docker-stack@dul-arclight
 
 deploy_development:
-  extends: .deploy
-  environment:
-    name: development
-    url: https://archives-dev.lib.duke.edu
-  tags:
-    - development
-  only:
-    - develop
-    - /^release-.*$/
-    - /^hotfix-.*$/
-    - /^aery-.*$/
+  extends:
+    - .deploy
+    - .development
 
 deploy_staging:
-  extends: .deploy
-  environment:
-    name: staging
-    url: https://archives-test.lib.duke.edu
-  tags:
-    - staging
-  only:
-    - develop
-    - tags
-    - /^release-.*$/
-    - /^hotfix-.*$/
+  extends:
+    - .deploy
+    - .staging
 
 deploy_production:
-  extends: .deploy
-  environment:
-    name: production
-    url: https://archives.lib.duke.edu
-  tags:
-    - production
-  only:
-    - master
+  extends:
+    - .deploy
+    - .production
   when: manual
