@@ -79,16 +79,9 @@ $gray-lightest:         #fafafa !default;
 
 $primary-link-color: #004CCC;
 $secondary-link-color: #003999;
-$link-hover-color: #3370d6;
+$link-hover-color: tint($primary-link-color, 16);
 
 $primary-link-color-inverted: #ffbc3f;
-
-// ## darker options?
-// $primary-link-color: #053482;
-// $secondary-link-color: #042762;
-// $link-hover-color: #021738;
-
-// $primary-link-color-inverted: #facb7d;
 
 $access-restriction-warning: #fed86a;
 $access-restriction-gray: #dee2e6;
