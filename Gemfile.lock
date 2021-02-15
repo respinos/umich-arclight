@@ -55,6 +55,20 @@ GEM
     ast (2.4.0)
     autoprefixer-rails (9.7.3)
       execjs
+    axe-core-api (4.1.0)
+      capybara
+      dumb_delegator
+      selenium-webdriver
+      virtus
+      watir
+    axe-core-rspec (4.1.0)
+      axe-core-api
+      dumb_delegator
+      virtus
+    axiom-types (0.1.1)
+      descendants_tracker (~> 0.0.4)
+      ice_nine (~> 0.11.0)
+      thread_safe (~> 0.3, >= 0.3.1)
     bcrypt (3.1.13)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
@@ -96,6 +110,8 @@ GEM
       xpath (~> 3.2)
     childprocess (1.0.0)
     coderay (1.1.2)
+    coercible (1.0.0)
+      descendants_tracker (~> 0.0.1)
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0)
@@ -108,6 +124,8 @@ GEM
     debug_inspector (0.0.3)
     deprecation (1.0.0)
       activesupport
+    descendants_tracker (0.0.4)
+      thread_safe (~> 0.3, >= 0.3.1)
     devise (4.7.1)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -120,6 +138,8 @@ GEM
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
     dot-properties (0.1.3)
+    dumb_delegator (1.0.0)
+    equalizer (0.0.11)
     erubi (1.9.0)
     erubis (2.7.0)
     execjs (2.7.0)
@@ -147,6 +167,7 @@ GEM
     httpclient (2.8.3)
     i18n (1.8.5)
       concurrent-ruby (~> 1.0)
+    ice_nine (0.11.2)
     jaro_winkler (1.5.4)
     jbuilder (2.9.1)
       activesupport (>= 4.2.0)
@@ -373,8 +394,16 @@ GEM
     unicode-display_width (1.6.0)
     vegas (0.1.11)
       rack (>= 1.0.0)
+    virtus (1.0.5)
+      axiom-types (~> 0.1)
+      coercible (~> 1.0)
+      descendants_tracker (~> 0.0, >= 0.0.3)
+      equalizer (~> 0.0, >= 0.0.9)
     warden (1.2.8)
       rack (>= 2.0.6)
+    watir (6.17.0)
+      regexp_parser (~> 1.2)
+      selenium-webdriver (~> 3.6)
     web-console (3.7.0)
       actionview (>= 5.0)
       activemodel (>= 5.0)
@@ -392,6 +421,7 @@ PLATFORMS
 
 DEPENDENCIES
   arclight (= 0.3.3)
+  axe-core-rspec
   better_errors
   binding_of_caller
   blacklight-hierarchy (= 4.0.0)
