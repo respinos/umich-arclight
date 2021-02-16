@@ -45,7 +45,7 @@ Capybara.server_host = '0.0.0.0'
 Capybara.app_host = "http://app:#{Capybara.server_port}"
 
 Capybara.always_include_port = true
-Capybara.default_max_wait_time = 15 # our ajax responses are sometimes slow
+Capybara.default_max_wait_time = 30 # our ajax responses are sometimes slow
 
 Capybara.enable_aria_label = true
 
