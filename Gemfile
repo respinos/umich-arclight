@@ -44,7 +44,7 @@ group :development do
 end
 
 group :test do
+  gem 'axe-core-rspec' # accessibility testing
   gem 'capybara'
   gem 'selenium-webdriver'
-  gem 'axe-core-rspec' # accessibility testing
 end

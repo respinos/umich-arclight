@@ -17,9 +17,9 @@ Capybara.javascript_driver = :selenium_remote
 
 Capybara.register_driver :selenium_remote do |app|
   capabilities = Selenium::WebDriver::Remote::Capabilities.chrome(
-  # See Chromium/Chromedriver capabilities:
-  # https://chromedriver.chromium.org/capabilities
-  # https://peter.sh/experiments/chromium-command-line-switches/
+    # See Chromium/Chromedriver capabilities:
+    # https://chromedriver.chromium.org/capabilities
+    # https://peter.sh/experiments/chromium-command-line-switches/
     chromeOptions: { args: [
       'headless',
       'no-sandbox',
