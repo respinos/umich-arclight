@@ -77,6 +77,28 @@ function applyAccessibilityPatches() {
 
   $("div.toggle-bookmark:not(:last-of-type)").remove();
 
+  /* Issue: in grouped search results (index) view, if the top-level collection appears */
+  /* within the top 3 results, its bookmark checkbox/label are duplicates of those same */
+  /* elements in the group header box, thus invalid/inaccessible. */
+  /* As a remedy, we append "_group" to these ids and the elements that reference them. */
+
+  /* Platform: DUL-ArcLight (core doesn't have checkboxes in grouped view) */
+  /* Version fixed in: TBD */
+
+  $(".group-doc-actions").find("label[id^='bookmark_toggle_']").each(function(){
+    $(this).attr('id', $(this).attr('id') + '_group');
+    $(this).text('Collection ' + $(this).text());
+  });
+  $(".group-doc-actions").find("form[aria-labelledby^='bookmark_toggle_']").each(function(){
+    $(this).attr('aria-labelledby', $(this).attr('aria-labelledby') + '_group');
+  });
+  $(".group-doc-actions").find("label[for^='toggle-bookmark_']").each(function(){
+    $(this).attr('for', $(this).attr('for') + '_group');
+  });
+  $(".group-doc-actions").find("input[id^='toggle-bookmark_']").each(function(){
+    $(this).attr('id', $(this).attr('id') + '_group');
+  });
+
 
   /* ---------------------------------- */
   /* Area: Grouped Results Wrapper      */
@@ -88,6 +110,18 @@ function applyAccessibilityPatches() {
   /* Version fixed in: TBD */
 
   $("div.al-grouped-results").attr('id', 'documents');
+
+
+  /* ---------------------------------- */
+  /* Area: Component Tree Navigation    */
+  /* ---------------------------------- */
+  /* Issue: we have ul > ul nesting; and need ul > li > ul for accessibility */
+
+  $("ul.prev-siblings").each(function() {
+    if(!$(this).parent().is('li')) {
+      $(this).wrap("<li></li>");
+    };
+  });
 
 }
 

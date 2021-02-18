@@ -47,9 +47,9 @@ RSpec.describe DulArclight::FieldConfigHelpers do
           )
 
           expect(content).to match(
-            # rubocop:disable Metrics/LineLength
+            # rubocop:disable Layout/LineLength
             %r{^<p class="rights-statement"><a rel="license" itemprop="license" target="_blank" href="https://creativecommons.org/licenses/by-nc-nd/4.0/"><img class="rights-icon"}
-            # rubocop:enable Metrics/LineLength
+            # rubocop:enable Layout/LineLength
           )
           expect(content.scan('rights-icon').size).to be 4
         end
