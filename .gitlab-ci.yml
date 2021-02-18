@@ -64,16 +64,23 @@ build:
 
 test:
   extends: .test
+  script:
+    - docker pull $build_tag
+    - make test
+
+accessibility:
+  extends: .test
+  script:
+    - docker pull $build_tag
+    - make test-accessibility
+  allow_failure: true
 
 rubocop:
   extends: .test
   script:
+    - docker pull $build_tag
     - make rubocop
   allow_failure: true
-
-bundler-audit:
-  tags:
-    - test
 
 #
 # Release jobs
@@ -99,10 +106,8 @@ release_production:
 #
 
 .deploy:
+  extends: .job
   stage: deploy
-  before_script:
-    - docker info
-    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
   script:
     - docker pull $release_tag
     - sudo -n systemctl reload-or-restart docker-stack@dul-arclight

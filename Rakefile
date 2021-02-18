@@ -8,6 +8,8 @@ Rails.application.load_tasks
 # Read the repository configuration
 repo_config = YAML.safe_load(File.read('./config/repositories.yml'))
 
+require 'rspec/core/rake_task'
+
 namespace :seed do
   # Seed Test EAD Data (From spec/fixtures/*)
   # Based on https://github.com/projectblacklight/arclight/blob/master/tasks/arclight.rake
@@ -87,5 +89,15 @@ namespace :dul_arclight do
   task build_suggest: :environment do
     BuildSuggestJob.perform_later
     puts 'BuildSuggestJob enqueued.'
+  end
+
+  namespace :test do
+    RSpec::Core::RakeTask.new(accessibility: ['seed:fixtures', 'db:reset']) do |t, _|
+      t.rspec_opts = '--tag accessibility'
+    end
+
+    RSpec::Core::RakeTask.new(default: ['seed:fixtures', 'db:reset']) do |t, _|
+      t.rspec_opts = '--tag ~accessibility'
+    end
   end
 end
