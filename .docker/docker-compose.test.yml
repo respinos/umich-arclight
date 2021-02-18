@@ -24,13 +24,6 @@ services:
     environment:
       - RAILS_ENV=test
       - FINDING_AID_DATA=spec/fixtures
-    command:
-      - bundle
-      - exec
-      - rake
-      - seed:fixtures
-      - db:reset
-      - spec
     ports:
       - '3002:3002'
     depends_on:
