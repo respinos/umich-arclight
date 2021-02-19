@@ -1,6 +1,6 @@
 <%# DUL CUSTOMIZATION: Overrides ArcLight Core partial. We avoid linking to repository %>
 <%# portals by slug, opting instead for the facet view. Also added index_doc_actions   %>
-<%# to show digital content indicator & bookmark checkboxes. %>
+<%# to show digital content indicator & bookmark checkboxes (w/group-doc-actions class). %>
 <%# Last checked for updates: ArcLight v0.3.2. See: %>
 <%# https://github.com/projectblacklight/arclight/blob/master/app/views/catalog/_group_header_default.html.erb %>
 
@@ -13,7 +13,7 @@
             <%= link_to(document.repository_config.name, repository_collections_path(document.repository_config)) %>
           </div>
         <% end %>
-        <%= render_index_doc_actions document, wrapping_class: 'd-flex justify-content-end' %>
+        <%= render_index_doc_actions document, wrapping_class: 'd-flex justify-content-end group-doc-actions' %>
       </div>
       <h3><%= link_to_document document, document_show_link_field(document) %></h3>
       <%= content_tag('span', class: 'al-document-extent badge') do %>
