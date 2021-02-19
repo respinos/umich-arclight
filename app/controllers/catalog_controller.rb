@@ -130,6 +130,11 @@ class CatalogController < ApplicationController
     config.add_facet_field 'access_subjects_ssim', label: 'Subject', limit: 10
     config.add_facet_field 'formats_ssim', label: 'Format', limit: 10
 
+    # Added in ArcLight v0.4.0
+    # See note in: https://github.com/projectblacklight/arclight/releases/tag/v0.4.0
+    config.add_facet_field 'component_level_isim', show: false
+    config.add_facet_field 'parent_ssim', show: false
+
     # DUL CUSTOMIZATION: Add UA Record Group hierarchical facet.
     config.add_facet_field 'ua_record_group_ssim',
                            limit: 99_999,

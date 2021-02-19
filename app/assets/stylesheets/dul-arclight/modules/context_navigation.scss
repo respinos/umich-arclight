@@ -15,9 +15,11 @@
   li.al-collection-context {
     .al-toggle-view-children {
       /* DUL CUSTOMIZATION: */
-      /* undo Arclight core style, content can only be on ::before & ::after */
+      /* undo Arclight core content style, we use background-image so we can resize the icons */
       /* see https://github.com/projectblacklight/arclight/blob/master/app/assets/stylesheets/arclight/modules/layout.scss#L112-L121 */
-      content: normal !important;
+      &::after {
+        content: normal !important;
+      }
       background-image: image-url('blacklight/plus.svg');
       background-repeat: no-repeat;
       background-size: 1rem;
