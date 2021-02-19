@@ -1,5 +1,5 @@
 <%# Copy of ArcLight Core partial for DUL customization %>
-<%# Last checked for updates: ArcLight v0.3.0 %>
+<%# Last checked for updates: ArcLight v0.4.0 %>
 <%# See: %>
 <%# https://github.com/projectblacklight/arclight/blob/master/app/views/catalog/_index_collection_context_default.html.erb %>
 
@@ -18,7 +18,6 @@
 
     <% if document.children? %>
       <div class="al-toggle-children-container">
-        <%# DUL CUSTOMIZATION: remove the hard-coded plus icon, use CSS instead %>
         <%= link_to(
           '',
           "#nav_#{document.id}-collapsible-hierarchy",

@@ -1,5 +1,5 @@
 // Copy of ArcLight core JS for overriding behavior.
-// Last checked for updates: ArcLight v0.3.2.
+// Last checked for updates: ArcLight v0.4.0.
 //
 // See:
 // https://github.com/projectblacklight/arclight/blob/master/app/assets/javascripts/arclight/context_navigation.js
@@ -17,14 +17,12 @@ class NavigationDocument {
     this.el.find('li.al-collection-context').addClass('al-hierarchy-highlight');
   }
 
-  collapse() {
-    this.el.find('li.al-collection-context').addClass('collapsed');
-  }
-
-  // DUL CUSTOMIZATION: Mark the context nav list items that should be collapsible
-  // via Expand/Collapse click. It differs in different contexts.
   makeCollapsible() {
     this.el.find('li.al-collection-context').addClass('collapsible');
+  }
+
+  collapse() {
+    this.el.find('li.al-collection-context').addClass('collapsed');
   }
 
   render() {
@@ -48,9 +46,6 @@ class ExpandButton {
     // DUL CUSTOMIZATION: Account for our change wrapping the <button> in an <li>
     // for a11y: Add another .parent() & then target .al-collection-context
     // class specifically (so the button li isn't considered a sibling).
-    // Also, just get the .collapsible siblings, which will be different for
-    // a current nested component's Expand button (1st preceding sibling doesn't collapse)
-    // vs. an ancestor component's Expand button (all preceding siblings do collapse)
     const $siblings = this.$el.parent().parent().children('li.al-collection-context.collapsible');
     return $siblings;
   }
@@ -84,9 +79,6 @@ class ExpandButton {
     this.$el.click(this.handleClick);
   }
 }
-
-// DUL CUSTOMIZATION: removed this class as it is unused:
-// class NestedExpandButton extends ExpandButton { }
 
 /**
  * Models the placeholder display elements for content loading from AJAX
@@ -311,9 +303,6 @@ class ContextNavigation {
     });
   }
 
-  // DUL CUSTOMIZATION: Removed this function as it is unused:
-  // updateListSiblings($li) { }
-
   /**
    * This updates the elements in the View DOM using an AJAX response containing
    *   the HTML of a server-rendered View template.
@@ -373,10 +362,7 @@ class ContextNavigation {
     const that = this;
     this.ul.find('.al-toggle-view-children').on('click', (e) => {
       e.preventDefault();
-      // DUL CUSTOMIZATION: Edge bugfix: use .currentTarget instead of .target
       const targetArea = $($(e.currentTarget).attr('href'));
-
-      // DUL CUSTOMIZATION: don't use data().resolved
       if (!targetArea.data('resolved') == true) {
         targetArea.find('.context-navigator').each((i, ee) => {
           const contextNavigation = new ContextNavigation(
