@@ -123,6 +123,19 @@ function applyAccessibilityPatches() {
     };
   });
 
+  /* ---------------------------------- */
+  /* Area: RTL language support         */
+  /* ---------------------------------- */
+  /* Issue: when a block of text is in a RTL language it should align right & read */
+  /* right-to-left. Setting dir="auto" plus the CSS rule "text-align: start" seems */
+  /* to accomplish this, setting the direction and alignment based on the language */
+  /* of the first character used in the block. For now we can try this as a        */
+  /* client-side DOM modification and limit it to <p> & <dd> elements. */
+
+  $("p, dd").each(function() {
+    $(this).attr('dir', 'auto');
+  });
+
 }
 
 Blacklight.onLoad(function () {
