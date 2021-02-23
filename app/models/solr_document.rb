@@ -57,12 +57,12 @@ class SolrDocument
   end
 
   # DUL override ArcLight core method to reflect changing the fields from _sim to _tesim
-  # and also to include all values, not just the first abstract or scope.
+  # Also include all values, not just the first abstract or scope. We also deduplicate the
+  # values; we have many collections (esp. trent-*) with the same text in abstract & scopecontent.
   def abstract_or_scope
     abstracts = fetch('abstract_tesim', [])
     scopes = fetch('scopecontent_tesim', [])
-    values = (abstracts + scopes).join(' ')
-
+    values = (abstracts + scopes).uniq { |v| ActionController::Base.helpers.strip_tags(v) }.join(' ')
     render_html_tags(value: [values]) if values.present?
   end
 
