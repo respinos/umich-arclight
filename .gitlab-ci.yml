@@ -7,6 +7,7 @@ include:
 stages:
   - build
   - test
+  - accessibility
   - release
   - deploy
 
@@ -68,18 +69,19 @@ test:
     - docker pull $build_tag
     - make test
 
-accessibility:
-  extends: .test
-  script:
-    - docker pull $build_tag
-    - make test-accessibility
-  allow_failure: true
-
 rubocop:
   extends: .test
   script:
     - docker pull $build_tag
     - make rubocop
+  allow_failure: true
+
+accessibility:
+  stage: accessibility
+  extends: .job
+  script:
+    - docker pull $build_tag
+    - make test-accessibility
   allow_failure: true
 
 #
