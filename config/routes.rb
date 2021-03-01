@@ -3,8 +3,12 @@ Rails.application.routes.draw do
   concern :range_searchable, BlacklightRangeLimit::Routes::RangeSearchable.new
   mount Blacklight::Engine => '/'
   mount BlacklightDynamicSitemap::Engine => '/'
+  mount Arclight::Engine => '/'
 
-    mount Arclight::Engine => '/'
+  # DUL CUSTOMIZATION: note that component URLs have underscores; collections don't
+  def collection_slug_constraint
+    /[a-z0-9\-]+/
+  end
 
   root to: "catalog#index"
   concern :searchable, Blacklight::Routes::Searchable.new
@@ -12,8 +16,8 @@ Rails.application.routes.draw do
   resource :catalog, only: [:index], as: 'catalog', path: '/catalog', controller: 'catalog' do
     concerns :searchable
     concerns :range_searchable
-
   end
+
   devise_for :users
   concern :exportable, Blacklight::Routes::Exportable.new
 
@@ -30,6 +34,10 @@ Rails.application.routes.draw do
   end
 
   resources :ua_record_groups, only: [:index], as: 'ua_record_groups', path: '/collections/ua-record-groups', controller: 'ua_record_groups'
+
+  # DUL CUSTOMIZATION: Download the source EAD XML file using the collection slug
+  get '/catalog/:id/xml', action: 'ead_download', controller: 'catalog', as: 'ead_download',
+                          constraints: { id: collection_slug_constraint }
 
   post '/index_finding_aids', to: 'index_finding_aids#create'
 end
