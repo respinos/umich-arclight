@@ -28,7 +28,3 @@ services:
       - '3002:3002'
     depends_on:
       - selenium
-
-  solr:
-    logging:
-      driver: none

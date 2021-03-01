@@ -67,7 +67,7 @@ test:
   extends: .test
   script:
     - docker pull $build_tag
-    - make test
+    - make clean test
 
 rubocop:
   extends: .test
@@ -76,12 +76,17 @@ rubocop:
     - make rubocop
   allow_failure: true
 
+#
+# Accessibility is in a separate stage to not
+# conflict with default test suite.
+#
+
 accessibility:
-  stage: accessibility
   extends: .job
+  stage: accessibility
   script:
     - docker pull $build_tag
-    - make test-accessibility
+    - make clean accessibility
   allow_failure: true
 
 #

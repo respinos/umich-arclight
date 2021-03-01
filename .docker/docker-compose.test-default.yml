@@ -1,0 +1,13 @@
+version: '3.7'
+
+services:
+  app:
+    entrypoint:
+      - 'wait-for-it'
+      - 'solr:8983'
+      - '--'
+    command:
+      - bundle
+      - exec
+      - rake
+      - dul_arclight:test:default
