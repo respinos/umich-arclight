@@ -74,7 +74,6 @@ accessibility:
     - docker pull $build_tag
     - make test-accessibility
   allow_failure: true
-  needs: ["test"]
 
 rubocop:
   extends: .test
