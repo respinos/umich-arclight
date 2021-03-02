@@ -3,7 +3,7 @@ SHELL = /bin/bash
 build_tag ?= dul-arclight
 builder_image ?= gitlab-registry.oit.duke.edu/devops/containers/ruby:2.6-main
 
-build_opts = --assemble-user 0 --incremental -p never
+build_opts = --assemble-user 0 --incremental --pull-policy never
 
 $(shell git diff-index --quiet HEAD --)
 ifeq ($(.SHELLSTATUS), 1)
@@ -17,12 +17,8 @@ build:
 
 .PHONY : clean
 clean:
-	./.docker/dev.sh down
-	./.docker/test.sh down
-	PROJECT_SUFFIX=test-a11y ./.docker/test.sh down
 	rm -rf ./tmp/*
 	rm -f ./log/*.log
-	docker volume ls -q --filter 'name=dul-arclight-' | xargs docker volume rm
 
 .PHONY : test
 test:
