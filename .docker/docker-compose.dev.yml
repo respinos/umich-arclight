@@ -21,7 +21,7 @@ services:
       - "3000:3000"
     environment:
       - RAILS_ENV=development
-      - FINDING_AID_DATA=../sample-ead
+      - FINDING_AID_DATA=./sample-ead
 
   redis:
     image: redis:6-buster
