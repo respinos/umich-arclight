@@ -22,18 +22,17 @@ clean:
 
 .PHONY : test
 test:
-	./.docker/test.sh \
-		-f docker-compose.test-default.yml \
-		up \
-		--exit-code-from app
+	./.docker/test.sh -f docker-compose.test-default.yml up --exit-code-from app; \
+		code=$$?; \
+		./.docker/test.sh down; \
+		exit $$code
 
 .PHONY : accessibility
 accessibility:
-	PROJECT_SUFFIX=test-a11y \
-		./.docker/test.sh \
-		-f docker-compose.test-a11y.yml \
-		up \
-		--exit-code-from app
+	./.docker/test.sh -f docker-compose.test-a11y.yml up --exit-code-from app; \
+		code=$$?; \
+		./.docker/test.sh down; \
+		exit $$code
 
 .PHONY : rubocop
 rubocop:
