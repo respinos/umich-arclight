@@ -39,5 +39,9 @@ Rails.application.routes.draw do
   get '/catalog/:id/xml', action: 'ead_download', controller: 'catalog', as: 'ead_download',
                           constraints: { id: collection_slug_constraint }
 
+  # DUL CUSTOMIZATION: Render a sitemap on-the-fly from a query (if configured)
+  get '/custom_sitemaps/:id', controller: 'custom_sitemaps', action: 'index', defaults: { format: 'xml' },
+                              constraints: ->(request) { CUSTOM_SITEMAP_CONFIG.key?(request.params[:id]) }
+
   post '/index_finding_aids', to: 'index_finding_aids#create'
 end

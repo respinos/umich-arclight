@@ -1,0 +1,19 @@
+# Configurable custom sitemaps, esp. for aggregators to harvest collections
+# matching a particular query.
+
+# Note that other query parameters for this feature are hard-coded in
+# custom_sitemaps_controller.rb. E.g., only collection pages are
+# included, and items listed are sorted by last indexed date (new to old).
+
+# You may specify multiple query parameters, one per line, e.g.:
+
+# test_ua_bw_photos:
+#  query: |
+#    formats_ssim:"Black-and-white photographs"
+#    repository_sim:"Duke University Archives"
+
+
+nlm_history_of_medicine:
+  query: |
+    names_ssim:"History of Medicine Collections (Duke University)"
+
