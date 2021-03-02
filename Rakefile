@@ -100,6 +100,6 @@ namespace :dul_arclight do
         t.rspec_opts = '--tag ~accessibility'
       end
     end
-  rescue LoadError => _
+  rescue LoadError => _e
   end
 end
