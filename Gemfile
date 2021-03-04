@@ -2,7 +2,7 @@
 
 source 'https://rubygems.org'
 
-gem 'arclight', '0.3.3'
+gem 'arclight', '0.4.0'
 gem 'blacklight-hierarchy', '4.0.0'
 gem 'blacklight-locale_picker'
 gem 'blacklight_dynamic_sitemap', '0.2.0'
@@ -44,6 +44,7 @@ group :development do
 end
 
 group :test do
-  gem 'capybara', '>= 2.15'
-  gem 'webdrivers', '~> 4.0'
+  gem 'axe-core-rspec' # accessibility testing
+  gem 'capybara'
+  gem 'selenium-webdriver'
 end

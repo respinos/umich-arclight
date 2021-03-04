@@ -21,10 +21,10 @@ services:
       - "3000:3000"
     environment:
       - RAILS_ENV=development
-      - FINDING_AID_DATA=../sample-ead
+      - FINDING_AID_DATA=./sample-ead
 
   redis:
-    image: gitlab-registry.oit.duke.edu/devops/containers/redis/5:latest
+    image: redis:6-buster
 
   resque:
     image: dul-arclight

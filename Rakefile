@@ -88,4 +88,18 @@ namespace :dul_arclight do
     BuildSuggestJob.perform_later
     puts 'BuildSuggestJob enqueued.'
   end
+
+  begin
+    require 'rspec/core/rake_task'
+    namespace :test do
+      RSpec::Core::RakeTask.new(accessibility: ['seed:fixtures', 'db:reset']) do |t, _|
+        t.rspec_opts = '--tag accessibility'
+      end
+
+      RSpec::Core::RakeTask.new(default: ['seed:fixtures', 'db:reset']) do |t, _|
+        t.rspec_opts = '--tag ~accessibility'
+      end
+    end
+  rescue LoadError => _e
+  end
 end

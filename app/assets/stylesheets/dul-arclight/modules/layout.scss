@@ -1,3 +1,11 @@
+/* Support right-to-left (RTL) text. If the beginning text in one of these  */
+/* elements is in a RTL language, the block's contents will align right and */
+/* flow right-to-left. */
+p, dd {
+  &[dir="auto"] {
+    text-align: start;
+  }
+}
 
 /* Sticky navigation for sidebar */
 .sticky-nav {

@@ -13,7 +13,14 @@
 
         <tr>
           <td>EAD ID</td>
-          <td><%= document.eadid %></td>
+          <td>
+            <%= link_to document.eadid,
+                  [solr_document_path(normalize_id(document.eadid)), 'xml'].join('/'),
+                  target: '_blank',
+                  rel: 'nofollow',
+                  aria: { label: 'EAD XML file' },
+                  data: { ga_label: 'EAD link'} %>
+          </td>
         </tr>
 
         <% if document.ark.present? %>

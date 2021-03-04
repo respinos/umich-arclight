@@ -7,42 +7,19 @@ include:
 stages:
   - build
   - test
+  - accessibility
+  - release
   - deploy
 
 variables:
   build_tag: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA
-  deploy_tag: $CI_REGISTRY_IMAGE/$CI_ENVIRONMENT_SLUG:latest
+  release_tag: $CI_REGISTRY_IMAGE/$CI_ENVIRONMENT_SLUG:latest
 
-build:
-  extends: .build
+#
+# Environments
+#
 
-test:
-  extends: .test
-
-rubocop:
-  extends: .test
-  script:
-    - make rubocop
-  allow_failure: true
-
-bundler-audit:
-  tags:
-    - test
-
-.deploy:
-  stage: deploy
-  before_script:
-    - docker info
-    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
-    - docker pull $build_tag
-  script:
-    - docker tag $build_tag $deploy_tag
-    - docker push $deploy_tag
-  after_script:
-    - sudo -n systemctl reload-or-restart docker-stack@dul-arclight
-
-deploy_development:
-  extends: .deploy
+.development:
   environment:
     name: development
     url: https://archives-dev.lib.duke.edu
@@ -54,8 +31,7 @@ deploy_development:
     - /^hotfix-.*$/
     - /^aery-.*$/
 
-deploy_staging:
-  extends: .deploy
+.staging:
   environment:
     name: staging
     url: https://archives-test.lib.duke.edu
@@ -67,8 +43,7 @@ deploy_staging:
     - /^release-.*$/
     - /^hotfix-.*$/
 
-deploy_production:
-  extends: .deploy
+.production:
   environment:
     name: production
     url: https://archives.lib.duke.edu
@@ -76,4 +51,86 @@ deploy_production:
     - production
   only:
     - master
+
+#
+# Jobs
+#
+
+build:
+  extends: .build
+
+#
+# Test jobs
+#
+
+test:
+  extends: .test
+  script:
+    - docker pull $build_tag
+    - make clean test
+
+rubocop:
+  extends: .test
+  script:
+    - docker pull $build_tag
+    - make rubocop
+  allow_failure: true
+
+#
+# Accessibility is in a separate stage to not
+# conflict with default test suite.
+#
+
+accessibility:
+  extends: .job
+  stage: accessibility
+  script:
+    - docker pull $build_tag
+    - make clean accessibility
+  allow_failure: true
+
+#
+# Release jobs
+#
+
+release_development:
+  extends:
+    - .release
+    - .development
+
+release_staging:
+  extends:
+    - .release
+    - .staging
+
+release_production:
+  extends:
+    - .release
+    - .production
+
+#
+# Deploy jobs
+#
+
+.deploy:
+  extends: .job
+  stage: deploy
+  script:
+    - docker pull $release_tag
+    - sudo -n systemctl reload-or-restart docker-stack@dul-arclight
+
+deploy_development:
+  extends:
+    - .deploy
+    - .development
+
+deploy_staging:
+  extends:
+    - .deploy
+    - .staging
+
+deploy_production:
+  extends:
+    - .deploy
+    - .production
   when: manual

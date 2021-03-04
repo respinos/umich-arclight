@@ -5,5 +5,5 @@
 #
 context=$(git rev-parse --show-toplevel)
 cd "$(dirname ${BASH_SOURCE[0]})"
-./test.sh run --rm -v "${context}:/opt/app-root" app bash
+./test.sh run --rm -v "${context}:/opt/app-root" --use-aliases app bash
 ./test.sh down

@@ -3,7 +3,7 @@
 <%# ArcLight v0.3.0. %>
 <%# https://github.com/projectblacklight/arclight/blob/master/app/views/catalog/_search_form.html.erb #%>
 
-<div id="advanced-search-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+<div id="advanced-search-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true" aria-label="Advanced Search">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -20,7 +20,9 @@
 
           <div class="form-group row">
             <%# select options %>
-            <label class="col-sm-4 col-form-label text-sm-right" for="within_collection_advanced"><%= t('dul_arclight.advanced_search.within_collections_label') %></label>
+            <label class="col-sm-4 col-form-label text-sm-right" for="within_collection_advanced">
+              <%= t('dul_arclight.advanced_search.within_collections_label') %>
+            </label>
             <div class="col-sm-6">
               <%= render 'catalog/within_collection_dropdown_advanced' %>
             </div>
@@ -29,7 +31,9 @@
           <div class="form-group row">
             <%# semi-fielded search options %>
             <% if search_fields.length > 1 %>
-              <label for="search_field_advanced" class="col-sm-4 col-form-label text-sm-right"><%= t('dul_arclight.advanced_search.search_fields_label') %></label>
+              <label for="search_field_advanced" class="col-sm-4 col-form-label text-sm-right">
+                <%= t('dul_arclight.advanced_search.search_fields_label') %>
+              </label>
             <% end %>
 
             <% if search_fields.length > 1 %>
