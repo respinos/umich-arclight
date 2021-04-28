@@ -17,13 +17,13 @@ en:
         heading: Ask a Librarian
 
       # Un/comment every line in the alert block with # to toggle activation
-      alert:
-        title: "Coronavirus Response"
-        message_html: |
-          <a href="https://library.duke.edu/rubenstein/about/coronavirus">Learn about changes
-          to Rubenstein Library services</a> during the Coronavirus response. The Rubenstein
-          Library remains <strong>closed</strong> until further notice while staff continue
-          to provide consulting, resources, and services online.
+      #alert:
+        #title: "Coronavirus Response"
+        #message_html: |
+        #  <a href="https://library.duke.edu/rubenstein/about/coronavirus">Learn about changes
+        #  to Rubenstein Library services</a> during the Coronavirus response. The Rubenstein
+        #  Library remains <strong>closed</strong> until further notice while staff continue
+        #  to provide consulting, resources, and services online.
 
     advanced_search:
       title: "Advanced Search"
