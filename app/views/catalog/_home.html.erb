@@ -1,6 +1,6 @@
 <% @random_feature = random_feature %>
 
-<div class="row homepage main-feature">
+<div class="row homepage main-feature mb-5">
   <div class="col-md-12">
     <div class="imgback imgback-shadow col-md-5 col-lg-6 col-xl-7 hidden-sm-down"></div>
     <div class="imgback imgback-image col-md-5 col-lg-6 col-xl-7 hidden-sm-down"
@@ -42,7 +42,7 @@
   <%# Configurable alert banner; set via un/commenting dul_arclight.home.alert.* %>
   <%# keys in config/locales/dul_arclight.en.yml %>
   <% if I18n.exists?('dul_arclight.home.alert') %>
-    <div id="homepage-alert" class="mt-4 mb-4 col-md-12 banner-wrapper banner-warning d-flex flex-row">
+    <div id="homepage-alert" class="mb-5 col-md-12 banner-wrapper banner-warning d-flex flex-row">
       <div class="banner-part banner-heading">
         <%= blacklight_icon :exclamation_triangle_solid %>
         <span class="banner-heading-text d-none d-lg-inline pr-4">
