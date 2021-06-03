@@ -139,11 +139,16 @@
   }
   .search-extra-controls {
     display: inline;
+    @include media-breakpoint-only(xs) {
+      display: block;
+    }
     .input-group {
       display: inline;
       a {
         font-size: 15px;
-        margin-left: 0.6em;
+        &:not(:first-child) {
+          margin-left: 0.6em;
+        }
       }
       .bookmarks-label {
         @include media-breakpoint-down(md) {
