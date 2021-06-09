@@ -4,12 +4,9 @@
 <%# https://github.com/projectblacklight/arclight/blob/master/app/views/catalog/_index_breadcrumb_default.html.erb %>
 <%# Last checked for updates: ArcLight v0.3.2. %>
 
-<div class="row">
-  <div class='breadcrumb-links media'>
-    <span class="media-body ml-3" aria-hidden="true"><%= blacklight_icon :repository, classes: 'al-repository-content-icon' %></span>
-    <span class="col ml-2 pl-0" >
-      <% if document.component_level.to_i > 1 %>In: <% end%>
-      <%= dul_compact_breadcrumbs(document) %>
-    </span>
-  </div>
+<div class="breadcrumb-links media">
+  <span class="col">
+    <% if document.component_level.to_i > 1 %>In: <% end%>
+    <%= dul_compact_breadcrumbs(document) %>
+  </span>
 </div>

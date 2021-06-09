@@ -883,7 +883,8 @@ a {
     border-top: 1px solid $access-restriction-gray;
   }
 
-  #documents {
+  /* Child component list from collection or component page */
+  #documents.documents-child_components {
     .documentHeader {
       padding-right: 15px;
       width: 100%;
