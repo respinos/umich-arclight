@@ -7,18 +7,22 @@
 <div class='al-grouped-title-bar'>
   <div class='row'>
     <div class='col-md-12'>
-      <div class='d-flex flex-wrap justify-content-between'>
+      <div class='d-flex justify-content-between'>
         <% if document.repository_config.present? %>
           <div class='al-grouped-repository breadcrumb-links'>
             <%= link_to(document.repository_config.name, repository_collections_path(document.repository_config)) %>
           </div>
         <% end %>
-        <%= render_index_doc_actions document, wrapping_class: 'd-flex justify-content-end group-doc-actions' %>
+
       </div>
+      <div class='d-flex justify-content-between'>
       <h3><%= link_to_document document, document_show_link_field(document) %></h3>
+      <%= render_index_doc_actions document, wrapping_class: 'd-flex justify-content-end group-doc-actions' %>
+      </div>
       <%= content_tag('span', class: 'al-document-extent badge') do %>
         <%= document.extent %>
       <% end if document.extent %>
+
       <%= content_tag('div', class: 'al-document-abstract-or-scope') do %>
         <%= content_tag('div', 'data-arclight-truncate' => true) do %>
           <%= document.abstract_or_scope %>
