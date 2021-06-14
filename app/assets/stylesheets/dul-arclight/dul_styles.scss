@@ -158,20 +158,6 @@ a {
   height: unset;
 }
 
-/* icon alignment */
-.bookmark-toggle {
-  padding-left: 0;
-}
-.blacklight-icons {
-  position: relative;
-  top: -1px;
-}
-.al-online-content-icon {
-  position: relative;
-  top: -1px;
-  padding-right: 5px;
-}
-
 
 /* item styles */
 
@@ -568,15 +554,32 @@ a {
   }
 }
 
+
+/* icon alignment */
+.bookmark-toggle {
+  padding-left: 0.3rem;
+}
+
+.blacklight-icons {
+  position: relative;
+  top: -1px;
+}
+
+label.toggle-bookmark > span:nth-child(2) {
+  margin-left: 0.1rem;
+}
+
 .al-online-content-icon {
-  padding-left: 0.2rem;
+  position: relative;
+  top: -1.5px;
+  padding-left: 0.4rem;
+  padding-right: 0.1rem;
   svg {
     fill: $green;
   }
 }
 
 .al-restricted-component-icon {
-  padding-left: 0.2rem;
   svg {
     color: $dandelion;
   }
