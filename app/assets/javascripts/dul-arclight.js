@@ -54,6 +54,13 @@ Blacklight.onLoad(function () {
     }
   });
 
+  /* Adding a click event to the Twitter Typeahead so that  */
+  /* the form submits when the user clicks on a search suggestion. */
+
+  $(document).on('typeahead:select', '.tt-input', function (e) {
+    $('.search-query-form')[0].submit();
+  });
+
 
 
   /* ================= */
@@ -69,9 +76,9 @@ Blacklight.onLoad(function () {
     $('#dul-masthead-region-megamenu').slideToggle();
 
     // toggle FA content
-    var el  = $('a#full-menu-toggle span.nav-icon'); 
+    var el  = $('a#full-menu-toggle span.nav-icon');
     el.html(el.html() == '<i class="fas fa-bars"></i>' ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>');
-      
+
   });
 
 
@@ -81,7 +88,7 @@ Blacklight.onLoad(function () {
 
   // Remove 'sr-only' class from applied search params label
   $('#appliedParams span.constraints-label').removeClass("sr-only");
-  
+
 
   /* =========== */
   /* Context Nav */
@@ -152,11 +159,11 @@ Blacklight.onLoad(function () {
     toggleExpanded($this);
     toggleText($this);
   });
-  
+
   $(window).bind("resize", function() {
 
     $('.responsiveTruncatorToggle').parent('.card-text').removeClass('expanded');
-    
+
     updateAllTruncatedText();
 
     // need to do this again after binding resize?
@@ -200,7 +207,7 @@ Blacklight.onLoad(function () {
           });
 
           clearInterval(checkExistDocument);
-      } 
+      }
     }, 100);
 
   }
@@ -225,16 +232,16 @@ Blacklight.onLoad(function () {
         console.log( 'There was an error loading external masthead html:' );
         console.log ( xhr.status + ' -- ' + xhr.statusText );
       }
-      
+
     });
 
   }
-  
+
 
   /* ================================================ */
   /* Add FA icons */
   /* ================================================ */
-  
+
    $( "#content #emailLink" ).html('<i class="fas fa-envelope"></i> Email Bookmarks');
 
 });
