@@ -14,7 +14,7 @@
   <%= hidden_field_tag :search_field, 'all_fields' %>
 
   <div class="d-md-flex">
-    
+
     <div class="input-group flex-nowrap">
       <%# select options %>
       <%= render 'catalog/within_collection_dropdown' %>
@@ -25,7 +25,7 @@
         <%# DUL Customization: make homepage autofocus the search box %>
         <%= text_field_tag :q, params[:q], placeholder: t('blacklight.search.form.search.placeholder'), class: "search-q q form-control", id: "q", autofocus: homepage? ? true : presenter.autofocus?, data: { autocomplete_enabled: presenter.autocomplete_enabled?, autocomplete_path: suggest_index_catalog_path } %>
       </div>
-      
+
       <%# search btn -%>
       <div class="input-group-append">
         <button type="submit" class="btn btn-primary search-btn" id="search">
