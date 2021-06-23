@@ -10,7 +10,7 @@ p, dd {
 /* Sticky navigation for sidebar */
 .sticky-nav {
   position: sticky;
-  top: 0;
+  top: 100px;
   @include media-breakpoint-down(sm) {
     position: static;
   }
@@ -24,11 +24,21 @@ p, dd {
   }
 }
 
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  @include media-breakpoint-down(sm) {
+    position: static;
+  }
+}
+
 .sidebar-scroll-wrapper {
-   /* viewport height minus height of the collections info box, ~170px */
-  height: calc(100vh - 170px);
+   /* viewport height minus height of the collections info box and the height of the header, ~270px */
+  height: calc(100vh - 270px);
   overflow-y: auto;
   overflow-x: hidden;
+  padding-bottom: 15px;
   @include media-breakpoint-down(sm) {
     border: 1px solid #eee;
     padding: 1em;
