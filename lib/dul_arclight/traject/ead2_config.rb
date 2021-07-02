@@ -33,7 +33,7 @@ extend TrajectPlus::Macros
 
 NAME_ELEMENTS = %w[corpname famname name persname].freeze
 
-# DUL CUSTOMIZATION: separate out restrictions <accessrestrict> <userestrict> from
+# DUL CUSTOMIZATION: separate out restrictions <accessrestrict> <userestrict> <phystech> from
 # other searchable notes, in order to revise inheritance rules during indexing.
 SEARCHABLE_NOTES_FIELDS = %w[
   accruals
@@ -48,7 +48,6 @@ SEARCHABLE_NOTES_FIELDS = %w[
   odd
   originalsloc
   otherfindaid
-  phystech
   prefercite
   processinfo
   relatedmaterial
@@ -67,6 +66,7 @@ DID_SEARCHABLE_NOTES_FIELDS = %w[
 RESTRICTION_FIELDS = %w[
   accessrestrict
   userestrict
+  phystech
 ].freeze
 
 settings do
@@ -534,6 +534,11 @@ compose 'components', ->(record, accumulator, _context) { accumulator.concat rec
   # DUL CUSTOMIZATION: redefine parent as top-level collection <userestrict>
   to_field 'parent_access_terms_tesim' do |_record, accumulator, context|
     accumulator.concat Array.wrap(context.clipboard[:parent].output_hash['userestrict_tesim'])
+  end
+
+  # DUL CUSTOMIZATION: redefine parent as top-level collection <phystech>
+  to_field 'parent_access_phystech_tesim' do |_record, accumulator, context|
+    accumulator.concat Array.wrap(context.clipboard[:parent].output_hash['phystech_tesim'])
   end
 
   # DUL CUSTOMIZATION: redefine component <accessrestrict> & <userestrict> as own values OR values from
