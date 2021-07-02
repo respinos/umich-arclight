@@ -73,6 +73,10 @@
           <head>Copyright Notice</head>
           <p>Use Restriction A</p>
         </userestrict>
+        <phystech>
+          <head>Phystech Restriction</head>
+          <p>Phystech Restriction A</p>
+        </phystech>
         <c02 id="aspace_testrestrict_subseries_c" level="subseries">
           <did>
             <unittitle>Subseries C With Restrictions, Under a Restricted Series A</unittitle>
@@ -83,6 +87,9 @@
           <userestrict>
             <p>Use Restriction C</p>
           </userestrict>
+          <phystech>
+            <p>Phystech Restriction C</p>
+          </phystech>
           <c03 id="aspace_testrestrict_file_g" level="file">
             <did>
               <unittitle>File Without Restrictions, Under a Restricted Subseries</unittitle>
@@ -98,6 +105,9 @@
             <userestrict>
               <p>Use Restriction H</p>
             </userestrict>
+            <phystech>
+              <p>Phystech Restriction H</p>
+            </phystech>
           </c03>
         </c02>
         <c02 id="aspace_testrestrict_subseries_d" level="subseries">
@@ -119,6 +129,9 @@
             <userestrict>
               <p>Use Restriction J</p>
             </userestrict>
+            <phystech>
+              <p>Phystech Restriction J</p>
+            </phystech>
           </c03>
         </c02>
       </c01>
@@ -136,6 +149,9 @@
           <userestrict>
             <p>Use Restriction E</p>
           </userestrict>
+          <phystech>
+            <p>Phystech Restriction E</p>
+          </phystech>
         </c02>
         <c02 id="aspace_testrestrict_subseries_f" level="subseries">
           <did>

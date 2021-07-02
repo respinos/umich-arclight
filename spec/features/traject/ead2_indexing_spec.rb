@@ -105,6 +105,8 @@ RSpec.describe 'EAD 2 traject indexing', type: :feature do
         component = result['components'].find { |c| c['id'] == ['restrictionstest_aspace_testrestrict_series_a'] }
         expect(component['accessrestrict_tesim'].count).to eq 1
         expect(component['accessrestrict_tesim'].first.to_xml).to eq '<p>Access Restriction A</p>'
+        expect(component['phystech_tesim'].count).to eq 1
+        expect(component['phystech_tesim'].first.to_xml).to eq '<p>Phystech Restriction A</p>'
       end
     end
 
@@ -113,6 +115,7 @@ RSpec.describe 'EAD 2 traject indexing', type: :feature do
         component = result['components'].find { |c| c['id'] == ['restrictionstest_aspace_testrestrict_series_b'] }
         expect(component['accessrestrict_tesim']).to be nil
         expect(component['userestrict_tesim']).to be nil
+        expect(component['phystech_tesim']).to be nil
       end
     end
 
@@ -121,6 +124,8 @@ RSpec.describe 'EAD 2 traject indexing', type: :feature do
         component = result['components'].find { |c| c['id'] == ['restrictionstest_aspace_testrestrict_subseries_c'] }
         expect(component['accessrestrict_tesim'].count).to eq 1
         expect(component['accessrestrict_tesim'].first.to_xml).to eq '<p>Access Restriction C</p>'
+        expect(component['phystech_tesim'].count).to eq 1
+        expect(component['phystech_tesim'].first.to_xml).to eq '<p>Phystech Restriction C</p>'
       end
     end
 
@@ -131,6 +136,8 @@ RSpec.describe 'EAD 2 traject indexing', type: :feature do
         expect(component['accessrestrict_tesim'].first.to_xml).to eq '<p>Access Restriction A</p>'
         expect(component['userestrict_tesim'].count).to eq 1
         expect(component['userestrict_tesim'].first.to_xml).to eq '<p>Use Restriction A</p>'
+        expect(component['phystech_tesim'].count).to eq 1
+        expect(component['phystech_tesim'].first.to_xml).to eq '<p>Phystech Restriction A</p>'
       end
     end
 
@@ -139,6 +146,7 @@ RSpec.describe 'EAD 2 traject indexing', type: :feature do
         component = result['components'].find { |c| c['id'] == ['restrictionstest_aspace_testrestrict_subseries_f'] }
         expect(component['accessrestrict_tesim']).to be nil
         expect(component['userestrict_tesim']).to be nil
+        expect(component['phystech_tesim']).to be nil
       end
     end
 
@@ -147,6 +155,8 @@ RSpec.describe 'EAD 2 traject indexing', type: :feature do
         component = result['components'].find { |c| c['id'] == ['restrictionstest_aspace_testrestrict_file_h'] }
         expect(component['accessrestrict_tesim'].count).to eq 1
         expect(component['accessrestrict_tesim'].first.to_xml).to eq '<p>Access Restriction H</p>'
+        expect(component['phystech_tesim'].count).to eq 1
+        expect(component['phystech_tesim'].first.to_xml).to eq '<p>Phystech Restriction H</p>'
       end
     end
 
@@ -155,6 +165,8 @@ RSpec.describe 'EAD 2 traject indexing', type: :feature do
         component = result['components'].find { |c| c['id'] == ['restrictionstest_aspace_testrestrict_file_i'] }
         expect(component['accessrestrict_tesim'].count).to eq 1
         expect(component['accessrestrict_tesim'].first.to_xml).to eq '<p>Access Restriction A</p>'
+        expect(component['phystech_tesim'].count).to eq 1
+        expect(component['phystech_tesim'].first.to_xml).to eq '<p>Phystech Restriction A</p>'
       end
     end
   end

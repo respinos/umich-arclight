@@ -374,6 +374,7 @@ class CatalogController < ApplicationController
 
     # Collection Show Page - Top Restrictions Snippet Section
     config.add_restrictions_field 'accessrestrict_tesim', label: 'Restrictions', helper_method: :render_html_tags
+    config.add_restrictions_field 'phystech_tesim', label: 'Physical / Technical Access Restrictions', helper_method: :render_html_tags
     config.add_restrictions_field 'userestrict_tesim', label: 'Use & Permissions', helper_method: :convert_rights_urls
 
     # Collection Show Page - Background Section
@@ -386,7 +387,6 @@ class CatalogController < ApplicationController
     config.add_background_field 'arrangement_tesim', label: 'Arrangement', helper_method: :render_html_tags
     config.add_background_field 'fileplan_tesim', label: 'File Plan', helper_method: :render_html_tags
     config.add_background_field 'accruals_tesim', label: 'Accruals', helper_method: :render_html_tags
-    config.add_background_field 'phystech_tesim', label: 'Physical / Technical Requirements', helper_method: :render_html_tags
     config.add_background_field 'physloc_tesim', label: 'Physical Location', helper_method: :render_html_tags
     config.add_background_field 'materialspec_tesim', label: 'Material Specific Details', helper_method: :render_html_tags
     config.add_background_field 'odd_tesim', label: 'Other Descriptive Data', helper_method: :render_html_tags
@@ -433,6 +433,7 @@ class CatalogController < ApplicationController
 
     # Restrictions Displayed in a Warning Box
     config.add_component_restrictions_field 'accessrestrict_tesim', label: 'Restrictions', helper_method: :render_html_tags
+    config.add_component_restrictions_field 'phystech_tesim', label: 'Physical / Technical Access - Restrictions', helper_method: :render_html_tags
     config.add_component_restrictions_field 'userestrict_tesim', label: 'Use & Permissions', helper_method: :convert_rights_urls
 
     # Component Show Page - Metadata Section
@@ -464,7 +465,6 @@ class CatalogController < ApplicationController
     config.add_component_field 'arrangement_tesim', label: 'Arrangement', helper_method: :render_html_tags
     config.add_component_field 'fileplan_tesim', label: 'File Plan', helper_method: :render_html_tags
     config.add_component_field 'accruals_tesim', label: 'Accruals', helper_method: :render_html_tags
-    config.add_component_field 'phystech_tesim', label: 'Physical / Technical Requirements', helper_method: :render_html_tags
     config.add_component_field 'physloc_tesim', label: 'Physical Location', helper_method: :render_html_tags
     config.add_component_field 'materialspec_tesim', label: 'Material Specific Details', helper_method: :render_html_tags
     config.add_component_field 'odd_tesim', label: 'Other Descriptive Data', helper_method: :render_html_tags
@@ -512,10 +512,12 @@ class CatalogController < ApplicationController
 
     # Collection Show Page Access Tab - Terms and Conditions Section
     config.add_terms_field 'accessrestrict_tesim', label: 'Restrictions', helper_method: :render_html_tags
+    config.add_terms_field 'phystech_tesim', label: 'Physical / Technical Access - Restrictions', helper_method: :render_html_tags
     config.add_terms_field 'userestrict_tesim', label: 'Use & Permissions', helper_method: :convert_rights_urls
 
     # Component Show Page Access Tab - Terms and Conditions Section
     config.add_component_terms_field 'parent_access_restrict_tesim', label: 'Restrictions', helper_method: :render_html_tags
+    config.add_component_terms_field 'parent_access_phystech_tesim', label: 'Physical / Technical Access - Restrictions', helper_method: :render_html_tags
     config.add_component_terms_field 'parent_access_terms_tesim', label: 'Use & Permissions', helper_method: :convert_rights_urls
 
     # Collection and Component Show Page Access Tab - In Person Section
