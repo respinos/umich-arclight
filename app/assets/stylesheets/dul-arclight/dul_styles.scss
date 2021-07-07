@@ -1224,4 +1224,8 @@ h1.modal-title {
       border: 3px solid white;
       padding: .5rem .7rem .7rem .7rem;
     }
+
+    @include media-breakpoint-only(xs) {
+      display: none;
+    }
 }
