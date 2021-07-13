@@ -887,64 +887,6 @@ label.toggle-bookmark > span:nth-child(2) {
       margin-bottom: 2rem;
    }
   }
-
-  #documents {
-    margin-bottom: 1rem;
-  }
-
-  #sortAndPerPageBottom {
-    border-bottom: none;
-    padding-bottom: 0;
-    padding-top: 1em;
-    border-top: 1px solid $access-restriction-gray;
-  }
-
-  /* Child component list from collection or component page */
-  #documents.documents-child_components {
-    .documentHeader {
-      padding-right: 15px;
-      width: 100%;
-      @include media-breakpoint-up(lg) {
-        width: 55%;
-      }
-      @include media-breakpoint-up(xl) {
-        width: 67%;
-      }
-    }
-    .documentContent {
-      width: 100%;
-      @include media-breakpoint-up(lg) {
-        width: 45%;
-      }
-      @include media-breakpoint-up(xl) {
-        width: 33%;
-      }
-    }
-    .al-document-container {
-      @include media-breakpoint-down(md) {
-        padding-left: 0;
-        padding-top: .4rem;
-        line-height: 1.2;
-      }
-    }
-  }
-
-  .grouped-documents {
-    .documentContent {
-      flex-grow: 1;
-    }
-  }
-
-  /* series results */
-
-  #document.blacklight-series article.document div.al-document-abstract-or-scope {
-    max-width: calc(100% - 1rem) !important;
-
-    .responsiveTruncatorToggle {
-      margin-right: -.5rem;
-    }
-  }
-
 }
 
 
