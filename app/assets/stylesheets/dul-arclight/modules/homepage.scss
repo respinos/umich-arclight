@@ -14,6 +14,9 @@
                 0 4px 4px rgba(0,0,0,0.06),
                 0 8px 8px rgba(0,0,0,0.06),
                 0 16px 16px rgba(0,0,0,0.06);
+    @include media-breakpoint-down(sm) {
+      min-height: 250px;
+    }
   }
 
   /* ---------------------- */
@@ -86,7 +89,7 @@
     margin-bottom: 0;
     font-size: 3rem;
     @include media-breakpoint-only(xs) {
-      font-size: 2.75rem;
+      font-size: 1.9rem;
     }
     @include media-breakpoint-only(sm) {
       font-size: 3rem;
@@ -136,11 +139,16 @@
   }
   .search-extra-controls {
     display: inline;
+    @include media-breakpoint-only(xs) {
+      display: block;
+    }
     .input-group {
       display: inline;
       a {
         font-size: 15px;
-        margin-left: 0.6em;
+        &:not(:first-child) {
+          margin-left: 0.6em;
+        }
       }
       .bookmarks-label {
         @include media-breakpoint-down(md) {
@@ -177,6 +185,11 @@
       text-decoration: none;
       color: inherit;
     }
+
+    @include media-breakpoint-only(xs){
+      font-size: 16px;
+    }
+
     @include media-breakpoint-up(xl) {
       font-size: 16.5px;
     }

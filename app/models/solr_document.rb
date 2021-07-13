@@ -100,8 +100,12 @@ class SolrDocument
     fetch('userestrict_tesim', [])
   end
 
+  def phystech
+    fetch('phystech_tesim', [])
+  end
+
   def restricted_component?
-    component? && (accessrestrict.present? || userestrict.present?)
+    component? && (accessrestrict.present? || userestrict.present? || phystech.present?)
   end
 
   def total_component_count

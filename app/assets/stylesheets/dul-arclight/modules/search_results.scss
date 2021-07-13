@@ -100,7 +100,32 @@
       }
     }
   }
+  /* Replaces Blacklight hamburger icon with a filter icon, adds */
+  /* "Search Filters" text in button, and removes the "LIMIT YOUR SEARCH" */
+  /* heading for smaller screens */
+  .navbar-toggler-icon {
+    background-image: asset-url("icons/filter-solid.svg");
+    height: 1rem;
+  }
+  button.navbar-toggler::after {
+    content: "Search Filters";
+    color: #555555;
+    font-size: 1rem;
+    vertical-align: center;
+  }
+  button.navbar-toggler {
+    padding: .5rem 1rem .75rem .5rem;
+  }
+  button.navbar-toggler:hover {
+    background-color: #f5f5f5;
+  }
+  @include media-breakpoint-down(md) {
+    .facets-heading {
+      display: none;
+    }
+  }
 }
+
 
 /* Override Blacklight-Hierarchy gem styles */
 /* ======================================== */

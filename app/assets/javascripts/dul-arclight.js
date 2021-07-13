@@ -54,7 +54,43 @@ Blacklight.onLoad(function () {
     }
   });
 
+  /* Fix autofocus for Firefox and Safari*/
+  $(".homepage").find("input#q").focus();
 
+
+  /* Adding a click event to the Twitter Typeahead so that  */
+  /* the form submits when the user clicks on a search suggestion. */
+
+  $(document).on('typeahead:select', '.tt-input', function (e) {
+    $('.search-query-form')[0].submit();
+  });
+
+
+  /* Do not display reset button when the page is first loaded. */
+  if (!$('input#q').val()) {
+    $('#reset').css('display', 'none');
+  }
+
+  /* If the input value has a length of at least 1, display the */
+  /* reset button. */
+  $('input#q').keyup(function() {
+    inputValue = $('input#q').val().length;
+    if (inputValue > 0) {
+      $('#reset').css('display', 'inline');
+    }
+    /* If the user manually deletes the input value, hide the button. */
+    if (inputValue == 0) {
+      $('#reset').css('display', 'none');
+    }
+  });
+
+  /* When the user clicks on the reset button, clear the value. This */
+  /* behaves slightly different than a standard reset button, because it */
+  /* clears the value even after the form has been submitted. */
+  $('#reset').click(function() {
+    $('.tt-input').val('');
+    $('#reset').css('display', 'none');
+  });
 
   /* ================= */
   /* MASTHEAD BEHAVIOR */
@@ -69,9 +105,9 @@ Blacklight.onLoad(function () {
     $('#dul-masthead-region-megamenu').slideToggle();
 
     // toggle FA content
-    var el  = $('a#full-menu-toggle span.nav-icon'); 
+    var el  = $('a#full-menu-toggle span.nav-icon');
     el.html(el.html() == '<i class="fas fa-bars"></i>' ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>');
-      
+
   });
 
 
@@ -81,7 +117,7 @@ Blacklight.onLoad(function () {
 
   // Remove 'sr-only' class from applied search params label
   $('#appliedParams span.constraints-label').removeClass("sr-only");
-  
+
 
   /* =========== */
   /* Context Nav */
@@ -152,11 +188,11 @@ Blacklight.onLoad(function () {
     toggleExpanded($this);
     toggleText($this);
   });
-  
+
   $(window).bind("resize", function() {
 
     $('.responsiveTruncatorToggle').parent('.card-text').removeClass('expanded');
-    
+
     updateAllTruncatedText();
 
     // need to do this again after binding resize?
@@ -200,7 +236,7 @@ Blacklight.onLoad(function () {
           });
 
           clearInterval(checkExistDocument);
-      } 
+      }
     }, 100);
 
   }
@@ -225,16 +261,16 @@ Blacklight.onLoad(function () {
         console.log( 'There was an error loading external masthead html:' );
         console.log ( xhr.status + ' -- ' + xhr.statusText );
       }
-      
+
     });
 
   }
-  
+
 
   /* ================================================ */
   /* Add FA icons */
   /* ================================================ */
-  
+
    $( "#content #emailLink" ).html('<i class="fas fa-envelope"></i> Email Bookmarks');
 
 });
