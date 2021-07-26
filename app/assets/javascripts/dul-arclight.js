@@ -66,30 +66,30 @@ Blacklight.onLoad(function () {
   });
 
 
-  /* Do not display reset button when the page is first loaded. */
+  /* Do not display clear-search button when the page is first loaded. */
   if (!$('input#q').val()) {
-    $('#reset').css('display', 'none');
+    $('#clear-search').css('display', 'none');
   }
 
   /* If the input value has a length of at least 1, display the */
-  /* reset button. */
+  /* clear-search button. */
   $('input#q').keyup(function() {
     inputValue = $('input#q').val().length;
     if (inputValue > 0) {
-      $('#reset').css('display', 'inline');
+      $('#clear-search').css('display', 'inline');
     }
     /* If the user manually deletes the input value, hide the button. */
     if (inputValue == 0) {
-      $('#reset').css('display', 'none');
+      $('#clear-search').css('display', 'none');
     }
   });
 
-  /* When the user clicks on the reset button, clear the value. This */
+  /* When the user clicks on the clear-search button, clear the value. This */
   /* behaves slightly different than a standard reset button, because it */
   /* clears the value even after the form has been submitted. */
-  $('#reset').click(function() {
+  $('#clear-search').click(function() {
     $('.tt-input').val('');
-    $('#reset').css('display', 'none');
+    $('#clear-search').css('display', 'none');
   });
 
   /* ================= */
