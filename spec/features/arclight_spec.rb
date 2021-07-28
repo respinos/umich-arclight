@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-RSpec.describe 'DUL Arclight Pages', type: :feature do
+RSpec.describe 'DUL Arclight Pages', type: :feature, js: true do
   it 'navigates to homepage' do
     visit '/'
     expect(page).to have_css 'h1', text: 'Find Archival Materials'
@@ -15,5 +15,10 @@ RSpec.describe 'DUL Arclight Pages', type: :feature do
     visit '/collections/ua-record-groups'
     expect(page).to have_link('Student/Campus Life',
                               href: '/catalog?f%5Bua_record_group_ssim%5D%5B%5D=31')
+  end
+
+  it 'has focus on the search field on the homepage' do
+    visit '/'
+    expect(page.evaluate_script('document.activeElement.id')).to eq 'q'
   end
 end
