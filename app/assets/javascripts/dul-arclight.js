@@ -56,7 +56,7 @@ Blacklight.onLoad(function () {
 
   /* Fix autofocus for Firefox and Safari*/
   $(".homepage").find("input#q").focus();
-
+  
 
   /* Adding a click event to the Twitter Typeahead so that  */
   /* the form submits when the user clicks on a search suggestion. */
