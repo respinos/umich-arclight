@@ -26,16 +26,16 @@
         <%= text_field_tag :q, params[:q], placeholder: t('blacklight.search.form.search.placeholder'), class: "search-q q form-control", id: "q", autofocus: homepage? ? true : presenter.autofocus?, data: { autocomplete_enabled: presenter.autocomplete_enabled?, autocomplete_path: suggest_index_catalog_path } %>
       </div>
 
-      <%# reset btn %>
+      <%# clear-search btn %>
       <div class="input-group-append">
-        <%= button_tag type: "button", id: "reset", class: "btn btn-secondary" do %>
+        <%= button_tag type: "button", id: "clear-search", aria: { label: "Clear Search" }, class: "btn btn-secondary" do %>
             <i class="fas fa-times fa-lg"></i>
         <% end %>
       </div>
 
       <%# search btn -%>
       <div class="input-group-append">
-        <button type="submit" class="btn btn-primary search-btn" id="search">
+        <button type="submit" class="btn btn-primary search-btn" id="search" aria-label="Submit Search">
           <span class="submit-search-text d-none d-lg-inline sr-only"><%= t('blacklight.search.form.submit') %></span>
           <i class="fas fa-search"></i>
         </button>
