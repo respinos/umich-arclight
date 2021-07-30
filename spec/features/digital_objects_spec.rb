@@ -30,12 +30,17 @@ RSpec.describe 'Digital Objects', type: :feature do
       end
     end
 
-    # NOTE this test has an external dependency (on DDR), which may become fragile.
     context 'when DDR item lookup (ddr-item-lookup)' do
       let(:doc_id) { 'daotest_aspace_testdao03a' }
 
-      it 'gets a result count via DDR results JSON API & renders the link to the search' do
+      it 'does not render an inline digital object' do
         expect(page).not_to have_css('iframe')
+      end
+
+      # NOTE: this test has an external dependency (on DDR), which may become fragile.
+      # It's included here for documentation but skipped by default when tests run.
+      # To include the test, change xit to it.
+      xit 'gets a result count via DDR results JSON API & renders the link to the search' do
         expect(page).to \
           have_link('View 89 Items',
                     href: 'https://repository.duke.edu/catalog?f[aspace_id_ssi][]=ce1d91c28328e9c2fc88f2c9c5e5d5ca')
