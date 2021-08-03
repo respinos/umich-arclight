@@ -8,15 +8,7 @@ body.blacklight-bookmarks-index {
     }
 
     .bookmarksTools {
-
-      a {
-        border: 1px solid shade($gray-lighter, 6);
-      }
-
-      a:hover {
-        background-color: $gray-lighter;
-      }
-
+      margin-bottom: 1rem;
     }
   }
 }

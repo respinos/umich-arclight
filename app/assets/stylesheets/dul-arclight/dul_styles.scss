@@ -37,6 +37,19 @@ a {
   }
 }
 
+.btn-outline-primary {
+  background-color: white;
+  border-color: $brand-primary;
+  &:hover, &:active, &:focus {
+    border-color: shade($brand-primary, 20%);
+    background-color: $brand-primary;
+    a {
+      color: white;
+      text-decoration: none;
+    }
+  }
+}
+
 .btn-success {
   background-color: $brand-success;
   border-color: $brand-success;
