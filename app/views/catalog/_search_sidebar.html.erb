@@ -3,6 +3,6 @@
 <%# https://github.com/projectblacklight/arclight/blob/master/app/views/catalog/_arclight_index_default.html.erb %>
 <%# Last checked for updates: ArcLight v0.3.2 / Blacklight 7.2.0 %>
 
-<%= link_to t('blacklight.skip_links.back_to_top'), '#skip-link', class: 'element-invisible element-focusable rounded-bottom mt-2 py-2 px-3', data: { turbolinks: 'false' } %>
-
+<%= render 'catalog/sidebar_back_to_top' %>
+<%= render 'catalog/sidebar_close' %>
 <%= render 'facets' %>

@@ -161,9 +161,19 @@
       }
     }
   }
-  /* Replaces Blacklight hamburger icon with a filter icon, adds */
-  /* "Search Filters" text in button, and removes the "LIMIT YOUR SEARCH" */
-  /* heading for smaller screens */
+
+  /* Always show the facets, even when "collapsed". */
+  /* DUL customization moves them off-screen in mobile to support side-drawer nav */
+  #facet-panel-collapse {
+    display: block !important;
+  }
+
+  /* Hide native BL mobile sidebar toggle */
+  .navbar-toggler {
+    display: none;
+  }
+
+  /*
   .navbar-toggler-icon {
     background-image: asset-url("icons/filter-solid.svg");
     height: 1rem;
@@ -185,6 +195,7 @@
       display: none;
     }
   }
+*/
 }
 
 

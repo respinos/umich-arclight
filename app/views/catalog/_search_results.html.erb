@@ -15,16 +15,18 @@
 <%# See: https://github.com/projectblacklight/blacklight/blob/master/app/views/catalog/_search_results.html.erb#L10-L12 %>
 <% content_for(:skip_links) do -%>
     <%= link_to t('blacklight.skip_links.first_result'), '#documents', class: 'element-invisible element-focusable rounded-bottom py-2 px-3', data: { turbolinks: 'false' } %>
-    <%= link_to t('blacklight.skip_links.facets'), '#facets', class: 'element-invisible element-focusable rounded-bottom py-2 px-3', data: { turbolinks: 'false' } %>
+    <%= link_to t('blacklight.skip_links.facets'), '#facets', class: 'element-invisible element-focusable rounded-bottom py-2 px-3 d-none d-lg-block', data: { turbolinks: 'false' } %>
 <% end %>
 
 <% content_for(:container_header) do %>
   <h1 class="sr-only top-content-title"><%= search_results_header_text %></h1>
-  <%# moved breadcrumbs, repository results, and constriants down below %>
+  <%# moved breadcrumbs, repository results, and constraints down below %>
 <% end %>
 
-
-<%= link_to t('blacklight.skip_links.back_to_top'), '#skip-link', class: 'element-invisible element-focusable rounded-bottom mt-2 py-2 px-3', data: { turbolinks: 'false' } %>
+<%= link_to t('blacklight.skip_links.back_to_top'),
+            '#skip-link',
+            class: 'element-invisible element-focusable rounded-bottom mt-2 py-2 px-3',
+            data: { turbolinks: 'false' } %>
 
 <div id="results-nav-and-constraints">
 
@@ -33,6 +35,12 @@
   </div>
 
   <%= render 'search_results_repository' %>
+
+  <div class="mb-2 d-lg-none">
+    <a class="btn btn-secondary btn-block sidebar-nav-toggle" href="#" id="navigate-collection-toggle" data-turbolinks="false">
+      <i class="fas fa-filter"></i> Search Filters
+    </a>
+  </div>
 
   <div class="constraints-wrapper card">
     <%= render 'constraints' %>
