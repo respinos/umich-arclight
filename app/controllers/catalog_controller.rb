@@ -511,12 +511,12 @@ class CatalogController < ApplicationController
     # =================
 
     # Collection Show Page Access Tab - Terms and Conditions Section
-    config.add_terms_field 'accessrestrict_tesim', label: 'Restrictions', helper_method: :render_html_tags
+    config.add_terms_field 'accessrestrict_tesim', label: 'Restrictions', helper_method: :add_help_text
     config.add_terms_field 'phystech_tesim', label: 'Physical / Technical Access - Restrictions', helper_method: :render_html_tags
     config.add_terms_field 'userestrict_tesim', label: 'Use & Permissions', helper_method: :convert_rights_urls
 
     # Component Show Page Access Tab - Terms and Conditions Section
-    config.add_component_terms_field 'parent_access_restrict_tesim', label: 'Restrictions', helper_method: :render_html_tags
+    config.add_component_terms_field 'parent_access_restrict_tesim', label: 'Restrictions', helper_method: :add_help_text
     config.add_component_terms_field 'parent_access_phystech_tesim', label: 'Physical / Technical Access - Restrictions', helper_method: :render_html_tags
     config.add_component_terms_field 'parent_access_terms_tesim', label: 'Use & Permissions', helper_method: :convert_rights_urls
 

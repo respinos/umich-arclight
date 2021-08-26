@@ -9,6 +9,7 @@ module DulArclight
   module FieldConfigHelpers
     extend ActiveSupport::Concern
     include Arclight::FieldConfigHelpers
+    include DulArclightHelper
     include HierarchyHelper
 
     included do
@@ -17,6 +18,7 @@ module DulArclight
         helper_method :singularize_extent
         helper_method :link_to_ua_record_group_facet
         helper_method :ua_record_group_display
+        helper_method :add_help_text
         helper_method :convert_rights_urls
         helper_method :keep_raw_values
       end
@@ -26,6 +28,20 @@ module DulArclight
     # Array#to_sentence
     def keep_raw_values(args)
       args[:value] || []
+    end
+
+    # Option to append something after a metadata field using an i18n key, e.g., a message with a
+    # link to the Ask form. Potentially a short-term patch. TBD: reevaluate long-term suitability.
+    def add_help_text(args)
+      field = args[:field] || ''
+
+      html = render_html_tags(args)
+      doc = Nokogiri::HTML.fragment(html)
+      if I18n.exists?("dul_arclight.views.show.field_note.#{field}")
+        doc.add_child(['<p>', t("dul_arclight.views.show.field_note.#{field}",
+                                url: ask_rubenstein_url), '</p>'].join)
+      end
+      doc.to_html.html_safe
     end
 
     def convert_rights_urls(args)

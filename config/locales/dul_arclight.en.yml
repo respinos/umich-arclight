@@ -69,13 +69,23 @@ en:
             requesting: "How to Request"
             reproductions: "Ordering Reproductions"
             visitors: "Info for Visitors"
+
         containers:
           see_all: "See all containers"
+
         field_group_note:
           indexed_terms_field: |
             Click on terms below to find related finding aids on this site. For other related
             materials in the Duke University Libraries, search for these terms in the
             <a href="https://find.library.duke.edu/">Catalog</a>.
+        field_note:
+          accessrestrict_tesim: |
+            <a href="%{url}" target="_blank" class="btn btn-secondary"><i class="fas fa-comment"></i>
+            Ask us about these restrictions</a>
+          parent_access_restrict_tesim: |
+            <a href="%{url}" target="_blank" class="btn btn-secondary"><i class="fas fa-comment"></i>
+            Ask us about these restrictions</a>
+
         sidebar:
           collection_title: Collection
           collection_info_icon_label: Advanced collection info
