@@ -143,7 +143,7 @@ RSpec.describe 'Digital Objects', type: :feature do
 
   describe 'online access banner' do
     context 'when no DAOs' do
-      let(:doc_id) { 'uaduketaekwondo' }
+      let(:doc_id) { 'trent-pasteurlouispapers' }
 
       it 'does not render a banner' do
         expect(page).not_to have_css('.banner-online')
@@ -161,7 +161,7 @@ RSpec.describe 'Digital Objects', type: :feature do
     end
 
     context 'when no DDR collection DAO is present but inline DAOs are' do
-      let(:doc_id) { 'daotest' }
+      let(:doc_id) { 'rushbenjaminandjulia' }
 
       it 'renders a banner with only a filter link' do
         expect(page).to have_css('.banner-online')
@@ -171,7 +171,7 @@ RSpec.describe 'Digital Objects', type: :feature do
     end
 
     context 'when both DDR collection DAO is present and inline DAOs are' do
-      let(:doc_id) { 'rushbenjaminandjulia' }
+      let(:doc_id) { 'daotest' }
 
       it 'renders a banner with both a DDR link and a filter link' do
         expect(page).to have_css('.banner-online')
