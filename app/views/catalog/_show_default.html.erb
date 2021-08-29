@@ -179,7 +179,7 @@
   <div id="component-restrictions">
     <%= render 'custom_metadata',
       document: @document, field_accessor: 'component_restrictions_field', skip_headings: true %>
-      <p><a class="smooth-scroll" href="#<%= t("arclight.views.show.sections.using_field").parameterize %>"><%= t('dul_arclight.views.show.access.more_restriction') %></a></p>
+      <p><a class="smooth-scroll" href="#<%= t("arclight.views.show.sections.using_field").parameterize %>" data-turbolinks="false"><%= t('dul_arclight.views.show.access.more_restriction') %></a></p>
   </div>
 <% end %>
 
