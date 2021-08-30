@@ -411,12 +411,11 @@ a {
       padding-top: 2rem;
       border-bottom: 1px solid $gray-light-more;
       padding-bottom: 25px;
-      /*
-      @include media-breakpoint-down(sm) {
-        margin: 0 0 15px 0 !important;
-        padding-top: 1rem;
+
+      @include media-breakpoint-down(lg) {
+        margin: -15px -10px 15px -10px !important;
+        padding: 25px 10px 25px 10px !important;
       }
-      */
     }
 
     .sidebar-collection-title {
