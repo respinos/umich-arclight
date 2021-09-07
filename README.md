@@ -11,7 +11,7 @@ The application currently runs at [https://archives.lib.duke.edu](https://archiv
 
 ## Getting Started
 
-Please consult the '''[DUL-ArcLight wiki](https://gitlab.oit.duke.edu/dul-its/dul-arclight/-/wikis/home)'''
+Please consult the **[DUL-ArcLight wiki](https://gitlab.oit.duke.edu/dul-its/dul-arclight/-/wikis/home)**
 for full documentation. Here are a few common commands ...
 
 You can index a set of sample Duke EAD files into Solr (takes a couple minutes):
