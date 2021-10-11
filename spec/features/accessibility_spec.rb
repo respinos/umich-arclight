@@ -37,7 +37,7 @@ RSpec.describe 'Accessibility (WCAG, 508, Best Practices)', type: :feature, js: 
 
   describe 'search results page (default)' do
     it 'is accessible' do
-      visit '/?utf8=✓&group=true&search_field=all_fields&q=duke'
+      visit '/?utf8=✓&group=true&search_field=all_fields&q=papers'
       expect(page).to be_axe_clean
     end
   end

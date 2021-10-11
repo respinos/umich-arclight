@@ -20,7 +20,7 @@
           <addressline>411 Chapel Drive</addressline>
           <addressline>Duke University</addressline>
           <addressline>Durham 27708</addressline>
-          <addressline>special-collections@duke.edu</addressline>
+          <addressline>askRL@duke.edu</addressline>
           <addressline>URL: <extptr xlink:href="http://library.duke.edu/rubenstein/"
               xlink:show="new" xlink:title="http://library.duke.edu/rubenstein/" xlink:type="simple"
             /></addressline>
@@ -33,8 +33,8 @@
       </notestmt>
     </filedesc>
     <profiledesc>
-      <creation>This finding aid was produced using ArchivesSpace on <date>2020-01-09 20:39:57
-          UTC</date>.</creation>
+      <creation>This finding aid was produced using ArchivesSpace on <date>2020-03-23 13:12:06
+          -0400</date>.</creation>
       <langusage>English</langusage>
       <descrules>Describing Archives: A Content Standard</descrules>
     </profiledesc>
@@ -110,177 +110,168 @@
         Correspondence</persname>
     </controlaccess>
     <dsc>
-      <c01 id="aspace_ref11_0yb" level="series">
+      <c01 id="aspace_ref13_j5a" level="file">
         <did>
-          <unittitle>Container List1934-1999</unittitle>
-          <physdesc altrender="whole"><extent altrender="materialtype spaceoccupied">1
-              boxes</extent></physdesc>
+          <unittitle>School of Law, 1934</unittitle>
+          <container id="aspace_63af57fc8e8df60243d7e92277da375c" label="Mixed Materials" type="box"
+            >1</container>
         </did>
-        <c02 id="aspace_ref13_j5a" level="file">
-          <did>
-            <unittitle>School of Law, 1934</unittitle>
-            <container id="aspace_28b043036fdaa88afffc2d4cdbfef3c7" label="Mixed Materials"
-              type="box">1</container>
-          </did>
-        </c02>
-        <c02 id="aspace_ref14_dd6" level="file">
-          <did>
-            <unittitle>School of Law, 1935-1937 May</unittitle>
-            <container id="aspace_1a2acc164093555f3acf8df26ccb18a3" label="Mixed Materials"
-              type="box">1</container>
-          </did>
-        </c02>
-        <c02 id="aspace_ref15_s63" level="file">
-          <did>
-            <unittitle>School of Law - Term Paper, 1936</unittitle>
-            <container id="aspace_4c396191ba1cd446ab3bda9a66f534ec" label="Mixed Materials"
-              type="box">1</container>
-          </did>
-        </c02>
-        <c02 id="aspace_ref16_7oz" level="file">
-          <did>
-            <unittitle>School of Law, 1937 Jul-1938</unittitle>
-            <container id="aspace_e03658af71c45d722e160a11517e63e7" label="Mixed Materials"
-              type="box">1</container>
-          </did>
-        </c02>
-        <c02 id="aspace_ref17_g43" level="file">
-          <did>
-            <unittitle>School of Law, 1940-1963</unittitle>
-            <container id="aspace_4b3734bc915f78d0b2625c0234e5a975" label="Mixed Materials"
-              type="box">1</container>
-          </did>
-        </c02>
-        <c02 id="aspace_ref18_uwm" level="file">
-          <did>
-            <unittitle>School of Law, 1965-1973 Oct</unittitle>
-            <container id="aspace_bed582104ccb73440372970a650546f4" label="Mixed Materials"
-              type="box">1</container>
-          </did>
-        </c02>
-        <c02 id="aspace_ref19_7k6" level="file">
-          <did>
-            <unittitle>School of Law, 1973 Nov-1975</unittitle>
-            <container id="aspace_ea43fe023c5d5f165c3bfc8531bdad35" label="Mixed Materials"
-              type="box">1</container>
-          </did>
-        </c02>
-        <c02 id="aspace_ref20_76p" level="file">
-          <did>
-            <unittitle>School of Law - Bumper Stickers, 1974</unittitle>
-            <container id="aspace_25db44c11fde4592135637dac3d5ee09" label="Mixed Materials"
-              type="box">1</container>
-          </did>
-        </c02>
-        <c02 id="aspace_ref21_mxw" level="file">
-          <did>
-            <unittitle>School of Law - Transcripts, Grades &amp; Professor, 1934-1937</unittitle>
-            <container id="aspace_d0690528b526ababdc70c6ee29e0560b" label="Mixed Materials"
-              type="box">1</container>
-          </did>
-        </c02>
-        <c02 id="aspace_ref22_ky3" level="file">
-          <did>
-            <unittitle>Duke Bar Association - President [R.M. Nixon Correspondence],
-              1936</unittitle>
-            <container id="aspace_2494c4506341702574de63531cd063b2" label="Mixed Materials"
-              type="box">1</container>
-          </did>
-        </c02>
-        <c02 id="aspace_ref23_thg" level="file">
-          <did>
-            <unittitle>Duke Bar Association - President [R.M. Nixon Correspondence],
-              1937</unittitle>
-            <container id="aspace_2501e71981af44a71089b618e92b763c" label="Mixed Materials"
-              type="box">1</container>
-          </did>
-        </c02>
-        <c02 id="aspace_ref24_lhw" level="file">
-          <did>
-            <unittitle>Duke Bar Association - Ephemera from Nixon Years, 1935-1937</unittitle>
-            <container id="aspace_982f6e5df9c9b940d69971ace76c02f9" label="Mixed Materials"
-              type="box">1</container>
-          </did>
-        </c02>
-        <c02 id="aspace_ref25_dz2" level="file">
-          <did>
-            <unittitle>Duke News Service - Correspondence, 1952, 1958</unittitle>
-            <container id="aspace_189099cd5706f3ed7bc17b8828ba9b76" label="Mixed Materials"
-              type="box">1</container>
-          </did>
-        </c02>
-        <c02 id="aspace_ref26_f6v" level="file">
-          <did>
-            <unittitle>Duke University - President A.H. Edens, 1952-1960</unittitle>
-            <container id="aspace_c99f8215d46f0f68d7df718c69ffe88e" label="Mixed Materials"
-              type="box">1</container>
-          </did>
-        </c02>
-        <c02 id="aspace_ref27_sgo" level="file">
-          <did>
-            <unittitle>Duke University - President A.H. Edens [Richard M. Nixon Honorary Degree
-              Controversy], 1954 Mar-July</unittitle>
-            <container id="aspace_62bd9e0ce0e314f67365d15eb4473f8b" label="Mixed Materials"
-              type="box">1</container>
-          </did>
-        </c02>
-        <c02 id="aspace_ref28_0py" level="file">
-          <did>
-            <unittitle>Duke University - President D.M. Knight, 1967</unittitle>
-            <container id="aspace_7363f3f0d2f837c7cf102b977ff68273" label="Mixed Materials"
-              type="box">1</container>
-          </did>
-        </c02>
-        <c02 id="aspace_ref29_rag" level="file">
-          <did>
-            <unittitle>Duke University - President Terry Sanford, 1970-1974</unittitle>
-            <container id="aspace_5c949e1db096e39b02c5a47810706a3f" label="Mixed Materials"
-              type="box">1</container>
-          </did>
-        </c02>
-        <c02 id="aspace_ref30_2wz" level="file">
-          <did>
-            <unittitle>Robert F. Durden Papers [Richard Nixon], 1987</unittitle>
-            <container id="aspace_523f0ce5189c4079e8f939a434f5b1a9" label="Mixed Materials"
-              type="box">1</container>
-          </did>
-        </c02>
-        <c02 id="aspace_ref31_w7j" level="file">
-          <did>
-            <unittitle>Calvin B. Hoover Papers [Richard Nixon Correspondence], 1954-1967</unittitle>
-            <container id="aspace_023a3fdd9b3bf042610bb8be3b7197e7" label="Mixed Materials"
-              type="box">1</container>
-          </did>
-        </c02>
-        <c02 id="aspace_ref32_f5f" level="file">
-          <did>
-            <unittitle>Bridget Booker Correspondence, 1991</unittitle>
-            <container id="aspace_ba15e77f2cd94278a775156cc172c8ef" label="Mixed Materials"
-              type="box">1</container>
-          </did>
-        </c02>
-        <c02 id="aspace_ref33_89j" level="file">
-          <did>
-            <unittitle>Clippings, Miscellaneous, 1999</unittitle>
-            <container id="aspace_f453c5e33a2b0f2de70063c86523007d" label="Mixed Materials"
-              type="box">1</container>
-          </did>
-        </c02>
-        <c02 id="aspace_ref34_cez" level="file">
-          <did>
-            <unittitle>Newspapers - Kansas City Star: 'Life Story of Nixon', 1955 October
-              30-November 6</unittitle>
-            <container id="aspace_76b0ba2a13289a2ccc10e54a99455c87" label="Mixed Materials"
-              type="box">1</container>
-          </did>
-        </c02>
-        <c02 id="aspace_ref35_4ru" level="file">
-          <did>
-            <unittitle>Gosnell, Jack</unittitle>
-            <container id="aspace_47c4dfd4477f1aa7efa927305dbc726e" label="Mixed Materials"
-              type="box">1</container>
-          </did>
-        </c02>
+      </c01>
+      <c01 id="aspace_ref14_dd6" level="file">
+        <did>
+          <unittitle>School of Law, 1935-1937 May</unittitle>
+          <container id="aspace_fde262580aa29db3142c1b041057386d" label="Mixed Materials" type="box"
+            >1</container>
+        </did>
+      </c01>
+      <c01 id="aspace_ref15_s63" level="file">
+        <did>
+          <unittitle>School of Law - Term Paper, 1936</unittitle>
+          <container id="aspace_c200b2b08f4cc7dea347066c42681493" label="Mixed Materials" type="box"
+            >1</container>
+        </did>
+      </c01>
+      <c01 id="aspace_ref16_7oz" level="file">
+        <did>
+          <unittitle>School of Law, 1937 Jul-1938</unittitle>
+          <container id="aspace_bf697a1c4f895bb8e06f80dbf552ff51" label="Mixed Materials" type="box"
+            >1</container>
+        </did>
+      </c01>
+      <c01 id="aspace_ref17_g43" level="file">
+        <did>
+          <unittitle>School of Law, 1940-1963</unittitle>
+          <container id="aspace_b947df027f848c31c9bef60f5eb9952f" label="Mixed Materials" type="box"
+            >1</container>
+        </did>
+      </c01>
+      <c01 id="aspace_ref18_uwm" level="file">
+        <did>
+          <unittitle>School of Law, 1965-1973 Oct</unittitle>
+          <container id="aspace_f33fda0a021d924ed3ed7f272d58fb60" label="Mixed Materials" type="box"
+            >1</container>
+        </did>
+      </c01>
+      <c01 id="aspace_ref19_7k6" level="file">
+        <did>
+          <unittitle>School of Law, 1973 Nov-1975</unittitle>
+          <container id="aspace_2de0ae547064dc5b77ac7c0618e47460" label="Mixed Materials" type="box"
+            >1</container>
+        </did>
+      </c01>
+      <c01 id="aspace_ref20_76p" level="file">
+        <did>
+          <unittitle>School of Law - Bumper Stickers, 1974</unittitle>
+          <container id="aspace_514cf0c23b1589eccc3a16df99f71d32" label="Mixed Materials" type="box"
+            >1</container>
+        </did>
+      </c01>
+      <c01 id="aspace_ref21_mxw" level="file">
+        <did>
+          <unittitle>School of Law - Transcripts, Grades &amp; Professor, 1934-1937</unittitle>
+          <container id="aspace_69b0f4c3c1f5e69109a725bfbe264012" label="Mixed Materials" type="box"
+            >1</container>
+        </did>
+      </c01>
+      <c01 id="aspace_ref22_ky3" level="file">
+        <did>
+          <unittitle>Duke Bar Association - President [R.M. Nixon Correspondence], 1936</unittitle>
+          <container id="aspace_bab1f1331e15cce2cf153621c5825a0b" label="Mixed Materials" type="box"
+            >1</container>
+        </did>
+      </c01>
+      <c01 id="aspace_ref23_thg" level="file">
+        <did>
+          <unittitle>Duke Bar Association - President [R.M. Nixon Correspondence], 1937</unittitle>
+          <container id="aspace_bd376af50c593bccea678eb1bd6b392b" label="Mixed Materials" type="box"
+            >1</container>
+        </did>
+      </c01>
+      <c01 id="aspace_ref24_lhw" level="file">
+        <did>
+          <unittitle>Duke Bar Association - Ephemera from Nixon Years, 1935-1937</unittitle>
+          <container id="aspace_bdaaa2b00d65d3c526aab91243763107" label="Mixed Materials" type="box"
+            >1</container>
+        </did>
+      </c01>
+      <c01 id="aspace_ref25_dz2" level="file">
+        <did>
+          <unittitle>Duke News Service - Correspondence, 1952, 1958</unittitle>
+          <container id="aspace_bdc1fcbc026184cc041bc8eab71eb827" label="Mixed Materials" type="box"
+            >1</container>
+        </did>
+      </c01>
+      <c01 id="aspace_ref26_f6v" level="file">
+        <did>
+          <unittitle>Duke University - President A.H. Edens, 1952-1960</unittitle>
+          <container id="aspace_b381657ba2d096c46b1ef2cb28a13d25" label="Mixed Materials" type="box"
+            >1</container>
+        </did>
+      </c01>
+      <c01 id="aspace_ref27_sgo" level="file">
+        <did>
+          <unittitle>Duke University - President A.H. Edens [Richard M. Nixon Honorary Degree
+            Controversy], 1954 Mar-July</unittitle>
+          <container id="aspace_aa49aef24ebd438e1156447a84b375ce" label="Mixed Materials" type="box"
+            >1</container>
+        </did>
+      </c01>
+      <c01 id="aspace_ref28_0py" level="file">
+        <did>
+          <unittitle>Duke University - President D.M. Knight, 1967</unittitle>
+          <container id="aspace_d0f215c38854c4c21b657c5ea9e76d1b" label="Mixed Materials" type="box"
+            >1</container>
+        </did>
+      </c01>
+      <c01 id="aspace_ref29_rag" level="file">
+        <did>
+          <unittitle>Duke University - President Terry Sanford, 1970-1974</unittitle>
+          <container id="aspace_3772230274c85520a8739b03be9272ae" label="Mixed Materials" type="box"
+            >1</container>
+        </did>
+      </c01>
+      <c01 id="aspace_ref30_2wz" level="file">
+        <did>
+          <unittitle>Robert F. Durden Papers [Richard Nixon], 1987</unittitle>
+          <container id="aspace_5a72b8797052a1bea67d5aa723228e7a" label="Mixed Materials" type="box"
+            >1</container>
+        </did>
+      </c01>
+      <c01 id="aspace_ref31_w7j" level="file">
+        <did>
+          <unittitle>Calvin B. Hoover Papers [Richard Nixon Correspondence], 1954-1967</unittitle>
+          <container id="aspace_29c0425ef34e652781afb978fea4b17c" label="Mixed Materials" type="box"
+            >1</container>
+        </did>
+      </c01>
+      <c01 id="aspace_ref32_f5f" level="file">
+        <did>
+          <unittitle>Bridget Booker Correspondence, 1991</unittitle>
+          <container id="aspace_4f2ff445f4e81143e321e233a1e7d345" label="Mixed Materials" type="box"
+            >1</container>
+        </did>
+      </c01>
+      <c01 id="aspace_ref33_89j" level="file">
+        <did>
+          <unittitle>Clippings, Miscellaneous, 1999</unittitle>
+          <container id="aspace_93225db87937a613f831ccb10abbb766" label="Mixed Materials" type="box"
+            >1</container>
+        </did>
+      </c01>
+      <c01 id="aspace_ref34_cez" level="file">
+        <did>
+          <unittitle>Newspapers - Kansas City Star: 'Life Story of Nixon', 1955 October 30-November
+            6</unittitle>
+          <container id="aspace_48d3228aa549f059390cc3ca5cfa8c57" label="Mixed Materials" type="box"
+            >1</container>
+        </did>
+      </c01>
+      <c01 id="aspace_ref35_4ru" level="file">
+        <did>
+          <unittitle>Gosnell, Jack</unittitle>
+          <container id="aspace_52e9e7931c4b99e5c9bb1053018fa911" label="Mixed Materials" type="box"
+            >1</container>
+        </did>
       </c01>
     </dsc>
   </archdesc>

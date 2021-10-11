@@ -1,5 +1,5 @@
 /* ============================================================ */
-/* Accessibility: Apply some band-aids on 3rd-party issues.     */
+/* Accessibility: Apply some band-aids on a11y issues.          */
 /* NOTE: These changes fix some issues client-side that can't   */
 /* easily be addressed otherwise. Blacklight.onLoad DOM         */
 /* modifications do not work for elements added dynamically,    */
@@ -38,31 +38,6 @@ function applyAccessibilityPatches() {
   
   $('nav[role="region"]').attr('role', 'navigation');
 
-  /* ---------------------------------- */
-  /* Area: Blacklight icons             */
-  /* ---------------------------------- */
-  /* Issue: invalid ARIA role ("image") */
-  /* Platform: Blacklight */
-  /* Version fixed in: 7.5.1 */
-  /* https://github.com/projectblacklight/blacklight/blob/v7.2.0/app/models/blacklight/icon.rb#L13 */
-
-  $('svg[role="image"]').attr('role','img');
-
-  /* Issue: invalid ARIA attribute ("aria-labelled-by") */
-  /* Issue: duplicate ID values; IDs used in ARIA labels must be unique */
-  /* https://github.com/projectblacklight/blacklight/blob/v7.2.0/app/models/blacklight/icon.rb#L27 */
-  /* https://github.com/projectblacklight/blacklight/pull/2301/files */
-  /* Platform: Blacklight */
-  /* Version fixed: somewhat improved in BL 7.5.1; likely to be fully fixed in 7.8.2. */
-
-  $('svg[aria-labelled-by]').each( function() {
-    /* Copies the text content of the <title> for use as an aria-label on the <svg>,  */
-    /* then drops the title & incorrect aria attribute altogether.                    */
-    $(this).removeAttr('aria-labelled-by');
-    $icon_title = $(this).find('title');
-    $(this).attr('aria-label', $icon_title.text());
-    $icon_title.remove();
-  }); 
 
   /* ---------------------------------- */
   /* Area: Bookmark Checkboxes          */

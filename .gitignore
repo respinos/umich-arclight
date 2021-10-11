@@ -11,6 +11,7 @@
 /.vegas/*
 
 .bash_history
+.gem
 
 /.cache/*
 

@@ -1,5 +1,5 @@
 <%# Link to this page with (sanitized) parameters intact to maintain per_page & page %>
 <%# Use .csv extension %>
-<%= link_to url_for(params: url_opts, format: 'csv'), class: 'nav-link', download: bookmarks_csv_filename do %>
+<%= link_to url_for(params: Blacklight::Parameters.sanitize(params.to_unsafe_h), format: 'csv'), download: bookmarks_csv_filename do %>
   <i class="fas fa-download"></i> <%= t('blacklight.bookmarks.export_csv') %>
 <% end %>

@@ -20,7 +20,7 @@
           <addressline>411 Chapel Drive</addressline>
           <addressline>Duke University</addressline>
           <addressline>Durham 27708</addressline>
-          <addressline>special-collections@duke.edu</addressline>
+          <addressline>askRL@duke.edu</addressline>
           <addressline>URL: <extptr xlink:href="http://library.duke.edu/rubenstein/"
               xlink:show="new" xlink:title="http://library.duke.edu/rubenstein/" xlink:type="simple"
             /></addressline>
@@ -33,8 +33,8 @@
       </notestmt>
     </filedesc>
     <profiledesc>
-      <creation>This finding aid was produced using ArchivesSpace on <date>2020-01-09 20:40:06
-          UTC</date>.</creation>
+      <creation>This finding aid was produced using ArchivesSpace on <date>2020-06-03 13:27:38
+          -0400</date>.</creation>
       <langusage>English</langusage>
       <descrules>Describing Archives: A Content Standard</descrules>
     </profiledesc>
@@ -79,9 +79,9 @@
       <langmaterial id="aspace_973ac6d712a871b2c2bc8a0b495832f1">Material in English and
         Spanish</langmaterial>
     </did>
-    <dao xlink:actuate="onRequest" xlink:href="https://repository.duke.edu/dc/stryker"
-      xlink:role="ddr-collection-object" xlink:show="new"
-      xlink:title="Deena Stryker Photographs Collection" xpointer="ark:/87924/r4nz80x17"/>
+    <dao xlink:actuate="onRequest" xlink:href="https://idn.duke.edu/ark:/87924/r4nz80x17"
+      xlink:role="ddr-collection-object" xlink:show="new" xlink:title="Deena Stryker Photographs"
+      xpointer="ark:/87924/r4nz80x17"/>
     <scopecontent id="aspace_f64eee985724c6468cd841821668d42e">
       <head>Collection Overview</head>
       <p>The Deena Stryker Photographs collection spans the dates 1963-1964 and contains photographs
@@ -169,12 +169,6 @@
       <p>The Deena Stryker photographs were received by the David M. Rubenstein Rare Book &amp;
         Manuscript Library in 2008.</p>
     </acqinfo>
-    <altformavail id="aspace_c4b7500dcc1921264ba482d181217498">
-      <head>Online Items</head>
-      <p>Images from this collection are available in the <extref
-          xlink:href="https://idn.duke.edu/ark:/87924/r4nz80x17">Deena Stryker Photographs - Duke
-          Digital Collections</extref>.</p>
-    </altformavail>
     <controlaccess>
       <genreform source="aat">Contact sheets</genreform>
       <genreform source="aat">Gelatin silver prints</genreform>
@@ -211,7 +205,7 @@
         <c02 id="aspace_ref16_a2l" level="file">
           <did>
             <unittitle>1963 July, 1963 Dec., and undated</unittitle>
-            <container id="aspace_3bb1e2056d98a4ab45d5e6a4bfc62221" label="Mixed Materials"
+            <container id="aspace_78d43606cf550116e926f0e44c533293" label="Mixed Materials"
               type="box">1</container>
           </did>
         </c02>
@@ -235,7 +229,7 @@
             <unittitle>Book manuscript, undated (in Italian)</unittitle>
             <physdesc id="aspace_ebcc583c38a797f7ec7ff72c8a030a15"
               label="General Physical Description note"><extent>3 folders</extent></physdesc>
-            <container id="aspace_ca846e3bb700be9c73e2a71aa28e81e1" label="Mixed Materials"
+            <container id="aspace_eefb53714157bf95d64baaa8cf986394" label="Mixed Materials"
               type="box">1</container>
           </did>
         </c02>
@@ -278,7 +272,7 @@
           <c03 id="aspace_ref27_v4o" level="file">
             <did>
               <unittitle>Original negatives (closed to use)</unittitle>
-              <container id="aspace_dc23982185482944dbef3049ff3ed709" label="Mixed Materials"
+              <container id="aspace_eeba0ac63bdde94018a66a7cca8c7f67" label="Mixed Materials"
                 type="box">1</container>
             </did>
           </c03>
@@ -294,14 +288,14 @@
               <unittitle>(Guamá) Indian village at Playa Girón (contact sheets 1-2)</unittitle>
               <physdesc id="aspace_086f9fa981c11c0b3d6f79544342a27e"
                 label="General Physical Description note"><extent>2 folders</extent></physdesc>
-              <container id="aspace_ceae27bd61f8abca694e1d7d5f5e0afa" label="Mixed Materials"
+              <container id="aspace_f3cbb53bbaba1bdd2c320d4c38073da3" label="Mixed Materials"
                 type="box">2</container>
             </did>
           </c03>
           <c03 id="aspace_ref32_vv5" level="file">
             <did>
               <unittitle>Camagüey to Santiago, Holguín (contact sheet 3)</unittitle>
-              <container id="aspace_6b5cbc6dee02f78a1792a6e9be77e887" label="Mixed Materials"
+              <container id="aspace_01ab020a4f79baeaae76902dd6f5a996" label="Mixed Materials"
                 type="box">2</container>
             </did>
           </c03>
@@ -311,35 +305,35 @@
                 4-5)</unittitle>
               <physdesc id="aspace_2ba8221c528f657ba5988e9baf0eebcb"
                 label="General Physical Description note"><extent>2 folders</extent></physdesc>
-              <container id="aspace_ad99b7175a167eeac7ac060cd84ccac9" label="Mixed Materials"
+              <container id="aspace_1c8d51229a05cdbfa49d85b053cb0933" label="Mixed Materials"
                 type="box">2</container>
             </did>
           </c03>
           <c03 id="aspace_ref35_qff" level="file">
             <did>
               <unittitle>Mayarí and Santiago de Cuba (contact sheet 5B)</unittitle>
-              <container id="aspace_e6d14f123797767a05f3701733563d6c" label="Mixed Materials"
+              <container id="aspace_08716947b7a1a19cd2501ddd76bcea35" label="Mixed Materials"
                 type="box">2</container>
             </did>
           </c03>
           <c03 id="aspace_ref36_oib" level="file">
             <did>
               <unittitle>Palma Soriano (contact sheet 6)</unittitle>
-              <container id="aspace_6f32b2644c090fd327b2b6d617cbd11e" label="Mixed Materials"
+              <container id="aspace_1c6801632d42deff32356dfd6ef4b2c8" label="Mixed Materials"
                 type="box">2</container>
             </did>
           </c03>
           <c03 id="aspace_ref37_ojp" level="file">
             <did>
               <unittitle>Palma Soriano and Bayamo (contact sheet 7)</unittitle>
-              <container id="aspace_d8c2efc8afe80f882ef076a796e66974" label="Mixed Materials"
+              <container id="aspace_af2ff4ddbfb25ad6ed9cd8ff224a98e6" label="Mixed Materials"
                 type="box">2</container>
             </did>
           </c03>
           <c03 id="aspace_ref38_87k" level="file">
             <did>
               <unittitle>Bayamo at night (contact sheet 8)</unittitle>
-              <container id="aspace_d9b6873a6ef89fbf3c3909a3782edff6" label="Mixed Materials"
+              <container id="aspace_e49d85612b99490e1574716a6dfd9f72" label="Mixed Materials"
                 type="box">2</container>
             </did>
           </c03>
@@ -348,21 +342,21 @@
               <unittitle>Rio Cauto (contact sheets 9-10)</unittitle>
               <physdesc id="aspace_8cd75e9560c06715f2d31a60d41e4358"
                 label="General Physical Description note"><extent>2 folders</extent></physdesc>
-              <container id="aspace_0865a66965d477c2cea0f60f4c261529" label="Mixed Materials"
+              <container id="aspace_8921602270071d5328aca3de18bb1a51" label="Mixed Materials"
                 type="box">2</container>
             </did>
           </c03>
           <c03 id="aspace_ref41_loo" level="file">
             <did>
               <unittitle>Guamá (contact sheet 11)</unittitle>
-              <container id="aspace_7b92634bd1b6fca8c02e8b74aa20b99c" label="Mixed Materials"
+              <container id="aspace_6b9e28138386e8d9efb4efc51739151e" label="Mixed Materials"
                 type="box">2</container>
             </did>
           </c03>
           <c03 id="aspace_ref42_doq" level="file">
             <did>
               <unittitle>Sierra (contact sheet 12)</unittitle>
-              <container id="aspace_d24b80937b4ffe328b4e80d485c4c017" label="Mixed Materials"
+              <container id="aspace_8d96a09c47d6197f9580227be534f040" label="Mixed Materials"
                 type="box">2</container>
             </did>
           </c03>
@@ -371,7 +365,7 @@
               <unittitle>Sierra and Turiguanó (contact sheets 13-14)</unittitle>
               <physdesc id="aspace_2fc16ef9f07c51d52d03dfbbc306e3f9"
                 label="General Physical Description note"><extent>2 folders</extent></physdesc>
-              <container id="aspace_8b8af32fd9e005f08b09570d56556ed1" label="Mixed Materials"
+              <container id="aspace_72f66e2d9e4abfdea0943c4ecffe9a90" label="Mixed Materials"
                 type="box">2</container>
             </did>
           </c03>
@@ -380,14 +374,14 @@
               <unittitle>January 1st national holiday (contact sheets 15-17)</unittitle>
               <physdesc id="aspace_30758cd5265b6d22a8578b237b912aad"
                 label="General Physical Description note"><extent>3 folders</extent></physdesc>
-              <container id="aspace_05a13a1306264c548ced3988812e8b5d" label="Mixed Materials"
+              <container id="aspace_c0a4b3c3bb788f4f50e3611a24e6785e" label="Mixed Materials"
                 type="box">2</container>
             </did>
           </c03>
           <c03 id="aspace_ref47_4nt" level="file">
             <did>
               <unittitle>Manuel Fajardo Sotomayor and Edith Gombos (contact sheet 18)</unittitle>
-              <container id="aspace_14f49911641b9a07741c8dbcd76a8998" label="Mixed Materials"
+              <container id="aspace_dce88b767da5f265453734742b0a0138" label="Mixed Materials"
                 type="box">2</container>
             </did>
           </c03>
@@ -395,14 +389,14 @@
             <did>
               <unittitle>School in ex-president Prio's house, Makarenkos, and Jimenez (contact sheet
                 19)</unittitle>
-              <container id="aspace_738b2884ccf00a20bbe4beef50db003d" label="Mixed Materials"
+              <container id="aspace_a51d69a85c8ff16495e10105c3e30f50" label="Mixed Materials"
                 type="box">2</container>
             </did>
           </c03>
           <c03 id="aspace_ref49_v51" level="file">
             <did>
               <unittitle>Jesus Montane, Luis Crespo, and Makarenkos (contact sheet 20)</unittitle>
-              <container id="aspace_fcba32bf4b231fcc2a553c6220a6d5c2" label="Mixed Materials"
+              <container id="aspace_cbdb52c1df2a93e9fad6a84c868631b1" label="Mixed Materials"
                 type="box">2</container>
             </did>
           </c03>
@@ -410,21 +404,21 @@
             <did>
               <unittitle>Ana Betancourts, Havana, and classroom in Miramar (contact sheet
                 21)</unittitle>
-              <container id="aspace_f608b5a973ebd3e5e461765fb1dea816" label="Mixed Materials"
+              <container id="aspace_99ca1dc094fa16eaa4eae88082fcdd9c" label="Mixed Materials"
                 type="box">2</container>
             </did>
           </c03>
           <c03 id="aspace_ref51_b2y" level="file">
             <did>
               <unittitle>Siomarra Sanchez, girls (contact sheet 22)</unittitle>
-              <container id="aspace_c85eea42b5b643b54a68eff8a5398c06" label="Mixed Materials"
+              <container id="aspace_7e3c9bd3e512fcd60aca2e058a96e8f9" label="Mixed Materials"
                 type="box">2</container>
             </did>
           </c03>
           <c03 id="aspace_ref52_6kc" level="file">
             <did>
               <unittitle>Faustino Pérez and Havana (contact sheet 23)</unittitle>
-              <container id="aspace_de8d368113230e2f2eaef2862f47a33e" label="Mixed Materials"
+              <container id="aspace_2926195b16a8613358fd1a9953971bdc" label="Mixed Materials"
                 type="box">2</container>
             </did>
           </c03>
@@ -432,7 +426,7 @@
             <did>
               <unittitle>Ramiro <emph render="doublequote">Ramirito</emph> Valdés Menendez and René
                 Vallejo (contact sheet 24)</unittitle>
-              <container id="aspace_27d8abaf00df00f0c4a1452026633530" label="Mixed Materials"
+              <container id="aspace_5fff69af67a1e3f8875827755099244f" label="Mixed Materials"
                 type="box">2</container>
             </did>
           </c03>
@@ -440,14 +434,14 @@
             <did>
               <unittitle>Ernesto <emph render="doublequote">Ché</emph> Guevara, Juan Almeida, and
                 Efigenio Almeijeiras Delgado (contact sheet 25)</unittitle>
-              <container id="aspace_2c8d327304da8d559b7acf538e48d649" label="Mixed Materials"
+              <container id="aspace_65beea91f5d5df950c318ffc1acfc478" label="Mixed Materials"
                 type="box">2</container>
             </did>
           </c03>
           <c03 id="aspace_ref55_v22" level="file">
             <did>
               <unittitle>Scuola d'Arte and René Vallejo (contact sheet 26)</unittitle>
-              <container id="aspace_f1ab434245c65b684a38d237a8279da2" label="Mixed Materials"
+              <container id="aspace_be40d2a23c786239619398c379dccab4" label="Mixed Materials"
                 type="box">2</container>
             </did>
           </c03>
@@ -456,14 +450,14 @@
               <unittitle>Scuola d'Arte and Cubanacán (contact sheets 27-28)</unittitle>
               <physdesc id="aspace_221bfaddb0c94f11cf62cf1a1d478916"
                 label="General Physical Description note"><extent>2 folders</extent></physdesc>
-              <container id="aspace_8223903ab5476b88a70032333dc9af38" label="Mixed Materials"
+              <container id="aspace_75c09b2488c312756fa0623a68ca7a29" label="Mixed Materials"
                 type="box">2</container>
             </did>
           </c03>
           <c03 id="aspace_ref58_fac" level="file">
             <did>
               <unittitle>Raúl Castro at home (contact sheet 29)</unittitle>
-              <container id="aspace_2fa4a2edaaa5c4ccb8bef9f805110b17" label="Mixed Materials"
+              <container id="aspace_2bc82787c328de77dfe550954ef5779e" label="Mixed Materials"
                 type="box">2</container>
             </did>
           </c03>
@@ -472,7 +466,7 @@
               <unittitle>Fisherman with Fidel Castro (contact sheet 31-32)</unittitle>
               <physdesc id="aspace_207639f9f56d505664fbef71f8094bdc"
                 label="General Physical Description note"><extent>2 folders</extent></physdesc>
-              <container id="aspace_8b756dea3b62cda3f4b08eb7a74bdc97" label="Mixed Materials"
+              <container id="aspace_cebdd10c818bd99da7181e1a32627944" label="Mixed Materials"
                 type="box">2</container>
             </did>
           </c03>
@@ -480,35 +474,35 @@
             <did>
               <unittitle>Fidel Castro and Giangiacomo Feltrinelli on terrace (contact sheet
                 34)</unittitle>
-              <container id="aspace_7490b56bb6dcb2dcac12b67d445d6473" label="Mixed Materials"
+              <container id="aspace_d383efa29846eca29a11fa1c2480fab9" label="Mixed Materials"
                 type="box">2</container>
             </did>
           </c03>
           <c03 id="aspace_ref62_85j" level="file">
             <did>
               <unittitle>Fidel Castro on terrace (contact sheet 34B)</unittitle>
-              <container id="aspace_f1faa5d7269dc9ef51bcd38c4577bb8e" label="Mixed Materials"
+              <container id="aspace_b69fdc06b24ea7f37f9a6c839a4cc56c" label="Mixed Materials"
                 type="box">2</container>
             </did>
           </c03>
           <c03 id="aspace_ref63_cla" level="file">
             <did>
               <unittitle>Fidel Castro writing with Armando Acosta (contact sheet 35)</unittitle>
-              <container id="aspace_5f26fbc5a99b13412df07623105ff701" label="Mixed Materials"
+              <container id="aspace_490b383c5507740eff96727367ed4523" label="Mixed Materials"
                 type="box">2</container>
             </did>
           </c03>
           <c03 id="aspace_ref64_9qr" level="file">
             <did>
               <unittitle>Luis Crespo, Celia Sánchez, and Havana (contact sheet 36B)</unittitle>
-              <container id="aspace_1b6ded647765e1bac3a1cb12af3527ec" label="Mixed Materials"
+              <container id="aspace_17252ff89fc1ca494a53147608d687bc" label="Mixed Materials"
                 type="box">2</container>
             </did>
           </c03>
           <c03 id="aspace_ref65_syk" level="file">
             <did>
               <unittitle>Carnival in Havana, Miss Estrella, and altar (contact sheet 36)</unittitle>
-              <container id="aspace_a0d11d802d9e99c3e3b91c384cd7dd42" label="Mixed Materials"
+              <container id="aspace_58aa0e2e383cd07baad447186a7595b3" label="Mixed Materials"
                 type="box">2</container>
             </did>
           </c03>
@@ -517,28 +511,28 @@
               <unittitle>Carnival in Havana (contact sheet 37-38)</unittitle>
               <physdesc id="aspace_4f1a14d030e1e671accd0f8d44315739"
                 label="General Physical Description note"><extent>2 folders</extent></physdesc>
-              <container id="aspace_3602e2614ab0ed30b49500b307dcb68f" label="Mixed Materials"
+              <container id="aspace_a342a66211f7619556fdad222d2f9210" label="Mixed Materials"
                 type="box">2</container>
             </did>
           </c03>
           <c03 id="aspace_ref68_4gf" level="file">
             <did>
               <unittitle>Guillermo García, Rita Longo (contact sheet 39)</unittitle>
-              <container id="aspace_0225da4c813fd6b180b17175f0da2ebf" label="Mixed Materials"
+              <container id="aspace_52aaa23325b8c8c8858469ec8c37c340" label="Mixed Materials"
                 type="box">2</container>
             </did>
           </c03>
           <c03 id="aspace_ref69_f47" level="file">
             <did>
               <unittitle>Havana (contact sheet 40)</unittitle>
-              <container id="aspace_7abac0754bf48c1c0de68faced1df00c" label="Mixed Materials"
+              <container id="aspace_1975081be5ef8ea5a9321725b82c2bfd" label="Mixed Materials"
                 type="box">2</container>
             </did>
           </c03>
           <c03 id="aspace_ref70_b4k" level="file">
             <did>
               <unittitle>Marcos Rodriguez trial (contact sheet 41)</unittitle>
-              <container id="aspace_03f5891e34abffc363bf67b14662ac7e" label="Mixed Materials"
+              <container id="aspace_a6fb2e4bc4ce95077cc44f810a9a429d" label="Mixed Materials"
                 type="box">2</container>
             </did>
           </c03>
@@ -546,28 +540,28 @@
             <did>
               <unittitle>Marcos Rodriguez trial and Ernest Hemingway room (contact sheet
                 42)</unittitle>
-              <container id="aspace_ed93f25081d688616a770ebc42f517af" label="Mixed Materials"
+              <container id="aspace_085f04e772ed31d3606c7bd8017e0176" label="Mixed Materials"
                 type="box">2</container>
             </did>
           </c03>
           <c03 id="aspace_ref72_wvz" level="file">
             <did>
               <unittitle>Habana Libre and Havana at night (contact sheet 42B)</unittitle>
-              <container id="aspace_f7f2ee9506d819fc5c54afea057b43fe" label="Mixed Materials"
+              <container id="aspace_04862294673f2d1d8a6468f3090a5b1c" label="Mixed Materials"
                 type="box">2</container>
             </did>
           </c03>
           <c03 id="aspace_ref73_lv9" level="file">
             <did>
               <unittitle>Santa Maria Spiaggia (contact sheet 43)</unittitle>
-              <container id="aspace_c69186f3d47d42a8bc420c63ebc0ee68" label="Mixed Materials"
+              <container id="aspace_10d1747949b10697ec4f6c84e504d729" label="Mixed Materials"
                 type="box">2</container>
             </did>
           </c03>
           <c03 id="aspace_ref74_5og" level="file">
             <did>
               <unittitle>Motel Pinar, San Cristobal (contact sheet 44)</unittitle>
-              <container id="aspace_235e8fe506a2f8e36c97d0525878d1ae" label="Mixed Materials"
+              <container id="aspace_1ccfb940844d6a50e5491ecf5f1cacd3" label="Mixed Materials"
                 type="box">2</container>
             </did>
           </c03>
@@ -575,35 +569,35 @@
             <did>
               <unittitle>Pinar del Río landscapes, <emph render="doublequote">mogotes</emph>
                 (contact sheet 45)</unittitle>
-              <container id="aspace_16accb995f11da630cc3fcb195fe6b00" label="Mixed Materials"
+              <container id="aspace_817ce0a9d53a84aaa0c57234100da815" label="Mixed Materials"
                 type="box">2</container>
             </did>
           </c03>
           <c03 id="aspace_ref76_w2a" level="file">
             <did>
               <unittitle>Tobacco, Pinar del Río, and coast (contact sheet 46)</unittitle>
-              <container id="aspace_7efd86a528a1b5ce96d11d8b1b0394f7" label="Mixed Materials"
+              <container id="aspace_0a676c6ba4372cb77ba21a16f8c685c4" label="Mixed Materials"
                 type="box">2</container>
             </did>
           </c03>
           <c03 id="aspace_ref77_kln" level="file">
             <did>
               <unittitle>Celia Sanchez and Carlos Rafael Rodriguez (contact sheet 47)</unittitle>
-              <container id="aspace_b427c9e47603963b740d12704b7673d6" label="Mixed Materials"
+              <container id="aspace_d8d17a7e08e7b6c3b84aef45826c2e7a" label="Mixed Materials"
                 type="box">2</container>
             </did>
           </c03>
           <c03 id="aspace_ref78_civ" level="file">
             <did>
               <unittitle>Habana del Este (contact sheet 48)</unittitle>
-              <container id="aspace_65fc27402a9c5bd07cf0ed70ad736a3d" label="Mixed Materials"
+              <container id="aspace_18f3ee43514853fabbde2b26358d9fdd" label="Mixed Materials"
                 type="box">2</container>
             </did>
           </c03>
           <c03 id="aspace_ref79_7c4" level="file">
             <did>
               <unittitle>César Escalante and Faustino Peréz (contact sheet 49)</unittitle>
-              <container id="aspace_f50947673a58d60d27cd639434937b82" label="Mixed Materials"
+              <container id="aspace_96f57a6d9bcb36e7ce4f4f2e5ee17850" label="Mixed Materials"
                 type="box">2</container>
             </did>
           </c03>
@@ -611,7 +605,7 @@
             <did>
               <unittitle>May 1st, Carlos Rafael Rodriguez, and presidential palace (contact sheet
                 50)</unittitle>
-              <container id="aspace_bb668292341874e9d03444858102e086" label="Mixed Materials"
+              <container id="aspace_b565879c50c4935c03bbf6dbadc400f4" label="Mixed Materials"
                 type="box">2</container>
             </did>
           </c03>
@@ -621,21 +615,21 @@
                 51-51B)</unittitle>
               <physdesc id="aspace_e522c915cc6888004344535d921861a8"
                 label="General Physical Description note"><extent>2 folders</extent></physdesc>
-              <container id="aspace_0a27d4a7fc615c463a388d3a163bb1aa" label="Mixed Materials"
+              <container id="aspace_f7d5aa63cee3168807746fa8d7b53e54" label="Mixed Materials"
                 type="box">2</container>
             </did>
           </c03>
           <c03 id="aspace_ref83_8zr" level="file">
             <did>
               <unittitle>San Cristobal, Pinar del Río (contact sheet 52)</unittitle>
-              <container id="aspace_7123b3c49306b0a9e73f79c0652fa751" label="Mixed Materials"
+              <container id="aspace_1f67490b3efca907f917266757fefd08" label="Mixed Materials"
                 type="box">2</container>
             </did>
           </c03>
           <c03 id="aspace_ref84_7cc" level="file">
             <did>
               <unittitle>La Güira, San Cristobal, Habana Libre Pool (contact sheet 53)</unittitle>
-              <container id="aspace_656e1af99b1b0d741a3eb2fb774a3f17" label="Mixed Materials"
+              <container id="aspace_775cb5243e5e65825c55c13be54266c9" label="Mixed Materials"
                 type="box">2</container>
             </did>
           </c03>
@@ -643,14 +637,14 @@
             <did>
               <unittitle>Dance hall, Prado at night, Polynesio Restaurant (contact sheet
                 54)</unittitle>
-              <container id="aspace_31ae6f9eaa9e180dd5ebb8ff92e65e81" label="Mixed Materials"
+              <container id="aspace_cb4367f88a1d1d34fc8cd51109d1e231" label="Mixed Materials"
                 type="box">2</container>
             </did>
           </c03>
           <c03 id="aspace_ref86_bt9" level="file">
             <did>
               <unittitle>Concert and Havana (contact sheet 55)</unittitle>
-              <container id="aspace_11d3ab99af96320c0b8fbcfed1b0dcb8" label="Mixed Materials"
+              <container id="aspace_0205e24c58287e200f32d805c9e8418d" label="Mixed Materials"
                 type="box">2</container>
             </did>
           </c03>
@@ -658,49 +652,49 @@
             <did>
               <unittitle>Habana Libre, night; Malecón; and Siomarra Sanchez (contact sheet
                 57)</unittitle>
-              <container id="aspace_113eeb98e177e9096914f72028b8863e" label="Mixed Materials"
+              <container id="aspace_369c41e9a38eb986b5b3198f53c72cf0" label="Mixed Materials"
                 type="box">2</container>
             </did>
           </c03>
           <c03 id="aspace_ref88_0wt" level="file">
             <did>
               <unittitle>Old Havana (contact sheet 58)</unittitle>
-              <container id="aspace_5e6901f62d5c35197dbb0c8fc58d3157" label="Mixed Materials"
+              <container id="aspace_1cda2fd48fb85dc05241b68c40ece9e3" label="Mixed Materials"
                 type="box">2</container>
             </did>
           </c03>
           <c03 id="aspace_ref89_wof" level="file">
             <did>
               <unittitle>Malecón, Old Havana, and Armando Hart (contact sheet 58B)</unittitle>
-              <container id="aspace_57c9d6224104ffacd10c4da70a3f2078" label="Mixed Materials"
+              <container id="aspace_94a31705f753f0ceec56cc8e9ac38f27" label="Mixed Materials"
                 type="box">2</container>
             </did>
           </c03>
           <c03 id="aspace_ref90_gtd" level="file">
             <did>
               <unittitle>Trinidad (contact sheet 59)</unittitle>
-              <container id="aspace_08a90b9fdd49d2e9bc213da0e6b54601" label="Mixed Materials"
+              <container id="aspace_7c39264daa234cffe5d73cf8ce568445" label="Mixed Materials"
                 type="box">2</container>
             </did>
           </c03>
           <c03 id="aspace_ref91_8y2" level="file">
             <did>
               <unittitle>Santiago press conference (contact sheet 60)</unittitle>
-              <container id="aspace_48fe7612d06b29be5c448d4c57ab7960" label="Mixed Materials"
+              <container id="aspace_e8e36a67117be8eeb743dd3c456b7e74" label="Mixed Materials"
                 type="box">2</container>
             </did>
           </c03>
           <c03 id="aspace_ref92_t5w" level="file">
             <did>
               <unittitle>Unsorted photographs</unittitle>
-              <container id="aspace_f51095279506ff195b36a2ff5664051c" label="Mixed Materials"
+              <container id="aspace_0c39006831ed20289045b186466f76cd" label="Mixed Materials"
                 type="box">2</container>
             </did>
           </c03>
           <c03 id="aspace_ref93_65o" level="file">
             <did>
               <unittitle>Photographs without negatives</unittitle>
-              <container id="aspace_0d941e929ab7dba720e23e354319f231" label="Mixed Materials"
+              <container id="aspace_29a7ca919c44f92f3c4443f3021903f7" label="Mixed Materials"
                 type="box">2</container>
             </did>
           </c03>
@@ -740,10 +734,10 @@
               <physdesc id="aspace_137edae971ea38277c07e8d7585375da"
                 label="General Physical Description note"><extent>1 unmatted duplicate
                   exists</extent></physdesc>
-              <container id="aspace_bf17375c08a92b59b059a590d5c949c1" label="Mixed Materials"
+              <container id="aspace_f5a2acd693945c31b8061d1d6d5ccfeb" label="Mixed Materials"
                 type="box">3</container>
-              <container id="aspace_9e8651426d91c653b884d2e947107f81"
-                parent="aspace_bf17375c08a92b59b059a590d5c949c1" type="image">1</container>
+              <container id="aspace_d5553bc57035142b262e22c977e6c251"
+                parent="aspace_f5a2acd693945c31b8061d1d6d5ccfeb" type="image">1</container>
             </did>
             <scopecontent id="aspace_801f50c030f79efb906566a5f96a6ac3">
               <head>Scope and Contents note</head>
@@ -757,10 +751,10 @@
               <physdesc id="aspace_586bcb5de8b1f758b0a30a266aa363a2"
                 label="General Physical Description note"><extent>1 unmatted
                 duplicate</extent></physdesc>
-              <container id="aspace_de8706f960d1fabb231e43633b85444d" label="Mixed Materials"
+              <container id="aspace_5ed2174ed36fdbc6cca76e83d99cd7df" label="Mixed Materials"
                 type="box">3</container>
-              <container id="aspace_724c289740972477d716823337de1a49"
-                parent="aspace_de8706f960d1fabb231e43633b85444d" type="image">2</container>
+              <container id="aspace_f727d7dbe1e604aba2a9cd732b287560"
+                parent="aspace_5ed2174ed36fdbc6cca76e83d99cd7df" type="image">2</container>
             </did>
             <scopecontent id="aspace_a3ceff1fc26e9b2a1156f7edb52759c5">
               <head>Scope and Contents note</head>
@@ -775,10 +769,10 @@
               <physdesc id="aspace_f0fda77bff398c2e8fe77076f80c3796"
                 label="General Physical Description note"><extent>1 unmatted
                 duplicate</extent></physdesc>
-              <container id="aspace_69e0f79d6c3f057b85f2b1f823af1569" label="Mixed Materials"
+              <container id="aspace_540935dd9d836311e2f9cf08af5035c8" label="Mixed Materials"
                 type="box">3</container>
-              <container id="aspace_fd968e24868d962a7e7fe342dfdac4a9"
-                parent="aspace_69e0f79d6c3f057b85f2b1f823af1569" type="image">3</container>
+              <container id="aspace_cd098a45b371cc14184feeb73803b567"
+                parent="aspace_540935dd9d836311e2f9cf08af5035c8" type="image">3</container>
             </did>
             <scopecontent id="aspace_b8296857ffecde94f3a0a49be111b5c0">
               <head>Scope and Contents note</head>
@@ -794,10 +788,10 @@
               <physdesc id="aspace_22d31e76fe1f5b1442b17ff02b2b8496"
                 label="General Physical Description note"><extent>2 unmatted
                 duplicates</extent></physdesc>
-              <container id="aspace_8e66629bdd7fe4f22422553748da40fc" label="Mixed Materials"
+              <container id="aspace_433d6c4975cf66ad2476d116020015f9" label="Mixed Materials"
                 type="box">3</container>
-              <container id="aspace_0784e7d728c6447a5102befb2d757ea9"
-                parent="aspace_8e66629bdd7fe4f22422553748da40fc" type="image">4</container>
+              <container id="aspace_accdba1300e25d542afbabfff6ea5522"
+                parent="aspace_433d6c4975cf66ad2476d116020015f9" type="image">4</container>
             </did>
             <scopecontent id="aspace_ffcd56bf0d289c6de79a63707baf8709">
               <head>Scope and Contents note</head>
@@ -810,10 +804,10 @@
               <physdesc id="aspace_1431d9ed4ca0985b53eff48efa73706e"
                 label="General Physical Description note"><extent>2 unmatted
                 duplicates</extent></physdesc>
-              <container id="aspace_bcb1a2062cf16c5b5cc6ffed51d5db2c" label="Mixed Materials"
+              <container id="aspace_ebfb63e782a2b14da0dfd0304a28cb64" label="Mixed Materials"
                 type="box">3</container>
-              <container id="aspace_8b86f8c9e6aacd40014eeaf2ed73baa0"
-                parent="aspace_bcb1a2062cf16c5b5cc6ffed51d5db2c" type="image">5</container>
+              <container id="aspace_c011d49d67e642c68f62fb34e4e9fe3e"
+                parent="aspace_ebfb63e782a2b14da0dfd0304a28cb64" type="image">5</container>
             </did>
             <scopecontent id="aspace_0706ae1da6f082cd549d4ad2f5be9f13">
               <head>Scope and Contents note</head>
@@ -832,10 +826,10 @@
               <physdesc id="aspace_bca4864fa06b96147c1705a09b3443e9"
                 label="General Physical Description note"><extent>1 unmatted
                 duplicate</extent></physdesc>
-              <container id="aspace_29ba9fcfff2e7dac20458175b23b1710" label="Mixed Materials"
+              <container id="aspace_221f524b7f69372264c89b092b8588a9" label="Mixed Materials"
                 type="box">3</container>
-              <container id="aspace_4d9d99181cb5f649dab4ebad324106d0"
-                parent="aspace_29ba9fcfff2e7dac20458175b23b1710" type="image">6</container>
+              <container id="aspace_cd1463a91b7b15b949be63cde32f93ad"
+                parent="aspace_221f524b7f69372264c89b092b8588a9" type="image">6</container>
             </did>
             <scopecontent id="aspace_0889d1c99e537e0b483d3dcda902fa10">
               <head>Scope and Contents note</head>
@@ -856,10 +850,10 @@
               <physdesc id="aspace_40e748147a7da8daa95ddd1d8691004b"
                 label="General Physical Description note"><extent>2 unmatted
                 duplicates</extent></physdesc>
-              <container id="aspace_282586f2215345444216afa8caddee25" label="Mixed Materials"
+              <container id="aspace_80acc38d7368b847dda44c4e77e6a57e" label="Mixed Materials"
                 type="box">3</container>
-              <container id="aspace_1ff68035d508776e6a879134aeeb1810"
-                parent="aspace_282586f2215345444216afa8caddee25" type="image">7</container>
+              <container id="aspace_dbb8ed1e67078a08813170188a34f68e"
+                parent="aspace_80acc38d7368b847dda44c4e77e6a57e" type="image">7</container>
             </did>
             <scopecontent id="aspace_517d74ffeb4d1e41c4cce7302ff35bb8">
               <head>Scope and Contents note</head>
@@ -872,10 +866,10 @@
               <physdesc id="aspace_9b85685e6fdc7203ecbec1d68480d257"
                 label="General Physical Description note"><extent>1 unmatted
                 duplicate</extent></physdesc>
-              <container id="aspace_632c634b949677c5627760321e8aa4a2" label="Mixed Materials"
+              <container id="aspace_1a790e70e5b6a564dd125ef23b7bee32" label="Mixed Materials"
                 type="box">3</container>
-              <container id="aspace_7e80741f478711c2f66614394e959f7e"
-                parent="aspace_632c634b949677c5627760321e8aa4a2" type="image">8</container>
+              <container id="aspace_f7d032c98ccb0c164c2e1a74b07b6429"
+                parent="aspace_1a790e70e5b6a564dd125ef23b7bee32" type="image">8</container>
             </did>
             <scopecontent id="aspace_7206e4aa7e072bec8f122f942ec025ef">
               <head>Scope and Contents note</head>
@@ -898,10 +892,10 @@
               <physdesc id="aspace_c37e9e70a078ca24490b3c53156bb48b"
                 label="General Physical Description note"><extent>1 unmatted
                 duplicate</extent></physdesc>
-              <container id="aspace_86de06181cd1ad3cf93ad4ad57867a51" label="Mixed Materials"
+              <container id="aspace_1968ac9b0aad52559618b44eb5f2a6da" label="Mixed Materials"
                 type="box">3</container>
-              <container id="aspace_ffee1ee6f13e22e725187238617785d6"
-                parent="aspace_86de06181cd1ad3cf93ad4ad57867a51" type="image">9</container>
+              <container id="aspace_8704b00deaa96dd636b4b24efc7f9191"
+                parent="aspace_1968ac9b0aad52559618b44eb5f2a6da" type="image">9</container>
             </did>
             <scopecontent id="aspace_5fff3848651c8b9dd3adb92203bd5638">
               <head>Scope and Contents note</head>
@@ -919,10 +913,10 @@
               <physdesc id="aspace_70050231d37768f351790965975f5b1f"
                 label="General Physical Description note"><extent>1 unmatted
                 duplicate</extent></physdesc>
-              <container id="aspace_7d045be25b06dd1fb47193a21c542103" label="Mixed Materials"
+              <container id="aspace_f69adb61f4cddf68543240631d84a912" label="Mixed Materials"
                 type="box">3</container>
-              <container id="aspace_b1b7284cb5c7f3dbae5ac98096fe030a"
-                parent="aspace_7d045be25b06dd1fb47193a21c542103" type="image">10</container>
+              <container id="aspace_b8016f25691b6507974f2fde53cbca04"
+                parent="aspace_f69adb61f4cddf68543240631d84a912" type="image">10</container>
             </did>
             <scopecontent id="aspace_db8b250babd017b233b0b5ad97ccee0c">
               <head>Scope and Contents note</head>
@@ -937,10 +931,10 @@
               <physdesc id="aspace_40a8c70904d8e21eea8345cf99ddedc0"
                 label="General Physical Description note"><extent>2 unmatted
                 duplicates</extent></physdesc>
-              <container id="aspace_63e5206656231d296932d103e0fc5f80" label="Mixed Materials"
+              <container id="aspace_4f83428b11683b74831ab48bffaa5842" label="Mixed Materials"
                 type="box">3</container>
-              <container id="aspace_5bc8b548acf0333415b6d50d0095b7df"
-                parent="aspace_63e5206656231d296932d103e0fc5f80" type="image">11</container>
+              <container id="aspace_08f6695bcd55196ae1ddd93600127a5e"
+                parent="aspace_4f83428b11683b74831ab48bffaa5842" type="image">11</container>
             </did>
             <scopecontent id="aspace_71e3bce92c5caa608010b1a18dd2c9ea">
               <head>Scope and Contents note</head>
@@ -953,10 +947,10 @@
               <physdesc id="aspace_dde54c8d8083a659c9eacd51fa1f5ff8"
                 label="General Physical Description note"><extent>1 unmatted
                 duplicate</extent></physdesc>
-              <container id="aspace_cbebeed78035d51f73aaa645bf6cfe3d" label="Mixed Materials"
+              <container id="aspace_f42c8fa2304765a7b38dc4e9ce97f2c9" label="Mixed Materials"
                 type="box">4</container>
-              <container id="aspace_224eec557218e4502bdad0df2612986e"
-                parent="aspace_cbebeed78035d51f73aaa645bf6cfe3d" type="image">12</container>
+              <container id="aspace_27ce97592f9252adde0e44e7f98b8fa4"
+                parent="aspace_f42c8fa2304765a7b38dc4e9ce97f2c9" type="image">12</container>
             </did>
             <scopecontent id="aspace_08bbdfb0bfd052f15123c631603aa1d6">
               <head>Scope and Contents note</head>
@@ -971,10 +965,10 @@
               <physdesc id="aspace_45837f26024148457e79d6cef791f284"
                 label="General Physical Description note"><extent>2 unmatted
                 duplicates</extent></physdesc>
-              <container id="aspace_252c09dfea9a455ee14a1b04971aa08f" label="Mixed Materials"
+              <container id="aspace_944c9b1ac0e3372285b91189f5999060" label="Mixed Materials"
                 type="box">4</container>
-              <container id="aspace_fb694786f030f83be1e92a8deb6a90cb"
-                parent="aspace_252c09dfea9a455ee14a1b04971aa08f" type="image">13</container>
+              <container id="aspace_931686920301422a14243e22e8e838b4"
+                parent="aspace_944c9b1ac0e3372285b91189f5999060" type="image">13</container>
             </did>
             <scopecontent id="aspace_fc8c58b9a15814d7b7ead7e9b99556f3">
               <head>Scope and Contents note</head>
@@ -989,10 +983,10 @@
               <physdesc id="aspace_f310d533987cc762ad463d6f60e81cd1"
                 label="General Physical Description note"><extent>1 unmatted
                 duplicate</extent></physdesc>
-              <container id="aspace_0b2ccb7e3e4101414241afc8e22ac211" label="Mixed Materials"
+              <container id="aspace_94fdcc7f2a031b017355fb8b8778a821" label="Mixed Materials"
                 type="box">4</container>
-              <container id="aspace_4ab0548203881771d09186f1c8cb418d"
-                parent="aspace_0b2ccb7e3e4101414241afc8e22ac211" type="image">14</container>
+              <container id="aspace_8361d4bfee2d2511db5772c7983d7f43"
+                parent="aspace_94fdcc7f2a031b017355fb8b8778a821" type="image">14</container>
             </did>
             <scopecontent id="aspace_6a7d983b867692ca984aeefa2f07e5b9">
               <head>Scope and Contents note</head>
@@ -1007,10 +1001,10 @@
               <physdesc id="aspace_136bb568caf64cfef4f781a49d2a6d5e"
                 label="General Physical Description note"><extent>1 unmatted
                 duplicate</extent></physdesc>
-              <container id="aspace_9dc2189d225b91c40f06a303dbcfbf52" label="Mixed Materials"
+              <container id="aspace_40b88d152689c611aafbeb32874420bd" label="Mixed Materials"
                 type="box">4</container>
-              <container id="aspace_e4897f514c8c96928a05b8e467fa09c8"
-                parent="aspace_9dc2189d225b91c40f06a303dbcfbf52" type="image">15</container>
+              <container id="aspace_a15055958d3d8bf7fac3bbc4c0834906"
+                parent="aspace_40b88d152689c611aafbeb32874420bd" type="image">15</container>
             </did>
             <scopecontent id="aspace_e88c6e607802d430048de4e5df9199c9">
               <head>Scope and Contents note</head>
@@ -1025,10 +1019,10 @@
               <physdesc id="aspace_d2bd3a5e2e47ab5599ceec1b199a54bd"
                 label="General Physical Description note"><extent>2 unmatted
                 duplicates</extent></physdesc>
-              <container id="aspace_f74171cf0a7e7b6eeb269ebb35c3a5c1" label="Mixed Materials"
+              <container id="aspace_9018c1ffe46c910c17f293f3e749df34" label="Mixed Materials"
                 type="box">4</container>
-              <container id="aspace_8263fd07094be136490cd8147904e37a"
-                parent="aspace_f74171cf0a7e7b6eeb269ebb35c3a5c1" type="image">16</container>
+              <container id="aspace_b91f5363244856bbfd60892070033402"
+                parent="aspace_9018c1ffe46c910c17f293f3e749df34" type="image">16</container>
             </did>
             <scopecontent id="aspace_6f3665ce6f66529338aec9ff35391620">
               <head>Scope and Contents note</head>
@@ -1041,10 +1035,10 @@
               <physdesc id="aspace_ebf903f107a3af3f846319417689d106"
                 label="General Physical Description note"><extent>2 unmatted
                 duplicates</extent></physdesc>
-              <container id="aspace_4302079e8f59c08d75a6449542880ede" label="Mixed Materials"
+              <container id="aspace_5114740e92d386a083109a4c3e802b69" label="Mixed Materials"
                 type="box">4</container>
-              <container id="aspace_83a9620b60f1b91a4bb58d45058d0f27"
-                parent="aspace_4302079e8f59c08d75a6449542880ede" type="image">17</container>
+              <container id="aspace_28eea77e74698791e023b15994cbd31a"
+                parent="aspace_5114740e92d386a083109a4c3e802b69" type="image">17</container>
             </did>
             <scopecontent id="aspace_1550e46143ae33db27f69bd3ae03aab5">
               <head>Scope and Contents note</head>
@@ -1061,10 +1055,10 @@
               <physdesc id="aspace_70f27a49d0ed2904f1b50ca0b0af9c30"
                 label="General Physical Description note"><extent>1 unmatted
                 duplicate</extent></physdesc>
-              <container id="aspace_d6859de333505c78ce3f151326eee9c1" label="Mixed Materials"
+              <container id="aspace_282a0e05045a24a2e3d11c5fad53e27d" label="Mixed Materials"
                 type="box">4</container>
-              <container id="aspace_4c4348dc6300704dab5f2c116347a0f7"
-                parent="aspace_d6859de333505c78ce3f151326eee9c1" type="image">18</container>
+              <container id="aspace_c87db838b0c798814c61e262f5ebf91f"
+                parent="aspace_282a0e05045a24a2e3d11c5fad53e27d" type="image">18</container>
             </did>
             <scopecontent id="aspace_ba7bd2b1721b61f7216f30e440825d30">
               <head>Scope and Contents note</head>
@@ -1081,10 +1075,10 @@
               <physdesc id="aspace_39ebc8bc71f9f320b273e8e3b9173fa1"
                 label="General Physical Description note"><extent>1 unmatted
                 duplicate</extent></physdesc>
-              <container id="aspace_95ab3f810a219884ea5e3b14d2612e37" label="Mixed Materials"
+              <container id="aspace_cda38e2da30ae4e596b7723e9bf69231" label="Mixed Materials"
                 type="box">4</container>
-              <container id="aspace_0c38049145fac009b4aff7272d2d1868"
-                parent="aspace_95ab3f810a219884ea5e3b14d2612e37" type="image">19</container>
+              <container id="aspace_1cfe835a994aed4c720acf487ca7a058"
+                parent="aspace_cda38e2da30ae4e596b7723e9bf69231" type="image">19</container>
             </did>
             <scopecontent id="aspace_db806bbe34606981b2ddf09e40f5929e">
               <head>Scope and Contents note</head>
@@ -1100,10 +1094,10 @@
               <physdesc id="aspace_d23a23378fded0369eec972aa8abd8c7"
                 label="General Physical Description note"><extent>2 unmatted
                 duplicates</extent></physdesc>
-              <container id="aspace_9f2d642d96f10235a366e26f5a1f0733" label="Mixed Materials"
+              <container id="aspace_b81e594b0ee93c53576846ff392c2b9f" label="Mixed Materials"
                 type="box">4</container>
-              <container id="aspace_409312ecad9297b54d6ff060a73324b8"
-                parent="aspace_9f2d642d96f10235a366e26f5a1f0733" type="image">20</container>
+              <container id="aspace_eab1dc8ec5808c6ea54587420b48eb79"
+                parent="aspace_b81e594b0ee93c53576846ff392c2b9f" type="image">20</container>
             </did>
             <scopecontent id="aspace_f7f1d701c1f3b8e98baa6b076538b794">
               <head>Scope and Contents note</head>
@@ -1122,10 +1116,10 @@
               <physdesc id="aspace_fd0f95cb0c760ae85c84251dda394337"
                 label="General Physical Description note"><extent>2 unmatted
                 duplicates</extent></physdesc>
-              <container id="aspace_d5dd160f89835a831484c71694880e2c" label="Mixed Materials"
+              <container id="aspace_a1586bb808bc3405ebb77712af8dde57" label="Mixed Materials"
                 type="box">4</container>
-              <container id="aspace_c2d5142eb1ff8ebda7aacaf5201a72da"
-                parent="aspace_d5dd160f89835a831484c71694880e2c" type="image">21</container>
+              <container id="aspace_6baff09b1924d54183236a6a9d9608ff"
+                parent="aspace_a1586bb808bc3405ebb77712af8dde57" type="image">21</container>
             </did>
             <scopecontent id="aspace_3346218664e2033dd4bbe6f0e6c2829d">
               <head>Scope and Contents note</head>
@@ -1141,10 +1135,10 @@
               <physdesc id="aspace_4a8810a69507086644415c3c6ced8352"
                 label="General Physical Description note"><extent>1 unmatted
                 duplicate</extent></physdesc>
-              <container id="aspace_d491efec5dd3b1c8bde6ceae26445fd6" label="Mixed Materials"
+              <container id="aspace_6fa2a6c40729de782d8a77e40b562eee" label="Mixed Materials"
                 type="box">4</container>
-              <container id="aspace_efdb9115f8fc88ddf06183ca024ee0a5"
-                parent="aspace_d491efec5dd3b1c8bde6ceae26445fd6" type="image">22</container>
+              <container id="aspace_8f97a06eba21564e93c6046f4620f02b"
+                parent="aspace_6fa2a6c40729de782d8a77e40b562eee" type="image">22</container>
             </did>
             <scopecontent id="aspace_887780954097b1c2410a8adc8e4dad15">
               <head>Scope and Contents note</head>
@@ -1175,7 +1169,7 @@
               <did>
                 <unittitle>One set of 22 duplicate copies of the matted prints (see listing for
                   boxes 3-4 for full titles and ids)</unittitle>
-                <container id="aspace_a5cf3546cb9f70abd4f3d77c32959631" label="Mixed Materials"
+                <container id="aspace_6d786300ecd0097b10707c7adb8ead15" label="Mixed Materials"
                   type="box">5</container>
               </did>
             </c04>
@@ -1193,10 +1187,10 @@
             <c04 id="aspace_ref171_3x6" level="file">
               <did>
                 <unittitle>Foyer, Habana Libre Hotel, Havana, 1964</unittitle>
-                <container id="aspace_bdc8d81d21e63a66f8d0cefb6aaedde0" label="Mixed Materials"
+                <container id="aspace_99e0c6d872dd149a09cecaa66a046beb" label="Mixed Materials"
                   type="box">5</container>
-                <container id="aspace_cb2cefe52252b6b49b276bf3007f6182"
-                  parent="aspace_bdc8d81d21e63a66f8d0cefb6aaedde0" type="image">23</container>
+                <container id="aspace_ea7ed9401935e54db171c5358bb28710"
+                  parent="aspace_99e0c6d872dd149a09cecaa66a046beb" type="image">23</container>
               </did>
               <scopecontent id="aspace_93cccde451885b6122f6bd293c8bdf32">
                 <head>Scope and Contents note</head>
@@ -1206,10 +1200,10 @@
             <c04 id="aspace_ref173_b2v" level="file">
               <did>
                 <unittitle>Altar for African rite, 1964</unittitle>
-                <container id="aspace_48d7680249592286ca80a289a01f9340" label="Mixed Materials"
+                <container id="aspace_befd094ec4f4e22222d80c3ef3992cf3" label="Mixed Materials"
                   type="box">5</container>
-                <container id="aspace_a0dfc5f29e7c71705ab9d33475605993"
-                  parent="aspace_48d7680249592286ca80a289a01f9340" type="image">24</container>
+                <container id="aspace_73bc8e6ca74ec074cf20d48e766ab59c"
+                  parent="aspace_befd094ec4f4e22222d80c3ef3992cf3" type="image">24</container>
               </did>
               <scopecontent id="aspace_ddc7275cc87d448ec6557ee0108594bb">
                 <head>Scope and Contents note</head>
@@ -1219,10 +1213,10 @@
             <c04 id="aspace_ref175_pf9" level="file">
               <did>
                 <unittitle>Santiago, 1964</unittitle>
-                <container id="aspace_ae3c7005ac8ee00415d1c2f5cf596698" label="Mixed Materials"
+                <container id="aspace_8d4c39a1801000ebc80ee3dd316bca10" label="Mixed Materials"
                   type="box">5</container>
-                <container id="aspace_ae88918a90fdd1f48338139ac89425af"
-                  parent="aspace_ae3c7005ac8ee00415d1c2f5cf596698" type="image">25</container>
+                <container id="aspace_646b9edbab5ba22a1ad57721f88a60d4"
+                  parent="aspace_8d4c39a1801000ebc80ee3dd316bca10" type="image">25</container>
               </did>
               <scopecontent id="aspace_40e04ae472d2d48ea127ff7cae3747d4">
                 <head>Scope and Contents note</head>
@@ -1232,10 +1226,10 @@
             <c04 id="aspace_ref177_9x7" level="file">
               <did>
                 <unittitle>Tobacco workers, 1964</unittitle>
-                <container id="aspace_d415a43db39618d2df476a159bfde791" label="Mixed Materials"
+                <container id="aspace_09ffa67959c4a8dd8406fc5b193f02f0" label="Mixed Materials"
                   type="box">5</container>
-                <container id="aspace_0f3aef132aa92c692db371d9aef60714"
-                  parent="aspace_d415a43db39618d2df476a159bfde791" type="image">26</container>
+                <container id="aspace_d81fea1e4d7fa4238df9edfc31effc59"
+                  parent="aspace_09ffa67959c4a8dd8406fc5b193f02f0" type="image">26</container>
               </did>
               <scopecontent id="aspace_f28e409a919c4d85eca557b4f166687c">
                 <head>Scope and Contents note</head>
@@ -1245,10 +1239,10 @@
             <c04 id="aspace_ref179_36m" level="file">
               <did>
                 <unittitle>Students living in former president Prio's house, 1964</unittitle>
-                <container id="aspace_77ae5f35efe2781481d20bf555ceba65" label="Mixed Materials"
+                <container id="aspace_714150222dcf47a1f44d6e36134d9b5d" label="Mixed Materials"
                   type="box">5</container>
-                <container id="aspace_1e88914734e1b02208d0c928965ead01"
-                  parent="aspace_77ae5f35efe2781481d20bf555ceba65" type="image">27</container>
+                <container id="aspace_53541013df66d5869ebd140742f73a22"
+                  parent="aspace_714150222dcf47a1f44d6e36134d9b5d" type="image">27</container>
               </did>
               <scopecontent id="aspace_b83220bdd2660a7fa5373368d6f08956">
                 <head>Scope and Contents note</head>
@@ -1258,10 +1252,10 @@
             <c04 id="aspace_ref181_0zb" level="file">
               <did>
                 <unittitle>Guanabacoa, 1964</unittitle>
-                <container id="aspace_40fd09b9a89b0b2ae16fcf6d0bf21f0e" label="Mixed Materials"
+                <container id="aspace_cbce1dca698efda2626a0463d9ca8b42" label="Mixed Materials"
                   type="box">5</container>
-                <container id="aspace_6f4f2c616ad1f32199d5575888de0663"
-                  parent="aspace_40fd09b9a89b0b2ae16fcf6d0bf21f0e" type="image">28</container>
+                <container id="aspace_06abac0c559fffa2477f73b32fac99ec"
+                  parent="aspace_cbce1dca698efda2626a0463d9ca8b42" type="image">28</container>
               </did>
               <scopecontent id="aspace_974e5a80bd3dd29c1315f6ba0a041668">
                 <head>Scope and Contents note</head>
@@ -1271,10 +1265,10 @@
             <c04 id="aspace_ref183_b60" level="file">
               <did>
                 <unittitle>Castillo del Morro, Santiago, 1964</unittitle>
-                <container id="aspace_66547819403aec62891a2468fa56a39a" label="Mixed Materials"
+                <container id="aspace_67eef203797ef3a979409afd1b036fd6" label="Mixed Materials"
                   type="box">5</container>
-                <container id="aspace_f683e30e46b5faaea0c24be48b358bfa"
-                  parent="aspace_66547819403aec62891a2468fa56a39a" type="image">29</container>
+                <container id="aspace_2b0a6f35e21e45f97b181e92b11aa269"
+                  parent="aspace_67eef203797ef3a979409afd1b036fd6" type="image">29</container>
               </did>
               <scopecontent id="aspace_6ff23682949224ca868f1ea4bbb35bea">
                 <head>Scope and Contents note</head>
@@ -1284,10 +1278,10 @@
             <c04 id="aspace_ref185_5ml" level="file">
               <did>
                 <unittitle>Castro family home, Biran, 1964</unittitle>
-                <container id="aspace_375250b4e385c38a0addd4a55144062c" label="Mixed Materials"
+                <container id="aspace_df8334696302cc0a0fae465ccb587014" label="Mixed Materials"
                   type="box">5</container>
-                <container id="aspace_39bc448f3e293d48db4b08188302398e"
-                  parent="aspace_375250b4e385c38a0addd4a55144062c" type="image">30</container>
+                <container id="aspace_3e5132537323ae25a79c48867370f630"
+                  parent="aspace_df8334696302cc0a0fae465ccb587014" type="image">30</container>
               </did>
               <scopecontent id="aspace_c9125058455e3c4fef5066d86af16eb0">
                 <head>Scope and Contents note</head>
@@ -1297,10 +1291,10 @@
             <c04 id="aspace_ref187_80m" level="file">
               <did>
                 <unittitle>Raul Castro at home, Havana, 1964</unittitle>
-                <container id="aspace_292a83235d872f7289054b698b22f607" label="Mixed Materials"
+                <container id="aspace_a1820b35fc557ac209cac778d3dd2096" label="Mixed Materials"
                   type="box">5</container>
-                <container id="aspace_40fe8feeeb79a68de21a57b82f46342b"
-                  parent="aspace_292a83235d872f7289054b698b22f607" type="image">31</container>
+                <container id="aspace_67db1d37c5c00d0f48d11d0e947398c4"
+                  parent="aspace_a1820b35fc557ac209cac778d3dd2096" type="image">31</container>
               </did>
               <scopecontent id="aspace_1e80883d3c9f8ea2c31d38a1808ff548">
                 <head>Scope and Contents note</head>
@@ -1310,10 +1304,10 @@
             <c04 id="aspace_ref189_25v" level="file">
               <did>
                 <unittitle>Vilma Espín, 1964</unittitle>
-                <container id="aspace_c2651f3ee0451bcc37234bbb42381a80" label="Mixed Materials"
+                <container id="aspace_dc24fa4de7dfc335f402b24455f8ca89" label="Mixed Materials"
                   type="box">5</container>
-                <container id="aspace_c46f5ad6fb7c1a1f3c0047612e9e10c0"
-                  parent="aspace_c2651f3ee0451bcc37234bbb42381a80" type="image">32</container>
+                <container id="aspace_c4e012dcc6dc3dfbd2a883be0ac37036"
+                  parent="aspace_dc24fa4de7dfc335f402b24455f8ca89" type="image">32</container>
               </did>
               <scopecontent id="aspace_7c635ff8a2067c56f0c5f504e1d32a7e">
                 <head>Scope and Contents note</head>
@@ -1331,7 +1325,7 @@
           <unittitle>Oversize Materials</unittitle>
           <physdesc id="aspace_1798d27bd39f3cc8a1c71589600caa81"
             label="General Physical Description note"><extent>1 folder</extent></physdesc>
-          <container id="aspace_68c74eb99fd95eb6f710fb7fd05cfa0d" label="Mixed Materials"
+          <container id="aspace_971094380397b91b4eeb2706df21c8f7" label="Mixed Materials"
             type="oversize-folder">1</container>
         </did>
         <scopecontent id="aspace_57acdf3f7fd153f17236e7c43baa1627">

@@ -19,7 +19,7 @@
           <addressline>103 Perkins Library, Duke University</addressline>
           <addressline>Durham 27708-0185</addressline>
           <addressline>919-660-5822</addressline>
-          <addressline>special-collections@duke.edu</addressline>
+          <addressline>askRL@duke.edu</addressline>
           <addressline>URL: <extptr xlink:href="http://library.duke.edu/rubenstein/"
               xlink:show="new" xlink:title="http://library.duke.edu/rubenstein/"
               xlink:type="simple"/>
@@ -52,6 +52,9 @@
       <physloc id="aspace_test85d519d924695c29d9c6be231dcaf084">For current information on the
         location of these materials, please consult the Library's online catalog.</physloc>
     </did>
+    <dao xlink:actuate="onRequest" xlink:href="https://idn.duke.edu/ark:/87924/r49r4z"
+          xlink:role="ddr-collection-object" xlink:show="new"
+          xlink:title="DAO Test Papers Collection in the DDR" xpointer="ark:/87924/r49r4z"/>
     <accessrestrict id="aspace_test158f9e8c2b15a99aaff240cdb14c62b2">
       <head>Access Restrictions</head>
       <p>Collection is open for research.</p>

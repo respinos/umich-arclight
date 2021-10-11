@@ -4,18 +4,82 @@
   display: none;
 }
 
+#sortAndPerPageBottom {
+  border-bottom: none;
+  padding-bottom: 0;
+  padding-top: 1em;
+  border-top: 1px solid $access-restriction-gray;
+}
 
-#content #documents .al-document-extent,
-#content .al-grouped-results .al-document-extent {
-  position: relative;
-  font-size: .75rem;
-  margin-left: 0;
-  margin-top: .125rem;
-  max-width: 20em;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  vertical-align: top;
+#content #documents, #content .al-grouped-results {
+  margin-bottom: 1rem;
+
+  .documentHeader {
+    padding-right: 15px;
+    width: 100%;
+    @include media-breakpoint-up(lg) {
+      width: 55%;
+    }
+    @include media-breakpoint-up(xl) {
+      width: 67%;
+    }
+  }
+  .documentContent {
+    width: 100%;
+    @include media-breakpoint-up(lg) {
+      width: 45%;
+    }
+    @include media-breakpoint-up(xl) {
+      width: 33%;
+    }
+  }
+
+  /* Cases where there's no container info -- let the title */
+  /* use up more of the horizontal real estate */
+  [data-has-containers='false'] {
+    .documentHeader {
+      @include media-breakpoint-up(lg) {
+        width: 80%;
+      }
+      @include media-breakpoint-up(xl) {
+        width: 90%;
+      }
+    }
+    .documentContent {
+      @include media-breakpoint-up(lg) {
+        width: 20%;
+      }
+      @include media-breakpoint-up(xl) {
+        width: 10%;
+      }
+    }
+    .al-document-container {
+      display: none;
+    }
+
+  }
+
+  .al-document-extent {
+    position: relative;
+    font-size: .75rem;
+    margin-left: 0;
+    margin-top: .125rem;
+    max-width: 20em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: top;
+  }
+
+  .al-document-container {
+    font-size: 0.9rem;
+    @include media-breakpoint-down(md) {
+      padding-left: 0;
+      padding-top: .4rem;
+      line-height: 1.2;
+    }
+  }
+
 }
 
 .scope-wrapper {
@@ -68,9 +132,6 @@
   .al-document-abstract-or-scope {
     max-width: none !important;
   }
-  .al-document-container {
-    display: none;
-  }
   .breadcrumb-links {
     a:first-of-type {
       display: none; /* don't show the collection title */
@@ -100,9 +161,19 @@
       }
     }
   }
-  /* Replaces Blacklight hamburger icon with a filter icon, adds */
-  /* "Search Filters" text in button, and removes the "LIMIT YOUR SEARCH" */
-  /* heading for smaller screens */
+
+  /* Always show the facets, even when "collapsed". */
+  /* DUL customization moves them off-screen in mobile to support side-drawer nav */
+  #facet-panel-collapse {
+    display: block !important;
+  }
+
+  /* Hide native BL mobile sidebar toggle */
+  .navbar-toggler {
+    display: none;
+  }
+
+  /*
   .navbar-toggler-icon {
     background-image: asset-url("icons/filter-solid.svg");
     height: 1rem;
@@ -124,6 +195,7 @@
       display: none;
     }
   }
+*/
 }
 
 
@@ -142,20 +214,3 @@
     color: #333;
   }
 }
-
-/* Range slider */
-
-// changing the graphs seems to require tapping into the JS functions for chart_js
-// this plugin looks potentially promising: https://github.com/mcldev/ChartJS-Sass/
-
-// #facet-date_range_sim {
-//   .slider-handle {
-//     background-color: $brand-primary;
-//     background-image: -webkit-gradient(linear, left top, left bottom, from($brand-secondary), to($brand-primary));
-//     background-image: linear-gradient(to bottom, $brand-secondary, $brand-primary);
-//   }
-
-//   .slider_js .slider-selection {
-//     background: $shackleford;
-//   }
-// }

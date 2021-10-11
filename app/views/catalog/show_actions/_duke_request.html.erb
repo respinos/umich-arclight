@@ -9,7 +9,7 @@
   <% if document.bibnums.count == 1 %>
     <%= link_to t('arclight.request.container'), duke_request_url,
       target: '_blank',
-      class: 'btn btn-secondary btn-sm al-show-actions-box-request',
+      class: 'btn btn-success btn-sm btn-block',
       title: request_tooltip(document),
       data: {
         toggle: 'tooltip',
@@ -22,7 +22,7 @@
     <% catalog_serp_url = duke_request.try(:catalog_serp_url) %>
     <%= link_to t('arclight.request.container'), catalog_serp_url,
       target: '_blank',
-      class: 'btn btn-secondary btn-sm al-show-actions-box-request',
+      class: 'btn btn-success btn-sm btn-block',
       title: request_tooltip(document),
       data: {
         toggle: 'tooltip',
@@ -35,7 +35,7 @@
       <%= link_to t('arclight.request.container'),
         ['mailto:', document&.repository_config&.contact_info].join,
         target: '_blank',
-        class: 'btn btn-secondary btn-sm al-show-actions-box-request',
+        class: 'btn btn-success btn-sm btn-block',
         title: t('dul_arclight.views.show.sidebar.request.email',
           email: document&.repository_config&.contact_info),
         data: {

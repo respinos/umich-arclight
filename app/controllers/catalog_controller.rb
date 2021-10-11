@@ -134,6 +134,7 @@ class CatalogController < ApplicationController
     # See note in: https://github.com/projectblacklight/arclight/releases/tag/v0.4.0
     config.add_facet_field 'component_level_isim', show: false
     config.add_facet_field 'parent_ssim', show: false
+    config.add_facet_field 'parent_ssi', show: false
 
     # DUL CUSTOMIZATION: Add UA Record Group hierarchical facet.
     config.add_facet_field 'ua_record_group_ssim',

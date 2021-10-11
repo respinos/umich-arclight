@@ -16,17 +16,18 @@
     <%= render partial: 'arclight_document_header_icon', locals: { document: document }  %>
   </div>
 
-  <div class="col pl-0">
-    <div class="documentHeader al-document-highlight d-flex" data-document-id="<%= document.id %>">
+  <div class="col pl-0 d-flex flex-wrap" data-has-containers="<%= document.containers.present? %>">
+    <div class="documentHeader order-0" data-document-id="<%= document.id %>">
       <h3 class="index_title document-title-heading">
         <%= link_to_document document, document.title_with_highlighting || document_show_link_field(document), counter: document_counter %>
         <%= content_tag('span', class: 'al-document-extent badge') do %>
           <%= document.extent %>
         <% end if document.extent %>
       </h3>
-      <div class="documentContent">
-        <%= render_index_doc_actions document, wrapping_class: 'd-flex justify-content-end' %>
-      </div>
+    </div>
+
+    <div class="documentContent order-md-1">
+      <%= render_index_doc_actions document, wrapping_class: 'd-flex justify-content-end' %>
     </div>
 
     <div class="order-2 scope-wrapper">

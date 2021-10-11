@@ -123,6 +123,36 @@ Blacklight.onLoad(function () {
   /* Context Nav */
   /* =========== */
 
+  /* This set of functions deals with the sidebar drawer side fly-in. */
+  /* The feature partially uses Bootstrap 4 modal functionality but */
+  /* not entirely, so it needs a little help. */
+
+  $(document).on('click', '.modal-backdrop', function (e) {
+    $('#sidebar').modal('hide');
+  });
+
+  $('.sidebar-nav-toggle').click(function() {
+    $('#sidebar').modal('toggle');
+  });
+
+  $('#sidebar').on('shown.bs.modal', function (event) {
+    $('#sidebar-close').focus();
+  });
+
+  $('#sidebar').on('hidden.bs.modal', function (event) {
+    $(this).show();
+    $('.sidebar-nav-toggle').first().focus();
+  });
+
+  /* Clicking side-drawer sidebar links that lead to in-page anchors must */
+  /* close the sidebar */
+  $('#sidebar a[data-turbolinks="false"]').click(function() {
+    $('#sidebar').modal('hide');
+  });
+
+
+  /* #facet-panel-collapse */
+
   // smooth scroll
   $('.smooth-scroll').click(function() {
     var sectionTo = $(this).attr('href');

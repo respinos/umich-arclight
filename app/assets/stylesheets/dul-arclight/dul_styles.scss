@@ -37,6 +37,19 @@ a {
   }
 }
 
+.btn-outline-primary {
+  background-color: white;
+  border-color: $brand-primary;
+  &:hover, &:active, &:focus {
+    border-color: shade($brand-primary, 20%);
+    background-color: $brand-primary;
+    a {
+      color: white;
+      text-decoration: none;
+    }
+  }
+}
+
 .btn-success {
   background-color: $brand-success;
   border-color: $brand-success;
@@ -212,7 +225,6 @@ a {
   border-bottom: none;
 
   h1 {
-    // font-size: 1.5rem;
     font-size: 2.5rem;
     margin-bottom: 2rem;
     font-weight: 700;
@@ -275,7 +287,6 @@ a {
   a {
     text-decoration: none;
     font-weight: 700;
-    // font-size: 2.5rem;
     line-height: 1.1;
     font-size: 1.9rem;
 
@@ -338,7 +349,6 @@ a {
 #access {
 
   h2 {
-    /*border-top: 1px dotted #e2e2e2;*/
     border-top: 1px solid shade($gray-lighter, 3);
     padding-top: 1rem;
   }
@@ -363,7 +373,6 @@ a {
 
 
 #sidebar {
-  z-index: 20;
   background: white;
   padding-top: 10px;
   box-shadow: 1px 0 1px -1px rgba(0, 0, 0, 0.06),
@@ -388,18 +397,24 @@ a {
 
 #context {
 
+  @include media-breakpoint-down(sm) {
+    padding-top: 0 !important;
+  }
+
   .actions-wrapper {
-    padding-top: 10px;
     margin-right: 0 !important;
 
     .al-show-actions {
       background: #f5f5f5;
       margin: -15px -15px 15px -15px !important;
       padding: 15px;
+      padding-top: 2rem;
       border-bottom: 1px solid $gray-light-more;
       padding-bottom: 25px;
-      @include media-breakpoint-down(sm) {
-        margin: 0 0 15px 0 !important;
+
+      @include media-breakpoint-down(lg) {
+        margin: -15px -10px 15px -10px !important;
+        padding: 25px 10px 25px 10px !important;
       }
     }
 
@@ -411,13 +426,6 @@ a {
       width: 100%;
     }
 
-    .btn.al-show-actions-box-request {
-      width: 100%;
-      background-color: $brand-success;
-      &:hover {
-        background-color: shade($brand-success, 15%);
-      }
-    }
     .btn.al-show-actions-collection-info {
       background-color: none;
     }
@@ -495,8 +503,6 @@ a {
       padding-bottom: .2rem;
       margin-top: -.2rem;
       margin-bottom: -.2rem;
-      // border-left: .4rem solid #f5f5f5;
-      // margin-left: -.4rem !important;
       border-left: 1.45rem solid #f5f5f5;
       margin-left: -1.45rem !important;
       margin-right: .85rem !important;
@@ -586,7 +592,6 @@ label.toggle-bookmark > span:nth-child(2) {
 }
 
 .al-hierarchy-highlight > .documentHeader {
-  // background-color: white;
   margin-right: -1.9rem;
   background-color: unset;
 }
@@ -639,7 +644,6 @@ label.toggle-bookmark > span:nth-child(2) {
       padding-right: 0 !important;
       padding-left: 0 !important;
       .blacklight-icons svg {
-        // fill: #6c757d;
         fill: $gray-light;
       }
     }
@@ -874,64 +878,6 @@ label.toggle-bookmark > span:nth-child(2) {
       margin-bottom: 2rem;
    }
   }
-
-  #documents {
-    margin-bottom: 1rem;
-  }
-
-  #sortAndPerPageBottom {
-    border-bottom: none;
-    padding-bottom: 0;
-    padding-top: 1em;
-    border-top: 1px solid $access-restriction-gray;
-  }
-
-  /* Child component list from collection or component page */
-  #documents.documents-child_components {
-    .documentHeader {
-      padding-right: 15px;
-      width: 100%;
-      @include media-breakpoint-up(lg) {
-        width: 55%;
-      }
-      @include media-breakpoint-up(xl) {
-        width: 67%;
-      }
-    }
-    .documentContent {
-      width: 100%;
-      @include media-breakpoint-up(lg) {
-        width: 45%;
-      }
-      @include media-breakpoint-up(xl) {
-        width: 33%;
-      }
-    }
-    .al-document-container {
-      @include media-breakpoint-down(md) {
-        padding-left: 0;
-        padding-top: .4rem;
-        line-height: 1.2;
-      }
-    }
-  }
-
-  .grouped-documents {
-    .documentContent {
-      flex-grow: 1;
-    }
-  }
-
-  /* series results */
-
-  #document.blacklight-series article.document div.al-document-abstract-or-scope {
-    max-width: calc(100% - 1rem) !important;
-
-    .responsiveTruncatorToggle {
-      margin-right: -.5rem;
-    }
-  }
-
 }
 
 

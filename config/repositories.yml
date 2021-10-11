@@ -16,7 +16,7 @@ rubenstein:
   zip: '27708'
   country: 'USA'
   phone: '919-660-5822'
-  contact_info: 'special-collections@duke.edu'
+  contact_info: 'askRL@duke.edu'
   thumbnail_url: 'https://library.duke.edu/sites/default/files/rubenstein/arclight/duke-rubenstein.jpg'
   request_types:
     duke_request:
@@ -43,7 +43,7 @@ ua:
   zip: '27708'
   country: 'USA'
   phone: '919-660-5822'
-  contact_info: 'special-collections@duke.edu'
+  contact_info: 'askRL@duke.edu'
   thumbnail_url: 'https://library.duke.edu/sites/default/files/rubenstein/arclight/duke-ua.jpg'
   request_types:
     duke_request:

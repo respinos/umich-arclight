@@ -11,7 +11,7 @@ p, dd {
 .sticky-nav {
   position: sticky;
   top: 100px;
-  @include media-breakpoint-down(sm) {
+  @include media-breakpoint-down(lg) {
     position: static;
   }
 }
@@ -39,9 +39,8 @@ header {
   overflow-y: auto;
   overflow-x: hidden;
   padding-bottom: 15px;
-  @include media-breakpoint-down(sm) {
-    border: 1px solid #eee;
-    padding: 1em;
+  @include media-breakpoint-down(lg) {
+    height: auto;
   }
 }
 

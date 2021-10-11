@@ -20,7 +20,7 @@
           <addressline>411 Chapel Drive</addressline>
           <addressline>Duke University</addressline>
           <addressline>Durham 27708</addressline>
-          <addressline>special-collections@duke.edu</addressline>
+          <addressline>askRL@duke.edu</addressline>
           <addressline>URL: <extptr xlink:href="http://library.duke.edu/rubenstein/"
               xlink:show="new" xlink:title="http://library.duke.edu/rubenstein/" xlink:type="simple"
             /></addressline>
@@ -33,8 +33,8 @@
       </notestmt>
     </filedesc>
     <profiledesc>
-      <creation>This finding aid was produced using ArchivesSpace on <date>2020-01-09 20:40:04
-          UTC</date>.</creation>
+      <creation>This finding aid was produced using ArchivesSpace on <date>2020-03-23 15:15:57
+          -0400</date>.</creation>
       <langusage>English</langusage>
       <descrules>Describing Archives: A Content Standard</descrules>
     </profiledesc>
@@ -149,417 +149,409 @@
         Carolina</corpname>
     </controlaccess>
     <dsc>
-      <c01 id="aspace_ref13_c49" level="series">
+      <c01 id="aspace_ref15_n4e" level="file">
         <did>
-          <unittitle>Container List</unittitle>
-          <physdesc altrender="whole"><extent altrender="materialtype spaceoccupied">1
-              boxes</extent></physdesc>
+          <unittitle>Materials sent from Clifford Feng (grandson of Tse Vung Soong and
+            great-grandson of Charles J. Soong) to William E. King (Duke University Archivist),
+            October 5, 1984 (with cover letter).</unittitle>
+          <container id="aspace_c61855eb3d35ae50ddea22f004ef5dc4" label="Mixed Materials" type="box"
+            >1</container>
+          <container id="aspace_b67b2259da768c960fb545fab55997f8"
+            parent="aspace_c61855eb3d35ae50ddea22f004ef5dc4" type="folder">1</container>
         </did>
-        <c02 id="aspace_ref15_n4e" level="file">
+      </c01>
+      <c01 id="aspace_ref16_tyn" level="file">
+        <did>
+          <unittitle>Correspondence:</unittitle>
+        </did>
+        <c02 id="aspace_ref17_xkn" level="file">
           <did>
-            <unittitle>Materials sent from Clifford Feng (grandson of Tse Vung Soong and
-              great-grandson of Charles J. Soong) to William E. King (Duke University Archivist),
-              October 5, 1984 (with cover letter).</unittitle>
-            <container id="aspace_638dc78f46f18a6e78f5456146de3ad7" label="Mixed Materials"
-              type="box">1</container>
-            <container id="aspace_3f3b101eba6e1bac2b0d24ad8d481d64"
-              parent="aspace_638dc78f46f18a6e78f5456146de3ad7" type="folder">1</container>
-          </did>
-        </c02>
-        <c02 id="aspace_ref16_tyn" level="file">
-          <did>
-            <unittitle>Correspondence:</unittitle>
-          </did>
-          <c03 id="aspace_ref17_xkn" level="file">
-            <did>
-              <unittitle>C. J. Soong to Tse Vung Soong (son), May 3, 1915 (photocopy of original +
-                transcription)</unittitle>
-              <container id="aspace_6bdee7d2ad179418a40c36bec089d287" label="Mixed Materials"
-                type="box">1</container>
-            </did>
-          </c03>
-          <c03 id="aspace_ref18_f1b" level="file">
-            <did>
-              <unittitle>C. J. Soong to Tse Vung Soong (son), August 6, 1915 (photocopy of original
-                + transcription)</unittitle>
-              <container id="aspace_2be360a528a47f471de49a42a3026100" label="Mixed Materials"
-                type="box">1</container>
-            </did>
-          </c03>
-          <c03 id="aspace_ref19_882" level="file">
-            <did>
-              <unittitle>Franklin D. Roosevelt to T. V. Soong, June 23, 1942 Includes June 18, 1942
-                letter from Arthur M. Harris of Durham, NC to FDR recounting some of C. J. Soong's
-                Trinity College days. Includes T. V. Soong's response to FDR, June 25, 1942. (all
-                are photocopies of originals)</unittitle>
-              <container id="aspace_49ad22c9de5b0c0323ce74d1f1843d72" label="Mixed Materials"
-                type="box">1</container>
-            </did>
-          </c03>
-        </c02>
-        <c02 id="aspace_ref20_xe3" level="file">
-          <did>
-            <unittitle>Report:</unittitle>
-          </did>
-          <c03 id="aspace_ref21_q6o" level="file">
-            <did>
-              <unittitle>"Charles J. Soong and Captain Eric Gabrielson: A Footnote to World History"
-                U. S. Coast Guard report, no date. 10 pages. The cover letter from USCG Captain
-                Ellis Reed Hill to Dr. Meng Sze, Officer of Minister for Foreign Affairs (US), dates
-                to April 16, 1943. Details Soong's service in the Coast Guard, 1879-1880
-                (pre-Trinity). (photocopies)</unittitle>
-              <container id="aspace_df158fa1d26a4fef3c3574b4b0491a89" label="Mixed Materials"
-                type="box">1</container>
-            </did>
-          </c03>
-        </c02>
-        <c02 id="aspace_ref22_sn6" level="file">
-          <did>
-            <unittitle>Transcripts:</unittitle>
-          </did>
-          <c03 id="aspace_ref23_l7m" level="file">
-            <did>
-              <unittitle>"Little Known Facts About Well Known People: Madame Chiang Kai Shek" by
-                Dale Carnegie. Broadcast by Central News Agency of China, February 23, 1943. 5
-                pages. Includes a May 10, 1943 cover letter from David Lu of Central News Agency of
-                China to "Szeming".</unittitle>
-              <container id="aspace_4114fa39dcc18ed86f28524a6b84948f" label="Mixed Materials"
-                type="box">1</container>
-            </did>
-          </c03>
-          <c03 id="aspace_ref24_b2g" level="file">
-            <did>
-              <unittitle>"Father and Mother Soong" by Mrs. Louise Roberts. Likely broadcast on
-                National Broadcasting Company (NBC), no date. 4 pages. The cover letter from Jerome
-                Bundsen, secretary to Mr. Upton Close, to T. V. Soong dates to June 26, 1942.
-                (photocopies)</unittitle>
-              <container id="aspace_51e64dc29325920f13f21ba356f83784" label="Mixed Materials"
-                type="box">1</container>
-            </did>
-          </c03>
-        </c02>
-        <c02 id="aspace_ref25_qdi" level="file">
-          <did>
-            <unittitle>Articles:</unittitle>
-          </did>
-          <c03 id="aspace_ref26_yo0" level="file">
-            <did>
-              <unittitle>Reviews, press releases, and articles regarding the publication of Sterling
-                Seagrave's The Soong Dynasty (Harper and Row, 1985).</unittitle>
-              <container id="aspace_dbb738a3c4d3f79cf4227f8e52cc9216" label="Mixed Materials"
-                type="box">1</container>
-            </did>
-          </c03>
-        </c02>
-        <c02 id="aspace_ref27_6mb" level="file">
-          <did>
-            <unittitle>Primary materials (all photocopied from originals in Trinity United Methodist
-              Church:</unittitle>
-            <container id="aspace_4d1250ef8903176dd06accd83aff5089" label="Mixed Materials"
-              type="box">1</container>
-            <container id="aspace_c920081625f2f83ba9f849ea27f828e3"
-              parent="aspace_4d1250ef8903176dd06accd83aff5089" type="folder">2</container>
-          </did>
-        </c02>
-        <c02 id="aspace_ref28_adb" level="file">
-          <did>
-            <unittitle>Correspondence:</unittitle>
-          </did>
-          <c03 id="aspace_ref29_8gx" level="file">
-            <did>
-              <unittitle>C. J. Soon to Miss Mattie, March 31, 1882. Comments on weather in Durham,
-                upcoming commencement, and studying. Includes transcription.</unittitle>
-              <container id="aspace_0614ed2ffd651104ae2ef3bacc6fb001" label="Mixed Materials"
-                type="box">1</container>
-            </did>
-          </c03>
-          <c03 id="aspace_ref30_04u" level="file">
-            <did>
-              <unittitle>Charlie Soon to Mr. Southgate, October 7, 1886. Writing from Soochow,
-                China. Comments on mission effort and war.</unittitle>
-              <container id="aspace_bd6667961b04131789dc4f7262918407" label="Mixed Materials"
-                type="box">1</container>
-            </did>
-          </c03>
-          <c03 id="aspace_ref31_1il" level="file">
-            <did>
-              <unittitle>Label, "Hammock made by Charlie Soon" describing hammock made in
-                1883.</unittitle>
-              <container id="aspace_d530cb9bc4d29acb5777f21577d3b774" label="Mixed Materials"
-                type="box">1</container>
-            </did>
-          </c03>
-        </c02>
-        <c02 id="aspace_ref32_ugh" level="file">
-          <did>
-            <unittitle>Minutes: Methodist Episcopal Church, South. North Carolina Conference.
-              Hillsborough District Conference Minutes, 1882-1884, and Durham District Conference
-              Minutes, 1885-1895. Volume F-2749, 4 pages. Pages 3-4 deal with Soong's arrival in
-              North Carolina, conversion to Christianity, and move to Durham.</unittitle>
-            <container id="aspace_9f53f8ec916e4672d746c32d372f4414" label="Mixed Materials"
+            <unittitle>C. J. Soong to Tse Vung Soong (son), May 3, 1915 (photocopy of original +
+              transcription)</unittitle>
+            <container id="aspace_9ac444105c61b8487b7cfd9b41323374" label="Mixed Materials"
               type="box">1</container>
           </did>
         </c02>
-        <c02 id="aspace_ref33_3wu" level="file">
+        <c02 id="aspace_ref18_f1b" level="file">
           <did>
-            <unittitle>Publications, arranged chronologically</unittitle>
-            <container id="aspace_0213a05ada700b63914962c06ba25412" label="Mixed Materials"
-              type="folder">3</container>
-          </did>
-          <c03 id="aspace_ref34_y9d" level="file">
-            <did>
-              <unittitle>"Will Visit This City: Facts Regarding Rev. Chas. J. Soon and His Daughter,
-                Miss Alice", <title render="italic">Durham Daily Sun</title>, July 20,
-                1904.</unittitle>
-              <container id="aspace_d1041e9e79328d77afb252975185454a" label="Mixed Materials"
-                type="box">1</container>
-            </did>
-          </c03>
-          <c03 id="aspace_ref35_l15" level="file">
-            <did>
-              <unittitle>"The Romance of Charlie Soong", <title render="italic">Duke Divinity School
-                  Bulletin</title>, January 1942 (Vol. VI, No. 4). Pages 73-81.</unittitle>
-              <container id="aspace_904f25fda5e81667a7e63e3ba0944534" label="Mixed Materials"
-                type="box">1</container>
-            </did>
-          </c03>
-          <c03 id="aspace_ref36_cmo" level="file">
-            <did>
-              <unittitle><title render="italic">The Chiangs of China</title> by Elmer T. Clark (New
-                York and Nashville: Abingdon-Cokesbury Press, 1943). Photocopies of first 2
-                chapters, "Charles Jones Soon in America" and "Charles Jones Soong in China". Pages
-                12-39.</unittitle>
-              <container id="aspace_382acfb08b2e53dd9243c9cdfe837f46" label="Mixed Materials"
-                type="box">1</container>
-            </did>
-          </c03>
-          <c03 id="aspace_ref37_1q3" level="file">
-            <did>
-              <unittitle>"Charles Jones Soong Memorial Building Dedicated", <title render="italic"
-                  >North Carolina Christian Advocate</title>, November 5, 1942. Page 8.</unittitle>
-              <container id="aspace_1ef07aea54393ec3ffd04448d8c851d6" label="Mixed Materials"
-                type="box">1</container>
-            </did>
-          </c03>
-          <c03 id="aspace_ref38_0fe" level="file">
-            <did>
-              <unittitle>"The Soong Family Special Edition", <title render="italic">North Carolina
-                  Christian Advocate</title>, May 6, 1943 (Vol. 88, No. 18). Pages 1-20.</unittitle>
-              <container id="aspace_9a6c2cf124928758e9a9f53e95dc55ca" label="Mixed Materials"
-                type="box">1</container>
-            </did>
-          </c03>
-          <c03 id="aspace_ref39_iuk" level="file">
-            <did>
-              <unittitle><title render="italic">Biographical Dictionary of Republican China</title>,
-                Howard L. Boormon, ed. (New York: Columbia Univ. Press, 1967-1971), Vol. III. Pages
-                137-153.</unittitle>
-              <container id="aspace_ecef7b43fbb41762035920b39bc2530c" label="Mixed Materials"
-                type="box">1</container>
-            </did>
-          </c03>
-          <c03 id="aspace_ref40_wbz" level="file">
-            <did>
-              <unittitle><title render="italic">The World of Time Inc.: The Intimate History of a
-                  Publishing Enterprise</title> (Vol. 2, 1941-1960) by Robert T. Elson (New York:
-                Atheneum, 1973). Page 121-122.</unittitle>
-              <container id="aspace_15fa50145b3eef2693445b69ea7ddba8" label="Mixed Materials"
-                type="box">1</container>
-            </did>
-          </c03>
-          <c03 id="aspace_ref41_9vr" level="file">
-            <did>
-              <unittitle>"Durham-By-The-Sea", <title render="italic">Durham Morning Herald</title>,
-                January 30, 1976.</unittitle>
-              <container id="aspace_9602ed4dabeed831f88aac4a8caac800" label="Mixed Materials"
-                type="box">1</container>
-            </did>
-          </c03>
-          <c03 id="aspace_ref42_pau" level="file">
-            <did>
-              <unittitle>"Widow of Sun Yat-Sen Honored", <title render="italic">Durham Morning
-                  Herald</title>, May 17, 1981.</unittitle>
-              <container id="aspace_b62fcda472855de679b3a0c84f9a570a" label="Mixed Materials"
-                type="box">1</container>
-            </did>
-          </c03>
-          <c03 id="aspace_ref43_9gk" level="file">
-            <did>
-              <unittitle><title render="italic">The Soong Dynasty</title> by Sterling Seagrave (New
-                York: Harper and Row, 1985). Prologue and first 2 chapters. Pages 1-69, 465-473.
-                Includes family tree chart.</unittitle>
-              <container id="aspace_ff5f2b9c442ab0956e07c9d87cbb039f" label="Mixed Materials"
-                type="box">1</container>
-            </did>
-          </c03>
-          <c03 id="aspace_ref44_07d" level="file">
-            <did>
-              <unittitle>"Madame Chiang honored", <title render="italic">Raleigh News and
-                  Observer</title>, July 27, 1995. Page 10A.</unittitle>
-              <container id="aspace_f3497615562b219b8844290ba9a5cd81" label="Mixed Materials"
-                type="box">1</container>
-            </did>
-          </c03>
-          <c03 id="aspace_ref45_noj" level="file">
-            <did>
-              <unittitle>"China article: check facts about Charles Soong's NC conversion" <title
-                  render="italic">North Carolina Christian Advocate</title>, December 19, 1995. Page
-                3. Letter to the editor.</unittitle>
-              <container id="aspace_592a8cdabeb2e17e81df4c078692a97f" label="Mixed Materials"
-                type="box">1</container>
-            </did>
-          </c03>
-          <c03 id="aspace_ref46_etg" level="file">
-            <did>
-              <unittitle>"A Gift that Blessed a Nation: The Story of General Carr and Charlie Soong"
-                by Bishop Costen J. Harrell. Pamphlet published by the Methodist Church, no
-                date.</unittitle>
-              <container id="aspace_ea5b1c729222373f61ec435c432f9dd9" label="Mixed Materials"
-                type="box">1</container>
-            </did>
-          </c03>
-          <c03 id="aspace_ref47_ncr" level="file">
-            <did>
-              <unittitle>"History of Ann Street Methodist Church, Beaufort, North Carolina".
-                Pamphlet, no date.</unittitle>
-              <container id="aspace_962e49bda8c1166301ae1e139ee24ef4" label="Mixed Materials"
-                type="box">1</container>
-            </did>
-          </c03>
-        </c02>
-        <c02 id="aspace_ref48_qrv" level="file">
-          <did>
-            <unittitle>Clippings, article fragments, notes, inventories of other
-              holdings.</unittitle>
-            <container id="aspace_565834a7a68fbaec3dc2a07961928621" label="Mixed Materials"
+            <unittitle>C. J. Soong to Tse Vung Soong (son), August 6, 1915 (photocopy of original +
+              transcription)</unittitle>
+            <container id="aspace_65fdf941ba19c7ba0e513b7aef650651" label="Mixed Materials"
               type="box">1</container>
-            <container id="aspace_c58b325aaa9a6c03f8aa421a5c949ea6"
-              parent="aspace_565834a7a68fbaec3dc2a07961928621" type="folder">4</container>
           </did>
         </c02>
-        <c02 id="aspace_ref49_h69" level="file">
+        <c02 id="aspace_ref19_882" level="file">
           <did>
-            <unittitle>Correspondence (copied from other collections), 1882-1942</unittitle>
-            <container id="aspace_24f688b5bd08334d7389eff681ebba5f" label="Mixed Materials"
-              type="folder">5</container>
+            <unittitle>Franklin D. Roosevelt to T. V. Soong, June 23, 1942 Includes June 18, 1942
+              letter from Arthur M. Harris of Durham, NC to FDR recounting some of C. J. Soong's
+              Trinity College days. Includes T. V. Soong's response to FDR, June 25, 1942. (all are
+              photocopies of originals)</unittitle>
+            <container id="aspace_ca8cbb42c6bafbfaf2ac7f94ebeb250c" label="Mixed Materials"
+              type="box">1</container>
           </did>
-          <c03 id="aspace_ref50_b83" level="file">
-            <did>
-              <unittitle>[C. J. Soong?] to Miss Mattie [Southgate], February 22, 1882. Comments on
-                past correspondence and a friend at Trinity College. Letter missing pages and
-                signature.</unittitle>
-              <container id="aspace_bb9382c3b480b318f98d25bc4f75e83e" label="Mixed Materials"
-                type="box">1</container>
-            </did>
-          </c03>
-          <c03 id="aspace_ref51_vsh" level="file">
-            <did>
-              <unittitle>C. J. Soon to Golden [James Gordon Hackett], June 20, 1882. Comments on
-                social life and the atmosphere at Trinity College during the summer.</unittitle>
-              <container id="aspace_1ba5755306874811b4cb354faadcb1dc" label="Mixed Materials"
-                type="box">1</container>
-            </did>
-          </c03>
-          <c03 id="aspace_ref52_s9v" level="file">
-            <did>
-              <unittitle>[Chevy?] to James A. Thomas, March 22, 1937. Comments on cancellation of
-                Madame Chiang Kai-Shek's visit to the United States.</unittitle>
-              <container id="aspace_cf48cf04249b4bbad21409d1fc8dab73" label="Mixed Materials"
-                type="box">1</container>
-            </did>
-          </c03>
-          <c03 id="aspace_ref53_hn5" level="file">
-            <did>
-              <unittitle>Madame Chiang Kai-shek to Mr. James A. Thomas, June 1, 1937. Comments on
-                the cancellation of Chiang's visit to the United States in spring 1937, her
-                husband's health, and patriotism in China.</unittitle>
-              <container id="aspace_c41aefadd1217cf69dadd363e708ebe4" label="Mixed Materials"
-                type="box">1</container>
-            </did>
-          </c03>
-          <c03 id="aspace_ref54_s5x" level="file">
-            <did>
-              <unittitle>James A. Thomas to Mr. A. S. Brower, June 28, 1937. Discusses gathering
-                material about Charles Soong to present May-ling Soong Chiang in anticipation of a
-                visit to Duke University.</unittitle>
-              <container id="aspace_94f27dd2c4d1f753c9ee0ef19bee23d6" label="Mixed Materials"
-                type="box">1</container>
-            </did>
-          </c03>
-          <c03 id="aspace_ref55_9wv" level="file">
-            <did>
-              <unittitle>Executive Secretary [A. S. Brower] to Mr. James A. Thomas, June 30, 1937.
-                Refers to a June 28, 1936 News and Observer article on Charles Soong as well as love
-                letters to Miss Southgate.</unittitle>
-              <container id="aspace_15a52cf02b25746909facd2d18030792" label="Mixed Materials"
-                type="box">1</container>
-            </did>
-          </c03>
-          <c03 id="aspace_ref56_l8s" level="file">
-            <did>
-              <unittitle>A. S. Brower to Mr. James A. Thomas, July 1, 1937. Letter accompanying
-                copies of June 28, 1936 News and Observer article on Charles Soong.</unittitle>
-              <container id="aspace_ba8654d29902280c74e0baf5ae4fa9f1" label="Mixed Materials"
-                type="box">1</container>
-            </did>
-          </c03>
-          <c03 id="aspace_ref57_q3y" level="file">
-            <did>
-              <unittitle>James A. Thomas to Mr. A. S. Brower, July 1, 1937. Recommendations on
-                information to provide May-ling Soong Chiang about Charles Soong's connection with
-                Trinity College.</unittitle>
-              <container id="aspace_bea74de760e97af4ce29ee1d8c6f32c3" label="Mixed Materials"
-                type="box">1</container>
-            </did>
-          </c03>
-          <c03 id="aspace_ref58_ds5" level="file">
-            <did>
-              <unittitle>J. G. Hackett to T. V. Soong, December 29, 1941. Comments on Hackett's
-                friendship with Charles Soong during their time at Trinity College.</unittitle>
-              <container id="aspace_98e2b5e87bfc6573de02be7ef3ccafea" label="Mixed Materials"
-                type="box">1</container>
-            </did>
-          </c03>
-          <c03 id="aspace_ref59_q0y" level="file">
-            <did>
-              <unittitle>Jerome Dowd to Miss Kate, December 13, 1942. Mentions Dowd's friendship
-                with Soong at Trinity College and the chapter that Dowd wrote about Soong in his
-                "Life of Braxton Craven."</unittitle>
-              <container id="aspace_c33d70e0a2ebba27dc77baf87fa45f8b" label="Mixed Materials"
-                type="box">1</container>
-            </did>
-          </c03>
         </c02>
-        <c02 id="aspace_ref60_gym" level="file">
+      </c01>
+      <c01 id="aspace_ref20_xe3" level="file">
+        <did>
+          <unittitle>Report:</unittitle>
+        </did>
+        <c02 id="aspace_ref21_q6o" level="file">
           <did>
-            <unittitle>Clippings (copied from other collections), 1936-1943</unittitle>
-            <container id="aspace_4bf811400f2934324cd75977429a60b3" label="Mixed Materials"
-              type="folder">6</container>
+            <unittitle>"Charles J. Soong and Captain Eric Gabrielson: A Footnote to World History"
+              U. S. Coast Guard report, no date. 10 pages. The cover letter from USCG Captain Ellis
+              Reed Hill to Dr. Meng Sze, Officer of Minister for Foreign Affairs (US), dates to
+              April 16, 1943. Details Soong's service in the Coast Guard, 1879-1880 (pre-Trinity).
+              (photocopies)</unittitle>
+            <container id="aspace_054cf9e709d9d123f0a79c1f06e209b2" label="Mixed Materials"
+              type="box">1</container>
           </did>
-          <c03 id="aspace_ref61_tub" level="file">
-            <did>
-              <unittitle>"Chinese Lad Left Trinity College to Found Own Dynasty", Raleigh News and
-                Observer, June 28, 1936.</unittitle>
-              <container id="aspace_9ca84239e5528bdfa1164c78bac23368" label="Mixed Materials"
-                type="box">1</container>
-            </did>
-          </c03>
-          <c03 id="aspace_ref62_ckl" level="file">
-            <did>
-              <unittitle>"Link North Carolinians to China's Great Leader", [unidentified newspaper],
-                circa 1937-1938.</unittitle>
-              <container id="aspace_cf891bcbb0c786c08c06af6504bbf17a" label="Mixed Materials"
-                type="box">1</container>
-            </did>
-          </c03>
-          <c03 id="aspace_ref63_m0p" level="file">
-            <did>
-              <unittitle>"When Charlie Soong Paid a Visit to Washington, N.C.", Raleigh News and
-                Observer, February 28, 1943.</unittitle>
-              <container id="aspace_54ead14e933460b19734a086fa97ff46" label="Mixed Materials"
-                type="box">1</container>
-            </did>
-          </c03>
+        </c02>
+      </c01>
+      <c01 id="aspace_ref22_sn6" level="file">
+        <did>
+          <unittitle>Transcripts:</unittitle>
+        </did>
+        <c02 id="aspace_ref23_l7m" level="file">
+          <did>
+            <unittitle>"Little Known Facts About Well Known People: Madame Chiang Kai Shek" by Dale
+              Carnegie. Broadcast by Central News Agency of China, February 23, 1943. 5 pages.
+              Includes a May 10, 1943 cover letter from David Lu of Central News Agency of China to
+              "Szeming".</unittitle>
+            <container id="aspace_c35ba13c0067f9995b9f3b26cb2ac5ba" label="Mixed Materials"
+              type="box">1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref24_b2g" level="file">
+          <did>
+            <unittitle>"Father and Mother Soong" by Mrs. Louise Roberts. Likely broadcast on
+              National Broadcasting Company (NBC), no date. 4 pages. The cover letter from Jerome
+              Bundsen, secretary to Mr. Upton Close, to T. V. Soong dates to June 26, 1942.
+              (photocopies)</unittitle>
+            <container id="aspace_9f8103badf26dc6d6defb1b4e860fad3" label="Mixed Materials"
+              type="box">1</container>
+          </did>
+        </c02>
+      </c01>
+      <c01 id="aspace_ref25_qdi" level="file">
+        <did>
+          <unittitle>Articles:</unittitle>
+        </did>
+        <c02 id="aspace_ref26_yo0" level="file">
+          <did>
+            <unittitle>Reviews, press releases, and articles regarding the publication of Sterling
+              Seagrave's The Soong Dynasty (Harper and Row, 1985).</unittitle>
+            <container id="aspace_516c5090eda2dca6f72e72fc02618ec9" label="Mixed Materials"
+              type="box">1</container>
+          </did>
+        </c02>
+      </c01>
+      <c01 id="aspace_ref27_6mb" level="file">
+        <did>
+          <unittitle>Primary materials (all photocopied from originals in Trinity United Methodist
+            Church:</unittitle>
+          <container id="aspace_53079ab523930c21e610cc67e67a81b4" label="Mixed Materials" type="box"
+            >1</container>
+          <container id="aspace_d22057716b9547ec47071515804b1b33"
+            parent="aspace_53079ab523930c21e610cc67e67a81b4" type="folder">2</container>
+        </did>
+      </c01>
+      <c01 id="aspace_ref28_adb" level="file">
+        <did>
+          <unittitle>Correspondence:</unittitle>
+        </did>
+        <c02 id="aspace_ref29_8gx" level="file">
+          <did>
+            <unittitle>C. J. Soon to Miss Mattie, March 31, 1882. Comments on weather in Durham,
+              upcoming commencement, and studying. Includes transcription.</unittitle>
+            <container id="aspace_5d3680ef41adc7d4bb87b90dbf5a4d1e" label="Mixed Materials"
+              type="box">1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref30_04u" level="file">
+          <did>
+            <unittitle>Charlie Soon to Mr. Southgate, October 7, 1886. Writing from Soochow, China.
+              Comments on mission effort and war.</unittitle>
+            <container id="aspace_c5242354ff4f53ea1581a5ff1c152484" label="Mixed Materials"
+              type="box">1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref31_1il" level="file">
+          <did>
+            <unittitle>Label, "Hammock made by Charlie Soon" describing hammock made in
+              1883.</unittitle>
+            <container id="aspace_9aaa9ba603e7a2515096181e55920c80" label="Mixed Materials"
+              type="box">1</container>
+          </did>
+        </c02>
+      </c01>
+      <c01 id="aspace_ref32_ugh" level="file">
+        <did>
+          <unittitle>Minutes: Methodist Episcopal Church, South. North Carolina Conference.
+            Hillsborough District Conference Minutes, 1882-1884, and Durham District Conference
+            Minutes, 1885-1895. Volume F-2749, 4 pages. Pages 3-4 deal with Soong's arrival in North
+            Carolina, conversion to Christianity, and move to Durham.</unittitle>
+          <container id="aspace_20544823e08755eb67e8a3c1ad346a8b" label="Mixed Materials" type="box"
+            >1</container>
+        </did>
+      </c01>
+      <c01 id="aspace_ref33_3wu" level="file">
+        <did>
+          <unittitle>Publications, arranged chronologically</unittitle>
+          <container id="aspace_f6bcd66ab0cbbcfe8e9a56e6c443ceff" label="Mixed Materials"
+            type="folder">3</container>
+        </did>
+        <c02 id="aspace_ref34_y9d" level="file">
+          <did>
+            <unittitle>"Will Visit This City: Facts Regarding Rev. Chas. J. Soon and His Daughter,
+              Miss Alice", <title render="italic">Durham Daily Sun</title>, July 20,
+              1904.</unittitle>
+            <container id="aspace_351796064947a4f449b4c1b11ba98b22" label="Mixed Materials"
+              type="box">1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref35_l15" level="file">
+          <did>
+            <unittitle>"The Romance of Charlie Soong", <title render="italic">Duke Divinity School
+                Bulletin</title>, January 1942 (Vol. VI, No. 4). Pages 73-81.</unittitle>
+            <container id="aspace_f01c9544122545917f2a5af4583beac9" label="Mixed Materials"
+              type="box">1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref36_cmo" level="file">
+          <did>
+            <unittitle><title render="italic">The Chiangs of China</title> by Elmer T. Clark (New
+              York and Nashville: Abingdon-Cokesbury Press, 1943). Photocopies of first 2 chapters,
+              "Charles Jones Soon in America" and "Charles Jones Soong in China". Pages
+              12-39.</unittitle>
+            <container id="aspace_63df01c5cd00eda0b4519235a64e014b" label="Mixed Materials"
+              type="box">1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref37_1q3" level="file">
+          <did>
+            <unittitle>"Charles Jones Soong Memorial Building Dedicated", <title render="italic"
+                >North Carolina Christian Advocate</title>, November 5, 1942. Page 8.</unittitle>
+            <container id="aspace_e6488be6e297400f23ea06f2cf714782" label="Mixed Materials"
+              type="box">1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref38_0fe" level="file">
+          <did>
+            <unittitle>"The Soong Family Special Edition", <title render="italic">North Carolina
+                Christian Advocate</title>, May 6, 1943 (Vol. 88, No. 18). Pages 1-20.</unittitle>
+            <container id="aspace_28b2ee5f10e73afcb83b4d68e71de338" label="Mixed Materials"
+              type="box">1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref39_iuk" level="file">
+          <did>
+            <unittitle><title render="italic">Biographical Dictionary of Republican China</title>,
+              Howard L. Boormon, ed. (New York: Columbia Univ. Press, 1967-1971), Vol. III. Pages
+              137-153.</unittitle>
+            <container id="aspace_deee21a461bc2bba5d2a3c4de10a97de" label="Mixed Materials"
+              type="box">1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref40_wbz" level="file">
+          <did>
+            <unittitle><title render="italic">The World of Time Inc.: The Intimate History of a
+                Publishing Enterprise</title> (Vol. 2, 1941-1960) by Robert T. Elson (New York:
+              Atheneum, 1973). Page 121-122.</unittitle>
+            <container id="aspace_40f0d30016087eb04708a6088a62007b" label="Mixed Materials"
+              type="box">1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref41_9vr" level="file">
+          <did>
+            <unittitle>"Durham-By-The-Sea", <title render="italic">Durham Morning Herald</title>,
+              January 30, 1976.</unittitle>
+            <container id="aspace_6d0bdce167b12f9b0d782359f3c75f99" label="Mixed Materials"
+              type="box">1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref42_pau" level="file">
+          <did>
+            <unittitle>"Widow of Sun Yat-Sen Honored", <title render="italic">Durham Morning
+                Herald</title>, May 17, 1981.</unittitle>
+            <container id="aspace_3c3b935662ba4c498c3949e68f33dac0" label="Mixed Materials"
+              type="box">1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref43_9gk" level="file">
+          <did>
+            <unittitle><title render="italic">The Soong Dynasty</title> by Sterling Seagrave (New
+              York: Harper and Row, 1985). Prologue and first 2 chapters. Pages 1-69, 465-473.
+              Includes family tree chart.</unittitle>
+            <container id="aspace_09ee6bf2edec1e8035e5b6e65dc9db46" label="Mixed Materials"
+              type="box">1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref44_07d" level="file">
+          <did>
+            <unittitle>"Madame Chiang honored", <title render="italic">Raleigh News and
+                Observer</title>, July 27, 1995. Page 10A.</unittitle>
+            <container id="aspace_89fee8186469efbacd086a0296074726" label="Mixed Materials"
+              type="box">1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref45_noj" level="file">
+          <did>
+            <unittitle>"China article: check facts about Charles Soong's NC conversion" <title
+                render="italic">North Carolina Christian Advocate</title>, December 19, 1995. Page
+              3. Letter to the editor.</unittitle>
+            <container id="aspace_b8558c5073fe4062b1dd7cd89f2ba26a" label="Mixed Materials"
+              type="box">1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref46_etg" level="file">
+          <did>
+            <unittitle>"A Gift that Blessed a Nation: The Story of General Carr and Charlie Soong"
+              by Bishop Costen J. Harrell. Pamphlet published by the Methodist Church, no
+              date.</unittitle>
+            <container id="aspace_29f4c57f269e4f61f329261923f162e4" label="Mixed Materials"
+              type="box">1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref47_ncr" level="file">
+          <did>
+            <unittitle>"History of Ann Street Methodist Church, Beaufort, North Carolina". Pamphlet,
+              no date.</unittitle>
+            <container id="aspace_69b70a362ba63999cf4464f9904e9177" label="Mixed Materials"
+              type="box">1</container>
+          </did>
+        </c02>
+      </c01>
+      <c01 id="aspace_ref48_qrv" level="file">
+        <did>
+          <unittitle>Clippings, article fragments, notes, inventories of other holdings.</unittitle>
+          <container id="aspace_7b151f965de065d06e725a7b50c882f8" label="Mixed Materials" type="box"
+            >1</container>
+          <container id="aspace_9505ff92694ba6e1308f9487717a2555"
+            parent="aspace_7b151f965de065d06e725a7b50c882f8" type="folder">4</container>
+        </did>
+      </c01>
+      <c01 id="aspace_ref49_h69" level="file">
+        <did>
+          <unittitle>Correspondence (copied from other collections), 1882-1942</unittitle>
+          <container id="aspace_ee3f2b8d9e4660ab56c9a3d863243bac" label="Mixed Materials"
+            type="folder">5</container>
+        </did>
+        <c02 id="aspace_ref50_b83" level="file">
+          <did>
+            <unittitle>[C. J. Soong?] to Miss Mattie [Southgate], February 22, 1882. Comments on
+              past correspondence and a friend at Trinity College. Letter missing pages and
+              signature.</unittitle>
+            <container id="aspace_ddfd0ca360fc7354d2da466a3de38631" label="Mixed Materials"
+              type="box">1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref51_vsh" level="file">
+          <did>
+            <unittitle>C. J. Soon to Golden [James Gordon Hackett], June 20, 1882. Comments on
+              social life and the atmosphere at Trinity College during the summer.</unittitle>
+            <container id="aspace_0c8b8295851ebd1cfb2c2911ebdad611" label="Mixed Materials"
+              type="box">1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref52_s9v" level="file">
+          <did>
+            <unittitle>[Chevy?] to James A. Thomas, March 22, 1937. Comments on cancellation of
+              Madame Chiang Kai-Shek's visit to the United States.</unittitle>
+            <container id="aspace_5c45d0b3ab4a7af6d86fc5c36638a49a" label="Mixed Materials"
+              type="box">1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref53_hn5" level="file">
+          <did>
+            <unittitle>Madame Chiang Kai-shek to Mr. James A. Thomas, June 1, 1937. Comments on the
+              cancellation of Chiang's visit to the United States in spring 1937, her husband's
+              health, and patriotism in China.</unittitle>
+            <container id="aspace_fa6599dbc3dc91d9c1400996d1c2c496" label="Mixed Materials"
+              type="box">1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref54_s5x" level="file">
+          <did>
+            <unittitle>James A. Thomas to Mr. A. S. Brower, June 28, 1937. Discusses gathering
+              material about Charles Soong to present May-ling Soong Chiang in anticipation of a
+              visit to Duke University.</unittitle>
+            <container id="aspace_e3607ad1e0290962fbcf1f66c0f2d611" label="Mixed Materials"
+              type="box">1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref55_9wv" level="file">
+          <did>
+            <unittitle>Executive Secretary [A. S. Brower] to Mr. James A. Thomas, June 30, 1937.
+              Refers to a June 28, 1936 News and Observer article on Charles Soong as well as love
+              letters to Miss Southgate.</unittitle>
+            <container id="aspace_0696892c5c453968e7591c76a88bb5f2" label="Mixed Materials"
+              type="box">1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref56_l8s" level="file">
+          <did>
+            <unittitle>A. S. Brower to Mr. James A. Thomas, July 1, 1937. Letter accompanying copies
+              of June 28, 1936 News and Observer article on Charles Soong.</unittitle>
+            <container id="aspace_80aac4294a7e44af320cea8f2936951d" label="Mixed Materials"
+              type="box">1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref57_q3y" level="file">
+          <did>
+            <unittitle>James A. Thomas to Mr. A. S. Brower, July 1, 1937. Recommendations on
+              information to provide May-ling Soong Chiang about Charles Soong's connection with
+              Trinity College.</unittitle>
+            <container id="aspace_f2021829ebb8cf0ce7622b78b0babdf7" label="Mixed Materials"
+              type="box">1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref58_ds5" level="file">
+          <did>
+            <unittitle>J. G. Hackett to T. V. Soong, December 29, 1941. Comments on Hackett's
+              friendship with Charles Soong during their time at Trinity College.</unittitle>
+            <container id="aspace_86b8b661d07debfdadb74a1bf36aa685" label="Mixed Materials"
+              type="box">1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref59_q0y" level="file">
+          <did>
+            <unittitle>Jerome Dowd to Miss Kate, December 13, 1942. Mentions Dowd's friendship with
+              Soong at Trinity College and the chapter that Dowd wrote about Soong in his "Life of
+              Braxton Craven."</unittitle>
+            <container id="aspace_9716223dcc9c7149f1fc3b58d552ec38" label="Mixed Materials"
+              type="box">1</container>
+          </did>
+        </c02>
+      </c01>
+      <c01 id="aspace_ref60_gym" level="file">
+        <did>
+          <unittitle>Clippings (copied from other collections), 1936-1943</unittitle>
+          <container id="aspace_caf74592e2e2e43d554b846c91348e66" label="Mixed Materials"
+            type="folder">6</container>
+        </did>
+        <c02 id="aspace_ref61_tub" level="file">
+          <did>
+            <unittitle>"Chinese Lad Left Trinity College to Found Own Dynasty", Raleigh News and
+              Observer, June 28, 1936.</unittitle>
+            <container id="aspace_65b70bf4b6de9677abbae9a599171630" label="Mixed Materials"
+              type="box">1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref62_ckl" level="file">
+          <did>
+            <unittitle>"Link North Carolinians to China's Great Leader", [unidentified newspaper],
+              circa 1937-1938.</unittitle>
+            <container id="aspace_b7e7cd215acc28de29c0a89ca29ed345" label="Mixed Materials"
+              type="box">1</container>
+          </did>
+        </c02>
+        <c02 id="aspace_ref63_m0p" level="file">
+          <did>
+            <unittitle>"When Charlie Soong Paid a Visit to Washington, N.C.", Raleigh News and
+              Observer, February 28, 1943.</unittitle>
+            <container id="aspace_befa4bc855f311fcec41e448cf2a7b2f" label="Mixed Materials"
+              type="box">1</container>
+          </did>
         </c02>
       </c01>
     </dsc>
