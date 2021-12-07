@@ -1,77 +1,42 @@
-rubenstein:
-  name: 'David M. Rubenstein Rare Book & Manuscript Library'
-  visit_note: |
-    Please consult our up-to-date <a href='https://library.duke.edu/rubenstein/about/visit' target='_blank'>
-    information for visitors page</a>, as our services and guidelines periodically change.
-  description: |
-    The holdings of the Rubenstein Rare Book & Manuscript Library range from ancient papyri to
-    records of modern advertising. There are over 10,000 manuscript collections containing more
-    than 20 million individual manuscript items. Only a portion of these collections and items
-    are discoverable on this site. Others may be found in the library catalog.
-  building: 'Rubenstein Library'
-  address1: '411 Chapel Drive'
+bhl:
+  name: 'University of Michigan. Bentley Historical Library'
+  description: 'The Bentley Historical Library collects the materials for and promotes the study of the histories of two great, intertwined institutions, the State of Michigan and the University of Michigan. The Library is open without fee to the public, and we welcome researchers regardless of academic or professional affiliation.'
+  visit_note: ''
+  building: ''
+  address1: '1150 Beal Ave'
   address2: ''
-  city: 'Durham'
-  state: 'NC'
-  zip: '27708'
+  city: 'Ann Arbor'
+  state: 'MI'
+  zip: '48109-2113'
   country: 'USA'
-  phone: '919-660-5822'
-  contact_info: 'askRL@duke.edu'
-  thumbnail_url: 'https://library.duke.edu/sites/default/files/rubenstein/arclight/duke-rubenstein.jpg'
-  request_types:
-    duke_request:
-      request_url: 'https://requests.library.duke.edu/item/'
-      request_mappings: 'none'
-ua:
-  name: 'Duke University Archives'
-  visit_note: |
-    Please consult our up-to-date <a href='https://library.duke.edu/rubenstein/about/visit' target='_blank'>
-    information for visitors page</a>, as our services and guidelines periodically change.
-  description: |
-    The Duke University Archives is the official repository for records of Duke University and has
-    a charge to make them available for use in accordance with policies approved by Duke University's
-    Board of Trustees, administration and faculty. In addition to the official records of the
-    university, the Duke University Archives holds campus publications; audiovisual materials by and
-    about Duke University; papers and selected publications of Duke University faculty members;
-    records of Duke University student and employee organizations and dissertations, theses, final
-    projects and senior honors papers produced by Duke University students.
-  building: 'Rubenstein Library'
-  address1: '411 Chapel Drive'
+  phone: ''
+  contact_info: 'bentley.ref@umich.edu'
+  thumbnail_url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Bhlexterior.jpg/150px-Bhlexterior.jpg'
+scrc:
+  name: 'University of Michigan. Special Collections Research Center'
+  description: 'In keeping with the University Library’s mission to collect, describe, preserve, and make available the record of human knowledge, the Special Collections Research Center acquires, cares for, interprets, and promotes the use of important collections of unique, rare, primary source, and other material in all formats and in a variety of subject areas.'
+  visit_note: ''
+  building: 'Harlan Hatcher Graduate Library (South)'
+  address1: '913 S. University Avenue'
   address2: ''
-  city: 'Durham'
-  state: 'NC'
-  zip: '27708'
+  city: 'Ann Arbor'
+  state: 'MI'
+  zip: '48109-1190'
   country: 'USA'
-  phone: '919-660-5822'
-  contact_info: 'askRL@duke.edu'
-  thumbnail_url: 'https://library.duke.edu/sites/default/files/rubenstein/arclight/duke-ua.jpg'
-  request_types:
-    duke_request:
-      request_url: 'https://requests.library.duke.edu/item/'
-      request_mappings: 'none'
-adf:
-  name: 'American Dance Festival Archives'
-  visit_note: |
-    Materials from the ADF Archives may be viewed by appointment in the David M. Rubenstein Rare
-    Book & Manuscript Library at Duke University. Visits may be arranged in advance by contacting the
-    ADF archivist at
-    <a href='mailto:adfarchives@americandancefestival.org'>adfarchives@americandancefestival.org</a>.
-    Visitors will need to comply with Duke's registration and security policies.
-  description: |
-    The American Dance Festival Archives serves as the repository for records of enduring historical
-    value created and collected by ADF. The Archives preserves its collections for use by the dance
-    community, including students, scholars, and the general public.
-  building: 'Rubenstein Library'
-  address1: '411 Chapel Drive'
+  phone: ''
+  contact_info: 'special.collections@umich.edu'
+  thumbnail_url: 'https://https://upload.wikimedia.org/wikipedia/commons/9/96/University_of_Michigan_library_stacks.JPG'
+clements:
+  name: 'University of Michigan. William L. Clements Library'
+  description: 'The William L. Clements Library is a rare book and manuscript repository located on the University of Michigan’s central campus in Ann Arbor, Michigan.'
+  visit_note: ''
+  building: ''
+  address1: '909 South University Avenue'
   address2: ''
-  city: 'Durham'
-  state: 'NC'
-  zip: '27708'
+  city: 'Ann Arbor'
+  state: 'MI'
+  zip: '48109'
   country: 'USA'
-  phone: '919-684-6402'
-  contact_info: 'adfarchives@americandancefestival.org'
-  thumbnail_url: 'https://library.duke.edu/sites/default/files/rubenstein/arclight/duke-adf.jpg'
-  request_types:
-    duke_request:
-      request_url: 'https://requests.library.duke.edu/item/'
-      request_mappings: 'none'
+  phone: ''
+  contact_info: 'clements-reference@umich.edu'
+  thumbnail_url: 'https://upload.wikimedia.org/wikipedia/commons/1/1d/University_of_Michigan_August_2013_179_%28William_L._Clements_Library%29.jpg'
