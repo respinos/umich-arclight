@@ -1,0 +1,63 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose -f docker-compose.yml -f docker-compose.dev.yml convert --volumes hostPath
+    kompose.version: 1.26.0 (40646f47)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: resque-web
+  name: resque-web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: resque-web
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose -f docker-compose.yml -f docker-compose.dev.yml convert --volumes hostPath
+        kompose.version: 1.26.0 (40646f47)
+      creationTimestamp: null
+      labels:
+        io.kompose.service: resque-web
+    spec:
+      containers:
+        - args:
+            - bundle
+            - exec
+            - resque-web
+            - -p
+            - "8080"
+            - -r
+            - redis:6379
+            - -F
+          command:
+            - wait-for-it
+            - redis:6379
+            - --
+          env:
+            - name: DATABASE_URL
+              value: postgresql://postgres:arclight@db/arclight
+            - name: RAILS_ENV
+              value: development
+            - name: REDIS_URL
+              value: redis://redis:6379
+            - name: SOLR_URL
+              value: http://solr:8983/solr/arclight
+          image: estythomas/umich-arclight:20220103.1
+          name: resque-web
+          ports:
+            - containerPort: 8080
+          resources: {}
+          volumeMounts:
+            - mountPath: /opt/app-root
+              name: resque-web-hostpath0
+      restartPolicy: Always
+      volumes:
+        - hostPath:
+            path: /home/esty/github/mlibrary/dul-arclight
+          name: resque-web-hostpath0
+status: {}
