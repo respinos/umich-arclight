@@ -45,14 +45,15 @@ spec:
               value: redis://redis:6379
             - name: SOLR_URL
               value: http://solr:8983/solr/arclight
-          image: estythomas/umich-arclight:20220103.1
+          image: umich-arclight-staging:20220105.4
+          imagePullPolicy: Never
           name: resque
           ports:
             - containerPort: 8282
           resources: {}
-          volumeMounts:
-            - mountPath: /opt/app-root
-              name: resque-hostpath0
+#          volumeMounts:
+#            - mountPath: /opt/app-root
+#              name: resque-hostpath0
       restartPolicy: Always
       volumes:
         - hostPath:
