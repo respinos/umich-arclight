@@ -25,28 +25,29 @@ spec:
         io.kompose.service: solr
     spec:
       containers:
-        - command:
-            - docker-entrypoint.sh
-            - solr-precreate
-            - arclight
-            - /solr_config
-          image: solr:8-slim
+#        - command:
+#            - docker-entrypoint.sh
+#            - solr-precreate
+#            - arclight
+#            - /solr_config
+        - image: umich-arclight-solr-staging:20220106.4
+          imagePullPolicy: Never
           name: solr
           ports:
             - containerPort: 8983
           resources: {}
-          volumeMounts:
-            - mountPath: /solr_config
-              name: solr-hostpath0
-              readOnly: true
-            - mountPath: /var/solr/data/arclight
-              name: solr-hostpath1
+#          volumeMounts:
+#            - mountPath: /solr_config
+#              name: solr-hostpath0
+#              readOnly: true
+#            - mountPath: /var/solr/data/arclight
+#              name: solr-hostpath1
       restartPolicy: Always
-      volumes:
-        - hostPath:
-            path: /home/esty/github/mlibrary/dul-arclight/solr/arclight/conf
-          name: solr-hostpath0
-        - hostPath:
-            path: /home/esty/github/mlibrary/dul-arclight/solr/arclight
-          name: solr-hostpath1
+#      volumes:
+#        - hostPath:
+#            path: /home/esty/github/mlibrary/dul-arclight/solr/arclight/conf
+#          name: solr-hostpath0
+#        - hostPath:
+#            path: /home/esty/github/mlibrary/dul-arclight/solr/arclight
+#          name: solr-hostpath1
 status: {}
