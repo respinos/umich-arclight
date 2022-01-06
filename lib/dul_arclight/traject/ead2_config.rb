@@ -13,7 +13,8 @@ require 'arclight/exceptions'
 require 'arclight/level_label'
 # DUL Customization: use custom normalized date
 require_relative '../normalized_date'
-require 'arclight/normalized_title'
+# UM Customization: use custom normalized title
+require_relative '../normalized_title'
 require 'active_model/conversion' ## Needed for Arclight::Repository
 require 'active_support/core_ext/array/wrap'
 # DUL Customization: use custom digital object model
@@ -94,27 +95,27 @@ to_field 'id', extract_xpath('/ead/eadheader/eadid'), strip, gsub('.', '-')
 
 # DUL CUSTOMIZATION: add high component position to collection so the collection record
 # appears after all components. Default was nil, which sorted between first [0] & second [1] component.
-to_field 'sort_ii' do |_record, accumulator|
-  accumulator << '999999'
-end
+#to_field 'sort_ii' do |_record, accumulator|
+  #accumulator << '999999'
+#end
 
 # DUL CUSTOMIZATION: Permalink & ARK. NOTE the ARK will be derived from the
 # permalink, and not the other way around; ARK is not stored atomically in the EAD.
 # Strip out any wayward spaces or linebreaks that might end up in the url attribute
 # and only capture the value if it's a real permalink (with an ARK).
-to_field 'permalink_ssi' do |record, accumulator|
-  url = record.at_xpath('/ead/eadheader/eadid').attribute('url')&.value
-  url.gsub(/[[:space:]]/, '')
-  accumulator << url if url.include?('ark:')
-end
+#to_field 'permalink_ssi' do |record, accumulator|
+  #url = record.at_xpath('/ead/eadheader/eadid').attribute('url')&.value
+  #url.gsub(/[[:space:]]/, '')
+  #accumulator << url if url.include?('ark:')
+#end
 
-to_field 'ark_ssi' do |_record, accumulator, context|
-  next unless context.output_hash['permalink_ssi']
+#to_field 'ark_ssi' do |_record, accumulator, context|
+  #next unless context.output_hash['permalink_ssi']
 
-  permalink = context.output_hash['permalink_ssi'].first
-  path = URI(permalink).path&.delete_prefix!('/')
-  accumulator << path
-end
+  #permalink = context.output_hash['permalink_ssi'].first
+  #path = URI(permalink).path&.delete_prefix!('/')
+  #accumulator << path
+#end
 
 to_field 'title_filing_si', extract_xpath('/ead/eadheader/filedesc/titlestmt/titleproper[@type="filing"]')
 to_field 'title_ssm', extract_xpath('/ead/archdesc/did/unittitle')
