@@ -1,11 +1,7 @@
 FROM dul-arclight
 
-USER root
-RUN ls /usr/libexec
-RUN rm -rf /opt/app-root && mkdir /opt/app-root && chown -R app-user /opt/app-root
 COPY . /opt/app-root
-RUN chown -R app-user /opt/app-root
-USER app-user
+
 ENV DATABASE_URL=postgresql://postgres:arclight@db/arclight
 ENV S2I_BIN=/usr/libexec/s2i
 ENV RAILS_ENV=development

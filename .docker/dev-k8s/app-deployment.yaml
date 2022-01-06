@@ -48,6 +48,10 @@ spec:
           ports:
             - containerPort: 3000
           resources: {}
+          command: ["/bin/bash", "-c"]
+          args:
+            - rake dul_arclight:reindex_all;
+              /usr/libexec/s2i/run rails-server
 #          volumeMounts:
 #            - mountPath: /opt/app-root
 #              name: app-claim0
