@@ -51,12 +51,5 @@ spec:
           ports:
             - containerPort: 8282
           resources: {}
-#          volumeMounts:
-#            - mountPath: /opt/app-root
-#              name: resque-hostpath0
       restartPolicy: Always
-      volumes:
-        - hostPath:
-            path: /home/esty/github/mlibrary/dul-arclight
-          name: resque-hostpath0
 status: {}
