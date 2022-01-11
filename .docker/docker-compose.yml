@@ -25,7 +25,6 @@ services:
     # container_name: app
     environment:
       - DATABASE_URL=postgresql://postgres:arclight@db/arclight
-      - GOOGLE_ANALYTICS_DEBUG=true
-      - GOOGLE_ANALYTICS_TRACKING_ID=UA-167959564-4
+      - GOOGLE_ANALYTICS_DEBUG=false
       - REDIS_URL=redis://redis:6379
       - SOLR_URL=http://solr:8983/solr/arclight

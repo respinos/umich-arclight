@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose -f docker-compose.yml -f docker-compose.dev.yml convert --volumes hostPath
+    kompose.version: 1.26.0 (40646f47)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: resque
+  name: resque
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: resque
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose -f docker-compose.yml -f docker-compose.dev.yml convert --volumes hostPath
+        kompose.version: 1.26.0 (40646f47)
+      creationTimestamp: null
+      labels:
+        io.kompose.service: resque
+    spec:
+      containers:
+        - args:
+            - bundle
+            - exec
+            - rake
+            - resque:pool
+          command:
+            - wait-for-it
+            - db:5432
+            - --
+          env:
+            - name: DATABASE_URL
+              value: postgresql://postgres:arclight@db/arclight
+            - name: FINDING_AID_DATA
+              value: ../../finding-aid-data
+            - name: RAILS_ENV
+              value: development
+            - name: REDIS_URL
+              value: redis://redis:6379
+            - name: SOLR_URL
+              value: http://solr:8983/solr/arclight
+          image: umich-arclight-staging:20220105.4
+          imagePullPolicy: Never
+          name: resque
+          ports:
+            - containerPort: 8282
+          resources: {}
+      restartPolicy: Always
+status: {}

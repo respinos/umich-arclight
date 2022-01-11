@@ -1,0 +1,9 @@
+FROM dul-arclight
+
+COPY . /opt/app-root
+
+ENV DATABASE_URL=postgresql://postgres:arclight@db/arclight
+ENV S2I_BIN=/usr/libexec/s2i
+ENV RAILS_ENV=development
+
+CMD ["/usr/libexec/s2i/run", "rails-server"]

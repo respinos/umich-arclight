@@ -1,0 +1,87 @@
+/* ============================================================== */
+/* Custom Sass functions for DUL                                  */
+/* See https://css-tricks.com/snippets/sass/tint-shade-functions/ */
+/* ============================================================== */
+
+/// Slightly lighten a color
+/// @access public
+/// @param {Color} $color - color to tint
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+@function tint($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+/// Slightly darken a color
+/// @access public
+/// @param {Color} $color - color to shade
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+@function shade($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}
+
+
+//== Colors
+
+/* ================================= */
+/* Duke Branding Guide colors        */
+/* https://brand.duke.edu/colors/    */
+/* ================================= */
+$duke-navy-blue:  #012169 !default;
+$duke-royal-blue: #00539b !default;
+$copper:          #c84e00 !default;
+$persimmon:       #e89923 !default;
+$dandelion:       #ffd960 !default;
+$piedmont:        #a1b70d !default;
+$eno:             #339898 !default;
+$magnolia:        #1d6363 !default;
+$prussian-blue:   #005587 !default;
+$shale-blue:      #0577b1 !default;
+$ironweed:        #993399 !default;
+$hatteras:        #e2e6ed !default;
+$whisper-gray:    #f3f2f1 !default;
+$ginger-beer:     #fcf7e5 !default;
+$dogwood:         #988675 !default;
+$shackleford:     #dad0c6 !default;
+$cast-iron:       #262626 !default;
+$graphite:        #666666 !default;
+$granite:         #b5b5b5 !default;
+$limestone:       #e5e5e5 !default;
+
+/* ================================= */
+/* DUL website colors (dulcet theme) */
+/* ================================= */
+$dul-masthead-blue:     #053482 !default;
+$dul-dulcet-lightblue:  #235f9c !default;
+$dul-dulcet-green:      #a1b70d !default;
+$dul-dulcet-orange:     #f09905 !default;
+$dul-dulcet-red:        #cc3300 !default;
+
+
+$brand-primary:         #053482 !default;
+$brand-secondary:       #042762 !default;
+$brand-success:         #00830e !default;
+$brand-danger:          #cc3300 !default;
+$brand-warning:         #f09905 !default;
+$brand-info:            #004ccc !default;
+
+
+$gray-darker:           #222222 !default;
+$gray-dark:             #333333 !default;
+$gray:                  #555555 !default;
+$gray-light:            #676767 !default;
+$gray-light-more:       #cccccc !default;
+$gray-lighter:          #eeeeee !default;
+$facet-grey:            #f5f5f5 !default;
+$gray-lightest:         #fafafa !default;
+
+
+$primary-link-color: #004CCC;
+$secondary-link-color: #003999;
+$link-hover-color: tint($primary-link-color, 16);
+
+$primary-link-color-inverted: #ffbc3f;
+
+$access-restriction-warning: #fed86a;
+$access-restriction-gray: #dee2e6;
