@@ -1,11 +1,10 @@
 <% @random_feature = random_feature %>
-
 <div class="row homepage main-feature mb-5">
-  <div class="col-md-12">
+  <div class="col-md-12" >
     <div class="imgback imgback-shadow col-md-5 col-lg-6 col-xl-7 hidden-sm-down"></div>
-    <div class="imgback imgback-image col-md-5 col-lg-6 col-xl-7 hidden-sm-down"
+    <div class="needs-changed imgback imgback-image col-md-5 col-lg-6 col-xl-7 hidden-sm-down"
         style="background-image: url(<%= feature_img_url(@random_feature['image']) %>)">
-      <div class="feature-caption"><%= @random_feature['caption_html'].html_safe %></div>
+      <div class="needs-changed feature-caption"><%= @random_feature['caption_html'].html_safe %></div>
     </div>
 
     <div class="col-md-7 col-lg-6 col-xl-5 rl-menu-title">
@@ -15,7 +14,7 @@
       <%= render_search_bar %>
 
       <div class="intro-buttons mt-2">
-        <div id="browse-links" class="btn-group mr-3">
+        <div id="browse-links" class="needs-changed btn-group mr-3">
           <%= link_to t('dul_arclight.home.browse_all'), arclight_engine.collections_path, { class: 'btn btn-sm btn-primary'} %>
           <button href="#" type="button" class="btn btn-primary btn-sm dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <span class="sr-only">Toggle Dropdown</span>
@@ -30,7 +29,7 @@
 
       </div>
       <hr class="extended-divider mt-3" />
-      <a class="rl-banner d-flex align-items-center mb-3" href="https://library.duke.edu/rubenstein">
+      <a class="needs-changed rl-banner d-flex align-items-center mb-3" href="https://library.duke.edu/rubenstein">
         <%= image_tag asset_url('dul-logos/rl-logo-black.png'), alt: 'Rubenstein Logo', class: 'rl-logo' %>
         <div class="rl-fullname">David M. Rubenstein Rare <br class="rl-break"/>Book &amp; Manuscript Library</div>
       </a>
@@ -58,7 +57,7 @@
     </div>
   <% end %>
 
-  <div id="homepage-text-blocks" class="row mt-4 mb-5">
+  <div id="homepage-text-blocks" class="needs-changed row mt-4 mb-5">
     <div class="col-md-5">
       <h2><%= t('dul_arclight.home.about.heading') %></h2>
       <p><%= t('dul_arclight.home.about.text_html').html_safe %></p>

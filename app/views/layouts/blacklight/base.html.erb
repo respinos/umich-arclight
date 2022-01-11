@@ -37,9 +37,11 @@
     <meta property="og:type" content="website" />
     <meta property="og:title" content="<%= render_page_title %>"/>
     <%= content_for(:twitter_og_meta) %>
+    <link href="https://unpkg.com/@umich-lib/css@v1/dist/umich-lib.css" rel="stylesheet"/>
 
   </head>
   <body class="<%= render_body_class %>">
+    <link href="https://unpkg.com/@umich-lib/css@v1/dist/umich-lib.css" rel="stylesheet"/>
     <nav id="skip-link" role="navigation" aria-label="<%= t('blacklight.skip_links.label') %>">
       <%= link_to t('blacklight.skip_links.search_field'), '#search_field', class: 'element-invisible element-focusable rounded-bottom py-2 px-3', data: { turbolinks: 'false' } %>
       <%= link_to t('blacklight.skip_links.main_content'), '#main-container', class: 'element-invisible element-focusable rounded-bottom py-2 px-3', data: { turbolinks: 'false' } %>
