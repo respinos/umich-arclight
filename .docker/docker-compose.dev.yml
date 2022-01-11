@@ -5,14 +5,14 @@ volumes:
 
 services:
   solr:
-    ports:
-      - "8983:8983"
+#    ports:
+#      - "8983:8983"
     volumes:
       - ../solr/arclight:/var/solr/data/arclight
 
   db:
-    ports:
-      - "5432:5432"
+#    ports:
+#      - "5432:5432"
     volumes:
       - pg_data:/var/lib/postgresql/data
 
@@ -27,13 +27,13 @@ services:
 
   redis:
     image: redis:6-buster
-    ports:
-      - "6379:6379"
+#    ports:
+#      - "6379:6379"
 
   resque:
     image: dul-arclight
-    ports:
-      - "8282:8282"
+#    ports:
+#      - "8282:8282"
     depends_on:
       - db
       - redis
@@ -61,8 +61,8 @@ services:
 
   resque-web:
     image: dul-arclight
-    ports:
-      - "8080:8080"
+#    ports:
+#      - "8080:8080"
     depends_on:
       - redis
     volumes:
