@@ -30,8 +30,8 @@ spec:
 #            - solr-precreate
 #            - arclight
 #            - /solr_config
-        - image: umich-arclight-solr-staging:20220106.4
-          imagePullPolicy: Never
+        - image: estythomas/umich-arclight-solr-staging:20220106.4
+          imagePullPolicy: Always
           name: solr
           ports:
             - containerPort: 8983
