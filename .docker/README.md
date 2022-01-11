@@ -1,3 +1,37 @@
+# Kubernetes workflow
+
+## K8s (local)
+docker image build loop for k8s:
+- In the relevant k8s yaml files, set `imagePullPolicy: Never`
+- for the app base image:
+    - modify .docker/Dockerfile.staging
+    - `$ docker build -t umich-arclight-staging:<tag> -f .docker/Dockerfile.staging .`
+    - `$ docker run umich-arclight-staging:<tag>` (to sanity-check)
+    - `$ minikube image load umich-arclight-staging:<tag>`
+    - set tag in .docker/dev-k8s/app-deployment.yaml spec->template->spec->containers->image
+    - `$ kubectl apply -f .docker/dev-k8s/app-deployment.yaml`
+- for the solr image:
+    - modify .docker/Dockerfile.solr.staging
+    - `$ docker build -t umich-arclight-solr-staging:<tag> -f .docker/Dockerfile.staging .`
+    - `$ docker run umich-arclight-solr-staging:<tag>` (to sanity-check)
+    - `$ minikube image load umich-arclight-solr-staging:<tag>`
+    - set tag in .docker/dev-k8s/app-deployment.yaml spec->template->spec->containers->image
+    - `$ kubectl apply -f .docker/dev-k8s/solr-deployment.yaml`
+- Check out lens to see what’s broken this time
+
+## K8s (staging)
+- Requires access to a dockerhub or other docker image repository
+- `$ docker build -t umich-arclight-solr-staging:<tag> -f .docker/Dockerfile.solr.staging .`
+- `$ docker image tag umich-arclight-solr-staging:<tag> <repository>/umich-arclight-solr-staging:<tag>`
+- `$ docker image push <repository>>/umich-arclight-solr-staging:<tag>`
+- `$ docker build -t umich-arclight-staging:<tag> -f .docker/Dockerfile.staging`
+- `$ docker image tag umich-arclight-staging:<tag> <repository>/umich-arclight-staging:<tag>`
+- `$ docker image push <repository>/umich-arclight-staging:<tag>`
+- Update image tags in app-deployment-staging.yaml and solr-deployment-staging.yaml
+- `$ kubectl --namespace=arclight-testing apply -f .docker/base-k8s/ -f .docker/staging-k8s/`
+    - If you haven't set up, or have changed, the persistent volume claims you will also need to apply `.docker/staging-pvc-k8s`
+
+
 # Containerized workflow
 
 ## Prerequisites
