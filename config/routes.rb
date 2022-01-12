@@ -33,6 +33,9 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :repositories, only: %i[index show], controller: 'arclight/repositories'
+
+
   resources :ua_record_groups, only: [:index], as: 'ua_record_groups', path: '/collections/ua-record-groups', controller: 'ua_record_groups'
 
   # DUL CUSTOMIZATION: Download the source EAD XML file using the collection slug
