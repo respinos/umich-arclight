@@ -316,11 +316,10 @@ RESTRICTION_FIELDS.map do |selector|
   to_field "#{selector}_teim", extract_xpath("/ead/archdesc/#{selector}/*[local-name()!='head']")
 end
 
-# DUL CUSTOMIZATION: exclude repository/corpname since it's always Rubenstein.
 NAME_ELEMENTS.map do |selector|
   to_field 'names_coll_ssim', extract_xpath("/ead/archdesc/controlaccess/#{selector}"), unique
-  to_field 'names_ssim', extract_xpath("//#{selector}[not(parent::repository)]"), unique
-  to_field "#{selector}_ssm", extract_xpath("//#{selector}[not(parent::repository)]"), unique
+  to_field 'names_ssim', extract_xpath("//#{selector}")
+  to_field "#{selector}_ssm", extract_xpath("//#{selector}")
 end
 
 # DUL CUSTOMIZATION: separate language vs langmaterial fields that don't have language
