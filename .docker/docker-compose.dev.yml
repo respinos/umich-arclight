@@ -5,8 +5,8 @@ volumes:
 
 services:
   solr:
-#    ports:
-#      - "8983:8983"
+    ports:
+      - "8983:8983"
     volumes:
       - ../solr/arclight:/var/solr/data/arclight
 
