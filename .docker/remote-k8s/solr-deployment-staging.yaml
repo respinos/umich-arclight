@@ -25,11 +25,6 @@ spec:
         io.kompose.service: solr
     spec:
       containers:
-#        - command:
-#            - docker-entrypoint.sh
-#            - solr-precreate
-#            - arclight
-#            - /solr_config
         - image: estythomas/umich-arclight-solr-staging:20220106.4
           imagePullPolicy: Always
           name: solr
