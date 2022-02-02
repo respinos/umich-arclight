@@ -42,14 +42,11 @@ spec:
               value: redis://redis:6379
             - name: SOLR_URL
               value: "http://$(SOLR_SERVICE_HOST):$(SOLR_SERVICE_PORT)/solr/arclight"
-          image: estythomas/umich-arclight-staging:20220118.1
+          image: estythomas/umich-arclight-staging:20220202.1
           imagePullPolicy: Always
           name: app
           ports:
             - containerPort: 3000
           resources: {}
-          command: ["/bin/bash", "-c"]
-          args:
-            - /usr/libexec/s2i/run rails-server
       restartPolicy: Always
 status: {}
