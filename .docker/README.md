@@ -15,7 +15,7 @@ docker image build loop for k8s:
     - `$ docker build -t umich-arclight-solr-staging:<tag> -f .docker/Dockerfile.staging .`
     - `$ docker run umich-arclight-solr-staging:<tag>` (to sanity-check)
     - `$ minikube image load umich-arclight-solr-staging:<tag>`
-    - set tag in .docker/dev-k8s/app-deployment.yaml spec->template->spec->containers->image
+    - set tag in .docker/dev-k8s/solr-deployment.yaml spec->template->spec->containers->image
     - `$ kubectl apply -f .docker/dev-k8s/solr-deployment.yaml`
 - Check out lens to see what’s broken this time
 
@@ -28,8 +28,8 @@ docker image build loop for k8s:
 - `$ docker image tag umich-arclight-staging:<tag> <repository>/umich-arclight-staging:<tag>`
 - `$ docker image push <repository>/umich-arclight-staging:<tag>`
 - Update image tags in app-deployment-staging.yaml and solr-deployment-staging.yaml
-- `$ kubectl --namespace=arclight-testing apply -f .docker/base-k8s/ -f .docker/staging-k8s/`
-    - If you haven't set up, or have changed, the persistent volume claims you will also need to apply `.docker/staging-pvc-k8s`
+- `$ kubectl --namespace=arclight-testing apply -f .docker/base-k8s/ -f .docker/remote-k8s -f .docker/staging-k8s/`
+    - If you haven't set up the persistent volume claims you will also need to apply `.docker/pvc-k8s`
 
 
 # Containerized workflow
@@ -43,6 +43,22 @@ docker image build loop for k8s:
 - [source-to-image](https://github.com/openshift/source-to-image#installation)
 - [GNU Make](https://www.gnu.org/software/make/) - Mac can get in XCode
   Command Line Tools (CLT) or via Home Brew.
+
+## Update Feb 8 2022
+Start docker compose with
+```bash
+$ docker-compose -f docker-compose.dev.yml up
+```
+
+Index EADs with
+```bash
+$ SOLR_URL=http://localhost:8983/solr/arclight FINDING_AID_DATA=./sample-ead bundle exec rake dul_arclight:reindex_all
+```
+
+May also need db migrations:
+```bash
+$ docker-compose -f docker-compose.dev.yml exec -- app bundle exec bin/rails db:migrate RAILS_ENV=development
+```
 
 ## Wrapper scripts
 
