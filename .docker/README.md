@@ -52,7 +52,7 @@ $ docker-compose -f docker-compose.dev.yml up
 
 Index EADs with
 ```bash
-$ SOLR_URL=http://localhost:8983/solr/arclight FINDING_AID_DATA=./sample-ead bundle exec rake dul_arclight:reindex_all
+$ docker-compose -f docker-compose.dev.yml exec -- app bundle exec rake dul_arclight:reindex_everything
 ```
 
 May also need db migrations:
