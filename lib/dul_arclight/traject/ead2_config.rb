@@ -92,6 +92,8 @@ end
 # ==================
 
 to_field 'id', extract_xpath('/ead/eadheader/eadid'), strip, gsub('.', '-')
+# to get the filename for Aeon for SCRC and Clements
+to_field 'publicid_ssi', extract_xpath('/ead/eadheader/eadid/@publicid')
 
 # DUL CUSTOMIZATION: add high component position to collection so the collection record
 # appears after all components. Default was nil, which sorted between first [0] & second [1] component.
