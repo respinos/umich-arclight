@@ -67,7 +67,7 @@ clements:
       request_mappings: 'Action=10&Form=31&Value=parsed_ead_url'
   request_id:
     field: 'publicid_ssi'
-    pattern: '-\/\/us::MiU\/\/TEXT us::MiU::(.*)\/\/EN'
+    pattern: 'us//::miu-c//TXT us::miu-c::(.*.xml)\/\/EN'
     prefix: 'https://quod.lib.umich.edu/c/clementsead/eads/'
 clarke:
   name: 'Central Michigan University. Clarke Historical Library'

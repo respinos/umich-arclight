@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'dul_arclight/digital_object'
+require_relative 'concerns/dul_arclight/solr_document'
 
 class SolrDocument
   include Blacklight::Solr::Document

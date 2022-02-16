@@ -45,7 +45,7 @@ RSpec.describe Arclight::Requests::AeonWebEad do
     let(:document) do
       instance_double 'Blacklight::SolrDocument',
                       repository_config: config,
-                      publicid_ssi: '-//us::MiU//TEXT us::MiU::ams0099.xml//EN'
+                      request_field: '-//us::MiU//TEXT us::MiU::ams0099.xml//EN'
     end
 
 
