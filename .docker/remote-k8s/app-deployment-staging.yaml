@@ -25,9 +25,9 @@ spec:
         io.kompose.service: app
     spec:
       securityContext:
-        runAsUser: 1001
-        runAsGroup: 1001
-        fsGroup: 1001
+        runAsUser: 1000
+        runAsGroup: 1000
+        fsGroup: 1000
       containers:
         - env:
             - name: DATABASE_URL
@@ -42,7 +42,7 @@ spec:
               value: redis://redis:6379
             - name: SOLR_URL
               value: "http://$(SOLR_SERVICE_HOST):$(SOLR_SERVICE_PORT)/solr/arclight"
-          image: estythomas/umich-arclight-staging:20220202.1
+          image: estythomas/umich-arclight-staging:20220217.4
           imagePullPolicy: Always
           name: app
           ports:

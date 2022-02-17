@@ -25,7 +25,7 @@ spec:
         io.kompose.service: resque-web
     spec:
       containers:
-        - args:
+        - command:
             - bundle
             - exec
             - resque-web
@@ -34,10 +34,6 @@ spec:
             - -r
             - redis:6379
             - -F
-          command:
-            - wait-for-it
-            - redis:6379
-            - --
           env:
             - name: DATABASE_URL
               value: postgresql://postgres:arclight@db/arclight
@@ -47,7 +43,7 @@ spec:
               value: redis://redis:6379
             - name: SOLR_URL
               value: http://solr:8983/solr/arclight
-          image: estythomas/umich-arclight-staging:20220105.4
+          image: estythomas/umich-arclight-staging:20220217.4
           imagePullPolicy: Always
           name: resque-web
           ports:

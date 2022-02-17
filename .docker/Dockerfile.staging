@@ -4,7 +4,6 @@ ARG UNAME=app-user
 ARG UID=1000
 ARG GID=1000
 
-RUN gem install 'bundler:~>1.17.3' 'bundler:~>2.1.4'
 
 RUN groupadd -g $GID -o $UNAME
 RUN useradd -m -d /opt/app-root -u $UID -g $GID -o -s /bin/bash $UNAME
@@ -16,6 +15,8 @@ COPY --chown=$UID:$GID Gemfile* /opt/app-root/
 ENV BUNDLE_PATH /gems
 
 WORKDIR /opt/app-root
+RUN gem install 'bundler:~>1.17.3' 'bundler:~>2.1.4'
+RUN bundle config --local build.sassc --disable-march-tune-native
 RUN bundle install
 
 COPY --chown=$UID:$GID . /opt/app-root/
