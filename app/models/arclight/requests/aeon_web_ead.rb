@@ -33,7 +33,7 @@ module Arclight
         field = document.repository_config.request_field
         pattern = document.repository_config.request_pattern
         prefix = document.repository_config.request_prefix
-        
+
         request_id = document.request_field(field)
         if pattern
           regexed_id = Regexp::new(pattern).match(request_id)

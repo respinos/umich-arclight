@@ -358,6 +358,13 @@ end
 
 # rubocop:disable Metrics/BlockLength
 compose 'components', ->(record, accumulator, _context) { accumulator.concat record.xpath('//*[is_component(.)]', NokogiriXpathExtensions.new) } do
+  to_field 'publicid_ssi' do |record, accumulator, context|
+    accumulator << if record.attribute('publicid_ssi').blank?
+                     context.clipboard[:parent].output_hash['publicid_ssi']
+                   else
+                     record.attribute('publicid_ssi')
+                   end
+  end
   to_field 'ref_ssi' do |record, accumulator, context|
     accumulator << if record.attribute('id').blank?
                      strategy = Arclight::MissingIdStrategy.selected
