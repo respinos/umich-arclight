@@ -1,29 +1,31 @@
 /* Need these to be able to use ArcLight mixins in DUL-Arclight */
-@import 'bootstrap/functions';
-@import 'bootstrap/variables';
-@import 'bootstrap/mixins';
-@import 'arclight/variables';
-@import 'dul-arclight/dul_variables';
+@import "bootstrap/functions";
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+@import "arclight/variables";
+@import "dul-arclight/dul_variables";
 
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
 @import "blacklight/hierarchy/hierarchy";
 
-@import 'arclight-overrides/modules/layout';
-@import 'arclight-overrides/modules/search_results';
+@import "arclight-overrides/modules/layout";
+@import "arclight-overrides/modules/search_results";
 
-@import 'dul-arclight/modules/layout';
-@import 'dul-arclight/modules/context_navigation';
-@import 'dul-arclight/modules/show_component';
-@import 'dul-arclight/modules/homepage';
-@import 'dul-arclight/modules/search_box';
-@import 'dul-arclight/modules/search_results';
-@import 'dul-arclight/modules/bookmarks';
-@import 'dul-arclight/modules/banners';
-@import 'dul-arclight/modules/digital_objects';
-@import 'dul-arclight/modules/ua_record_groups';
-@import 'dul-arclight/modules/rights';
+@import "dul-arclight/modules/layout";
+@import "dul-arclight/modules/context_navigation";
+@import "dul-arclight/modules/show_component";
+@import "dul-arclight/modules/homepage";
+@import "dul-arclight/modules/search_box";
+@import "dul-arclight/modules/search_results";
+@import "dul-arclight/modules/bookmarks";
+@import "dul-arclight/modules/banners";
+@import "dul-arclight/modules/digital_objects";
+@import "dul-arclight/modules/ua_record_groups";
+@import "dul-arclight/modules/rights";
 
-@import 'dul-arclight/dul_styles';
-@import 'dul-arclight/dul_masthead';
+@import "dul-arclight/dul_styles";
+@import "dul-arclight/dul_masthead";
+
+@import "umich-arclight/index";

@@ -1,0 +1,27 @@
+#homepage-text-blocks {
+  justify-content: space-between;
+}
+
+#homepage-text-blocks > * {
+  border: solid 1px var(--color-neutral-100);
+  padding: 2em 3em;
+  width: calc(50% - 12px);
+
+  @include media-breakpoint-down(sm) {
+    width: 100%;
+  }
+}
+
+.main-title {
+  margin: 0.5em 0;
+}
+
+.card-icon {
+  color: var(--color-teal-400);
+  background-color: var(--color-teal-100);
+  display: flex;
+  justify-content: space-evenly;
+  margin-right: var(--space-medium);
+  border-radius: 100%;
+  padding: var(--space-medium);
+}

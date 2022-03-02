@@ -37,7 +37,11 @@
     <meta property="og:type" content="website" />
     <meta property="og:title" content="<%= render_page_title %>"/>
     <%= content_for(:twitter_og_meta) %>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
     <link href="https://unpkg.com/@umich-lib/web@1/umich-lib.css" rel="stylesheet"/>
+    <script type="module" src="https://unpkg.com/@umich-lib/web@1/dist/umich-lib/umich-lib.esm.js"></script>
+    <script nomodule src="https://unpkg.com/@umich-lib/web@1/dist/umich-lib/umich-lib.js"></script>
 
   </head>
   <body class="<%= render_body_class %>">
@@ -48,7 +52,7 @@
     </nav>
     <%= render partial: 'shared/header_navbar' %>
 
-    <main id="main-container" class="<%= container_classes %>" role="main" aria-label="<%= t('blacklight.main.aria.main_container') %>">
+    <main id="main-container" class="viewport-container" role="main" aria-label="<%= t('blacklight.main.aria.main_container') %>">
       <%= content_for(:container_header) %>
 
       <%= render partial: 'shared/flash_msg', layout: 'shared/flash_messages' %>
@@ -81,6 +85,5 @@
       <%= render partial: "shared/google_analytics_body", locals: {
         ga_tracking_id: DulArclight.google_analytics_tracking_id } %>
     <% end %>
-
   </body>
 </html>

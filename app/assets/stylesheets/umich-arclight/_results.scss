@@ -1,0 +1,53 @@
+.form-control:focus {
+  outline: 0;
+  box-shadow: 0 0 0 2px var(--color-maize-400),
+    0 0 0 3px var(--color-neutral-400);
+  border-radius: 2px !important;
+}
+
+#content #documents {
+  margin-bottom: 4rem;
+}
+
+.al-repositories {
+  margin-bottom: 2rem;
+}
+
+#context .actions-wrapper .btn.al-show-actions-collection-info {
+  color: var(--color-neutral-400) !important;
+}
+
+/* Facets */
+
+#facets .facet-limit-active .card-header {
+  background: var(--color-green-500) !important;
+}
+
+#facets {
+  .facet-limit-active {
+    border-color: var(--color-green-500) !important;
+  }
+
+  .facet-limit-active .card-header {
+    background-color: var(--color-green-500) !important;
+  }
+
+  .facet-values li .selected {
+    color: var(--color-green-500) !important;
+  }
+
+  .facet-limit-active .collapse-toggle {
+    color: white;
+  }
+}
+
+/*Results*/
+
+.page-link {
+  color: var(--color-indigo-500);
+}
+
+.page-item.active .page-link {
+  background-color: var(--color-indigo-500);
+  border-color: var(--color-indigo-500);
+}
