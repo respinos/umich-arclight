@@ -1,8 +1,8 @@
-name: Build latest from umich-develop
+name: Build latest from whatever side branch
 
 on:
   push:
-    branches: [ umich-develop ] # umich-develop is effectively our main branch
+    branches: [ umich-fe ]
 
 jobs:
   build:
