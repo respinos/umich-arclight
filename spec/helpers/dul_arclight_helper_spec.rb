@@ -11,7 +11,7 @@ describe DulArclightHelper, type: :helper do
     before { allow(helper).to receive(:request).and_return(request) }
 
     it 'appends an encoded referring URL to the ask page URL' do
-      expect(helper.ask_rubenstein_url).to \
+      expect(helper.ask_librarian_url).to \
         eq('https://library.duke.edu/rubenstein/ask?' \
            'referrer=https%3A%2F%2Farchives.lib.duke.edu%2F%3Futf8%3D%25E2%259C%2593%26group%3Dtrue%26' \
            'search_field%3Dall_fields%26q%3Dduke%2Bchapel')

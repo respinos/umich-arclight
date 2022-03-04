@@ -47,8 +47,8 @@ module DulArclightHelper
     document.abstract_or_scope.present? && !collection_result_in_group?(document)
   end
 
-  def ask_rubenstein_url
-    base_url = 'https://library.duke.edu/rubenstein/ask'
+  def ask_librarian_url
+    base_url = 'https://www.lib.umich.edu/ask-librarian'
     [base_url, { referrer: request.original_url }.to_param].join('?')
   end
 
