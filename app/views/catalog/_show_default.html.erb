@@ -2,11 +2,6 @@
 <%# Last checked for updates: ArcLight v0.3.0. %>
 <%# https://github.com/projectblacklight/arclight/blob/master/app/views/catalog/_show_default.html.erb %>
 
-<% content_for :twitter_og_meta do %>
-  <meta name="description" content="<%= meta_tag_description(document) %>" />
-  <meta property="og:description" content="<%= meta_tag_description(document) %>" />
-<% end %>
-
 <%# DUL CUSTOMIZATION: Additional skip link for show views to get to collection nav. %>
 <% content_for(:skip_links) do -%>
     <%= link_to t('blacklight.skip_links.collection_nav'), '#context', class: 'element-invisible element-focusable rounded-bottom py-2 px-3 d-none d-lg-block', data: { turbolinks: 'false' } %>

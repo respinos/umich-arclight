@@ -31,12 +31,8 @@
     <% end %>
 
     <%# DUL CUSTOMIZATION: Open Graph & Twitter card metadata %>
-    <meta property="og:site_name" content="<%= t('dul_arclight.twitter_og.site_name') %>"/>
-    <meta name="twitter:site" content="<%= t('dul_arclight.twitter_og.twitter_handle') %>"/>
-    <meta name="twitter:card" content="summary" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="<%= render_page_title %>"/>
-    <%= content_for(:twitter_og_meta) %>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
     <link href="https://unpkg.com/@umich-lib/web@1/umich-lib.css" rel="stylesheet"/>
