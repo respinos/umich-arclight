@@ -10,10 +10,5 @@
 # test_ua_bw_photos:
 #  query: |
 #    formats_ssim:"Black-and-white photographs"
-#    repository_sim:"Duke University Archives"
-
-
-nlm_history_of_medicine:
-  query: |
-    names_ssim:"History of Medicine Collections (Duke University)"
+#    repository_sim:"University Archives"
 

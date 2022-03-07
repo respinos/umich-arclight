@@ -45,19 +45,22 @@ docker image build loop for k8s:
   Command Line Tools (CLT) or via Home Brew.
 
 ## Update Feb 8 2022
+__Note: These commands all use the docker-compose.yml which is in the base directory,
+not the one in the .docker directory__
+
 Start docker compose with
 ```bash
-$ docker-compose -f docker-compose.dev.yml up
+$ docker-compose up
 ```
 
 Index EADs with
 ```bash
-$ docker-compose -f docker-compose.dev.yml exec -- app bundle exec rake dul_arclight:reindex_everything
+$ docker-compose exec -- app bundle exec rake dul_arclight:reindex_everything
 ```
 
 May also need db migrations:
 ```bash
-$ docker-compose -f docker-compose.dev.yml exec -- app bundle exec bin/rails db:migrate RAILS_ENV=development
+$ docker-compose exec -- app bundle exec bin/rails db:migrate RAILS_ENV=development
 ```
 
 ## Wrapper scripts

@@ -1,13 +1,13 @@
 ---
 en:
   arclight:
-    masthead_heading: "Archival Collections at Duke"
+    masthead_heading: "Finding Aids"
     truncation:
       show_more: "show more"
       show_less: "show less"
     views:
       home:
-        title: "Archival Collections at Duke"
+        title: "Finding Aids"
       index:
         group_results_count:
           one: "1 result in this collection"

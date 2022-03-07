@@ -1,6 +1,6 @@
 en:
   blacklight:
-    application_name: 'Archives & Manuscripts at Duke University Libraries'
+    application_name: 'University of Michigan Finding Aids'
     bookmarks:
       disclaimer_html: '<strong>Please note:</strong> saved bookmarks may expire'
       per_page_warning: |
@@ -10,8 +10,8 @@ en:
         page <em>(up to 100)</em>.
       export_csv: Export CSV
     branding:
-      library_name: "Duke University Libraries"
-      primary: "Archives & Manuscripts"
+      library_name: "University of Michigan"
+      primary: "Finding Aids"
       secondary: "Collection Guides"
     email:
       text:
@@ -25,9 +25,7 @@ en:
           one: 'Saved Bookmark from Collection Guides'
           other: 'Saved Bookmarks from Collection Guides'
       views:
-        note: |
-          This message was sent from the Rubenstein Library Collection Guides system. For
-          research assistance, see: https://library.duke.edu/rubenstein/ask
+        note: "INSERT CONTENT HERE"
     header_links:
       ask: "Ask"
       ask_long: "Ask a Question"

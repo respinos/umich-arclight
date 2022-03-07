@@ -1,0 +1,23 @@
+#search-col {
+  padding-right: 0.5em;
+}
+
+.header-utilities a {
+  color: #fff;
+}
+
+.custom-select:focus {
+  outline: 0;
+  box-shadow: 0 0 0 2px var(--color-maize-400),
+    0 0 0 3px var(--color-neutral-400);
+  border-radius: 2px !important;
+}
+
+/* Search Extra Controls */
+#search-col .search-extra-controls .input-group {
+  padding: 0.25em 0;
+
+  a {
+    padding: 0 0.25em;
+  }
+}

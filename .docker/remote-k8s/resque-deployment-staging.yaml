@@ -24,16 +24,16 @@ spec:
       labels:
         io.kompose.service: resque
     spec:
+      securityContext:
+        runAsUser: 1000
+        runAsGroup: 1000
+        fsGroup: 1000
       containers:
-        - args:
+        - command:
             - bundle
             - exec
             - rake
             - resque:pool
-          command:
-            - wait-for-it
-            - db:5432
-            - --
           env:
             - name: DATABASE_URL
               value: postgresql://postgres:arclight@db/arclight
@@ -45,7 +45,7 @@ spec:
               value: redis://redis:6379
             - name: SOLR_URL
               value: http://solr:8983/solr/arclight
-          image: estythomas/umich-arclight-staging:20220118.1
+          image: estythomas/umich-arclight-staging:20220217.4
           imagePullPolicy: Always
           name: resque
           ports:

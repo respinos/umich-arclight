@@ -1,19 +1,14 @@
 /* Styles for DUL-ArcLight homepage */
 
 .homepage {
-
   /* ---------------------- */
   /* HORIZONTAL BAR AT TOP  */
   /* ---------------------- */
   &.main-feature {
-    background-color: #ccc;
+    background-color: #fff;
     min-height: 300px;
-    background: #f0f0f0;
-    box-shadow: 0 1px 1px rgba(0,0,0,0.06),
-                0 2px 2px rgba(0,0,0,0.06),
-                0 4px 4px rgba(0,0,0,0.06),
-                0 8px 8px rgba(0,0,0,0.06),
-                0 16px 16px rgba(0,0,0,0.06);
+    background: #fff;
+    border: solid 1px var(--color-neutral-100);
     @include media-breakpoint-down(sm) {
       min-height: 250px;
     }
@@ -35,20 +30,18 @@
       background-size: cover;
       right: 0;
       background-position: 50% 50%;
-      clip-path: polygon(50px 0,100% 0,100% 100%,0 100%);
-      -webkit-clip-path: polygon(50px 0,100% 0,100% 100%,0 100%);
       z-index: 90;
-      background-color: #ddd;
     }
-    &.imgback-shadow { /* transparent diagonal white stripe */
-      -webkit-clip-path: polygon(50px 0, 70px 0, 20px 100%,0 100%);
-      clip-path: polygon(50px 0, 70px 0, 20px 100%,0 100%);
+    &.imgback-shadow {
+      /* transparent diagonal white stripe */
+      -webkit-clip-path: polygon(50px 0, 70px 0, 20px 100%, 0 100%);
+      clip-path: polygon(50px 0, 70px 0, 20px 100%, 0 100%);
       z-index: 95;
       box-shadow: -30px 30px -30px 30px;
       background-color: #eee;
       opacity: 0.8;
       /* Microsoft Edge doesn't support clip-path, so just remove it */
-      @supports (-ms-ime-align:auto) {
+      @supports (-ms-ime-align: auto) {
         display: none;
       }
       /* IE10+, hide it. No clip-path support. */
@@ -61,11 +54,8 @@
       position: absolute;
       bottom: 0px;
       right: 0px;
-      background-color: rgba(0,0,0,0.4);
+      background-color: rgba(0, 0, 0, 0.4);
       padding: 10px 10px 10px 20px;
-      margin-left: 20px;
-      -webkit-clip-path: polygon(8px 0, 100% 0, 100% 100%, 0 100%);
-      clip-path: polygon(8px 0, 100% 0, 100% 100%, 0 100%);
       @include media-breakpoint-only(xl) {
         padding-right: 25px;
       }
@@ -83,6 +73,7 @@
   /* MAIN TITLE ON HOMEPAGE */
   /* ---------------------- */
 
+  /*
   h1.main-title {
     color: black;
     margin-top: 0.4em;
@@ -106,12 +97,14 @@
     font-weight: 500;
     font-size: 22px;
   }
+  */
 
   /* ---------------------- */
   /* SEARCH BOX ON HOMEPAGE */
   /* ---------------------- */
   form {
-    .text-input-wrapper, .twitter-typeahead {
+    .text-input-wrapper,
+    .twitter-typeahead {
       width: 100%;
     }
     .within-collection-dropdown {
@@ -124,18 +117,18 @@
       &.search-q {
         background-color: white !important;
       }
-
     }
 
     .search-btn {
       background-color: $brand-success;
       border-color: shade($brand-success, 5%);
-      &:hover, &:active, &:focus {
+      &:hover,
+      &:active,
+      &:focus {
         background-color: shade($brand-success, 10%);
         border-color: shade($brand-success, 15%);
       }
     }
-
   }
   .search-extra-controls {
     display: inline;
@@ -186,7 +179,7 @@
       color: inherit;
     }
 
-    @include media-breakpoint-only(xs){
+    @include media-breakpoint-only(xs) {
       font-size: 16px;
     }
 

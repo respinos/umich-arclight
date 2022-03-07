@@ -1,22 +1,22 @@
 <% @random_feature = random_feature %>
-<div class="row homepage main-feature mb-5">
+<div class="row homepage main-feature mt-5 mb-5">
   <div class="col-md-12" >
-    <div class="imgback imgback-shadow col-md-5 col-lg-6 col-xl-7 hidden-sm-down"></div>
-    <div class="needs-changed imgback imgback-image col-md-5 col-lg-6 col-xl-7 hidden-sm-down"
+    <div class="imgback col-md-5 col-lg-6 col-xl-6 hidden-sm-down"></div>
+    <div class="imgback imgback-image col-md-5 col-lg-6 col-xl-6 hidden-sm-down"
         style="background-image: url(<%= feature_img_url(@random_feature['image']) %>)">
-      <div class="needs-changed feature-caption"><%= @random_feature['caption_html'].html_safe %></div>
+      <div class="feature-caption"><%= @random_feature['caption_html'].html_safe %></div>
     </div>
 
     <div class="col-md-7 col-lg-6 col-xl-5 rl-menu-title">
       <h1 class="main-title">Find Archival Materials</h1>
-      <p class="lead tagline">Detailed inventories of <span class="collection-count"><%= number_with_delimiter(collection_count) %></span> collections</p>
+      <p>Detailed inventories of <%= number_with_delimiter(collection_count) %> collections</p>
 
       <%= render_search_bar %>
 
-      <div class="intro-buttons mt-2">
-        <div id="browse-links" class="needs-changed btn-group mr-3">
-          <%= link_to t('dul_arclight.home.browse_all'), arclight_engine.collections_path, { class: 'btn btn-sm btn-primary'} %>
-          <button href="#" type="button" class="btn btn-primary btn-sm dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <div class="intro-buttons mt-3 mb-3">
+        <div id="browse-links" class="btn-group mr-3">
+          <%= link_to t('dul_arclight.home.browse_all'), arclight_engine.collections_path, { class: 'btn btn-sm btn-secondary'} %>
+          <button href="#" type="button" class="btn btn-secondary btn-sm dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <span class="sr-only">Toggle Dropdown</span>
           </button>
           <div class="dropdown-menu">
@@ -28,14 +28,14 @@
         <%= render 'search_extra_controls' %>
 
       </div>
-      <hr class="extended-divider mt-3" />
-      <a class="rl-banner d-flex align-items-center mb-3" href="/repositories">
-        <div class="rl-fullname">Browse All Repositories</div>
+     
+      <a class="d-flex align-items-center mt-4 mb-3" href="/repositories">
+        <div>Browse All Repositories</div>
       </a>
     </div>
   </div>
 </div>
-<div class="container">
+<div class="container-fluid full-width">
 
   <%# Configurable alert banner; set via un/commenting dul_arclight.home.alert.* %>
   <%# keys in config/locales/dul_arclight.en.yml %>
@@ -56,23 +56,26 @@
     </div>
   <% end %>
 
-  <div id="homepage-text-blocks" class="needs-changed row mt-4 mb-5">
-    <div class="col-md-5">
+  <div id="homepage-text-blocks" class="row mt-4 mb-5 d-flex flex-wrap">
+    <div class="mb-2">
+    <div class="card-title d-flex align-items-center">
+      <div class="card-icon"><span class="material-icons">
+      info
+      </span></div>
       <h2><%= t('dul_arclight.home.about.heading') %></h2>
+     </div>
       <p><%= t('dul_arclight.home.about.text_html').html_safe %></p>
     </div>
-    <div class="col-md-4">
+    
+    <div>
+    <div class="card-title d-flex align-items-center">
+    <div class="card-icon">
+    <span class="material-icons">
+    email
+    </span></div>
       <h2><%= t('dul_arclight.home.catalog.heading') %></h2>
-      <p>Not all of the Rubenstein's collections are described on this site. <a href="https://find.library.duke.edu/?f_inclusive%5Blocation_hierarchy_f%5D%5B%5D=duke%3Adukeruby&amp;f_inclusive%5Blocation_hierarchy_f%5D%5B%5D=duke%3Adukeunis&amp;search_field=all_fields&amp;q=&amp;f%5Blocation_hierarchy_f%5D%5B%5D=">Search the catalog</a> to find additional manuscripts, rare books, and other items held in the Rubenstein.</p>
     </div>
-    <div class="col-md-3">
-      <h2><%= t('dul_arclight.home.ask.heading') %></h2>
-      <p>Need help or have questions? <a href="<%= ask_rubenstein_url %>">Contact a librarian or archivist</a> for more information.</p>
+      <p><%= t('um_arclight.insert_content') %></p>
     </div>
   </div>
 </div>
-
-<% content_for :twitter_og_meta do %>
-  <meta name="description" content="<%= t('dul_arclight.home.about.text_html') %>" />
-  <meta property="og:description" content="<%= t('dul_arclight.home.about.text_html') %>" />
-<% end %>
