@@ -2,7 +2,7 @@ name: Build latest from whatever side branch
 
 on:
   push:
-    branches: [ umich-fe ]
+    branches: [ CMDC-74_finalize-branding ]
 
 jobs:
   build:
