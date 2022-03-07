@@ -142,6 +142,8 @@
 
 </div>
 
+<%= render partial: 'arclight/repositories/repository', locals: { repository: document.repository_config } %>
+
 <div class="mb-2 d-lg-none">
   <%#= render partial: 'catalog/show_actions/duke_request', locals: { document: document } %>
   <a class="btn btn-secondary btn-block sidebar-nav-toggle" href="#" id="navigate-collection-toggle" data-turbolinks="false">
