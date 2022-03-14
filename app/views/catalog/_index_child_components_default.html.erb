@@ -4,6 +4,7 @@
 
   <div class="col d-flex flex-wrap">
     <div class="documentHeader order-0" data-document-id="<%= document.id %>">
+
       <h3 class="index_title document-title-heading">
         <%= link_to_document document, document_show_link_field(document), counter: counter %>
         <% if document.children? %>
@@ -17,7 +18,8 @@
     </div>
 
     <div class="documentContent order-md-1">
-      <%= render_index_doc_actions document, wrapping_class: 'd-flex justify-content-end' %>
+      <%#= render_index_doc_actions document, wrapping_class: 'd-flex justify-content-end' %>
+      <%= render 'aeon_request_checkbox', document: document %>
     </div>
 
     <div class="order-2 scope-wrapper">
