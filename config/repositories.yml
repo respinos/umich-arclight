@@ -13,7 +13,7 @@ bhl:
   contact_info: 'bentley.ref@umich.edu'
   thumbnail_url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Bhlexterior.jpg/150px-Bhlexterior.jpg'
   request_types:
-    aeon_external_request_endpoint:
+    aeon_hidden_form_request:
       request_url: https://aeon.bentley.umich.edu/ead_request
       request_mappings:
         url_params:

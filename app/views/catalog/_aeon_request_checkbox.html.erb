@@ -6,8 +6,8 @@
 <% if current_or_guest_user %>
   <div class="checkbox">
     <label class="" for="request-item_<%= document.id %>" title="">
-      <input type="checkbox" name="Request" value="request-item_<%= document.id %>">
-      <input type="hidden" name="Request" value="request-item_<%= document.id %>">
+      <input type="checkbox" name="Request" value="<%= document.id %>">
+      <input type="hidden" name="Request" value="<%= document.id %>">
       <input type="hidden" name="ItemSubTitle_<%= document.id %>" value="<%= document.normalized_title %>(<%= document.extent %>)">
       <input type="hidden" name="ItemVolume_<%= document.id %>" value="<%= document.containers %>">
       <input type="hidden" name="ItemCitation_<%= document.id %>" value="<%= document.reference %>">

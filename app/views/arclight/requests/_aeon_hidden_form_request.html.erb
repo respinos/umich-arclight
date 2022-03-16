@@ -1,0 +1,14 @@
+<% document ||= @document %>
+<% aeon_external_request ||= Arclight::Requests::AeonHiddenFormRequest.new(document, show_presenter(document)) %>
+<%# content_for :head do %>
+  <%#= javascript_include_tag 'aeonform' %>
+<%# end %>
+
+<%= form_tag aeon_external_request.url,
+             name: "EADRequest",
+             id: "EADRequestFormId",
+             method: :post,
+             class: 'al-request-form' do %>
+<% end %>
+  <button type='submit' class='al-request-button btn-link' onclick="SubmitAeonRequestForm()">Request</button>
+  <button onclick="ClearAllCheckboxes()">Clear</button>
