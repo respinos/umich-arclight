@@ -3,7 +3,9 @@
 <%# Last checked for updates: ArcLight v0.3.2. %>
 <%# https://github.com/projectblacklight/arclight/blob/master/app/views/catalog/_arclight_bookmark_control.html.erb %>
 
-<% if current_or_guest_user %>
+<%# if requestable: config has type hidden_form_request and containers %>
+<%# includes one of box, folder, reel, map-case, tube, object, volume, bundle %>
+<% if document.is_checkbox_requestable? %>
   <div class="checkbox">
     <label class="" for="request-item_<%= document.id %>" title="">
       <input type="checkbox" name="Request" value="<%= document.id %>">

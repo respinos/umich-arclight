@@ -117,6 +117,16 @@ class SolrDocument
     fetch('physdesc_tesim', []).map! { |value| correct_singular_value(value) }
   end
 
+  def is_checkbox_requestable?
+    config_present = repository_config.request_config_present_for_type?('aeon_hidden_form_request')
+    container_requestable = containers.all? do |container|
+      %w(Box Folder Reel Map-case Tube Object Volume Bundle).any? do |type|
+        container.match(/#{type}/)
+      end
+    end
+    config_present && containers.length > 0 && container_requestable
+  end
+
   # DUL override ArcLight core; we want all extent values, and to singularize e.g. 1 boxes.
   # document.extent is used for the "extent badge"; note other locations in the app use
   # the full physdesc field and may still be labeled as "Extent".
