@@ -37,7 +37,6 @@ scrc:
   country: 'USA'
   phone: ''
   contact_info: 'special.collections@umich.edu'
-
   thumbnail_url: 'https://upload.wikimedia.org/wikipedia/commons/9/96/University_of_Michigan_library_stacks.JPG'
   request_types:
     aeon_web_ead:
