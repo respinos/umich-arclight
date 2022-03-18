@@ -973,6 +973,7 @@ label.toggle-bookmark > span:nth-child(2) {
       align-self: center;
       display: flex;
       background-color: $gray-light;
+      border: 1px solid #dee2e6;
     }
   }
 
@@ -1044,7 +1045,7 @@ label.toggle-bookmark > span:nth-child(2) {
       border-top-right-radius: 0;
 
       .img-wrapper {
-        height: 14rem;
+        max-height: 14rem;
         align-self: center;
         display: flex;
         background-color: $gray-light;
