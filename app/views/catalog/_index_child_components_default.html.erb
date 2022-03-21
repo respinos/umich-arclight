@@ -3,7 +3,13 @@
   <% counter = document_counter_with_offset(document_counter) %>
 
   <div class="col d-flex flex-wrap">
-    <div class="documentHeader order-0" data-document-id="<%= document.id %>">
+    <div class="order-md-0"> <%# how to handle ordering with an optional thing at the front? %>
+      <% if document.is_checkbox_requestable? %>
+        <%= render 'aeon_request_checkbox', document: document %>
+      <% end %>
+    </div>
+
+    <div class="documentHeader order-1" data-document-id="<%= document.id %>">
 
       <h3 class="index_title document-title-heading">
         <%= link_to_document document, document_show_link_field(document), counter: counter %>
@@ -17,12 +23,11 @@
       </h3>
     </div>
 
-    <div class="documentContent order-md-1">
-      <%#= render_index_doc_actions document, wrapping_class: 'd-flex justify-content-end' %>
-      <%= render 'aeon_request_checkbox', document: document %>
+    <div class="documentContent order-md-2">
+      <%= render_index_doc_actions document, wrapping_class: 'd-flex justify-content-end' %>
     </div>
 
-    <div class="order-2 scope-wrapper">
+    <div class="order-3 scope-wrapper">
       <div class="row">
         <%= content_tag('div', class: 'al-document-highlight col') do %>
           <%= document.highlights.join('<br/>').html_safe %>
