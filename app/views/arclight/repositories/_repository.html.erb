@@ -56,11 +56,11 @@
     </div>
 
     <div class="card-body">
-      <h5 class="card-title">
+      <h2 class="card-title page-sub-sub-heading">
         <%= link_to_unless(params[:id] == repository.slug, repository.name, repository_collections_path(repository)) %>
-      </h5>
+      </h2>
       <p class="card-text" data-arclight-truncate="true">
-        <%= repository.description %>
+        <%= link_to_unless(params[:id] == repository.slug, "See More About This Repository", repository_collections_path(repository)) %>
       </p>
     </div>
 
@@ -68,7 +68,7 @@
     <div class="card-footer">
       
       <address>
-        <h6><%= t('arclight.views.repositories.address') %>:</h6>
+        <h3><%= t('arclight.views.repositories.address') %>:</h3>
         <div class="al-repository-street-address">
           <% %i[building address1 address2 city_state_zip_country].each do |f| %>
             <% if repository.send(f).present? %>
