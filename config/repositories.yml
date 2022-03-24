@@ -25,7 +25,7 @@ scrc:
   country: 'USA'
   phone: ''
   contact_info: 'special.collections@umich.edu'
-  thumbnail_url: 'https://https://upload.wikimedia.org/wikipedia/commons/9/96/University_of_Michigan_library_stacks.JPG'
+  thumbnail_url: 'https://upload.wikimedia.org/wikipedia/commons/9/96/University_of_Michigan_library_stacks.JPG'
 clements:
   name: 'University of Michigan. William L. Clements Library'
   description: 'The William L. Clements Library is a rare book and manuscript repository located on the University of Michigan’s central campus in Ann Arbor, Michigan.'
