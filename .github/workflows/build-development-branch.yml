@@ -2,7 +2,7 @@ name: Build latest from whatever side branch
 
 on:
   push:
-    branches: [ CMDC-74_finalize-branding ]
+    branches: [ CMDC-106_pics ]
 
 jobs:
   build:
