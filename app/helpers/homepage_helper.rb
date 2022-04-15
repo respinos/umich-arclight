@@ -28,7 +28,7 @@ module HomepageHelper
     image_url(['homepage', image].join('/'))
   end
 
-  def collection_count
+  def collection_count_home
     search_service = Blacklight.repository_class.new(blacklight_config)
     query = search_service.search(
       q: 'level_sim:Collection',
