@@ -25,7 +25,7 @@ spec:
         io.kompose.service: solr
     spec:
       containers:
-        - image: estythomas/umich-arclight-solr-staging:20220106.4
+        - image: ghcr.io/mlibrary/arclight/umich-arclight-solr-staging:latest
           imagePullPolicy: Always
           name: solr
           ports:
