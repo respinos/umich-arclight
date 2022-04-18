@@ -25,11 +25,18 @@ spec:
         io.kompose.service: solr
     spec:
       containers:
-        - image: ghcr.io/mlibrary/arclight/umich-arclight-solr-staging:latest
+        - image: ghcr.io/mlibrary/arclight/umich-arclight-solr-staging:20220418.1
           imagePullPolicy: Always
           name: solr
           ports:
             - containerPort: 8983
           resources: {}
+          volumeMounts:
+            - mountPath: /solr/data
+              name: solr-data
       restartPolicy: Always
+      volumes:
+        - name: solr-data
+          persistentVolumeClaim:
+            claimName: solr-data
 status: {}

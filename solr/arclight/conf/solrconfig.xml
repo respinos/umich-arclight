@@ -46,7 +46,7 @@
   <schemaFactory class="ClassicIndexSchemaFactory"/>
 
 
-  <dataDir>${solr.blacklight-core.data.dir:}</dataDir>
+  <dataDir>/solr/data/${solr.core.name}</dataDir>
 
   <requestDispatcher handleSelect="true" >
     <requestParsers enableRemoteStreaming="false" multipartUploadLimitInKB="2048" />
