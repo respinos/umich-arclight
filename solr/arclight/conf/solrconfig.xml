@@ -46,7 +46,7 @@
   <schemaFactory class="ClassicIndexSchemaFactory"/>
 
 
-  <dataDir>/solr/data/${solr.core.name}</dataDir>
+  <dataDir>/var/solr/data/${solr.core.name}</dataDir>
 
   <requestDispatcher handleSelect="true" >
     <requestParsers enableRemoteStreaming="false" multipartUploadLimitInKB="2048" />

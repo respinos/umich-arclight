@@ -12,10 +12,8 @@ services:
 #      - ./solr/arclight:/var/solr/data/arclight
       - ./solr/arclight/conf:/solr_config:ro
     command:
-      - solr-create
-      - -c
+      - solr-precreate
       - arclight
-      - -d
       - /solr_config
 
   db:
