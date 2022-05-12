@@ -2,7 +2,7 @@ name: Build latest from whatever side branch
 
 on:
   push:
-    branches: [ CMDC-106_pics ]
+    branches: [ CMDC-112_diagnose_slowness ]
 
 jobs:
   build:

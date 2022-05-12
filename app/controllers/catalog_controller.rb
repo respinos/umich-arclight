@@ -136,18 +136,18 @@ class CatalogController < ApplicationController
     config.add_facet_field 'parent_ssim', show: false
     config.add_facet_field 'parent_ssi', show: false
 
-    # DUL CUSTOMIZATION: Add UA Record Group hierarchical facet.
-    config.add_facet_field 'ua_record_group_ssim',
-                           limit: 99_999,
-                           label: 'University Archives Record Group',
-                           helper_method: :ua_record_group_display,
-                           partial: 'blacklight/hierarchy/facet_hierarchy'
+    # # DUL CUSTOMIZATION: Add UA Record Group hierarchical facet.
+    # config.add_facet_field 'ua_record_group_ssim',
+    #                        limit: 99_999,
+    #                        label: 'University Archives Record Group',
+    #                        helper_method: :ua_record_group_display,
+    #                        partial: 'blacklight/hierarchy/facet_hierarchy'
 
-    config.facet_display = {
-      hierarchy: {
-        'ua_record_group' => [['ssim'], ':']
-      }
-    }
+    # config.facet_display = {
+    #   hierarchy: {
+    #     'ua_record_group' => [['ssim'], ':']
+    #   }
+    # }
 
     # Have BL send all facet field names to Solr, which has been the default
     # previously. Simply remove these lines if you'd rather use Solr request
