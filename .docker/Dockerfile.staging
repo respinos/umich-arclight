@@ -15,7 +15,7 @@ COPY --chown=$UID:$GID Gemfile* /opt/app-root/
 ENV BUNDLE_PATH /gems
 
 WORKDIR /opt/app-root
-RUN gem install 'bundler:~>1.17.3' 'bundler:~>2.2.21'
+RUN gem install 'bundler:~>2.2.21'
 RUN bundle config --local build.sassc --disable-march-tune-native
 RUN bundle install
 
