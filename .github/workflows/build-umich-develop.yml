@@ -29,12 +29,12 @@ jobs:
           tags: 'ghcr.io/mlibrary/arclight/umich-arclight-staging:${{ github.sha }}, ghcr.io/mlibrary/arclight/umich-arclight-staging:latest'
           file: .docker/Dockerfile.staging
 
-  deploy-testing:
+  deploy-staging-resque:
     needs: build
     runs-on: ubuntu-latest
-    environment: testing
+    environment: staging
     steps:
-      - name: Deploy to Testing
+      - name: Deploy to Staging
         uses: mlibrary/deploy-to-kubernetes@v1
         with:
           github_username: ${{ github.actor }}
@@ -44,10 +44,10 @@ jobs:
           cluster_server: https://hatcher.kubernetes.lib.umich.edu
           namespace_token: ${{ secrets.HATCHER_TOKEN }}
           namespace: ${{ secrets.NAMESPACE }}
-          deployment: app
-          container: app
+          deployment: resque
+          container: resque
 
-  deploy-staging:
+  deploy-staging-app:
     needs: build
     runs-on: ubuntu-latest
     environment: staging
