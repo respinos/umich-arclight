@@ -56,7 +56,7 @@ clarke:
   thumbnail_url: 'https://www.cmich.edu/images/default-source/academic-affairs-division/cmu-libraries/about/support-the-libraries/20210723_support_universityseal_0086fdf1a7f-50e7-4d64-a7ca-f7979508b7a2.jpg'
 vrc:
   name: 'University of Michigan. History of Art. Visual Resources Collection'
-  description: 'The VRC maintains nearly two million images of art. The collection's roots are more than 90 years old and developed as a teaching collection to support University of Michigan faculty and students. Through these online finding aids, we hope to help you connect with our vast resources of images of art, architecture, and artifacts.'
+  description: "The VRC maintains nearly two million images of art. The collection's roots are more than 90 years old and developed as a teaching collection to support University of Michigan faculty and students. Through these online finding aids, we hope to help you connect with our vast resources of images of art, architecture, and artifacts."
   visit_note: ''
   building: '45 Tappan Hall'
   address1: '2855 South University Avenue'
@@ -82,7 +82,7 @@ archivemi:
   contact_info: 'Archives@Michigan.gov'
   thumbnail_url: 'https://www.michigan.gov/mhc/-/media/Project/Websites/mhc/images/archives/archives_womanresearcher.jpg'
 mlibraryead:
-  name: 'MLibrary's Finding Aids site provides access to finding aids or descriptive inventories for archival records and manuscript collections not held in the Special Collections Research Center.'
+  name: "MLibrary's Finding Aids site provides access to finding aids or descriptive inventories for archival records and manuscript collections not held in the Special Collections Research Center."
   visit_note: ''
   building: ''
   address1: '913 South University Avenue'
