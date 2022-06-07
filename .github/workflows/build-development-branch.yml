@@ -2,7 +2,7 @@ name: Build latest from whatever side branch
 
 on:
   push:
-    branches: [ CMDC-111_trim-name-facet ]
+    branches: [ cmkpowell-patch-1 ]
 
 jobs:
   build:
