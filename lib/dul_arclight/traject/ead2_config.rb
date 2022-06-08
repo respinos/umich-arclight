@@ -151,7 +151,8 @@ to_field 'collection_unitid_ssm', extract_xpath('/ead/archdesc/did/unitid')
 
 # DUL CUSTOMIZATION: UA Record Groups
 to_field 'ua_record_group_ssim' do |_record, accumulator, context|
-  id = context.output_hash['collection_unitid_ssm'].first.split('.')
+  unitid = context.output_hash['collection_unitid_ssm']
+  id = if unitid then unitid.first.split('.') else [''] end
   if id[0] == 'UA'
     group = id[1]
     subgroup = id[2]
