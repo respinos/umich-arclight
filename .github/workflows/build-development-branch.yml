@@ -2,7 +2,7 @@ name: Build latest from whatever side branch
 
 on:
   push:
-    branches: [ cmkpowell-patch-1 ]
+    branches: [ cmkpowell-patch-2 ]
 
 jobs:
   build:
