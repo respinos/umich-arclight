@@ -2,7 +2,7 @@ name: Build latest from whatever side branch
 
 on:
   push:
-    branches: [ CMDC-112_diagnose_slowness ]
+    branches: [ cmkpowell-patch-1 ]
 
 jobs:
   build:
@@ -29,7 +29,7 @@ jobs:
           tags: 'ghcr.io/mlibrary/arclight/umich-arclight-staging:${{ github.sha }}, ghcr.io/mlibrary/arclight/umich-arclight-staging:latest'
           file: .docker/Dockerfile.staging
 
-  deploy-testing:
+  deploy-testing-app:
     needs: build
     runs-on: ubuntu-latest
     environment: testing
@@ -46,3 +46,21 @@ jobs:
           namespace: ${{ secrets.NAMESPACE }}
           deployment: app
           container: app
+
+  deploy-testing-resque:
+    needs: build
+    runs-on: ubuntu-latest
+    environment: testing
+    steps:
+      - name: Deploy to Testing
+        uses: mlibrary/deploy-to-kubernetes@v1
+        with:
+          github_username: ${{ github.actor }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          image: mlibrary/${{ secrets.IMAGE_NAME }}:${{ github.sha }}
+          cluster_ca: ${{ secrets.HATCHER_CLUSTER_CA }}
+          cluster_server: https://hatcher.kubernetes.lib.umich.edu
+          namespace_token: ${{ secrets.HATCHER_TOKEN }}
+          namespace: ${{ secrets.NAMESPACE }}
+          deployment: resque
+          container: resque

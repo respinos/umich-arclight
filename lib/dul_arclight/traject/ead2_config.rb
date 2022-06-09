@@ -151,7 +151,8 @@ to_field 'collection_unitid_ssm', extract_xpath('/ead/archdesc/did/unitid')
 
 # DUL CUSTOMIZATION: UA Record Groups
 to_field 'ua_record_group_ssim' do |_record, accumulator, context|
-  id = context.output_hash['collection_unitid_ssm'].first.split('.')
+  unitid = context.output_hash['collection_unitid_ssm']
+  id = if unitid then unitid.first.split('.') else [''] end
   if id[0] == 'UA'
     group = id[1]
     subgroup = id[2]
@@ -211,11 +212,11 @@ to_field 'creator_sort' do |record, accumulator|
   accumulator << record.xpath('/ead/archdesc/did/origination').map { |c| c.text.strip }.join(', ')
 end
 
-to_field 'creator_persname_ssm', extract_xpath('/ead/archdesc/did/origination/persname')
-to_field 'creator_persname_ssim', extract_xpath('/ead/archdesc/did/origination/persname')
-to_field 'creator_corpname_ssm', extract_xpath('/ead/archdesc/did/origination/corpname')
-to_field 'creator_corpname_sim', extract_xpath('/ead/archdesc/did/origination/corpname')
-to_field 'creator_corpname_ssim', extract_xpath('/ead/archdesc/did/origination/corpname')
+to_field 'creator_persname_ssm', extract_xpath('/ead/archdesc/did/origination/persname'), strip
+to_field 'creator_persname_ssim', extract_xpath('/ead/archdesc/did/origination/persname'), strip
+to_field 'creator_corpname_ssm', extract_xpath('/ead/archdesc/did/origination/corpname'), strip
+to_field 'creator_corpname_sim', extract_xpath('/ead/archdesc/did/origination/corpname'), strip
+to_field 'creator_corpname_ssim', extract_xpath('/ead/archdesc/did/origination/corpname'), strip
 to_field 'creator_famname_ssm', extract_xpath('/ead/archdesc/did/origination/famname')
 to_field 'creator_famname_ssim', extract_xpath('/ead/archdesc/did/origination/famname')
 
@@ -323,9 +324,9 @@ RESTRICTION_FIELDS.map do |selector|
 end
 
 NAME_ELEMENTS.map do |selector|
-  to_field 'names_coll_ssim', extract_xpath("/ead/archdesc/controlaccess/#{selector}"), unique
-  to_field 'names_ssim', extract_xpath("//#{selector}")
-  to_field "#{selector}_ssm", extract_xpath("//#{selector}")
+  to_field 'names_coll_ssim', extract_xpath("/ead/archdesc/controlaccess/#{selector}"), unique, strip
+  to_field 'names_ssim', extract_xpath("//#{selector}"), strip
+  to_field "#{selector}_ssm", extract_xpath("//#{selector}"), strip
 end
 
 # DUL CUSTOMIZATION: separate language vs langmaterial fields that don't have language
@@ -591,8 +592,8 @@ compose 'components', ->(record, accumulator, _context) { accumulator.concat rec
   end
 
   NAME_ELEMENTS.map do |selector|
-    to_field 'names_ssim', extract_xpath("./controlaccess/#{selector}"), unique
-    to_field "#{selector}_ssm", extract_xpath(".//#{selector}"), unique
+    to_field 'names_ssim', extract_xpath("./controlaccess/#{selector}"), unique, strip
+    to_field "#{selector}_ssm", extract_xpath(".//#{selector}"), unique, strip
   end
 
   # DUL CUSTOMIZATION: Bugfix field geogname --> places
