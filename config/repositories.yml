@@ -97,7 +97,8 @@ vrc:
   contact_info: 'vrum@umich.edu'
   thumbnail_url: 'https://mapproxy.studentlife.umich.edu/images/tappan-hall/AXP2S1698.jpg'
 archivemi:
-  name: 'The Archives of Michigan is responsible for preserving the records of Michigan government and other public institutions. The collections also include documents, maps, photographs and film from private individuals and organizations.'
+  name: 'Archives of Michigan'
+  description: 'The Archives of Michigan is responsible for preserving the records of Michigan government and other public institutions. The collections also include documents, maps, photographs and film from private individuals and organizations.'
   visit_note: ''
   building: ''
   address1: '702 West Kalamazoo Street'
@@ -110,7 +111,8 @@ archivemi:
   contact_info: 'Archives@Michigan.gov'
   thumbnail_url: 'https://www.michigan.gov/mhc/-/media/Project/Websites/mhc/images/archives/archives_womanresearcher.jpg'
 mlibraryead:
-  name: "MLibrary's Finding Aids site provides access to finding aids or descriptive inventories for archival records and manuscript collections not held in the Special Collections Research Center."
+  name: 'MLibrary Finding Aids'
+  description: "MLibrary's Finding Aids site provides access to finding aids or descriptive inventories for archival records and manuscript collections not held in the Special Collections Research Center."
   visit_note: ''
   building: ''
   address1: '913 South University Avenue'
