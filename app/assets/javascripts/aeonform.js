@@ -28,13 +28,6 @@ function ReturnToMain() {
     window.location = url;
 }
 
-function isClementsConfirmationPage(){
-    if ( $( "#ClementsConfirmationPageID").length){
-        return true;
-    }
-    return false;
-}
-
 
 //----------------------------------------------------------------------
 //Validation Functions
@@ -91,34 +84,10 @@ function ValidateCheckboxes(req) {
     return valid;
 }
 
-//for Clements
-function ValidateResearchTopic() {
-    var valid = 1;
-    //XXX this looks wrong so comment out $( "#myselect" ).val();
-
-    var ItemInfo3_val = $("#ItemInfo3").val()
-    if (ItemInfo3_val == "Choose a Research Topic"){
-        valid = 0;
-    }
-    // if not "Save for My Review" then enforce a date selection
-    if (! valid) {
-        var msg = "Please select a research topic from the list labeled: \"" + ItemInfo3_val +"\""
-        alert(msg);
-    }
-    return valid;
-}
 
 //What validations to run depending on which page
 function allValid(){
-    // an element with the id "ClementsConfirmationPageID" must be present in the
-    // HTML to trigger the additional validation of research topic
-    if (isClementsConfirmationPage()){
-        //add ValidateResearchTopic check for clements
-        if ( ValidateCheckboxes() && ValidateDateField() && ValidateResearchTopic() ) {
-            return true;
-        }
-    }
-    else if ( ValidateCheckboxes() && ValidateDateField()  ) {
+    if ( ValidateCheckboxes() && ValidateDateField()  ) {
         return true;
     }
     else {
@@ -251,65 +220,7 @@ $(document).ready(function(){
             $('div#scheduler_div').show();
         }
     });
-    //XXX tbw If clements and browser supports localstorage, populate Research Topic from local storage
-    if (isClementsConfirmationPage()){
-        if (storageAvailable('localStorage')){
-            populateResearchTopic();
-        }
-    }
-    // When dropdown for ItemInfo3 changes, if clements and browser supports localstorage,
-    // store new value
 
-    $("#ItemInfo3").change(function(){
-        var newValue =  $("#ItemInfo3").val()
-        if (isClementsConfirmationPage()){
-            if (storageAvailable('localStorage')){
-                //alert("on change handler for ItemInfo3 called"+newValue);
-                localStorage.setItem("topic", newValue);
-            }
-        }
-    });
+
 });
-
-
-//----------------------------------------------------------------------
-//Functions to support Clements Research Topic and local storage use
-
-function populateResearchTopic(){
-    //try to get topic from local storage
-    // if there is one set the select to the correct value
-    //   alert("populateResearchTopic needs code!");
-    if ( localStorage.getItem("topic") ){
-        var topic = localStorage.getItem("topic");
-        //alert("topic is " + topic );
-        //set select to topic
-        $("#ItemInfo3").val(topic);
-    }
-}
-
-
-//  storageAvailable function from "https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API"
-function storageAvailable(type) {
-    try {
-        var storage = window[type],
-            x = '__storage_test__';
-        storage.setItem(x, x);
-        storage.removeItem(x);
-        return true;
-    }
-    catch(e) {
-        return e instanceof DOMException && (
-                // everything except Firefox
-            e.code === 22 ||
-            // Firefox
-            e.code === 1014 ||
-            // test name field too, because code might not be present
-            // everything except Firefox
-            e.name === 'QuotaExceededError' ||
-            // Firefox
-            e.name === 'NS_ERROR_DOM_QUOTA_REACHED') &&
-            // acknowledge QuotaExceededError only if there's something already stored
-            storage.length !== 0;
-    }
-}
 
