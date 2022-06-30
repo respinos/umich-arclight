@@ -12,6 +12,18 @@ bhl:
   phone: ''
   contact_info: 'bentley.ref@umich.edu'
   thumbnail_url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Bhlexterior.jpg/150px-Bhlexterior.jpg'
+  request_types:
+    aeon_hidden_form_request:
+      request_url: https://aeon-dev.bentley.umich.edu/ead_request
+      request_mappings:
+        url_params:
+          Action: 11
+          Type: 200
+        static:
+          SystemId: ArcLight
+          ItemInfo1: manuscript
+        accessor:
+          ItemTitle: collection_name
 scrc:
   name: 'University of Michigan. Special Collections Research Center'
   description: 'In keeping with the University Library’s mission to collect, describe, preserve, and make available the record of human knowledge, the Special Collections Research Center acquires, cares for, interprets, and promotes the use of important collections of unique, rare, primary source, and other material in all formats and in a variety of subject areas.'
@@ -26,6 +38,14 @@ scrc:
   phone: ''
   contact_info: 'special.collections@umich.edu'
   thumbnail_url: 'https://upload.wikimedia.org/wikipedia/commons/9/96/University_of_Michigan_library_stacks.JPG'
+  request_types:
+    aeon_web_ead:
+      request_url: 'https://aeon.lib.umich.edu/logon'
+      request_mappings: 'Action=10&Form=31&Value=parsed_ead_url'
+  request_id:
+    field: 'publicid_ssi'
+    pattern: '-\/\/us::MiU\/\/TEXT us::MiU::(.*)\/\/EN'
+    prefix: 'https://quod.lib.umich.edu/s/sclead/eads/'
 clements:
   name: 'University of Michigan. William L. Clements Library'
   description: 'The William L. Clements Library is a rare book and manuscript repository located on the University of Michigan’s central campus in Ann Arbor, Michigan.'
@@ -40,6 +60,14 @@ clements:
   phone: ''
   contact_info: 'clements-reference@umich.edu'
   thumbnail_url: 'https://upload.wikimedia.org/wikipedia/commons/1/1d/University_of_Michigan_August_2013_179_%28William_L._Clements_Library%29.jpg'
+  request_types:
+    aeon_web_ead:
+      request_url: 'https://aeon.clements.umich.edu/logon'
+      request_mappings: 'Action=10&Form=31&Value=parsed_ead_url'
+  request_id:
+    field: 'publicid_ssi'
+    pattern: 'us//::miu-c//TXT us::miu-c::(.*.xml)\/\/EN'
+    prefix: 'https://quod.lib.umich.edu/c/clementsead/eads/'
 clarke:
   name: 'Central Michigan University. Clarke Historical Library'
   description: 'The Clarke Historical Library collects, preserves, and promotes collections including the history of Michigan and the Old Northwest Territory, the history of Central Michigan University, as well as other topics.'

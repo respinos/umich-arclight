@@ -1,0 +1,16 @@
+<%# Overrides ArcLight Core partial. %>
+<%# Adds BS tooltips to bookmark icons %>
+<%# Last checked for updates: ArcLight v0.3.2. %>
+<%# https://github.com/projectblacklight/arclight/blob/master/app/views/catalog/_arclight_bookmark_control.html.erb %>
+
+<%# if requestable: config has type hidden_form_request and containers %>
+<%# includes one of box, folder, reel, map-case, tube, object, volume, bundle %>
+<div class="checkbox request-checkbox">
+  <label class="" for="request-item_<%= document.id %>" title="">
+    <input type="checkbox" name="Request" value="<%= document.id %>">
+    <input type="hidden" name="Request" value="<%= document.id %>">
+    <input type="hidden" name="ItemSubTitle_<%= document.id %>" value="<%= raw(strip_tags(document.normalized_title)) %> (<%= document.extent %>)">
+    <input type="hidden" name="ItemVolume_<%= document.id %>" value="<%= document.containers.join(', ') %>">
+    <input type="hidden" name="ItemCitation_<%= document.id %>" value="<%= document.reference %>">
+  </label>
+</div>

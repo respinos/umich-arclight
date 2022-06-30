@@ -1,3 +1,4 @@
+require_relative './dul_arclight/repository'
 module DulArclight
   # The value used to authenticate the webhook
   # (not a repo deploy token)

@@ -71,13 +71,13 @@ class CatalogController < ApplicationController
     config.show.display_type_field = 'level_ssm'
     # config.show.thumbnail_field = 'thumbnail_path_ss'
 
-    config.add_results_document_tool(:bookmark, partial: 'bookmark_control', if: :render_bookmarks_control?)
+    # config.add_results_document_tool(:bookmark, partial: 'bookmark_control', if: :render_bookmarks_control?)
 
     config.add_results_collection_tool(:sort_widget)
     config.add_results_collection_tool(:per_page_widget)
     config.add_results_collection_tool(:view_type_group)
 
-    config.add_show_tools_partial(:bookmark, partial: 'bookmark_control', if: :render_bookmarks_control?)
+    # config.add_show_tools_partial(:bookmark, partial: 'bookmark_control', if: :render_bookmarks_control?)
     config.add_show_tools_partial(:email, callback: :email_action, validator: :validate_email_params)
     # DUL CUSTOMIZATION: Add CSV export especially for bookmarks
     config.add_show_tools_partial(:export_csv, partial: 'export_csv')
@@ -305,7 +305,7 @@ class CatalogController < ApplicationController
     config.index.document_actions << :containers
     config.index.document_actions << :restricted_component_badge
     config.index.document_actions << :online_content_label
-    config.add_results_document_tool :arclight_bookmark_control, partial: 'arclight_bookmark_control'
+    # config.add_results_document_tool :arclight_bookmark_control, partial: 'arclight_bookmark_control'
     config.index.document_actions.delete(:bookmark)
 
     # NOTE cannot add using_field here since it is to appear at the bottom

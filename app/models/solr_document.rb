@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'dul_arclight/digital_object'
+require_relative 'concerns/dul_arclight/solr_document'
 
 class SolrDocument
   include Blacklight::Solr::Document
@@ -114,6 +115,16 @@ class SolrDocument
 
   def physdesc
     fetch('physdesc_tesim', []).map! { |value| correct_singular_value(value) }
+  end
+
+  def is_checkbox_requestable?
+    config_present = repository_config.request_config_present_for_type?('aeon_hidden_form_request')
+    container_requestable = containers.all? do |container|
+      %w(Box Folder Reel Map-case Tube Object Volume Bundle).any? do |type|
+        container.match(/#{type}/)
+      end
+    end
+    config_present && containers.length > 0 && container_requestable
   end
 
   # DUL override ArcLight core; we want all extent values, and to singularize e.g. 1 boxes.

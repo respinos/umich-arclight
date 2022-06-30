@@ -12,9 +12,10 @@
       </div>
 
     <div class="d-flex mt-3">
-<!--      <div class="flex-fill">-->
-        <%#= render partial: 'catalog/show_actions/duke_request', locals: { document: document } %>
-<!--      </div>-->
+
+      <div class="flex-fill">
+        <%= render partial: 'arclight/requests', locals: { document: document } %>
+      </div>
       <div>
         <%= render partial: 'catalog/show_actions/collection_info', locals: { document: collection_doc(document) } %>
       </div>

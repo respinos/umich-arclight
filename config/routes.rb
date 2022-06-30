@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   # DUL CUSTOMIZATION: note that component URLs have underscores; collections don't
   def collection_slug_constraint
-    /[a-z0-9\-]+/
+    /[a-zA-Z0-9\-]+/
   end
 
   root to: "catalog#index"
