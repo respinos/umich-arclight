@@ -8,7 +8,7 @@ module Arclight
     class AeonWebEad
       attr_reader :document, :ead_url
       ##
-      # @param [Blacklight::SolrDocument] document
+      # @param [Arclight::SolrDocument] document
       # @param [String] ead_url
       def initialize(document, ead_url)
         @document = document
@@ -33,6 +33,7 @@ module Arclight
         field = document.repository_config.request_field
         pattern = document.repository_config.request_pattern
         prefix = document.repository_config.request_prefix
+        postfix = document.repository_config.request_postfix
 
         request_id = document.request_field(field)
         if pattern
@@ -42,7 +43,7 @@ module Arclight
           end
         end
 
-        "#{prefix}#{request_id}"
+        "#{prefix}#{request_id}#{postfix}"
       end
 
       ##

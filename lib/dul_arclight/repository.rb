@@ -81,19 +81,25 @@ module Arclight
       return false unless respond_to? :request_id
       return false if request_id.nil? || request_id.empty?
 
-      request_id.fetch('field').present?
+      request_id.key?('field')
     end
 
     def request_pattern_present?
       return false unless request_id_present?
 
-      request_id.fetch('pattern').present?
+      request_id.key?('pattern')
     end
 
     def request_prefix_present?
       return false unless request_id_present?
 
-      request_id.fetch('prefix').present?
+      request_id.key?('prefix')
+    end
+
+    def request_postfix_present?
+      return false unless request_id_present?
+
+      request_id.key?('postfix')
     end
 
     def request_id
@@ -118,6 +124,12 @@ module Arclight
       return '' unless request_prefix_present?
 
       request_id.fetch('prefix')
+    end
+
+    def request_postfix
+      return '' unless request_postfix_present?
+
+      request_id.fetch('postfix')
     end
 
     # Load repository information from a YAML file
