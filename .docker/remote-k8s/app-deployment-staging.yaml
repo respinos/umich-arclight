@@ -35,7 +35,9 @@ spec:
             - name: FINDING_AID_DATA
               value: /opt/app-data
             - name: GOOGLE_ANALYTICS_DEBUG
-              value: "false"
+              value: "true"
+            - name: GOOGLE_ANALYTICS_TRACKING_ID
+              value: "G-D0JL9WVR0D"
             - name: RAILS_ENV
               value: production
             - name: RAILS_SERVE_STATIC_FILES
