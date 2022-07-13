@@ -31,6 +31,7 @@ require_relative 'dul_compressed_reader'
 # rubocop:disable Style/MixinUsage
 extend TrajectPlus::Macros
 # rubocop:enable Style/MixinUsage
+#
 
 NAME_ELEMENTS = %w[corpname famname name persname].freeze
 
@@ -120,15 +121,33 @@ to_field 'publicid_ssi', extract_xpath('/ead/eadheader/eadid/@publicid')
 #end
 
 to_field 'title_filing_si', extract_xpath('/ead/eadheader/filedesc/titlestmt/titleproper[@type="filing"]')
-to_field 'title_ssm', extract_xpath('/ead/archdesc/did/unittitle')
-to_field 'title_formatted_ssm', extract_xpath('/ead/archdesc/did/unittitle', to_text: false)
+to_field 'title_ssm' do |record, accumulator|
+  result = record.xpath('/ead/archdesc/did/unittitle')
+  result = result.collect do |n|
+    if n.kind_of?(Nokogiri::XML::Attr)
+      # attribute value
+      n.value
+    else
+      # text from node
+      n.xpath('.//text()[not(ancestor-or-self::unitdate)]').collect(&:text).tap do |arr|
+        arr.reject! { |s| s =~ (/\A\s+\z/) }
+      end.join(" ")
+    end
+  end
+  accumulator.concat result
+end
+to_field 'title_formatted_ssm' do |record, accumulator|
+  whole_title = record.xpath('/ead/archdesc/did/unittitle').to_a
+  no_dates = whole_title.select { |elem| elem.to_s !~ /unitdate/ }
+  accumulator.concat no_dates
+end
 to_field 'title_teim', extract_xpath('/ead/archdesc/did/unittitle')
 to_field 'ead_ssi', extract_xpath('/ead/eadheader/eadid')
 
-to_field 'unitdate_ssm', extract_xpath('/ead/archdesc/did/unitdate')
-to_field 'unitdate_bulk_ssim', extract_xpath('/ead/archdesc/did/unitdate[@type="bulk"]')
-to_field 'unitdate_inclusive_ssm', extract_xpath('/ead/archdesc/did/unitdate[@type="inclusive"]')
-to_field 'unitdate_other_ssim', extract_xpath('/ead/archdesc/did/unitdate[not(@type)]')
+to_field 'unitdate_ssm', extract_xpath('/ead/archdesc/did/unitdate|/ead/archdesc/did/unittitle/unitdate')
+to_field 'unitdate_bulk_ssim', extract_xpath('/ead/archdesc/did/unitdate[@type="bulk"]|/ead/archdesc/did/unittitle/unitdate[@type="bulk"]')
+to_field 'unitdate_inclusive_ssm', extract_xpath('/ead/archdesc/did/unitdate[@type="inclusive"]|/ead/archdesc/did/unittitle/unitdate[@type="inclusive"]')
+to_field 'unitdate_other_ssim', extract_xpath('/ead/archdesc/did/unitdate[not(@type)]|/ead/archdesc/did/unittitle/unitdate[not(@type)]')
 
 # Aleph ID (esp. for request integration)
 to_field 'bibnum_ssim', extract_xpath('/ead/eadheader/filedesc/notestmt/note/p/num[@type="aleph"]')
