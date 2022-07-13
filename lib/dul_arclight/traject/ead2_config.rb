@@ -235,7 +235,7 @@ to_field 'places_ssm', extract_xpath('/ead/archdesc/controlaccess/geogname|/ead/
 to_field 'acqinfo_ssim', extract_xpath('/ead/archdesc/acqinfo/*[local-name()!="head"]')
 to_field 'acqinfo_ssim', extract_xpath('/ead/archdesc/descgrp/acqinfo/*[local-name()!="head"]')
 
-to_field 'access_subjects_ssim', extract_xpath('/ead/archdesc/controlaccess/', to_text: false) do |_record, accumulator|
+to_field 'access_subjects_ssim', extract_xpath('/ead/archdesc/controlaccess', to_text: false) do |_record, accumulator|
   accumulator.map! do |element|
     # DUL CUSTOMIZATION: pull out genreform into its own field
     %w[subject function occupation].map do |selector|
