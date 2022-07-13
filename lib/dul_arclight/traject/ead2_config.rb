@@ -610,7 +610,7 @@ compose 'components', ->(record, accumulator, _context) { accumulator.concat rec
   to_field 'places_ssm', extract_xpath('./controlaccess/geogname|./controlaccess/controlaccess/geogname')
   to_field 'places_ssim', extract_xpath('./controlaccess/geogname|./controlaccess/controlaccess/geogname')
 
-  to_field 'access_subjects_ssim', extract_xpath('./controlaccess)', to_text: false) do |_record, accumulator|
+  to_field 'access_subjects_ssim', extract_xpath('./controlaccess', to_text: false) do |_record, accumulator|
     accumulator.map! do |element|
       # DUL CUSTOMIZATION: pull out genreform into its own field
       %w[subject function occupation].map do |selector|
