@@ -228,9 +228,9 @@ to_field 'creators_ssim' do |_record, accumulator, context|
   accumulator.concat context.output_hash['creator_famname_ssm'] if context.output_hash['creator_famname_ssm']
 end
 
-to_field 'places_sim', extract_xpath('/ead/archdesc/controlaccess/geogname')
-to_field 'places_ssim', extract_xpath('/ead/archdesc/controlaccess/geogname')
-to_field 'places_ssm', extract_xpath('/ead/archdesc/controlaccess/geogname')
+to_field 'places_sim', extract_xpath('/ead/archdesc/controlaccess/geogname|/ead/archdesc/controlaccess/controlaccess/geogname')
+to_field 'places_ssim', extract_xpath('/ead/archdesc/controlaccess/geogname|/ead/archdesc/controlaccess/controlaccess/geogname')
+to_field 'places_ssm', extract_xpath('/ead/archdesc/controlaccess/geogname|/ead/archdesc/controlaccess/controlaccess/geogname')
 
 to_field 'acqinfo_ssim', extract_xpath('/ead/archdesc/acqinfo/*[local-name()!="head"]')
 to_field 'acqinfo_ssim', extract_xpath('/ead/archdesc/descgrp/acqinfo/*[local-name()!="head"]')
@@ -249,7 +249,7 @@ to_field 'access_subjects_ssm' do |_record, accumulator, context|
 end
 
 # DUL CUSTOMIZATION: capture formats (genreform) field separately from subjects
-to_field 'formats_ssim', extract_xpath('/ead/archdesc/controlaccess/genreform')
+to_field 'formats_ssim', extract_xpath('/ead/archdesc/controlaccess/genreform|/ead/archdesc/controlaccess/controlaccess/genreform')
 to_field 'formats_ssm' do |_record, accumulator, context|
   accumulator.concat Array.wrap(context.output_hash['formats_ssim'])
 end
@@ -326,7 +326,7 @@ RESTRICTION_FIELDS.map do |selector|
 end
 
 NAME_ELEMENTS.map do |selector|
-  to_field 'names_coll_ssim', extract_xpath("/ead/archdesc/controlaccess/#{selector}"), unique, strip
+  to_field 'names_coll_ssim', extract_xpath("/ead/archdesc/controlaccess/#{selector}|/ead/archdesc/controlaccess/controlaccess/#{selector}"), unique, strip
   to_field 'names_ssim', extract_xpath("//#{selector}"), strip
   to_field "#{selector}_ssm", extract_xpath("//#{selector}"), strip
 end
@@ -606,9 +606,9 @@ compose 'components', ->(record, accumulator, _context) { accumulator.concat rec
   end
 
   # DUL CUSTOMIZATION: Bugfix field geogname --> places
-  to_field 'places_sim', extract_xpath('./controlaccess/geogname')
-  to_field 'places_ssm', extract_xpath('./controlaccess/geogname')
-  to_field 'places_ssim', extract_xpath('./controlaccess/geogname')
+  to_field 'places_sim', extract_xpath('./controlaccess/geogname|./controlaccess/controlaccess/geogname')
+  to_field 'places_ssm', extract_xpath('./controlaccess/geogname|./controlaccess/controlaccess/geogname')
+  to_field 'places_ssim', extract_xpath('./controlaccess/geogname|./controlaccess/controlaccess/geogname')
 
   to_field 'access_subjects_ssim', extract_xpath('./controlaccess', to_text: false) do |_record, accumulator|
     accumulator.map! do |element|
@@ -624,7 +624,7 @@ compose 'components', ->(record, accumulator, _context) { accumulator.concat rec
   end
 
   # DUL CUSTOMIZATION: capture formats (genreform) field separately from subjects
-  to_field 'formats_ssim', extract_xpath('./controlaccess/genreform')
+  to_field 'formats_ssim', extract_xpath('./controlaccess/genreform|./controlaccess/controlaccess/genreform')
   to_field 'formats_ssm' do |_record, accumulator, context|
     accumulator.concat(context.output_hash.fetch('formats_ssim', []))
   end
