@@ -320,9 +320,9 @@ to_field 'date_range_sim', extract_xpath('/ead/archdesc/did/unitdate/@normal|/ea
   accumulator.replace range.years
 end
 
-to_field 'date_range_sim', extract_xpath('/ead/archdesc/did/unittitle/unitdate') do |record, accumulator|
-  range = Arclight::YearRange.new(record.include?('/') ? record : record.map { |v| v.tr('-', '/') })
-  accumulator << range.to_s
+to_field 'date_range_sim', extract_xpath('/ead/archdesc/did/unittitle/unitdate') do |_record, accumulator|
+  range = Arclight::YearRange.new(accumulator.include?('/') ? accumulator : accumulator.map { |v| v.tr('-', '/') })
+  accumulator.replace range.years
 end
 
 
@@ -626,8 +626,8 @@ compose 'components', ->(record, accumulator, _context) { accumulator.concat rec
   end
 
   to_field 'date_range_sim', extract_xpath('./did/unittitle/unitdate') do |record, accumulator|
-    range = Arclight::YearRange.new(record.include?('/') ? record : record.map { |v| v.tr('-', '/') })
-    accumulator << range.to_s
+    range = Arclight::YearRange.new(accumulator.include?('/') ? accumulator : accumulator.map { |v| v.tr('-', '/') })
+    accumulator.replace range.years
   end
 
   NAME_ELEMENTS.map do |selector|
