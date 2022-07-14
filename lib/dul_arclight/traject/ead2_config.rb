@@ -311,7 +311,7 @@ to_field 'extent_teim', extract_xpath('/ead/archdesc/did/physdesc/extent')
 to_field 'physdesc_tesim', extract_xpath('/ead/archdesc/did/physdesc/child::*')
 to_field 'physdesc_tesim', extract_xpath('/ead/archdesc/did/physdesc[not(child::*)]')
 
-to_field 'date_range_sim', extract_xpath('/ead/archdesc/did/unitdate/@normal', to_text: false) do |_record, accumulator|
+to_field 'date_range_sim', extract_xpath('/ead/archdesc/did/unitdate/@normal|/ead/archdesc/did/unittitle/unitdate/@normal', to_text: false) do |_record, accumulator|
   range = Arclight::YearRange.new
   next range.years if accumulator.blank?
 
@@ -319,6 +319,12 @@ to_field 'date_range_sim', extract_xpath('/ead/archdesc/did/unitdate/@normal', t
   range << range.parse_ranges(ranges)
   accumulator.replace range.years
 end
+
+to_field 'date_range_sim', extract_xpath('/ead/archdesc/did/unittitle/unitdate') do |record, accumulator|
+  range = Arclight::YearRange.new(record.include?('/') ? record : record.map { |v| v.tr('-', '/') })
+  accumulator << range.to_s
+end
+
 
 SEARCHABLE_NOTES_FIELDS.map do |selector|
   to_field "#{selector}_tesim", extract_xpath("/ead/archdesc/#{selector}/*[local-name()!='head']", to_text: false)
@@ -610,13 +616,18 @@ compose 'components', ->(record, accumulator, _context) { accumulator.concat rec
     end
   end
 
-  to_field 'date_range_sim', extract_xpath('./did/unitdate/@normal', to_text: false) do |_record, accumulator|
+  to_field 'date_range_sim', extract_xpath('./did/unitdate/@normal|./did/unittitle/unitdate/@normal', to_text: false) do |_record, accumulator|
     range = Arclight::YearRange.new
     next range.years if accumulator.blank?
 
     ranges = accumulator.map(&:to_s)
     range << range.parse_ranges(ranges)
     accumulator.replace range.years
+  end
+
+  to_field 'date_range_sim', extract_xpath('./did/unittitle/unitdate') do |record, accumulator|
+    range = Arclight::YearRange.new(record.include?('/') ? record : record.map { |v| v.tr('-', '/') })
+    accumulator << range.to_s
   end
 
   NAME_ELEMENTS.map do |selector|
