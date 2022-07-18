@@ -32,6 +32,7 @@ a {
   display: inline-block;
   border: none;
   font-weight: 700;
+  font-size: 1em;
   font-family: var(--font-base-family);
   border-radius: var(--radius-default);
   text-decoration: none;
@@ -105,6 +106,20 @@ a {
   }
 }
 
+.m-search-btn {
+  color: var(--color-neutral-500);
+  background-color: var(--color-maize-400);
+  border-color: var(--color-maize-400);
+  &:focus, &:hover, &:active {
+    outline: 0;
+    box-shadow: 0 0 0 2px #fff,
+      0 0 0 3px var(--color-neutral-400);
+    border-radius: 2px !important;
+    color: var(--color-neutral-500);
+    background-color: var(--color-maize-400);
+  }
+}
+
 .btn-link {
   color: var(--color-teal-400);
   background-color: transparent;
@@ -157,4 +172,12 @@ a {
 
 .al-restricted-component-icon svg {
   color: var(--color-orange-500);
+}
+
+/* ====================== */
+/* TYPOGRAPHY     */
+/* ====================== */
+
+.responsiveTruncate{
+  font-size: 1rem;
 }

@@ -183,12 +183,8 @@
   }
 
   .search-btn {
-    background-color: $brand-success;
-    border-color: shade($brand-success, 5%);
-    &:hover, &:active, &:focus {
-      background-color: shade($brand-success, 10%);
-      border-color: shade($brand-success, 15%);
-    }
+    background-color: var(--color-maize-400);
+    border-color: var(--color-maize-400);
   }
 
   /* ======++++===== */

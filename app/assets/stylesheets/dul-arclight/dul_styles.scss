@@ -882,12 +882,13 @@ label.toggle-bookmark > span:nth-child(2) {
     top: -1.5rem;
     color: $facet-grey;
     margin-right: 0;
-    background: linear-gradient(to left, white, rgba(255, 255, 255, 0.1));
+    /*background: linear-gradient(to top, white, rgba(255, 255, 255, 0.2));*/
   }
 
   .btn-wrapper {
     /* treat these like buttons */
     border-width: 2px;
+    font-size: 16px;
     transition-duration: 0.1s;
     transition-property: background-color;
     transition-timing-function: ease-in-out;
@@ -902,7 +903,6 @@ label.toggle-bookmark > span:nth-child(2) {
     background-image: none;
     border: 1px solid transparent;
     padding: 6px 12px;
-    font-size: 14px;
     line-height: 1.428571429;
     border-radius: 4px;
     -webkit-user-select: none;
@@ -1088,10 +1088,11 @@ body.blacklight-repositories-index {
     }
 
     .card-deck .card {
-      flex: 1 0 0%;
+      flex: 0 0 30%;
       margin-right: 15px;
       margin-bottom: 0;
       margin-left: 15px;
+      margin-top: 20px;
     }
   }
 }
