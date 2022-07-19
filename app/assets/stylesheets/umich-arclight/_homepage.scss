@@ -1,11 +1,12 @@
 #homepage-text-blocks {
   justify-content: space-between;
+
 }
 
 #homepage-text-blocks > * {
   border: solid 1px var(--color-neutral-100);
   padding: 2em 3em;
-  width: calc(50% - 12px);
+  width: calc(100% - 12px);
 
   @include media-breakpoint-down(sm) {
     width: 100%;
@@ -24,4 +25,8 @@
   margin-right: var(--space-medium);
   border-radius: 100%;
   padding: var(--space-medium);
+}
+
+.content-block {
+  max-width: 80ch;
 }
