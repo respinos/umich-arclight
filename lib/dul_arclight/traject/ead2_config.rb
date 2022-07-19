@@ -124,21 +124,15 @@ to_field 'title_filing_si', extract_xpath('/ead/eadheader/filedesc/titlestmt/tit
 to_field 'title_ssm' do |record, accumulator|
   result = record.xpath('/ead/archdesc/did/unittitle')
   result = result.collect do |n|
-    if n.kind_of?(Nokogiri::XML::Attr)
-      # attribute value
-      n.value
-    else
-      # text from node
-      n.xpath('.//text()[not(ancestor-or-self::unitdate)]').collect(&:text).tap do |arr|
-        arr.reject! { |s| s =~ (/\A\s+\z/) }
-      end.join(" ")
-    end
-  end
-  accumulator.concat result
+    n.xpath('.//text()[not(ancestor::unitdate)]').collect(&:text).join(" ")
+  end.join(" ")
+  accumulator << result
 end
 to_field 'title_formatted_ssm' do |record, accumulator|
   whole_title = record.xpath('/ead/archdesc/did/unittitle').to_a
-  no_dates = whole_title.select { |elem| elem.to_s !~ /unitdate/ }
+  no_dates = whole_title.collect do |parent_node|
+    parent_node.children.select { |elem| elem.name != 'unitdate' }
+  end.flatten
   accumulator.concat no_dates
 end
 to_field 'title_teim', extract_xpath('/ead/archdesc/did/unittitle')
