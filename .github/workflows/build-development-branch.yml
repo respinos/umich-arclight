@@ -2,8 +2,7 @@ name: Build latest from whatever side branch
 
 on:
   push:
-    branches: [ CMDC-143-FE ]
-
+    branches: [ cmdc-148_indexing-issues ]
 jobs:
   build:
     runs-on: ubuntu-latest
