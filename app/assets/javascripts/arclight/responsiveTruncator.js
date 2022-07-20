@@ -32,7 +32,7 @@
           var total_lines = Math.ceil(parent.height() / lineHeight);
           var settings = $.extend({
             'lines'  : 3,
-            'height' : null,
+            'height' : 70,
             'more'   : 'more',
             'less'   : 'less'
           }, options);
@@ -50,7 +50,7 @@
           }
           if(parent.height() > truncate_height) {
             var orig_content = parent.html();
-            parent.html("<div style='height: " + truncate_height + "px; overflow: hidden;' class='responsiveTruncate'></div>");
+            parent.html("<div style='height: " + truncate_height + "px; overflow: hidden; margin-top: .5em' class='responsiveTruncate'></div>");
             var truncate = $(".responsiveTruncate", parent);
             truncate.html(orig_content);
             truncate.after("<a class='responsiveTruncatorToggle' href='#'>" + settings.more + "</a>");
