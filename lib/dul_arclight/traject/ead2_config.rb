@@ -314,9 +314,15 @@ to_field 'date_range_sim', extract_xpath('/ead/archdesc/did/unitdate/@normal|/ea
   accumulator.replace range.years
 end
 
-to_field 'date_range_sim', extract_xpath('/ead/archdesc/did/unittitle/unitdate') do |_record, accumulator|
-  range = Arclight::YearRange.new(accumulator.include?('/') ? accumulator : accumulator.map { |v| v.tr('-', '/') })
-  accumulator.replace range.years
+to_field 'date_range_sim', extract_xpath('/ead/archdesc/did/unittitle/unitdate') do |_record, accumulator, context|
+  unless context.output_hash['date_range_sim']
+    # logger.debug accumulator
+    clean_range = accumulator.map { |v| v.gsub(/([^()]*)\(.*\)/, '\1').tr('^0-9\\-/ ', '').strip }
+                      .select { |date| date.match? /^\d\d\d\d[-\/]\d\d\d\d$/}
+    # logger.debug clean_range
+    range = Arclight::YearRange.new(clean_range.include?('/') ? clean_range : clean_range.map { |v| v.tr('-', '/') })
+    accumulator.replace range.years
+  end
 end
 
 
@@ -619,9 +625,15 @@ compose 'components', ->(record, accumulator, _context) { accumulator.concat rec
     accumulator.replace range.years
   end
 
-  to_field 'date_range_sim', extract_xpath('./did/unittitle/unitdate') do |record, accumulator|
-    range = Arclight::YearRange.new(accumulator.include?('/') ? accumulator : accumulator.map { |v| v.tr('-', '/') })
-    accumulator.replace range.years
+  to_field 'date_range_sim', extract_xpath('./did/unittitle/unitdate') do |_record, accumulator, context|
+    unless context.output_hash['date_range_sim']
+      clean_range = accumulator.map { |v| v.gsub(/([^()]*)\(.*\)/, '\1').tr('^0-9\\-/ ', '').strip }
+                        .select { |date| date.match? /^\d\d\d\d[-\/]\d\d\d\d$/}
+      # logger.debug accumulator unless clean_range.empty?
+      # logger.debug clean_range unless clean_range.empty?
+      range = Arclight::YearRange.new(clean_range.include?('/') ? clean_range : clean_range.map { |v| v.tr('-', '/') })
+      accumulator.replace range.years
+    end
   end
 
   NAME_ELEMENTS.map do |selector|
