@@ -2,9 +2,9 @@ name: Build latest from whatever side branch
 
 on:
   push:
-    branches: [ cmdc-148_indexing-issues ]
+    branches: [ suppress_levels_facet ]
 jobs:
-  build:
+  build-testing:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -29,7 +29,7 @@ jobs:
           file: .docker/Dockerfile.staging
 
   deploy-testing-app:
-    needs: build
+    needs: build-testing
     runs-on: ubuntu-latest
     environment: testing
     steps:
@@ -47,7 +47,7 @@ jobs:
           container: app
 
   deploy-testing-resque:
-    needs: build
+    needs: build-testing
     runs-on: ubuntu-latest
     environment: testing
     steps:
