@@ -5,7 +5,7 @@ on:
     branches: [ umich_develop ] # umich_develop is effectively our main branch
 
 jobs:
-  build:
+  build-staging:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -30,7 +30,7 @@ jobs:
           file: .docker/Dockerfile.staging
 
   deploy-staging-resque:
-    needs: build
+    needs: build-staging
     runs-on: ubuntu-latest
     environment: staging
     steps:
@@ -48,7 +48,7 @@ jobs:
           container: resque
 
   deploy-staging-app:
-    needs: build
+    needs: build-staging
     runs-on: ubuntu-latest
     environment: staging
     steps:
