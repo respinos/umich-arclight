@@ -141,6 +141,7 @@ to_field 'ead_ssi', extract_xpath('/ead/eadheader/eadid')
 to_field 'unitdate_ssm', extract_xpath('/ead/archdesc/did/unitdate|/ead/archdesc/did/unittitle/unitdate')
 to_field 'unitdate_bulk_ssim', extract_xpath('/ead/archdesc/did/unitdate[@type="bulk"]|/ead/archdesc/did/unittitle/unitdate[@type="bulk"]')
 to_field 'unitdate_inclusive_ssm', extract_xpath('/ead/archdesc/did/unitdate[@type="inclusive"]|/ead/archdesc/did/unittitle/unitdate[@type="inclusive"]')
+to_field 'collection_date_inclusive_ssm', extract_xpath('/ead/archdesc/did/unitdate[@type="inclusive"]|/ead/archdesc/did/unittitle/unitdate[@type="inclusive"]')
 to_field 'unitdate_other_ssim', extract_xpath('/ead/archdesc/did/unitdate[not(@type)]|/ead/archdesc/did/unittitle/unitdate[not(@type)]')
 
 # Aleph ID (esp. for request integration)
@@ -339,6 +340,8 @@ DID_SEARCHABLE_NOTES_FIELDS.map do |selector|
   to_field "#{selector}_tesim", extract_xpath("/ead/archdesc/did/#{selector}", to_text: false)
   to_field "#{selector}_teim", extract_xpath("/ead/archdesc/did/#{selector}/*[local-name()!='head']")
 end
+to_field "collection_physloc_tesim", extract_xpath("/ead/archdesc/did/physloc")
+
 
 # DUL CUSTOMIZATION
 RESTRICTION_FIELDS.map do |selector|
@@ -519,6 +522,14 @@ compose 'components', ->(record, accumulator, _context) { accumulator.concat rec
   to_field 'collection_ssi' do |_record, accumulator, context|
     accumulator.concat context.clipboard[:parent].output_hash['normalized_title_ssm']
   end
+
+  to_field 'collection_physloc_tesim' do |_record, accumulator, context|
+    accumulator.concat context.clipboard[:parent].output_hash['collection_physloc_tesim']
+  end
+  to_field 'collection_date_inclusive_ssm' do |_record, accumulator, context|
+    accumulator.concat context.clipboard[:parent].output_hash['collection_date_inclusive_ssm']
+  end
+
 
   to_field 'extent_ssm', extract_xpath('./did/physdesc/extent')
   to_field 'extent_teim', extract_xpath('./did/physdesc/extent')
