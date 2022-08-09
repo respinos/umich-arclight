@@ -21,7 +21,7 @@ module Arclight
       end
 
       def form_mapping
-        static_mappings.merge(dynamic_mappings)
+        static_mappings.merge(dynamic_mappings).merge(transform_mappings)
       end
 
       def static_mappings
@@ -31,6 +31,14 @@ module Arclight
       def dynamic_mappings
         config['request_mappings']['accessor'].transform_values do |v|
           @document.send(v.to_sym)
+        end
+      end
+
+      def transform_mappings
+        config['request_mappings']['transform'].transform_values do |v|
+          raw = @document.send(v['field'].to_sym)
+          matched = raw.match(v['regex'])
+          matched[1]
         end
       end
 
