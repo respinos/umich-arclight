@@ -242,6 +242,8 @@ to_field 'creators_ssim' do |_record, accumulator, context|
   accumulator.concat context.output_hash['creator_famname_ssm'] if context.output_hash['creator_famname_ssm']
 end
 
+to_field 'collection_creator_ssm', extract_xpath('/ead/archdesc/did/origination[@label="creator"]')
+
 to_field 'places_sim', extract_xpath('/ead/archdesc/controlaccess/geogname|/ead/archdesc/controlaccess/controlaccess/geogname')
 to_field 'places_ssim', extract_xpath('/ead/archdesc/controlaccess/geogname|/ead/archdesc/controlaccess/controlaccess/geogname')
 to_field 'places_ssm', extract_xpath('/ead/archdesc/controlaccess/geogname|/ead/archdesc/controlaccess/controlaccess/geogname')
@@ -529,7 +531,9 @@ compose 'components', ->(record, accumulator, _context) { accumulator.concat rec
   to_field 'collection_date_inclusive_ssm' do |_record, accumulator, context|
     accumulator.concat context.clipboard[:parent].output_hash['collection_date_inclusive_ssm']
   end
-
+  to_field 'collection_creator_ssm' do |_record, accumulator, context|
+    accumulator.concat context.clipboard[:parent].output_hash['collection_creator_ssm']
+  end
 
   to_field 'extent_ssm', extract_xpath('./did/physdesc/extent')
   to_field 'extent_teim', extract_xpath('./did/physdesc/extent')

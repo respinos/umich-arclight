@@ -125,6 +125,10 @@ class SolrDocument
     fetch('collection_date_inclusive_ssm', [])[0]
   end
 
+  def collection_creator
+    fetch('collection_creator_ssm', [])[0]
+  end
+
   def is_checkbox_requestable?
     config_present = repository_config.request_config_present_for_type?('aeon_hidden_form_request')
     container_requestable = containers.all? do |container|
