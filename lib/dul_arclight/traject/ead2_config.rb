@@ -526,13 +526,22 @@ compose 'components', ->(record, accumulator, _context) { accumulator.concat rec
   end
 
   to_field 'collection_physloc_tesim' do |_record, accumulator, context|
-    accumulator.concat context.clipboard[:parent].output_hash['collection_physloc_tesim']
+    collection_physloc = context.clipboard[:parent].output_hash['collection_physloc_tesim']
+    if collection_physloc
+      accumulator.concat collection_physloc
+    end
   end
   to_field 'collection_date_inclusive_ssm' do |_record, accumulator, context|
-    accumulator.concat context.clipboard[:parent].output_hash['collection_date_inclusive_ssm']
+    collection_date = context.clipboard[:parent].output_hash['collection_date_inclusive_ssm']
+    if collection_date
+      accumulator.concat collection_date
+    end
   end
   to_field 'collection_creator_ssm' do |_record, accumulator, context|
-    accumulator.concat context.clipboard[:parent].output_hash['collection_creator_ssm']
+    collection_creator = context.clipboard[:parent].output_hash['collection_creator_ssm']
+    if collection_creator
+      accumulator.concat collection_creator
+    end
   end
 
   to_field 'extent_ssm', extract_xpath('./did/physdesc/extent')
