@@ -21,9 +21,18 @@ bhl:
           Type: 200
         static:
           SystemId: ArcLight
-          ItemInfo1: manuscript
+#          ItemInfo1: manuscript
         accessor:
           ItemTitle: collection_name
+          idno: eadid
+          CallNumber: collection_unitid
+          SubLocation: physloc
+          ItemDate: collection_date
+          ItemAuthor: collection_creator
+        transform:
+          ReferenceNumber:
+            field: eadid
+            regex: 'umich-bhl-(.*)'
 scrc:
   name: 'University of Michigan. Special Collections Research Center'
   description: 'In keeping with the University Library’s mission to collect, describe, preserve, and make available the record of human knowledge, the Special Collections Research Center acquires, cares for, interprets, and promotes the use of important collections of unique, rare, primary source, and other material in all formats and in a variety of subject areas.'

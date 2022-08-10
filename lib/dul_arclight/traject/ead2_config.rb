@@ -141,6 +141,7 @@ to_field 'ead_ssi', extract_xpath('/ead/eadheader/eadid')
 to_field 'unitdate_ssm', extract_xpath('/ead/archdesc/did/unitdate|/ead/archdesc/did/unittitle/unitdate')
 to_field 'unitdate_bulk_ssim', extract_xpath('/ead/archdesc/did/unitdate[@type="bulk"]|/ead/archdesc/did/unittitle/unitdate[@type="bulk"]')
 to_field 'unitdate_inclusive_ssm', extract_xpath('/ead/archdesc/did/unitdate[@type="inclusive"]|/ead/archdesc/did/unittitle/unitdate[@type="inclusive"]')
+to_field 'collection_date_inclusive_ssm', extract_xpath('/ead/archdesc/did/unitdate[@type="inclusive"]|/ead/archdesc/did/unittitle/unitdate[@type="inclusive"]')
 to_field 'unitdate_other_ssim', extract_xpath('/ead/archdesc/did/unitdate[not(@type)]|/ead/archdesc/did/unittitle/unitdate[not(@type)]')
 
 # Aleph ID (esp. for request integration)
@@ -241,6 +242,8 @@ to_field 'creators_ssim' do |_record, accumulator, context|
   accumulator.concat context.output_hash['creator_famname_ssm'] if context.output_hash['creator_famname_ssm']
 end
 
+to_field 'collection_creator_ssm', extract_xpath('/ead/archdesc/did/origination[@label="creator"]')
+
 to_field 'places_sim', extract_xpath('/ead/archdesc/controlaccess/geogname|/ead/archdesc/controlaccess/controlaccess/geogname')
 to_field 'places_ssim', extract_xpath('/ead/archdesc/controlaccess/geogname|/ead/archdesc/controlaccess/controlaccess/geogname')
 to_field 'places_ssm', extract_xpath('/ead/archdesc/controlaccess/geogname|/ead/archdesc/controlaccess/controlaccess/geogname')
@@ -339,6 +342,8 @@ DID_SEARCHABLE_NOTES_FIELDS.map do |selector|
   to_field "#{selector}_tesim", extract_xpath("/ead/archdesc/did/#{selector}", to_text: false)
   to_field "#{selector}_teim", extract_xpath("/ead/archdesc/did/#{selector}/*[local-name()!='head']")
 end
+to_field "collection_physloc_tesim", extract_xpath("/ead/archdesc/did/physloc")
+
 
 # DUL CUSTOMIZATION
 RESTRICTION_FIELDS.map do |selector|
@@ -518,6 +523,25 @@ compose 'components', ->(record, accumulator, _context) { accumulator.concat rec
   end
   to_field 'collection_ssi' do |_record, accumulator, context|
     accumulator.concat context.clipboard[:parent].output_hash['normalized_title_ssm']
+  end
+
+  to_field 'collection_physloc_tesim' do |_record, accumulator, context|
+    collection_physloc = context.clipboard[:parent].output_hash['collection_physloc_tesim']
+    if collection_physloc
+      accumulator.concat collection_physloc
+    end
+  end
+  to_field 'collection_date_inclusive_ssm' do |_record, accumulator, context|
+    collection_date = context.clipboard[:parent].output_hash['collection_date_inclusive_ssm']
+    if collection_date
+      accumulator.concat collection_date
+    end
+  end
+  to_field 'collection_creator_ssm' do |_record, accumulator, context|
+    collection_creator = context.clipboard[:parent].output_hash['collection_creator_ssm']
+    if collection_creator
+      accumulator.concat collection_creator
+    end
   end
 
   to_field 'extent_ssm', extract_xpath('./did/physdesc/extent')

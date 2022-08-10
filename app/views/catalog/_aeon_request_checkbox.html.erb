@@ -12,5 +12,6 @@
     <input type="hidden" name="ItemSubTitle_<%= document.id %>" value="<%= raw(strip_tags(document.normalized_title)) %> (<%= document.extent %>)">
     <input type="hidden" name="ItemVolume_<%= document.id %>" value="<%= document.containers.join(', ') %>">
     <input type="hidden" name="ItemCitation_<%= document.id %>" value="<%= document.reference %>">
+    <input type="hidden" name="ItemInfo1" value="<%= document.accessrestrict %>">
   </label>
 </div>

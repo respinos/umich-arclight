@@ -2,7 +2,7 @@ name: Build latest from whatever side branch
 
 on:
   push:
-    branches: [ suppress_levels_facet ]
+    branches: [ cmdc-161_aeon-fields ]
 jobs:
   build-testing:
     runs-on: ubuntu-latest
