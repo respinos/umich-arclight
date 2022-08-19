@@ -2,7 +2,6 @@ en:
   dul_arclight:
     home:
       browse_all: "Browse All Collections"
-      browse_ua: "Browse University Archives"
       about:
         heading: About This Site
         text_html: INSERT CONTENT HERE
