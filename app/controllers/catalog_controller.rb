@@ -119,13 +119,13 @@ class CatalogController < ApplicationController
                            query: {
                              online: { label: I18n.t('um_arclight.advanced_search.available_online'), fq: 'has_online_content_ssim:true' }
                            }
+    config.add_facet_field 'repository_sim', label: 'Repository', limit: 10
     config.add_facet_field 'collection_sim', label: 'Collection', limit: 10
     config.add_facet_field 'creator_ssim', label: 'Creator', show: false
     config.add_facet_field 'creators_ssim', label: 'Creator', limit: 10
     config.add_facet_field 'date_range_sim', label: 'Date range', range: true
     config.add_facet_field 'level_sim', label: 'Level', show: false
     config.add_facet_field 'names_ssim', label: 'Names', limit: 10
-    config.add_facet_field 'repository_sim', label: 'Repository', limit: 10
     config.add_facet_field 'places_ssim', label: 'Place', limit: 10
     config.add_facet_field 'access_subjects_ssim', label: 'Subject', limit: 10
     config.add_facet_field 'formats_ssim', label: 'Format', limit: 10
