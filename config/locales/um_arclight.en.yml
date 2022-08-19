@@ -14,7 +14,7 @@ en:
       title: "Advanced Search"
       within_collections_label: "Search in"
       search_fields_label: "Search field"
-      available_online: "has Online Access"
+      available_online: "Available Online"
       search_label: "Search for"
       submit: "Search"
       start_over: "Start Over"

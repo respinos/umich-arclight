@@ -15,7 +15,6 @@ en:
       within_collections_label: "Search in"
       search_fields_label: "Search field"
       restrict_to_ua: "INSERT CONTENT HERE"
-      available_online: "has Online Access"
       search_label: "Search for"
       submit: "Search"
       start_over: "Start Over"
