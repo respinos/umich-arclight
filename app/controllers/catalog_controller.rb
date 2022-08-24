@@ -364,7 +364,7 @@ class CatalogController < ApplicationController
                                                 document.languages.present?
                                               }
 
-    config.add_summary_field 'collection_unitid_ssm', label: 'Collection ID'
+    # config.add_summary_field 'collection_unitid_ssm', label: 'Collection ID'
 
     config.add_summary_field 'ua_record_group_ssim', label: 'University Archives Record Group',
                                                      helper_method: :link_to_ua_record_group_facet, separator_options: {
