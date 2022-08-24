@@ -114,18 +114,18 @@ class CatalogController < ApplicationController
     # :index_range can be an array or range of prefixes that will be used to create the navigation (note: It is case sensitive when searching values)
 
     config.add_facet_field 'has_online_content_ssim',
-                           label: 'Online Access',
+                           label: 'Online Content',
                            collapse: false,
                            query: {
-                             online: { label: 'Available Online', fq: 'has_online_content_ssim:true' }
+                             online: { label: I18n.t('um_arclight.advanced_search.available_online'), fq: 'has_online_content_ssim:true' }
                            }
+    config.add_facet_field 'repository_sim', label: 'Repository', limit: 10
     config.add_facet_field 'collection_sim', label: 'Collection', limit: 10
     config.add_facet_field 'creator_ssim', label: 'Creator', show: false
     config.add_facet_field 'creators_ssim', label: 'Creator', limit: 10
     config.add_facet_field 'date_range_sim', label: 'Date range', range: true
     config.add_facet_field 'level_sim', label: 'Level', show: false
     config.add_facet_field 'names_ssim', label: 'Names', limit: 10
-    config.add_facet_field 'repository_sim', label: 'Repository', limit: 10
     config.add_facet_field 'places_ssim', label: 'Place', limit: 10
     config.add_facet_field 'access_subjects_ssim', label: 'Subject', limit: 10
     config.add_facet_field 'formats_ssim', label: 'Format', limit: 10
@@ -364,7 +364,7 @@ class CatalogController < ApplicationController
                                                 document.languages.present?
                                               }
 
-    config.add_summary_field 'collection_unitid_ssm', label: 'Collection ID'
+    # config.add_summary_field 'collection_unitid_ssm', label: 'Collection ID'
 
     config.add_summary_field 'ua_record_group_ssim', label: 'University Archives Record Group',
                                                      helper_method: :link_to_ua_record_group_facet, separator_options: {

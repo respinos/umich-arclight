@@ -2,7 +2,7 @@ name: Build latest from whatever side branch
 
 on:
   push:
-    branches: [ cmdc-161_aeon-fields ]
+    branches: [ quick_fixes ]
 jobs:
   build-testing:
     runs-on: ubuntu-latest
