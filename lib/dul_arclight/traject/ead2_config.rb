@@ -136,7 +136,7 @@ to_field 'title_formatted_ssm' do |record, accumulator|
   accumulator.concat no_dates
 end
 to_field 'title_teim', extract_xpath('/ead/archdesc/did/unittitle')
-to_field 'ead_ssi', extract_xpath('/ead/eadheader/eadid')
+to_field 'ead_ssi', extract_xpath('/ead/eadheader/eadid'), strip
 
 to_field 'unitdate_ssm', extract_xpath('/ead/archdesc/did/unitdate|/ead/archdesc/did/unittitle/unitdate')
 to_field 'unitdate_bulk_ssim', extract_xpath('/ead/archdesc/did/unitdate[@type="bulk"]|/ead/archdesc/did/unittitle/unitdate[@type="bulk"]')
