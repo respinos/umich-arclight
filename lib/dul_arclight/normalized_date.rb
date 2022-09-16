@@ -48,7 +48,7 @@ module DulArclight
       result = []
       result << inclusive if inclusive.present?
       result << other if other.present?
-      result << "bulk #{bulk}" if bulk.present?
+      result << "(Majority of material found within #{bulk})" if bulk.present?
       result.compact.map(&:strip).join(', ')
     end
   end
