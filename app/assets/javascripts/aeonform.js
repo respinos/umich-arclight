@@ -179,7 +179,7 @@ function SubmitAeonRequestForm() {
     if ( ValidateCheckboxes(1) ) {
         var aeon_form = $('#EADRequestFormId')[0];
         AddAeonRequestFormInputs(aeon_form);
-        $('#EADRequestFormId input').each(function(i, item) { console.log(item.name + ': ' + item.value)});
+        // $('#EADRequestFormId input').each(function(i, item) { console.log(item.name + ': ' + item.value)});
         aeon_form.submit();
     }
 }
