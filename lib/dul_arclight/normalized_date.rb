@@ -26,7 +26,7 @@ module DulArclight
 
       # DUL CUSTOMIZATION: strip out the word "bulk" if at the start of the value for
       # a type="bulk" unitdate. This prevents "bulk bulk" from displaying.
-      @bulk = Array.wrap(bulk).compact.map { |i| i.sub('bulk', '') }.map(&:strip).join(', ')
+      @bulk = Array.wrap(bulk).compact.map { |i| i.sub(/[bB]ulk/, '') }.map(&:strip).join(', ')
       @other = Array.wrap(other).compact.map(&:strip).join(', ')
     end
 
