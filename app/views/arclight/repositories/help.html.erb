@@ -1,0 +1,17 @@
+<%#= @repository.inspect %>
+
+<h2>Using Materials from <%= @repository.name %></h2>
+
+<%= @repository.using_materials.html_safe %>
+
+<h2>Info for Visitors</h2>
+
+<%= @repository.visitor_info.html_safe %>
+
+<h2>How to Request</h2>
+
+<%= @repository.how_to_request.html_safe %>
+
+<h2>Ordering Reproductions</h2>
+
+<%= @repository.how_to_order.html_safe %>

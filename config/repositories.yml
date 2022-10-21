@@ -12,6 +12,11 @@ bhl:
   phone: ''
   contact_info: 'bentley.ref@umich.edu'
   thumbnail_url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Bhlexterior.jpg/150px-Bhlexterior.jpg'
+  repo_help:
+    using_materials: 'Finding aids describe collections of primary sources and other unique, original, or rare materials. Some finding aids contain links to digitized versions of parts or all of a collection. Access to the original physical items, when available, requires requesting items for use in the reading room. Items may not be requested for use outside of the library.'
+    visitor_info: 'The Bentley is open by appointment only Monday-Friday 10am - 4pm, including the general public. Please see our <a href="https://bentley.umich.edu/research/policies/">In-Person Research Policies</a>'
+    how_to_request: 'Please see our <a href="https://bentley.umich.edu/research/requesting-items-new2020/">Requesting Items page</a>'
+    how_to_order: 'Please see our <a href="https://bentley.umich.edu/research/duplication/">Duplication of Materials page</a>'
   request_types:
     aeon_hidden_form_request:
       request_url: https://aeon-dev.bentley.umich.edu/ead_request
@@ -47,6 +52,11 @@ scrc:
   phone: ''
   contact_info: 'special.collections@umich.edu'
   thumbnail_url: 'https://upload.wikimedia.org/wikipedia/commons/9/96/University_of_Michigan_library_stacks.JPG'
+  repo_help:
+    using_materials: ''
+    visitor_info: ''
+    how_to_request: ''
+    how_to_order: ''
   request_types:
     aeon_web_ead:
       request_url: 'https://aeon.lib.umich.edu/logon'
@@ -69,6 +79,11 @@ clements:
   phone: ''
   contact_info: 'clements-reference@umich.edu'
   thumbnail_url: 'https://upload.wikimedia.org/wikipedia/commons/1/1d/University_of_Michigan_August_2013_179_%28William_L._Clements_Library%29.jpg'
+  repo_help:
+    using_materials: ''
+    visitor_info: ''
+    how_to_request: ''
+    how_to_order: ''
   request_types:
     aeon_web_ead:
       request_url: 'https://aeon.clements.umich.edu/logon'
@@ -91,6 +106,11 @@ clarke:
   phone: ''
   contact_info: 'clarke@cmich.edu'
   thumbnail_url: 'https://www.cmich.edu/images/default-source/academic-affairs-division/cmu-libraries/about/support-the-libraries/20210723_support_universityseal_0086fdf1a7f-50e7-4d64-a7ca-f7979508b7a2.jpg'
+  repo_help:
+    using_materials: ''
+    visitor_info: ''
+    how_to_request: ''
+    how_to_order: ''
 vrc:
   name: 'University of Michigan. History of Art. Visual Resources Collection'
   description: "The VRC maintains nearly two million images of art. The collection's roots are more than 90 years old and developed as a teaching collection to support University of Michigan faculty and students. Through these online finding aids, we hope to help you connect with our vast resources of images of art, architecture, and artifacts."
@@ -105,6 +125,11 @@ vrc:
   phone: ''
   contact_info: 'vrum@umich.edu'
   thumbnail_url: 'https://mapproxy.studentlife.umich.edu/images/tappan-hall/AXP2S1698.jpg'
+  repo_help:
+    using_materials: ''
+    visitor_info: ''
+    how_to_request: ''
+    how_to_order: ''
 archivemi:
   name: 'Archives of Michigan'
   description: 'The Archives of Michigan is responsible for preserving the records of Michigan government and other public institutions. The collections also include documents, maps, photographs and film from private individuals and organizations.'
@@ -119,6 +144,11 @@ archivemi:
   phone: ''
   contact_info: 'Archives@Michigan.gov'
   thumbnail_url: 'https://www.michigan.gov/mhc/-/media/Project/Websites/mhc/images/archives/archives_womanresearcher.jpg'
+  repo_help:
+    using_materials: ''
+    visitor_info: ''
+    how_to_request: ''
+    how_to_order: ''
 mlibraryead:
   name: 'MLibrary Finding Aids'
   description: "MLibrary's Finding Aids site provides access to finding aids or descriptive inventories for archival records and manuscript collections not held in the Special Collections Research Center."
@@ -133,3 +163,8 @@ mlibraryead:
   phone: ''
   contact_info: 'dlps-help@umich.edu'
   thumbnail_url: 'https://www.lib.umich.edu/static/f7ffa2d7bc8b7d2c2e56eaf08f237c8b/53249/AerialsNov08(186)Stock-a.webp'
+  repo_help:
+    using_materials: ''
+    visitor_info: ''
+    how_to_request: ''
+    how_to_order: ''
