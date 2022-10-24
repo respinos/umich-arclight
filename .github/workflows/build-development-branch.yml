@@ -2,7 +2,7 @@ name: Build latest from whatever side branch
 
 on:
   push:
-    branches: [ quick_fixes ]
+    branches: [ DCP2-233-using-these-materials ]
 jobs:
   build-testing:
     runs-on: ubuntu-latest
