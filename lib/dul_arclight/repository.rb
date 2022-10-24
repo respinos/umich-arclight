@@ -143,14 +143,17 @@ module Arclight
     end
 
     def visitor_info
+      return false unless repo_help.key('visitor_info')
       repo_help.fetch('visitor_info')
     end
 
     def how_to_request
+      return false unless repo_help.key('how_to_request')
       repo_help.fetch('how_to_request')
     end
 
     def how_to_order
+      return false unless repo_help.key('how_to_order')
       repo_help.fetch('how_to_order')
     end
     # Load repository information from a YAML file

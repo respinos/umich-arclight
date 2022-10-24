@@ -4,14 +4,20 @@
 
 <%= @repository.using_materials.html_safe %>
 
+<% if @repository.visitor_info %>
 <h2>Info for Visitors</h2>
 
 <%= @repository.visitor_info.html_safe %>
+<% end %>
 
+<% if @repository.how_to_request %>
 <h2>How to Request</h2>
 
 <%= @repository.how_to_request.html_safe %>
+<% end %>
 
+<% if @repository.how_to_order %>
 <h2>Ordering Reproductions</h2>
 
 <%= @repository.how_to_order.html_safe %>
+<% end %>
