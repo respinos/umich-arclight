@@ -197,7 +197,6 @@ GEM
       activerecord
       kaminari-core (= 1.2.2)
     kaminari-core (1.2.2)
-    libv8 (7.3.492.27.1)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -216,8 +215,6 @@ GEM
     method_source (1.0.0)
     mini_mime (1.1.2)
     mini_portile2 (2.8.0)
-    mini_racer (0.2.8)
-      libv8 (>= 6.9.411)
     minitest (5.16.2)
     mono_logger (1.1.0)
     multi_json (1.14.1)
@@ -447,7 +444,6 @@ DEPENDENCIES
   font-awesome-sass (~> 5.12.0)
   jquery-rails
   listen (>= 3.0.5, < 3.2)
-  mini_racer
   pg
   puma
   rails (~> 5.2.3)
@@ -467,4 +463,4 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 BUNDLED WITH
-   2.2.21
+   2.2.33
