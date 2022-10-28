@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  web:
+    image: structurizr/lite
+    ports:
+    - "9000:8080"
+    volumes:
+    - .:/usr/local/structurizr
