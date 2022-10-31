@@ -126,9 +126,9 @@ class CatalogController < ApplicationController
     config.add_facet_field 'date_range_sim', label: 'Date range', range: true
     config.add_facet_field 'level_sim', label: 'Level', show: false
     config.add_facet_field 'names_ssim', label: 'Names', limit: 10
-    config.add_facet_field 'places_ssim', label: 'Place', limit: 10
-    config.add_facet_field 'access_subjects_ssim', label: 'Subject', limit: 10
-    config.add_facet_field 'formats_ssim', label: 'Format', limit: 10
+    config.add_facet_field 'places_ssim', label: 'Places', limit: 10
+    config.add_facet_field 'access_subjects_ssim', label: 'Subjects', limit: 10
+    config.add_facet_field 'formats_ssim', label: 'Formats', limit: 10
 
     # Added in ArcLight v0.4.0
     # See note in: https://github.com/projectblacklight/arclight/releases/tag/v0.4.0
