@@ -11,13 +11,13 @@
 <% end %>
 
 <% if @repository.how_to_request %>
-<h2>How to Request</h2>
+<h2 id="requesting">How to Request</h2>
 
 <%= @repository.how_to_request.html_safe %>
 <% end %>
 
 <% if @repository.how_to_order %>
-<h2>Ordering Reproductions</h2>
+<h2 id="ordering">Ordering Reproductions</h2>
 
 <%= @repository.how_to_order.html_safe %>
 <% end %>

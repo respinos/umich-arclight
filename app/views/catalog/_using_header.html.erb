@@ -4,7 +4,17 @@
   <%= t("arclight.views.show.sections.using_field") %>
 </h2>
 <p>
-  <%= link_to 'About', repository_about_path(@document.repository_config.slug) %>
+  <%= link_to 'Using These Materials', repository_about_path(@document.repository_config.slug) %>
+</p>
+<p>
+  <% if @document.repository_config.how_to_request %>
+    <%= link_to 'How to Request', repository_about_path(@document.repository_config.slug, anchor: 'requesting') %>
+  <% end %>
+</p>
+<p>
+  <% if @document.repository_config.how_to_order %>
+    <%= link_to 'Ordering Reproductions', repository_about_path(@document.repository_config.slug, anchor: 'ordering') %>
+<% end %>
 </p>
 
 <hr/>
