@@ -1,23 +1,24 @@
 <%#= @repository.inspect %>
+<div class="prose prose-container">
+<h1>Using Materials from <%= @repository.name %></h1>
 
-<h2>Using Materials from <%= @repository.name %></h2>
-
-<%= @repository.using_materials.html_safe %>
+<p><%= @repository.using_materials.html_safe %></p>
 
 <% if @repository.visitor_info %>
 <h2>Info for Visitors</h2>
 
-<%= @repository.visitor_info.html_safe %>
+<p><%= @repository.visitor_info.html_safe %></p>
 <% end %>
 
 <% if @repository.how_to_request %>
 <h2 id="requesting">How to Request</h2>
 
-<%= @repository.how_to_request.html_safe %>
+<p><%= @repository.how_to_request.html_safe %></p>
 <% end %>
 
 <% if @repository.how_to_order %>
 <h2 id="ordering">Ordering Reproductions</h2>
 
-<%= @repository.how_to_order.html_safe %>
+<p><%= @repository.how_to_order.html_safe %></p>
+</div>
 <% end %>

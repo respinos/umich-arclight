@@ -10,7 +10,7 @@ p, dd {
 /* Sticky navigation for sidebar */
 .sticky-nav {
   position: sticky;
-  top: 100px;
+  top: 4px;
   @include media-breakpoint-down(lg) {
     position: static;
   }
