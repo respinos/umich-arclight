@@ -34,7 +34,7 @@ Rails.application.routes.draw do
   end
 
   resources :repositories, only: %i[index show], controller: 'repositories'
-  get 'repositories/:id/help', to: 'repositories#help'
+  get 'repositories/:id/about', as: 'repository_about', to: 'repositories#about'
 
   resources :ua_record_groups, only: [:index], as: 'ua_record_groups', path: '/collections/ua-record-groups', controller: 'ua_record_groups'
 
