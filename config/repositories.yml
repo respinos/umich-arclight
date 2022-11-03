@@ -80,10 +80,10 @@ clements:
   contact_info: 'clements-reference@umich.edu'
   thumbnail_url: 'https://upload.wikimedia.org/wikipedia/commons/1/1d/University_of_Michigan_August_2013_179_%28William_L._Clements_Library%29.jpg'
   repo_about:
-    using_materials: ''
-    visitor_info: ''
-    how_to_request: ''
-    how_to_order: ''
+    using_materials: 'Finding aids describe collections of primary sources and other unique, original, or rare materials. Collections are non-circulating and must be used in the Clements Library reading room. Some finding aids contain links to digitized versions of parts or all of a collection, but in most cases viewing a collection in its entirety will require visiting the library.'
+    visitor_info: 'See <a href="https://clements.umich.edu/research/plan-your-visit/">Clements Library Plan Your Visit</a>.'
+    how_to_request: 'See <a href="https://clements.umich.edu/research/request-materials/">Clements Library Request Materials</a>.'
+    how_to_order: 'See <a href="https://clements.umich.edu/research/duplication-and-use/">Clements Library Duplication and Use</a>.'
   request_types:
     aeon_web_ead:
       request_url: 'https://aeon.clements.umich.edu/logon'
