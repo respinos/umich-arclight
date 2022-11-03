@@ -4,7 +4,7 @@
   <%= t("arclight.views.show.sections.using_field") %>
 </h2>
 <p>
-  <%= link_to 'Info for Visitors', repository_about_path(@document.repository_config.slug, anchor: 'visiting'), target: '_blank' %>
+  <%= link_to 'Info for Visitors', repository_about_path(@document.repository_config.slug), target: '_blank' %>
 </p>
 <p>
   <% if @document.repository_config.how_to_request %>
