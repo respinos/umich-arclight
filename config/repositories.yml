@@ -1,5 +1,5 @@
 bhl:
-  name: 'University of Michigan Bentley Historical Library'
+  name: 'University of Michigan. Bentley Historical Library'
   description: 'The Bentley Historical Library collects the materials for and promotes the study of the histories of two great, intertwined institutions, the State of Michigan and the University of Michigan. The Library is open without fee to the public, and we welcome researchers regardless of academic or professional affiliation.'
   visit_note: ''
   building: ''
@@ -39,7 +39,7 @@ bhl:
             field: eadid
             regex: 'umich-bhl-(.*)'
 scrc:
-  name: 'University of Michigan Special Collections Research Center'
+  name: 'University of Michigan. Special Collections Research Center'
   description: 'In keeping with the University Library’s mission to collect, describe, preserve, and make available the record of human knowledge, the Special Collections Research Center acquires, cares for, interprets, and promotes the use of important collections of unique, rare, primary source, and other material in all formats and in a variety of subject areas.'
   visit_note: ''
   building: 'Harlan Hatcher Graduate Library (South)'
@@ -93,7 +93,7 @@ clements:
     pattern: 'us//::miu-c//TXT us::miu-c::(.*.xml)\/\/EN'
     prefix: 'https://quod.lib.umich.edu/c/clementsead/eads/'
 clarke:
-  name: 'Central Michigan University Clarke Historical Library'
+  name: 'Central Michigan University. Clarke Historical Library'
   description: 'The Clarke Historical Library collects, preserves, and promotes collections including the history of Michigan and the Old Northwest Territory, the history of Central Michigan University, as well as other topics.'
   visit_note: ''
   building: ''
@@ -112,7 +112,7 @@ clarke:
     how_to_request: '<a href="clarke@cmich.edu">Contact the Clarke</a> for assistance with collections.'
     how_to_order: 'Please visit <a href="https://www.cmich.edu/research/clarke-historical-library/about/policies#a3">Clarke Digital Reproduction Policies and Fees</a>.'
 vrc:
-  name: 'University of Michigan History of Art Visual Resources Collection'
+  name: 'University of Michigan. History of Art. Visual Resources Collection'
   description: "The VRC maintains nearly two million images of art. The collection's roots are more than 90 years old and developed as a teaching collection to support University of Michigan faculty and students. Through these online finding aids, we hope to help you connect with our vast resources of images of art, architecture, and artifacts."
   visit_note: ''
   building: '45 Tappan Hall'
