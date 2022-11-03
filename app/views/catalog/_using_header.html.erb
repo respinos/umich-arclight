@@ -4,7 +4,17 @@
   <%= t("arclight.views.show.sections.using_field") %>
 </h2>
 <p>
-  INSERT CONTENT HERE
+  <%= link_to 'Info for Visitors', repository_about_path(@document.repository_config.slug), target: '_blank' %>
+</p>
+<p>
+  <% if @document.repository_config.how_to_request %>
+    <%= link_to 'How to Request', repository_about_path(@document.repository_config.slug, anchor: 'requesting'), target: '_blank' %>
+  <% end %>
+</p>
+<p>
+  <% if @document.repository_config.how_to_order %>
+    <%= link_to 'Ordering Reproductions', repository_about_path(@document.repository_config.slug, anchor: 'ordering'), target: '_blank' %>
+<% end %>
 </p>
 
 <hr/>

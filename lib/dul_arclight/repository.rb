@@ -132,6 +132,30 @@ module Arclight
       request_id.fetch('postfix')
     end
 
+    def repo_about_present?
+      return false unless respond_to? :repo_about
+      return false if repo_about.nil? || repo_about.empty?
+      true
+    end
+
+    def using_materials
+      repo_about.fetch('using_materials')
+    end
+
+    def visitor_info
+      return false unless repo_about.key?('visitor_info')
+      repo_about.fetch('visitor_info')
+    end
+
+    def how_to_request
+      return false unless repo_about.key?('how_to_request')
+      repo_about.fetch('how_to_request')
+    end
+
+    def how_to_order
+      return false unless repo_about.key?('how_to_order')
+      repo_about.fetch('how_to_order')
+    end
     # Load repository information from a YAML file
     #
     # @param [String] `filename`
