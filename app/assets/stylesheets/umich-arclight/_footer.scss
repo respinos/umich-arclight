@@ -1,16 +1,19 @@
 .footer {
   background: var(--color-blue-400);
 }
+
 .footer ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
+
 .footer ul a {
-  display: inline-block;
   padding: var(--space-x-small) 0;
   text-decoration: none;
   text-decoration-thickness: 0px;
+  display: flex;
+  align-items: center;
 }
 
 .footer ul a span:hover {
@@ -59,12 +62,15 @@
   color: var(--color-blue-200);
   padding: var(--space-medium) 0;
 }
+
 .footer__disclaimer a {
   color: var(--color-blue-200);
 }
+
 .footer__disclaimer p {
   margin: 0;
 }
+
 @media screen and (min-width: 820px) {
   .footer__disclaimer p {
     display: inline-block;

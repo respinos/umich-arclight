@@ -1,0 +1,353 @@
+{
+  "id" : 1,
+  "name" : "ArcLight",
+  "description" : "An overview of the ArcLight archival material discovery system",
+  "lastModifiedDate" : "2022-10-28T16:44:49Z",
+  "properties" : {
+    "structurizr.dsl" : "d29ya3NwYWNlIHsKICBtb2RlbCB7CiAgICByZXNlYXJjaGVyID0gcGVyc29uICJSZXNlYXJjaGVyIiAiQSBwZXJzb24gaW50ZXJlc3RlZCBpbiBtYXRlcmlhbHMgaGVsZCBieSBhbiBhcmNoaXZlLiIKICAgIG9wZXJhdG9yID0gcGVyc29uICJBcHAgT3BlcmF0b3IiICJBZG1pbmlzdHJhdGl2ZSBzdGFmZiB3aG8gY29uZHVjdCBzeXN0ZW0gb3BlcmF0aW9ucy4iCiAgICBtYW5hZ2VyID0gcGVyc29uICJEYXRhIE1hbmFnZXIiICJTdGFmZiB3aG8gbWFuYWdlIHRoZSBhcmNoaXZhbCBtZXRhZGF0YS4iCgogICAgcmVxdWVzdFN5c3RlbSA9IHNvZnR3YXJlU3lzdGVtICJNYXRlcmlhbCBSZXF1ZXN0IFN5c3RlbSIgIkFsbG93cyBwYXRyb25zIHRvIHJlcXVlc3QgbWF0ZXJpYWxzIG9yIGNvcGllcyBmcm9tIGEgZ2l2ZW4gYXJjaGl2ZS4gQ29tbW9ubHkgaW1wbGVtZW50ZWQgYnkgYSBwYXJ0bmVyIHdpdGggQWVvbi4iICJFeHRlcm5hbCBTeXN0ZW0iCiAgICBhcmNsaWdodCA9IHNvZnR3YXJlU3lzdGVtICJBcmNMaWdodCIgewogICAgICB3ZWJhcHAgPSBjb250YWluZXIgIldlYiBBcHAiICJPZmZlcnMgYnJvd3NlIGFuZCBzZWFyY2ggZmVhdHVyZXMgYWNyb3NzIG1hdGVyaWFscyBob3VzZWQgaW4gbWFueSBhcmNoaXZhbCByZXBvc2l0b3JpZXMuIiAiUnVieS9SYWlscyIKICAgICAgc2VhcmNoID0gY29udGFpbmVyICJTZWFyY2ggSW5kZXgiICJPZmZlcnMgc3RydWN0dXJlZCBhbmQgZnJlZSB0ZXh0IHNlYXJjaGVzIG9mIGZpbmRpbmcgYWlkcyAoRUFEcy9hcmNoaXZhbCBkZXNjcmlwdGlvbnMpLiIgIlNvbHIiCiAgICAgIGRhdGFiYXNlID0gY29udGFpbmVyICJEYXRhYmFzZSIgIkhvbGRzIGhpc3RvcmljYWwvYW5hbHl0aWNhbCBkYXRhIGFib3V0IHNlYXJjaCBhY3Rpdml0eS4iICJQb3N0Z3JlU1FMIiAiRGF0YWJhc2UiCiAgICAgIGpvYnF1ZXVlID0gY29udGFpbmVyICJKb2IgUXVldWUiICJIb2xkcyBqb2JzIHRvIGJlIHByb2Nlc3NlZCBhc3luY2hyb25vdXNseS4iICJSZWRpcy9SZXNxdWUiCiAgICAgIHdvcmtlcnMgPSBjb250YWluZXIgIkJhY2tncm91bmQgV29ya2VycyIgIlByb2Nlc3MgZGF0YSBqb2JzIGxpa2UgaW5kZXhpbmcgRUFEcy4iICJSdWJ5L1Jlc3F1ZSIKICAgICAgY29uc29sZSA9IGNvbnRhaW5lciAiQWRtaW4gQ29uc29sZSIgIk9mZmVycyBtYW5hZ2VtZW50IGZ1bmN0aW9uYWxpdHkgdG8gc3lzdGVtIG9wZXJhdG9ycy4iICJSYWtlL1JhaWxzIENvbnNvbGUiCiAgICAgIGRhdGEgPSBjb250YWluZXIgIkFyY2hpdmVzIERhdGEiICJTdHJ1Y3R1cmVkIGZpbGUgc3RvcmFnZSBmb3IgcHJlcGFyaW5nIGFuZCBpbXBvcnRpbmcgRUFEcy4iICJFbnRlcnByaXNlIFN0b3JhZ2UiICJGaWxlc3lzdGVtIgogICAgfQoKICAgIHJlc2VhcmNoZXIgLT4gYXJjbGlnaHQgIk5hdmlnYXRlcyB0byIgIkhUVFBTL0hUTUwiCiAgICByZXNlYXJjaGVyIC0+IHdlYmFwcCAiTmF2aWdhdGVzIHRvIiAiSFRUUFMvSFRNTCIKICAgIG9wZXJhdG9yIC0+IGNvbnNvbGUgIlJ1bnMgYWRtaW5pc3RyYXRpdmUgdGFza3MiICJTU0giCiAgICBtYW5hZ2VyIC0+IGRhdGEgIkN1cmF0ZXMgYXJjaGl2ZXMgZGF0YSBpbiIgIk5GUyIKCiAgICBjb25zb2xlIC0+IGpvYnF1ZXVlICJFbnF1ZXVlcyBqb2JzIGluIiAiUmVkaXMiCiAgICBjb25zb2xlIC0+IHNlYXJjaCAiUmVhZHMgZnJvbSBhbmQgd3JpdGVzIHRvIiAiSFRUUFMiCgogICAgd2ViYXBwIC0+IHNlYXJjaCAiUmVhZHMgZnJvbSIgIkhUVFBTIgogICAgd2ViYXBwIC0+IGRhdGFiYXNlICJSZWNvcmRzIHNlYXJjaCBhY3Rpdml0eSBpbiIgInBnc3FsIGdlbSIKCiAgICB3b3JrZXJzIC0+IGpvYnF1ZXVlICJGZXRjaCBqb2JzIGZyb20iICJSZWRpcyIKICAgIHdvcmtlcnMgLT4gc2VhcmNoICJBZGQgZG9jdW1lbnRzIHRvIiAiSFRUUFMiCgogICAgY29uc29sZSAtPiBkYXRhICJSZWFkcyBmcm9tIGFuZCB3cml0ZXMgdG8iICJORlMiCiAgICB3b3JrZXJzIC0+IGRhdGEgIlJlYWQgZnJvbSIgIk5GUyIKCiAgICBhcmNsaWdodCAtPiByZXF1ZXN0U3lzdGVtICJEaXJlY3RzIG1hdGVyaWFsIHJlcXVlc3RzIHRvIiAiSFRUUFMiCiAgICB3ZWJhcHAgLT4gcmVxdWVzdFN5c3RlbSAiRGlyZWN0cyBtYXRlcmlhbCByZXF1ZXN0cyB0byIgIkhUVFBTIgogIH0KCiAgdmlld3MgewogICAgc3lzdGVtQ29udGV4dCBhcmNsaWdodCB7CiAgICAgIGluY2x1ZGUgKgogICAgfQoKICAgIGNvbnRhaW5lciBhcmNsaWdodCB7CiAgICAgIGluY2x1ZGUgKgogICAgfQoKCiAgICB0aGVtZSBkZWZhdWx0CiAgICBzdHlsZXMgewogICAgICBlbGVtZW50ICJFeHRlcm5hbCBTeXN0ZW0iIHsKICAgICAgICBiYWNrZ3JvdW5kICM5OTk5OTkKICAgICAgfQoKICAgICAgZWxlbWVudCAiRGF0YWJhc2UiIHsKICAgICAgICBzaGFwZSBDeWxpbmRlcgogICAgICB9CgogICAgICBlbGVtZW50ICJCcm93c2VyIEFwcGxpY2F0aW9uIiB7CiAgICAgICAgc2hhcGUgV2ViQnJvd3NlcgogICAgICB9CgogICAgICBlbGVtZW50ICJGaWxlc3lzdGVtIiB7CiAgICAgICAgc2hhcGUgRm9sZGVyCiAgICAgIH0KICAgIH0KICB9Cn0KCgogICAgLyoKICAgIHByb2R1Y3Rpb24gPSBkZXBsb3ltZW50RW52aXJvbm1lbnQgIlByb2R1Y3Rpb24iIHsKICAgICAgZGVwbG95bWVudE5vZGUgIm15YXBwIiAiIiAia3ViZXJuZXRlcyBuYW1lc3BhY2UiIHsKICAgICAgICBkZXBsb3ltZW50Tm9kZSAid2ViOjgwIiAiIiAia3ViZXJuZXRlcyBzZXJ2aWNlIiB7CiAgICAgICAgICBjb250YWluZXJJbnN0YW5jZSBiYWNrZW5kCiAgICAgICAgfQogICAgICB9CgogICAgICBkZXBsb3ltZW50Tm9kZSAic29tZSB2bSBzb21ld2hlcmUiIHsKICAgICAgICBjb250YWluZXJJbnN0YW5jZSBkYXRhYmFzZQogICAgICB9CiAgICB9CiAgICAqLwoKICAgIC8qCiAgICBkZXBsb3ltZW50ICogc3RhZ2luZyB7CiAgICAgIGluY2x1ZGUgKgogICAgfQogICAgKi8K"
+  },
+  "configuration" : { },
+  "model" : {
+    "people" : [ {
+      "id" : "1",
+      "tags" : "Element,Person",
+      "name" : "Researcher",
+      "description" : "A person interested in materials held by an archive.",
+      "relationships" : [ {
+        "id" : "13",
+        "tags" : "Relationship",
+        "sourceId" : "1",
+        "destinationId" : "5",
+        "description" : "Navigates to",
+        "technology" : "HTTPS/HTML"
+      }, {
+        "id" : "14",
+        "tags" : "Relationship",
+        "sourceId" : "1",
+        "destinationId" : "6",
+        "description" : "Navigates to",
+        "technology" : "HTTPS/HTML"
+      } ],
+      "location" : "Unspecified"
+    }, {
+      "id" : "2",
+      "tags" : "Element,Person",
+      "name" : "App Operator",
+      "description" : "Administrative staff who conduct system operations.",
+      "relationships" : [ {
+        "id" : "15",
+        "tags" : "Relationship",
+        "sourceId" : "2",
+        "destinationId" : "11",
+        "description" : "Runs administrative tasks",
+        "technology" : "SSH"
+      }, {
+        "id" : "16",
+        "sourceId" : "2",
+        "destinationId" : "5",
+        "description" : "Runs administrative tasks",
+        "technology" : "SSH",
+        "linkedRelationshipId" : "15"
+      } ],
+      "location" : "Unspecified"
+    }, {
+      "id" : "3",
+      "tags" : "Element,Person",
+      "name" : "Data Manager",
+      "description" : "Staff who manage the archival metadata.",
+      "relationships" : [ {
+        "id" : "17",
+        "tags" : "Relationship",
+        "sourceId" : "3",
+        "destinationId" : "12",
+        "description" : "Curates archives data in",
+        "technology" : "NFS"
+      }, {
+        "id" : "18",
+        "sourceId" : "3",
+        "destinationId" : "5",
+        "description" : "Curates archives data in",
+        "technology" : "NFS",
+        "linkedRelationshipId" : "17"
+      } ],
+      "location" : "Unspecified"
+    } ],
+    "softwareSystems" : [ {
+      "id" : "4",
+      "tags" : "Element,Software System,External System",
+      "name" : "Material Request System",
+      "description" : "Allows patrons to request materials or copies from a given archive. Commonly implemented by a partner with Aeon.",
+      "location" : "Unspecified",
+      "documentation" : { }
+    }, {
+      "id" : "5",
+      "tags" : "Element,Software System",
+      "name" : "ArcLight",
+      "relationships" : [ {
+        "id" : "27",
+        "tags" : "Relationship",
+        "sourceId" : "5",
+        "destinationId" : "4",
+        "description" : "Directs material requests to",
+        "technology" : "HTTPS"
+      } ],
+      "location" : "Unspecified",
+      "containers" : [ {
+        "id" : "8",
+        "tags" : "Element,Container,Database",
+        "name" : "Database",
+        "description" : "Holds historical/analytical data about search activity.",
+        "technology" : "PostgreSQL"
+      }, {
+        "id" : "9",
+        "tags" : "Element,Container",
+        "name" : "Job Queue",
+        "description" : "Holds jobs to be processed asynchronously.",
+        "technology" : "Redis/Resque"
+      }, {
+        "id" : "10",
+        "tags" : "Element,Container",
+        "name" : "Background Workers",
+        "description" : "Process data jobs like indexing EADs.",
+        "relationships" : [ {
+          "id" : "23",
+          "tags" : "Relationship",
+          "sourceId" : "10",
+          "destinationId" : "9",
+          "description" : "Fetch jobs from",
+          "technology" : "Redis"
+        }, {
+          "id" : "24",
+          "tags" : "Relationship",
+          "sourceId" : "10",
+          "destinationId" : "7",
+          "description" : "Add documents to",
+          "technology" : "HTTPS"
+        }, {
+          "id" : "26",
+          "tags" : "Relationship",
+          "sourceId" : "10",
+          "destinationId" : "12",
+          "description" : "Read from",
+          "technology" : "NFS"
+        } ],
+        "technology" : "Ruby/Resque"
+      }, {
+        "id" : "6",
+        "tags" : "Element,Container",
+        "name" : "Web App",
+        "description" : "Offers browse and search features across materials housed in many archival repositories.",
+        "relationships" : [ {
+          "id" : "21",
+          "tags" : "Relationship",
+          "sourceId" : "6",
+          "destinationId" : "7",
+          "description" : "Reads from",
+          "technology" : "HTTPS"
+        }, {
+          "id" : "22",
+          "tags" : "Relationship",
+          "sourceId" : "6",
+          "destinationId" : "8",
+          "description" : "Records search activity in",
+          "technology" : "pgsql gem"
+        }, {
+          "id" : "28",
+          "tags" : "Relationship",
+          "sourceId" : "6",
+          "destinationId" : "4",
+          "description" : "Directs material requests to",
+          "technology" : "HTTPS"
+        } ],
+        "technology" : "Ruby/Rails"
+      }, {
+        "id" : "12",
+        "tags" : "Element,Container,Filesystem",
+        "name" : "Archives Data",
+        "description" : "Structured file storage for preparing and importing EADs.",
+        "technology" : "Enterprise Storage"
+      }, {
+        "id" : "7",
+        "tags" : "Element,Container",
+        "name" : "Search Index",
+        "description" : "Offers structured and free text searches of finding aids (EADs/archival descriptions).",
+        "technology" : "Solr"
+      }, {
+        "id" : "11",
+        "tags" : "Element,Container",
+        "name" : "Admin Console",
+        "description" : "Offers management functionality to system operators.",
+        "relationships" : [ {
+          "id" : "19",
+          "tags" : "Relationship",
+          "sourceId" : "11",
+          "destinationId" : "9",
+          "description" : "Enqueues jobs in",
+          "technology" : "Redis"
+        }, {
+          "id" : "20",
+          "tags" : "Relationship",
+          "sourceId" : "11",
+          "destinationId" : "7",
+          "description" : "Reads from and writes to",
+          "technology" : "HTTPS"
+        }, {
+          "id" : "25",
+          "tags" : "Relationship",
+          "sourceId" : "11",
+          "destinationId" : "12",
+          "description" : "Reads from and writes to",
+          "technology" : "NFS"
+        } ],
+        "technology" : "Rake/Rails Console"
+      } ],
+      "documentation" : { }
+    } ]
+  },
+  "documentation" : { },
+  "views" : {
+    "systemContextViews" : [ {
+      "softwareSystemId" : "5",
+      "key" : "ArcLight-SystemContext",
+      "order" : 1,
+      "paperSize" : "A5_Landscape",
+      "dimensions" : {
+        "width" : 2480,
+        "height" : 1748
+      },
+      "enterpriseBoundaryVisible" : true,
+      "elements" : [ {
+        "id" : "1",
+        "x" : 495,
+        "y" : 10
+      }, {
+        "id" : "2",
+        "x" : 1035,
+        "y" : 5
+      }, {
+        "id" : "3",
+        "x" : 1635,
+        "y" : 10
+      }, {
+        "id" : "4",
+        "x" : 90,
+        "y" : 720
+      }, {
+        "id" : "5",
+        "x" : 1015,
+        "y" : 724
+      } ],
+      "relationships" : [ {
+        "id" : "18"
+      }, {
+        "id" : "16"
+      }, {
+        "id" : "27"
+      }, {
+        "id" : "13"
+      } ]
+    } ],
+    "containerViews" : [ {
+      "softwareSystemId" : "5",
+      "key" : "ArcLight-Container",
+      "order" : 2,
+      "paperSize" : "A4_Landscape",
+      "dimensions" : {
+        "width" : 3508,
+        "height" : 2480
+      },
+      "externalSoftwareSystemBoundariesVisible" : true,
+      "elements" : [ {
+        "id" : "11",
+        "x" : 2095,
+        "y" : 735
+      }, {
+        "id" : "1",
+        "x" : 1475,
+        "y" : 55
+      }, {
+        "id" : "12",
+        "x" : 2730,
+        "y" : 1245
+      }, {
+        "id" : "2",
+        "x" : 2120,
+        "y" : 55
+      }, {
+        "id" : "3",
+        "x" : 2755,
+        "y" : 55
+      }, {
+        "id" : "4",
+        "x" : 85,
+        "y" : 725
+      }, {
+        "id" : "6",
+        "x" : 1450,
+        "y" : 730
+      }, {
+        "id" : "7",
+        "x" : 1450,
+        "y" : 1270
+      }, {
+        "id" : "8",
+        "x" : 835,
+        "y" : 1275
+      }, {
+        "id" : "9",
+        "x" : 2097,
+        "y" : 1265
+      }, {
+        "id" : "10",
+        "x" : 2105,
+        "y" : 1855
+      } ],
+      "relationships" : [ {
+        "id" : "21"
+      }, {
+        "id" : "20"
+      }, {
+        "id" : "28"
+      }, {
+        "id" : "17"
+      }, {
+        "id" : "26"
+      }, {
+        "id" : "15"
+      }, {
+        "id" : "14"
+      }, {
+        "id" : "25"
+      }, {
+        "id" : "24"
+      }, {
+        "id" : "23"
+      }, {
+        "id" : "22"
+      }, {
+        "id" : "19"
+      } ]
+    } ],
+    "configuration" : {
+      "branding" : { },
+      "styles" : {
+        "elements" : [ {
+          "tag" : "External System",
+          "background" : "#999999"
+        }, {
+          "tag" : "Database",
+          "shape" : "Cylinder"
+        }, {
+          "tag" : "Browser Application",
+          "shape" : "WebBrowser"
+        }, {
+          "tag" : "Filesystem",
+          "shape" : "Folder"
+        } ]
+      },
+      "themes" : [ "https://static.structurizr.com/themes/default/theme.json" ],
+      "terminology" : { },
+      "lastSavedView" : "ArcLight-Container"
+    }
+  }
+}
