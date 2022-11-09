@@ -122,27 +122,28 @@ to_field 'publicid_ssi', extract_xpath('/ead/eadheader/eadid/@publicid')
 
 to_field 'title_filing_si', extract_xpath('/ead/eadheader/filedesc/titlestmt/titleproper[@type="filing"]')
 to_field 'title_ssm' do |record, accumulator|
-  result = record.xpath('/ead/archdesc/did/unittitle')
+  result = record.xpath('/ead/archdesc/did/unittitle[not(@type) or ( @type != "sort" )]')
   result = result.collect do |n|
+    # return if n['type'] and n['type'] == "sort"
     n.xpath('.//text()[not(ancestor::unitdate)]').collect(&:text).join(" ")
   end.join(" ")
   accumulator << result
 end
 to_field 'title_formatted_ssm' do |record, accumulator|
-  whole_title = record.xpath('/ead/archdesc/did/unittitle').to_a
+  whole_title = record.xpath('/ead/archdesc/did/unittitle[not(@type) or ( @type != "sort" )]').to_a
   no_dates = whole_title.collect do |parent_node|
     parent_node.children.select { |elem| elem.name != 'unitdate' }
   end.flatten
   accumulator.concat no_dates
 end
-to_field 'title_teim', extract_xpath('/ead/archdesc/did/unittitle')
+to_field 'title_teim', extract_xpath('/ead/archdesc/did/unittitle[not(@type) or ( @type != "sort" )]')
 to_field 'ead_ssi', extract_xpath('/ead/eadheader/eadid'), strip
 
-to_field 'unitdate_ssm', extract_xpath('/ead/archdesc/did/unitdate|/ead/archdesc/did/unittitle/unitdate')
-to_field 'unitdate_bulk_ssim', extract_xpath('/ead/archdesc/did/unitdate[@type="bulk"]|/ead/archdesc/did/unittitle/unitdate[@type="bulk"]')
-to_field 'unitdate_inclusive_ssm', extract_xpath('/ead/archdesc/did/unitdate[@type="inclusive"]|/ead/archdesc/did/unittitle/unitdate[@type="inclusive"]')
-to_field 'collection_date_inclusive_ssm', extract_xpath('/ead/archdesc/did/unitdate[@type="inclusive"]|/ead/archdesc/did/unittitle/unitdate[@type="inclusive"]')
-to_field 'unitdate_other_ssim', extract_xpath('/ead/archdesc/did/unitdate[not(@type)]|/ead/archdesc/did/unittitle/unitdate[not(@type)]')
+to_field 'unitdate_ssm', extract_xpath('/ead/archdesc/did/unitdate|/ead/archdesc/did/unittitle[not(@type) or ( @type != "sort" )]/unitdate')
+to_field 'unitdate_bulk_ssim', extract_xpath('/ead/archdesc/did/unitdate[@type="bulk"]|/ead/archdesc/did/unittitle[not(@type) or ( @type != "sort" )]/unitdate[@type="bulk"]')
+to_field 'unitdate_inclusive_ssm', extract_xpath('/ead/archdesc/did/unitdate[@type="inclusive"]|/ead/archdesc/did/unittitle[not(@type) or ( @type != "sort" )]/unitdate[@type="inclusive"]')
+to_field 'collection_date_inclusive_ssm', extract_xpath('/ead/archdesc/did/unitdate[@type="inclusive"]|/ead/archdesc/did/unittitle[not(@type) or ( @type != "sort" )]/unitdate[@type="inclusive"]')
+to_field 'unitdate_other_ssim', extract_xpath('/ead/archdesc/did/unitdate[not(@type)]|/ead/archdesc/did/unittitle[not(@type) or ( @type != "sort" )]/unitdate[not(@type)]')
 
 # Aleph ID (esp. for request integration)
 to_field 'bibnum_ssim', extract_xpath('/ead/eadheader/filedesc/notestmt/note/p/num[@type="aleph"]')
@@ -308,7 +309,7 @@ to_field 'extent_teim', extract_xpath('/ead/archdesc/did/physdesc/extent')
 to_field 'physdesc_tesim', extract_xpath('/ead/archdesc/did/physdesc/child::*')
 to_field 'physdesc_tesim', extract_xpath('/ead/archdesc/did/physdesc[not(child::*)]')
 
-to_field 'date_range_sim', extract_xpath('/ead/archdesc/did/unitdate/@normal|/ead/archdesc/did/unittitle/unitdate/@normal', to_text: false) do |_record, accumulator|
+to_field 'date_range_sim', extract_xpath('/ead/archdesc/did/unitdate/@normal|/ead/archdesc/did/unittitle[not(@type) or ( @type != "sort" )]/unitdate/@normal', to_text: false) do |_record, accumulator|
   range = Arclight::YearRange.new
   next range.years if accumulator.blank?
 
@@ -317,7 +318,7 @@ to_field 'date_range_sim', extract_xpath('/ead/archdesc/did/unitdate/@normal|/ea
   accumulator.replace range.years
 end
 
-to_field 'date_range_sim', extract_xpath('/ead/archdesc/did/unittitle/unitdate') do |_record, accumulator, context|
+to_field 'date_range_sim', extract_xpath('/ead/archdesc/did/unittitle[not(@type) or ( @type != "sort" )]/unitdate') do |_record, accumulator, context|
   unless context.output_hash['date_range_sim']
     # logger.debug accumulator
     clean_range = accumulator.map { |v| v.gsub(/([^()]*)\(.*\)/, '\1').tr('^0-9\\-/ ', '').strip }
@@ -429,10 +430,10 @@ compose 'components', ->(record, accumulator, _context) { accumulator.concat rec
     accumulator << context.clipboard[:parent].output_hash['ead_ssi'].first
   end
 
-  to_field 'title_filing_si', extract_xpath('./did/unittitle'), first_only
-  to_field 'title_ssm', extract_xpath('./did/unittitle')
-  to_field 'title_formatted_ssm', extract_xpath('./did/unittitle', to_text: false)
-  to_field 'title_teim', extract_xpath('./did/unittitle')
+  to_field 'title_filing_si', extract_xpath('./did/unittitle[not(@type) or ( @type != "sort" )]'), first_only
+  to_field 'title_ssm', extract_xpath('./did/unittitle[not(@type) or ( @type != "sort" )]')
+  to_field 'title_formatted_ssm', extract_xpath('./did/unittitle[not(@type) or ( @type != "sort" )]', to_text: false)
+  to_field 'title_teim', extract_xpath('./did/unittitle[not(@type) or ( @type != "sort" )]')
 
   to_field 'unitdate_bulk_ssim', extract_xpath('./did/unitdate[@type="bulk"]')
   to_field 'unitdate_inclusive_ssm', extract_xpath('./did/unitdate[@type="inclusive"]')
@@ -477,7 +478,7 @@ compose 'components', ->(record, accumulator, _context) { accumulator.concat rec
     accumulator << context.output_hash['parent_ssim'].last
   end
 
-  to_field 'parent_unittitles_ssm' do |_rec, accumulator, context|
+  to_field 'parent_unittitle[not(@type) or ( @type != "sort" )]s_ssm' do |_rec, accumulator, context|
     # top level document
     accumulator.concat context.clipboard[:parent].output_hash['normalized_title_ssm']
     parent_ssim = context.output_hash['parent_ssim']
@@ -490,8 +491,8 @@ compose 'components', ->(record, accumulator, _context) { accumulator.concat rec
     end
   end
 
-  to_field 'parent_unittitles_teim' do |_record, accumulator, context|
-    accumulator.concat context.output_hash['parent_unittitles_ssm']
+  to_field 'parent_unittitle[not(@type) or ( @type != "sort" )]s_teim' do |_record, accumulator, context|
+    accumulator.concat context.output_hash['parent_unittitle[not(@type) or ( @type != "sort" )]s_ssm']
   end
 
   to_field 'parent_levels_ssm' do |_record, accumulator, context|
@@ -640,7 +641,7 @@ compose 'components', ->(record, accumulator, _context) { accumulator.concat rec
     end
   end
 
-  to_field 'date_range_sim', extract_xpath('./did/unitdate/@normal|./did/unittitle/unitdate/@normal', to_text: false) do |_record, accumulator|
+  to_field 'date_range_sim', extract_xpath('./did/unitdate/@normal|./did/unittitle[not(@type) or ( @type != "sort" )]/unitdate/@normal', to_text: false) do |_record, accumulator|
     range = Arclight::YearRange.new
     next range.years if accumulator.blank?
 
@@ -649,7 +650,7 @@ compose 'components', ->(record, accumulator, _context) { accumulator.concat rec
     accumulator.replace range.years
   end
 
-  to_field 'date_range_sim', extract_xpath('./did/unittitle/unitdate') do |_record, accumulator, context|
+  to_field 'date_range_sim', extract_xpath('./did/unittitle[not(@type) or ( @type != "sort" )]/unitdate') do |_record, accumulator, context|
     unless context.output_hash['date_range_sim']
       clean_range = accumulator.map { |v| v.gsub(/([^()]*)\(.*\)/, '\1').tr('^0-9\\-/ ', '').strip }
                         .select { |date| date.match? /^\d\d\d\d[-\/]\d\d\d\d$/}
