@@ -1,6 +1,70 @@
 # frozen_string_literal: true
 
 describe GoogleAnalyticsHelper, type: :helper do
+
+  describe 'ga_user_properties' do
+    context 'with document' do
+      before do
+        allow(helper).to receive(:collection_show_page?).and_return(true)
+      end
+
+      it 'returns a hash with properties for page type, and repository' do
+        slug = 'scrc'
+        collection_id = "umich-#{slug}-001"
+        repository_name = 'University of Michigan. Special Collections Research Center'
+          config = instance_double 'Arclight::Repository',
+              slug: slug
+          document = instance_double 'Blacklight::SolrDocument', 
+              repository_config: config,
+              repository: repository_name,
+              eadid: collection_id
+
+          assign(:document, document)
+          user_properties = JSON.parse(helper.ga_user_properties)
+          expect(user_properties).to include(
+            "page_type" => "Collection Page",
+            "repository_id" => ":#{slug}:",
+            "collection_id" => ":#{collection_id}:"
+          )
+      end
+    end
+  end
+
+  describe 'ga_repository_id' do
+    context 'with document' do
+      slug = 'scrc'
+      repository_name = 'University of Michigan. Special Collections Research Center'
+
+      it 'a document with repository should return the slug' do
+
+        config = instance_double 'Arclight::Repository',
+            slug: slug
+        document = instance_double 'Blacklight::SolrDocument', 
+            repository_config: config,
+            repository: repository_name
+
+        assign(:document, document)
+        expect(helper.ga_repository_id).to eq(slug)
+      end
+    end
+    context 'with no document, but params' do
+      before do
+        allow(helper).to receive(:params).and_return({ f: { "repository_sim" => ["University of Michigan. Bentley Historical Library"] }})        
+      end
+
+      slug = 'bhl'
+      repository_name = 'University of Michigan. Bentley Historical Library'
+
+      it 'is finding the repository from a filtered query' do
+        config = double('Arclight::Repository', slug: slug, name: repository_name)
+        repository = class_double('Arclight::Repository', 
+          find_by: config
+        ).as_stubbed_const
+        expect(helper.ga_repository_id).to eq(slug)
+      end
+    end
+  end
+
   describe 'ga_page_type' do
     context 'with search results page with no results' do
       before do

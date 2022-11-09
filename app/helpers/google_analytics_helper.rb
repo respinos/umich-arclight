@@ -9,10 +9,31 @@ module GoogleAnalyticsHelper
   # fields tracked by Google.
   # https://developers.google.com/analytics/devguides/collection/gtagjs/setting-values
 
+  def delimit(coll_or_colls)
+    ":#{Array(coll_or_colls).join(":")}:"
+  end
+
+  def ga_user_properties
+    {
+      collection_id: delimit(ga_collection_id),
+      page_type: ga_page_type,
+      repository_id: delimit(ga_repository_id)
+    }.reject {|key, value| value.blank? || value == "::" }
+     .to_json.html_safe
+  end
+
   def ga_collection_id
     # within_collection_context? doesn't quite help b/c we can't get the slug
     # out of a within-collection search, just the title
     @document&.eadid
+  end
+
+  def ga_repository_id
+    if params[:f].present? && params[:f]["repository_sim"].present?
+      repository_config = Arclight::Repository.find_by(name: params[:f]["repository_sim"].first)
+      return repository_config.slug
+    end
+    @document&.repository_config&.slug
   end
 
   def ga_page_type

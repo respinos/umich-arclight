@@ -9,9 +9,35 @@
   <%# from the current page. See: -%>
   <%# https://developers.google.com/analytics/devguides/collection/gtagjs/setting-values -%>
 
+  var user_properties = <%= ga_user_properties %>
+  if ( user_properties['page_type'] == 'Search Results Page' ) {
+    if ( user_properties['repository_id'] === undefined ) {
+      let repositorySet = new Set;
+      $("[data-repository-id]").each(function(idx, div) {
+        if ( div.dataset.repositoryId ) {
+          repositorySet.add(div.dataset.repositoryId);
+        }
+      })
+      if ( repositorySet.size > 0 ) {
+        user_properties['repository_id'] = ':' + Array.from(repositorySet).sort().join(':') + ':';
+      }
+    }
+    if ( user_properties['collection_id'] === undefined && location.search.indexOf('collection_sim') > -1 ) {
+      let collectionSet = new Set;
+      // collect the first link of available breadcrumbs
+      $("article[data-document-id] .breadcrumb-links").find("a:first-child").each(function(idx, link) {
+        let collectionId = (link.getAttribute('href').split('/')).pop();
+        collectionSet.add(collectionId);
+      })
+      if ( collectionSet.size == 1 ) {
+        // if there's only one collectionId, we are probably searching within a collection
+        user_properties['collection_id'] = ':' + Array.from(collectionSet).join(':') + ':';
+      }
+    }
+    
+  }
   gtag('set', {
-    'collection_id': '<%= ga_collection_id %>',
-    'page_type': '<%= ga_page_type %>'
+    'user_properties': user_properties
   });
 
   <%# Send a pageview hit, along with some configured options: %>
@@ -47,5 +73,6 @@
         'GA Page Type: <%= ga_page_type %>',
         'GA Tracking ID: <%= ga_tracking_id %>'
       ].join(' --- '));
+      console.log("GA user_properties", user_properties);
   <% end %>
 </script>

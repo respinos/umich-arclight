@@ -33,6 +33,10 @@ module Arclight
       fetch('ead_ssi', nil)&.strip
     end
 
+    def repository_id
+      repository_config&.slug
+    end
+
     def request_field(field)
       fetch(field, nil)&.strip
     end

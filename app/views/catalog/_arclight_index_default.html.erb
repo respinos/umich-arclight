@@ -17,7 +17,7 @@
   </div>
 
   <div class="col pl-0 d-flex flex-wrap" data-has-containers="<%= document.containers.present? %>">
-    <div class="documentHeader order-0" data-document-id="<%= document.id %>">
+    <div class="documentHeader order-0" data-document-id="<%= document.id %>" data-repository-id="<%= document&.repository_id %>">
       <h3 class="index_title document-title-heading">
         <%= link_to_document document, document.title_with_highlighting || document_show_link_field(document), counter: document_counter %>
         <%= content_tag('span', class: 'al-document-extent badge') do %>

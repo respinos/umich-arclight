@@ -40,7 +40,8 @@ services:
       - "3000:3000"
     environment:
       - DATABASE_URL=postgresql://postgres:arclight@db/arclight
-      - GOOGLE_ANALYTICS_DEBUG=false
+      - GOOGLE_ANALYTICS_DEBUG=${GOOGLE_ANALYTICS_DEBUG:-false}
+      - GOOGLE_ANALYTICS_TRACKING_ID=${GOOGLE_ANALYTICS_TRACKING_ID}
       - REDIS_URL=redis://redis:6379
       - SOLR_URL=http://solr:8983/solr/arclight
       - RAILS_ENV=development
