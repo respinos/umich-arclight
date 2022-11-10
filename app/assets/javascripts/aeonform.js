@@ -1,6 +1,4 @@
-// aeonform.js for use on both Aeon request page
-// (text.components.xsl request button)  and Aeon confirmation
-// page (AeonForm.xsl) form id=AeonRequestFormId
+// aeonform.js supports aeon requests
 
 //----------------------------------------------------------------------
 // Utility functions
@@ -8,220 +6,109 @@
 
 function ClearAllCheckboxes() {
     $(':checkbox').prop('checked', false);
+    selectedItems.clear();
 }
 
-function SelectAllCheckboxes() {
-    $(':checkbox').prop('checked', true);
-}
-
-function ClearItemCheckboxes() {
-    $('input.item_request[type=checkbox]').prop('checked', false);
-}
-
-function SelectItemCheckboxes() {
-    $('input.item_request[type=checkbox]').prop('checked', true);
-}
-
-// called by reset button in aeonform.xsl
-function ReturnToMain() {
-    var url = $('div#returntourl').html();
-    window.location = url;
-}
-
-
-//----------------------------------------------------------------------
-//Validation Functions
-
-function ValidateDateField() {
-    var valid = 1;
-
-    // if not "Save for My Review" then enforce a date selection
-    var id = $("#EADConfirmFormId input[type='radio']:checked").attr('id');
-    if (id == 'VisitScheduled') {
-        if ( $('input#datepicker').val() == '' ) {
-            valid = 0;
-        }
-    } else if (id == 'UserReview') {
-        $('input#datepicker').val('');
-        $('input#request_duplication').prop('checked', false);
-    }
-
-    if (! valid) {
-        var msg = "Please select a date for your visit."
-        alert(msg);
-    }
-
-    return valid;
-}
-
-// Validate Checkboxes on Request or Confirmation page, depending on req parameter
-function ValidateCheckboxes(req) {
-    var valid = 0;
-    var selection = 0;
-    var selector = '';
-
-    if (req) {
-        selector = ':checkbox';
-    } else {
-        selector = 'input.item_request[type=checkbox]';
-    }
-
-    $(selector).each(function(i, elem) {
-        if ( $(this).prop('checked') ) {
-            selection = 1;
-            valid = 1;
-        }
-    });
-
-    var msg = "Please select one or more items to request."
-    if (! selection) {
-        if (req) {
-            msg += " (You may need to scroll down to see the checkboxes)";
-        }
-        alert(msg);
-    }
-
-    return valid;
-}
-
-
-//What validations to run depending on which page
-function allValid(){
-    if ( ValidateCheckboxes() && ValidateDateField()  ) {
-        return true;
-    }
-    else {
-        return false;
-    }
-}
-
-//----------------------------------------------------------------------
-
-// For Aeon Request form (text.components.xsl) : construct additional inputs from checked checkedbox input and append to the form
-function AddAeonRequestFormInputs(aform) {
-    $('input[name=Request]').each(function () {
-        if (this.checked) {
-            // console.log($(this).val());
-            var unique_id = $(this).val();
-
-            // append Request input control
-            $('<input/>')
-                .attr("type", "hidden")
-                .attr("name", "Request")
-                .attr("value", unique_id)
-                .appendTo(aform);
-
-            $('input[type=hidden]').each(function(i, elem) {
-                var name = elem.name;
-                // console.log('unique_id='+unique_id+' name='+name);
-
-                if (name.indexOf(unique_id) >= 0) {
-                    var val = $(this).val();
-                    // console.log('match:'+name);
-
-                    // append associated input controls
-                    $('<input/>')
-                        .attr("type", "hidden")
-                        .attr("name", name)
-                        .attr("value", val)
-                        .appendTo(aform);
-                }
-            });
-        }
-    });
-}
-
-
-// For Aeon Confirmation Form (aeonform.xsl): construct additional inputs from checked checkedbox input and append to the form
-function AddAeonConfirmFormInputs(aform) {
-
-    $('#aeon_fixed_fields').find('input').each(function(i, elem) {
-        var name = $(this).attr("name");
-        var val = $(this).val();
-        // console.log('hidden input name='+name+' val='+val);
-
-        // append common input controls
-        $('<input/>')
-            .attr("type", "hidden")
-            .attr("name", name)
-            .attr("value", val)
-            .appendTo(aform);
-    });
-
-    $('input[type=checkbox]').each(function () {
-        if (this.checked) {
-            var unique_id = $(this).attr("id");
-            // console.log("checkbox unique_id="+unique_id);
-
-            $('div#'+unique_id).find('input').each(function(i, elem) {
-                var name = $(this).attr("name");
-                var val = $(this).val();
-                //console.log('hidden input name='+name+' val='+val);
-
-                // append associated input controls
-                $('<input/>')
-                    .attr("type", "hidden")
-                    .attr("name", name)
-                    .attr("value", val)
-                    .appendTo(aform);
-            });
-        }
+function _RestoreSelectedCheckboxes() {
+    selectedItems.forEach((identifier) => {
+        let $inputEl = $(`input[name="Request"][value="${identifier}"]`);
+        $inputEl.prop('checked', true);
+        console.log("-- NAVIGATION al-contents", identifier, $inputEl.get(0));
     });
 }
 
 //----------------------------------------------------------------------
-//onSubmit logic
-
-
-// Submit request from request button in first row of  ContentsList (text.components.xsl)
+// Submit handler
 
 function SubmitAeonRequestForm() {
-    if ( ValidateCheckboxes(1) ) {
-        var aeon_form = $('#EADRequestFormId')[0];
-        AddAeonRequestFormInputs(aeon_form);
-        // $('#EADRequestFormId input').each(function(i, item) { console.log(item.name + ': ' + item.value)});
-        aeon_form.submit();
+    if (selectedItems.size == 0) {
+        msg = `Please select one or more items to request.
+(You may need to scroll down to see the checkboxes)`;
+        alert(msg);
+        return false;
     }
+
+    // clean up old forms
+    $(".aeon-submitted-form").remove();
+
+    // clone the aeon request form to add the hidden inputs
+    let $aeonForm = $("#EADRequestFormId").clone().attr('id', `EADRequestFormId-${(new Date).getTime()}`);
+    $aeonForm.css({ display: 'none' }).addClass('aeon-submitted-form');
+    selectedItems.forEach((identifier) => {
+        let metaData = collectionItems.get(identifier);
+        $('<input/>')
+            .attr("type", "hidden")
+            .attr("name", "Request")
+            .attr("value", identifier)
+            .appendTo($aeonForm);
+
+        Object.keys(metaData).forEach((key) => {
+            $('<input/>')
+                .attr("type", "hidden")
+                .attr("name", key)
+                .attr("value", metaData[key])
+                .appendTo($aeonForm);
+        })
+    })
+
+    $("body").append($aeonForm);
+    $aeonForm.submit();
+
+    ClearAllCheckboxes();
+    return false;
 }
 
-// Submit request from Confirmation page
-function SubmitAeonConfirmForm() {
-    // If duplication request box checked ...
-    if ( $('input#request_duplication').prop('checked') ) {
-        $('input#request_duplication').attr("value", "Copy");
-    }
-
-    // Send aeon key/value for radios not "input name/value"
-    var id = $("#EADConfirmFormId input[type='radio']:checked").attr('id');
-    $('input#'+id).attr("name", id);
-    $('input#'+id).attr("value", "Yes");
-
-
-
-    if ( allValid() ) {
-        //alert("all valid passed")
-        var aeon_form = $('#EADConfirmFormId')[0];
-        AddAeonConfirmFormInputs(aeon_form);
-        aeon_form.submit();
-    }
-}
 //----------------------------------------------------------------------
 // Document ready set up
 
-$(document).ready(function(){
-    $('input[name=Visit]').click(function() {
-        var id = $(this).attr('id');
-        if (id == 'UserReview') {
-            $('input#UserReview').prop("checked", true);
-            $('input#VisitScheduled').prop("checked", false);
-            $('div#scheduler_div').hide();
-        } else {
-            $('input#UserReview').prop("checked", false);
-            $('input#VisitScheduled').prop("checked", true);
-            $('div#scheduler_div').show();
+let selectedItems;
+let collectionItems;
+
+// collect the requeset metadata for each identifier
+// so it can be submitted even if the checkbox is no longer
+// being displayed
+function _buildCollectionItemsMap() {
+    $('input[type="checkbox"][name="Request"]').each(function (idx, inputEl) {
+        let identifier = inputEl.value;
+        let datum = {};
+        let $labelEl = $(inputEl).parents('label');
+        $labelEl.find('input').each(function (i, el) {
+            let key = $(el).attr('name');
+            if ( key.indexOf(identifier) >= 0 ) {
+                let value = $(el).val();
+                datum[key] = value;
+            }
+        })
+        collectionItems.set(identifier, datum);
+    })
+}
+
+document.addEventListener('DOMContentLoaded', function(event) {
+
+    selectedItems = new Set();
+    collectionItems = new Map();
+
+    // listen for request checkbox selections on body
+    $("body").on('click', 'input[type="checkbox"][name="Request"]', function (event) {
+        let identifier = event.target.value;
+        if ( ! collectionItems.get(identifier) ) {
+            // either initial page load, or user has loaded
+            // another page of checkboxes
+            _buildCollectionItemsMap();
         }
-    });
+        if ( event.target.checked ) {
+            selectedItems.add(identifier);
+        } else {
+            selectedItems.delete(identifier);
+        }
+    })
+})
 
+document.addEventListener('turbolinks:load', function(event) {
+    // user has switched collections; reset the data structures
+    selectedItems.clear();
+    collectionItems.clear();
 
+    // contents has been paginated; restore any previously made selections
+    $('.al-contents').on('navigation.contains.elements', _RestoreSelectedCheckboxes);
 });
-
