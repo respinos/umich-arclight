@@ -2,7 +2,7 @@ name: Build latest from whatever side branch
 
 on:
   push:
-    branches: [ CDN-swap ]
+    branches: [ DCP2-343-exclude_unittitle_sort_type ]
 jobs:
   build-testing:
     runs-on: ubuntu-latest
