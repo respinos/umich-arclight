@@ -19,4 +19,23 @@ RSpec.describe 'Search results', type: :feature do
       expect(page).to have_css '.relevance-score'
     end
   end
+
+  it 'pluralizes multivalued facet names' do
+    visit search_catalog_path q: '', search_field: 'all_fields'
+
+    within('#facets') do
+      within('.blacklight-names_ssim') do
+        expect(page).to have_css('h3 button', text: 'Names')
+      end
+      within('.blacklight-places_ssim') do
+        expect(page).to have_css('h3 button', text: 'Places')
+      end
+      within('.blacklight-access_subjects_ssim') do
+        expect(page).to have_css('h3 button', text: 'Subjects')
+      end
+      within('.blacklight-formats_ssim') do
+        expect(page).to have_css('h3 button', text: 'Formats')
+      end
+    end
+  end
 end
