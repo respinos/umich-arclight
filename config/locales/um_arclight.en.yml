@@ -56,6 +56,8 @@ en:
             visitors: "Info for Visitors"
         containers:
           see_all: "See all containers"
+        field_group_note:
+          indexed_terms_field: "Click on terms below to find any related finding aids on this site."
         sidebar:
           collection_title: Collection
           collection_info_icon_label: Advanced collection info

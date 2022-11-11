@@ -2,7 +2,7 @@ name: Build latest from whatever side branch
 
 on:
   push:
-    branches: [ CDN-swap ]
+    branches: [ DCP2-233-insert-content ]
 jobs:
   build-testing:
     runs-on: ubuntu-latest
