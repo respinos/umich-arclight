@@ -469,6 +469,7 @@ class CatalogController < ApplicationController
     config.add_component_field 'physloc_tesim', label: 'Physical Location', helper_method: :render_html_tags
     config.add_component_field 'materialspec_tesim', label: 'Material Specific Details', helper_method: :render_html_tags
     config.add_component_field 'odd_tesim', label: 'Other Descriptive Data', helper_method: :render_html_tags
+    config.add_component_field 'unitid_ssm', label: 'Unit ID', helper_method: :render_html_tags
 
     config.add_component_field 'languages', label: 'Language', accessor: 'languages', separator_options: {
       words_connector: '<br/>',
