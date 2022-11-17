@@ -1,7 +1,20 @@
-<div>
+<%
+  link_label = 'View'
+  if obj.label.present?
+    if obj.label.index('View')
+      link_label = obj.label
+    else
+      link_label = link_label + ' &mdash; ' + obj.label
+    end
+  end
+%>
+<div class="<%= classes if local_assigns[:classes] %>">
   <%= link_to obj.href, target: '_blank' do %>
-    <strong>View</strong>
-  <% end %>
-  <%= content_tag(:span, ['&mdash; ', obj.label].join.html_safe,
+    <strong><%= link_label.html_safe %></strong>
+    <% if false %>
+    <%= content_tag(:span, ['&mdash; ', obj.label].join.html_safe,
                   { class: 'text-muted' }) if obj.label.present? %>
+    <% end %>
+    <span class='fas fa-external-link-alt' aria-hidden="true"></span>
+  <% end %>
 </div>

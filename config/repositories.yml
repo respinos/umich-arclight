@@ -38,6 +38,23 @@ bhl:
           ReferenceNumber:
             field: eadid
             regex: 'umich-bhl-(.*)'
+  dlxs_iiif:
+    image:
+      - bhl
+    text:
+      - angell
+      - blydenburgh
+      - daas
+      - hudson
+      - mershon
+      - petoskey
+      - potter
+      - pray
+      - thomas
+      - walker
+  mivideo:
+    partner_id: "1758271"
+    uiconf_id: "51362482"
 scrc:
   name: 'University of Michigan Special Collections Research Center'
   description: 'In keeping with the University Library’s mission to collect, describe, preserve, and make available the record of human knowledge, the Special Collections Research Center acquires, cares for, interprets, and promotes the use of important collections of unique, rare, primary source, and other material in all formats and in a variety of subject areas.'
@@ -65,6 +82,9 @@ scrc:
     field: 'publicid_ssi'
     pattern: '-\/\/us::MiU\/\/TEXT us::MiU::(.*)\/\/EN'
     prefix: 'https://quod.lib.umich.edu/s/sclead/eads/'
+  mivideo:
+    partner_id: "1038472"
+    uiconf_id: "51362542"
 clements:
   name: 'University of Michigan William L. Clements Library'
   description: 'The William L. Clements Library is a rare book and manuscript repository located on the University of Michigan’s central campus in Ann Arbor, Michigan.'

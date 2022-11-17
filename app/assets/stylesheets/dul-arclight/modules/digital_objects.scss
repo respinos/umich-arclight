@@ -2,10 +2,18 @@
   margin-bottom: 2rem;
 }
 
+.ddr-link-under {
+  margin-top: 0.25rem;
+}
+
+.ddr-link-under + .ddr-embed-iframe {
+  margin-top: 1.5rem;
+}
+
 .ddr-item-link {
   .fas {
     text-decoration: none;
-    margin-right: 0.25rem;
+    margin-left: 0.25rem;
   }
 }
 
