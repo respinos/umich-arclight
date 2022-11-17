@@ -159,9 +159,11 @@ module Arclight
 
     def image_service(embed)
       return nil unless respond_to? :dlxs_iiif
-      dlxs_class = if dlxs_iiif["image"].include?(embed[:collid])
+      dlxs_class = if dlxs_iiif["image"].present? && 
+          dlxs_iiif["image"].include?(embed[:collid])
         "image"
-      elsif dlxs_iiif["text"].include?(embed[:collid])
+      elsif dlxs_iiif["text"].present? && 
+          dlxs_iiif["text"].include?(embed[:collid])
         "text"
       end
       return if dlxs_class.nil?
@@ -175,7 +177,7 @@ module Arclight
     end
 
     def video_service(embed)
-      return nil unless respond_to? :mivideo
+      return nil unless respond_to? :mivideo and mivideo.present?
       [
         "https://cdnapisec.kaltura.com",
         "p", mivideo["partner_id"],
