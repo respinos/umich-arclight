@@ -177,7 +177,7 @@ module Arclight
     end
 
     def video_service(embed)
-      return nil unless respond_to? :mivideo and mivideo.present?
+      return nil unless respond_to? :mivideo && mivideo.present?
       [
         "https://cdnapisec.kaltura.com",
         "p", mivideo["partner_id"],
