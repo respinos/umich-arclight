@@ -82,6 +82,18 @@ scrc:
     field: 'publicid_ssi'
     pattern: '-\/\/us::MiU\/\/TEXT us::MiU::(.*)\/\/EN'
     prefix: 'https://quod.lib.umich.edu/s/sclead/eads/'
+  dlxs_iiif:
+    image:
+      - scl
+      - sclalgeria
+      - sclaudubon
+      - scldixie
+      - sclfranck
+      - sclharris
+      - sclib
+      - sclpapyric
+      - sclphilimg
+      - sclshenute
   mivideo:
     partner_id: "1038472"
     uiconf_id: "51362542"
@@ -112,6 +124,35 @@ clements:
     field: 'publicid_ssi'
     pattern: 'us//::miu-c//TXT us::miu-c::(.*.xml)\/\/EN'
     prefix: 'https://quod.lib.umich.edu/c/clementsead/eads/'
+  dlxs_iiif:
+    image:
+      - pohrt
+      - wcl
+    text:
+      - adams
+      - africanamer
+      - campe
+      - chase
+      - child
+      - fortwayne
+      - fullerh
+      - germanaux
+      - gilman
+      - greatbritainindiandept
+      - holsteinfam
+      - howew
+      - irving
+      - jameshenry
+      - japanese
+      - kingfamily
+      - leylandt
+      - marshallfam
+      - mitchill
+      - rochester
+      - sterlingj
+      - stothert
+      - unitedsons
+      - utleyv
 clarke:
   name: 'Central Michigan University Clarke Historical Library'
   description: 'The Clarke Historical Library collects, preserves, and promotes collections including the history of Michigan and the Old Northwest Territory, the history of Central Michigan University, as well as other topics.'
