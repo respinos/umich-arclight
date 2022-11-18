@@ -45,6 +45,10 @@ en:
       browse_groups: "Browse by Group"
 
     views:
+      index:
+        number_of_components:
+          one: entry
+          other: entries
       show:
         access:
           more: "More..."

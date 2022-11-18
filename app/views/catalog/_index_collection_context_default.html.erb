@@ -53,7 +53,7 @@
         <%# ---------------------- %>
 
         <% if document.children? %>
-          <span class="badge badge-pill badge-secondary al-number-of-children-badge"><%= document.number_of_children %><span class="sr-only"><%= t(:'arclight.views.index.number_of_components', count: document.number_of_children) %></span></span>
+          <span class="badge badge-pill badge-secondary al-number-of-children-badge"><%= document.number_of_children %> <%= t(:'um_arclight.views.index.number_of_components', count: document.number_of_children) %></span>
         <% end %>
 
         <%# -------------------- %>
