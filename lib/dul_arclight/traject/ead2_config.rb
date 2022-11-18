@@ -478,7 +478,7 @@ compose 'components', ->(record, accumulator, _context) { accumulator.concat rec
     accumulator << context.output_hash['parent_ssim'].last
   end
 
-  to_field 'parent_unittitle[not(@type) or ( @type != "sort" )]s_ssm' do |_rec, accumulator, context|
+  to_field 'parent_unittitles_ssm' do |_rec, accumulator, context|
     # top level document
     accumulator.concat context.clipboard[:parent].output_hash['normalized_title_ssm']
     parent_ssim = context.output_hash['parent_ssim']
@@ -491,8 +491,8 @@ compose 'components', ->(record, accumulator, _context) { accumulator.concat rec
     end
   end
 
-  to_field 'parent_unittitle[not(@type) or ( @type != "sort" )]s_teim' do |_record, accumulator, context|
-    accumulator.concat context.output_hash['parent_unittitle[not(@type) or ( @type != "sort" )]s_ssm']
+  to_field 'parent_unittitles_teim' do |_record, accumulator, context|
+    accumulator.concat context.output_hash['parent_unittitles_ssm']
   end
 
   to_field 'parent_levels_ssm' do |_record, accumulator, context|
