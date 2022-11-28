@@ -26,4 +26,5 @@ Arclight::Engine.config.catalog_controller_field_accessors = %i[
   component_indexed_terms_field
   component_indexes_field
   component_restrictions_field
+  additional_descriptive_data_field
 ]
