@@ -83,31 +83,36 @@ function _buildCollectionItemsMap() {
     })
 }
 
-document.addEventListener('DOMContentLoaded', function(event) {
-
-    selectedItems = new Set();
-    collectionItems = new Map();
-
-    // listen for request checkbox selections on body
-    $("body").on('click', 'input[type="checkbox"][name="Request"]', function (event) {
-        let identifier = event.target.value;
-        if ( ! collectionItems.get(identifier) ) {
-            // either initial page load, or user has loaded
-            // another page of checkboxes
-            _buildCollectionItemsMap();
-        }
-        if ( event.target.checked ) {
-            selectedItems.add(identifier);
-        } else {
-            selectedItems.delete(identifier);
-        }
-    })
-})
+function _SelectCheckbox() {
+    let target = this;
+    let identifier = target.value;
+    if (!collectionItems.get(identifier)) {
+        // either initial page load, or user has loaded
+        // another page of checkboxes
+        _buildCollectionItemsMap();
+    }
+    if (target.checked) {
+        selectedItems.add(identifier);
+    } else {
+        selectedItems.delete(identifier);
+    }
+}
 
 document.addEventListener('turbolinks:load', function(event) {
     // user has switched collections; reset the data structures
+
+    if ( selectedItems === undefined ) {
+        selectedItems = new Set();
+        collectionItems = new Map();
+    }
+
     selectedItems.clear();
     collectionItems.clear();
+
+    // bind checkbox handlers
+    $('.al-contents').on('navigation.contains.elements', function() {
+        $(`input[type="checkbox"][name="Request"]`).on('click', _SelectCheckbox);
+    });
 
     // contents has been paginated; restore any previously made selections
     $('.al-contents').on('navigation.contains.elements', _RestoreSelectedCheckboxes);
