@@ -404,24 +404,6 @@
    <copyField source="scopecontent_teim" dest="text" />
    <copyField source="separatedmaterial_teim" dest="text" />
    <copyField source="userestrict_teim" dest="text" />
-
-  <!-- also grab Additional Descriptive Data notes -->
-   <copyField source="add_accruals_teim" dest="text" />
-   <copyField source="add_altformavail_teim" dest="text" />
-   <copyField source="add_appraisal_teim" dest="text" />
-   <copyField source="add_arrangement_teim" dest="text" />
-   <copyField source="add_bibliography_teim" dest="text" />
-   <copyField source="add_bioghist_teim" dest="text" />
-   <copyField source="add_custodhist_teim" dest="text" />
-   <copyField source="add_fileplan_teim" dest="text" />
-   <copyField source="add_note_teim" dest="text" />
-   <copyField source="add_odd_teim" dest="text" />
-   <copyField source="add_originalsloc_teim" dest="text" />
-   <copyField source="add_processinfo_teim" dest="text" />
-   <copyField source="add_relatedmaterial_teim" dest="text" />
-   <copyField source="add_scopecontent_teim" dest="text" />
-   <copyField source="add_separatedmaterial_teim" dest="text" />
-
    <!-- grab structured data that's important -->
    <copyField source="unitid_ssm" dest="text" />
    <copyField source="unitid_ssm" dest="unitid_identifier_match" />
