@@ -28,7 +28,6 @@ en:
           contents: "Contents"
           component_indexed_terms_field: Subjects
           indexed_terms_field: Subjects
-          additional_descriptive_data_field: "Additional Descriptive Data"
           using_field: "Using These Materials"
           indexes_field: "Other Indexes"
         download:
