@@ -13,16 +13,24 @@ module Arclight
     extend ActiveSupport::Concern
     include ActionView::Helpers::OutputSafetyHelper
 
+    COLLIDING_TAGS = %w[abbr address blockquote div label title].freeze
+
     def render_html_tags(args)
       values = args[:value] || []
-      values.map! do |value|
-        transform_ead_to_html(value)
-      end
+      values.map! { |value| transform_ead_to_html(value) }
       values.map! { |value| wrap_in_paragraph(value) } if values.count > 1
       safe_join(values.map(&:html_safe))
     end
 
     private
+
+    def wrap_in_paragraph(value)
+      if value.start_with?('<')
+        value
+      else
+        content_tag(:p, value)
+      end
+    end
 
     def transform_ead_to_html(value)
       Loofah.xml_fragment(condense_whitespace(value))
@@ -30,15 +38,23 @@ module Arclight
             .scrub!(:strip).to_html
     end
 
+    def condense_whitespace(str)
+      str.squish.strip.gsub(/>[\n\s]+</, '> <')
+    end
+
     def ead_to_html_scrubber
       Loofah::Scrubber.new do |node|
+        # Order of formatting is important!!!
+        format_special_elements(node)
         format_render_attributes(node) if node.attr('render').present?
+        format_href_attributes(node) if node.attr('href').present?
+        format_url_content(node) if %r{https?://}i.match?(node.content)
 
         # Some elements are in common between EAD & HTML:
         # abbr address blockquote div head label p table tbody thead title
-        format_colliding_tags(node) if
-          %w[abbr address blockquote div label title].include? node.name
-        format_special_elements(node)
+        # For any that we don't want to end up in our page HTML (e.g., we
+        # want <p> but not <title>), just change it into a span.
+        node.name = 'span' if COLLIDING_TAGS.include? node.name
         node
       end
     end
@@ -49,18 +65,6 @@ module Arclight
       format_lists(node) if %w[list chronlist].include? node.name
       format_indexes(node) if node.name == 'index'
       format_tables(node) if node.name == 'table'
-    end
-
-    def condense_whitespace(str)
-      str.squish.strip.gsub(/>[\n\s]+</, '> <')
-    end
-
-    def wrap_in_paragraph(value)
-      if value.start_with?('<')
-        value
-      else
-        content_tag(:p, value)
-      end
     end
 
     def format_render_attributes(node) # rubocop:disable Metrics/MethodLength, Metrics/CyclomaticComplexity
@@ -111,6 +115,41 @@ module Arclight
         node.name = 'span'
         node['class'] = 'text-underline'
       end
+    end
+
+    def format_href_attributes(node)
+      return if node.name == "a"
+
+      node['target'] = '_blank'
+      node['class'] = 'external-link'
+      node.wrap("<#{node.name}/>") unless COLLIDING_TAGS.include? node.name
+      node.name = "a"
+    end
+
+    def format_url_content(node)
+      # This scrubber processes children after the parent node and
+      # we only want to process the parent node
+      # NOT its child text nodes!
+      return if node.name == "text"
+
+      # The parsed html document fragment of the parent (see below)
+      # will create anchor children which need to skipped to
+      # avoid infinite recursion!
+      return if node.name == "a"
+
+      html = String.new(node.content)
+      URI.extract(node.content).each do |uri|
+        # URI extract matches all URIs not just URLs
+        # so skip over non-URL URIs
+        next unless %r{https?://}i.match?(uri)
+
+        # Wrap the URL in an anchor tag
+        anchor = "<a class='external-link' href='#{uri}' target='_blank'>#{uri}</a>"
+        html.sub!(uri, anchor)
+      end
+
+      # Parse the HTML to create the parent's new children
+      node.children = Nokogiri::XML::DocumentFragment.parse(html).children
     end
 
     def format_lists(node)
@@ -239,15 +278,6 @@ module Arclight
         event_node['class'] = 'chronlist-item-event'
       end
       multi_events.each { |event_node| event_node.name = 'div' }
-    end
-
-    # Some elements are in common between EAD & HTML:
-    # abbr address blockquote div head label p table tbody thead title
-    #
-    # For any that we don't want to end up in our page HTML (e.g., we
-    # want <p> but not <title>), just change it into a span.
-    def format_colliding_tags(node)
-      node.name = 'span'
     end
 
     # Format references to other finding aids
