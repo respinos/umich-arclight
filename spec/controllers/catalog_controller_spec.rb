@@ -5,7 +5,7 @@
 # replicated tests in the future when there are tests specific to
 # DUL ArcLight's local customizations.
 
-require 'spec_helper'
+require 'rails_spec_helper'
 
 RSpec.describe CatalogController, type: :controller do
   # Modeled after ArcLight core, see:

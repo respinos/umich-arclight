@@ -3,7 +3,7 @@
 # Adapted from ArcLight core spec. See:
 # https://github.com/projectblacklight/arclight/blob/master/spec/features/traject/ead2_indexing_spec.rb
 
-require 'spec_helper'
+require 'rails_spec_helper'
 require 'nokogiri'
 
 RSpec.describe 'EAD 2 traject indexing', type: :feature do

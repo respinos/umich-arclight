@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require 'rails_spec_helper'
 
 RSpec.xdescribe 'Digital Objects', type: :feature do
   before { visit solr_document_path(id: doc_id) }

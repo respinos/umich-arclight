@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require 'rails_spec_helper'
 
 RSpec.xdescribe 'Custom sitemap', type: :feature do
   context 'with a URL for a configured query-based sitemap' do

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require 'rails_spec_helper'
 
 RSpec.describe 'Search results', type: :feature do
   describe 'debug mode' do
