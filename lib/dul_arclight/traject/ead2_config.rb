@@ -44,8 +44,11 @@ SEARCHABLE_NOTES_FIELDS = %w[
   arrangement
   bibliography
   bioghist
+  chronlist
   custodhist
   fileplan
+  index
+  list
   note
   odd
   originalsloc
@@ -359,6 +362,9 @@ SEARCHABLE_NOTES_FIELDS.map do |selector|
   to_field "#{selector}_teim", extract_xpath("/ead/archdesc/#{selector}/*[local-name()!='head']")
   to_field "#{selector}_teim", extract_xpath("/ead/archdesc/descgrp/#{selector}/*[local-name()!='head']")
 end
+
+to_field "para_tesim", extract_xpath("/ead/archdesc/descgrp/p", to_text: false)
+to_field "para_teim", extract_xpath("/ead/archdesc/descgrp/p")
 
 DID_SEARCHABLE_NOTES_FIELDS.map do |selector|
   to_field "#{selector}_tesim", extract_xpath("/ead/archdesc/did/#{selector}", to_text: false)
