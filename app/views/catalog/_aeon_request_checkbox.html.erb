@@ -6,14 +6,18 @@
 <%# if requestable: config has type hidden_form_request and containers %>
 <%# includes one of box, folder, reel, map-case, tube, object, volume, bundle %>
 <%# label originally had for="request-item_[%= document.id %] %>
-<div class="checkbox request-checkbox">
-  <label class="" title="">
+<div class="<%= local_assigns[:class] || 'checkbox request-checkbox' %>">
+  <label class="<%= local_assigns[:label_class] || '' %>" title="">
     <input type="checkbox" name="Request" value="<%= document.id %>">
     <input type="hidden" name="Request" value="<%= document.id %>">
     <input type="hidden" name="ItemSubTitle_<%= document.id %>" value="<%= raw(strip_tags(document.normalized_title)) %><%= if document.extent then " (#{document.extent})" end %>">
     <input type="hidden" name="ItemVolume_<%= document.id %>" value="<%= document.containers.join(', ') %>">
     <input type="hidden" name="ItemCitation_<%= document.id %>" value="<%= document.reference %>">
     <input type="hidden" name="ItemInfo1" value="<%= document.accessrestrict %>">
-    <span class="sr-only">Request <%= raw(strip_tags(document.normalized_title)) %><%= if document.extent then " (#{document.extent})" end %></span>
+    <% if local_assigns[:label] %>
+      <span><%= label %></span>
+    <% else %>
+      <span class="sr-only">Request "<%= raw(strip_tags(document.normalized_title)) %><%= if document.extent then " (#{document.extent})" end %>"</span>
+    <% end %>
   </label>
 </div>

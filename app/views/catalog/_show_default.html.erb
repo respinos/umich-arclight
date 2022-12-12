@@ -166,6 +166,10 @@
   </div>
 <% end %>
 
+<% if document.is_checkbox_requestable? %>
+  <%= render "aeon_request_checkbox", document: document, class: 'px-0 pb-3 mt-n3', label_class: 'btn btn-outline-secondary btn-outline-request p-2', label: 'Request Item' %>
+<% end %>
+
 <%# ================ %>
 <%# upper metadata   %>
 <%# ================ %>

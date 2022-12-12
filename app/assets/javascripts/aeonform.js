@@ -3,10 +3,21 @@
 //----------------------------------------------------------------------
 // Utility functions
 
+function sessionSave(key, value) {
+    if ( value == null ) {
+        sessionStorage.removeItem(key);
+    } else {
+        if ( value instanceof Map ) { value = Object.fromEntries(value); }
+        else { value = Array.from(value); }
+        sessionStorage.setItem(key, JSON.stringify(value));
+    }
+}
 
 function ClearAllCheckboxes() {
     $(':checkbox').prop('checked', false);
-    selectedItems.clear();
+    selectedItems.clear(); collectionItems.clear();
+    sessionSave('selectedItems', selectedItems);
+    sessionSave('collectionItems', collectionItems);
 }
 
 function _RestoreSelectedCheckboxes() {
@@ -58,6 +69,16 @@ function SubmitAeonRequestForm() {
     return false;
 }
 
+function updateSelectedItemsCount() {
+    let $span = $("#selected-items-count");
+    if ( selectedItems.size == 0 ) {
+        $span.html('');
+    } else {
+        let description = selectedItems.size == 1 ? 'item' : 'items';
+        $span.html(`<span class="sr-only">Request </span>${selectedItems.size}<span class="sr-only"> ${description}</span>`)
+    }
+}
+
 //----------------------------------------------------------------------
 // Document ready set up
 
@@ -80,6 +101,7 @@ function _buildCollectionItemsMap() {
             }
         })
         collectionItems.set(identifier, datum);
+        sessionSave('collectionItems', collectionItems);
     })
 }
 
@@ -96,22 +118,40 @@ function _SelectCheckbox() {
     } else {
         selectedItems.delete(identifier);
     }
+    sessionSave('selectedItems', selectedItems);
+
+    updateSelectedItemsCount();
+}
+
+function _BindEvents() {
+    $(`input[type="checkbox"][name="Request"]`).each(function(i, input) {
+        if ( input.dataset.initialized ) { return;}
+        input.dataset.initialized = true;
+        $(input).on('click', _SelectCheckbox);
+    });
 }
 
 document.addEventListener('turbolinks:load', function(event) {
     // user has switched collections; reset the data structures
 
     if ( selectedItems === undefined ) {
-        selectedItems = new Set();
-        collectionItems = new Map();
+        let jsonValue = sessionStorage.getItem('selectedItems');
+        if ( jsonValue === null ) {
+            selectedItems = new Set();
+            collectionItems = new Map();
+        } else {
+            selectedItems = new Set(JSON.parse(jsonValue) || []);
+            collectionItems = new Map(Object.entries(JSON.parse(sessionStorage.getItem('collectionItems')) || {}));
+        }
     }
+    updateSelectedItemsCount();        
 
-    selectedItems.clear();
-    collectionItems.clear();
+    _BindEvents();
+    _RestoreSelectedCheckboxes();
 
-    // bind checkbox handlers
+    // bind checkbox handlers on contents navigation
     $('.al-contents').on('navigation.contains.elements', function() {
-        $(`input[type="checkbox"][name="Request"]`).on('click', _SelectCheckbox);
+        _BindEvents();
     });
 
     // contents has been paginated; restore any previously made selections
