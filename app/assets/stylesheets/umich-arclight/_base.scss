@@ -3,6 +3,7 @@
 /* ====================== */
 body {
   background-color: #fff;
+  accent-color: var(--color-teal-400);
 }
 
 a {
@@ -109,6 +110,15 @@ a {
 .btn-outline-request {
   border: 1px solid var(--color-neutral-100);
   color: var(--color-blue-400);
+}
+
+.btn-outline-request.squat {
+  min-width: 2.875rem;
+  min-height: 2.875rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
 }
 
 .m-search-btn {

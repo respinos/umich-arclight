@@ -18,6 +18,7 @@ function ClearAllCheckboxes() {
     selectedItems.clear(); collectionItems.clear();
     sessionSave('selectedItems', selectedItems);
     sessionSave('collectionItems', collectionItems);
+    updateSelectedItemsCount();
 }
 
 function _RestoreSelectedCheckboxes() {
