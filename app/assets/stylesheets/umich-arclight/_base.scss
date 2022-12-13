@@ -16,6 +16,10 @@ a {
   }
 }
 
+h1, h2, h3 {
+  line-height: var(--line-height-heading);
+}
+
 /* ====================== */
 /* BUTTONS     */
 /* ====================== */
@@ -195,6 +199,15 @@ a {
 
 .responsiveTruncate{
   font-size: 1rem;
+}
+
+mark, .mark {
+  padding: 0;
+  background-color: var(--color-maize-200);
+}
+
+.al-document-highlight mark {
+   background-color: var(--color-maize-200);
 }
 
 /* =============++========= */
