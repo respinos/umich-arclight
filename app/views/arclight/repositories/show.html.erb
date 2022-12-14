@@ -1,4 +1,4 @@
-<% @page_title = t(:'arclight.views.repositories.show', name: @repository.name) %>
+<% @page_title = t(:'arclight.views.repositories.show', name: @repository.name, application_name: application_name) %>
 <%= render 'shared/breadcrumbs' %>
 <%= render @repository %>
 <div class="row al-repository-show-header">

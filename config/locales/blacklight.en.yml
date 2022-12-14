@@ -33,6 +33,9 @@ en:
       menu: "Menu"
       menu_long: "Expand/Collapse Menu"
     search:
+      page_title:
+        title: '%{constraints} - %{application_name}'
+        prefix: 'Results for'
       bookmarks:
         label: "Bookmark:"
     skip_links:

@@ -7,7 +7,7 @@ en:
       show_less: "show less"
     views:
       home:
-        title: "Finding Aids"
+        title: "Home - %{application_name}"
       index:
         group_results_count:
           one: "1 result in this collection"
@@ -18,6 +18,8 @@ en:
           other: "Top %{count} results in this collection — "
       repositories:
         browse: "Browse"
+        show: "%{name} - %{application_name}"
+        title: "Repositories - %{application_name}"
       show:
         collapse: "Collapse"
         expand: "Show More ..."
