@@ -431,13 +431,26 @@ compose 'components', ->(record, accumulator, _context) { accumulator.concat rec
   end
 
   to_field 'title_filing_si', extract_xpath('./did/unittitle[not(@type) or ( @type != "sort" )]'), first_only
-  to_field 'title_ssm', extract_xpath('./did/unittitle[not(@type) or ( @type != "sort" )]')
-  to_field 'title_formatted_ssm', extract_xpath('./did/unittitle[not(@type) or ( @type != "sort" )]', to_text: false)
+  to_field 'title_ssm' do |record, accumulator|
+    result = record.xpath('./did/unittitle[not(@type) or ( @type != "sort" )]')
+    result = result.collect do |n|
+      # return if n['type'] and n['type'] == "sort"
+      n.xpath('.//text()[not(ancestor::unitdate)]').collect(&:text).join(" ")
+    end.join(" ")
+    accumulator << result
+  end
+  to_field 'title_formatted_ssm' do |record, accumulator|
+    whole_title = record.xpath('./did/unittitle[not(@type) or ( @type != "sort" )]').to_a
+    no_dates = whole_title.collect do |parent_node|
+      parent_node.children.select { |elem| elem.name != 'unitdate' }
+    end.flatten
+    accumulator.concat no_dates
+  end
   to_field 'title_teim', extract_xpath('./did/unittitle[not(@type) or ( @type != "sort" )]')
 
-  to_field 'unitdate_bulk_ssim', extract_xpath('./did/unitdate[@type="bulk"]')
-  to_field 'unitdate_inclusive_ssm', extract_xpath('./did/unitdate[@type="inclusive"]')
-  to_field 'unitdate_other_ssim', extract_xpath('./did/unitdate[not(@type)]')
+  to_field 'unitdate_bulk_ssim', extract_xpath('./did/unitdate[@type="bulk"]|./did/unittitle[not(@type) or ( @type != "sort" )]/unitdate[@type="bulk"]')
+  to_field 'unitdate_inclusive_ssm', extract_xpath('./did/unitdate[@type="inclusive"]|./did/unittitle[not(@type) or ( @type != "sort" )]/unitdate[@type="inclusive"]')
+  to_field 'unitdate_other_ssim', extract_xpath('./did/unitdate[not(@type)]|./did/unittitle[not(@type) or ( @type != "sort" )]/unitdate[not(@type)]')
 
   # DUL CUSTOMIZATION: use DUL rules for NormalizedDate
   to_field 'normalized_date_ssm' do |_record, accumulator, context|
