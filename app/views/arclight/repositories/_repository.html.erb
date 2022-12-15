@@ -21,9 +21,9 @@
 
     <div class="card-body">
 
-      <h5 class="card-title text-center">
+      <h2 class="card-title text-center">
         <%= link_to_unless(params[:id] == repository.slug, repository.name, repository_collections_path(repository)) %>
-      </h5>
+      </h2>
 
       <p class="card-text" data-arclight-truncate="true">
         <%= repository.description %>
