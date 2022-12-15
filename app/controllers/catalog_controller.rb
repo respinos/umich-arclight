@@ -293,7 +293,7 @@ class CatalogController < ApplicationController
     ##
     # Arclight Configurations
 
-    config.show.document_presenter_class = Arclight::ShowPresenter
+    config.show.document_presenter_class = DulArclight::ShowPresenter
     config.index.document_presenter_class = Arclight::IndexPresenter
 
     ##
