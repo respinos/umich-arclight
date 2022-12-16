@@ -30,10 +30,9 @@ module DulArclight
     end
 
     def render_bioghist(args)
-      # args keys      [:context, :document, :field, :config, :value]
       html = render_html_tags(args)
 
-      if args[:value].length > 1 && args[:value].length == html.to_s.scan("&lt;head&gt;").size
+      if args[:value].length > 1
         output = []
         for i in 0...args[:value].length do
           raw_html = CGI::unescape_html(args[:value][i].gsub(/<\/?p>/,"").strip)
@@ -45,6 +44,7 @@ module DulArclight
       else
         html
       end
+
     end
 
     def convert_rights_urls(args)
