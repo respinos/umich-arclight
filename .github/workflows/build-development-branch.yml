@@ -2,7 +2,7 @@ name: Build latest from whatever side branch
 
 on:
   push:
-    branches: [ DCP2-343-exclude_unittitle_sort_type ]
+    branches: [ DCP2-370-cohenead ]
 jobs:
   build-testing:
     runs-on: ubuntu-latest
