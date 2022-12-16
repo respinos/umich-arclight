@@ -11,7 +11,7 @@ bhl:
   country: 'USA'
   phone: ''
   contact_info: 'bentley.ref@umich.edu'
-  thumbnail_url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Bhlexterior.jpg/150px-Bhlexterior.jpg'
+  thumbnail_url: '/thumbnails/BHL-x400.jpg'
   repo_about:
     using_materials: 'Finding aids describe collections of primary sources and other unique, original, or rare materials. Some finding aids contain links to digitized versions of parts or all of a collection. Access to the original physical items, when available, requires requesting items for use in the reading room. Items may not be requested for use outside of the library.'
     visitor_info: 'The Bentley is open by appointment only Monday-Friday 10am - 4pm, including the general public. For more information, visit <a href="https://bentley.umich.edu/research/policies/">In-Person Research Policies</a>.'
