@@ -33,3 +33,4 @@ en:
     within_collection_dropdown:
       all_collections: "All Collections"
       this_collection: "This Collection"
+      label_html: "Search within"

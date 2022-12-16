@@ -22,7 +22,7 @@
       <%# text input %>
       <div class="text-input-wrapper">
         <%# DUL Customization: make homepage autofocus the search box %>
-        <%= text_field_tag :q, params[:q], placeholder: t('blacklight.search.form.search.placeholder'), aria: { label: "Clear Search" }, class: "search-q q form-control", id: "q", autofocus: homepage? ? true : presenter.autofocus?, data: { autocomplete_enabled: presenter.autocomplete_enabled?, autocomplete_path: suggest_index_catalog_path } %>
+        <%= text_field_tag :q, params[:q], aria: { label: t('blacklight.search.form.search.label') }, class: "search-q q form-control rounded-0", id: "q", autofocus: homepage? ? true : presenter.autofocus?, data: { autocomplete_enabled: presenter.autocomplete_enabled?, autocomplete_path: suggest_index_catalog_path } %>
       </div>
 
       <%# clear-search btn %>
@@ -34,8 +34,7 @@
 
       <%# search btn -%>
       <div class="input-group-append">
-        <button type="submit" class="btn btn-primary m-search-btn" id="search" aria-label="Submit Search">
-          <span class="submit-search-text d-none d-lg-inline sr-only"><%= t('blacklight.search.form.submit') %></span>
+        <button type="submit" class="btn btn-primary m-search-btn" id="search" aria-label="<%= t('blacklight.search.form.submit') %>">
           <i class="fas fa-search"></i>
         </button>
       </div>

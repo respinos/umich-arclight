@@ -38,6 +38,11 @@ en:
         prefix: 'Results for'
       bookmarks:
         label: "Bookmark:"
+      form:
+        search:
+          placeholder: "Type something..."
+          label: "Search for"
+        submit: "Submit Search"
     skip_links:
       back_to_top: 'Back to top'
       collection_nav: 'Skip to collection navigation'
