@@ -380,7 +380,7 @@ class CatalogController < ApplicationController
 
     # Collection Show Page - Background Section
     config.add_background_field 'scopecontent_tesim', label: 'Scope and Content', helper_method: :render_html_tags
-    config.add_background_field 'bioghist_tesim', label: 'Biographical / Historical', helper_method: :render_html_tags
+    config.add_background_field 'bioghist_tesim', label: 'Biographical / Historical', helper_method: :render_bioghist
     config.add_background_field 'acqinfo_ssim', label: 'Acquisition Information', helper_method: :render_html_tags
     config.add_background_field 'appraisal_tesim', label: 'Appraisal Information', helper_method: :render_html_tags
     config.add_background_field 'custodhist_tesim', label: 'Custodial History', helper_method: :render_html_tags
