@@ -8,6 +8,9 @@ services:
     image: solr:8-slim
     ports:
       - "8983:8983"
+    environment:
+      - SOLR_JAVA_MEM=-Xms1024m -Xmx1024m
+      - SOLR_HEAP=1024m
     volumes:
 #      - ./solr/arclight:/var/solr/data/arclight
       - ./solr/arclight/conf:/solr_config:ro
@@ -38,6 +41,9 @@ services:
       - .:/opt/app-root
     ports:
       - "3000:3000"
+# Uncomment for Docker Compose RubyMine Development
+#      - "1234:1234"
+#      - "26162:26162"
     environment:
       - DATABASE_URL=postgresql://postgres:arclight@db/arclight
       - GOOGLE_ANALYTICS_DEBUG=${GOOGLE_ANALYTICS_DEBUG:-false}
@@ -46,6 +52,11 @@ services:
       - SOLR_URL=http://solr:8983/solr/arclight
       - RAILS_ENV=development
       - FINDING_AID_DATA=./sample-ead
+# Uncomment for Docker Compose RubyMine Development
+#    command:
+#      - tail
+#      - -f
+#      - /dev/null
 
   redis:
     image: redis:6-buster
