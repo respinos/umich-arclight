@@ -32,7 +32,7 @@ module DulArclight
     def render_bioghist(args)
       html = render_html_tags(args)
 
-      if args[:value].length > 1
+      if args[:value].length > 1 && args[:value][0].include?("&lt;head&gt;")
         output = []
         for i in 0...args[:value].length do
           raw_html = CGI::unescape_html(args[:value][i].gsub(/<\/?p>/,"").strip)
