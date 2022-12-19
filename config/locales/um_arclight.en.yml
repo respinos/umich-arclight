@@ -14,7 +14,7 @@ en:
       title: "Advanced Search"
       within_collections_label: "Search in"
       search_fields_label: "Search field"
-      available_online: "Available Online"
+      available_online: "Selected Digital Content"
       search_label: "Search for"
       submit: "Search"
       start_over: "Start Over"
@@ -30,7 +30,7 @@ en:
       electronic-record-use-copy: Electronic Record (Use Copy)
 
     tooltips:
-      online: "Available Online"
+      online: "Selected Digital Content"
       bookmarks:
         present: "In Bookmarks"
         absent: "Add to Bookmarks"
