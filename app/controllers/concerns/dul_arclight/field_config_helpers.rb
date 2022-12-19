@@ -30,20 +30,19 @@ module DulArclight
     end
 
     def render_bioghist(args)
-      html = render_html_tags(args)
-
-      if args[:value].length > 1 && args[:value][0].include?("&lt;head&gt;")
-        output = []
-        for i in 0...args[:value].length do
-          raw_html = CGI::unescape_html(args[:value][i].gsub(/<\/?p>/,"").strip)
-          with_headers = raw_html.gsub("<head>", "<strong>").gsub("</head>", "</strong>")
-          output.append(render_html_tags({value:[with_headers]}))
+      output = []
+      for i in 0...args[:value].length do
+        paragraph = args[:value][i]
+        if paragraph.include?("<bioghist")
+          stripped_para = paragraph.gsub(/<\/?bioghist[^>]*>/,"").strip
+          with_headers = stripped_para.gsub("<head>", "<strong>").gsub("</head>", "</strong>")
+          output.append(render_html_tags({value: [with_headers]}))
+        else
+          output.append(render_html_tags({value: [paragraph]}))
         end
-        doc = Nokogiri::HTML.fragment(output.join(""))
-        doc.to_html.html_safe
-      else
-        html
       end
+      doc = Nokogiri::HTML.fragment(output.join(""))
+      doc.to_html.html_safe
 
     end
 
