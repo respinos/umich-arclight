@@ -19,6 +19,7 @@ module DulArclight
         helper_method :ua_record_group_display
         helper_method :convert_rights_urls
         helper_method :keep_raw_values
+        helper_method :render_bioghist
       end
     end
 
@@ -26,6 +27,23 @@ module DulArclight
     # Array#to_sentence
     def keep_raw_values(args)
       args[:value] || []
+    end
+
+    def render_bioghist(args)
+      output = []
+      for i in 0...args[:value].length do
+        paragraph = args[:value][i]
+        if paragraph.include?("<bioghist")
+          stripped_para = paragraph.gsub(/<\/?bioghist[^>]*>/,"").strip
+          with_headers = stripped_para.gsub("<head>", "<strong>").gsub("</head>", "</strong>")
+          output.append(render_html_tags({value: [with_headers]}))
+        else
+          output.append(render_html_tags({value: [paragraph]}))
+        end
+      end
+      doc = Nokogiri::HTML.fragment(output.join(""))
+      doc.to_html.html_safe
+
     end
 
     def convert_rights_urls(args)
