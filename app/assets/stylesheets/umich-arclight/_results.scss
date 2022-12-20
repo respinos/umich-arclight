@@ -57,3 +57,16 @@
   background-color: var(--color-indigo-500);
   border-color: var(--color-indigo-500);
 }
+
+.modal[aria-modal="true"] {
+  button.close {
+    span.visually-hidden {
+      // THIS IS SO DUMB
+      position: static !important;
+      height: auto !important;
+      width: auto !important;
+      overflow: auto !important;
+      clip: unset !important;
+    }
+  }
+}
