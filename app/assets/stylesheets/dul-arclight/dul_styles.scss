@@ -282,7 +282,7 @@ a {
 }
 
 .collection-name-wrapper {
-  margin-top: 0.75rem;
+  margin-top: 1.5rem;
   display: block;
   position: relative;
   &:before {
@@ -298,8 +298,8 @@ a {
   a {
     text-decoration: none;
     font-weight: 700;
-    line-height: 1.1;
-    font-size: 1.9rem;
+    line-height: 1.25;
+    font-size: 1.35rem;
 
     i.fas {
       display: block;
@@ -967,6 +967,8 @@ label.toggle-bookmark > span:nth-child(2) {
     align-self: center;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
+    height: 100%;
+    object-fit: cover;
 
     .img-wrapper {
       height: 10rem;
