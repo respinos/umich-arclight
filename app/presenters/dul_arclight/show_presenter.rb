@@ -5,11 +5,9 @@ module DulArclight
   class ShowPresenter < Arclight::ShowPresenter
     def heading
       values = [document.normalized_title]
-      if document.level != 'collection'
-        values << document.collection_name
-      end
+      values << document.collection_name if document.level != 'collection'
       values << document.repository
-      values.join(" - ")
+      values.join(' - ')
     end
   end
 end

@@ -118,24 +118,24 @@ module Arclight
     end
 
     def format_href_attributes(node)
-      return if node.name == "a"
+      return if node.name == 'a'
 
       node['target'] = '_blank'
       node['class'] = 'external-link'
       node.wrap("<#{node.name}/>") unless COLLIDING_TAGS.include? node.name
-      node.name = "a"
+      node.name = 'a'
     end
 
     def format_url_content(node)
       # This scrubber processes children after the parent node and
       # we only want to process the parent node
       # NOT its child text nodes!
-      return if node.name == "text"
+      return if node.name == 'text'
 
       # The parsed html document fragment of the parent (see below)
       # will create anchor children which need to skipped to
       # avoid infinite recursion!
-      return if node.name == "a"
+      return if node.name == 'a'
 
       html = String.new(node.content)
       URI.extract(node.content).each do |uri|

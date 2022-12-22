@@ -20,7 +20,9 @@ module UmArclightHelper
     add_prefix = true
 
     if search_state.query_param.present?
-      q_label = label_for_search_field(search_state.search_field.key) unless search_state.search_field&.key.blank? || default_search_field?(search_state.search_field.key)
+      unless search_state.search_field&.key.blank? || default_search_field?(search_state.search_field.key)
+        q_label = label_for_search_field(search_state.search_field.key)
+      end
 
       constraints += if q_label.present?
                        [t('blacklight.search.page_title.constraint', label: q_label, value: search_state.query_param)]
@@ -46,9 +48,7 @@ module UmArclightHelper
       end
       suffixes << repository unless repository.nil?
       if collection.nil?
-        if has_level_collection and suffixes.present?
-          suffixes.unshift "Collections"
-        end
+        suffixes.unshift 'Collections' if has_level_collection && suffixes.present?
       else
         suffixes.unshift collection
         add_prefix = constraints.present?
@@ -56,14 +56,12 @@ module UmArclightHelper
     end
 
     title = []
-    unless constraints.empty?
-      title += [constraints.join(' / ')]
-    end
+    title += [constraints.join(' / ')] unless constraints.empty?
     unless suffixes.empty?
       title << '-' unless title.empty?
       title << suffixes.join(' - ')
     end
-    title.unshift prefix if (add_prefix)
+    title.unshift prefix if add_prefix
     title = title.join(' ')
   end
 end

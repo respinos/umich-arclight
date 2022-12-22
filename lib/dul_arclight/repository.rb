@@ -164,36 +164,36 @@ module Arclight
     def image_service(embed)
       return nil unless respond_to? :dlxs_iiif
 
-      dlxs_class = if dlxs_iiif["image"].present? &&
-                      dlxs_iiif["image"].include?(embed[:collid])
-                     "image"
-                   elsif dlxs_iiif["text"].present? &&
-                         dlxs_iiif["text"].include?(embed[:collid])
-                     "text"
+      dlxs_class = if dlxs_iiif['image'].present? &&
+                      dlxs_iiif['image'].include?(embed[:collid])
+                     'image'
+                   elsif dlxs_iiif['text'].present? &&
+                         dlxs_iiif['text'].include?(embed[:collid])
+                     'text'
       end
       return if dlxs_class.nil?
 
       [
         "https://#{embed[:hostname]}",
-        "cgi", dlxs_class[0], dlxs_class,
-        "api/embed",
+        'cgi', dlxs_class[0], dlxs_class,
+        'api/embed',
         embed[:identifier]
       ].join('/')
     end
 
     def video_service(embed)
-      return nil unless (respond_to?(:mivideo) && mivideo.present?)
+      return nil unless respond_to?(:mivideo) && mivideo.present?
 
       [
-        "https://cdnapisec.kaltura.com",
-        "p", mivideo["partner_id"],
-        "sp", "#{mivideo["partner_id"]}00",
-        "embedIframeJs",
-        "uiconf_id", mivideo["uiconf_id"],
-        "partner_id", mivideo["partner_id"],
-        "entry_id", embed[:entry_id],
-        "playerId", "kaltura_player?iframeembed=true&playerId=kaltura_player"
-      ].join("/")
+        'https://cdnapisec.kaltura.com',
+        'p', mivideo['partner_id'],
+        'sp', "#{mivideo['partner_id']}00",
+        'embedIframeJs',
+        'uiconf_id', mivideo['uiconf_id'],
+        'partner_id', mivideo['partner_id'],
+        'entry_id', embed[:entry_id],
+        'playerId', 'kaltura_player?iframeembed=true&playerId=kaltura_player'
+      ].join('/')
     end
 
     # Load repository information from a YAML file

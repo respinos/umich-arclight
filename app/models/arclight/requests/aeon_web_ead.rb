@@ -37,10 +37,8 @@ module Arclight
 
         request_id = document.request_field(field)
         if pattern
-          regexed_id = Regexp::new(pattern).match(request_id)
-          if regexed_id
-            request_id = regexed_id[1]
-          end
+          regexed_id = Regexp.new(pattern).match(request_id)
+          request_id = regexed_id[1] if regexed_id
         end
 
         "#{prefix}#{request_id}#{postfix}"

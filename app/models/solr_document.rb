@@ -132,7 +132,7 @@ class SolrDocument
   def is_checkbox_requestable?
     config_present = repository_config.request_config_present_for_type?('aeon_hidden_form_request')
     container_requestable = containers.all? do |container|
-      %w(Box Folder Reel Map-case Tube Object Volume Bundle).any? do |type|
+      %w[Box Folder Reel Map-case Tube Object Volume Bundle].any? do |type|
         container.match(/#{type}/)
       end
     end

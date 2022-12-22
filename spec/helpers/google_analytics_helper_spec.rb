@@ -21,9 +21,9 @@ describe GoogleAnalyticsHelper, type: :helper do
         assign(:document, document)
         user_properties = JSON.parse(helper.ga_user_properties)
         expect(user_properties).to include(
-          "page_type" => "Collection Page",
-          "repository_id" => ":#{slug}:",
-          "collection_id" => ":#{collection_id}:"
+          'page_type' => 'Collection Page',
+          'repository_id' => ":#{slug}:",
+          'collection_id' => ":#{collection_id}:"
         )
       end
     end
@@ -45,9 +45,10 @@ describe GoogleAnalyticsHelper, type: :helper do
         expect(helper.ga_repository_id).to eq(slug)
       end
     end
+
     context 'with no document, but params' do
       before do
-        allow(helper).to receive(:params).and_return({ f: { "repository_sim" => ["University of Michigan. Bentley Historical Library"] } })
+        allow(helper).to receive(:params).and_return(f: { 'repository_sim' => ['University of Michigan. Bentley Historical Library'] })
       end
 
       slug = 'bhl'

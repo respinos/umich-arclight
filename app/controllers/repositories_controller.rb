@@ -19,7 +19,7 @@ class RepositoriesController < ApplicationController
 
   def about
     @repository = Arclight::Repository.find_by(slug: params[:id])
-    render "arclight/repositories/about"
+    render 'arclight/repositories/about'
   end
 
   private

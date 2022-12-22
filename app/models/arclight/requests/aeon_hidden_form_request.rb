@@ -17,7 +17,7 @@ module Arclight
       end
 
       def url
-        "#{config['request_url']}"
+        config['request_url'].to_s
       end
 
       def form_mapping
