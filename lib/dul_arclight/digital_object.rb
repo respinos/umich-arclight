@@ -39,6 +39,7 @@ module DulArclight
 
     def iframe_link(doc)
       return @href if @embed_data.nil?
+
       repository = doc.repository_config
       case @role
       when 'image-service'

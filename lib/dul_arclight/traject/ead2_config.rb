@@ -98,27 +98,27 @@ to_field 'publicid_ssi', extract_xpath('/ead/eadheader/eadid/@publicid')
 
 # DUL CUSTOMIZATION: add high component position to collection so the collection record
 # appears after all components. Default was nil, which sorted between first [0] & second [1] component.
-#to_field 'sort_ii' do |_record, accumulator|
-  #accumulator << '999999'
-#end
+# to_field 'sort_ii' do |_record, accumulator|
+# accumulator << '999999'
+# end
 
 # DUL CUSTOMIZATION: Permalink & ARK. NOTE the ARK will be derived from the
 # permalink, and not the other way around; ARK is not stored atomically in the EAD.
 # Strip out any wayward spaces or linebreaks that might end up in the url attribute
 # and only capture the value if it's a real permalink (with an ARK).
-#to_field 'permalink_ssi' do |record, accumulator|
-  #url = record.at_xpath('/ead/eadheader/eadid').attribute('url')&.value
-  #url.gsub(/[[:space:]]/, '')
-  #accumulator << url if url.include?('ark:')
-#end
+# to_field 'permalink_ssi' do |record, accumulator|
+# url = record.at_xpath('/ead/eadheader/eadid').attribute('url')&.value
+# url.gsub(/[[:space:]]/, '')
+# accumulator << url if url.include?('ark:')
+# end
 
-#to_field 'ark_ssi' do |_record, accumulator, context|
-  #next unless context.output_hash['permalink_ssi']
+# to_field 'ark_ssi' do |_record, accumulator, context|
+# next unless context.output_hash['permalink_ssi']
 
-  #permalink = context.output_hash['permalink_ssi'].first
-  #path = URI(permalink).path&.delete_prefix!('/')
-  #accumulator << path
-#end
+# permalink = context.output_hash['permalink_ssi'].first
+# path = URI(permalink).path&.delete_prefix!('/')
+# accumulator << path
+# end
 
 to_field 'title_filing_si', extract_xpath('/ead/eadheader/filedesc/titlestmt/titleproper[@type="filing"]')
 to_field 'title_ssm' do |record, accumulator|
@@ -322,13 +322,12 @@ to_field 'date_range_sim', extract_xpath('/ead/archdesc/did/unittitle[not(@type)
   unless context.output_hash['date_range_sim']
     # logger.debug accumulator
     clean_range = accumulator.map { |v| v.gsub(/([^()]*)\(.*\)/, '\1').tr('^0-9\\-/ ', '').strip }
-                      .select { |date| date.match? /^\d\d\d\d[-\/]\d\d\d\d$/}
+                             .select { |date| date.match? /^\d\d\d\d[-\/]\d\d\d\d$/ }
     # logger.debug clean_range
     range = Arclight::YearRange.new(clean_range.include?('/') ? clean_range : clean_range.map { |v| v.tr('-', '/') })
     accumulator.replace range.years
   end
 end
-
 
 SEARCHABLE_NOTES_FIELDS.map do |selector|
   to_field "#{selector}_tesim", extract_xpath("/ead/archdesc/#{selector}/*[local-name()!='head']", to_text: false)
@@ -344,7 +343,6 @@ DID_SEARCHABLE_NOTES_FIELDS.map do |selector|
   to_field "#{selector}_teim", extract_xpath("/ead/archdesc/did/#{selector}/*[local-name()!='head']")
 end
 to_field "collection_physloc_tesim", extract_xpath("/ead/archdesc/did/physloc")
-
 
 # DUL CUSTOMIZATION
 RESTRICTION_FIELDS.map do |selector|
@@ -665,7 +663,7 @@ compose 'components', ->(record, accumulator, _context) { accumulator.concat rec
   to_field 'date_range_sim', extract_xpath('./did/unittitle[not(@type) or ( @type != "sort" )]/unitdate') do |_record, accumulator, context|
     unless context.output_hash['date_range_sim']
       clean_range = accumulator.map { |v| v.gsub(/([^()]*)\(.*\)/, '\1').tr('^0-9\\-/ ', '').strip }
-                        .select { |date| date.match? /^\d\d\d\d[-\/]\d\d\d\d$/}
+                               .select { |date| date.match? /^\d\d\d\d[-\/]\d\d\d\d$/ }
       # logger.debug accumulator unless clean_range.empty?
       # logger.debug clean_range unless clean_range.empty?
       range = Arclight::YearRange.new(clean_range.include?('/') ? clean_range : clean_range.map { |v| v.tr('-', '/') })

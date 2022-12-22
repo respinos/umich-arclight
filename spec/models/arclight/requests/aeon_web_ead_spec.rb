@@ -48,7 +48,6 @@ RSpec.describe Arclight::Requests::AeonWebEad do
                       request_field: '-//us::MiU//TEXT us::MiU::ams0099.xml//EN'
     end
 
-
     it 'responds to parsed_ead_url' do
       expect(valid_object.parsed_ead_url).to eq 'https://quod.lib.umich.edu/s/sclead/eads/ams0099.xml'
     end

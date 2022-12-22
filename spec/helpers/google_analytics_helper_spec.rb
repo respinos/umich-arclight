@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 describe GoogleAnalyticsHelper, type: :helper do
-
   describe 'ga_user_properties' do
     context 'with document' do
       before do
@@ -12,20 +11,20 @@ describe GoogleAnalyticsHelper, type: :helper do
         slug = 'scrc'
         collection_id = "umich-#{slug}-001"
         repository_name = 'University of Michigan. Special Collections Research Center'
-          config = instance_double 'Arclight::Repository',
-              slug: slug
-          document = instance_double 'Blacklight::SolrDocument', 
-              repository_config: config,
-              repository: repository_name,
-              eadid: collection_id
+        config = instance_double 'Arclight::Repository',
+                                 slug: slug
+        document = instance_double 'Blacklight::SolrDocument',
+                                   repository_config: config,
+                                   repository: repository_name,
+                                   eadid: collection_id
 
-          assign(:document, document)
-          user_properties = JSON.parse(helper.ga_user_properties)
-          expect(user_properties).to include(
-            "page_type" => "Collection Page",
-            "repository_id" => ":#{slug}:",
-            "collection_id" => ":#{collection_id}:"
-          )
+        assign(:document, document)
+        user_properties = JSON.parse(helper.ga_user_properties)
+        expect(user_properties).to include(
+          "page_type" => "Collection Page",
+          "repository_id" => ":#{slug}:",
+          "collection_id" => ":#{collection_id}:"
+        )
       end
     end
   end
@@ -36,12 +35,11 @@ describe GoogleAnalyticsHelper, type: :helper do
       repository_name = 'University of Michigan. Special Collections Research Center'
 
       it 'a document with repository should return the slug' do
-
         config = instance_double 'Arclight::Repository',
-            slug: slug
-        document = instance_double 'Blacklight::SolrDocument', 
-            repository_config: config,
-            repository: repository_name
+                                 slug: slug
+        document = instance_double 'Blacklight::SolrDocument',
+                                   repository_config: config,
+                                   repository: repository_name
 
         assign(:document, document)
         expect(helper.ga_repository_id).to eq(slug)
@@ -49,7 +47,7 @@ describe GoogleAnalyticsHelper, type: :helper do
     end
     context 'with no document, but params' do
       before do
-        allow(helper).to receive(:params).and_return({ f: { "repository_sim" => ["University of Michigan. Bentley Historical Library"] }})        
+        allow(helper).to receive(:params).and_return({ f: { "repository_sim" => ["University of Michigan. Bentley Historical Library"] } })
       end
 
       slug = 'bhl'
@@ -57,9 +55,8 @@ describe GoogleAnalyticsHelper, type: :helper do
 
       it 'is finding the repository from a filtered query' do
         config = double('Arclight::Repository', slug: slug, name: repository_name)
-        repository = class_double('Arclight::Repository', 
-          find_by: config
-        ).as_stubbed_const
+        repository = class_double('Arclight::Repository',
+                                  find_by: config).as_stubbed_const
         expect(helper.ga_repository_id).to eq(slug)
       end
     end

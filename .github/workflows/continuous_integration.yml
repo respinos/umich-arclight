@@ -44,5 +44,7 @@ jobs:
           bundler-cache: true
       - name: Bundle Install
         run: bundle install
+      - name: Lint
+        run: bundle exec rubocop
       - name: RSpec
         run: bundle exec rspec

@@ -135,6 +135,7 @@ module Arclight
     def repo_about_present?
       return false unless respond_to? :repo_about
       return false if repo_about.nil? || repo_about.empty?
+
       true
     end
 
@@ -144,27 +145,31 @@ module Arclight
 
     def visitor_info
       return false unless repo_about.key?('visitor_info')
+
       repo_about.fetch('visitor_info')
     end
 
     def how_to_request
       return false unless repo_about.key?('how_to_request')
+
       repo_about.fetch('how_to_request')
     end
 
     def how_to_order
       return false unless repo_about.key?('how_to_order')
+
       repo_about.fetch('how_to_order')
     end
 
     def image_service(embed)
       return nil unless respond_to? :dlxs_iiif
-      dlxs_class = if dlxs_iiif["image"].present? && 
-          dlxs_iiif["image"].include?(embed[:collid])
-        "image"
-      elsif dlxs_iiif["text"].present? && 
-          dlxs_iiif["text"].include?(embed[:collid])
-        "text"
+
+      dlxs_class = if dlxs_iiif["image"].present? &&
+                      dlxs_iiif["image"].include?(embed[:collid])
+                     "image"
+                   elsif dlxs_iiif["text"].present? &&
+                         dlxs_iiif["text"].include?(embed[:collid])
+                     "text"
       end
       return if dlxs_class.nil?
 
@@ -177,7 +182,8 @@ module Arclight
     end
 
     def video_service(embed)
-      return nil unless ( respond_to?(:mivideo) && mivideo.present? )
+      return nil unless (respond_to?(:mivideo) && mivideo.present?)
+
       [
         "https://cdnapisec.kaltura.com",
         "p", mivideo["partner_id"],

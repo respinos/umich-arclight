@@ -18,8 +18,8 @@ module GoogleAnalyticsHelper
       collection_id: delimit(ga_collection_id),
       page_type: ga_page_type,
       repository_id: delimit(ga_repository_id)
-    }.reject {|key, value| value.blank? || value == "::" }
-     .to_json.html_safe
+    }.reject { |key, value| value.blank? || value == "::" }
+      .to_json.html_safe
   end
 
   def ga_collection_id

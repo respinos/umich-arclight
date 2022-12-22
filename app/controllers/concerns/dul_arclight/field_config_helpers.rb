@@ -34,16 +34,15 @@ module DulArclight
       for i in 0...args[:value].length do
         paragraph = args[:value][i]
         if paragraph.include?("<bioghist")
-          stripped_para = paragraph.gsub(/<\/?bioghist[^>]*>/,"").strip
+          stripped_para = paragraph.gsub(/<\/?bioghist[^>]*>/, "").strip
           with_headers = stripped_para.gsub("<head>", "<strong>").gsub("</head>", "</strong>")
-          output.append(render_html_tags({value: [with_headers]}))
+          output.append(render_html_tags({ value: [with_headers] }))
         else
-          output.append(render_html_tags({value: [paragraph]}))
+          output.append(render_html_tags({ value: [paragraph] }))
         end
       end
       doc = Nokogiri::HTML.fragment(output.join(""))
       doc.to_html.html_safe
-
     end
 
     def convert_rights_urls(args)

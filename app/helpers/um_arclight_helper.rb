@@ -3,7 +3,6 @@
 # Helper methods specific to UM ArcLight
 # ---------------------------------------
 module UmArclightHelper
-
   # Render an html <title> appropriate string for a set of search parameters, based on local requirements
   # @param [ActionController::Parameters] params
   # @return [String]
@@ -58,14 +57,13 @@ module UmArclightHelper
 
     title = []
     unless constraints.empty?
-      title += [ constraints.join(' / ') ]
+      title += [constraints.join(' / ')]
     end
     unless suffixes.empty?
       title << '-' unless title.empty?
       title << suffixes.join(' - ')
     end
-    title.unshift prefix if ( add_prefix )
+    title.unshift prefix if (add_prefix)
     title = title.join(' ')
   end
-
 end

@@ -29,4 +29,3 @@ module Arclight
     end
   end
 end
-
