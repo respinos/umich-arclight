@@ -51,7 +51,7 @@ module DulArclight
 
     def guess_role
       uri = URI(@href)
-      if match = uri.path.match('/[a-z]/([^/]+)/([^/]+)/(\w+)$')
+      if (match = uri.path.match('/[a-z]/([^/]+)/([^/]+)/(\w+)$'))
         @embed_data = {
           identifier: "#{match[1]}:#{match[2]}:#{match[3]}",
           collid: match[1],

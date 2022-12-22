@@ -15,6 +15,8 @@ AllCops:
 
 Layout/LineLength:
   Max: 160
+  Exclude:
+    - 'lib/dul_arclight/traject/ead2_config.rb'
 
 Metrics/ClassLength:
   Exclude:

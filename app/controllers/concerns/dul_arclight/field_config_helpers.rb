@@ -6,7 +6,7 @@
 module DulArclight
   ##
   # A module to add configuration helpers for certain fields used by Arclight
-  module FieldConfigHelpers
+  module FieldConfigHelpers # rubocop:disable Metrics/ModuleLength
     extend ActiveSupport::Concern
     include Arclight::FieldConfigHelpers
     include HierarchyHelper

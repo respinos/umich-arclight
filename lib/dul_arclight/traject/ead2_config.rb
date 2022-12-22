@@ -398,7 +398,7 @@ compose 'components', ->(record, accumulator, _context) { accumulator.concat rec
     accumulator << if record.attribute('id').blank?
                      strategy = Arclight::MissingIdStrategy.selected
                      hexdigest = strategy.new(record).to_hexdigest
-                     parent_id = context.clipboard[:parent].output_hash['id'].first
+                     _parent_id = context.clipboard[:parent].output_hash['id'].first
                      # logger.debug('MISSING ID WARNING') do
                      #   [
                      #     "A component in #{parent_id} did not have an ID so one was minted using the #{strategy} strategy.",

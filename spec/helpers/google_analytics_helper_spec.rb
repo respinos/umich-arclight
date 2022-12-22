@@ -7,24 +7,15 @@ describe GoogleAnalyticsHelper, type: :helper do
         allow(helper).to receive(:collection_show_page?).and_return(true)
       end
 
-      it 'returns a hash with properties for page type, and repository' do
+      it 'returns a hash with properties for page type, and repository' do # rubocop:disable RSpec/ExampleLength
         slug = 'scrc'
         collection_id = "umich-#{slug}-001"
         repository_name = 'University of Michigan. Special Collections Research Center'
-        config = instance_double 'Arclight::Repository',
-                                 slug: slug
-        document = instance_double 'Blacklight::SolrDocument',
-                                   repository_config: config,
-                                   repository: repository_name,
-                                   eadid: collection_id
-
+        config = instance_double 'Arclight::Repository', slug: slug
+        document = instance_double 'Blacklight::SolrDocument', repository_config: config, repository: repository_name, eadid: collection_id
         assign(:document, document)
         user_properties = JSON.parse(helper.ga_user_properties)
-        expect(user_properties).to include(
-          'page_type' => 'Collection Page',
-          'repository_id' => ":#{slug}:",
-          'collection_id' => ":#{collection_id}:"
-        )
+        expect(user_properties).to include('page_type' => 'Collection Page', 'repository_id' => ":#{slug}:", 'collection_id' => ":#{collection_id}:")
       end
     end
   end
@@ -35,12 +26,8 @@ describe GoogleAnalyticsHelper, type: :helper do
       repository_name = 'University of Michigan. Special Collections Research Center'
 
       it 'a document with repository should return the slug' do
-        config = instance_double 'Arclight::Repository',
-                                 slug: slug
-        document = instance_double 'Blacklight::SolrDocument',
-                                   repository_config: config,
-                                   repository: repository_name
-
+        config = instance_double 'Arclight::Repository', slug: slug
+        document = instance_double 'Blacklight::SolrDocument', repository_config: config, repository: repository_name
         assign(:document, document)
         expect(helper.ga_repository_id).to eq(slug)
       end
@@ -55,9 +42,8 @@ describe GoogleAnalyticsHelper, type: :helper do
       repository_name = 'University of Michigan. Bentley Historical Library'
 
       it 'is finding the repository from a filtered query' do
-        config = double('Arclight::Repository', slug: slug, name: repository_name)
-        repository = class_double('Arclight::Repository',
-                                  find_by: config).as_stubbed_const
+        config = instance_double('Arclight::Repository', slug: slug, name: repository_name)
+        _repository = class_double('Arclight::Repository', find_by: config).as_stubbed_const
         expect(helper.ga_repository_id).to eq(slug)
       end
     end

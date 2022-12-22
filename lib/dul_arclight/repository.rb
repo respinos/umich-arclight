@@ -4,7 +4,7 @@ module Arclight
   #
   # Static information about a given repository identified by a unique `slug`
   #
-  class Repository
+  class Repository # rubocop:disable Metrics/ClassLength
     include ActiveModel::Conversion # for to_partial_path
 
     attr_accessor :slug, :collection_count
@@ -170,7 +170,7 @@ module Arclight
                    elsif dlxs_iiif['text'].present? &&
                          dlxs_iiif['text'].include?(embed[:collid])
                      'text'
-      end
+                   end
       return if dlxs_class.nil?
 
       [

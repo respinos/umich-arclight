@@ -7,7 +7,7 @@ module UmArclightHelper
   # @param [ActionController::Parameters] params
   # @return [String]
   # adapated from https://github.com/projectblacklight/blacklight/blob/main/app/helpers/blacklight/catalog_helper_behavior.rb#L207
-  def render_search_as_breadcrumbs_to_page_title(search_state_or_params)
+  def render_search_as_breadcrumbs_to_page_title(search_state_or_params) # rubocop:disable Metrics/PerceivedComplexity, Metrics/CyclomaticComplexity, Metrics/AbcSize, Metrics/MethodLength
     search_state = if search_state_or_params.is_a? Blacklight::SearchState
                      search_state_or_params
                    else
@@ -62,6 +62,6 @@ module UmArclightHelper
       title << suffixes.join(' - ')
     end
     title.unshift prefix if add_prefix
-    title = title.join(' ')
+    _title = title.join(' ')
   end
 end
