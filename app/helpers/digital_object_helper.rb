@@ -30,7 +30,7 @@ module DigitalObjectHelper
   # NOTE: we are not using the ArcLight core default viewer; we fall back to
   # our own web-resource-link viewer if no custom viewer is found.
   def render_object_viewer(obj, doc = nil)
-    if CUSTOM_DAO_ROLES.include? obj.role and obj.iframe_link(doc).present?
+    if CUSTOM_DAO_ROLES.include?(obj.role) && obj.iframe_link(doc).present?
       render ['arclight/viewers/', obj.role].join, obj: obj, doc: doc, iframe_link: obj.iframe_link(doc)
     else
       render 'arclight/viewers/web-resource-link', obj: obj, doc: doc

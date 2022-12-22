@@ -10,7 +10,7 @@ module GoogleAnalyticsHelper
   # https://developers.google.com/analytics/devguides/collection/gtagjs/setting-values
 
   def delimit(coll_or_colls)
-    ":#{Array(coll_or_colls).join(":")}:"
+    ":#{Array(coll_or_colls).join(':')}:"
   end
 
   def ga_user_properties
@@ -18,8 +18,8 @@ module GoogleAnalyticsHelper
       collection_id: delimit(ga_collection_id),
       page_type: ga_page_type,
       repository_id: delimit(ga_repository_id)
-    }.reject {|key, value| value.blank? || value == "::" }
-     .to_json.html_safe
+    }.reject { |_key, value| value.blank? || value == '::' }
+      .to_json.html_safe
   end
 
   def ga_collection_id
@@ -29,8 +29,8 @@ module GoogleAnalyticsHelper
   end
 
   def ga_repository_id
-    if params[:f].present? && params[:f]["repository_sim"].present?
-      repository_config = Arclight::Repository.find_by(name: params[:f]["repository_sim"].first)
+    if params[:f].present? && params[:f]['repository_sim'].present?
+      repository_config = Arclight::Repository.find_by(name: params[:f]['repository_sim'].first)
       return repository_config.slug
     end
     @document&.repository_config&.slug

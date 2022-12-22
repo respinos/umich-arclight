@@ -3,7 +3,7 @@
 module Arclight
   ##
   # Extends Blacklight::Solr::Document to provide Arclight specific behavior
-  module SolrDocument
+  module SolrDocument # rubocop:disable Metrics/ModuleLength
     extend Blacklight::Solr::Document
     include Arclight::EadFormatHelpers
 

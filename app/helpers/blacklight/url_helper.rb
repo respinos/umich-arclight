@@ -4,10 +4,12 @@
 # ---------------------------------------
 
 module Blacklight
+  ##
+  # A module to add configuration helpers for certain fields used by umich_develop
   module UrlHelper
     include Blacklight::UrlHelperBehavior
 
-    def link_to_document(doc, field_or_opts = nil, opts = { counter: nil }, url_options = { anchor: nil })
+    def link_to_document(doc, field_or_opts = nil, opts = { counter: nil }, url_options = { anchor: nil }) # rubocop:disable Metrics/MethodLength
       label = case field_or_opts
               when NilClass
                 document_presenter(doc).heading

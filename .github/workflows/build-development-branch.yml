@@ -1,6 +1,7 @@
 name: Build latest from whatever side branch
 
 on:
+  workflow_dispatch:  # This allows to kick-off the action manually from GitHub Actions
   push:
     branches: [ DCP2-370-cohenead ]
 jobs:

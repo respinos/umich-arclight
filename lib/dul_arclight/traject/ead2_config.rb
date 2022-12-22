@@ -98,41 +98,41 @@ to_field 'publicid_ssi', extract_xpath('/ead/eadheader/eadid/@publicid')
 
 # DUL CUSTOMIZATION: add high component position to collection so the collection record
 # appears after all components. Default was nil, which sorted between first [0] & second [1] component.
-#to_field 'sort_ii' do |_record, accumulator|
-  #accumulator << '999999'
-#end
+# to_field 'sort_ii' do |_record, accumulator|
+# accumulator << '999999'
+# end
 
 # DUL CUSTOMIZATION: Permalink & ARK. NOTE the ARK will be derived from the
 # permalink, and not the other way around; ARK is not stored atomically in the EAD.
 # Strip out any wayward spaces or linebreaks that might end up in the url attribute
 # and only capture the value if it's a real permalink (with an ARK).
-#to_field 'permalink_ssi' do |record, accumulator|
-  #url = record.at_xpath('/ead/eadheader/eadid').attribute('url')&.value
-  #url.gsub(/[[:space:]]/, '')
-  #accumulator << url if url.include?('ark:')
-#end
+# to_field 'permalink_ssi' do |record, accumulator|
+# url = record.at_xpath('/ead/eadheader/eadid').attribute('url')&.value
+# url.gsub(/[[:space:]]/, '')
+# accumulator << url if url.include?('ark:')
+# end
 
-#to_field 'ark_ssi' do |_record, accumulator, context|
-  #next unless context.output_hash['permalink_ssi']
+# to_field 'ark_ssi' do |_record, accumulator, context|
+# next unless context.output_hash['permalink_ssi']
 
-  #permalink = context.output_hash['permalink_ssi'].first
-  #path = URI(permalink).path&.delete_prefix!('/')
-  #accumulator << path
-#end
+# permalink = context.output_hash['permalink_ssi'].first
+# path = URI(permalink).path&.delete_prefix!('/')
+# accumulator << path
+# end
 
 to_field 'title_filing_si', extract_xpath('/ead/eadheader/filedesc/titlestmt/titleproper[@type="filing"]')
 to_field 'title_ssm' do |record, accumulator|
   result = record.xpath('/ead/archdesc/did/unittitle[not(@type) or ( @type != "sort" )]')
   result = result.collect do |n|
     # return if n['type'] and n['type'] == "sort"
-    n.xpath('.//text()[not(ancestor::unitdate)]').collect(&:text).join(" ")
-  end.join(" ")
+    n.xpath('.//text()[not(ancestor::unitdate)]').collect(&:text).join(' ')
+  end.join(' ')
   accumulator << result
 end
 to_field 'title_formatted_ssm' do |record, accumulator|
   whole_title = record.xpath('/ead/archdesc/did/unittitle[not(@type) or ( @type != "sort" )]').to_a
   no_dates = whole_title.collect do |parent_node|
-    parent_node.children.select { |elem| elem.name != 'unitdate' }
+    parent_node.children.reject { |elem| elem.name == 'unitdate' }
   end.flatten
   accumulator.concat no_dates
 end
@@ -169,7 +169,7 @@ to_field 'collection_unitid_ssm', extract_xpath('/ead/archdesc/did/unitid')
 # DUL CUSTOMIZATION: UA Record Groups
 to_field 'ua_record_group_ssim' do |_record, accumulator, context|
   unitid = context.output_hash['collection_unitid_ssm']
-  id = if unitid then unitid.first.split('.') else [''] end
+  id = unitid ? unitid.first.split('.') : ['']
   if id[0] == 'UA'
     group = id[1]
     subgroup = id[2]
@@ -322,13 +322,12 @@ to_field 'date_range_sim', extract_xpath('/ead/archdesc/did/unittitle[not(@type)
   unless context.output_hash['date_range_sim']
     # logger.debug accumulator
     clean_range = accumulator.map { |v| v.gsub(/([^()]*)\(.*\)/, '\1').tr('^0-9\\-/ ', '').strip }
-                      .select { |date| date.match? /^\d\d\d\d[-\/]\d\d\d\d$/}
+                             .select { |date| date.match? %r{^\d\d\d\d[-/]\d\d\d\d$} }
     # logger.debug clean_range
     range = Arclight::YearRange.new(clean_range.include?('/') ? clean_range : clean_range.map { |v| v.tr('-', '/') })
     accumulator.replace range.years
   end
 end
-
 
 SEARCHABLE_NOTES_FIELDS.map do |selector|
   to_field "#{selector}_tesim", extract_xpath("/ead/archdesc/#{selector}/*[local-name()!='head']", to_text: false)
@@ -343,8 +342,7 @@ DID_SEARCHABLE_NOTES_FIELDS.map do |selector|
   to_field "#{selector}_tesim", extract_xpath("/ead/archdesc/did/#{selector}", to_text: false)
   to_field "#{selector}_teim", extract_xpath("/ead/archdesc/did/#{selector}/*[local-name()!='head']")
 end
-to_field "collection_physloc_tesim", extract_xpath("/ead/archdesc/did/physloc")
-
+to_field 'collection_physloc_tesim', extract_xpath('/ead/archdesc/did/physloc')
 
 # DUL CUSTOMIZATION
 RESTRICTION_FIELDS.map do |selector|
@@ -400,7 +398,7 @@ compose 'components', ->(record, accumulator, _context) { accumulator.concat rec
     accumulator << if record.attribute('id').blank?
                      strategy = Arclight::MissingIdStrategy.selected
                      hexdigest = strategy.new(record).to_hexdigest
-                     parent_id = context.clipboard[:parent].output_hash['id'].first
+                     _parent_id = context.clipboard[:parent].output_hash['id'].first
                      # logger.debug('MISSING ID WARNING') do
                      #   [
                      #     "A component in #{parent_id} did not have an ID so one was minted using the #{strategy} strategy.",
@@ -435,14 +433,14 @@ compose 'components', ->(record, accumulator, _context) { accumulator.concat rec
     result = record.xpath('./did/unittitle[not(@type) or ( @type != "sort" )]')
     result = result.collect do |n|
       n.xpath('child::node()[not(self::unitdate)]').map(&:text)
-    end.join(" ")
+    end.join(' ')
     accumulator << result
   end
   to_field 'title_formatted_ssm' do |record, accumulator|
     result = record.xpath('./did/unittitle[not(@type) or ( @type != "sort" )]')
     result = result.collect do |n|
       n.xpath('child::node()[not(self::unitdate)]').to_s
-    end.join(" ")
+    end.join(' ')
     accumulator << result
   end
   to_field 'title_teim', extract_xpath('./did/unittitle[not(@type) or ( @type != "sort" )]')
@@ -540,21 +538,15 @@ compose 'components', ->(record, accumulator, _context) { accumulator.concat rec
 
   to_field 'collection_physloc_tesim' do |_record, accumulator, context|
     collection_physloc = context.clipboard[:parent].output_hash['collection_physloc_tesim']
-    if collection_physloc
-      accumulator.concat collection_physloc
-    end
+    accumulator.concat collection_physloc if collection_physloc
   end
   to_field 'collection_date_inclusive_ssm' do |_record, accumulator, context|
     collection_date = context.clipboard[:parent].output_hash['collection_date_inclusive_ssm']
-    if collection_date
-      accumulator.concat collection_date
-    end
+    accumulator.concat collection_date if collection_date
   end
   to_field 'collection_creator_ssm' do |_record, accumulator, context|
     collection_creator = context.clipboard[:parent].output_hash['collection_creator_ssm']
-    if collection_creator
-      accumulator.concat collection_creator
-    end
+    accumulator.concat collection_creator if collection_creator
   end
 
   to_field 'extent_ssm', extract_xpath('./did/physdesc/extent')
@@ -665,7 +657,7 @@ compose 'components', ->(record, accumulator, _context) { accumulator.concat rec
   to_field 'date_range_sim', extract_xpath('./did/unittitle[not(@type) or ( @type != "sort" )]/unitdate') do |_record, accumulator, context|
     unless context.output_hash['date_range_sim']
       clean_range = accumulator.map { |v| v.gsub(/([^()]*)\(.*\)/, '\1').tr('^0-9\\-/ ', '').strip }
-                        .select { |date| date.match? /^\d\d\d\d[-\/]\d\d\d\d$/}
+                               .select { |date| date.match? %r{^\d\d\d\d[-/]\d\d\d\d$} }
       # logger.debug accumulator unless clean_range.empty?
       # logger.debug clean_range unless clean_range.empty?
       range = Arclight::YearRange.new(clean_range.include?('/') ? clean_range : clean_range.map { |v| v.tr('-', '/') })

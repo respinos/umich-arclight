@@ -20,7 +20,7 @@ RSpec.describe 'Search results', type: :feature do
     end
   end
 
-  it 'pluralizes multivalued facet names' do
+  it 'pluralizes multivalued facet names' do # rubocop:disable RSpec/ExampleLength
     visit search_catalog_path q: '', search_field: 'all_fields'
 
     within('#facets') do

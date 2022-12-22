@@ -4,7 +4,7 @@ module Arclight
   #
   # Static information about a given repository identified by a unique `slug`
   #
-  class Repository
+  class Repository # rubocop:disable Metrics/ClassLength
     include ActiveModel::Conversion # for to_partial_path
 
     attr_accessor :slug, :collection_count
@@ -135,6 +135,7 @@ module Arclight
     def repo_about_present?
       return false unless respond_to? :repo_about
       return false if repo_about.nil? || repo_about.empty?
+
       true
     end
 
@@ -144,50 +145,55 @@ module Arclight
 
     def visitor_info
       return false unless repo_about.key?('visitor_info')
+
       repo_about.fetch('visitor_info')
     end
 
     def how_to_request
       return false unless repo_about.key?('how_to_request')
+
       repo_about.fetch('how_to_request')
     end
 
     def how_to_order
       return false unless repo_about.key?('how_to_order')
+
       repo_about.fetch('how_to_order')
     end
 
     def image_service(embed)
       return nil unless respond_to? :dlxs_iiif
-      dlxs_class = if dlxs_iiif["image"].present? && 
-          dlxs_iiif["image"].include?(embed[:collid])
-        "image"
-      elsif dlxs_iiif["text"].present? && 
-          dlxs_iiif["text"].include?(embed[:collid])
-        "text"
-      end
+
+      dlxs_class = if dlxs_iiif['image'].present? &&
+                      dlxs_iiif['image'].include?(embed[:collid])
+                     'image'
+                   elsif dlxs_iiif['text'].present? &&
+                         dlxs_iiif['text'].include?(embed[:collid])
+                     'text'
+                   end
       return if dlxs_class.nil?
 
       [
         "https://#{embed[:hostname]}",
-        "cgi", dlxs_class[0], dlxs_class,
-        "api/embed",
+        'cgi', dlxs_class[0], dlxs_class,
+        'api/embed',
         embed[:identifier]
       ].join('/')
     end
 
     def video_service(embed)
-      return nil unless ( respond_to?(:mivideo) && mivideo.present? )
+      return nil unless respond_to?(:mivideo) && mivideo.present?
+
       [
-        "https://cdnapisec.kaltura.com",
-        "p", mivideo["partner_id"],
-        "sp", "#{mivideo["partner_id"]}00",
-        "embedIframeJs",
-        "uiconf_id", mivideo["uiconf_id"],
-        "partner_id", mivideo["partner_id"],
-        "entry_id", embed[:entry_id],
-        "playerId", "kaltura_player?iframeembed=true&playerId=kaltura_player"
-      ].join("/")
+        'https://cdnapisec.kaltura.com',
+        'p', mivideo['partner_id'],
+        'sp', "#{mivideo['partner_id']}00",
+        'embedIframeJs',
+        'uiconf_id', mivideo['uiconf_id'],
+        'partner_id', mivideo['partner_id'],
+        'entry_id', embed[:entry_id],
+        'playerId', 'kaltura_player?iframeembed=true&playerId=kaltura_player'
+      ].join('/')
     end
 
     # Load repository information from a YAML file

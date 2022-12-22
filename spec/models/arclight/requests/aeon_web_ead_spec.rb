@@ -3,7 +3,7 @@
 require 'spec_helper'
 
 RSpec.describe Arclight::Requests::AeonWebEad do
-  describe "simple request mappings" do
+  describe 'simple request mappings' do
     subject(:valid_object) { described_class.new(document, 'http://example.com/sample.xml') }
 
     let(:config) do
@@ -18,6 +18,7 @@ RSpec.describe Arclight::Requests::AeonWebEad do
         expect(valid_object.request_url).to eq 'https://sample.request.com'
       end
     end
+
     describe '#url' do
       it 'constructs a url with params' do
         expect(valid_object.url).to eq 'https://sample.request.com?Action=10&Form=31&Value=http%3A%2F%2Fexample.com%2Fsample.xml'
@@ -37,7 +38,7 @@ RSpec.describe Arclight::Requests::AeonWebEad do
     end
   end
 
-  describe "parsed ead url" do
+  describe 'parsed ead url' do
     subject(:valid_object) { described_class.new(document, 'http://example.com/sample.xml') }
 
     config = Arclight::Repository.find_by(slug: 'scrc')
@@ -47,7 +48,6 @@ RSpec.describe Arclight::Requests::AeonWebEad do
                       repository_config: config,
                       request_field: '-//us::MiU//TEXT us::MiU::ams0099.xml//EN'
     end
-
 
     it 'responds to parsed_ead_url' do
       expect(valid_object.parsed_ead_url).to eq 'https://quod.lib.umich.edu/s/sclead/eads/ams0099.xml'

@@ -36,6 +36,5 @@ namespace :dul_arclight do
       puts path
       IndexFindingAidJob.perform_later(path, repo_id)
     end
-
   end
 end
