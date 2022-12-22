@@ -132,7 +132,7 @@ end
 to_field 'title_formatted_ssm' do |record, accumulator|
   whole_title = record.xpath('/ead/archdesc/did/unittitle[not(@type) or ( @type != "sort" )]').to_a
   no_dates = whole_title.collect do |parent_node|
-    parent_node.children.select { |elem| elem.name != 'unitdate' }
+    parent_node.children.reject { |elem| elem.name == 'unitdate' }
   end.flatten
   accumulator.concat no_dates
 end

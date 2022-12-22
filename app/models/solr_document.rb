@@ -136,7 +136,7 @@ class SolrDocument
         container.match(/#{type}/)
       end
     end
-    config_present && containers.length > 0 && container_requestable
+    config_present && !containers.empty? && container_requestable
   end
 
   # DUL override ArcLight core; we want all extent values, and to singularize e.g. 1 boxes.
