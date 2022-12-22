@@ -2,9 +2,9 @@
 name: Continuous Integration
 
 on:
-  workflow_dispatch:
-#  push:
-#  pull_request:
+  workflow_dispatch:  # This allows to kick-off the action manually from GitHub Actions
+  push:
+  pull_request:
 
 #env:
 #  LAUTH_API_DB_HOST: 127.0.0.1
@@ -44,7 +44,7 @@ jobs:
           bundler-cache: true
       - name: Bundle Install
         run: bundle install
-      - name: Lint
+      - name: Rubocop
         run: bundle exec rubocop
 #      - name: RSpec
 #        run: bundle exec rspec
