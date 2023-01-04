@@ -1,8 +1,8 @@
-name: Build latest from umich_develop
+name: Build latest from main branch
 
 on:
   push:
-    branches: [ umich_develop ] # umich_develop is effectively our main branch
+    branches: [ main ]
 
 jobs:
   build-staging:
@@ -26,7 +26,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: 'ghcr.io/mlibrary/arclight/umich-arclight-staging:${{ github.sha }}, ghcr.io/mlibrary/arclight/umich-arclight-staging:latest'
+          tags: 'ghcr.io/mlibrary/umich-arclight/umich-arclight-staging:${{ github.sha }}, ghcr.io/mlibrary/umich-arclight/umich-arclight-staging:latest'
           file: .docker/Dockerfile.staging
 
   deploy-staging-resque:

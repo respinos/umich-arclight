@@ -1,9 +1,8 @@
-name: Build latest from whatever side branch
+name: Build latest from any branch
 
 on:
   workflow_dispatch:  # This allows to kick-off the action manually from GitHub Actions
-  push:
-    branches: [ DCP2-232/DCP2-255/group_by_parent_collection ]
+
 jobs:
   build-testing:
     runs-on: ubuntu-latest
@@ -26,7 +25,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: 'ghcr.io/mlibrary/arclight/umich-arclight-staging:${{ github.sha }}, ghcr.io/mlibrary/arclight/umich-arclight-staging:latest'
+          tags: 'ghcr.io/mlibrary/umich-arclight/umich-arclight-staging:${{ github.sha }}, ghcr.io/mlibrary/umich-arclight/umich-arclight-staging:latest'
           file: .docker/Dockerfile.staging
 
   deploy-testing-app:
