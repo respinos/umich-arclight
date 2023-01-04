@@ -214,10 +214,26 @@ to_field 'collection_title_tesim' do |_record, accumulator, context|
   accumulator.concat context.output_hash.fetch('normalized_title_ssm', [])
 end
 
+to_field 'subarea_sim' do |record, accumulator, _context|
+  subarea = record.xpath('/ead/archdesc/did/repository/descendant::subarea')&.text&.strip
+  subarea = case subarea
+            when /^subarea3$/i
+              'Screen Arts Mavericks and Makers'
+            when /^JBLCA$/i
+              'Janice Bluestein Longone Culinary Archive'
+            when /^Labadie$/i
+              'Joseph A. Labadie Collection'
+            when /^William\s(L\.\s)?Clements Library.?$/i
+              nil
+            else
+              subarea
+            end
+  accumulator << subarea unless subarea.nil? || subarea.empty?
+end
+
 to_field 'repository_ssm' do |_record, accumulator, context|
   accumulator << context.clipboard[:repository]
 end
-
 to_field 'repository_sim' do |_record, accumulator, context|
   accumulator << context.clipboard[:repository]
 end

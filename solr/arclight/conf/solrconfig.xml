@@ -272,6 +272,7 @@
        <str name="facet.field">geogname_sim</str>
        <str name="facet.field">access_subjects_sim</str>
        <str name="facet.field">repository_sim</str>
+       <str name="facet.field">subarea_sim</str>
        <str name="facet.field">collection_sim</str>
 
        <str name="spellcheck">true</str>

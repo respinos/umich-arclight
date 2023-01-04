@@ -120,6 +120,7 @@ class CatalogController < ApplicationController
                              online: { label: I18n.t('um_arclight.advanced_search.available_online'), fq: 'has_online_content_ssim:true' }
                            }
     config.add_facet_field 'repository_sim', label: 'Repository', limit: 10
+    config.add_facet_field 'subarea_sim', label: 'Subarea', limit: 10
     config.add_facet_field 'collection_sim', label: 'Collection', limit: 10
     config.add_facet_field 'creator_ssim', label: 'Creator', show: false
     config.add_facet_field 'creators_ssim', label: 'Creator', limit: 10
