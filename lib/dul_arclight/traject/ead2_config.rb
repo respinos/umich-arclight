@@ -47,7 +47,6 @@ SEARCHABLE_NOTES_FIELDS = %w[
   chronlist
   custodhist
   fileplan
-  index
   list
   note
   odd
@@ -365,6 +364,9 @@ end
 
 to_field "para_tesim", extract_xpath("/ead/archdesc/descgrp/p", to_text: false)
 to_field "para_teim", extract_xpath("/ead/archdesc/descgrp/p")
+
+to_field "index_tesim", extract_xpath("/ead/archdesc/index|/ead/archdesc/descgrp/index", to_text: false)
+to_field "index_teim", extract_xpath("/ead/archdesc/index|/ead/archdesc/descgrp/index")
 
 DID_SEARCHABLE_NOTES_FIELDS.map do |selector|
   to_field "#{selector}_tesim", extract_xpath("/ead/archdesc/did/#{selector}", to_text: false)
