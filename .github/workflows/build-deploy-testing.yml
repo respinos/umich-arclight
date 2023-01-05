@@ -1,4 +1,4 @@
-name: Build latest from any branch
+name: Build and Deploy to Testing
 
 on:
   workflow_dispatch:  # This allows to kick-off the action manually from GitHub Actions
@@ -25,8 +25,8 @@ jobs:
         with:
           context: .
           push: true
-          tags: 'ghcr.io/mlibrary/umich-arclight/umich-arclight-staging:${{ github.sha }}, ghcr.io/mlibrary/umich-arclight/umich-arclight-staging:latest'
-          file: .docker/Dockerfile.staging
+          tags: 'ghcr.io/mlibrary/umich-arclight/umich-arclight-testing:${{ github.sha }}, ghcr.io/mlibrary/umich-arclight/umich-arclight-testing:latest'
+          file: .docker/Dockerfile.testing
 
   deploy-testing-app:
     needs: build-testing
