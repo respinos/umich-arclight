@@ -19,7 +19,7 @@ bhl:
     how_to_order: 'Please visit <a href="https://bentley.umich.edu/research/duplication/">Duplication of Materials</a>.'
   request_types:
     aeon_hidden_form_request:
-      request_url: https://aeon-dev.bentley.umich.edu/ead_request
+      request_url: https://aeon.bentley.umich.edu/ead_request
       request_mappings:
         url_params:
           Action: 11
