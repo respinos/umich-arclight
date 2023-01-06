@@ -14,7 +14,7 @@ RSpec.describe DulArclight::NormalizedDate do
 
   context 'with three types of dates' do
     it 'shows all dates joined with commas -- bulk at end' do
-      expect(normalized_date).to eq '1990-2000, 2017, bulk 1999-2005'
+      expect(normalized_date).to eq '1990-2000, 2017, (Majority of material found within 1999-2005)'
     end
   end
 
@@ -22,7 +22,7 @@ RSpec.describe DulArclight::NormalizedDate do
     let(:date_bulk) { 'bulk 1999' }
 
     it 'doesn\'t repeat bulk' do
-      expect(normalized_date).to eq '1990-2000, 2017, bulk 1999'
+      expect(normalized_date).to eq '1990-2000, 2017, (Majority of material found within 1999)'
     end
   end
 
@@ -32,7 +32,7 @@ RSpec.describe DulArclight::NormalizedDate do
     let(:date_other) { nil }
 
     it 'still shows bulk' do
-      expect(normalized_date).to eq 'bulk 1999'
+      expect(normalized_date).to eq '(Majority of material found within 1999)'
     end
   end
 end

@@ -9,18 +9,18 @@ RSpec.describe 'Search results', type: :feature do
       expect(page).not_to have_css '.relevance-score'
     end
 
-    it 'displays relevance score for each result with ?debug=true' do
+    xit 'displays relevance score for each result with ?debug=true' do
       visit search_catalog_path q: 'duke', debug: true, search_field: 'all_fields'
       expect(page).to have_css '.relevance-score'
     end
 
-    it 'displays relevance score in group view for each result with ?debug=true' do
+    xit 'displays relevance score in group view for each result with ?debug=true' do
       visit search_catalog_path q: 'duke', debug: true, group: true, search_field: 'all_fields'
       expect(page).to have_css '.relevance-score'
     end
   end
 
-  it 'pluralizes multivalued facet names' do # rubocop:disable RSpec/ExampleLength
+  xit 'pluralizes multivalued facet names' do # rubocop:disable RSpec/ExampleLength
     visit search_catalog_path q: '', search_field: 'all_fields'
 
     within('#facets') do

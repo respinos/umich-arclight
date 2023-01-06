@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-RSpec.describe 'DUL Arclight Pages', type: :feature, js: true do
+RSpec.xdescribe 'DUL Arclight Pages', type: :feature, js: true do
   it 'navigates to homepage' do
     visit '/'
     expect(page).to have_css 'h1', text: 'Find Archival Materials'

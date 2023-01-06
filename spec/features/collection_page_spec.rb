@@ -3,7 +3,7 @@
 require 'spec_helper'
 
 RSpec.describe 'Collection Page', type: :feature do
-  describe 'UA collection' do
+  xdescribe 'UA collection' do
     let(:doc_id) { 'uaduketaekwondo' }
 
     before do

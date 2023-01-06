@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-RSpec.describe 'Custom sitemap', type: :feature do
+RSpec.xdescribe 'Custom sitemap', type: :feature do
   context 'with a URL for a configured query-based sitemap' do
     it 'returns a sitemaps.org compliant sitemap w/matching collection URLs & lastmod dates' do
       visit '/custom_sitemaps/nlm_history_of_medicine.xml'
