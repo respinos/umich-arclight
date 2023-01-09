@@ -1,4 +1,4 @@
-apiVersion: networking.k8s.io/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: web
@@ -7,15 +7,17 @@ metadata:
     kubernetes.io/ingress.class: nginx
 spec:
   rules:
-    - host: staging.arclight.kubernetes.lib.umich.edu
+    - host: dcp2-339.workshop.findingaids.lib.umich.edu
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
-              serviceName: app
-              servicePort: 80
+              service:
+                name: app
+                port: 
+                  number: 80
   tls:
     - hosts:
-        - staging.arclight.kubernetes.lib.umich.edu
+        - dcp2-339.workshop.findingaids.lib.umich.edu
       secretName: search-tls
