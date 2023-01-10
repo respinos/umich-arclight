@@ -1,0 +1,21 @@
+// contrast fix
+code {
+  color: var(--color-pink-500);
+}
+
+// tweak dl.record to improve readability
+.blacklight-help {
+  dl.record {
+    max-width: var(--max-prose-width);
+    width: 100%;
+    grid-template-columns: 0.8fr 1fr;
+
+    dt {
+        font-weight: bold;
+    }
+
+    dd {
+      padding-left: 1rem;
+    }
+  }
+}
