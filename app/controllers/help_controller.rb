@@ -3,7 +3,7 @@
 # Controller for our /help page
 class HelpController < ApplicationController
   def help
-    render "arclight/help"
+    render 'arclight/help'
   end
 
 end
