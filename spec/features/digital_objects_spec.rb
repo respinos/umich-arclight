@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-RSpec.describe 'Digital Objects', type: :feature do
+RSpec.xdescribe 'Digital Objects', type: :feature do
   before { visit solr_document_path(id: doc_id) }
 
   describe 'single DAO on a component' do

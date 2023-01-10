@@ -6,11 +6,9 @@ on:
   push:
   pull_request:
 
-#env:
-#  LAUTH_API_DB_HOST: 127.0.0.1
-#  LAUTH_API_DB_DATABASE: test
-#  LAUTH_API_DB_USER: user
-#  LAUTH_API_DB_PASSWORD: password
+env:
+  RAILS_ENV: test
+  SOLR_URL: "http://127.0.0.1:8983/solr/test"
 
 jobs:
 
@@ -22,17 +20,20 @@ jobs:
         ruby:
           - '2.6.3'
 
-#    services:
-#      mariadb:
-#        image: mariadb:latest
-#        ports:
-#          - 3306:3306
-#        env:
-#          MYSQL_USER: user
-#          MYSQL_PASSWORD: password
-#          MYSQL_DATABASE: test
-#          MYSQL_ROOT_PASSWORD: password
-#        options: --health-cmd="mysqladmin ping" --health-interval=5s --health-timeout=2s --health-retries=3
+    services:
+      db:
+        image: postgres
+        env:
+          POSTGRES_PASSWORD: postgres
+        # Set health checks to wait until postgres has started
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          # Maps tcp port 5432 on service container to the host
+          - 5432:5432
 
     steps:
       - name: Checkout
@@ -42,9 +43,13 @@ jobs:
         with:
           ruby-version: ${{ matrix.ruby }}
           bundler-cache: true
+      - name: Start Solr
+        run: docker run -d -p 8983:8983 -v $(pwd)/solr/arclight/conf:/test/conf solr:8 solr-precreate test /test
       - name: Bundle Install
         run: bundle install
+      - name: DB Migration
+        run: bundle exec rake db:migrate
       - name: Rubocop
         run: bundle exec rubocop
-#      - name: RSpec
-#        run: bundle exec rspec
+      - name: RSpec
+        run: bundle exec rspec

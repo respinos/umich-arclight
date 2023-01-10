@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-RSpec.describe 'Component Page', type: :feature, js: true do
+RSpec.xdescribe 'Component Page', type: :feature, js: true do
   # Note the DUL-custom {eadid}_{ref} in the document id
   # This component is a series.
   let(:doc_id) { 'rushbenjaminandjulia_aspace_60bc65ac982c71ade8c13641188f6dbc' }

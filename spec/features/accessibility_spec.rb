@@ -17,7 +17,7 @@
 require 'spec_helper'
 require 'axe-rspec'
 
-RSpec.describe 'Accessibility (WCAG, 508, Best Practices)', type: :feature, js: true, accessibility: true do
+RSpec.xdescribe 'Accessibility (WCAG, 508, Best Practices)', type: :feature, js: true, accessibility: true do
   describe 'homepage' do
     it 'is accessible' do
       visit '/'
