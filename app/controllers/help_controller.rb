@@ -5,5 +5,4 @@ class HelpController < ApplicationController
   def help
     render 'arclight/help'
   end
-
 end
