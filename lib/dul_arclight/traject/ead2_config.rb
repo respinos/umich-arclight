@@ -225,6 +225,12 @@ to_field 'subarea_sim' do |record, accumulator, _context|
               'Joseph A. Labadie Collection'
             when /^William\s(L\.\s)?Clements Library.?$/i
               nil
+            when /^Clarke Historical Library$/i
+              nil
+            when /^Archives of Michigan$/i
+              nil
+            when /^\s*$/i
+              nil
             else
               subarea
             end
