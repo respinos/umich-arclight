@@ -54,7 +54,7 @@ en:
             reproductions: "Ordering Reproductions"
             visitors: "Info for Visitors"
         containers:
-          see_all: "See all containers"
+          see_all: "Expand list"
         field_group_note:
           indexed_terms_field: INSERT CONTENT HERE
         sidebar:
