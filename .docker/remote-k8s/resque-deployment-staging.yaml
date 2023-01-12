@@ -45,7 +45,7 @@ spec:
               value: redis://redis:6379
             - name: SOLR_URL
               value: http://solr:8983/solr/arclight
-          image: ghcr.io/mlibrary/arclight/umich-arclight-staging:latest
+          image: ghcr.io/mlibrary/arclight/umich-arclight-unstable:latest
           imagePullPolicy: Always
           name: resque
           ports:

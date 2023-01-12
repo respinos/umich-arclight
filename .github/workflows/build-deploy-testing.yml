@@ -25,7 +25,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: 'ghcr.io/mlibrary/umich-arclight/umich-arclight-testing:${{ github.sha }}, ghcr.io/mlibrary/umich-arclight/umich-arclight-testing:latest'
+          tags: 'ghcr.io/mlibrary/umich-arclight/umich-arclight-testing:${{ github.sha }}, ghcr.io/mlibrary/umich-arclight/umich-arclight-testing:latest, ghcr.io/mlibrary/umich-arclight/umich-arclight-unstable:${{ github.sha }}'
           file: .docker/Dockerfile.testing
 
   deploy-testing-app:
