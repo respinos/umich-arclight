@@ -1,0 +1,264 @@
+<style id="utility-styles">
+
+    html[data-media="print"] #sidebar {
+      display: none;
+    }
+
+    html[data-media="print"] #content {
+      max-width: 100%; flex: 0 0 100%;
+    }
+
+    html[data-media="print"] footer {
+      display: none;
+    }
+
+    html[data-media="print"] m-universal-header {
+      display: none;
+    }
+
+    html > body > header {
+      display: none;
+    }
+
+    html[data-media="print"] header {
+      background: var(--color-blue-400);
+      color: var(--color-blue-100);
+      position: static;
+      display: block;
+    }
+
+    html[data-media="print"] header > div.website-header-container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1rem;
+      font-size: 1.5rem;
+    }
+
+    html[data-media="print"] header > div.website-header-container a {
+      color: white;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      line-height: 1.1;
+    }
+
+    html[data-media="print"] header > div.repository {
+      display: flex;
+      padding: 0.5rem 1rem;
+      background: var(--color-blue-100);
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: white;
+    }
+
+    html[data-media="print"] header > div.repository a {
+      color: var(--color-neutral-500);
+      text-decoration: none;
+    }
+
+    .fs-7 {
+      font-size: 0.875rem;
+    }
+
+    dl.record {
+      display: block;
+      width: 100%;
+    }
+
+    dl.record > div {
+      display: grid;
+      grid-template-columns: 12rem 1fr;
+      column-gap: 0;
+      border-bottom: 1px solid #ddd;
+    }
+
+    dl.record dt {
+      font-weight: bold;
+    }
+
+    dl.record dt,
+    dl.record dd {
+      padding: 0.5rem 0;
+      margin-left: 0;
+      border-bottom: none;
+    }
+
+    dl.record dd {
+      /* for longer/wrapping dt */
+      padding-left: 0.5rem;
+    }
+
+    dl.record dd + dd {
+      grid-column: 2/3;
+      border-top: 1px solid #eee;
+    }
+
+    dd > p:first-child, blockquote > p:first-child {
+      margin-top: 0;
+    }
+
+    html[data-media="print"] #toc {
+      padding: 1rem;
+      margin: 2rem 4rem;
+      /* border: 1px solid #666; */
+    }
+
+    address {
+      font-style: normal;
+    }
+
+    :root {
+  --width: 36;
+  --rounding: 4px;
+  --accent: #696;
+  --dark-grey: #ddd;
+  --grey: #eee;
+  --light-grey: #f8f8f8;
+}
+
+.tree-padding {
+  --spacing: 1.5rem;
+  --radius: 10px;
+  padding-left: 1rem;
+}
+
+.tree-padding li {
+  display: block;
+  position: relative;
+  padding-left: calc(2 * var(--spacing) - var(--radius) - 2px);
+  padding-bottom: 1rem;
+
+  /* page-break-before: auto; */ /* 'always,' 'avoid,' 'left,' 'inherit,' or 'right' */
+  /* page-break-after: auto; */ /* 'always,' 'avoid,' 'left,' 'inherit,' or 'right' */
+  /* page-break-inside: avoid; */
+}
+
+.tree-padding ul {
+  margin-left: calc(var(--radius) - var(--spacing));
+  padding-left: 0;
+}
+
+.tree-vertical-lines ul li {
+  border-left: 2px solid var(--dark-grey);
+}
+
+.tree-vertical-lines ul li:last-child {
+  border-color: transparent;
+}
+
+.tree-horizontal-lines ul li::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: calc(var(--spacing) / -2);
+  left: -2px;
+  width: calc(var(--spacing) + 2px);
+  height: calc(var(--spacing) + 1px);
+  border: solid var(--dark-grey);
+  border-width: 0 0 2px 2px;
+}
+
+.tree-summaries summary {
+  display: block;
+  cursor: pointer;
+}
+
+.tree-summaries summary::marker,
+.tree-summaries summary::-webkit-details-marker {
+  display: none;
+}
+
+.tree-summaries summary:focus {
+  outline: none;
+}
+
+.tree-summaries summary:focus-visible {
+  outline: 1px dotted #000;
+}
+
+.tree-markers li::after,
+.tree-markers summary::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: calc(var(--spacing) / 2 - var(--radius));
+  left: calc(var(--spacing) - var(--radius) - 1px);
+  width: calc(2 * var(--radius));
+  height: calc(2 * var(--radius));
+  border-radius: 50%;
+  background: var(--dark-grey);
+  margin-top: 0.5rem;
+}
+
+.tree-buttons summary::before {
+  content: "+";
+  z-index: 1;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 400;
+  line-height: calc(2 * var(--radius) - 2px);
+  text-align: center;
+}
+
+.tree-buttons details[open] > summary::before {
+  content: "−";
+}
+
+.tree-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 0 1rem;
+  padding-top: 0.5rem;
+}
+
+    .tree-container blockquote, details blockquote, .details blockquote {
+      margin: 0 1rem;
+      font-size: 0.875rem;
+      border: none !important;
+    }
+
+    .tree-title {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    article blockquote {
+      font-size: 0.875rem;
+      border: none !important;
+    }
+
+    .tree-padding ul li:nth-child(even) > details > summary {
+      background-color: #f8f8f8;
+    }
+    .tree-padding ul li:nth-child(even) > .details > .summary {
+      background-color: #f8f8f8;
+    }
+
+    .tree-padding > li:not(:has(ul)):nth-child(even) > details > summary {
+      background-color: #f8f8f8;
+    }
+
+    .tree-padding > li:not(:has(ul)):nth-child(even) > .details > .summary {
+      background-color: #f8f8f8;
+    }
+
+    ul ul {
+      padding: 0 0 0 1rem;
+    }
+
+    ul span {
+      display: block;
+    }
+
+    ul span.box {
+      text-transform: capitalize;
+      white-space: nowrap;
+    }
+
+    .child-components article:nth-of-type(odd) {
+      background-color: initial;
+    }
+</style>

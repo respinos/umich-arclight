@@ -25,6 +25,21 @@ module DulArclight
       )
     end
 
+    def html_download
+      _, @document = search_service.fetch(params[:id])
+      render file: html_file_path, layout: false
+    end
+
+    def pdf_download
+      _, @document = search_service.fetch(params[:id])
+      send_file(
+        pdf_file_path,
+        filename: "#{params[:id]}.pdf",
+        disposition: 'attachment',
+        type: 'application/pdf'
+      )
+    end
+
     ##
     # Overriding the Blacklight method so that the hierarchy view does not start
     # a new search session
@@ -45,6 +60,14 @@ module DulArclight
 
     def ead_file_path
       "#{DulArclight.finding_aid_data}/ead/#{repo_id}/#{params[:id]}.xml"
+    end
+
+    def html_file_path
+      "#{DulArclight.finding_aid_data}/pdf/#{repo_id}/#{params[:id]}.html"
+    end
+
+    def pdf_file_path
+      "#{DulArclight.finding_aid_data}/pdf/#{repo_id}/#{params[:id]}.pdf"
     end
 
     def repo_id

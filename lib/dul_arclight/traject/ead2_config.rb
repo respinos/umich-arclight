@@ -746,21 +746,21 @@ compose 'components', ->(record, accumulator, _context) { accumulator.concat rec
   to_field 'indexes_tesim', extract_xpath('./index', to_text: false)
 end
 
- ## --- BEGIN: properties for HTML/PDF generation
- to_field 'ead_author_ssm', extract_xpath('/ead/eadheader/filedesc/titlestmt/author')
- to_field 'ead_profiledesc_creation_ssm', extract_xpath('/ead/eadheader/profiledesc/creation')
- to_field 'ead_profiledesc_langusage_ssm', extract_xpath('/ead/eadheader/profiledesc/langusage')
- to_field 'ead_profiledesc_descrules_ssm', extract_xpath('/ead/eadheader/profiledesc/descrules')
+## --- BEGIN: properties for HTML/PDF generation
+to_field 'ead_author_ssm', extract_xpath('/ead/eadheader/filedesc/titlestmt/author')
+to_field 'ead_profiledesc_creation_ssm', extract_xpath('/ead/eadheader/profiledesc/creation')
+to_field 'ead_profiledesc_langusage_ssm', extract_xpath('/ead/eadheader/profiledesc/langusage')
+to_field 'ead_profiledesc_descrules_ssm', extract_xpath('/ead/eadheader/profiledesc/descrules')
 
- to_field 'revdesc_changes_ssm', extract_xpath('/ead/eadheader/revisiondesc/change', to_text: false) do |_record, accumulator|
-   accumulator.map! do |change|
-     {
-       date: change.xpath('string(date)'),
-       item: change.xpath('string(item)'),
-     }.to_json
-   end
- end
- ## --- END: properties for HTML/PDF generation
+to_field 'revdesc_changes_ssm', extract_xpath('/ead/eadheader/revisiondesc/change', to_text: false) do |_record, accumulator|
+  accumulator.map! do |change|
+    {
+      date: change.xpath('string(date)'),
+      item: change.xpath('string(item)'),
+    }.to_json
+  end
+end
+## --- END: properties for HTML/PDF generation
 
 # rubocop:enable Metrics/BlockLength
 
