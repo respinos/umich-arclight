@@ -1,0 +1,48 @@
+<li data-container-id="<%= component.id %>">
+  <div class="details">
+    <div class="summary">
+      <div class="tree-container">
+        <div class="tree-title">
+          <% if component.is_checkbox_requestable? %>
+            <%= render "catalog/aeon_request_checkbox", document: component, class: 'x-printable', label_class: 'btn btn-outline-secondary btn-outline-request squat p-2' %>
+          <% end %>
+          <%= component.normalized_title %><%= component.unitid.present? ? " #{component.unitid}" : '' %>
+        </div>
+        <% if component.containers.present? %>
+          <span class="box">
+            <%= component.containers.join(', ') %>
+          </span>
+        <% end %>
+      </div>
+    </div>
+    <% if false %><pre><%= component.odd.present? %> :: <%= component.bioghist.present? %> :: <%= component.total_digital_object_count %></pre><% end %>
+    <% if component.odd.present? or component.bioghist.present? or component.total_digital_object_count > 0 %>
+      <blockquote>
+        <% component.odd.each do |value_| %>
+          <p>
+            <%= render_html_tags(value: [value_]) %>
+          </p>
+        <% end %>
+        <% component.bioghist.each do |value_| %>
+          <p>
+            <%= render_html_tags(value: [value_]) %>
+          </p>
+        <% end %>
+        <% if component.total_digital_object_count > 0 && component.digital_objects.present? %>
+          <% component.digital_objects.each do |dao| %>
+            <p>
+              <a href="<%= dao.href %>">View: <%= dao.label %></a>
+            </p>
+          <% end %>
+        <% end %>
+      </blockquote>
+    <% end %> 
+    <% if ( components = @components.select{ |v| v.parent_ids.last == component.reference } ).present? %>
+    <ul>
+      <% components.each do |subcomponent| %>
+        <%= render 'arclight/fragments/component_tree', { component: subcomponent, level: level + 1 } %>
+      <% end %>
+    </ul>
+    <% end %>
+  </div>
+</li>

@@ -28,6 +28,16 @@ class SolrDocument # rubocop:disable Metrics/ClassLength
     render_html_tags(value: [value]) if value.present?
   end
 
+  def ead_author
+    fetch('ead_author_ssm', []).first
+  end
+
+  def revdesc_changes
+    fetch('revdesc_changes_ssm', []).map do |rev|
+      JSON.parse(rev)
+    end
+  end
+
   # DUL CUSTOMIZATION: ARK & Permalink
   def ark
     fetch('ark_ssi', '')
@@ -65,6 +75,14 @@ class SolrDocument # rubocop:disable Metrics/ClassLength
     scopes = fetch('scopecontent_tesim', [])
     values = (abstracts + scopes).uniq { |v| ActionController::Base.helpers.strip_tags(v) }.join(' ')
     render_html_tags(value: [values]) if values.present?
+  end
+
+  def odd
+    fetch('odd_tesim', [])
+  end
+
+  def bioghist
+    fetch('bioghist_tesim', [])
   end
 
   # DUL custom property for a tagless short description of a collection or component.

@@ -1,0 +1,36 @@
+<% @components.select { |v| v.component_level == 1 }.each do |component| %>
+  <article>
+    <h3 id="<%= component.id %>">
+      <%= component.normalized_title %>
+      <% if component.level.present? %> (<%= component.level %>)<% end %></h3>
+    <% if component.abstract_or_scope.present? or component.bioghist.present? or component.odd.present? or component.total_digital_object_count > 0 %>
+    <blockquote>
+      <%= component.abstract_or_scope %>
+      <% component.odd.each do |value_| %>
+        <p>
+          <%= render_html_tags(value: [value_]) %>
+        </p>
+      <% end %>
+      <% component.bioghist.each do |value_| %>
+        <p>
+          <%= render_html_tags(value: [value_]) %>
+        </p>
+      <% end %>
+      <% if component.total_digital_object_count > 0 && component.digital_objects.present? %>
+        <% component.digital_objects.each do |dao| %>
+          <p>
+            <a href="<%= dao.href %>">View: <%= dao.label %></a>
+          </p>
+        <% end %>
+      <% end %>
+    </blockquote>
+    <% end %>
+
+    <ul class="tree-padding tree-vertical-lines tree-horizontal-lines tree-summaries tree-markers">
+      <% @components.select{ |v| v.parent_ids.last == component.reference }.each do |subcomponent| %>
+        <%= render 'arclight/fragments/component_tree', { component: subcomponent, level: 5 } %>
+      <% end %>
+    </ul>
+
+  </article>
+<% end %>

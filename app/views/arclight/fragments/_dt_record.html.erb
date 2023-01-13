@@ -1,0 +1,10 @@
+<% if values.present? and not [values].flatten.empty? %>
+  <div>
+    <dt><%= label %></dt>
+    <% [values].flatten.each do |value| %>
+      <% unless value.nil? %>
+        <dd><%= render_html_tags(value: [value]) %></dd>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>
