@@ -66,6 +66,9 @@ module UmArclight
         end
         puts "UM-Arclight generate package : #{collection.id} : build HTML (in #{elapsed_time.round(3)} secs)."      
 
+      end
+
+      def generate_html
         output_filename = generate_output_filename('.html')
         unless Dir.exists?(File.dirname(output_filename))
           FileUtils.makedirs(File.dirname(output_filename))
@@ -92,6 +95,9 @@ module UmArclight
         end
         puts "UM-Arclight generate package: #{collection.id} : update HTML for PDF (in #{elapsed_time.round(3)} secs)."      
 
+      end
+
+      def generate_pdf
         local_html_filename = "#{collection.id}.local.html"
         File.open(local_html_filename, "w") do |f|
           f.puts doc.serialize

@@ -7,8 +7,8 @@ class PackageFindingAidJob < ApplicationJob
   def perform(identifier)
     begin
       artifact = UmArclight::Package::Generator.new identifier: identifier
-      artifact.build_html
-      artifact.build_pdf
+      artifact.generate_html
+      artifact.generate_pdf
     rescue StandardError => e
       raise UmArclight::PackageError, e
     end
