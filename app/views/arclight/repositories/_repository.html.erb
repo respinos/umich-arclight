@@ -7,20 +7,10 @@
 <%# renders as card display %>
 
   <div class="card al-repository">
-
     <div class="card-img-top">
-      <% if (params[:id] != repository.slug) %>
-        <%= link_to(repository_collections_path(repository)) do %>
-          <%= image_tag repository.thumbnail_url, alt: repository.name, class: 'card-img' %>
-        <% end %>
-      <% else %>
-        <%= image_tag repository.thumbnail_url, alt: repository.name, class: 'card-img' %>
-      <% end %>
+     <%= image_tag repository.thumbnail_url, alt: '', class: 'card-img' %>
     </div>
-    
-
     <div class="card-body">
-
       <h2 class="card-title text-center">
         <%= link_to_unless(params[:id] == repository.slug, repository.name, repository_collections_path(repository)) %>
       </h2>
@@ -32,15 +22,12 @@
     </div>
 
     <div class="card-footer">
-      
        <div class="collection-count-wrapper text-center">
         <%= link_to(repository_collections_path(repository), class: 'btn btn-primary')  do %>
           <%= t('arclight.views.repositories.browse') %> <%= t(:'arclight.views.repositories.number_of_collections', count: repository.collection_count) %>
         <% end %>
       </div>
-
     </div>
-
   </div>
 
 
@@ -51,7 +38,7 @@
 
     <div class="card-img">
       <div class="img-wrapper">
-        <%= image_tag repository.thumbnail_url, alt: repository.name, class: 'card-img' %>
+        <%= image_tag repository.thumbnail_url, alt: '', class: 'card-img' %>
       </div>
     </div>
 
