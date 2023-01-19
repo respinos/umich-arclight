@@ -56,7 +56,7 @@ Blacklight.onLoad(function () {
 
   /* Fix autofocus for Firefox and Safari*/
   $(".homepage").find("input#q").focus();
-  
+
 
   /* Adding a click event to the Twitter Typeahead so that  */
   /* the form submits when the user clicks on a search suggestion. */
@@ -274,10 +274,12 @@ Blacklight.onLoad(function () {
 
   /* ================================================ */
   /* Reload DUL masthead when turbolinks is triggered */
+  /* Scroll to hash tag anchor after turbolinks load  */
   /* ================================================ */
 
   $(document).on('ready turbolinks:load', function() {
     loadMastHTML();
+    scrollToHashTagAnchor();
   });
 
   loadMastHTML = function() {
@@ -296,6 +298,12 @@ Blacklight.onLoad(function () {
 
   }
 
+  scrollToHashTagAnchor = function () {
+    if (location.hash) {
+      let el = document.querySelector(location.hash);
+      if (el) { el.scrollIntoView(); }
+    }
+  };
 
   /* ================================================ */
   /* Add FA icons */
