@@ -4,17 +4,11 @@
   <div class="dropdown-item-text">
     <table class="table table-sm table-borderless collection-info-table">
       <tbody>
-        <%# if document.unitid.present? %>
-<!--          <tr>-->
-<!--            <td>Collection ID</td>-->
-<!--            <td><%#= document.unitid %></td>-->
-<!--          </tr>-->
-        <%# end %>
-
+        <% if /^\s*bhl\s*$/i.match?(document.repository_id) %>
         <tr>
-          <td>Collection ID</td>
+          <td>Call Number</td>
           <td>
-            <%= link_to document.eadid,
+            <%= link_to document.collection_unitid,
                   [solr_document_path(normalize_id(document.eadid)), 'xml'].join('/'),
                   target: '_blank',
                   rel: 'nofollow',
@@ -22,6 +16,7 @@
                   data: { ga_label: 'EAD link'} %>
           </td>
         </tr>
+        <% end %>
 
         <% if document.ark.present? %>
           <tr>
