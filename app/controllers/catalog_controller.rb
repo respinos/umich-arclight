@@ -365,7 +365,10 @@ class CatalogController < ApplicationController
                                                 document.languages.present?
                                               }
 
-    config.add_summary_field 'eadid', label: 'Collection ID', accessor: :eadid
+    config.add_summary_field 'collection_unitid_ssm', label: 'Call Number', accessor: :collection_unitid,
+                                                      if: lambda { |_context, _field_config, document|
+                                                            /^\s*bhl\s*$/i.match?(document.repository_id)
+                                                          }
 
     config.add_summary_field 'ua_record_group_ssim', label: 'University Archives Record Group',
                                                      helper_method: :link_to_ua_record_group_facet, separator_options: {
