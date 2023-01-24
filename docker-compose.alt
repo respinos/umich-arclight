@@ -1,0 +1,87 @@
+---
+services:
+  app:
+    depends_on:
+      - db
+      - solr
+      - redis
+    image: umich-arclight
+    build:
+      dockerfile: Dockerfile
+      context: .
+    ports:
+      - "3000:3000" # Rails
+      - "1234:1234" # RubyMine
+      - "26162:26162" # RubyMine
+    environment:
+      - DATABASE_URL=postgresql://postgres:postgres@db/umich-arclight-development
+      - SOLR_URL=http://solr:8983/solr/umich-arclight-development
+      - REDIS_URL=redis://redis:6379
+    volumes:
+      - .:/opt/app
+      - data:/var/opt/app/data
+      - gems:/var/opt/app/gems
+      - solr-conf:/opt/app/solr/arclight
+  db:
+    ports:
+      - "5432:5432"
+    image: postgres:12-alpine
+    environment:
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - db-data:/var/lib/postgresql/data
+  solr:
+    image: solr:8-slim
+    ports:
+      - "8983:8983"
+    environment:
+      - SOLR_JAVA_MEM=-Xms1024m -Xmx1024m
+      - SOLR_HEAP=1024m
+    volumes:
+      - solr-conf:/opt/solr/server/solr/configsets/umich-arclight:ro
+      - solr-data:/var/solr
+  redis:
+    image: redis:6-buster
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+  resque:
+    depends_on:
+      - db
+      - solr
+      - redis
+    image: umich-arclight
+    ports:
+      - "8282:8282"
+    environment:
+      - DATABASE_URL=postgresql://postgres:postgres@db/umich-arclight-development
+      - SOLR_URL=http://solr:8983/solr/umich-arclight-development
+      - REDIS_URL=redis://redis:6379
+    volumes:
+      - .:/opt/app
+      - data:/var/opt/app/data
+      - gems:/var/opt/app/gems
+    healthcheck:
+      disable: true
+    stop_signal: SIGQUIT
+    command: bundle exec rake resque:pool
+  resque-web:
+    depends_on:
+      - redis
+    image: umich-arclight
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/opt/app
+      - gems:/var/opt/app/gems
+    healthcheck:
+      disable: true
+    command: bundle exec resque-web -p 8080 -r redis:6379 -F
+volumes:
+  data:
+  gems:
+  db-data:
+  solr-conf:
+  solr-data:
+  redis-data:

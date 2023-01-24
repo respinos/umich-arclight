@@ -1,1 +1,9 @@
-.docker/**
+# Ignore
+.cache
+.docker
+.github
+db/*.sqlite3
+log/*
+tmp/*
+# Except
+!**/.keep
