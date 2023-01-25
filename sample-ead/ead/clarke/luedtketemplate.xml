@@ -5,11 +5,11 @@
 		<eadid countrycode="us" mainagencycode="MiMtpT-C" publicid="us//::mi-HC//TXT us::ehll::luedtke.xml//EN" encodinganalog="identifier">ehll--luedtke</eadid>
 		<filedesc>
 			<titlestmt>
-				<titleproper encodinganalog="title">Finding Aid for 
+				<titleproper encodinganalog="title">Finding Aid for
 Luedtke Engineering Company (Frankfort, Mich.) Organizational Records</titleproper>
-				<author encodinganalog="creator">Collection processed and finding aid created by 
+				<author encodinganalog="creator">Collection processed and finding aid created by
 A. Meyer, S. Albinhamad, C. Olson, K. Tremlin, B. Schamber, K. Mason, G. Richard, M. Matyn</author>
-			</titlestmt> 
+			</titlestmt>
 			<publicationstmt>
 				<publisher encodinganalog="publisher">Clarke Historical Library</publisher>
 				<date encodinganalog="date">
@@ -18,8 +18,8 @@ May-December, 2015
 			</publicationstmt>
 		</filedesc>
 		<profiledesc>
-			<creation>Encoded finding aid created by 
-Marian Matyn, 
+			<creation>Encoded finding aid created by
+Marian Matyn,
 <date>2016</date>
 			</creation>
 			<langusage>The finding aid is written in  <language langcode="eng">English</language>
@@ -31,7 +31,7 @@ Marian Matyn,
 			<publisher>Clarke Historical Library<lb/>Central Michigan University</publisher>
 			<titleproper>Finding aid for<lb/>
 Luedtke Engineering Company (Frankfort, Mich.) Organizational Records</titleproper>
-			<author>Finding aid created by<lb/> 
+			<author>Finding aid created by<lb/>
 A. Meyer, S. Albinhamad, C. Olson, K. Tremlin, B. Schamber, K. Mason, G. Richard, M. Matyn
 </author>
 		</titlepage>
@@ -76,7 +76,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records are open f
 			</accessrestrict>
 			<userestrict encodinganalog="540">
 				<p>
-Copyright is unknown.  
+Copyright is unknown.
 </p>
 			</userestrict>
 			<prefercite encodinganalog="524">
@@ -222,7 +222,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>DCA Annual Meeting,<unitdate type="inclusive">2005</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">1</container>
@@ -230,7 +230,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>DCA Annual Meeting,<unitdate type="inclusive">2006</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">1</container>
@@ -238,7 +238,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>DCA Annual Meeting,<unitdate type="inclusive">2007</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">1</container>
@@ -246,7 +246,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>DCA Annual Meeting,<unitdate type="inclusive">2008</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">1</container>
@@ -254,7 +254,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>NADC Annual Meeting,<unitdate type="inclusive">1988</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">1</container>
@@ -262,7 +262,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>NADC Annual Meeting,<unitdate type="inclusive">1989</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">1</container>
@@ -270,7 +270,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>NADC Background Information,<unitdate type="inclusive">1989</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">2</container>
@@ -933,7 +933,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 457, 1977, 3 of 9,<unitdate type="inclusive">1977</unitdate>
 						</unittitle>
 					</did>
-				</c02>				
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">10</container>
@@ -941,7 +941,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 457, 1977, 4 of 9,<unitdate type="inclusive">1977</unitdate>
 						</unittitle>
 					</did>
-				</c02>			
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">10</container>
@@ -2429,7 +2429,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 564,<unitdate type="inclusive">1982</unitdate>
 						</unittitle>
 					</did>
-				</c02>			
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">32</container>
@@ -2437,7 +2437,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 565,<unitdate type="inclusive">1982</unitdate>
 						</unittitle>
 					</did>
-				</c02>			
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">32</container>
@@ -2445,7 +2445,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 566,<unitdate type="inclusive">1982</unitdate>
 						</unittitle>
 					</did>
-				</c02>			
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">32</container>
@@ -2453,7 +2453,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 567,<unitdate type="inclusive">1982</unitdate>
 						</unittitle>
 					</did>
-				</c02>				
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">32</container>
@@ -2461,7 +2461,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 568,<unitdate type="inclusive">1982</unitdate>
 						</unittitle>
 					</did>
-				</c02>			
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">32</container>
@@ -2469,7 +2469,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 569,<unitdate type="inclusive">1982</unitdate>
 						</unittitle>
 					</did>
-				</c02>				
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">33</container>
@@ -2477,7 +2477,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 570,<unitdate type="inclusive">1982</unitdate>
 						</unittitle>
 					</did>
-				</c02>			
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">33</container>
@@ -2485,7 +2485,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 571,<unitdate type="inclusive">1982</unitdate>
 						</unittitle>
 					</did>
-				</c02>				
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">33</container>
@@ -2493,7 +2493,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 572, 1 of 2,<unitdate type="inclusive">1983</unitdate>
 						</unittitle>
 					</did>
-				</c02>			
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">33</container>
@@ -2508,7 +2508,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 573,<unitdate type="inclusive">1982</unitdate>
 						</unittitle>
 					</did>
-				</c02>				
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">33</container>
@@ -2516,7 +2516,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 574, 1 of 3,<unitdate type="inclusive">1982</unitdate>
 						</unittitle>
 					</did>
-				</c02>			
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">33</container>
@@ -2524,7 +2524,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 574, 2 of 3,<unitdate type="inclusive">1982</unitdate>
 						</unittitle>
 					</did>
-				</c02>				
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">34</container>
@@ -2532,7 +2532,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 574, 3 of 3,<unitdate type="inclusive">1982</unitdate>
 						</unittitle>
 					</did>
-				</c02>			
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">34</container>
@@ -2540,7 +2540,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 575,<unitdate type="inclusive">1982</unitdate>
 						</unittitle>
 					</did>
-				</c02>							
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">34</container>
@@ -2548,7 +2548,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 576, 1 of 2,<unitdate type="inclusive">1982</unitdate>
 						</unittitle>
 					</did>
-				</c02>			
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">34</container>
@@ -2563,7 +2563,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 577,<unitdate type="inclusive">1982</unitdate>
 						</unittitle>
 					</did>
-				</c02>			
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">34</container>
@@ -2571,7 +2571,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 577, 1 of 2,<unitdate type="inclusive">1983</unitdate>
 						</unittitle>
 					</did>
-				</c02>							
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">34</container>
@@ -2579,7 +2579,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 577, 2 of 2,<unitdate type="inclusive">1983</unitdate>
 						</unittitle>
 					</did>
-				</c02>			
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">34</container>
@@ -2587,7 +2587,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 577, 1 of 2,<unitdate type="inclusive">1984</unitdate>
 						</unittitle>
 					</did>
-				</c02>		
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">35</container>
@@ -2595,7 +2595,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 577, 2 of 2,<unitdate type="inclusive">1984</unitdate>
 						</unittitle>
 					</did>
-				</c02>						
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">35</container>
@@ -2603,7 +2603,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 578,<unitdate type="inclusive">1982</unitdate>
 						</unittitle>
 					</did>
-				</c02>						
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">35</container>
@@ -2611,7 +2611,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 579,<unitdate type="inclusive">1982</unitdate>
 						</unittitle>
 					</did>
-				</c02>		
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">35</container>
@@ -2626,7 +2626,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 581,<unitdate type="inclusive">1982</unitdate>
 						</unittitle>
 					</did>
-				</c02>						
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">35</container>
@@ -2648,7 +2648,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 582, 3 of 5,<unitdate type="inclusive">1983</unitdate>
 						</unittitle>
 					</did>
-				</c02>						
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">35</container>
@@ -2656,7 +2656,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 582, 4 of 5,<unitdate type="inclusive">1983</unitdate>
 						</unittitle>
 					</did>
-				</c02>						
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">36</container>
@@ -2664,7 +2664,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 582, 5 of 5,<unitdate type="inclusive">1983</unitdate>
 						</unittitle>
 					</did>
-				</c02>						
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">36</container>
@@ -2672,7 +2672,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 582,<unitdate type="inclusive">1984</unitdate>
 						</unittitle>
 					</did>
-				</c02>						
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">36</container>
@@ -2736,7 +2736,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 589,<unitdate type="inclusive">1983</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">37</container>
@@ -2744,7 +2744,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 590, 1 of 4,<unitdate type="inclusive">1983</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">37</container>
@@ -2752,7 +2752,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 590, 2 of 4,<unitdate type="inclusive">1983</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">37</container>
@@ -2760,7 +2760,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 590, 3 of 4,<unitdate type="inclusive">1983</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">37</container>
@@ -2768,7 +2768,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 590, 4 of 4,<unitdate type="inclusive">1983</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">37</container>
@@ -2776,7 +2776,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 590, 1 of 6,<unitdate type="inclusive">1984</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">37</container>
@@ -2784,7 +2784,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 590, 2 of 6,<unitdate type="inclusive">1984</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">38</container>
@@ -2792,7 +2792,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 590, 3 of 6,<unitdate type="inclusive">1984</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">38</container>
@@ -2800,7 +2800,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 590, 4 of 6,<unitdate type="inclusive">1984</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">38</container>
@@ -2808,7 +2808,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 590, 5 of 6,<unitdate type="inclusive">1984</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">38</container>
@@ -2816,7 +2816,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 590, 6 of 6,<unitdate type="inclusive">1984</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">38</container>
@@ -3140,7 +3140,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 608,<unitdate type="inclusive">1986</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">45</container>
@@ -3205,7 +3205,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 614, 1 of 2,<unitdate type="inclusive">1984</unitdate>
 						</unittitle>
 					</did>
-				</c02>		
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">45</container>
@@ -3213,7 +3213,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 614, 2 of 2,<unitdate type="inclusive">1984</unitdate>
 						</unittitle>
 					</did>
-				</c02>				
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">46</container>
@@ -3228,7 +3228,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 614, 2 of 2,<unitdate type="inclusive">1985</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">46</container>
@@ -3250,7 +3250,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 615, 3 of 8,<unitdate type="inclusive">1985</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">46</container>
@@ -3258,7 +3258,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 615, 4 of 8,<unitdate type="inclusive">1985</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">47</container>
@@ -3280,7 +3280,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 615, 7 of 8,<unitdate type="inclusive">1985</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">47</container>
@@ -3288,7 +3288,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 615, 8 of 8,<unitdate type="inclusive">1985</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">47</container>
@@ -3296,7 +3296,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 615, 1 of 2,<unitdate type="inclusive">1986</unitdate>
 						</unittitle>
 					</did>
-				</c02>			
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">47</container>
@@ -3304,7 +3304,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 615, 2 of 2,<unitdate type="inclusive">1986</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">48</container>
@@ -3312,7 +3312,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 617,<unitdate type="inclusive">1985</unitdate>
 						</unittitle>
 					</did>
-				</c02>		
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">48</container>
@@ -3600,7 +3600,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 634, 4 of 4,<unitdate type="inclusive">1986</unitdate>
 						</unittitle>
 					</did>
-				</c02>		
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">53</container>
@@ -3608,7 +3608,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 634,<unitdate type="inclusive">1987</unitdate>
 						</unittitle>
 					</did>
-				</c02>		
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">54</container>
@@ -3616,7 +3616,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 635,<unitdate type="inclusive">1986</unitdate>
 						</unittitle>
 					</did>
-				</c02>							
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">54</container>
@@ -3624,7 +3624,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 636,<unitdate type="inclusive">1986</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">54</container>
@@ -3632,7 +3632,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 637,<unitdate type="inclusive">1986</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">54</container>
@@ -3640,7 +3640,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 638,<unitdate type="inclusive">1986</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">54</container>
@@ -3648,7 +3648,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 638,<unitdate type="inclusive">1987</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">54</container>
@@ -3656,7 +3656,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 639, 1 of 2,<unitdate type="inclusive">1986</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">54</container>
@@ -3783,7 +3783,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 644,<unitdate type="inclusive">1987</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">57</container>
@@ -3847,7 +3847,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 644, 9 of 9,<unitdate type="inclusive">1987</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">58</container>
@@ -4293,7 +4293,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 672, 2 of 3,<unitdate type="inclusive">1989</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">65</container>
@@ -4301,7 +4301,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 672, 3 of 3,<unitdate type="inclusive">1989</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">65</container>
@@ -4309,7 +4309,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 673,<unitdate type="inclusive">1988</unitdate>
 						</unittitle>
 					</did>
-				</c02>					
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">65</container>
@@ -4317,7 +4317,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 673, 1 of 2,<unitdate type="inclusive">1989</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">65</container>
@@ -4325,7 +4325,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 673, 2 of 2,<unitdate type="inclusive">1989</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">65</container>
@@ -4340,7 +4340,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 674, 2 of 3,<unitdate type="inclusive">1988</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">66</container>
@@ -4348,7 +4348,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 674, 3 of 3,<unitdate type="inclusive">1988</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">66</container>
@@ -4432,7 +4432,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 682,<unitdate type="inclusive">1989</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">67</container>
@@ -4440,7 +4440,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 683, 1 of 2,<unitdate type="inclusive">1990</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">67</container>
@@ -4448,7 +4448,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 683, 2 of 2,<unitdate type="inclusive">1990</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">67</container>
@@ -4456,7 +4456,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 683,<unitdate type="inclusive">1991</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">67</container>
@@ -4471,7 +4471,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 684, 2 of 3<unitdate type="inclusive">1989</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">67</container>
@@ -4479,7 +4479,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 684, 3 of 3<unitdate type="inclusive">1989</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">68</container>
@@ -4778,7 +4778,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 704,<unitdate type="inclusive">1991</unitdate>
 						</unittitle>
 					</did>
-				</c02>		
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">73</container>
@@ -4786,7 +4786,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 705,<unitdate type="inclusive">1990</unitdate>
 						</unittitle>
 					</did>
-				</c02>		
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">73</container>
@@ -4802,7 +4802,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 705,<unitdate type="inclusive">1992</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">73</container>
@@ -4810,7 +4810,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 706, 1 of 3,<unitdate type="inclusive">1991</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">73</container>
@@ -4818,7 +4818,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 705, 2 of 3,<unitdate type="inclusive">1991</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">73</container>
@@ -4826,7 +4826,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Daily Report, Job 705, 3 of 3,<unitdate type="inclusive">1991</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">73</container>
@@ -4997,7 +4997,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 7, Algoma, WI,<unitdate type="inclusive">1932</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">77</container>
@@ -5005,7 +5005,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 8, Frankfort,<unitdate type="inclusive">1932</unitdate>
 						</unittitle>
 					</did>
-				</c02>		
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">77</container>
@@ -5013,7 +5013,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 9, Algoma, WI,<unitdate type="inclusive">1932</unitdate>
 						</unittitle>
 					</did>
-				</c02>				
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">77</container>
@@ -5295,7 +5295,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 37, Crystal Lake,<unitdate type="inclusive">1939</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">79</container>
@@ -5326,7 +5326,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 40, Escanaba,<unitdate type="inclusive">1938</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">80</container>
@@ -5637,7 +5637,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 65, Frankfort,<unitdate type="inclusive">1940</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">83</container>
@@ -6366,7 +6366,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 144, Menominee,<unitdate type="inclusive">1945</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">89</container>
@@ -6422,7 +6422,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 149, Round Island,<unitdate type="inclusive">1946-1947</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">90</container>
@@ -6454,7 +6454,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 151, Frankfort,<unitdate type="inclusive">1946</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">91</container>
@@ -6485,7 +6485,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 155, Round Island,<unitdate type="inclusive">1946</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">91</container>
@@ -6493,7 +6493,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 156, Manistique,<unitdate type="inclusive">1946</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">91</container>
@@ -6501,7 +6501,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 157, Mackinac Island,<unitdate type="inclusive">1946</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">91</container>
@@ -6517,7 +6517,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 159, Frankfort,<unitdate type="inclusive">1946-1947</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">91</container>
@@ -6525,7 +6525,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 160, St. Ignace,<unitdate type="inclusive">1946</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">91</container>
@@ -6533,8 +6533,8 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 161, Mackinac Island,<unitdate type="inclusive">1946</unitdate>
 						</unittitle>
 					</did>
-				</c02>					
-				
+				</c02>
+
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">91</container>
@@ -6564,7 +6564,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 162, Charlevoix, 4 of 4,<unitdate type="inclusive">1947</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">92</container>
@@ -6572,7 +6572,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 162, Charlevoix,<unitdate type="inclusive">1950</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">92</container>
@@ -6580,7 +6580,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 162, Charlevoix, Blue-line Drawings,<unitdate type="inclusive">1947</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">92</container>
@@ -6780,7 +6780,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 180, Frankfort,<unitdate type="inclusive">1948</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">94</container>
@@ -6855,7 +6855,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 188, Frankfort,<unitdate type="inclusive">1949</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">94</container>
@@ -6863,7 +6863,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 189, Mackinaw City,<unitdate type="inclusive">1949</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">95</container>
@@ -6945,7 +6945,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 195, Gulliver,<unitdate type="inclusive">1949</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">96</container>
@@ -7720,7 +7720,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 263, Elberta,<unitdate type="inclusive">1955</unitdate>
 						</unittitle>
 					</did>
-				</c02>					
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">104</container>
@@ -7734,7 +7734,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 265, Gulliver,<unitdate type="inclusive">1955</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">104</container>
@@ -7742,7 +7742,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 266, Elberta,<unitdate type="inclusive">1955</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">104</container>
@@ -7750,7 +7750,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 267, Mackinac Island,<unitdate type="inclusive">1955</unitdate>
 						</unittitle>
 					</did>
-				</c02>		
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">104</container>
@@ -7758,7 +7758,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 268, Mackinac Island,<unitdate type="inclusive">1955</unitdate>
 						</unittitle>
 					</did>
-				</c02>		
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">104</container>
@@ -7766,7 +7766,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 269, Mackinac City,<unitdate type="inclusive">1955</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">104</container>
@@ -7774,7 +7774,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 271, St. Ignace,<unitdate type="inclusive">1955</unitdate>
 						</unittitle>
 					</did>
-				</c02>		
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">104</container>
@@ -7947,7 +7947,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 283, Frankfort,<unitdate type="inclusive">1956-1957</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">107</container>
@@ -7955,7 +7955,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 284, St. Ignace,<unitdate type="inclusive">1956</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">107</container>
@@ -7963,7 +7963,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 285, Frankfort,<unitdate type="inclusive">1957</unitdate>
 						</unittitle>
 					</did>
-				</c02>					
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">107</container>
@@ -7971,7 +7971,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 286, Manistee,<unitdate type="inclusive">1957</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">107</container>
@@ -8137,7 +8137,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 298, City of Michigan, IN, 3 of 6,<unitdate type="inclusive">1959-1960</unitdate>
 						</unittitle>
 					</did>
-				</c02>				
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">110</container>
@@ -8525,7 +8525,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 316, St. Joseph, 1 of 2,<unitdate type="inclusive">1961-1962</unitdate>
 						</unittitle>
 					</did>
-				</c02>				
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">116</container>
@@ -8876,7 +8876,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 334, Mackinac Island, Drawings, 1 of 2,<unitdate type="inclusive">1964</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">121</container>
@@ -8884,7 +8884,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 334, Mackinac Island, Drawings, 2 of 2,<unitdate type="inclusive">1964</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">122</container>
@@ -9020,7 +9020,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 342, Frankfort,<unitdate type="inclusive">1965</unitdate>
 						</unittitle>
 					</did>
-				</c02>				
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">123</container>
@@ -9076,7 +9076,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 347, Frankfort, 2 of 2,<unitdate type="inclusive">1965</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">124</container>
@@ -9235,7 +9235,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 355, Harbor Beach, Contract and Estimate,<unitdate type="inclusive">1966</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">125</container>
@@ -10282,7 +10282,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 411, Manistee, Drawings,<unitdate type="inclusive">1971</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">141</container>
@@ -10542,7 +10542,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 426, Elberta,<unitdate type="inclusive">1973</unitdate>
 						</unittitle>
 					</did>
-				</c02>		
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">144</container>
@@ -10550,7 +10550,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 427, Elberta,<unitdate type="inclusive">1973</unitdate>
 						</unittitle>
 					</did>
-				</c02>		
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">145</container>
@@ -10558,7 +10558,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 428, Lake Township,<unitdate type="inclusive">1974</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">145</container>
@@ -11435,7 +11435,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 464, Lorain, OH,<unitdate type="inclusive">1977</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">161</container>
@@ -11618,7 +11618,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 474, Conneaut, OH, Estimates and Specifications,<unitdate type="inclusive">1977</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">163</container>
@@ -11810,7 +11810,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 486, Erie, PA, 1 of 2,<unitdate type="inclusive">1978</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">166</container>
@@ -11826,7 +11826,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 486, Erie, PA, Drawings,<unitdate type="inclusive">1978</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">166</container>
@@ -11870,7 +11870,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 487, Milwaukee, WI, Drawings, 2 of 2,<unitdate type="inclusive">1978</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">167</container>
@@ -11910,7 +11910,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 489, Michigan City, IN, Bid, Estimate and Contract,<unitdate type="inclusive">1978</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">168</container>
@@ -11918,7 +11918,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 489, Michigan City, IN, Contract Modifications,<unitdate type="inclusive">1978-1979</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">168</container>
@@ -11934,7 +11934,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 489, Michigan City, IN, Drawings,<unitdate type="inclusive">1978</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">168</container>
@@ -11942,7 +11942,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 489, Michigan City, IN, Interest Claims, 1 of 2,<unitdate type="inclusive">1978-1982</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">168</container>
@@ -11966,7 +11966,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 490, Arcadia, Bid and Contract,<unitdate type="inclusive">1978</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">169</container>
@@ -11974,7 +11974,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 490, Arcadia, Drawings and Photographs,<unitdate type="inclusive">1978</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">169</container>
@@ -11998,7 +11998,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 492, Cleveland, OH, 1 of 2,<unitdate type="inclusive">1977-1978</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">169</container>
@@ -12293,7 +12293,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 507, Harrisville, Little Lake, Lac la Belle, Big Bay, Black River and Grand Traverse,1 of 3,<unitdate type="inclusive">1979</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">175</container>
@@ -12559,7 +12559,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 526, Frankfort,<unitdate type="inclusive">1980</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">179</container>
@@ -13021,7 +13021,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 551, Kewaunee, WI, Contract Modifications,<unitdate type="inclusive">1981</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">187</container>
@@ -13029,7 +13029,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 551, Kewaunee, WI, Drawings,<unitdate type="inclusive">1981</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">187</container>
@@ -13037,7 +13037,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 551, Kewaunee, WI, Full Length and Copied Photographs,<unitdate type="inclusive">1981</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">187</container>
@@ -13222,7 +13222,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 554, Frankfort,<unitdate type="inclusive">1981</unitdate>
 						</unittitle>
 					</did>
-				</c02>		
+				</c02>
 						<c02 level="file">
 					<did>
 						<container type="Box" label="Box">190</container>
@@ -13230,7 +13230,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 555, Ashtabula, OH, 1 of 2,<unitdate type="inclusive">1981</unitdate>
 						</unittitle>
 					</did>
-				</c02>		
+				</c02>
 						<c02 level="file">
 					<did>
 						<container type="Box" label="Box">191</container>
@@ -13238,7 +13238,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 555, Ashtabula, OH, 2 of 2,<unitdate type="inclusive">1981</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 					<c02 level="file">
 					<did>
 						<container type="Box" label="Box">191</container>
@@ -13246,7 +13246,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 555, Ashtabula, OH, Drawings,<unitdate type="inclusive">1981</unitdate>
 						</unittitle>
 					</did>
-				</c02>		
+				</c02>
 					<c02 level="file">
 					<did>
 						<container type="Box" label="Box">191</container>
@@ -13254,7 +13254,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 556, Frankfort, 1 of 2,<unitdate type="inclusive">1981</unitdate>
 						</unittitle>
 					</did>
-				</c02>			
+				</c02>
 						<c02 level="file">
 					<did>
 						<container type="Box" label="Box">191</container>
@@ -13307,7 +13307,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 558, Peach Island, Marine Accident,<unitdate type="inclusive">1983</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 						<c02 level="file">
 					<did>
 						<container type="Box" label="Box">192</container>
@@ -13329,7 +13329,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 559, Dunkirk, NY,<unitdate type="inclusive">1981</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">192</container>
@@ -13337,7 +13337,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 560, Milwaukee, WI,<unitdate type="inclusive">1981</unitdate>
 						</unittitle>
 					</did>
-				</c02>		
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">193</container>
@@ -13345,7 +13345,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 560, Milwaukee, WI, Bid and Estimate,<unitdate type="inclusive">1981</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 						<c02 level="file">
 					<did>
 						<container type="Box" label="Box">193</container>
@@ -13353,7 +13353,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 560, Milwaukee, WI, Drawings,<unitdate type="inclusive">1981</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">193</container>
@@ -13361,7 +13361,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 561, Toledo, OH,<unitdate type="inclusive">1981-1982</unitdate>
 						</unittitle>
 					</did>
-				</c02>		
+				</c02>
 					<c02 level="file">
 					<did>
 						<container type="Box" label="Box">193</container>
@@ -13369,7 +13369,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 561, Toledo, OH, Bid Invitation,<unitdate type="inclusive">1981</unitdate>
 						</unittitle>
 					</did>
-				</c02>		
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">193</container>
@@ -13377,7 +13377,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 561, Toledo, OH, Contract and Estimate,<unitdate type="inclusive">1981</unitdate>
 						</unittitle>
 					</did>
-				</c02>			
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">193</container>
@@ -13385,7 +13385,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 561, Toledo, OH, Contract Correspondence,<unitdate type="inclusive">1982</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">193</container>
@@ -13393,7 +13393,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 561, Toledo, OH, Correspondence,<unitdate type="inclusive">1981-1982</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">194</container>
@@ -13401,7 +13401,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 561, Toledo, OH, Drawings,<unitdate type="inclusive">1982</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">194</container>
@@ -13409,7 +13409,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 561, Toledo, OH, Photographs,<unitdate type="inclusive">1982</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">194</container>
@@ -13417,7 +13417,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 562, Frankfort,<unitdate type="inclusive">1981-1982</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">194</container>
@@ -13895,7 +13895,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 582, Sheboygan, WI, Progressive Fabricators Inc. Correspondence<unitdate type="inclusive">1982-1983</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">202</container>
@@ -13903,7 +13903,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 583, Lakewood, OH,<unitdate type="inclusive">1982</unitdate>
 						</unittitle>
 					</did>
-				</c02>		
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">203</container>
@@ -13911,7 +13911,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 584, Frankfort,<unitdate type="inclusive">1982-1983</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">203</container>
@@ -14606,7 +14606,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 					<did>
 						<container type="Box" label="Box">215</container>
 						<container type="Folder" label="F">6</container>
-						<unittitle>Job 608, Irondequoit, NY, Drawings, 1 of 2,<unitdate type="inclusive">1984-1896</unitdate>
+						<unittitle>Job 608, Irondequoit, NY, Drawings, 1 of 2,<unitdate type="inclusive">1984-1986</unitdate>
 						</unittitle>
 					</did>
 				</c02>
@@ -14614,7 +14614,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 					<did>
 						<container type="Box" label="Box">215</container>
 						<container type="Folder" label="F">7</container>
-						<unittitle>Job 608, Irondequoit, NY, Drawings, 2 of 2,<unitdate type="inclusive">1984-1896</unitdate>
+						<unittitle>Job 608, Irondequoit, NY, Drawings, 2 of 2,<unitdate type="inclusive">1984-1986</unitdate>
 						</unittitle>
 					</did>
 				</c02>
@@ -14622,7 +14622,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 					<did>
 						<container type="Box" label="Box">216</container>
 						<container type="Folder" label="F">1</container>
-						<unittitle>Job 608, Irondequoit, NY, Estimate,<unitdate type="inclusive">1984-1896</unitdate>
+						<unittitle>Job 608, Irondequoit, NY, Estimate,<unitdate type="inclusive">1984-1986</unitdate>
 						</unittitle>
 					</did>
 				</c02>
@@ -14832,7 +14832,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 613, Fairport, OH,<unitdate type="inclusive">1984</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">219</container>
@@ -15082,7 +15082,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 620, Grand Haven, Contract, Receipts, and Estimate,<unitdate type="inclusive">1985</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">223</container>
@@ -15261,7 +15261,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 624, Au Gres, Yacht Club Correspondence, 3 of 3,<unitdate type="inclusive">1987-1992</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">226</container>
@@ -15299,7 +15299,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 627, Waukegan, IL,<unitdate type="inclusive">1985</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 					<c02 level="file">
 					<did>
 						<container type="Box" label="Box">226</container>
@@ -15307,7 +15307,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 627, Waukegan, IL, Contract Correspondence,<unitdate type="inclusive">1985</unitdate>
 						</unittitle>
 					</did>
-				</c02>			
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">227</container>
@@ -15315,7 +15315,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 627, Waukegan, IL, Specifications and Blue – line Drawings,<unitdate type="inclusive">1985</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">227</container>
@@ -15323,7 +15323,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 628, Lorain, OH,<unitdate type="inclusive">1985</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 					<c02 level="file">
 					<did>
 						<container type="Box" label="Box">227</container>
@@ -15331,7 +15331,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 628, Lorain, OH, Bid and Estimate,<unitdate type="inclusive">1985</unitdate>
 						</unittitle>
 					</did>
-				</c02>			
+				</c02>
 						<c02 level="file">
 					<did>
 						<container type="Box" label="Box">227</container>
@@ -15339,7 +15339,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 628, Lorain, OH, Claims, 1 of 2,<unitdate type="inclusive">1985-1987</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 						<c02 level="file">
 					<did>
 						<container type="Box" label="Box">227</container>
@@ -15354,7 +15354,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 628, Lorain, OH, Contract Correspondence,<unitdate type="inclusive">1986-1987</unitdate>
 						</unittitle>
 					</did>
-				</c02>		
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">227</container>
@@ -15362,7 +15362,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 628, Lorain, OH, Correspondence, 1 of 3,<unitdate type="inclusive">1986-1987</unitdate>
 						</unittitle>
 					</did>
-				</c02>				
+				</c02>
 					<c02 level="file">
 					<did>
 						<container type="Box" label="Box">228</container>
@@ -15370,7 +15370,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 628, Lorain, OH, Correspondence, 2 of 3,<unitdate type="inclusive">1986-1987</unitdate>
 						</unittitle>
 					</did>
-				</c02>		
+				</c02>
 					<c02 level="file">
 					<did>
 						<container type="Box" label="Box">228</container>
@@ -15393,7 +15393,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 628, Lorain, OH, Orders and Receipts,<unitdate type="inclusive">1986</unitdate>
 						</unittitle>
 					</did>
-				</c02>			
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">228</container>
@@ -15409,7 +15409,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 628, Lorain, OH, Specifications,<unitdate type="inclusive">1984 – 1985</unitdate>
 						</unittitle>
 					</did>
-				</c02>					
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">229</container>
@@ -15417,7 +15417,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 629, Green Bay, WI,<unitdate type="inclusive">1985 – 1986</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">229</container>
@@ -15425,7 +15425,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 629, Green Bay, WI, Contract, 1 of 2,<unitdate type="inclusive">1985 – 1986</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">229</container>
@@ -15433,7 +15433,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 629, Green Bay, WI, Contract, 2 of 2,<unitdate type="inclusive">1985 – 1986</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">229</container>
@@ -15441,7 +15441,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 629, Green Bay, WI, Contract Performance,<unitdate type="inclusive">1985 – 1986</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">229</container>
@@ -15518,7 +15518,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 634, Racine, WI, Claim, 2 of 2,<unitdate type="inclusive">1986 – 1989</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">231</container>
@@ -15526,7 +15526,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 634, Racine, WI, Correspondence, 1 of 2,<unitdate type="inclusive">1986 – 1987</unitdate>
 						</unittitle>
 					</did>
-				</c02>		
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">231</container>
@@ -16313,7 +16313,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 650, Harrisville,<unitdate type="inclusive">1987</unitdate>
 						</unittitle>
 					</did>
-				</c02>		
+				</c02>
 					<c02 level="file">
 					<did>
 						<container type="Box" label="Box">245</container>
@@ -16321,7 +16321,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 651, Saginaw, 1 of 2,<unitdate type="inclusive">1987-1988</unitdate>
 						</unittitle>
 					</did>
-				</c02>				
+				</c02>
 						<c02 level="file">
 					<did>
 						<container type="Box" label="Box">245</container>
@@ -16329,7 +16329,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 651, Saginaw, 2 of 2,<unitdate type="inclusive">1987-1988</unitdate>
 						</unittitle>
 					</did>
-				</c02>				
+				</c02>
 						<c02 level="file">
 					<did>
 						<container type="Box" label="Box">245</container>
@@ -16337,7 +16337,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 651, Saginaw, Contract,<unitdate type="inclusive">1987</unitdate>
 						</unittitle>
 					</did>
-				</c02>				
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">245</container>
@@ -16345,7 +16345,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 652, Allendale,<unitdate type="inclusive">1987-1988</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 					<c02 level="file">
 					<did>
 						<container type="Box" label="Box">246</container>
@@ -16353,7 +16353,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 652, Allendale, Contract,<unitdate type="inclusive">1987</unitdate>
 						</unittitle>
 					</did>
-				</c02>			
+				</c02>
 					<c02 level="file">
 					<did>
 						<container type="Box" label="Box">246</container>
@@ -16361,7 +16361,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 653, Avon Lake, OH,<unitdate type="inclusive">1987</unitdate>
 						</unittitle>
 					</did>
-				</c02>					
+				</c02>
 					<c02 level="file">
 					<did>
 						<container type="Box" label="Box">246</container>
@@ -16369,7 +16369,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 653, Avon Lake, OH, Contract,<unitdate type="inclusive">1987</unitdate>
 						</unittitle>
 					</did>
-				</c02>		
+				</c02>
 					<c02 level="file">
 					<did>
 						<container type="Box" label="Box">246</container>
@@ -16377,7 +16377,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 653, Avon Lake, OH, Drawings,<unitdate type="inclusive">1987</unitdate>
 						</unittitle>
 					</did>
-				</c02>			
+				</c02>
 					<c02 level="file">
 					<did>
 						<container type="Box" label="Box">246</container>
@@ -16385,7 +16385,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 653, Avon Lake, OH, Photographs,<unitdate type="inclusive">undated</unitdate>
 						</unittitle>
 					</did>
-				</c02>		
+				</c02>
 					<c02 level="file">
 					<did>
 						<container type="Box" label="Box">246</container>
@@ -16393,7 +16393,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 654, Elberta,<unitdate type="inclusive">1987-1988</unitdate>
 						</unittitle>
 					</did>
-				</c02>		
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">246</container>
@@ -16401,7 +16401,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 655, Cleveland, OH,<unitdate type="inclusive">1987</unitdate>
 						</unittitle>
 					</did>
-				</c02>		
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">247</container>
@@ -16409,7 +16409,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 656, Lakeside Marblehead, OH,<unitdate type="inclusive">1987</unitdate>
 						</unittitle>
 					</did>
-				</c02>		
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">247</container>
@@ -16417,7 +16417,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 656, Lakeside Marblehead, OH, Contract,<unitdate type="inclusive">1987</unitdate>
 						</unittitle>
 					</did>
-				</c02>		
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">247</container>
@@ -16425,7 +16425,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 657, Green Bay, WI,<unitdate type="inclusive">1987</unitdate>
 						</unittitle>
 					</did>
-				</c02>		
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">247</container>
@@ -16433,7 +16433,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 657, Green Bay, WI, Bid,<unitdate type="inclusive">1987</unitdate>
 						</unittitle>
 					</did>
-				</c02>		
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">247</container>
@@ -16441,7 +16441,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 657, Green Bay, WI, Blue – line Drawings,<unitdate type="inclusive">1987-1988</unitdate>
 						</unittitle>
 					</did>
-				</c02>		
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">247</container>
@@ -16449,7 +16449,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 657, Green Bay, WI, Claim, 1 of 4,<unitdate type="inclusive">1987-1989</unitdate>
 						</unittitle>
 					</did>
-				</c02>		
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">248</container>
@@ -16464,7 +16464,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 657, Green Bay, WI, Claim, 3 of 4,<unitdate type="inclusive">1987-1989</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 					<c02 level="file">
 					<did>
 						<container type="Box" label="Box">248</container>
@@ -16479,7 +16479,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 657, Green Bay, WI, Correspondence, 1 of 4,<unitdate type="inclusive">1987-1988</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">248</container>
@@ -16487,7 +16487,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 657, Green Bay, WI, Correspondence, 2 of 4,<unitdate type="inclusive">1987-1988</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">249</container>
@@ -16495,7 +16495,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 657, Green Bay, WI, Correspondence, 3 of 4,<unitdate type="inclusive">1987-1988</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 					<c02 level="file">
 					<did>
 						<container type="Box" label="Box">249</container>
@@ -16503,7 +16503,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 657, Green Bay, WI, Correspondence, 4 of 4,<unitdate type="inclusive">1987-1988</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 					<c02 level="file">
 					<did>
 						<container type="Box" label="Box">249</container>
@@ -16511,7 +16511,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 657, Green Bay, WI, Equitable Adjustment Claim,<unitdate type="inclusive">1988</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">249</container>
@@ -16519,7 +16519,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 657, Green Bay, WI, Equitable Adjustment Claim Correspondence, 1 of 2,<unitdate type="inclusive">1987-1988</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">249</container>
@@ -16527,7 +16527,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 657, Green Bay, WI, Equitable Adjustment Claim Correspondence, 2 of 2,<unitdate type="inclusive">1987-1988</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">249</container>
@@ -16535,7 +16535,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 657, Green Bay, WI, Griffin, Cochrane, Marshall and Elger Correspondence, 1 of 5,<unitdate type="inclusive">1987-1988</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">250</container>
@@ -16644,7 +16644,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 659, Saginaw, Estimate,<unitdate type="inclusive">1987-1988</unitdate>
 						</unittitle>
 					</did>
-				</c02>			
+				</c02>
 					<c02 level="file">
 					<did>
 						<container type="Box" label="Box">252</container>
@@ -16652,7 +16652,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 659, Saginaw, Photographs,<unitdate type="inclusive">undated</unitdate>
 						</unittitle>
 					</did>
-				</c02>			
+				</c02>
 					<c02 level="file">
 					<did>
 						<container type="Box" label="Box">252</container>
@@ -16660,7 +16660,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 660, Bay City,<unitdate type="inclusive">1987-1988</unitdate>
 						</unittitle>
 					</did>
-				</c02>			
+				</c02>
 					<c02 level="file">
 					<did>
 						<container type="Box" label="Box">252</container>
@@ -16675,7 +16675,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 661, Detroit, 1 of 2,<unitdate type="inclusive">1987-1989</unitdate>
 						</unittitle>
 					</did>
-				</c02>			
+				</c02>
 					<c02 level="file">
 					<did>
 						<container type="Box" label="Box">252</container>
@@ -16690,7 +16690,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 661, Detroit, Contract,<unitdate type="inclusive">1987-1988</unitdate>
 						</unittitle>
 					</did>
-				</c02>			
+				</c02>
 					<c02 level="file">
 					<did>
 						<container type="Box" label="Box">252</container>
@@ -16698,7 +16698,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 661, Detroit, Drawings,<unitdate type="inclusive">1987</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">252</container>
@@ -16706,7 +16706,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 661, Detroit, Estimate,<unitdate type="inclusive">1987</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">253</container>
@@ -16714,7 +16714,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 662, Frankfort,<unitdate type="inclusive">1987-1988</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">253</container>
@@ -16722,7 +16722,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 663, Monroe,<unitdate type="inclusive">1988</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">253</container>
@@ -16730,7 +16730,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 663, Monroe, Bid,<unitdate type="inclusive">1987</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">253</container>
@@ -16738,7 +16738,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 663, Monroe, Blue – line Drawings,<unitdate type="inclusive">1987</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">253</container>
@@ -16746,7 +16746,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 663, Monroe, Contract,<unitdate type="inclusive">1988</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">253</container>
@@ -16754,7 +16754,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 663, Monroe, Photographs,<unitdate type="inclusive">1988</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">253</container>
@@ -16762,7 +16762,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 663, Monroe, Receipts and Estimate,<unitdate type="inclusive">1988</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">253</container>
@@ -17281,7 +17281,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 673, Charlevoix, Receipts and Estimate,<unitdate type="inclusive">1988</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">263</container>
@@ -17289,7 +17289,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 675, Frankfort,<unitdate type="inclusive">1988</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">263</container>
@@ -17297,7 +17297,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 675, Frankfort, Correspondence and Estimate,<unitdate type="inclusive">1988</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">263</container>
@@ -17305,7 +17305,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 675, Frankfort, Drawings,<unitdate type="inclusive">1988</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">263</container>
@@ -17313,7 +17313,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 675, Frankfort, Specifications,<unitdate type="inclusive">1989</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">263</container>
@@ -17496,7 +17496,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 680, Monroe,<unitdate type="inclusive">1988 – 1989</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">266</container>
@@ -18599,7 +18599,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 707, Presque Isle, Blue-line Drawings, 3 of 3,<unitdate type="inclusive">1990</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">286</container>
@@ -19633,7 +19633,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 737, Lake Erie, OH,<unitdate type="inclusive">1993</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">304</container>
@@ -19641,7 +19641,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 737, Lake Erie, OH, Bid,<unitdate type="inclusive">1993</unitdate>
 						</unittitle>
 					</did>
-				</c02>		
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">305</container>
@@ -19928,7 +19928,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 745, Dunkirk, NY, Photographs,<unitdate type="inclusive">1993</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">310</container>
@@ -19936,7 +19936,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 745, Dunkirk, NY, Specifications,<unitdate type="inclusive">1993</unitdate>
 						</unittitle>
 					</did>
-				</c02>				
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">311</container>
@@ -19944,7 +19944,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<unittitle>Job 763, Chicago, IL, Advance Case,<unitdate type="inclusive">1998</unitdate>
 						</unittitle>
 					</did>
-				</c02>	
+				</c02>
 				<c02 level="file">
 					<did>
 						<container type="Box" label="Box">311</container>
@@ -20965,7 +20965,7 @@ Luedtke Engineering Company (Frankfort, Mich.) Organizational Records, Folder # 
 						<container type="Box" label="Box">326</container>
 						<container type="Folder" label="F">10</container>
 						<unittitle>NLB Replacement of Three Fender Walls at Carfloat, Detroit, Photographs,<unitdate type="inclusive">1991</unitdate>
-						</unittitle> 
+						</unittitle>
 					</did>
 				</c02>
 				<c02 level="file">
