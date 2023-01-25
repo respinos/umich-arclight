@@ -708,6 +708,36 @@ label.toggle-bookmark > span:nth-child(2) {
       padding: 0.25rem 0.5rem;
       font-size: 14px;
     }
+
+    .btn-outline-secondary {
+      background-color: #fff;
+      border: solid 1px var(--color-neutral-400);
+      color: var(--color-neutral-400);
+      padding: 0.5rem;
+    }
+
+    .btn-outline-secondary:not(:disabled):not(.disabled).active {
+      background-color: var(--color-teal-100);
+      border: solid 1px var(--color-teal-400);
+      color: var(--color-teal-400);
+    }
+
+    .btn-outline-secondary:not(:disabled):not(.disabled).active:before {
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      content: "\f00c";
+      margin-right: 0.35rem;
+      display: inline-block;
+      text-decoration: none;
+    }
+
+    .btn-outline-secondary:hover {
+      background-color: var(--color-neutral-100);
+    }
+  }
+
+  .pagination {
+    padding-bottom: .5rem;
   }
 
   .al-grouped-results .al-grouped-title-bar {
@@ -983,19 +1013,6 @@ label.toggle-bookmark > span:nth-child(2) {
     line-height: 1.2;
     .al-repository-street-address {
       margin-bottom: 1rem;
-    }
-  }
-}
-
-.card-text,
-.al-grouped-title-bar {
-  .responsiveTruncatorToggle {
-    &::before {
-      background: linear-gradient(
-        to left,
-        $facet-grey,
-        rgba(255, 255, 255, 0.1)
-      );
     }
   }
 }
