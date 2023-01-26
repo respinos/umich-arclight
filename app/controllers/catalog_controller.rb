@@ -11,6 +11,8 @@ class CatalogController < ApplicationController
   include DulArclight::FieldConfigHelpers
   include HierarchyHelper
 
+  helper_method :pdf_available?
+
   # DUL CUSTOMIZATION: temporary patch for
   # ArcLight bug https://github.com/projectblacklight/arclight/issues/741
   # Patched for now by copying the raw method from Blacklight https://github.com/projectblacklight/blacklight/blob/master/app/controllers/concerns/blacklight/catalog.rb#L57-L63
@@ -383,6 +385,7 @@ class CatalogController < ApplicationController
     config.add_restrictions_field 'userestrict_tesim', label: 'Use & Permissions', helper_method: :convert_rights_urls
 
     # Collection Show Page - Background Section
+    config.add_background_field 'para_tesim', label: '', helper_method: :render_html_tags
     config.add_background_field 'scopecontent_tesim', label: 'Scope and Content', helper_method: :render_html_tags
     config.add_background_field 'bioghist_tesim', label: 'Biographical / Historical', helper_method: :render_bioghist
     config.add_background_field 'acqinfo_ssim', label: 'Acquisition Information', helper_method: :render_html_tags
@@ -403,6 +406,10 @@ class CatalogController < ApplicationController
     config.add_related_field 'otherfindaid_tesim', label: 'Other Finding Aids', helper_method: :render_html_tags
     config.add_related_field 'altformavail_tesim', label: 'Alternative Form Available', helper_method: :render_html_tags
     config.add_related_field 'originalsloc_tesim', label: 'Location of Originals', helper_method: :render_html_tags
+    config.add_related_field 'bibliography_tesim', label: 'Bibliography', helper_method: :render_html_tags
+    config.add_related_field 'chronlist_tesim', label: 'Chronlist', helper_method: :render_html_tags
+    config.add_related_field 'index_tesim', label: 'Index', helper_method: :render_html_tags
+    config.add_related_field 'list_tesim', label: 'List', helper_method: :render_html_tags
 
     # Collection Show Page - Indexed Terms Section
     config.add_indexed_terms_field 'access_subjects_ssim', label: 'Subjects', link_to_facet: true, separator_options: {

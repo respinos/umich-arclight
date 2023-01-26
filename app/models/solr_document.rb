@@ -28,6 +28,16 @@ class SolrDocument # rubocop:disable Metrics/ClassLength
     render_html_tags(value: [value]) if value.present?
   end
 
+  def ead_author
+    fetch('ead_author_ssm', []).first
+  end
+
+  def revdesc_changes
+    fetch('revdesc_changes_ssm', []).map do |rev|
+      JSON.parse(rev)
+    end
+  end
+
   # DUL CUSTOMIZATION: ARK & Permalink
   def ark
     fetch('ark_ssi', '')
@@ -67,6 +77,14 @@ class SolrDocument # rubocop:disable Metrics/ClassLength
     render_html_tags(value: [values]) if values.present?
   end
 
+  def odd
+    fetch('odd_tesim', [])
+  end
+
+  def bioghist
+    fetch('bioghist_tesim', [])
+  end
+
   # DUL custom property for a tagless short description of a collection or component.
   # Can be used e.g., in meta tags or popovers/tooltips.
   def short_description
@@ -91,6 +109,12 @@ class SolrDocument # rubocop:disable Metrics/ClassLength
 
   def component?
     parent_ids.present?
+  end
+
+  def parent_ids_keyed
+    parent_ids.map do |parent_id|
+      parent_id.gsub('.', '-')
+    end
   end
 
   def accessrestrict

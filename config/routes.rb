@@ -1,4 +1,4 @@
-Rails.application.routes.draw do
+Rails.application.routes.draw do # rubocop:disable Metrics/BlockLength
 
   concern :range_searchable, BlacklightRangeLimit::Routes::RangeSearchable.new
   mount Blacklight::Engine => '/'
@@ -42,6 +42,12 @@ Rails.application.routes.draw do
 
   # DUL CUSTOMIZATION: Download the source EAD XML file using the collection slug
   get '/catalog/:id/xml', action: 'ead_download', controller: 'catalog', as: 'ead_download',
+                          constraints: { id: collection_slug_constraint }
+
+  get '/catalog/:id/html', action: 'html_download', controller: 'catalog', as: 'html_download',
+                           constraints: { id: collection_slug_constraint }
+
+  get '/catalog/:id/pdf', action: 'pdf_download', controller: 'catalog', as: 'pdf_download',
                           constraints: { id: collection_slug_constraint }
 
   # DUL CUSTOMIZATION: Render a sitemap on-the-fly from a query (if configured)

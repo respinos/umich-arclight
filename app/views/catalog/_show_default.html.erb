@@ -194,8 +194,17 @@
     <div class="access-preview-snippet">
       <%= render 'using_header' %>
 
+      <% if pdf_available? %>
+        <div class="mb-3 x-printable">
+          <%= link_to url_for(action: 'pdf_download', id: @document.eadid), download: "#{@document.eadid}.pdf", class: 'btn btn-primary btn-compact' do %>
+            <i class="far fa-file-pdf" aria=hidden="true"></i> <%= t('arclight.views.show.download.pdf') %>
+          <% end %>
+        </div>
+      <% end %>
+
       <%= render 'custom_metadata',
         document: @document, field_accessor: 'restrictions_field', truncation_length: 200, skip_headings: true %>
+
       <p><a class="smooth-scroll" href="#<%=t("arclight.views.show.sections.using_field").parameterize %>" data-turbolinks="false">More ...</a></p>
     </div>
 
@@ -309,6 +318,14 @@
       <% items = blacklight_config.show.component_access_tab_items.select { |i|  fields_have_content?(@document, i) } %>
     <% else %>
       <% items = blacklight_config.show.context_access_tab_items.select { |i|  fields_have_content?(@document, i) } %>
+    <% end %>
+
+    <% if pdf_available? %>
+      <div class="mb-3 x-printable">
+        <%= link_to url_for(action: 'pdf_download', id: @document.eadid), download: "#{@document.eadid}.pdf", class: 'btn btn-primary' do %>
+          <i class="far fa-file-pdf" aria=hidden="true"></i> <%= t('arclight.views.show.download.pdf') %>
+        <% end %>
+      </div>
     <% end %>
 
     <% items.each_with_index do |item, index| %>

@@ -30,6 +30,8 @@ en:
           indexed_terms_field: Subjects
           using_field: "Using These Materials"
           indexes_field: "Other Indexes"
+        download:
+          pdf: "Download PDF Finding Aid"
     within_collection_dropdown:
       all_collections: "All Collections"
       this_collection: "This Collection"

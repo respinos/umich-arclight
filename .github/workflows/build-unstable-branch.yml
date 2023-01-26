@@ -1,5 +1,5 @@
-name: Build unstable image
-description: "Builds an image from any branch and push/tags it in the `-unstable` repository with only the commit hash"
+---
+name: "Build unstable image"
 
 on:
   workflow_dispatch:  # This allows to kick-off the action manually from GitHub Actions
@@ -27,4 +27,4 @@ jobs:
           context: .
           push: true
           tags: 'ghcr.io/mlibrary/umich-arclight/umich-arclight-unstable:${{ github.sha }}'
-          file: .docker/Dockerfile.testing
+          file: .docker/Dockerfile.unstable

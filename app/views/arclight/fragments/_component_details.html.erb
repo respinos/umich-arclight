@@ -1,0 +1,21 @@
+<% if component.odd.present? or component.bioghist.present? or component.total_digital_object_count > 0 %>
+  <blockquote>
+    <% component.odd.each do |value_| %>
+      <p>
+        <%= render_html_tags(value: [value_]) %>
+      </p>
+    <% end %>
+    <% component.bioghist.each do |value_| %>
+      <p>
+        <%= render_html_tags(value: [value_]) %>
+      </p>
+    <% end %>
+    <% if component.total_digital_object_count > 0 && component.digital_objects.present? %>
+      <% component.digital_objects.each do |dao| %>
+        <p>
+          <a href="<%= dao.href %>">View: <%= dao.label %></a>
+        </p>
+      <% end %>
+    <% end %>
+  </blockquote>
+<% end %> 
