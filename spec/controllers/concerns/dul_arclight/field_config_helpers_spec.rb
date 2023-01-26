@@ -9,7 +9,7 @@ end
 RSpec.describe DulArclight::FieldConfigHelpers do
   subject(:helper) { TestController.new }
 
-  let(:RIGHTS_STATEMENTS) do
+  let(:RIGHTS_STATEMENTS) do # rubocop:disable RSpec/VariableName
     {
       'http://rightsstatements.org/vocab/InC/1.0/' => {
         'title' => 'In Copyright',

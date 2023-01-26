@@ -7,11 +7,11 @@ on:
   pull_request:
 
 env:
-  RAILS_ENV: test
-  SOLR_URL: "http://127.0.0.1:8983/solr/test"
+  RAILS_ENV: "test"
+  DATABASE_URL: "postgresql://postgres:postgres@127.0.0.1:5432/umich-arclight-test"
+  SOLR_URL: "http://127.0.0.1:8983/solr/umich-arclight-test"
 
 jobs:
-
   ci:
     runs-on: ubuntu-latest
     name: Ruby ${{ matrix.ruby }}
@@ -19,7 +19,6 @@ jobs:
       matrix:
         ruby:
           - '2.6.3'
-
     services:
       db:
         image: postgres
@@ -34,7 +33,6 @@ jobs:
         ports:
           # Maps tcp port 5432 on service container to the host
           - 5432:5432
-
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -43,13 +41,11 @@ jobs:
         with:
           ruby-version: ${{ matrix.ruby }}
           bundler-cache: true
-      - name: Start Solr
-        run: docker run -d -p 8983:8983 -v $(pwd)/solr/arclight/conf:/test/conf solr:8 solr-precreate test /test
-      - name: Bundle Install
-        run: bundle install
-      - name: DB Migration
-        run: bundle exec rake db:migrate
-      - name: Rubocop
-        run: bundle exec rubocop
-      - name: RSpec
-        run: bundle exec rspec
+      - name: Run Solr (and create core)
+        run: docker run -d -p 8983:8983 -v $(pwd)/solr/arclight:/umich-arclight:ro  solr:8 solr-precreate umich-arclight-test /umich-arclight
+      - name: Yarn Install
+        run: yarn install
+      - name: Setup Database (db:setup)
+        run: bundle exec rake db:setup
+      - name: Continuous Integration (standard rb, rubocop, test, spec)
+        run: bundle exec rake
