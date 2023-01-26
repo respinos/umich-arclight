@@ -31,8 +31,10 @@ gem 'puppeteer-ruby'
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails', '~> 4.0'
-  gem 'rubocop', '~> 0.79.0'
-  gem 'rubocop-rspec', '~> 1.37'
+  gem 'standard'
+  gem 'rubocop-rails'
+  gem 'rubocop-rspec'
+  gem 'rubocop-rake'
 end
 
 group :development do

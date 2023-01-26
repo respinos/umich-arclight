@@ -359,10 +359,10 @@ class CatalogController < ApplicationController
                                                }
 
     config.add_summary_field 'languages', label: 'Language', accessor: 'languages', separator_options: {
-      words_connector: '<br/>',
-      two_words_connector: '<br/>',
-      last_word_connector: '<br/>'
-    },
+                                                                                      words_connector: '<br/>',
+                                                                                      two_words_connector: '<br/>',
+                                                                                      last_word_connector: '<br/>'
+                                                                                    },
                                           if: lambda { |_context, _field_config, document|
                                                 document.languages.present?
                                               }
@@ -483,10 +483,10 @@ class CatalogController < ApplicationController
     config.add_component_field 'unitid_ssm', label: 'Unit ID', helper_method: :render_html_tags
 
     config.add_component_field 'languages', label: 'Language', accessor: 'languages', separator_options: {
-      words_connector: '<br/>',
-      two_words_connector: '<br/>',
-      last_word_connector: '<br/>'
-    },
+                                                                                        words_connector: '<br/>',
+                                                                                        two_words_connector: '<br/>',
+                                                                                        last_word_connector: '<br/>'
+                                                                                      },
                                             if: lambda { |_context, _field_config, document|
                                                   document.languages.present?
                                                 }

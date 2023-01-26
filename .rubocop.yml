@@ -1,9 +1,17 @@
-require: rubocop-rspec
+---
+inherit_from: .rubocop_todo.yml
 
-inherit_from:
-  - .rubocop_todo.yml
+require:
+  - standard
+  - rubocop-rails
+  - rubocop-rspec
+  - rubocop-rake
+
+inherit_gem:
+  standard: config/base.yml
 
 AllCops:
+  NewCops: enable
   Exclude:
     - 'bin/**/*'
     - 'db/**/*'
@@ -11,25 +19,10 @@ AllCops:
     - 'node_modules/**/*'
     - 'sample-ead/**/*'
     - 'tmp/**/*'
-  TargetRubyVersion: 2.6
   DisplayCopNames: true
 
-Layout/LineLength:
-  Max: 160
-  Exclude:
-    - 'lib/dul_arclight/traject/ead2_config.rb'
-
-Metrics/ClassLength:
-  Exclude:
-    - 'app/controllers/catalog_controller.rb'
-
-Metrics/BlockLength:
-  Exclude:
-    - 'app/controllers/catalog_controller.rb'
-    - 'lib/dul-arclight/traject/ead2_config.rb'
-    - 'lib/tasks/**/*'
-    - 'spec/**/*'
-    - 'tasks/**/*'
-
 Rails:
-  Enabled: true
+  Enabled: true # enable rubocop-rails cops
+
+RSpec:
+  Enabled: true # enable rubocop-rspec cops
