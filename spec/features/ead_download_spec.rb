@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require 'rails_helper'
 
 RSpec.xdescribe 'EAD downloads', type: :feature do
   context 'with collection URL followed by /xml' do

@@ -4,7 +4,7 @@
 # https://github.com/projectblacklight/arclight/blob/master/spec/models/arclight/parent_spec.rb
 # Last checked for updates: ArcLight v0.3.0.
 
-require 'spec_helper'
+require 'rails_helper'
 
 RSpec.describe Arclight::Parent do
   subject(:instance) { described_class.new(id: 'abc', label: 'ABC', eadid: '123', level: 'collection') }

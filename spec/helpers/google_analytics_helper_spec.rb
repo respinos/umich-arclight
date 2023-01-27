@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-describe GoogleAnalyticsHelper, type: :helper do
+RSpec.describe GoogleAnalyticsHelper, type: :helper do
   describe 'ga_user_properties' do
     context 'with document' do
       before do

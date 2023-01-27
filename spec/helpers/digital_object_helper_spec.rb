@@ -1,4 +1,4 @@
-describe DigitalObjectHelper, type: :helper do
+RSpec.describe DigitalObjectHelper, type: :helper do
   describe '#online_access_items?' do
     before do
       allow(helper).to receive(:ONLINE_ACCESS_DAOS).and_return(
