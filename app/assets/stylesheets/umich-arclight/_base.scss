@@ -125,6 +125,21 @@ h1, h2, h3 {
   background-color: white;
 }
 
+.btn-outline-dark {
+  border: 1px solid #343a40;
+  color: #343a40;
+}
+
+.btn-outline-secondary {
+  border: 1px solid #6c757d;
+  color: #6c757d;
+}
+
+.btn-outline-ghost {
+  border: 1px solid #eee;
+  color: #eee;
+}
+
 .m-search-btn {
   color: var(--color-neutral-500);
   background-color: var(--color-maize-400);

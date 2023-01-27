@@ -16,6 +16,14 @@
 
 (function (global) {
   var CollectionNavigation;
+  var NestedNavigation;
+
+  NestedNavigation = {
+    init: function(e, page = 1) {
+      var $el = $(el);
+      var data = $el.data();
+    }
+  };
 
   CollectionNavigation = {
     init: function (el, page = 1) {
@@ -41,6 +49,9 @@
                       </section>');
       $markup.append(placeholder);
       $el.html($markup);
+
+      const isNested = $el.is(".nested-components");
+      console.log("AHOY IS NESTED", isNested);
 
       $.ajax({
         url: data.arclight.path,
@@ -93,7 +104,11 @@
           }
         });
 
-        $el.hide().html('').append(sortPerPage).append(newDocs)
+        if ( isNested ) {
+          newDocs.attr('id', 'documents-' + (new Date).getTime());
+        }
+
+        $el.hide().html('').append(isNested ? '' : sortPerPage).append(newDocs)
           .fadeIn(500);
         if (showDocs.length > 0) {
           $el.trigger('navigation.contains.elements');
@@ -101,7 +116,7 @@
         Blacklight.doBookmarkToggleBehavior();
 
         // DUL CUSTOMIZATION: 'deep' clone sortAndPerPage and append ID
-        if ( $( sortPerPage ).text().indexOf('Previous') > -1 ) {
+        if ( ! isNested && $( sortPerPage ).text().indexOf('Previous') > -1 ) {
           $( sortPerPage ).clone( true ).prop('id', 'sortAndPerPageBottom' ).insertAfter('#documents');
           // fix duplicate IDs
           $("#sortAndPerPageBottom #sort-dropdown").prop('id', 'sort-dropdown-bottom' );
@@ -124,12 +139,34 @@ Blacklight.onLoad(function () {
   });
 
   $('.al-contents').on('navigation.contains.elements', function (e) {
+
+    $(e.target).find('article').each(function(idx) {
+      let config = $(this).find('[data-config="true"]').get(0);
+      let arclightData = $(config).data('arclight');
+      // console.log(config);
+      let html = `<div class="collapse indented" id="${this.dataset.documentId}-collapsible-hierarchy">
+        <div 
+          class="al-contents child-components nested-components children-count-${config.dataset.numberOfChildren}"></div>
+      </div>`;
+      let $div = $(html).insertAfter($(this));
+      $div.find('.al-contents').get(0).dataset.arclight = config.dataset.arclight;
+
+      if ( arclightData.childrencount == 1 ) {
+        setTimeout(() => {
+          $div.collapse();
+        }, 1000);
+      }
+
+      // console.log("-->", config.dataset.arclight);
+    })
+
     var toEnable = $('[data-hierarchy-enable-me]');
     var srOnly = $('h2[data-sr-enable-me]');
     toEnable.removeClass('disabled');
     toEnable.text(srOnly.data('hasContents'));
     srOnly.text(srOnly.data('hasContents'));
 
+    // these don't exist 
     $(e.target).find('.collapse').on('show.bs.collapse', function (ee) {
       var $newTarget = $(ee.target);
       $newTarget.find('.al-contents').each(function (i, element) {
@@ -138,5 +175,6 @@ Blacklight.onLoad(function () {
         $newTarget.off('show.bs.collapse');
       });
     });
+
   });
 });

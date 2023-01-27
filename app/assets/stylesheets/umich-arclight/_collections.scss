@@ -8,3 +8,21 @@
 nav#about-collection-nav {
   padding-left: 0.25em;
 }
+
+.indented {
+  article {
+    margin-left: 2rem;
+  }
+
+  .indented {
+    margin-left: 2rem;
+  }
+}
+
+#documents {
+  button[aria-expanded="true"] {
+    i::before {
+      content: "" !important;
+    }
+  }
+}
