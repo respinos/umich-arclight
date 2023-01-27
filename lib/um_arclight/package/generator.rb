@@ -18,6 +18,7 @@ module UmArclight
         parent_ssim
         ref_ssi
         ref_ssm
+        ead_ssi
         component_level_isim
         normalized_title_ssm
         level_ssm
@@ -42,14 +43,15 @@ module UmArclight
       end
 
       def build_html
-        response = get("/catalog/#{identifier}")
-        @doc = Nokogiri::HTML5(response.body)
-
         components = []
         elapsed_time = Benchmark.realtime do
           @collection = fetch_doc(identifier)
-          components = fetch_components(identifier)
+          components = fetch_components(@collection.eadid)
         end
+
+        response = get("/catalog/#{@collection.id}")
+        @doc = Nokogiri::HTML5(response.body)
+
         puts "UM-Arclight generate package : #{collection.id} : fetch components (in #{elapsed_time.round(3)} secs)."
         elapsed_time = Benchmark.realtime do
           @fragment = render_fragment(
@@ -155,7 +157,7 @@ module UmArclight
       def fetch_doc(id)
         params = {
           fl: '*',
-          q: ["id:#{id}"],
+          q: ["id:#{id.gsub('.', '-')}"],
           start: 0,
           rows: 1
         }
@@ -182,11 +184,12 @@ module UmArclight
         while response.documents.present?
           puts "UM-Arclight generate package : harvesting components : #{collection.id} : #{start} / #{response.total}"
           response.documents.each do |doc|
-            if doc.id == id
+            if doc.component_level.nil?
               # ignore the collection doc
               next
             end
 
+            STDERR.puts "== #{doc.id} / #{id} / #{doc.eadid} :: #{doc.component_level}"
             tmp[doc.component_level] = [] if tmp[doc.component_level].nil?
             tmp[doc.component_level] << doc
             tmp_map[doc.reference] = doc
