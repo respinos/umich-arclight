@@ -371,8 +371,13 @@ module UmArclight
         @index = Index.new
       end
 
-      def setup(repository_ssm: nil)
-        identifiers = fetch_collection_identifiers(repository_ssm)
+      def setup(**kw)
+        identifiers = if kw[:eadid]
+          [ kw[:eadid].gsub('.', '-' ) ]
+        else
+          fetch_collection_identifiers(kw[:repository_ssm])
+        end
+
         identifiers.each do |identifier|
           puts "UM-Arclight queue package: #{identifier}"
           ::PackageFindingAidJob.perform_later(identifier)

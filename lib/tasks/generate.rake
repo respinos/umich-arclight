@@ -8,12 +8,14 @@ namespace :arclight do
 
   desc 'Generate packages for indexed finding aids via background jobs'
   task generate_enqueue: :environment do
-    repository_ssm = nil
+    args = {}
     if ENV['REPOSITORY_ID']
       repository_config = Arclight::Repository.find_by(slug: ENV['REPOSITORY_ID'])
-      repository_ssm = repository_config.name
+      args[:repository_ssm] = repository_config.name
+    elsif ENV['EADID']
+      args[:eadid] = ENV['EADID']
     end
-    UmArclight::Package::Queue.new.setup(repository_ssm: repository_ssm)
+    UmArclight::Package::Queue.new.setup(**args)
   end
 
   desc 'Build a full HTML out of an EAD document, use EADID=<id>'
