@@ -157,7 +157,7 @@ module UmArclight
       def fetch_doc(id)
         params = {
           fl: '*',
-          q: ["id:#{id.gsub('.', '-')}"],
+          q: ["id:#{id.tr(".", "-")}"],
           start: 0,
           rows: 1
         }
@@ -189,7 +189,6 @@ module UmArclight
               next
             end
 
-            STDERR.puts "== #{doc.id} / #{id} / #{doc.eadid} :: #{doc.component_level}"
             tmp[doc.component_level] = [] if tmp[doc.component_level].nil?
             tmp[doc.component_level] << doc
             tmp_map[doc.reference] = doc
@@ -373,7 +372,7 @@ module UmArclight
 
       def setup(**kw)
         identifiers = if kw[:eadid]
-          [ kw[:eadid].gsub('.', '-' ) ]
+          [kw[:eadid].tr('.', '-')]
         else
           fetch_collection_identifiers(kw[:repository_ssm])
         end
