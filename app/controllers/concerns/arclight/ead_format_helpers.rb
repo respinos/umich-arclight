@@ -65,6 +65,7 @@ module Arclight
       format_lists(node) if %w[list chronlist].include? node.name
       format_indexes(node) if node.name == 'index'
       format_tables(node) if node.name == 'table'
+      format_simple_elements(node) if %w[separatedmaterial relatedmaterial].include? node.name
     end
 
     def format_render_attributes(node) # rubocop:disable Metrics/MethodLength, Metrics/CyclomaticComplexity
@@ -313,6 +314,14 @@ module Arclight
       end
       node.content = node['title'] if (%w[extptr ptr].include? node.name) && node['title'].present?
       node.name = 'a' if node['href'].present?
+    end
+
+    def format_simple_elements(node)
+      head = node.at_css('head')
+      head&.name = 'h3'
+      return if head.present?
+      label = I18n.t("um_arclight.ead_element_labels.#{node.name}")
+      node.add_previous_sibling("<h3>#{label}</h3>")
     end
 
     # Format EAD <index> elements

@@ -355,18 +355,21 @@ end
 
 SEARCHABLE_NOTES_FIELDS.map do |selector|
   to_field "#{selector}_tesim", extract_xpath("/ead/archdesc/#{selector}/*[local-name()!='head']", to_text: false)
-  to_field "#{selector}_tesim", extract_xpath("/ead/archdesc/descgrp/#{selector}/*[local-name()!='head']", to_text: false)
+  to_field "#{selector}_tesim", extract_xpath("/ead/archdesc/descgrp[@type != 'add']/#{selector}/*[local-name()!='head']", to_text: false)
   to_field "#{selector}_heading_ssm", extract_xpath("/ead/archdesc/#{selector}/head") unless selector == 'prefercite'
-  to_field "#{selector}_heading_ssm", extract_xpath("/ead/archdesc/descgrp/#{selector}/head") unless selector == 'prefercite'
+  to_field "#{selector}_heading_ssm", extract_xpath("/ead/archdesc/descgrp[@type != 'add']/#{selector}/head") unless selector == 'prefercite'
   to_field "#{selector}_teim", extract_xpath("/ead/archdesc/#{selector}/*[local-name()!='head']")
-  to_field "#{selector}_teim", extract_xpath("/ead/archdesc/descgrp/#{selector}/*[local-name()!='head']")
+  to_field "#{selector}_teim", extract_xpath("/ead/archdesc/descgrp[@type != 'add']/#{selector}/*[local-name()!='head']")
 end
 
-to_field "para_tesim", extract_xpath("/ead/archdesc/descgrp/p", to_text: false)
-to_field "para_teim", extract_xpath("/ead/archdesc/descgrp/p")
+to_field "add_tesim", extract_xpath("/ead/archdesc/descgrp[@type = 'add']", to_text: false)
+to_field "add_teim", extract_xpath("/ead/archdesc/descgrp[@type = 'add']")
 
-to_field "index_tesim", extract_xpath("/ead/archdesc/index|/ead/archdesc/descgrp/index", to_text: false)
-to_field "index_teim", extract_xpath("/ead/archdesc/index|/ead/archdesc/descgrp/index")
+# to_field "para_tesim", extract_xpath("/ead/archdesc/descgrp/p", to_text: false)
+# to_field "para_teim", extract_xpath("/ead/archdesc/descgrp/p")
+#
+# to_field "index_tesim", extract_xpath("/ead/archdesc/index|/ead/archdesc/descgrp/index", to_text: false)
+# to_field "index_teim", extract_xpath("/ead/archdesc/index|/ead/archdesc/descgrp/index")
 
 DID_SEARCHABLE_NOTES_FIELDS.map do |selector|
   to_field "#{selector}_tesim", extract_xpath("/ead/archdesc/did/#{selector}", to_text: false)

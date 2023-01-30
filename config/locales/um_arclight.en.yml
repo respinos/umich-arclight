@@ -36,14 +36,6 @@ en:
         absent: "Add to Bookmarks"
       restricted: "Some restrictions apply"
 
-    ua_record_groups:
-      page_title: "University Archives Record Groups"
-      nav_header: "Browse by Group"
-      browse_all: "INSERT CONTENT HERE"
-      about_text: "What is a record group?"
-      about_link: "INSERT CONTENT HERE"
-      browse_groups: "Browse by Group"
-
     views:
       index:
         number_of_components:
@@ -79,3 +71,7 @@ en:
 
     contact:
       title: "Contact Us"
+
+    ead_element_labels:
+      separatedmaterial: "Alternate Locations"
+      relatedmaterial: "Related Materials"
