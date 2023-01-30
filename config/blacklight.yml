@@ -1,9 +1,9 @@
 development:
   adapter: solr
-  url: <%= ENV['SOLR_URL'] || "http://127.0.0.1:8983/solr/umich-arclight-development" %>
+  url: <%= ENV['SOLR_URL'] || "http://solr:8983/solr/umich-arclight-development" %>
 test: &test
   adapter: solr
-  url: <%= ENV['SOLR_URL'] || "http://127.0.0.1:8983/solr/umich-arclight-test" %>
+  url: <%= ENV['SOLR_URL'] || "http://solr:8983/solr/umich-arclight-test" %>
 production:
   adapter: solr
-  url: <%= ENV['SOLR_URL'] || "http://127.0.0.1:8983/solr/umich-arclight" %>
+  url: <%= ENV['SOLR_URL'] || "http://solr:8983/solr/umich-arclight" %>

@@ -88,7 +88,9 @@ Blacklight.onLoad(function () {
   /* behaves slightly different than a standard reset button, because it */
   /* clears the value even after the form has been submitted. */
   $('#clear-search').click(function() {
-    $('.tt-input').val('');
+    // eslint-disable-next-line max-len
+    // $('.tt-input').val(''); DCP2-485: ArcLight - Turn off predictive text - commented out this line
+    $('input#q').val(''); // DCP2-485: ArcLight - Turn off predictive text - added this line
     $('#clear-search').css('display', 'none');
   });
 
