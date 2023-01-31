@@ -159,7 +159,6 @@ Layout/SpaceInsideHashLiteralBraces:
     - 'app/controllers/catalog_controller.rb'
     - 'app/controllers/concerns/dul_arclight/field_config_helpers.rb'
     - 'app/helpers/blacklight/url_helper.rb'
-    - 'app/helpers/dul_arclight_helper.rb'
     - 'app/jobs/index_finding_aid_job.rb'
     - 'config/routes.rb'
     - 'lib/dul_arclight/digital_object.rb'

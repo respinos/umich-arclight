@@ -21,11 +21,12 @@ module DulArclightHelper
   def dul_compact_breadcrumbs(document)
     breadcrumb_links = []
     parents = document_parents(document)
-    breadcrumb_links << parents[0, 2].map do |parent|
+    # breadcrumb_links << parents[0, 2].map do |parent| # DCP2-467: ArcLight - enable full breadcrumb list (option 2)
+    breadcrumb_links << parents[0, parents.length].map do |parent|
       link_to parent.label, solr_document_path(parent.global_id)
     end
 
-    breadcrumb_links << '&hellip;'.html_safe if parents.length > 1
+    # breadcrumb_links << '&hellip;'.html_safe if parents.length > 1 # DCP2-467: ArcLight - enable full breadcrumb list (option 2)
 
     safe_join(
       breadcrumb_links,
@@ -49,7 +50,7 @@ module DulArclightHelper
 
   def ask_librarian_url
     base_url = 'https://www.lib.umich.edu/ask-librarian'
-    [base_url, { referrer: request.original_url }.to_param].join('?')
+    [base_url, {referrer: request.original_url}.to_param].join('?')
   end
 
   def request_tooltip(document)
