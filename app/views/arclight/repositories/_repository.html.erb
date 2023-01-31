@@ -47,7 +47,7 @@
         <%= link_to_unless(params[:id] == repository.slug, repository.name, repository_collections_path(repository)) %>
       </h2>
       <p class="card-text" data-arclight-truncate="false">
-        <%= link_to_unless(params[:id] == repository.slug, "See More About This Repository", repository_collections_path(repository)) %>
+        <%= link_to_unless(params[:id] == repository.slug, "See More About This Repository", repository.about_url) %>
       </p>
     </div>
 
