@@ -6,8 +6,8 @@ class BuildSuggestJob < ApplicationJob
   queue_as :index
 
   def perform
-    # Not using Blacklight.default_index.connection for greater control
-    uri = URI("#{ENV['SOLR_URL']}/suggest?suggest.build=true")
+    base_uri = ENV.fetch('SOLR_URL', Blacklight.default_index.connection.base_uri).to_s.chomp('/')
+    uri = URI("#{base_uri}/suggest?suggest.build=true")
 
     ::Net::HTTP.start(uri.host, uri.port) do |http|
       http.read_timeout = 600

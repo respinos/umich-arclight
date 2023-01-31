@@ -14,8 +14,6 @@ services:
       - "1234:1234" # RubyMine
       - "26162:26162" # RubyMine
     environment:
-      - DATABASE_URL=postgresql://postgres:postgres@db/umich-arclight-development
-      - SOLR_URL=http://solr:8983/solr/umich-arclight-development
       - REDIS_URL=redis://redis:6379
     volumes:
       - .:/opt/app
@@ -55,8 +53,6 @@ services:
     ports:
       - "8282:8282"
     environment:
-      - DATABASE_URL=postgresql://postgres:postgres@db/umich-arclight-development
-      - SOLR_URL=http://solr:8983/solr/umich-arclight-development
       - REDIS_URL=redis://redis:6379
     volumes:
       - .:/opt/app
@@ -80,6 +76,10 @@ services:
     command: bundle exec resque-web -p 8080 -r redis:6379 -F
 volumes:
   data:
+    driver_opts:
+      type: none
+      device: ${PWD}/sample-ead
+      o: bind
   gems:
   db-data:
   solr-conf:
