@@ -5,22 +5,14 @@ class IndexFindingAidJob < ApplicationJob
 
   def perform(path, repo_id)
     env = { 'REPOSITORY_ID' => repo_id }
+    cmd = "bundle exec traject -u #{ENV.fetch('SOLR_URL', Blacklight.default_index.connection.base_uri).to_s.chomp('/')} -i xml -c ./lib/dul_arclight/traject/ead2_config.rb #{path}"
 
-    # Calling the traject command directly here instead of
-    # the arclight:index rake task because the latter
-    # doesn't return the exit code for the traject command.
-    cmd = %W[ bundle exec traject
-              -u #{ENV['SOLR_URL']}
-              -i xml
-              -c ./lib/dul_arclight/traject/ead2_config.rb
-              #{path} ]
+    stdout_and_stderr, process_status = Open3.capture2e(env, cmd)
 
-    output = IO.popen(env, cmd, chdir: Rails.root, err: %i[child out], &:read)
-
-    if $?.success?
-      puts output
+    if process_status.success?
+      puts stdout_and_stderr
     else
-      raise DulArclight::IndexError, output
+      raise DulArclight::IndexError, stdout_and_stderr
     end
   end
 end

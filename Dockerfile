@@ -4,11 +4,8 @@ ARG UNAME=app
 ARG UID=1000
 ARG GID=1000
 
-ENV RAILS_ENV development
 ENV BUNDLE_PATH /var/opt/app/gems
 ENV FINDING_AID_DATA /var/opt/app/data
-ENV GOOGLE_ANALYTICS_DEBUG=false
-ENV GOOGLE_ANALYTICS_TRACKING_ID=0
 
 RUN curl https://deb.nodesource.com/setup_12.x | bash
 RUN curl https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -

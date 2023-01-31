@@ -124,17 +124,16 @@ to_field 'title_filing_si', extract_xpath('/ead/eadheader/filedesc/titlestmt/tit
 to_field 'title_ssm' do |record, accumulator|
   result = record.xpath('/ead/archdesc/did/unittitle[not(@type) or ( @type != "sort" )]')
   result = result.collect do |n|
-    # return if n['type'] and n['type'] == "sort"
-    n.xpath('.//text()[not(ancestor::unitdate)]').collect(&:text).join(' ')
+    n.xpath('child::node()[not(self::unitdate)]').map(&:text)
   end.join(' ')
   accumulator << result
 end
 to_field 'title_formatted_ssm' do |record, accumulator|
-  whole_title = record.xpath('/ead/archdesc/did/unittitle[not(@type) or ( @type != "sort" )]').to_a
-  no_dates = whole_title.collect do |parent_node|
-    parent_node.children.reject { |elem| elem.name == 'unitdate' }
-  end.flatten
-  accumulator.concat no_dates
+  result = record.xpath('/ead/archdesc/did/unittitle[not(@type) or ( @type != "sort" )]')
+  result = result.collect do |n|
+    n.xpath('child::node()[not(self::unitdate)]').to_s
+  end.join(' ')
+  accumulator << result
 end
 to_field 'title_teim', extract_xpath('/ead/archdesc/did/unittitle[not(@type) or ( @type != "sort" )]')
 to_field 'ead_ssi', extract_xpath('/ead/eadheader/eadid'), strip

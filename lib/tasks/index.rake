@@ -1,29 +1,21 @@
-# frozen_string_literal: true
-
 # Overrides for select ArcLight Core rake tasks
 # https://github.com/projectblacklight/arclight/blob/master/lib/tasks/index.rake
 
-require 'arclight'
 require 'benchmark'
 
-# Override default arclight:index task to point to DUL-Arclight
-# indexing rules (ead2_config.rb) instead.
+# Override default arclight:index task to use ead2_config.rb indexing rules.
 Rake::Task['arclight:index'].clear
 
 namespace :arclight do
   desc 'Index an EAD document, use FILE=<path/to/ead.xml> and REPOSITORY_ID=<myid>'
-  task :index do
+  task index: :environment do
     raise 'Please specify your EAD document, ex. FILE=<path/to/ead.xml>' unless ENV['FILE']
+    raise 'Please specify your Repository ID, ex. REPOSITORY_ID=<repo>' unless ENV['REPOSITORY_ID']
 
-    print "DUL-Arclight loading #{ENV['FILE']} into index...\n"
-    solr_url = begin
-                 Blacklight.default_index.connection.base_uri
-               rescue StandardError
-                 ENV['SOLR_URL'] || 'http://solr:8983/solr/umich-arclight'
-               end
+    print "UofM Arclight loading #{ENV['FILE']} to be indexed under #{ENV['REPOSITORY_ID']}...\n"
     elapsed_time = Benchmark.realtime do
-      `bundle exec traject -u #{solr_url} -i xml -c ./lib/dul_arclight/traject/ead2_config.rb #{ENV['FILE']}`
+      IndexFindingAidJob.perform_now(ENV['FILE'], ENV['REPOSITORY_ID'])
     end
-    print "DUL-Arclight indexed #{ENV['FILE']} (in #{elapsed_time.round(3)} secs).\n"
+    print "UofM Arclight indexed #{ENV['FILE']} (in #{elapsed_time.round(3)} secs).\n"
   end
 end
