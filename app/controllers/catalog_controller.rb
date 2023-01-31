@@ -290,7 +290,7 @@ class CatalogController < ApplicationController
     config.spell_max = 5
 
     # Configuration for autocomplete suggestor
-    config.autocomplete_enabled = true
+    config.autocomplete_enabled = false # autocomplete_disabled DCP2-474: ArcLight - Bug: Titles in italics are cut off
     config.autocomplete_path = 'suggest'
 
     ##
