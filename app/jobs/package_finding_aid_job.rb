@@ -9,7 +9,7 @@ class PackageFindingAidJob < ApplicationJob
 
   def perform(identifier, format)
     artifact = UmArclight::Package::Generator.new identifier: identifier
-    format == 'html' ? artifact.generate_html : artifact.generate_pdf
+    (format == 'html') ? artifact.generate_html : artifact.generate_pdf
   rescue StandardError
     raise UmArclight::GenerateError, identifier
   end
