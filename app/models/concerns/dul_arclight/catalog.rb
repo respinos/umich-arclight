@@ -17,6 +17,13 @@ module DulArclight
     # https://github.com/projectblacklight/blacklight/blob/master/app/controllers/concerns/blacklight/catalog.rb#L65-L71
     def ead_download
       _, @document = search_service.fetch(params[:id])
+      xml_filename = ead_file_path
+      
+      if xml_filename.nil?
+        render plain: '404 Not Found', status: :not_found
+        return
+      end
+
       send_file(
         ead_file_path,
         filename: "#{params[:id]}.xml",
@@ -81,15 +88,25 @@ module DulArclight
     private
 
     def ead_file_path
-      "#{DulArclight.finding_aid_data}/ead/#{repo_id}/#{params[:id]}.xml"
+      # look for the document eadid first
+      filename = File.join(DulArclight.finding_aid_data, 'ead', repo_id, "#{eadid}.xml")
+      return filename if File.exist?(filename)
+
+      # look for a filename based on publicid_ssi
+      publicid = @document.publicid
+      match = publicid.match(/us::miu-c::(.*)\/\/EN/)
+      filename = File.join(DulArclight.finding_aid_data, 'ead', repo_id, match[1])
+      return filename if File.exist?(filename)
+
+      nil
     end
 
     def html_file_path
-      "#{DulArclight.finding_aid_data}/pdf/#{repo_id}/#{eadid}.html"
+      File.join(DulArclight.finding_aid_data, 'pdf', repo_id, "#{eadid}.html")
     end
 
     def pdf_file_path
-      "#{DulArclight.finding_aid_data}/pdf/#{repo_id}/#{eadid}.pdf"
+      File.join(DulArclight.finding_aid_data, 'pdf', repo_id, "#{eadid}.pdf")
     end
 
     def repo_id
