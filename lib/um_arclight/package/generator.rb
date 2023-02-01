@@ -73,12 +73,15 @@ module UmArclight
         output_filename = generate_output_filename('.html')
         FileUtils.makedirs(File.dirname(output_filename)) unless Dir.exist?(File.dirname(output_filename))
 
+        # serialize the viewable HTML
         File.open(output_filename, 'w') do |f|
           f.puts doc.serialize
         end
+
+        generate_pdf_html
       end
 
-      def build_pdf
+      def build_pdf_html
         # build the source in tmp
         FileUtils.mkdir_p(working_path_name)
         Dir.chdir(working_path_name)
@@ -94,23 +97,35 @@ module UmArclight
         puts "UM-Arclight generate package: #{collection.id} : update HTML for PDF (in #{elapsed_time.round(3)} secs)."
       end
 
-      def generate_pdf # rubocop:disable Metrics/MethodLength
-        generate_html if @doc.nil?
-
-        build_pdf
-
-        local_html_filename = "#{collection.document_id}.local.html"
+      def generate_pdf_html
+        build_pdf_html
+        local_html_filename = generate_local_html_filename # "#{collection.document_id}.local.html"
         File.open(local_html_filename, 'w') do |f|
           f.puts doc.serialize
         end
+      end
 
+      def build_pdf_prereq
+        @collection = fetch_doc(identifier)
+        local_html_filename = generate_local_html_filename
+        if File.exist?(local_html_filename)
+          warn "-- using #{local_html_filename}"
+        else
+          generate_html
+        end
+      end
+
+      def generate_pdf # rubocop:disable Metrics/MethodLength
+        build_pdf_prereq
+
+        local_html_filename = generate_local_html_filename
         output_filename = generate_output_filename('.pdf')
         FileUtils.mkdir_p(File.dirname(output_filename))
 
         elapsed_time = Benchmark.realtime do
           Puppeteer.launch(headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox']) do |browser|
             page = browser.new_page
-            page.goto("file:#{working_path_name}/#{@collection.document_id}.local.html", wait_until: 'networkidle2')
+            page.goto("file:#{local_html_filename}", wait_until: 'networkidle2')
             page.pdf(
               path: output_filename,
               print_background: true,
@@ -136,13 +151,17 @@ module UmArclight
       private
 
       def generate_output_filename(ext)
-        filename = "#{DulArclight.finding_aid_data}/pdf/#{collection.repository_id}/#{collection.document_id}#{ext}"
+        filename = File.join(DulArclight.finding_aid_data, 'pdf', collection.repository_id, "#{collection.document_id}#{ext}")
         filename = File.join(Rails.root, filename) if filename.start_with?('./')
         filename
       end
 
       def working_path_name
-        "#{Rails.root}/tmp/pdf"
+        File.join(Rails.root, "tmp", "pdf")
+      end
+
+      def generate_local_html_filename
+        File.join(working_path_name, "#{@collection.document_id}.local.html")
       end
 
       def get(url)
@@ -309,44 +328,49 @@ module UmArclight
         placeholder_el = doc.css('m-arclight-placeholder').first
         @chunks.css('link').each do |link|
           next unless link['rel'] == 'stylesheet' && link['href'].start_with?('/assets/')
-
-          response = get(link['href'])
-          stylesheet = response.body
-
-          # now we have to look for url(/assets) here
-          buffer = stylesheet.split(/\n/)
-          buffer.each_with_index do |line, i|
-            next unless (matches = line.scan(%r{url\(\/assets\/([^\)]+)\)}))
-
-            matches.each do |match|
-              asset_path = match[0]
-              filename = asset_path.split(/[\?#]/).first
-
-              unless File.exist?("assets/#{filename}")
-                response = get("/assets/#{asset_path}")
-                resource = response.body
-
-                FileUtils.makedirs("assets/#{File.dirname(filename)}") unless Dir.exist?(File.dirname("assets/#{filename}"))
-
-                File.open("./assets/#{filename}", 'wb') do |f|
-                  f.puts resource
-                end
-              end
-
-              line.gsub!("/assets/#{asset_path}", "./#{filename}")
-            end
-            buffer[i] = line
-          end
-
           filename = link['href'].split(/[\?#]/).first
 
-          FileUtils.makedirs(".#{File.dirname(filename)}") unless Dir.exist?(".#{File.dirname(filename)}")
+          # only cache as needed
+          download_and_cache(link, filename) unless File.exist?(".#{filename}")
 
-          File.open(".#{filename}", 'wb') do |f|
-            f.puts buffer.join("\n")
-          end
           link['href'] = ".#{filename}"
           placeholder_el.add_next_sibling link
+        end
+      end
+
+      def download_and_cache(link, filename)
+        response = get(link['href'])
+        stylesheet = response.body
+
+        # now we have to look for url(/assets) here
+        buffer = stylesheet.split(/\n/)
+        buffer.each_with_index do |line, i|
+          next unless (matches = line.scan(%r{url\(\/assets\/([^\)]+)\)}))
+
+          matches.each do |match|
+            asset_path = match[0]
+            filename = asset_path.split(/[\?#]/).first
+
+            unless File.exist?("assets/#{filename}")
+              response = get("/assets/#{asset_path}")
+              resource = response.body
+
+              FileUtils.makedirs("assets/#{File.dirname(filename)}") unless Dir.exist?(File.dirname("assets/#{filename}"))
+
+              File.open("./assets/#{filename}", 'wb') do |f|
+                f.puts resource
+              end
+            end
+
+            line.gsub!("/assets/#{asset_path}", "./#{filename}")
+          end
+          buffer[i] = line
+        end
+
+        FileUtils.makedirs(".#{File.dirname(filename)}") unless Dir.exist?(".#{File.dirname(filename)}")
+
+        File.open(".#{filename}", 'wb') do |f|
+          f.puts buffer.join("\n")
         end
       end
       # rubocop:enable Metrics/AbcSize
@@ -381,7 +405,7 @@ module UmArclight
 
         identifiers.each do |identifier|
           puts "UM-Arclight queue package: #{identifier}"
-          ::PackageFindingAidJob.perform_later(identifier)
+          ::PackageFindingAidJob.perform_later(identifier, kw.fetch(:format, 'html'))
         end
       end
 
