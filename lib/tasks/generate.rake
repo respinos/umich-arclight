@@ -15,6 +15,7 @@ namespace :arclight do
     elsif ENV['EADID']
       args[:eadid] = ENV['EADID']
     end
+    args[:format] = ENV['FORMAT'] || 'html'
     UmArclight::Package::Queue.new.setup(**args)
   end
 
@@ -29,8 +30,12 @@ namespace :arclight do
   end
 
   desc 'Build a PDF out of an EAD document, use EADID=<id>'
-  task generate_pdf: :generate_html do
-    # now set up the doc for the HTML PDF
+  task generate_pdf: :environment do
+    raise 'Please specify your EAD ID, ex. EADID=<id>' unless ENV['EADID']
+
+    identifier = ENV['EADID']
+
+    artifact = UmArclight::Package::Generator.new identifier: identifier
     artifact.generate_pdf
   end
 end
