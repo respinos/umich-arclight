@@ -60,7 +60,7 @@ RSpec.describe UmArclight::Package::Generator do
 
   it 'modify HTML for to generate PDF' do
     generator.build_html
-    generator.build_pdf
+    generator.build_pdf_html
     doc = generator.doc
 
     expect(doc.css('m-website-header')).to be_empty
