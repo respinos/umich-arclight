@@ -1,0 +1,65 @@
+name: Build and Deploy to Testing
+
+on:
+  workflow_dispatch:  # This allows to kick-off the action manually from GitHub Actions
+
+jobs:
+  build-testing:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build image and push to GitHub Container Registry
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          push: true
+          tags: 'ghcr.io/mlibrary/umich-arclight/umich-arclight-testing:${{ github.sha }}, ghcr.io/mlibrary/umich-arclight/umich-arclight-testing:latest, ghcr.io/mlibrary/umich-arclight/umich-arclight-unstable:${{ github.sha }}'
+          file: .docker/Dockerfile.testing
+
+  deploy-testing-app:
+    needs: build-testing
+    runs-on: ubuntu-latest
+    environment: testing
+    steps:
+      - name: Deploy to Testing
+        uses: mlibrary/deploy-to-kubernetes@v1
+        with:
+          github_username: ${{ github.actor }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          image: mlibrary/${{ secrets.IMAGE_NAME }}:${{ github.sha }}
+          cluster_ca: ${{ secrets.HATCHER_CLUSTER_CA }}
+          cluster_server: https://hatcher.kubernetes.lib.umich.edu
+          namespace_token: ${{ secrets.HATCHER_TOKEN }}
+          namespace: ${{ secrets.NAMESPACE }}
+          deployment: app
+          container: app
+
+  deploy-testing-resque:
+    needs: build-testing
+    runs-on: ubuntu-latest
+    environment: testing
+    steps:
+      - name: Deploy to Testing
+        uses: mlibrary/deploy-to-kubernetes@v1
+        with:
+          github_username: ${{ github.actor }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          image: mlibrary/${{ secrets.IMAGE_NAME }}:${{ github.sha }}
+          cluster_ca: ${{ secrets.HATCHER_CLUSTER_CA }}
+          cluster_server: https://hatcher.kubernetes.lib.umich.edu
+          namespace_token: ${{ secrets.HATCHER_TOKEN }}
+          namespace: ${{ secrets.NAMESPACE }}
+          deployment: resque
+          container: resque
