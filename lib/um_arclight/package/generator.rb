@@ -19,6 +19,8 @@ module UmArclight
         ref_ssi
         ref_ssm
         ead_ssi
+        abstract_tesim
+        scopecontent_tesim
         component_level_isim
         normalized_title_ssm
         level_ssm
