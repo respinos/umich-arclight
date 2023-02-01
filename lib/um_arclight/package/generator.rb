@@ -97,7 +97,7 @@ module UmArclight
 
         build_pdf
 
-        local_html_filename = "#{collection.id}.local.html"
+        local_html_filename = "#{collection.document_id}.local.html"
         File.open(local_html_filename, 'w') do |f|
           f.puts doc.serialize
         end
@@ -108,7 +108,7 @@ module UmArclight
         elapsed_time = Benchmark.realtime do
           Puppeteer.launch(headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox']) do |browser|
             page = browser.new_page
-            page.goto("file:#{working_path_name}/#{identifier}.local.html", wait_until: 'networkidle2')
+            page.goto("file:#{working_path_name}/#{@collection.document_id}.local.html", wait_until: 'networkidle2')
             page.pdf(
               path: output_filename,
               print_background: true,
@@ -134,7 +134,7 @@ module UmArclight
       private
 
       def generate_output_filename(ext)
-        filename = "#{DulArclight.finding_aid_data}/pdf/#{collection.repository_id}/#{collection.id}#{ext}"
+        filename = "#{DulArclight.finding_aid_data}/pdf/#{collection.repository_id}/#{collection.document_id}#{ext}"
         filename = File.join(Rails.root, filename) if filename.start_with?('./')
         filename
       end
