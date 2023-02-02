@@ -12,12 +12,22 @@ module DulArclight
     extend ActiveSupport::Concern
     include Arclight::Catalog
 
+    included do
+      if respond_to?(:before_action)
+        before_action :setup_download_helper, only: [:ead_download, :html_download, :pdf_download]
+      end
+
+      if respond_to?(:helper_method)
+        helper_method :pdf_available?
+        helper_method :ead_available?
+      end
+    end
+
     # DUL CUSTOMIZATION: send the source EAD XML file that we already have on the filesystem
     # Modeled after "raw", see:
     # https://github.com/projectblacklight/blacklight/blob/master/app/controllers/concerns/blacklight/catalog.rb#L65-L71
     def ead_download
-      _, @document = search_service.fetch(params[:id])
-      xml_filename = ead_file_path
+      xml_filename = download_helper.ead_file_path
       
       if xml_filename.nil?
         render plain: '404 Not Found', status: :not_found
@@ -25,8 +35,8 @@ module DulArclight
       end
 
       send_file(
-        ead_file_path,
-        filename: "#{params[:id]}.xml",
+        xml_filename,
+        filename: "#{@document.id}.xml",
         disposition: 'inline',
         type: 'text/xml'
       )
@@ -42,7 +52,7 @@ module DulArclight
 
       # replace m-arclight-placeholder with current asset styles/scripts
       self.response_body = Enumerator.new do |output|
-        File.foreach(html_file_path) do |line|
+        File.foreach(download_helper.html_file_path) do |line|
           if line.index('<m-arclight-placeholder></m-arclight-placeholder>')
             output << helpers.stylesheet_link_tag('application', media: 'all')
             output << helpers.javascript_include_tag('application')
@@ -55,18 +65,23 @@ module DulArclight
     end
 
     def pdf_download
-      _, @document = search_service.fetch(params[:id])
+
       send_file(
-        pdf_file_path,
-        filename: "#{params[:id]}.pdf",
+        download_helper.pdf_file_path,
+        filename: "#{@document.id}.pdf",
         disposition: 'attachment',
         type: 'application/pdf'
       )
     end
 
     def pdf_available?
-      # _, @document = search_service.fetch(params[:id])
-      File.exist?(pdf_file_path)
+      setup_download_helper
+      download_helper.pdf_available?
+    end
+
+    def ead_available?(document)
+      setup_download_helper
+      download_helper.ead_available?
     end
 
     ##
@@ -87,34 +102,13 @@ module DulArclight
 
     private
 
-    def ead_file_path
-      # look for the document eadid first
-      filename = File.join(DulArclight.finding_aid_data, 'ead', repo_id, "#{eadid}.xml")
-      return filename if File.exist?(filename)
-
-      # look for a filename based on publicid_ssi
-      publicid = @document.publicid
-      match = publicid.match(/us::miu-c::(.*)\/\/EN/)
-      filename = File.join(DulArclight.finding_aid_data, 'ead', repo_id, match[1])
-      return filename if File.exist?(filename)
-
-      nil
+    def setup_download_helper
+      _, @document = search_service.fetch(params[:id])
+      @download_helper = UmArclight::DownloadHelper.new(@document)
     end
 
-    def html_file_path
-      File.join(DulArclight.finding_aid_data, 'pdf', repo_id, "#{eadid}.html")
-    end
-
-    def pdf_file_path
-      File.join(DulArclight.finding_aid_data, 'pdf', repo_id, "#{eadid}.pdf")
-    end
-
-    def repo_id
-      @document.repository_config&.slug
-    end
-
-    def eadid
-      @document.eadid
+    def download_helper
+      @download_helper
     end
   end
 end

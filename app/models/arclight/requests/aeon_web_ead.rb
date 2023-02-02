@@ -28,7 +28,7 @@ module Arclight
       end
 
       def parsed_ead_url
-        return ead_url unless document.repository_config.request_id_present?
+        return ead_url unless document.repository_config.request_prefix_present?
 
         field = document.repository_config.request_field
         pattern = document.repository_config.request_pattern

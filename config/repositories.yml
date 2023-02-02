@@ -83,7 +83,6 @@ scrc:
   request_id:
     field: 'publicid_ssi'
     pattern: '-\/\/us::MiU\/\/TEXT us::MiU::(.*)\/\/EN'
-    prefix: 'https://quod.lib.umich.edu/s/sclead/eads/'
   dlxs_iiif:
     image:
       - scl
@@ -126,7 +125,6 @@ clements:
   request_id:
     field: 'publicid_ssi'
     pattern: 'us//::miu-c//TXT us::miu-c::(.*.xml)\/\/EN'
-    prefix: 'https://quod.lib.umich.edu/c/clementsead/eads/'
   dlxs_iiif:
     image:
       - pohrt
