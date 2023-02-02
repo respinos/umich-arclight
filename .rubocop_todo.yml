@@ -53,14 +53,6 @@ Layout/EmptyLineBetweenDefs:
     - 'lib/dul_arclight/errors.rb'
     - 'lib/um_arclight/errors.rb'
 
-# Offense count: 1
-# This cop supports safe autocorrection (--autocorrect).
-# Configuration parameters: EnforcedStyle.
-# SupportedStyles: empty_lines, no_empty_lines
-Layout/EmptyLinesAroundBlockBody:
-  Exclude:
-    - 'config/routes.rb'
-
 # Offense count: 2
 # This cop supports safe autocorrection (--autocorrect).
 # Configuration parameters: EnforcedStyle.
@@ -160,7 +152,6 @@ Layout/SpaceInsideHashLiteralBraces:
     - 'app/controllers/concerns/dul_arclight/field_config_helpers.rb'
     - 'app/helpers/blacklight/url_helper.rb'
     - 'app/jobs/index_finding_aid_job.rb'
-    - 'config/routes.rb'
     - 'lib/dul_arclight/digital_object.rb'
     - 'spec/controllers/catalog_controller_spec.rb'
     - 'spec/helpers/google_analytics_helper_spec.rb'
@@ -445,7 +436,6 @@ Style/QuotedSymbols:
   Exclude:
     - 'Rakefile'
     - 'app/controllers/custom_sitemaps_controller.rb'
-    - 'app/controllers/repositories_controller.rb'
     - 'app/controllers/ua_record_groups_controller.rb'
     - 'app/helpers/digital_object_helper.rb'
     - 'spec/lib/um_arclight/package/generator_spec.rb'
@@ -461,7 +451,6 @@ Style/RedundantFetchBlock:
 # This cop supports safe autocorrection (--autocorrect).
 Style/RedundantRegexpEscape:
   Exclude:
-    - 'config/routes.rb'
     - 'lib/um_arclight/package/generator.rb'
 
 # Offense count: 2

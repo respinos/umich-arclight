@@ -1,27 +1,38 @@
 Rails.application.routes.draw do # rubocop:disable Metrics/BlockLength
-
+  # FYI: Routes declared at the top of the file will mask routes that have yet to be declared.
+  # The engines are mounted last so you may override engine routes.
+  concern :exportable, Blacklight::Routes::Exportable.new
+  concern :searchable, Blacklight::Routes::Searchable.new
   concern :range_searchable, BlacklightRangeLimit::Routes::RangeSearchable.new
-  mount Blacklight::Engine => '/'
-  mount BlacklightDynamicSitemap::Engine => '/'
-  mount Arclight::Engine => '/'
 
-  # DUL CUSTOMIZATION: note that component URLs have underscores; collections don't
+  # Note that component URLs have underscores; collections don't
   def collection_slug_constraint
-    /[a-zA-Z0-9\-]+/
+    /[a-zA-Z0-9-]+/
   end
 
-  root to: "catalog#index"
-  concern :searchable, Blacklight::Routes::Searchable.new
+  get 'help', to: 'help#help'
+
+  resources :repositories, only: %i[index show], controller: 'arclight/repositories' do
+    member do
+      get :about
+    end
+  end
 
   resource :catalog, only: [:index], as: 'catalog', path: '/catalog', controller: 'catalog' do
     concerns :searchable
     concerns :range_searchable
   end
 
-  devise_for :users
-  concern :exportable, Blacklight::Routes::Exportable.new
+  get '/catalog/:id/xml', action: 'ead_download', controller: 'catalog', as: 'ead_download',
+                          constraints: {id: collection_slug_constraint}
 
-  get 'help', to: 'help#help'
+  get '/catalog/:id/html', action: 'html_download', controller: 'catalog', as: 'html_download',
+                           constraints: {id: collection_slug_constraint}
+
+  get '/catalog/:id/pdf', action: 'pdf_download', controller: 'catalog', as: 'pdf_download',
+                          constraints: {id: collection_slug_constraint}
+
+  root to: "catalog#index"
 
   resources :solr_documents, only: [:show], path: '/catalog', controller: 'catalog' do
     concerns :exportable
@@ -35,24 +46,17 @@ Rails.application.routes.draw do # rubocop:disable Metrics/BlockLength
     end
   end
 
-  resources :repositories, only: %i[index show], controller: 'repositories'
-  get 'repositories/:id/about', as: 'repository_about', to: 'repositories#about'
+  post '/index_finding_aids', to: 'index_finding_aids#create'
+
+  devise_for :users
 
   resources :ua_record_groups, only: [:index], as: 'ua_record_groups', path: '/collections/ua-record-groups', controller: 'ua_record_groups'
 
-  # DUL CUSTOMIZATION: Download the source EAD XML file using the collection slug
-  get '/catalog/:id/xml', action: 'ead_download', controller: 'catalog', as: 'ead_download',
-                          constraints: { id: collection_slug_constraint }
-
-  get '/catalog/:id/html', action: 'html_download', controller: 'catalog', as: 'html_download',
-                           constraints: { id: collection_slug_constraint }
-
-  get '/catalog/:id/pdf', action: 'pdf_download', controller: 'catalog', as: 'pdf_download',
-                          constraints: { id: collection_slug_constraint }
-
-  # DUL CUSTOMIZATION: Render a sitemap on-the-fly from a query (if configured)
-  get '/custom_sitemaps/:id', controller: 'custom_sitemaps', action: 'index', defaults: { format: 'xml' },
+  # Render a sitemap on-the-fly from a query (if configured)
+  get '/custom_sitemaps/:id', controller: 'custom_sitemaps', action: 'index', defaults: {format: 'xml'},
                               constraints: ->(request) { CUSTOM_SITEMAP_CONFIG.key?(request.params[:id]) }
 
-  post '/index_finding_aids', to: 'index_finding_aids#create'
+  mount Arclight::Engine => '/'
+  mount BlacklightDynamicSitemap::Engine => '/'
+  mount Blacklight::Engine => '/'
 end
