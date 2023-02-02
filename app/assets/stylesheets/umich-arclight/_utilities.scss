@@ -31,6 +31,27 @@
   padding: 6px 10px;
 }
 
+.btn-toggle {
+  min-width: 2.875rem;
+  min-height: 2.875rem;
+  i {
+    font-size: 2rem;
+  }
+}
+
 span.twitter-typeahead input[name="q"] {
   background: #fff !important;
+}
+
+.gap-3 {
+  gap: 1rem;
+}
+
+.gap-1 {
+  gap: 0.5rem;
+}
+
+.text-blended {
+  color: var(--color-neutral-100);
+  opacity: 0.5;
 }

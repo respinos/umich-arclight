@@ -1,0 +1,93 @@
+<%# <div class="al-search-result-index-article d-flex flex-column"> %>
+<% target = "xp-#{document.id}" %>
+<%= content_tag(
+      :div,
+      '',
+      class: 'al-search-result-index-article d-flex flex-column',
+      data: {
+        collapse: I18n.t('arclight.views.show.collapse'),
+        expand: I18n.t('arclight.views.show.expand'),
+        config: true,
+        target: target,
+        number_of_children: document.number_of_children,
+        arclight: {
+          path: search_catalog_path,
+          name: document.collection_name,
+          view: 'child_components',
+          parent: document.reference,
+          directparent: document.reference,
+          childrencount: document.number_of_children,
+          search_field: 'within_collection',
+          per_page: '100'
+        }
+      }
+  ) do %>
+
+  <% counter = document_counter_with_offset(document_counter) %>
+
+  <div class="d-flex align-items-center flex-nowrap gap-3" style="x-width: 100%">
+
+    <div class="align-self-center d-flex align-items-center flex-nowrap gap-1" style="margin-left: -3.5rem;">
+      <% if document.children? %>
+        <button aria-label="View" data-toggle="collapse" data-target="#<%= target %>" class="btn btn-outline-light btn-toggle" style="" type="button">
+          <i class="text-dark fas <%= show_expanded?(document) ? 'fa-minus-circle' : 'fa-plus-circle' %>"></i>
+        </button>
+      <% else %>
+        <span style="padding: 0.6rem 1.25rem;"><i class="text-blended fas fa-circle"></i></span>
+      <% end %>
+
+      <% if document.collection_has_requestable_components? %>
+        <% if document.is_checkbox_requestable? %>
+          <%= render "aeon_request_checkbox", document: document, class: '', label_class: 'btn btn-outline-secondary btn-outline-request squat p-2 mb-0' %>
+        <% else %>
+          <span style="padding: 0.375rem 1rem;"><i class="text-blended fas fa-circle"></i></span>
+        <% end %>
+      <% end %>
+
+    </div>
+
+    <div class="d-flex" xclass="documentHeader d-flex order-1" data-document-id="<%= document.id %>">
+      <h3 xclass="index_title document-title-heading">
+        <!-- def link_to_document(doc, field_or_opts = nil, opts = { counter: nil }, url_options = { anchor: nil })-->
+        <% if document.is_linkable? %>
+          <%= link_to_document(document, document_show_link_field(document), { counter: counter }, { anchor: "contents" }) %>
+        <% else %>
+          <span><%= index_presenter(document).label %></span>
+        <% end %>
+        <% if document.children? %>
+          <span class="badge badge-pill badge-secondary al-number-of-children-badge"><%= document.number_of_children %> <%= t(:'um_arclight.views.index.number_of_components', count: document.number_of_children) %></span>
+        <% end %>
+        <%= content_tag('span', class: 'al-document-extent badge') do %>
+          <%= document.extent %>
+        <% end if document.extent %>
+      </h3>
+    </div>
+
+    <div class="ml-auto" xclass="documentContent">
+      <%= render_index_doc_actions document, wrapping_class: 'd-flex justify-content-end' %>
+    </div>
+
+  </div>
+
+
+  <div class="row">
+    <%= content_tag('div', class: 'al-document-highlight col') do %>
+      <%= document.highlights.join('<br/>').html_safe %>
+    <% end if document.highlights %>
+  </div>
+
+  <div class="row">
+    <%= content_tag('div', class: 'al-document-creator col') do %>
+      <%= document.creator %>
+    <% end if document.creator %>
+  </div>
+
+  <div class="row">
+    <%= content_tag('div', class: 'al-document-abstract-or-scope col') do %>
+      <%= content_tag('div', 'data-arclight-truncate' => true) do %>
+        <%= document.abstract_or_scope %>
+      <% end %>
+    <% end if document.abstract_or_scope %>
+  </div>
+<% end %>
+<%# </div> %>

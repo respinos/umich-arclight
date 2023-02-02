@@ -8,3 +8,35 @@
 nav#about-collection-nav {
   padding-left: 0.25em;
 }
+
+#documents {
+  margin-left: 3rem;
+}
+
+.indented {
+
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+
+  border-left: 1px solid var(--color-indigo-100);
+
+  // 2rem is respectable, but 4rem aligns better
+  article {
+    margin-left: 4rem;
+  }
+
+  .indented {
+    margin-left: 4rem;
+  }
+}
+
+#documents {
+  button[aria-expanded="true"] {
+    i::before {
+      // // angle down
+      // content: "" !important;
+      // minus circle
+      content: "\f056" !important;
+    }
+  }
+}

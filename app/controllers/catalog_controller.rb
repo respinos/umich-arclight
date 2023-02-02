@@ -568,7 +568,8 @@ class CatalogController < ApplicationController
     # Modeled after Online Contents
     config.view.child_components
     config.view.child_components.display_control = false
-    config.view.child_components.partials = %i[index_child_components]
+    config.view.child_components.partials = %i[index_child_components_nestable]
+    # config.view.child_components.partials = %i[index_child_components]
 
     ##
     # Collection Context
