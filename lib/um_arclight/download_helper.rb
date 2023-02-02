@@ -10,7 +10,7 @@ module UmArclight
       # look for the document eadid first
       filename = File.join(DulArclight.finding_aid_data, 'ead', repo_id, "#{eadid}.xml")
       return filename if File.exist?(filename)
-      
+
       return ead_filename_from_publicid if request_pattern_present?
     end
 
@@ -35,9 +35,7 @@ module UmArclight
       document.repository_config&.slug
     end
 
-    def eadid
-      document.eadid
-    end
+    delegate :eadid, to: :document
 
     def request_pattern_present?
       document.repository_config&.request_pattern_present?

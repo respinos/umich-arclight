@@ -28,7 +28,7 @@ module DulArclight
     # https://github.com/projectblacklight/blacklight/blob/master/app/controllers/concerns/blacklight/catalog.rb#L65-L71
     def ead_download
       xml_filename = download_helper.ead_file_path
-      
+
       if xml_filename.nil?
         render plain: '404 Not Found', status: :not_found
         return
@@ -65,7 +65,6 @@ module DulArclight
     end
 
     def pdf_download
-
       send_file(
         download_helper.pdf_file_path,
         filename: "#{@document.id}.pdf",
