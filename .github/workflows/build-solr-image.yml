@@ -26,5 +26,5 @@ jobs:
         with:
           context: .
           push: true
-          tags: 'ghcr.io/mlibrary/umich-arclight/umich-arclight-solr:${{ github.sha }}, ghcr.io/mlibrary/umich-arclight/umich-arclight-solr:latest'
+          tags: 'ghcr.io/mlibrary/umich-arclight/umich-arclight-solr:${{ github.ref_name }}, ghcr.io/mlibrary/umich-arclight/umich-arclight-solr:latest'
           file: .docker/solr.dockerfile

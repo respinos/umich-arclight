@@ -26,5 +26,5 @@ jobs:
         with:
           context: .
           push: true
-          tags: 'ghcr.io/mlibrary/umich-arclight/umich-arclight-${{ github.ref_name }}:${{ github.sha }}, ghcr.io/mlibrary/umich-arclight/umich-arclight-${{ github.ref_name }}:latest'
+          tags: 'ghcr.io/mlibrary/umich-arclight/umich-arclight-branch:${{ github.ref_name }}, ghcr.io/mlibrary/umich-arclight/umich-arclight-branch:latest'
           file: .docker/branch.dockerfile
