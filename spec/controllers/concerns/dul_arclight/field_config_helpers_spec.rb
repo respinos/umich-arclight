@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'rails_spec_helper'
+require 'spec_helper'
 
 class TestController
   include DulArclight::FieldConfigHelpers

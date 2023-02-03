@@ -14,7 +14,7 @@
 # and more. If in the future we need to target specific standards, we can use the
 # tag clause (.according_to)
 
-require 'rails_spec_helper'
+require 'spec_helper'
 require 'axe-rspec'
 
 RSpec.xdescribe 'Accessibility (WCAG, 508, Best Practices)', type: :feature, js: true, accessibility: true do

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'rails_spec_helper'
+require 'spec_helper'
 
 RSpec.describe 'Collection Page', type: :feature do
   xdescribe 'UA collection' do

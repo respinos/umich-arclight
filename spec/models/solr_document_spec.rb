@@ -2,7 +2,7 @@
 
 # Extends ArcLight Core SolrDocument tests
 # https://github.com/projectblacklight/arclight/blob/master/spec/models/concerns/arclight/solr_document_spec.rb
-require 'rails_spec_helper'
+require 'spec_helper'
 
 RSpec.describe SolrDocument do
   describe '#aspace_id' do

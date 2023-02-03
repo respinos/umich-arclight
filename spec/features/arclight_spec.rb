@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'rails_spec_helper'
+require 'spec_helper'
 
 RSpec.xdescribe 'DUL Arclight Pages', type: :feature, js: true do
   it 'navigates to homepage' do
