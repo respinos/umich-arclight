@@ -1,5 +1,5 @@
 ---
-name: "Build production image"
+name: "Build db image"
 
 on:
   workflow_dispatch:  # This allows to kick-off the action manually from GitHub Actions
@@ -26,5 +26,5 @@ jobs:
         with:
           context: .
           push: true
-          tags: 'ghcr.io/mlibrary/umich-arclight/umich-arclight-production:${{ github.ref_name }}, ghcr.io/mlibrary/umich-arclight/umich-arclight-production:latest'
-          file: .docker/production.dockerfile
+          tags: 'ghcr.io/mlibrary/umich-arclight/umich-arclight-db:${{ github.ref_name }}, ghcr.io/mlibrary/umich-arclight/umich-arclight-db:latest'
+          file: .docker/db.dockerfile
