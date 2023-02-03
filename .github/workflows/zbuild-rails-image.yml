@@ -1,5 +1,5 @@
 ---
-name: "Build rails image"
+name: "zBuild rails image"
 
 on:
   workflow_dispatch:  # This allows to kick-off the action manually from GitHub Actions
