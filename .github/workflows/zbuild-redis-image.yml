@@ -1,5 +1,5 @@
 ---
-name: "Build redis image"
+name: "zBuild redis image"
 
 on:
   workflow_dispatch:  # This allows to kick-off the action manually from GitHub Actions

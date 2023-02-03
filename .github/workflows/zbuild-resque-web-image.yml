@@ -1,5 +1,5 @@
 ---
-name: "Build resque-web image"
+name: "zBuild resque-web image"
 
 on:
   workflow_dispatch:  # This allows to kick-off the action manually from GitHub Actions
