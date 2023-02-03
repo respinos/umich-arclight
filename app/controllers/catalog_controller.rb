@@ -11,8 +11,6 @@ class CatalogController < ApplicationController
   include DulArclight::FieldConfigHelpers
   include HierarchyHelper
 
-  helper_method :pdf_available?
-
   # DUL CUSTOMIZATION: temporary patch for
   # ArcLight bug https://github.com/projectblacklight/arclight/issues/741
   # Patched for now by copying the raw method from Blacklight https://github.com/projectblacklight/blacklight/blob/master/app/controllers/concerns/blacklight/catalog.rb#L57-L63

@@ -37,6 +37,10 @@ module Arclight
       repository_config&.slug
     end
 
+    def publicid
+      fetch('publicid_ssi', nil)&.strip
+    end
+
     def request_field(field)
       fetch(field, nil)&.strip
     end
