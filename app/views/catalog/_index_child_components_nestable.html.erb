@@ -54,9 +54,6 @@
         <% else %>
           <span>
             <%= index_presenter(document).label %>
-            <span> / <%= document.number_of_children %></span>
-            <span> / <%= document.total_digital_object_count %></span>
-            <span> / <%= document.online_content? %></span>
           </span>
         <% end %>
         <% if document.children? %>

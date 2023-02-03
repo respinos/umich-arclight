@@ -53,5 +53,9 @@ span.twitter-typeahead input[name="q"] {
 
 .text-blended {
   color: var(--color-neutral-100);
-  opacity: 0.5;
+  opacity: 0.0;
+}
+
+.al-search-result-index-article .row {
+  padding-left: 4.5rem;
 }

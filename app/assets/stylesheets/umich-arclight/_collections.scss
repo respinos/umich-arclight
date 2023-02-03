@@ -18,7 +18,7 @@ nav#about-collection-nav {
   margin-top: 1rem;
   margin-bottom: 1rem;
 
-  border-left: 1px solid var(--color-indigo-100);
+  // border-left: 1px solid var(--color-indigo-100);
 
   // 2rem is respectable, but 4rem aligns better
   article {
@@ -39,4 +39,18 @@ nav#about-collection-nav {
       content: "\f056" !important;
     }
   }
+}
+
+.child-components article {
+
+  &:nth-of-type(odd) {
+    background: #fff;
+  }
+
+  margin-top: 1rem; 
+  margin-bottom: 1rem;
+  
+  padding-right: 1rem;
+  // border: 1px solid #ddd;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
