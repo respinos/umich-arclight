@@ -20,14 +20,14 @@ Capybara.register_driver :selenium_remote do |app|
     # See Chromium/Chromedriver capabilities:
     # https://chromedriver.chromium.org/capabilities
     # https://peter.sh/experiments/chromium-command-line-switches/
-    chromeOptions: { args: [
+    chromeOptions: {args: [
       'headless',
       'no-sandbox',
       'disable-gpu',
       'disable-infobars',
       'window-size=1400,1000',
       'enable-features=NetworkService,NetworkServiceInProcess'
-    ] }
+    ]}
   )
 
   Capybara::Selenium::Driver.new(app,
@@ -38,7 +38,7 @@ end
 
 # Puma defaults to Threads: '0:4' (min_threads:max_threads);
 # Tests with AJAX requests seem to timeout & fail unless setting to 1:1
-Capybara.server = :puma, { Threads: '1:1' }
+Capybara.server = :puma, {Threads: '1:1'}
 
 Capybara.server_port = '3002'
 Capybara.server_host = '0.0.0.0'
