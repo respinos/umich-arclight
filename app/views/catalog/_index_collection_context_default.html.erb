@@ -41,7 +41,7 @@
 
         <% counter = document_counter_with_offset(document_counter) %>
         <!-- def link_to_document(doc, field_or_opts = nil, opts = { counter: nil }, url_options = { anchor: nil })-->
-        <% if document.is_linkable? %>
+        <% if is_interesting_component?(document) %>
           <%= link_to_document document, document_show_link_field(document),
             {
               class: 'tree-nav-leaf', title: document.level, counter: counter,
