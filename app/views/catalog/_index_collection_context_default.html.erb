@@ -41,16 +41,20 @@
 
         <% counter = document_counter_with_offset(document_counter) %>
         <!-- def link_to_document(doc, field_or_opts = nil, opts = { counter: nil }, url_options = { anchor: nil })-->
-        <%= link_to_document document, document_show_link_field(document),
-          {
-            class: 'tree-nav-leaf', title: document.level, counter: counter,
-            data: {
-              toggle: 'popover',
-              content: [document.containers.join(', '), document.short_description].reject(&:blank?).join('<br/>')
-            }
-          },
-          { anchor: "contents" }
-        %>
+        <% if document.is_linkable? %>
+          <%= link_to_document document, document_show_link_field(document),
+            {
+              class: 'tree-nav-leaf', title: document.level, counter: counter,
+              data: {
+                toggle: 'popover',
+                content: [document.containers.join(', '), document.short_description].reject(&:blank?).join('<br/>')
+              }
+            },
+            { anchor: "contents" }
+          %>
+        <% else %>
+          <span><%= index_presenter(document).label %></span>
+        <% end %>
 
         <%# ---------------------- %>
         <%# DESCENDANT COUNT BADGE %>
