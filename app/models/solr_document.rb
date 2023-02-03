@@ -168,7 +168,7 @@ class SolrDocument # rubocop:disable Metrics/ClassLength
   end
 
   def is_linkable?
-    (online_content? || number_of_children > 0)
+    (online_content? || number_of_children > 0 || restricted_component?)
   end
 
   # DUL override ArcLight core; we want all extent values, and to singularize e.g. 1 boxes.
