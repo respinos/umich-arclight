@@ -6,6 +6,9 @@ require 'json'
 require 'fileutils'
 require 'nokogiri'
 
+require 'uri'
+require 'net/http'
+
 Deprecation.default_deprecation_behavior = :silence
 
 module UmArclight
@@ -326,52 +329,115 @@ module UmArclight
       def update_package_styles_pdf
         # restore the stylesheet links for the PDF
         placeholder_el = doc.css('m-arclight-placeholder').first
+        doc.css('link[rel="stylesheet"][href^="https://"]').each do |link|
+          @chunks << link.unlink
+        end
         @chunks.css('link').each do |link|
-          next unless link['rel'] == 'stylesheet' && link['href'].start_with?('/assets/')
-          filename = link['href'].split(/[\?#]/).first
+          next unless link['rel'] == 'stylesheet' # && link['href'].start_with?('/assets/')
+          next unless (link['href'].start_with?('/assets/') || link['href'].start_with?('https://'))
+          filename = if link['href'].start_with?('/assets/')
+            link['href'].split(/[\?#]/).first.gsub('/assets', '')
+          else
+            ('/' + link['href'].split(/[\?#]/).first.gsub(/[:\/\@]/,'-'))
+          end
+          STDERR.puts ":: #{link['href']} -> #{filename}" if link['rel'] == 'stylesheet'
 
           # only cache as needed
           download_and_cache(link, filename) unless File.exist?(".#{filename}")
 
-          link['href'] = ".#{filename}"
+          link['href'] = "./assets#{filename}"
           placeholder_el.add_next_sibling link
         end
+        placeholder_el.unlink
       end
 
       def download_and_cache(link, filename)
-        response = get(link['href'])
+        if link['href'].start_with?('/assets/')
+          response = get(link['href'])
+        else
+          uri = URI(link['href'])
+          response = Net::HTTP.get_response(uri)
+          # STDERR.puts "-- FETCHING #{link['href']} :: #{response.is_a?(Net::HTTPSuccess)}"
+          return unless response.is_a?(Net::HTTPSuccess)
+        end
+
         stylesheet = response.body
+        buffer = download_and_update_urls(stylesheet)
+
+        FileUtils.makedirs("./assets#{File.dirname(filename)}") unless Dir.exist?("./assets/#{File.dirname(filename)}")
+
+        File.open("./assets/#{filename}", 'wb') do |f|
+          f.puts buffer
+        end
+      end
+
+      def download_and_update_urls(stylesheet, relative=true)
 
         # now we have to look for url(/assets) here
         buffer = stylesheet.split(/\n/)
         buffer.each_with_index do |line, i|
-          next unless (matches = line.scan(%r{url\(\/assets\/([^\)]+)\)}))
+          # next unless (matches = line.scan(%r{url\(\/assets\/([^\)]+)\)}))
+          # next unless (matches = line.scan(%r{url\(([^\)]+)\)}))
+          matches = line.scan(%r{url\("?([^\)]+)"?\)})
+          next unless matches
 
           matches.each do |match|
-            asset_path = match[0]
-            filename = asset_path.split(/[\?#]/).first
+            asset_path = match[0].gsub('"', '')
+            next unless (asset_path.start_with?('/assets/') || asset_path.start_with?('https://'))
+            
+            asset_filename = if asset_path.start_with?('/assets/')
+              STDERR.puts "<<<<< #{asset_path.split(/[\?#]/).first.gsub('/assets', '')}"
+              asset_path.split(/[\?#]/).first.gsub('/assets', '')
+            else
+              ('/' + asset_path.gsub(/[:\/\@\?\#\|\&,]/,'-'))
+            end
 
-            unless File.exist?("assets/#{filename}")
-              response = get("/assets/#{asset_path}")
-              resource = response.body
+            if asset_filename.nil?
+              STDERR.puts "WTF #{asset_path}"
+              exit
+            end
 
-              FileUtils.makedirs("assets/#{File.dirname(filename)}") unless Dir.exist?(File.dirname("assets/#{filename}"))
+            STDERR.puts "!! #{asset_path} -> #{asset_filename}" # if asset_path.start_with?('https://')
+            if asset_filename.start_with?('/assets')
+              STDERR.puts asset_filename
+              STDERR.puts asset_path
+              exit
+            end
 
-              File.open("./assets/#{filename}", 'wb') do |f|
+            unless File.exist?("./#{asset_filename}")
+              resource = if asset_path.start_with?('/assets/')
+                response = get("#{asset_path}")
+                response.body
+              else
+                uri = URI(asset_path)
+                response = Net::HTTP.get_response(uri)
+                STDERR.puts "-- +++ FETCHING #{asset_path} :: #{response.code} :: #{response['content-type']}"
+                return unless response.is_a?(Net::HTTPSuccess)
+                asset_filename += '.css' if (response['content-type'].include?('text/css') && ! asset_filename.end_with?('.css'))
+                if response['content-type'].include?('text/css')
+                  STDERR.puts response.body
+                  STDERR.puts ">>> DOWN THE RABBIT HOLE"
+                  download_and_update_urls(response.body)
+                else
+                  STDERR.puts "!!! NOT DOWN THE RABBIT HOLE :: #{response['content-type']}"
+                  response.body
+                end
+              end
+
+              FileUtils.makedirs("./assets#{File.dirname(asset_filename)}") unless Dir.exist?(File.dirname("./assets#{asset_filename}"))
+
+              File.open("./assets#{asset_filename}", 'wb') do |f|
                 f.puts resource
               end
             end
 
-            line.gsub!("/assets/#{asset_path}", "./#{filename}")
+            line.gsub!("#{asset_path}", ".#{asset_filename}")
           end
           buffer[i] = line
         end
 
-        FileUtils.makedirs(".#{File.dirname(filename)}") unless Dir.exist?(".#{File.dirname(filename)}")
+        buffer.join("\n")
 
-        File.open(".#{filename}", 'wb') do |f|
-          f.puts buffer.join("\n")
-        end
       end
       # rubocop:enable Metrics/AbcSize
       # rubocop:enable Metrics/MethodLength
