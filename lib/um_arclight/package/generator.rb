@@ -334,13 +334,13 @@ module UmArclight
         end
         @chunks.css('link').each do |link|
           next unless link['rel'] == 'stylesheet' # && link['href'].start_with?('/assets/')
-          next unless (link['href'].start_with?('/assets/') || link['href'].start_with?('https://'))
+          next unless link['href'].start_with?('/assets/', 'https://')
           filename = if link['href'].start_with?('/assets/')
             link['href'].split(/[\?#]/).first.gsub('/assets', '')
           else
-            ('/' + link['href'].split(/[\?#]/).first.gsub(/[:\/\@]/,'-'))
+            ('/' + link['href'].split(/[\?#]/).first.gsub(/[:\/\@]/, '-'))
           end
-          STDERR.puts ":: #{link['href']} -> #{filename}" if link['rel'] == 'stylesheet'
+          # STDERR.puts ":: #{link['href']} -> #{filename}" if link['rel'] == 'stylesheet'
 
           # only cache as needed
           download_and_cache(link, filename) unless File.exist?(".#{filename}")
@@ -371,55 +371,36 @@ module UmArclight
         end
       end
 
-      def download_and_update_urls(stylesheet, relative=true)
-
+      def download_and_update_urls(stylesheet)
         # now we have to look for url(/assets) here
         buffer = stylesheet.split(/\n/)
         buffer.each_with_index do |line, i|
-          # next unless (matches = line.scan(%r{url\(\/assets\/([^\)]+)\)}))
-          # next unless (matches = line.scan(%r{url\(([^\)]+)\)}))
           matches = line.scan(%r{url\("?([^\)]+)"?\)})
           next unless matches
 
           matches.each do |match|
-            asset_path = match[0].gsub('"', '')
-            next unless (asset_path.start_with?('/assets/') || asset_path.start_with?('https://'))
-            
+            asset_path = match[0].delete('"')
+            next unless asset_path.start_with?('/assets/', 'https://')
+
             asset_filename = if asset_path.start_with?('/assets/')
-              STDERR.puts "<<<<< #{asset_path.split(/[\?#]/).first.gsub('/assets', '')}"
               asset_path.split(/[\?#]/).first.gsub('/assets', '')
             else
-              ('/' + asset_path.gsub(/[:\/\@\?\#\|\&,]/,'-'))
-            end
-
-            if asset_filename.nil?
-              STDERR.puts "WTF #{asset_path}"
-              exit
-            end
-
-            STDERR.puts "!! #{asset_path} -> #{asset_filename}" # if asset_path.start_with?('https://')
-            if asset_filename.start_with?('/assets')
-              STDERR.puts asset_filename
-              STDERR.puts asset_path
-              exit
+              ('/' + asset_path.gsub(/[:\/\@\?\#\|\&,]/, '-'))
             end
 
             unless File.exist?("./#{asset_filename}")
               resource = if asset_path.start_with?('/assets/')
-                response = get("#{asset_path}")
+                response = get(asset_path)
                 response.body
               else
                 uri = URI(asset_path)
                 response = Net::HTTP.get_response(uri)
-                STDERR.puts "-- +++ FETCHING #{asset_path} :: #{response.code} :: #{response['content-type']}"
-                return unless response.is_a?(Net::HTTPSuccess)
-                asset_filename += '.css' if (response['content-type'].include?('text/css') && ! asset_filename.end_with?('.css'))
+                # STDERR.puts "-- +++ FETCHING #{asset_path} :: #{response.code} :: #{response['content-type']}"
+                next unless response.is_a?(Net::HTTPSuccess)
+                asset_filename += '.css' if response['content-type'].include?('text/css') && !asset_filename.end_with?('.css')
                 if response['content-type'].include?('text/css')
-                  STDERR.puts response.body
-                  STDERR.puts ">>> DOWN THE RABBIT HOLE"
                   download_and_update_urls(response.body)
                 else
-                  STDERR.puts "!!! NOT DOWN THE RABBIT HOLE :: #{response['content-type']}"
                   response.body
                 end
               end
@@ -431,13 +412,12 @@ module UmArclight
               end
             end
 
-            line.gsub!("#{asset_path}", ".#{asset_filename}")
+            line.gsub!(asset_path, ".#{asset_filename}")
           end
           buffer[i] = line
         end
 
         buffer.join("\n")
-
       end
       # rubocop:enable Metrics/AbcSize
       # rubocop:enable Metrics/MethodLength
