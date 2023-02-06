@@ -146,7 +146,7 @@ module UmArclight
           end
         end
 
-        File.unlink(local_html_filename) unless ENV.fetch('DEBUG_GENERATOR', 'FALSE') == 'TRUE'
+        ## File.unlink(local_html_filename) unless ENV.fetch('DEBUG_GENERATOR', 'FALSE') == 'TRUE'
 
         puts "UM-Arclight generate package: #{collection.id} : puppeteer render (in #{elapsed_time.round(3)} secs)."
       end
@@ -222,6 +222,8 @@ module UmArclight
           response = index.search(params)
         end
 
+        return [] if tmp.keys.empty?
+
         # now attach child components
         tmp.keys.sort.each do |component_level|
           next if component_level == 1
@@ -293,11 +295,15 @@ module UmArclight
 
         doc.css('#summary dl').first << fragment.css('dl#ead_author_block dt,dd')
         doc.css('#background').first << fragment.css('#revdesc_changes')
-        doc.css('div.al-contents').first.replace(fragment.css('div.al-contents-ish').first)
+        if contents_el = doc.css('div.al-contents').first
+          contents_el.replace(fragment.css('div.al-contents-ish').first)
+        end
         doc.css('.card-img').first.remove
         doc.css('#navigate-collection-toggle').first.remove
-        doc.css('#context-tree-nav .tab-pane.active').first.inner_html = ''
-        doc.css('#context-tree-nav .tab-pane.active').first << fragment.css('#toc').first
+        if tree_el = doc.css('#context-tree-nav .tab-pane.active').first
+          tree_el.first.inner_html = ''
+          tree_el.first << fragment.css('#toc').first
+        end
       end
       # rubocop:enable Metrics/AbcSize
 
@@ -319,9 +325,10 @@ module UmArclight
         end
         return unless contents_li
 
-        contents_ul = doc.css('#sidebar #toc > ul').first
-        contents_ul['class'] = 'list-unbulleted'
-        contents_li << contents_ul
+        if contents_ul = doc.css('#sidebar #toc > ul').first
+          contents_ul['class'] = 'list-unbulleted'
+          contents_li << contents_ul
+        end
       end
 
       # rubocop:disable Metrics/AbcSize
