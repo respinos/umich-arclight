@@ -301,8 +301,8 @@ module UmArclight
         doc.css('.card-img').first.remove
         doc.css('#navigate-collection-toggle').first.remove
         if (tree_el = doc.css('#context-tree-nav .tab-pane.active').first)
-          tree_el.first.inner_html = ''
-          tree_el.first << fragment.css('#toc').first
+          tree_el.inner_html = ''
+          tree_el << fragment.css('#toc').first
         end
       end
       # rubocop:enable Metrics/AbcSize
