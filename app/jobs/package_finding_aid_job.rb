@@ -7,9 +7,9 @@ require 'um_arclight/package/generator'
 class PackageFindingAidJob < ApplicationJob
   queue_as :index
 
-  def perform(identifier)
+  def perform(identifier, format)
     artifact = UmArclight::Package::Generator.new identifier: identifier
-    artifact.generate_pdf
+    (format == 'html') ? artifact.generate_html : artifact.generate_pdf
   rescue StandardError
     raise UmArclight::GenerateError, identifier
   end

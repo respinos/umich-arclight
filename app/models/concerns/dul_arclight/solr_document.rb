@@ -33,6 +33,10 @@ module Arclight
       fetch('ead_ssi', nil)&.strip
     end
 
+    def document_id
+      fetch('ead_ssi', nil)&.strip&.tr('.', '-')
+    end
+
     def repository_id
       repository_config&.slug
     end

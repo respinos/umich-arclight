@@ -1,5 +1,8 @@
-<% if component.odd.present? or component.bioghist.present? or component.total_digital_object_count > 0 %>
+<% if component.abstract_or_scope.present? or component.odd.present? or component.bioghist.present? or component.total_digital_object_count > 0 %>
   <blockquote>
+    <% if component.abstract_or_scope.present? %>
+      <p><%= component.abstract_or_scope %></p>
+    <% end %>
     <% component.odd.each do |value_| %>
       <p>
         <%= render_html_tags(value: [value_]) %>

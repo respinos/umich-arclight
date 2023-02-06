@@ -6,6 +6,9 @@ require 'json'
 require 'fileutils'
 require 'nokogiri'
 
+require 'uri'
+require 'net/http'
+
 Deprecation.default_deprecation_behavior = :silence
 
 module UmArclight
@@ -18,6 +21,9 @@ module UmArclight
         parent_ssim
         ref_ssi
         ref_ssm
+        ead_ssi
+        abstract_tesim
+        scopecontent_tesim
         component_level_isim
         normalized_title_ssm
         level_ssm
@@ -42,14 +48,15 @@ module UmArclight
       end
 
       def build_html
-        response = get("/catalog/#{identifier}")
-        @doc = Nokogiri::HTML5(response.body)
-
         components = []
         elapsed_time = Benchmark.realtime do
           @collection = fetch_doc(identifier)
-          components = fetch_components(identifier)
+          components = fetch_components(@collection.eadid)
         end
+
+        response = get("/catalog/#{@collection.id}")
+        @doc = Nokogiri::HTML5(response.body)
+
         puts "UM-Arclight generate package : #{collection.id} : fetch components (in #{elapsed_time.round(3)} secs)."
         elapsed_time = Benchmark.realtime do
           @fragment = render_fragment(
@@ -69,12 +76,15 @@ module UmArclight
         output_filename = generate_output_filename('.html')
         FileUtils.makedirs(File.dirname(output_filename)) unless Dir.exist?(File.dirname(output_filename))
 
+        # serialize the viewable HTML
         File.open(output_filename, 'w') do |f|
           f.puts doc.serialize
         end
+
+        generate_pdf_html
       end
 
-      def build_pdf
+      def build_pdf_html
         # build the source in tmp
         FileUtils.mkdir_p(working_path_name)
         Dir.chdir(working_path_name)
@@ -90,23 +100,35 @@ module UmArclight
         puts "UM-Arclight generate package: #{collection.id} : update HTML for PDF (in #{elapsed_time.round(3)} secs)."
       end
 
-      def generate_pdf # rubocop:disable Metrics/MethodLength
-        generate_html if @doc.nil?
-
-        build_pdf
-
-        local_html_filename = "#{collection.id}.local.html"
+      def generate_pdf_html
+        build_pdf_html
+        local_html_filename = generate_local_html_filename # "#{collection.document_id}.local.html"
         File.open(local_html_filename, 'w') do |f|
           f.puts doc.serialize
         end
+      end
 
+      def build_pdf_prereq
+        @collection = fetch_doc(identifier)
+        local_html_filename = generate_local_html_filename
+        if File.exist?(local_html_filename)
+          warn "-- using #{local_html_filename}"
+        else
+          generate_html
+        end
+      end
+
+      def generate_pdf # rubocop:disable Metrics/MethodLength
+        build_pdf_prereq
+
+        local_html_filename = generate_local_html_filename
         output_filename = generate_output_filename('.pdf')
         FileUtils.mkdir_p(File.dirname(output_filename))
 
         elapsed_time = Benchmark.realtime do
           Puppeteer.launch(headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox']) do |browser|
             page = browser.new_page
-            page.goto("file:#{working_path_name}/#{identifier}.local.html", wait_until: 'networkidle2')
+            page.goto("file:#{local_html_filename}", wait_until: 'networkidle2')
             page.pdf(
               path: output_filename,
               print_background: true,
@@ -124,7 +146,7 @@ module UmArclight
           end
         end
 
-        File.unlink(local_html_filename) unless ENV.fetch('DEBUG_GENERATOR', 'FALSE') == 'TRUE'
+        ## File.unlink(local_html_filename) unless ENV.fetch('DEBUG_GENERATOR', 'FALSE') == 'TRUE'
 
         puts "UM-Arclight generate package: #{collection.id} : puppeteer render (in #{elapsed_time.round(3)} secs)."
       end
@@ -132,13 +154,17 @@ module UmArclight
       private
 
       def generate_output_filename(ext)
-        filename = "#{DulArclight.finding_aid_data}/pdf/#{collection.repository_id}/#{collection.id}#{ext}"
+        filename = File.join(DulArclight.finding_aid_data, 'pdf', collection.repository_id, "#{collection.document_id}#{ext}")
         filename = File.join(Rails.root, filename) if filename.start_with?('./')
         filename
       end
 
       def working_path_name
-        "#{Rails.root}/tmp/pdf"
+        File.join(Rails.root, "tmp", "pdf")
+      end
+
+      def generate_local_html_filename
+        File.join(working_path_name, "#{@collection.document_id}.local.html")
       end
 
       def get(url)
@@ -155,7 +181,7 @@ module UmArclight
       def fetch_doc(id)
         params = {
           fl: '*',
-          q: ["id:#{id}"],
+          q: ["id:#{id.tr(".", "-")}"],
           start: 0,
           rows: 1
         }
@@ -182,7 +208,7 @@ module UmArclight
         while response.documents.present?
           puts "UM-Arclight generate package : harvesting components : #{collection.id} : #{start} / #{response.total}"
           response.documents.each do |doc|
-            if doc.id == id
+            if doc.component_level.nil?
               # ignore the collection doc
               next
             end
@@ -195,6 +221,8 @@ module UmArclight
           params[:start] = start
           response = index.search(params)
         end
+
+        return [] if tmp.keys.empty?
 
         # now attach child components
         tmp.keys.sort.each do |component_level|
@@ -267,11 +295,15 @@ module UmArclight
 
         doc.css('#summary dl').first << fragment.css('dl#ead_author_block dt,dd')
         doc.css('#background').first << fragment.css('#revdesc_changes')
-        doc.css('div.al-contents').first.replace(fragment.css('div.al-contents-ish').first)
+        if (contents_el = doc.css('div.al-contents').first)
+          contents_el.replace(fragment.css('div.al-contents-ish').first)
+        end
         doc.css('.card-img').first.remove
         doc.css('#navigate-collection-toggle').first.remove
-        doc.css('#context-tree-nav .tab-pane.active').first.inner_html = ''
-        doc.css('#context-tree-nav .tab-pane.active').first << fragment.css('#toc').first
+        if (tree_el = doc.css('#context-tree-nav .tab-pane.active').first)
+          tree_el.inner_html = ''
+          tree_el << fragment.css('#toc').first
+        end
       end
       # rubocop:enable Metrics/AbcSize
 
@@ -293,9 +325,10 @@ module UmArclight
         end
         return unless contents_li
 
-        contents_ul = doc.css('#sidebar #toc > ul').first
-        contents_ul['class'] = 'list-unbulleted'
-        contents_li << contents_ul
+        if (contents_ul = doc.css('#sidebar #toc > ul').first)
+          contents_ul['class'] = 'list-unbulleted'
+          contents_li << contents_ul
+        end
       end
 
       # rubocop:disable Metrics/AbcSize
@@ -303,47 +336,95 @@ module UmArclight
       def update_package_styles_pdf
         # restore the stylesheet links for the PDF
         placeholder_el = doc.css('m-arclight-placeholder').first
+        doc.css('link[rel="stylesheet"][href^="https://"]').each do |link|
+          @chunks << link.unlink
+        end
         @chunks.css('link').each do |link|
-          next unless link['rel'] == 'stylesheet' && link['href'].start_with?('/assets/')
+          next unless link['rel'] == 'stylesheet' # && link['href'].start_with?('/assets/')
+          next unless link['href'].start_with?('/assets/', 'https://')
+          filename = if link['href'].start_with?('/assets/')
+            link['href'].split(/[\?#]/).first.gsub('/assets', '')
+          else
+            ('/' + link['href'].split(/[\?#]/).first.gsub(/[:\/\@]/, '-'))
+          end
+          # STDERR.puts ":: #{link['href']} -> #{filename}" if link['rel'] == 'stylesheet'
 
+          # only cache as needed
+          download_and_cache(link, filename) unless File.exist?(".#{filename}")
+
+          link['href'] = "./assets#{filename}"
+          placeholder_el.add_next_sibling link
+        end
+        placeholder_el.unlink
+      end
+
+      def download_and_cache(link, filename)
+        if link['href'].start_with?('/assets/')
           response = get(link['href'])
-          stylesheet = response.body
+        else
+          uri = URI(link['href'])
+          response = Net::HTTP.get_response(uri)
+          # STDERR.puts "-- FETCHING #{link['href']} :: #{response.is_a?(Net::HTTPSuccess)}"
+          return unless response.is_a?(Net::HTTPSuccess)
+        end
 
-          # now we have to look for url(/assets) here
-          buffer = stylesheet.split(/\n/)
-          buffer.each_with_index do |line, i|
-            next unless (matches = line.scan(%r{url\(\/assets\/([^\)]+)\)}))
+        stylesheet = response.body
+        buffer = download_and_update_urls(stylesheet)
 
-            matches.each do |match|
-              asset_path = match[0]
-              filename = asset_path.split(/[\?#]/).first
+        FileUtils.makedirs("./assets#{File.dirname(filename)}") unless Dir.exist?("./assets/#{File.dirname(filename)}")
 
-              unless File.exist?("assets/#{filename}")
-                response = get("/assets/#{asset_path}")
-                resource = response.body
+        File.open("./assets/#{filename}", 'wb') do |f|
+          f.puts buffer
+        end
+      end
 
-                FileUtils.makedirs("assets/#{File.dirname(filename)}") unless Dir.exist?(File.dirname("assets/#{filename}"))
+      def download_and_update_urls(stylesheet)
+        # now we have to look for url(/assets) here
+        buffer = stylesheet.split(/\n/)
+        buffer.each_with_index do |line, i|
+          matches = line.scan(%r{url\("?([^\)]+)"?\)})
+          next unless matches
 
-                File.open("./assets/#{filename}", 'wb') do |f|
-                  f.puts resource
+          matches.each do |match|
+            asset_path = match[0].delete('"')
+            next unless asset_path.start_with?('/assets/', 'https://')
+
+            asset_filename = if asset_path.start_with?('/assets/')
+              asset_path.split(/[\?#]/).first.gsub('/assets', '')
+            else
+              ('/' + asset_path.gsub(/[:\/\@\?\#\|\&,]/, '-'))
+            end
+
+            unless File.exist?("./#{asset_filename}")
+              resource = if asset_path.start_with?('/assets/')
+                response = get(asset_path)
+                response.body
+              else
+                uri = URI(asset_path)
+                response = Net::HTTP.get_response(uri)
+                # STDERR.puts "-- +++ FETCHING #{asset_path} :: #{response.code} :: #{response['content-type']}"
+                next unless response.is_a?(Net::HTTPSuccess)
+                asset_filename += '.css' if response['content-type'].include?('text/css') && !asset_filename.end_with?('.css')
+                if response['content-type'].include?('text/css')
+                  download_and_update_urls(response.body)
+                else
+                  response.body
                 end
               end
 
-              line.gsub!("/assets/#{asset_path}", "./#{filename}")
+              FileUtils.makedirs("./assets#{File.dirname(asset_filename)}") unless Dir.exist?(File.dirname("./assets#{asset_filename}"))
+
+              File.open("./assets#{asset_filename}", 'wb') do |f|
+                f.puts resource
+              end
             end
-            buffer[i] = line
+
+            line.gsub!(asset_path, ".#{asset_filename}")
           end
-
-          filename = link['href'].split(/[\?#]/).first
-
-          FileUtils.makedirs(".#{File.dirname(filename)}") unless Dir.exist?(".#{File.dirname(filename)}")
-
-          File.open(".#{filename}", 'wb') do |f|
-            f.puts buffer.join("\n")
-          end
-          link['href'] = ".#{filename}"
-          placeholder_el.add_next_sibling link
+          buffer[i] = line
         end
+
+        buffer.join("\n")
       end
       # rubocop:enable Metrics/AbcSize
       # rubocop:enable Metrics/MethodLength
@@ -368,11 +449,16 @@ module UmArclight
         @index = Index.new
       end
 
-      def setup(repository_ssm: nil)
-        identifiers = fetch_collection_identifiers(repository_ssm)
+      def setup(**kw)
+        identifiers = if kw[:eadid]
+          [kw[:eadid].tr('.', '-')]
+        else
+          fetch_collection_identifiers(kw[:repository_ssm])
+        end
+
         identifiers.each do |identifier|
           puts "UM-Arclight queue package: #{identifier}"
-          ::PackageFindingAidJob.perform_later(identifier)
+          ::PackageFindingAidJob.perform_later(identifier, kw.fetch(:format, 'html'))
         end
       end
 
