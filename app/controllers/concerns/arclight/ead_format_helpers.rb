@@ -48,7 +48,7 @@ module Arclight
         format_special_elements(node)
         format_render_attributes(node) if node.attr('render').present?
         format_href_attributes(node) if node.attr('href').present?
-        format_url_content(node) if %r{https?://}i.match?(node.content)
+        format_url_content(node) if %r{https?://}i.match?(node.xpath('normalize-space(text())'))
 
         # Some elements are in common between EAD & HTML:
         # abbr address blockquote div head label p table tbody thead title
@@ -65,6 +65,8 @@ module Arclight
       format_lists(node) if %w[list chronlist].include? node.name
       format_indexes(node) if node.name == 'index'
       format_tables(node) if node.name == 'table'
+      format_compound_elements(node) if %w[separatedmaterial relatedmaterial bibliography].include? node.name
+      format_notes_elements(node) if %w[p note odd].include? node.name
     end
 
     def format_render_attributes(node) # rubocop:disable Metrics/MethodLength, Metrics/CyclomaticComplexity
@@ -313,6 +315,19 @@ module Arclight
       end
       node.content = node['title'] if (%w[extptr ptr].include? node.name) && node['title'].present?
       node.name = 'a' if node['href'].present?
+    end
+
+    def format_compound_elements(node)
+      head = node.xpath("./head").first
+      head&.name = 'h3'
+      return if head.present?
+      label = I18n.t("um_arclight.ead_element_labels.#{node.name}")
+      node.add_previous_sibling("<h3>#{label}</h3>")
+    end
+
+    def format_notes_elements(node)
+      head = node.xpath("./head").first
+      head&.name = 'h3'
     end
 
     # Format EAD <index> elements

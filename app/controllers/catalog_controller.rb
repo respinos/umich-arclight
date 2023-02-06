@@ -399,6 +399,7 @@ class CatalogController < ApplicationController
     config.add_background_field 'descrules_ssm', label: 'Rules or Conventions', helper_method: :render_html_tags
 
     # Collection Show Page - Related Section
+    config.add_related_field 'add_tesim', label: 'Additional Descriptive Data', helper_method: :render_html_tags
     config.add_related_field 'relatedmaterial_tesim', label: 'Related Material', helper_method: :render_html_tags
     config.add_related_field 'separatedmaterial_tesim', label: 'Separated Material', helper_method: :render_html_tags
     config.add_related_field 'otherfindaid_tesim', label: 'Other Finding Aids', helper_method: :render_html_tags
