@@ -295,12 +295,12 @@ module UmArclight
 
         doc.css('#summary dl').first << fragment.css('dl#ead_author_block dt,dd')
         doc.css('#background').first << fragment.css('#revdesc_changes')
-        if contents_el = doc.css('div.al-contents').first
+        if (contents_el = doc.css('div.al-contents').first)
           contents_el.replace(fragment.css('div.al-contents-ish').first)
         end
         doc.css('.card-img').first.remove
         doc.css('#navigate-collection-toggle').first.remove
-        if tree_el = doc.css('#context-tree-nav .tab-pane.active').first
+        if (tree_el = doc.css('#context-tree-nav .tab-pane.active').first)
           tree_el.first.inner_html = ''
           tree_el.first << fragment.css('#toc').first
         end
@@ -325,7 +325,7 @@ module UmArclight
         end
         return unless contents_li
 
-        if contents_ul = doc.css('#sidebar #toc > ul').first
+        if (contents_ul = doc.css('#sidebar #toc > ul').first)
           contents_ul['class'] = 'list-unbulleted'
           contents_li << contents_ul
         end
