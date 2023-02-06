@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'um_arclight/download_helper'
+
 # Modifies some ArcLight core methods to account for the
 # DUL custom child_components view. Last checked for updates
 # ArcLight v0.3.0. See:
