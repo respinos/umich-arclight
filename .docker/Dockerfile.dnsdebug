@@ -1,0 +1,4 @@
+FROM golang:1.16.10-alpine3.13
+
+RUN apk add strace
+CMD ["sleep", "infinity"]
