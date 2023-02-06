@@ -1,5 +1,7 @@
 /.bundle
 /.cache
+/.gem
+/.local
 /.yarn
 /.vegas
 
@@ -7,6 +9,7 @@
 /node_modules
 /resque_web
 /tmp
+/vendor/bundle
 
 
 .byebug_history

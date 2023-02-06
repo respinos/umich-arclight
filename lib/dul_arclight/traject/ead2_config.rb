@@ -314,7 +314,7 @@ to_field 'digital_objects_ssm', extract_xpath('/ead/archdesc/did/dao|/ead/archde
   accumulator.map! do |dao|
     label = dao.attributes['title']&.value ||
             dao.attributes['xlink:title']&.value ||
-            dao.xpath('daodesc/p')&.text
+            dao.xpath('daodesc//p')&.text
     href = (dao.attributes['href'] || dao.attributes['xlink:href'])&.value
     role = (dao.attributes['role'] || dao.attributes['xlink:role'])&.value
     xpointer = (dao.attributes['xpointer'] || dao.attributes['xlink:xpointer'])&.value
@@ -658,7 +658,7 @@ compose 'components', ->(record, accumulator, _context) { accumulator.concat rec
     accumulator.map! do |dao|
       label = dao.attributes['title']&.value ||
               dao.attributes['xlink:title']&.value ||
-              dao.xpath('daodesc/p')&.text
+              dao.xpath('daodesc//p')&.text
       href = (dao.attributes['href'] || dao.attributes['xlink:href'])&.value
       role = (dao.attributes['role'] || dao.attributes['xlink:role'])&.value
       xpointer = (dao.attributes['xpointer'] || dao.attributes['xlink:xpointer'])&.value
