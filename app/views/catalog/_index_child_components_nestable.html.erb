@@ -49,7 +49,7 @@
     <div class="d-flex" xclass="documentHeader d-flex order-1" data-document-id="<%= document.id %>">
       <h3 xclass="index_title document-title-heading">
         <!-- def link_to_document(doc, field_or_opts = nil, opts = { counter: nil }, url_options = { anchor: nil })-->
-        <% if document.is_linkable? %>
+        <% if (is_interesting_component?(document)) %>
           <%= link_to_document(document, document_show_link_field(document), { counter: counter }, { anchor: "contents" }) %>
         <% else %>
           <span>
