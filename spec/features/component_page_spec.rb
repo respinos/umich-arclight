@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require 'rails_helper'
 
 RSpec.xdescribe 'Component Page', type: :feature, js: true do
   # Note the DUL-custom {eadid}_{ref} in the document id

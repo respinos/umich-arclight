@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-describe DulArclightHelper, type: :helper do
+RSpec.describe DulArclightHelper, type: :helper do
   describe '#ask_rubenstein_url' do
     let(:request) do
       instance_double('request',

@@ -4,7 +4,7 @@
 # https://github.com/projectblacklight/arclight/blob/master/spec/models/arclight/requests/google_form_spec.rb
 # https://github.com/projectblacklight/arclight/blob/master/spec/models/arclight/requests/aeon_web_ead_spec.rb
 
-require 'spec_helper'
+require 'rails_helper'
 
 RSpec.xdescribe 'Arclight::Requests::DukeRequest' do
   subject(:valid_object) { described_class.new(document) }

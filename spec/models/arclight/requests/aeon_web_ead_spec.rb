@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require 'rails_helper'
 
 RSpec.describe Arclight::Requests::AeonWebEad do
   describe 'simple request mappings' do
