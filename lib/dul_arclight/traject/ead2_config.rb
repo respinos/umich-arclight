@@ -418,7 +418,6 @@ to_field 'text' do |_record, accumulator, context|
   accumulator.concat context.output_hash.fetch('non_components_teim', [])
 end
 
-
 # =============================
 # Each component child document
 # <c> <c01> <c12>
