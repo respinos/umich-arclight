@@ -2,9 +2,18 @@ require 'arclight'
 require 'arclight/repository'
 
 require 'um_arclight/package/generator'
+require 'fileutils'
 
 namespace :arclight do
   artifact = nil
+
+  desc 'Clear package assets cache'
+  task clear_package_assets: :environment do
+    working_path_name = File.join(DulArclight.finding_aid_data, 'pdf', 'tmp')
+    Dir.glob(File.join(working_path_name, '*/assets')).each do |asset_path|
+      FileUtils.remove_dir(asset_path, true)
+    end
+  end
 
   desc 'Generate packages for indexed finding aids via background jobs'
   task generate_enqueue: :environment do

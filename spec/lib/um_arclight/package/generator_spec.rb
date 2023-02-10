@@ -13,7 +13,7 @@ RSpec.describe UmArclight::Package::Generator do
         'id': 'umich-test-9999',
         'normalized_title_ssm': ['Finding Aid'],
         'ead_author_ssm': ['Finding Aid written by E. A. Document'],
-        'repository_ssm': ['University of Michigan XML Library']
+        'repository_ssm': ['University of Michigan Bentley Historical Library']
       )
     end
 

@@ -35,27 +35,5 @@
       <%= render "arclight/fragments/components" %>
     </div>
 
-    <div id="revdesc_changes">
-    <% if @collection.revdesc_changes.present? %>
-      <h3>Revision History</h3>
-      <table class="table table-sm fs-7">
-        <thead>
-          <tr>
-            <th>Date</th>
-            <th>Item</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @collection.revdesc_changes.each do |change| %>
-            <tr>
-              <td style="white-space: nowrap"><%= change['date'] %></td>
-              <td><%= change['item'] %></td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-    <% end %>
-    </div>
-
   </body>
 </html>

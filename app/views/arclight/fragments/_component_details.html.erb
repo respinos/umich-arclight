@@ -16,7 +16,7 @@
     <% if component.total_digital_object_count > 0 && component.digital_objects.present? %>
       <% component.digital_objects.each do |dao| %>
         <p>
-          <a href="<%= dao.href %>">View: <%= dao.label %></a>
+          <a href="<%= dao.href %>">View: <%= render_html_tags(value: [dao.label]) %></a>
         </p>
       <% end %>
     <% end %>

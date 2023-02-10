@@ -35,7 +35,7 @@ module DulArclight
     def ead_download
       xml_filename = download_helper.ead_file_path
 
-      if xml_filename.nil?
+      unless xml_filename && File.exist?(xml_filename)
         render plain: '404 Not Found', status: :not_found
         return
       end

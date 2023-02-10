@@ -1,5 +1,5 @@
 <% @components.each do |component| %>
-  <article data-component-level="<%= component.component_level %>" style="--component-level: <%= component.component_level %>">
+  <article data-component-level="<%= component.component_level %>">
     <div class="component-wrapper">
       <%= content_tag "h#{component.component_level + 2}", class: 'tree-title', id: component.id do -%>
         <span>
