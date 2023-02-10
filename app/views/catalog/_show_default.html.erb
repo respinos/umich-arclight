@@ -244,7 +244,7 @@
   </div>
 <% end %>
 
-<% if document.children? %>
+<% if document.children? or document.non_component_contents? %>
 
   <%# ========================== %>
   <%# Child Components           %>
@@ -253,22 +253,25 @@
   <h2 class="al-show-sub-heading" id="<%= t("arclight.views.show.sections.contents").parameterize %>">
     <%= t("arclight.views.show.sections.contents") %>
   </h2>
-  <%= content_tag(
-    :div, '',
-    class: "al-contents child-components children-count-#{document.number_of_children}",
-    data: {
-      arclight: {
-        path: search_catalog_path,
-        name: document.collection_name,
-        view: 'child_components',
-        parent: document.reference,
-        directparent: document.reference,
-        childrencount: document.number_of_children,
-        search_field: 'within_collection',
-        per_page: '100'
+  <%= document.non_component_contents %>
+  <% if document.children? %>
+    <%= content_tag(
+      :div, '',
+      class: "al-contents child-components children-count-#{document.number_of_children}",
+      data: {
+        arclight: {
+          path: search_catalog_path,
+          name: document.collection_name,
+          view: 'child_components',
+          parent: document.reference,
+          directparent: document.reference,
+          childrencount: document.number_of_children,
+          search_field: 'within_collection',
+          per_page: '100'
+        }
       }
-    }
-  ) %>
+    ) %>
+  <% end %>
 <% end %>
 
 <!--
