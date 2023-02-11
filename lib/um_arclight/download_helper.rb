@@ -27,7 +27,7 @@ module UmArclight
       publicid = document.publicid
       request_pattern = document.repository_config.request_pattern
       match = Regexp.new(request_pattern).match(publicid)
-      File.join(DulArclight.finding_aid_data, 'ead', repo_id, match[1])
+      File.join(DulArclight.finding_aid_data, 'ead', repo_id, match[1]) unless match.nil?
     end
 
     def repo_id

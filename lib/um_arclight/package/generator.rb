@@ -137,7 +137,7 @@ module UmArclight
           if process_status.success?
             puts stdout_and_stderr
           else
-            raise UmArclight::GenerateError, identifier, stdout_and_stderr
+            raise UmArclight::GenerateError, identifier, stdout_and_stderr.to_s
           end
         end
 
