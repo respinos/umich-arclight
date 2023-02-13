@@ -63,6 +63,7 @@ DID_SEARCHABLE_NOTES_FIELDS = %w[
   abstract
   materialspec
   physloc
+  note
 ].freeze
 
 # DUL CUSTOMIZATION: separated from SEARCHABLE_NOTES for more
@@ -756,7 +757,7 @@ compose 'components', ->(record, accumulator, _context) { accumulator.concat rec
     to_field "#{selector}_tesim", extract_xpath("./did/#{selector}", to_text: false)
     to_field "#{selector}_teim", extract_xpath("./did/#{selector}/*[local-name()!='head']")
   end
-  to_field 'did_note_ssm', extract_xpath('./did/note')
+  to_field 'did_note_teim', extract_xpath('./did/note')
 
   # DUL CUSTOMIZATION: add index
   to_field 'indexes_tesim', extract_xpath('./index', to_text: false)
