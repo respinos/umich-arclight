@@ -137,6 +137,15 @@ module Arclight
       end
     end
 
+    def non_component_contents?
+      non_component_contents.present?
+    end
+
+    def non_component_contents
+      content = fetch('non_components_tesim', []).join
+      render_html_tags(value: [content]) unless content.empty?
+    end
+
     def containers
       # note that .titlecase strips punctuation, like hyphens, we want to keep
       fetch('containers_ssim', []).map(&:capitalize)

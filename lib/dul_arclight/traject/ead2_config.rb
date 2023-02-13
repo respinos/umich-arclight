@@ -412,6 +412,12 @@ to_field 'total_component_count_isim' do |record, accumulator|
   accumulator << record.xpath('/ead/archdesc/dsc//*[is_component(.)]', NokogiriXpathExtensions.new).count
 end
 
+to_field 'non_components_tesim', extract_xpath('/ead/archdesc/dsc/*[not(self::c01)]', to_text: false)
+to_field 'non_components_teim', extract_xpath('/ead/archdesc/dsc/*[not(self::c01)]')
+to_field 'text' do |_record, accumulator, context|
+  accumulator.concat context.output_hash.fetch('non_components_teim', [])
+end
+
 # =============================
 # Each component child document
 # <c> <c01> <c12>
