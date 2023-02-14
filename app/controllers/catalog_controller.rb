@@ -450,14 +450,14 @@ class CatalogController < ApplicationController
     # Component Show Page - Metadata Section
 
     # DUL CUSTOMIZATION: add creators field; it's missing in ArcLight core.
-    config.add_component_field 'creators_ssim', label: 'Creator', link_to_facet: true
+    config.add_component_field 'creators_ssim', label: 'Creator', link_to_facet: true, ignore_interesting: true
     config.add_component_field 'containers', label: 'Containers', accessor: 'containers', separator_options: {
       words_connector: ', ',
       two_words_connector: ', ',
       last_word_connector: ', '
     }, if: lambda { |_context, _field_config, document|
       document.containers.present?
-    }
+    }, ignore_interesting: true
     config.add_component_field 'abstract_tesim', label: 'Abstract', helper_method: :render_html_tags
 
     # DUL CUSTOMIZATION: Present all physdesc as extent
@@ -466,7 +466,8 @@ class CatalogController < ApplicationController
                                                    words_connector: '<br/>',
                                                    two_words_connector: '<br/>',
                                                    last_word_connector: '<br/>'
-                                                 }
+                                                 },
+                                                 ignore_interesting: true
 
     config.add_component_field 'scopecontent_tesim', label: 'Scope and Content', helper_method: :render_html_tags
     config.add_component_field 'acqinfo_ssim', label: 'Acquisition Information', helper_method: :render_html_tags

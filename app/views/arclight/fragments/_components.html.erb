@@ -1,7 +1,7 @@
 <% @components.each do |component| %>
   <article data-component-level="<%= component.component_level %>">
     <div class="component-wrapper">
-      <%= content_tag "h#{component.component_level + 2}", class: 'tree-title', id: component.id do -%>
+      <%= content_tag "h3", class: 'tree-title', id: component.id do -%>
         <span>
           <%= component.normalized_title %>
           <% if component.level.present? %> (<%= component.level %>)<% end %>

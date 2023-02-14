@@ -29,10 +29,11 @@ module UmArclight
         component_level_isim
         normalized_title_ssm
         level_ssm
-        scopecontent_teism
         unitid_ssm
         odd_tesim
         bioghist_tesim
+        physloc_tesim
+        materialspec_tesim
         total_digital_object_count_isim
         digital_objects_ssm
         containers_ssim
@@ -261,6 +262,11 @@ module UmArclight
         lookup_context = ActionView::LookupContext.new(paths)
         renderer = ActionView::Renderer.new(lookup_context)
         view_context = ActionView::Base.new(renderer)
+
+        # re-evaluate when we upgrade Rails to use CatalogController.renderer
+        view_context.define_singleton_method(:blacklight_config) do
+          @config ||= CatalogController.blacklight_config.deep_copy
+        end
         view_context.assign(variables)
         view_context.extend Arclight::EadFormatHelpers
 
@@ -282,7 +288,7 @@ module UmArclight
         @chunks = doc.fragment
         asset_links = doc.xpath('/html/head/link[starts-with(@href, "/assets")]')
         # add the placeholder
-        asset_links.first.add_previous_sibling '<m-arclight-placeholder></m-arclight-placeholder>'
+        asset_links.first.add_previous_sibling '<base id="placeholder" />'
         asset_links.each do |el|
           @chunks << el
         end
@@ -291,7 +297,7 @@ module UmArclight
         @chunks << doc.css('meta[name="csrf-param"]').first&.unlink
         @chunks << doc.css('meta[name="csrf-token"]').first&.unlink
 
-        doc.css('#summary dl').first << fragment.css('dl#ead_author_block dt,dd')
+        doc.css('#summary dl').first << fragment.css('dl#ead_author_block dt,dl#ead_author_block dd')
         if (contents_el = doc.css('div.al-contents').first)
           contents_el.replace(fragment.css('div.al-contents-ish').first)
         end
@@ -341,7 +347,8 @@ module UmArclight
       # rubocop:disable Metrics/MethodLength
       def update_package_styles_pdf
         # restore the stylesheet links for the PDF
-        placeholder_el = doc.css('m-arclight-placeholder').first
+        placeholder_el = doc.css('base#placeholder').first
+
         # this is getting so dumb
         placeholder_el.add_next_sibling '<link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">'
         placeholder_el.add_next_sibling '<link href="https://fonts.googleapis.com/css?family=Crimson+Text|Muli:400,600,700" rel="stylesheet">'

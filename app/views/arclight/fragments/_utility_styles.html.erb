@@ -47,6 +47,10 @@
     color: #06080A;
     text-decoration: none;
   }
+
+  #sidebar {
+    display: none;
+  }
 </style>
 
 <style id="utility-styles">
@@ -146,8 +150,8 @@
 
   /* LISTS */
 
-  #document dl {
-    margin-bottom: 2rem;
+  #document dl.al-metadata {
+    margin-bottom: 1rem;
   }
 
   .al-show-sub-heading+dl>dt {
@@ -273,6 +277,18 @@
     margin-left: 12rem;
   }
 
+  article[data-component-level="8"] {
+    margin-left: 14rem;
+  }
+
+  article[data-component-level="9"] {
+    margin-left: 15rem;
+  }
+
+  article[data-component-level="10"] {
+    margin-left: 16rem;
+  }
+
   article[data-component-level] h4 {
     font-size: 1rem;
   }
@@ -338,10 +354,6 @@
   /* OTHER */
 
   .modal {
-    display: none;
-  }
-
-  #sidebar {
     display: none;
   }
 
