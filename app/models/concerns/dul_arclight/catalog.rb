@@ -59,7 +59,7 @@ module DulArclight
       # replace m-arclight-placeholder with current asset styles/scripts
       self.response_body = Enumerator.new do |output|
         File.foreach(download_helper.html_file_path) do |line|
-          if line.index('<m-arclight-placeholder></m-arclight-placeholder>')
+          if line.index('<base id="placeholder">')
             output << helpers.stylesheet_link_tag('application', media: 'all')
             output << helpers.javascript_include_tag('application')
             output << helpers.csrf_meta_tags
