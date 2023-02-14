@@ -23,6 +23,10 @@ module DulArclight
         helper_method :pdf_available?
         helper_method :ead_available?
       end
+
+      if respond_to?(:after_action)
+        after_action :add_noindex_headers
+      end
     end
 
     # DUL CUSTOMIZATION: send the source EAD XML file that we already have on the filesystem
@@ -83,6 +87,12 @@ module DulArclight
     def ead_available?(document)
       setup_download_helper
       download_helper.ead_available?
+    end
+
+    def add_noindex_headers
+      unless params[:id]
+        response.headers['X-Robots-Tag'] = 'noindex'
+      end
     end
 
     ##
