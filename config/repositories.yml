@@ -172,7 +172,7 @@ clarke:
   repo_about:
     using_materials: 'Finding aids describe collections of primary sources and other unique, original, or rare materials. Collections are non-circulating and must be used in the Clarke Library reading room. Some finding aids contain links to digitized versions of parts or all of a collection, but in most cases viewing a collection in its entirety will require visiting the library.'
     visitor_info: 'Please visit <a href="https://www.cmich.edu/research/clarke-historical-library/services/reference-research-help">Clarke Research and Reference Help</a>.'
-    how_to_request: '<a href="clarke@cmich.edu">Contact the Clarke</a> for assistance with collections.'
+    how_to_request: '<a href="mailto:clarke@cmich.edu?subject=Online Finding Aids Question">Contact the Clarke</a> for assistance with collections.'
     how_to_order: 'Please visit <a href="https://www.cmich.edu/research/clarke-historical-library/about/policies#a3">Clarke Digital Reproduction Policies and Fees</a>.'
 vrc:
   name: 'University of Michigan History of Art Visual Resources Collection'
