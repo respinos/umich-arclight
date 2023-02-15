@@ -1,58 +1,3 @@
-<style id="pdf-styles">
-  html, body {
-    font-family: "Mulish", Calibri, Candara, Arial, sans-serif;
-    font-size: 16px;
-  }
-
-  #sidebar,
-  .skip-link,
-  .element-invisible,
-  .visually-hidden
-    {
-    display: none;
-  }
-
-  header {
-    background: #00274C;
-    color: #F7F8F9;
-    position: static;
-    display: block;
-  }
-
-  header>div.website-header-container {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 1rem;
-    font-size: 1.5rem;
-  }
-
-  header>div.website-header-container a {
-    color: white;
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    line-height: 1.1;
-  }
-
-  header>div.repository a {
-    color: #06080A;
-    text-decoration: none;
-  }
-
-  #sidebar {
-    display: none;
-  }
-</style>
-
 <style id="utility-styles">
 
   #component-breadcrumb {
@@ -86,38 +31,8 @@
     text-decoration: underline;
   }
 
-  .card {
-    position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    min-width: 0;
-    word-wrap: break-word;
-    background-color: #fff;
-    background-clip: border-box;
-  }
-
   .card-horizontal {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-  }
-
-  .card-body {
-    padding: 1.25rem;
-  }
-
-  .card-footer {
-    padding: 1.25rem;
-    background-color: rgba(0, 0, 0, 0.03);
-    border-left: 1px solid rgba(0, 0, 0, 0.125);
-    border-top: unset;
-    line-height: 1.2;
+    max-height: unset;
   }
 
   .al-repository {
@@ -152,6 +67,19 @@
 
   #document dl.al-metadata {
     margin-bottom: 1rem;
+  }
+
+  dt[data-field="scopecontent_tesim"],
+  dt[data-field="abstract_tesim"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
   }
 
   .al-show-sub-heading+dl>dt {
@@ -333,9 +261,23 @@
     -webkit-box-direction: normal;
     -ms-flex-direction: row;
     flex-direction: row;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+  }
+
+  .component-title {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
+    flex-grow: 1;
   }
 
   article blockquote {
@@ -353,8 +295,21 @@
 
   /* OTHER */
 
-  .modal {
-    display: none;
-  }
+.d-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+.flex-grow-1 {
+  flex-grow: 1;
+}
 
 </style>

@@ -288,14 +288,20 @@ module UmArclight
         @chunks = doc.fragment
         asset_links = doc.xpath('/html/head/link[starts-with(@href, "/assets")]')
         # add the placeholder
-        asset_links.first.add_previous_sibling '<base id="placeholder" />'
+        asset_links.first.add_previous_sibling '<style id="placeholder"></style>'
+
         asset_links.each do |el|
-          @chunks << el
+          # @chunks << el
+          el.unlink
         end
 
-        @chunks << doc.xpath('/html/head/script[starts-with(@src, "/assets")]')
-        @chunks << doc.css('meta[name="csrf-param"]').first&.unlink
-        @chunks << doc.css('meta[name="csrf-token"]').first&.unlink
+        # @chunks << doc.xpath('/html/head/script[starts-with(@src, "/assets")]')
+        doc.xpath('/html/head/script[starts-with(@src, "/assets")]').each do |el|
+          el.unlink
+        end
+
+        doc.css('meta[name="csrf-param"]').first&.unlink
+        doc.css('meta[name="csrf-token"]').first&.unlink
 
         doc.css('#summary dl').first << fragment.css('dl#ead_author_block dt,dl#ead_author_block dd')
         if (contents_el = doc.css('div.al-contents').first)
@@ -347,20 +353,22 @@ module UmArclight
       # rubocop:disable Metrics/MethodLength
       def update_package_styles_pdf
         # restore the stylesheet links for the PDF
-        placeholder_el = doc.css('base#placeholder').first
+        placeholder_el = doc.css('style#placeholder').first
 
-        # this is getting so dumb
-        placeholder_el.add_next_sibling '<link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">'
-        placeholder_el.add_next_sibling '<link href="https://fonts.googleapis.com/css?family=Crimson+Text|Muli:400,600,700" rel="stylesheet">'
         doc.css('link[rel="stylesheet"][href^="https://"]').each do |link|
-          @chunks << link.unlink
+          link.unlink
         end
 
-        # <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+        # add links for pdf
+        placeholder_el.add_next_sibling '<link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">'
+        placeholder_el.add_next_sibling '<link href="https://fonts.googleapis.com/css?family=Crimson+Text|Muli:400,600,700" rel="stylesheet">'
+        placeholder_el.add_next_sibling '<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">'
+        placeholder_el.add_next_sibling CatalogController.helpers.stylesheet_link_tag('print')
 
-        @chunks.css('link').each do |link|
-          next unless link['rel'] == 'stylesheet' # && link['href'].start_with?('/assets/')
-          next unless link['href'].start_with?('/assets/', 'https://')
+        # cache the assets locally
+        doc.xpath('/html/head/link').each do |link|
+          next unless link['rel'] == 'stylesheet'
+          # next unless link['href'].start_with?('/assets/', 'https://')
           filename = if link['href'].start_with?('/assets/')
             link['href'].split(/[\?#]/).first.gsub('/assets', '')
           else
@@ -368,20 +376,16 @@ module UmArclight
           end
           filename += '.css' if link['rel'] == 'stylesheet' && !filename.end_with?('.css')
 
-          # STDERR.puts ":: #{link['href']} -> #{filename}" if link['rel'] == 'stylesheet'
-
           # only cache as needed
           download_and_cache(link, filename) unless File.exist?("./assets#{filename}")
 
           link['href'] = "./assets#{filename}"
-          # we only need the google fonts
-          next unless link['href'].include?('fonts.googleapis.com') || link['href'].include?('font-awesome')
           placeholder_el.add_next_sibling link
         end
         @fonts.each do |filename|
           placeholder_el.add_next_sibling "<link rel='stylesheet' href='./assets/#{filename}'>"
         end
-        @doc.css('#utility-styles').before(fragment.css('style#pdf-styles').first)
+
         placeholder_el.unlink
       end
 

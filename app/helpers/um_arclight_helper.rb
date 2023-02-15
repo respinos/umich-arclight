@@ -65,7 +65,7 @@ module UmArclightHelper
     _title = title.join(' ')
   end
 
-  SKIPPABLE_KEYS = ['containers', 'physdesc_tesim', 'creators_ssim', 'abstract_teism', 'scopecontent_tesim']
+  SKIPPABLE_KEYS = ['containers', 'physdesc_tesim', 'creators_ssim', 'abstract_tesim', 'scopecontent_tesim']
   def is_interesting_component?(document)
     (blacklight_config.component_fields.keys.find do |key|
       (SKIPPABLE_KEYS.exclude?(key) && document.fetch(key, nil).present?)

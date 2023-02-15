@@ -32,7 +32,8 @@ RSpec.describe UmArclight::Package::Generator do
               'role': 'image-service',
               'xpointer': nil
             }.to_json
-          ]
+          ],
+          'repository_ssm': ['University of Michigan Bentley Historical Library']
         )
       ]
     end
