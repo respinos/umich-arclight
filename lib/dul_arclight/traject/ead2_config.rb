@@ -466,6 +466,11 @@ compose 'components', ->(record, accumulator, _context) { accumulator.concat rec
     accumulator << context.clipboard[:parent].output_hash['ead_ssi'].first
   end
 
+  to_field 'subarea_sim' do |_record, accumulator, context|
+    subarea = context.clipboard[:parent].output_hash['subarea_sim']&.first
+    accumulator << subarea unless subarea.nil? || subarea.empty?
+  end
+
   to_field 'title_filing_si', extract_xpath('./did/unittitle[not(@type) or ( @type != "sort" )]'), first_only
   to_field 'title_ssm' do |record, accumulator|
     result = record.xpath('./did/unittitle[not(@type) or ( @type != "sort" )]')
