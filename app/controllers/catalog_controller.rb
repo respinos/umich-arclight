@@ -37,7 +37,8 @@ class CatalogController < ApplicationController
 
     ## Default parameters to send to solr for all search-like requests. See also SearchBuilder#processed_parameters
     config.default_solr_params = {
-      rows: 10
+      rows: 10,
+      fl: '*'
     }
 
     # solr path which will be added to solr base url before the other solr params.
@@ -479,6 +480,7 @@ class CatalogController < ApplicationController
     config.add_component_field 'accruals_tesim', label: 'Accruals', helper_method: :render_html_tags
     config.add_component_field 'physloc_tesim', label: 'Physical Location', helper_method: :render_html_tags
     config.add_component_field 'materialspec_tesim', label: 'Material Specific Details', helper_method: :render_html_tags
+    config.add_component_field 'note_tesim', label: 'Note', helper_method: :render_html_tags
     config.add_component_field 'odd_tesim', label: 'Other Descriptive Data', helper_method: :render_html_tags
     config.add_component_field 'unitid_ssm', label: 'Unit ID', helper_method: :render_html_tags
 
