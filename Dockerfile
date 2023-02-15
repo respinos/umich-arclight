@@ -13,6 +13,10 @@ RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources
 
 RUN apt-get update -yqq && \
     apt-get install -yqq --no-install-recommends vim nodejs yarn
+
+RUN wget -q https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6.1-2/wkhtmltox_0.12.6.1-2.bullseye_amd64.deb
+RUN apt-get install -yqq --no-install-recommends ./wkhtmltox_0.12.6.1-2.bullseye_amd64.deb
+
 RUN groupadd -g $GID -o $UNAME
 RUN useradd -m -d /opt/app -u $UID -g $GID -o -s /bin/bash $UNAME
 RUN mkdir /var/opt/app

@@ -27,8 +27,7 @@ module UmArclight
       publicid = document.publicid
       request_pattern = document.repository_config.request_pattern
       match = Regexp.new(request_pattern).match(publicid)
-      filename = File.join(DulArclight.finding_aid_data, 'ead', repo_id, match[1])
-      return filename if File.exist?(filename)
+      File.join(DulArclight.finding_aid_data, 'ead', repo_id, match[1]) unless match.nil?
     end
 
     def repo_id
@@ -42,7 +41,7 @@ module UmArclight
     end
 
     def ead_available?
-      File.exist?(ead_file_path)
+      ead_file_path && File.exist?(ead_file_path)
     end
 
     def pdf_available?
