@@ -26,8 +26,10 @@ services:
     image: postgres:12-alpine
     environment:
       - POSTGRES_PASSWORD=postgres
+      - PGDATA=/var/lib/postgresql/data/db
+
     volumes:
-      - db-data:/var/lib/postgresql/data
+      - db-data:/var/lib/postgresql/data/db
   solr:
     image: solr:8-slim
     ports:

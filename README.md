@@ -191,7 +191,7 @@ docker-compose exec -- app env
 |---------------------------|-------------------------|----------------------------------------------------|
 | umich-arclight_data       | app, resque             | /var/opt/app/data                                  |
 | umich-arclight_gems       | app, resque, resque-web | /var/opt/app/gems                                  |
-| umich-arclight_db-data    | db                      | /var/lib/postgresql/data                           |
+| umich-arclight_db-data    | db                      | /var/lib/postgresql/data/db                        |
 | umich-arclight_solr-conf  | solr                    | /opt/solr/server/solr/configsets/umich-arclight:ro |
 | umich-arclight_solr-data  | solr                    | /var/solr                                          |
 | umich-arclight_redis-data | redis                   | /data                                              |
