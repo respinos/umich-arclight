@@ -26,3 +26,6 @@ Rails:
 
 RSpec:
   Enabled: true # enable rubocop-rspec cops
+
+RSpec/MessageSpies:
+  EnforcedStyle: have_received
