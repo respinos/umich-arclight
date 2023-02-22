@@ -38,11 +38,11 @@ RSpec.describe IndexFindingAidsController, type: :controller do
     end
 
     specify do
-      expect(IndexFindingAidJob)
+      allow(IndexFindingAidJob)
         .to receive(:perform_later)
         .with('spec/fixtures/ead/rubenstein/rushbenjaminandjulia.xml', 'rubenstein')
         .and_call_original
-      expect(DeleteFindingAidJob)
+      allow(DeleteFindingAidJob)
         .to receive(:perform_later)
         .with('appleberrydilmus')
         .and_call_original

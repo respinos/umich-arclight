@@ -21,3 +21,6 @@
 
 # Don't Ignore .keep files
 !**/.keep
+
+/sample-ead/pdf
+/sample-ead/xml
