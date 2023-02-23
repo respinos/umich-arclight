@@ -1,4 +1,4 @@
-FROM ruby:2.6
+FROM ruby:2.7
 
 ARG UNAME=app
 ARG UID=1000
@@ -31,4 +31,7 @@ COPY --chown=$UID:$GID . /opt/app
 
 USER $UNAME
 WORKDIR /opt/app
+RUN gem install 'bundler:~>2.2.21'
+RUN bundle config --local build.sassc --disable-march-tune-native
+
 CMD ["sleep", "infinity"]

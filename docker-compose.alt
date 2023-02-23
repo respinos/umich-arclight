@@ -19,7 +19,6 @@ services:
       - .:/opt/app
       - data:/var/opt/app/data
       - gems:/var/opt/app/gems
-      - solr-conf:/opt/app/solr/arclight
   db:
     ports:
       - "5432:5432"
@@ -29,7 +28,7 @@ services:
       - PGDATA=/var/lib/postgresql/data/db
 
     volumes:
-      - db-data:/var/lib/postgresql/data/db
+      - db-data:/var/lib/postgresql/data
   solr:
     image: solr:8-slim
     ports:
@@ -38,7 +37,7 @@ services:
       - SOLR_JAVA_MEM=-Xms1024m -Xmx1024m
       - SOLR_HEAP=1024m
     volumes:
-      - solr-conf:/opt/solr/server/solr/configsets/umich-arclight:ro
+      - solr-conf:/opt/solr/server/solr/configsets/umich-arclight
       - solr-data:/var/solr
   redis:
     image: redis:6-buster
@@ -85,5 +84,9 @@ volumes:
   gems:
   db-data:
   solr-conf:
+    driver_opts:
+      type: none
+      device: ${PWD}/solr/arclight
+      o: bind
   solr-data:
   redis-data:
