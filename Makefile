@@ -1,7 +1,7 @@
 SHELL = /bin/bash
 
 build_tag ?= dul-arclight
-builder_image ?= gitlab-registry.oit.duke.edu/devops/containers/ruby:2.6-main
+builder_image ?= gitlab-registry.oit.duke.edu/devops/containers/ruby:2.7-main
 
 build_opts = --assemble-user 0 --incremental --pull-policy never
 

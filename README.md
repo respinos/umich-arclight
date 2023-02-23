@@ -27,12 +27,15 @@ docker-compose build app
 docker-compose up -d
 ```
 NOTES
-* The ***resque*** and ***resque-web*** containers will exit because we have yet to *install bundler*.
-### Install bundler
-```shell
-docker-compose exec -- app gem install 'bundler:~>2.2.21'
-docker-compose exec -- app bundle config --local build.sassc --disable-march-tune-native
-```
+* The ***resque*** and ***resque-web*** containers will exit because we have yet to do a ***bundle install!***.
+> ### Install bundler
+> ```shell
+> docker-compose exec -- app gem install 'bundler:~>2.2.21'
+> docker-compose exec -- app bundle config --local build.sassc --disable-march-tune-native
+> ```
+> This was moved into the Dockerfile so it is no longer is necessary but is left here as a reminder so it will not be forgotten.  
+> 
+> Need to revisit why this is necessary in the first place!
 ### Bundle install
 ```shell
 docker-compose exec -- app bundle install

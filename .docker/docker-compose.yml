@@ -21,7 +21,7 @@ services:
     image: dul-arclight
     build:
       dockerfile: Dockerfile.staging
-      context: ../.bundle/ruby/2.6.0/gems/blacklight_range_limit-7.4.0/vendor/assets/javascripts
+      context: ../.bundle/ruby/2.7.0/gems/blacklight_range_limit-7.4.0/vendor/assets/javascripts
     depends_on:
       - db
       - solr
