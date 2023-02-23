@@ -19,8 +19,13 @@ alias abe="dce app bundle exec"
 NOTES
 * To revert back to the old way just copy **docker-compose.bak** over **docker-compose.yml** file. a.k.a. `cp docker-compose.bak docker-compose.yml`
 ### Build application image
+The default is **amd64** architecture a.k.a. Intel
 ```shell
 docker-compose build app
+```
+For Apple Silicon use **arm64** architecture 
+```shell
+docker-compose build --build-arg ARCH=arm64 app
 ```
 ### Bring up development environment
 ```shell
