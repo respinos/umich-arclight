@@ -176,3 +176,7 @@
     color: tint($brand-primary, 80);
   }
 }
+
+.flash_messages > .alert:first-child {
+  margin-top: 0.5rem;
+}

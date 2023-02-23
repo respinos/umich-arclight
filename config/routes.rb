@@ -56,6 +56,10 @@ Rails.application.routes.draw do # rubocop:disable Metrics/BlockLength
   get '/custom_sitemaps/:id', controller: 'custom_sitemaps', action: 'index', defaults: {format: 'xml'},
                               constraints: ->(request) { CUSTOM_SITEMAP_CONFIG.key?(request.params[:id]) }
 
+  ### Handle errors
+  match "/404", to: "errors#not_found", via: :all
+  match "/500", to: "errors#internal_server_error", via: :all
+
   mount Arclight::Engine => '/'
   mount BlacklightDynamicSitemap::Engine => '/'
   mount Blacklight::Engine => '/'
