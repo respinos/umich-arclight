@@ -1,5 +1,8 @@
 # See http://www.robotstxt.org/robotstxt.html for documentation on how to use the robots.txt file
+Sitemap: https://findingaids.lib.umich.edu/sitemap
 
-# Just block everything
+# Block crawlers from crawling the raw EAD and derivatives
 User-agent: *
-Disallow: /
+Disallow: /*/xml$
+Disallow: /*/pdf$
+Disallow: /*/html$
