@@ -378,6 +378,8 @@
    <copyField source="subject_tesim" dest="text" />
    <copyField source="format_tesim" dest="text" />
    <copyField source="parent_unittitles_teim" dest="text" />
+   <copyField source="authors_creators_tesim" dest="text" />
+   <copyField source="sponsors_tesim" dest="text" />
 
    <!-- grab the searchable notes -->
    <copyField source="abstract_teim" dest="text" />

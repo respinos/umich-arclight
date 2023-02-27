@@ -377,6 +377,8 @@ class CatalogController < ApplicationController
                                                        two_words_connector: '<br/>',
                                                        last_word_connector: '<br/>'
                                                      }
+    config.add_summary_field 'sponsors_ssm', label: 'Sponsor', helper_method: :render_html_tags
+    config.add_summary_field 'authors_creators_ssm', label: 'Authors', helper_method: :render_html_tags
 
     # Collection Show Page - Top Restrictions Snippet Section
     config.add_restrictions_field 'accessrestrict_tesim', label: 'Restrictions', helper_method: :render_html_tags

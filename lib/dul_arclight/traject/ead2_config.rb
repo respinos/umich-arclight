@@ -419,6 +419,11 @@ to_field 'text' do |_record, accumulator, context|
   accumulator.concat context.output_hash.fetch('non_components_teim', [])
 end
 
+to_field 'authors_creators_tesim', extract_xpath('/ead/eadheader/filedesc/titlestmt//author') # search plain text
+to_field 'authors_creators_ssm', extract_xpath('/ead/eadheader/filedesc/titlestmt//author', to_text: false) # show render_html_tags
+to_field 'sponsors_tesim', extract_xpath('/ead//sponsor') # search plain text
+to_field 'sponsors_ssm', extract_xpath('/ead//sponsor', to_text: false) # show render_html_tags
+
 # =============================
 # Each component child document
 # <c> <c01> <c12>

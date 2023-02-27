@@ -235,6 +235,7 @@
          appraisal_tesim,
          ark_ssi,
          arrangement_tesim,
+         authors_creators_tesim,
          bibnum_ssim,
          bioghist_tesim,
          child_component_count_isim,
@@ -270,6 +271,7 @@
          ref_ssm,
          repository_ssm,
          scopecontent_tesim,
+         sponsors_tesim,
          title_ssm,
     <!-- ua_record_group_ssim, -->
          unitid_ssm,
