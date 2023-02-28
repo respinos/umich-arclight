@@ -5,11 +5,6 @@ A front-end for archival finding aids / collection guides built on the [ArcLight
 
 The application currently runs at [https://findingaids.lib.umich.edu](https://findingaids.lib.umich.edu/).
 ## Development Quick Start
-### Prerequisites
-#### Copy over the current docker-compose.yml
-```shell
-cp docker-compose.alt docker-compose.yml
-```
 #### Handy Dandy Aliases (Optional)
 ```shell
 alias dc="docker-compose"
