@@ -1,9 +1,34 @@
-version: '3.7'
-
-volumes:
-  pg_data:
-
+---
 services:
+  app:
+    depends_on:
+      - db
+      - solr
+      - redis
+    image: umich-arclight
+    build:
+      dockerfile: Dockerfile
+      context: .
+    ports:
+      - "3000:3000" # Rails
+      - "1234:1234" # RubyMine
+      - "26162:26162" # RubyMine
+    environment:
+      - REDIS_URL=redis://redis:6379
+    volumes:
+      - .:/opt/app
+      - data:/var/opt/app/data
+      - gems:/var/opt/app/gems
+  db:
+    ports:
+      - "5432:5432"
+    image: postgres:12-alpine
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - PGDATA=/var/lib/postgresql/data/db
+
+    volumes:
+      - db-data:/var/lib/postgresql/data
   solr:
     image: solr:8-slim
     ports:
@@ -12,103 +37,56 @@ services:
       - SOLR_JAVA_MEM=-Xms1024m -Xmx1024m
       - SOLR_HEAP=1024m
     volumes:
-#      - ./solr/arclight:/var/solr/data/arclight
-      - ./solr/arclight/conf:/solr_config:ro
-    command:
-      - solr-precreate
-      - arclight
-      - /solr_config
-
-  db:
-#    ports:
-#      - "5432:5432"
-    image: postgres:12-alpine
-    environment:
-      - POSTGRES_DB=arclight
-      - POSTGRES_PASSWORD=arclight
-    volumes:
-      - pg_data:/var/lib/postgresql/data
-
-  app:
-    image: dul-arclight
-    build:
-      dockerfile: .docker/Dockerfile.staging
-      context: .
-    depends_on:
-      - db
-      - solr
-    volumes:
-      - .:/opt/app-root
-    ports:
-      - "3000:3000"
-# Uncomment for Docker Compose RubyMine Development
-#      - "1234:1234"
-#      - "26162:26162"
-    environment:
-      - DATABASE_URL=postgresql://postgres:arclight@db/arclight
-      - GOOGLE_ANALYTICS_DEBUG=${GOOGLE_ANALYTICS_DEBUG:-false}
-      - GOOGLE_ANALYTICS_TRACKING_ID=${GOOGLE_ANALYTICS_TRACKING_ID}
-      - REDIS_URL=redis://redis:6379
-      - SOLR_URL=http://solr:8983/solr/arclight
-      - RAILS_ENV=development
-      - FINDING_AID_DATA=./sample-ead
-# Uncomment for Docker Compose RubyMine Development
-#    command:
-#      - tail
-#      - -f
-#      - /dev/null
-
+      - solr-conf:/opt/solr/server/solr/configsets/umich-arclight
+      - solr-data:/var/solr
   redis:
     image: redis:6-buster
-#    ports:
-#      - "6379:6379"
-
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
   resque:
-    image: dul-arclight
-#    ports:
-#      - "8282:8282"
     depends_on:
       - db
-      - redis
       - solr
-    volumes:
-      - .:/opt/app-root
+      - redis
+    image: umich-arclight
+    ports:
+      - "8282:8282"
     environment:
-      - DATABASE_URL=postgresql://postgres:arclight@db/arclight
-      - FINDING_AID_DATA=./sample-ead
-      - RAILS_ENV=development
       - REDIS_URL=redis://redis:6379
-      - SOLR_URL=http://solr:8983/solr/arclight
+    volumes:
+      - .:/opt/app
+      - data:/var/opt/app/data
+      - gems:/var/opt/app/gems
     healthcheck:
       disable: true
     stop_signal: SIGQUIT
-    command:
-      - bundle
-      - exec
-      - rake
-      - resque:pool
-
+    command: bundle exec rake resque:pool
   resque-web:
-    image: dul-arclight
-    ports:
-     - "8080:8080"
     depends_on:
       - redis
+    image: umich-arclight
+    ports:
+      - "8080:8080"
     volumes:
-      - .:/opt/app-root
-    environment:
-      - DATABASE_URL=postgresql://postgres:arclight@db/arclight
-      - RAILS_ENV=development
-      - REDIS_URL=redis://redis:6379
-      - SOLR_URL=http://solr:8983/solr/arclight
+      - .:/opt/app
+      - gems:/var/opt/app/gems
     healthcheck:
       disable: true
-    command:
-      - bundle
-      - exec
-      - resque-web
-      - '-p'
-      - '8080'
-      - '-r'
-      - redis:6379
-      - '-F'
+    command: bundle exec resque-web -p 8080 -r redis:6379 -F
+volumes:
+  data:
+    driver_opts:
+      type: none
+      device: ${PWD}/sample-ead
+      o: bind
+  gems:
+  db-data:
+  solr-conf:
+    driver_opts:
+      type: none
+      device: ${PWD}/solr/arclight
+      o: bind
+  solr-data:
+  redis-data:
