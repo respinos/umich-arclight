@@ -76,3 +76,8 @@ en:
       separatedmaterial: "Alternate Locations"
       relatedmaterial: "Related Materials"
       bibliography: "Bibliography"
+
+    errors:
+      redirected_to_collection: |
+        We’re not sure what section of the finding aid you were looking for;
+        you've been redirected to the collection main page.

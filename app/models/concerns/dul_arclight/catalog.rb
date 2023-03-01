@@ -29,6 +29,29 @@ module DulArclight
       end
     end
 
+    # U-M Library CUSTOMIZATION:
+    # if possible, send the user to the top of the collection when a document
+    # cannot be found in the index
+    def show
+      begin
+        deprecated_response, @document = search_service.fetch(params[:id])
+      rescue Blacklight::Exceptions::RecordNotFound
+        # see if we can resolve this to the collection
+        deprecated_response, @document = find_possible_collection
+        flash[:notice] = I18n.t("um_arclight.errors.redirected_to_collection")
+        return redirect_to action: 'show', id: @document.id
+      end
+
+      # continue as usual
+      @response = ActiveSupport::Deprecation::DeprecatedObjectProxy.new(deprecated_response, 'The @response instance variable is deprecated; use @document.response instead.')
+
+      respond_to do |format|
+        format.html { @search_context = setup_next_and_previous_documents }
+        format.json
+        additional_export_formats(@document, format)
+      end
+    end
+
     # DUL CUSTOMIZATION: send the source EAD XML file that we already have on the filesystem
     # Modeled after "raw", see:
     # https://github.com/projectblacklight/blacklight/blob/master/app/controllers/concerns/blacklight/catalog.rb#L65-L71
@@ -120,6 +143,23 @@ module DulArclight
 
     def download_helper
       @download_helper
+    end
+
+    def find_possible_collection
+      if params[:id].include?('_')
+        possibles = []
+        parts = params[:id].split('_')
+        until parts.empty?
+          parts.pop
+          possibles << parts.join('_') unless parts.empty?
+        end
+
+        deprecated_response, documents = search_service.fetch(possibles)
+        unless documents.empty?
+          return deprecated_response, documents.first
+        end
+      end
+      raise Blacklight::Exceptions::RecordNotFound
     end
   end
 end
