@@ -91,17 +91,18 @@ module UmArclight
       def build_pdf_html
         # build the source in tmp
         FileUtils.mkdir_p(working_path_name)
-        Dir.chdir(working_path_name)
-        FileUtils.mkdir_p('assets')
+        Dir.chdir(working_path_name) do
+          FileUtils.mkdir_p('assets')
 
-        elapsed_time = Benchmark.realtime do
-          update_package_html_pdf
-          update_package_styles_pdf
-          update_package_scripts_pdf
-          # set the media
-          doc.root['data-media'] = 'print'
+          elapsed_time = Benchmark.realtime do
+            update_package_html_pdf
+            update_package_styles_pdf
+            update_package_scripts_pdf
+            # set the media
+            doc.root['data-media'] = 'print'
+          end
+          puts "UM-Arclight generate package: #{collection.id} : update HTML for PDF (in #{elapsed_time.round(3)} secs)."
         end
-        puts "UM-Arclight generate package: #{collection.id} : update HTML for PDF (in #{elapsed_time.round(3)} secs)."
       end
 
       def generate_pdf_html
@@ -129,22 +130,20 @@ module UmArclight
         output_filename = generate_output_filename('.pdf')
         FileUtils.mkdir_p(File.dirname(output_filename))
 
-        Dir.chdir working_path_name
+        Dir.chdir working_path_name do
+          elapsed_time = Benchmark.realtime do
+            cmd = "wkhtmltopdf --page-size Letter --enable-internal-links --enable-local-file-access --margin-top 20mm --margin-bottom 20mm --margin-right 20mm --margin-left 20mm #{local_html_filename} #{output_filename}"
+            stdout_and_stderr, process_status = Open3.capture2e(cmd)
 
-        elapsed_time = Benchmark.realtime do
-          cmd = "wkhtmltopdf --page-size Letter --enable-internal-links --enable-local-file-access --margin-top 20mm --margin-bottom 20mm --margin-right 20mm --margin-left 20mm #{local_html_filename} #{output_filename}"
-          stdout_and_stderr, process_status = Open3.capture2e(cmd)
-
-          if process_status.success?
-            puts stdout_and_stderr
-          else
-            raise UmArclight::GenerateError, identifier, stdout_and_stderr.to_s
+            if process_status.success?
+              puts stdout_and_stderr
+            else
+              raise UmArclight::GenerateError, identifier, stdout_and_stderr.to_s
+            end
           end
+
+          puts "UM-Arclight generate package: #{collection.id} : PDF render (in #{elapsed_time.round(3)} secs)."
         end
-
-        ## File.unlink(local_html_filename) unless ENV.fetch('DEBUG_GENERATOR', 'FALSE') == 'TRUE'
-
-        puts "UM-Arclight generate package: #{collection.id} : PDF render (in #{elapsed_time.round(3)} secs)."
       end
 
       private
@@ -179,7 +178,7 @@ module UmArclight
 
       def fetch_doc(id)
         params = {
-          fl: '*',
+          fl: '*', # COMPONENT_FIELDS.join(','),
           q: ["id:#{id.tr(".", "-")}"],
           start: 0,
           rows: 1
@@ -192,7 +191,7 @@ module UmArclight
       # rubocop:disable Metrics/MethodLength
       def fetch_components(id)
         params = {
-          fl: COMPONENT_FIELDS.join(','),
+          fl: '*',
           q: ["ead_ssi:#{id}"],
           sort: 'sort_ii asc, title_sort asc',
           start: 0,
