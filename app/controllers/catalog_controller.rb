@@ -573,6 +573,10 @@ class CatalogController < ApplicationController
     config.view.child_components
     config.view.child_components.display_control = false
     config.view.child_components.partials = %i[index_child_components_nestable]
+
+    config.view.expanded_child_components
+    config.view.expanded_child_components.display_control = false
+    config.view.expanded_child_components.partials = %i[index_child_components_nestable]
     # config.view.child_components.partials = %i[index_child_components]
 
     ##

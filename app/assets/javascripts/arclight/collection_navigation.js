@@ -63,8 +63,8 @@
           'f[parent_ssi][]': data.arclight.directparent,
           page: page,
           search_field: data.arclight.search_field,
-          view: data.arclight.view,
-          per_page: data.arclight.per_page
+          view: isNested ? `expanded_${data.arclight.view}` : data.arclight.view,
+          per_page: isNested ? data.arclight.childrencount : 100
         }
       }).done(function (response) {
         var resp = $.parseHTML(response);

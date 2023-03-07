@@ -28,6 +28,7 @@ module DulArclight
     # For the collection_context views, set a higher (unlimited) maximum document return
     def add_hierarchy_max_rows(solr_params)
       solr_params[:rows] = 999_999_999 if %w[collection_context].include? blacklight_params[:view]
+      solr_params[:rows] = 999_999_999 if %w[expanded_child_components].include? blacklight_params[:view]
 
       # For inline child components display on component view, break into pages of 100.
       # This has to be in sync with collection_navigation.js
